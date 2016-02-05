@@ -1,0 +1,218 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy}{\section{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy}\index{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy@{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.708861cm]{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a088ec7286518a77dbc32030b12d93070}{is\-Calculated} ()
+\item 
+Point2\-D \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a5e4633aa7ba3767e13a668c06472a4be}{calculate\-Position} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner)
+\item 
+Point2\-D \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ade43fff779d3382e9acf27d88138645b}{calculate\-Dragged\-Position} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner, double moved\-X, double moved\-Y)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af4b124b22fd21fb61eb3d8fe0f5d14f8}{move\-To} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner, double x, double y)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_aeefc92690d78ec3452c109f53cb36d8a}{store\-Additional\-Info} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_persist_helper}{Persist\-Helper} helper, Element node\-Element, boolean hidden)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ae920d61f6bd6382e5d39d23564a9df3c}{restore\-Additional\-Info} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_persist_helper}{Persist\-Helper} helper, int version)  throws Restore\-Layout\-Exception
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a00910dffbc249c425f8e05228dcb1ae1}{debug\-Draw} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node}{Placeable\-Node} owner, Graphics2\-D g)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af9a301c4f5f3d6445657d0180aa2a686}{dispose} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a67473d97d2d3a23de1e1aeb69875278a}{reset} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a0b29d4840b6f672bd6548845e57be73c}{recover\-Non\-Serialized\-Information} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy}{Position\-Strategy} strategy)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A position strategy handles the placement of a node. These strategies can be completely manual like the identity strategy (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity}{Strategy\-Identity} or a combination of automatic values and user information from dragging elements from their automatic position to a user defined one.
+
+This dragging information can be used if the calculated position of a node changes. The most simple case is to move the node by the previously dragged deltas, like it is done in the strategy \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between}{Strategy\-In\-Between}.
+
+\begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 44 of file Position\-Strategy.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ade43fff779d3382e9acf27d88138645b}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!calculate\-Dragged\-Position@{calculate\-Dragged\-Position}}
+\index{calculate\-Dragged\-Position@{calculate\-Dragged\-Position}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{calculate\-Dragged\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Point2\-D org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-calculate\-Dragged\-Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner, }
+\item[{double}]{moved\-X, }
+\item[{double}]{moved\-Y}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ade43fff779d3382e9acf27d88138645b}
+Handles a user movement of the owned node. Returns the new center position after the move. 
+\begin{DoxyParams}{Parameters}
+{\em moved\-X} & \\
+\hline
+{\em moved\-Y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position after a move. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_attached_intersection_a30f965859ce2d066e7704dcf163a5d39}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Attached\-Intersection}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_ae8ed094691a8f3ee9d7e5d225f13a25b}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a8db2a4d3368ef4cd10c42804622a8aca}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a885b8ba5f61d07ae5f3658cdafe906c9}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_ab9fbe2b586ce319ffb80a63b359904f5}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a5e4633aa7ba3767e13a668c06472a4be}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!calculate\-Position@{calculate\-Position}}
+\index{calculate\-Position@{calculate\-Position}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{calculate\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Point2\-D org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-calculate\-Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a5e4633aa7ba3767e13a668c06472a4be}
+Where should the center of the node be places? 
+\begin{DoxyParams}{Parameters}
+{\em owner} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_ac2018027f2b075a8e1655c3201b29ed5}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_ad1c4fd3d48b732fdfdc24123d9ec8d00}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_af3f147d9fad17f3b38c5d3aa0a54854c}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a00910dffbc249c425f8e05228dcb1ae1}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!debug\-Draw@{debug\-Draw}}
+\index{debug\-Draw@{debug\-Draw}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{debug\-Draw}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-debug\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner, }
+\item[{Graphics2\-D}]{g}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a00910dffbc249c425f8e05228dcb1ae1}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a97a4fea9b1b6721aafc21b5389f00b66}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_attached_intersection_a0d9123e1d4fa58640e4808ad1bc5d5d5}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Attached\-Intersection}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_ab653f864d6314d0e674e2c702051d42a}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Attached}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between_abd201873296db3bf5ee55d6c9cef762f}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-In\-Between}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a97fb0c988d565c652e914f80aa77533f}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a2119721deb1720617397286d95fb50f5}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_ae73729ed5923dd51604fb327d8043884}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af9a301c4f5f3d6445657d0180aa2a686}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!dispose@{dispose}}
+\index{dispose@{dispose}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{dispose}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af9a301c4f5f3d6445657d0180aa2a686}
+Free up any resources and remove listeners from related nodes. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a507df07ba80297cdb0d57a3d1806ec1b}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_a43de0af83f2d4fa5c6890f0c5532492e}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Attached}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_attached_intersection_aaf3c06633678c405a097763ff2d4d152}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Attached\-Intersection}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between_ae2e2d7390259ee5c20dc88f7a35eaf3a}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-In\-Between}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a713177f8c92b7a319c25a66c2163afe4}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_aa64f02d8f7402e95362033c71712314f}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_af6cfc51104cbd337fec558173edc3d66}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a088ec7286518a77dbc32030b12d93070}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!is\-Calculated@{is\-Calculated}}
+\index{is\-Calculated@{is\-Calculated}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{is\-Calculated}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-is\-Calculated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a088ec7286518a77dbc32030b12d93070}
+If {\ttfamily true}, the position of a strategy is calculated. This means, a call to \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1_placeable_node_a308ce2fbf8c26e76232d619cf45b863a}{Placeable\-Node\#set\-Position(double, double)} from outside does not change the position. Instead it forces an update by calling the strategy. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_a3c6a2949e09e44ec27797cfec90e2b97}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Attached}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a44b83daefff4ff2340ef7fa9d13a6edf}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_a5c652ab9c4fc2d81389d2b011d4c8b18}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a497e7d53e8a35720cdfe2470dfb72f2d}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between_aae179110fd760b5c107092753c96c35b}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-In\-Between}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a7ad88f7e5d202dcdeb546e2342bdf980}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_attached_intersection_a7a2d9d3d29f05444c794d6d87199c634}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Attached\-Intersection}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af4b124b22fd21fb61eb3d8fe0f5d14f8}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!move\-To@{move\-To}}
+\index{move\-To@{move\-To}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{move\-To}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-move\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_af4b124b22fd21fb61eb3d8fe0f5d14f8}
+Notifies the strategy to align its values in a way such that the next time \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a5e4633aa7ba3767e13a668c06472a4be}{calculate\-Position(\-Placeable\-Node)} is called, the position is equals to the provided {\ttfamily x} and {\ttfamily y} values. 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_aa8591f28a225f66dc60c37f169779121}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a26c502a4faa272ed2efe6cae02e0b05e}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_a3ba666fb1cd7124b23038033513ef560}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a0b29d4840b6f672bd6548845e57be73c}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!recover\-Non\-Serialized\-Information@{recover\-Non\-Serialized\-Information}}
+\index{recover\-Non\-Serialized\-Information@{recover\-Non\-Serialized\-Information}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{recover\-Non\-Serialized\-Information}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-recover\-Non\-Serialized\-Information (
+\begin{DoxyParamCaption}
+\item[{{\bf Position\-Strategy}}]{strategy}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a0b29d4840b6f672bd6548845e57be73c}
+Allows a strategy to recover information from the current one, before it replaces the given {\ttfamily strategy}. 
+\begin{DoxyParams}{Parameters}
+{\em strategy} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a201360071def647b67360dadb870f7fc}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_a5c6bd2b756cfc80487d404196dfcfcb5}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_ac1f5faee6060891495a09ae26810508b}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_afb27777187bd5a0363427c1d3ab6860e}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a67473d97d2d3a23de1e1aeb69875278a}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!reset@{reset}}
+\index{reset@{reset}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_a67473d97d2d3a23de1e1aeb69875278a}
+Resets the strategy to the initial state, i. w., no user changes. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_a12a382645925bf78bea37a1871399885}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_aa0a814fd77a435b005daa9aa2ad35178}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_a328eefcc961765ad50066ade0b78ee76}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ae920d61f6bd6382e5d39d23564a9df3c}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!restore\-Additional\-Info@{restore\-Additional\-Info}}
+\index{restore\-Additional\-Info@{restore\-Additional\-Info}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{restore\-Additional\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-restore\-Additional\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner, }
+\item[{{\bf Persist\-Helper}}]{helper, }
+\item[{int}]{version}
+\end{DoxyParamCaption}
+) throws {\bf Restore\-Layout\-Exception}}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_ae920d61f6bd6382e5d39d23564a9df3c}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a341de0d964427ca604babeb33df0be98}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between_a6b863f3d97ec32bf7c60e4f4a2c715b2}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-In\-Between}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_a6874a9e2822616e40fc52f901e483f95}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Attached}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_abc8c2b8fc1394df129eecb946bab2701}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a8af6c03c5cf7c7dbdfedbc4a5556e7b3}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a3ebdf3fc29e43632e0a7c8a6e821cc94}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_a78aaec896b0e737ec35b919ac273f806}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_aeefc92690d78ec3452c109f53cb36d8a}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}!store\-Additional\-Info@{store\-Additional\-Info}}
+\index{store\-Additional\-Info@{store\-Additional\-Info}!org::tzi::use::gui::views::diagrams::elements::positioning::PositionStrategy@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::elements\-::positioning\-::\-Position\-Strategy}}
+\subsubsection[{store\-Additional\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Position\-Strategy.\-store\-Additional\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Placeable\-Node}}]{owner, }
+\item[{{\bf Persist\-Helper}}]{helper, }
+\item[{Element}]{node\-Element, }
+\item[{boolean}]{hidden}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_position_strategy_aeefc92690d78ec3452c109f53cb36d8a}
+Stores information about the settings of a strategy. 
+\begin{DoxyParams}{Parameters}
+{\em owner} & The owner of the strategy. required for stateless strategies. \\
+\hline
+{\em helper} & \\
+\hline
+{\em node\-Element} & \\
+\hline
+{\em hidden} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_a53205f8eb30efd78071149ebaf633e28}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Corner}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_in_between_a75e03d00994442a942381dc43eae05e8}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-In\-Between}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_a520c964659293890e127eba1f135fbe0}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Relative\-To\-Attached}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy_a475a879a4a51b34c89632545b8f9d2e3}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Statefull\-Position\-Strategy}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_identity_a2505e4a79153e367e73e05a2ce84a485}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Identity}, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_unmovable_a108c67b3a51bc3997fbdfc3448bde2f7}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Unmovable}, and \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_fixed_aadbed3950fe334643c8ab48301aaa437}{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-elements.\-positioning.\-Strategy\-Fixed}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/gui/org/tzi/use/gui/views/diagrams/elements/positioning/\hyperlink{_position_strategy_8java}{Position\-Strategy.\-java}\end{DoxyCompactItemize}

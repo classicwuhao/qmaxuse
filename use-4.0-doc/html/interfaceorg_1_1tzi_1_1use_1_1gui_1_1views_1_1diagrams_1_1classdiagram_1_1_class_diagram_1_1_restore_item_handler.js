@@ -1,0 +1,4 @@
+var interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1classdiagram_1_1_class_diagram_1_1_restore_item_handler =
+[
+    [ "handleItem", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1classdiagram_1_1_class_diagram_1_1_restore_item_handler.html#ae2974b8ef5c50c83ae44699da4ab9799", null ]
+];

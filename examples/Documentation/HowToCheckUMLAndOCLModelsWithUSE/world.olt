@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram_Layout version="4">
+  <diagramOptions>
+    <autolayout>false</autolayout>
+    <antialiasing>false</antialiasing>
+    <showassocnames>true</showassocnames>
+    <showattributes>true</showattributes>
+    <showmultiplicities>false</showmultiplicities>
+    <showoperations>false</showoperations>
+    <showrolenames>true</showrolenames>
+    <showgrid>false</showgrid>
+  </diagramOptions>
+  <node type="Object">
+    <name>Person2</name>
+    <x_coord>128.0</x_coord>
+    <y_coord>103.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person1</name>
+    <x_coord>10.0</x_coord>
+    <y_coord>103.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person4</name>
+    <x_coord>247.0</x_coord>
+    <y_coord>103.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person3</name>
+    <x_coord>189.0</x_coord>
+    <y_coord>8.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person10</name>
+    <x_coord>254.5</x_coord>
+    <y_coord>314.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person11</name>
+    <x_coord>312.5</x_coord>
+    <y_coord>416.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person12</name>
+    <x_coord>368.5</x_coord>
+    <y_coord>314.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person13</name>
+    <x_coord>503.5</x_coord>
+    <y_coord>312.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person14</name>
+    <x_coord>560.5</x_coord>
+    <y_coord>416.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person15</name>
+    <x_coord>634.5</x_coord>
+    <y_coord>313.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person16</name>
+    <x_coord>687.5</x_coord>
+    <y_coord>411.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person9</name>
+    <x_coord>136.0</x_coord>
+    <y_coord>317.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person7</name>
+    <x_coord>629.0</x_coord>
+    <y_coord>105.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person8</name>
+    <x_coord>18.0</x_coord>
+    <y_coord>317.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person5</name>
+    <x_coord>371.0</x_coord>
+    <y_coord>103.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <node type="Object">
+    <name>Person6</name>
+    <x_coord>499.0</x_coord>
+    <y_coord>105.0</y_coord>
+    <hidden>false</hidden>
+  </node>
+  <edge type="BinaryEdge">
+    <source>Person7</source>
+    <target>Person12</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>520.0</x_coord>
+      <y_coord>231.3125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>459.0</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>431.359375</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>593.375</x_coord>
+      <y_coord>234.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>627.0</x_coord>
+      <y_coord>234.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>625.0</x_coord>
+      <y_coord>178.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>457.0</x_coord>
+      <y_coord>313.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Person1</source>
+    <target>Person10</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>152.0</x_coord>
+      <y_coord>229.8125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>199.390625</x_coord>
+      <y_coord>259.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>253.0</x_coord>
+      <y_coord>260.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>98.0</x_coord>
+      <y_coord>234.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>70.359375</x_coord>
+      <y_coord>234.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>96.0</x_coord>
+      <y_coord>178.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>250.0</x_coord>
+      <y_coord>310.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Person6</source>
+    <target>Person15</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>587.0</x_coord>
+      <y_coord>231.8125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>598.390625</x_coord>
+      <y_coord>258.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>651.0</x_coord>
+      <y_coord>258.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>569.0</x_coord>
+      <y_coord>239.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>540.359375</x_coord>
+      <y_coord>239.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>567.0</x_coord>
+      <y_coord>183.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>649.0</x_coord>
+      <y_coord>309.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Person4</source>
+    <target>Person13</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>395.0</x_coord>
+      <y_coord>228.8125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>448.390625</x_coord>
+      <y_coord>259.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>502.0</x_coord>
+      <y_coord>260.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>335.0</x_coord>
+      <y_coord>232.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>307.359375</x_coord>
+      <y_coord>232.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>333.0</x_coord>
+      <y_coord>176.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>499.0</x_coord>
+      <y_coord>310.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Person5</source>
+    <target>Person9</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>273.5</x_coord>
+      <y_coord>232.3125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>224.0</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>195.359375</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>335.375</x_coord>
+      <y_coord>236.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>369.0</x_coord>
+      <y_coord>236.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>367.0</x_coord>
+      <y_coord>180.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>222.0</x_coord>
+      <y_coord>313.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Person2</source>
+    <target>Person8</target>
+    <name>Marriage</name>
+    <edgeproperty type="associationName" userDefined="false">
+      <name>Marriage</name>
+      <x_coord>92.5</x_coord>
+      <y_coord>232.8125</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="rolename" userDefined="false">
+      <name>husband</name>
+      <x_coord>82.0</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="target" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>53.359375</x_coord>
+      <y_coord>262.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="rolename" userDefined="false">
+      <name>wife</name>
+      <x_coord>115.375</x_coord>
+      <y_coord>237.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty kind="source" type="multiplicity" userDefined="false">
+      <name>0..1</name>
+      <x_coord>149.0</x_coord>
+      <y_coord>237.0</y_coord>
+      <hidden>false</hidden>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>0</name>
+      <x_coord>147.0</x_coord>
+      <y_coord>181.0</y_coord>
+      <hidden>false</hidden>
+      <id>0</id>
+      <specialid>1</specialid>
+    </edgeproperty>
+    <edgeproperty type="WayPoint" userDefined="false">
+      <name>1</name>
+      <x_coord>80.0</x_coord>
+      <y_coord>313.0</y_coord>
+      <hidden>false</hidden>
+      <id>1</id>
+      <specialid>2</specialid>
+    </edgeproperty>
+    <hidden>false</hidden>
+  </edge>
+</diagram_Layout>

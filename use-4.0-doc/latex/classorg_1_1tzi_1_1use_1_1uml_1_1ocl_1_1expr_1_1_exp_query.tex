@@ -1,0 +1,308 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query}{\section{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query}\index{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query@{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab979d349ef0f6a5f4af255007686c395}{name} ()
+\item 
+String\-Builder \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a8b54a7233c059b9be36c666de5a2186b}{to\-String} (String\-Builder sb)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a974ab3755c0073b282a8d0085e038c4e}{get\-Range\-Expression} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a36d640d07146c4a8e0b56b4d0de0a57d}{get\-Query\-Expression} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_var_decl_list}{Var\-Decl\-List} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a351b36257afffa1ea67e3213fc3e7ab5}{get\-Variable\-Declarations} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a01cdecfd164f7a69130b3abbc025e2ea}{Exp\-Query} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_type}{Type} result\-Type, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_var_decl_list}{Var\-Decl\-List} elem\-Var\-Decls, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} range\-Exp, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} query\-Exp)  throws Exp\-Invalid\-Exception 
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab330ba12b0b9e7de85f7745172198cbe}{child\-Expression\-Requires\-Pre\-State} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6661d84573da86756cc212ff6a00ee14}{assert\-Boolean\-Query} ()  throws Exp\-Invalid\-Exception 
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2666872eca7df4760fec0d9694cf8898}{eval\-Select\-Or\-Reject} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx, boolean do\-Select)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a24a1116c552b98064461c4cfcf1945a4}{eval\-Exists\-Or\-For\-All} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx, boolean do\-Exists)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6ec9c8ae4ba5a06558c4acca93109c55}{eval\-Collect\-Nested} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aec317e1342ceea7ded13a1e853c2936f}{eval\-Collect} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aaf818c5e06fce51ea853f63134ef40c4}{eval\-Collect\-On\-Nested} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a233064c7a9ea82602f08536d56eb71ca}{eval\-Is\-Unique} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx)
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a38f40159ca8fb3500e77a84e869e35c8}{eval\-Sorted\-By} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_var_decl_list}{Var\-Decl\-List} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a7e40f4075438ec4592d115c2fe34eb73}{f\-Elem\-Var\-Decls}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2444567d3e10350a6c4936e1685b20fb}{f\-Range\-Exp}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ac5a43d4322a25df31d0094249a498b4f}{f\-Query\-Exp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class for select, reject, collect, exists, for\-All and iterate expressions.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 52 of file Exp\-Query.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a01cdecfd164f7a69130b3abbc025e2ea}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!Exp\-Query@{Exp\-Query}}
+\index{Exp\-Query@{Exp\-Query}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{Exp\-Query}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-Exp\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{result\-Type, }
+\item[{{\bf Var\-Decl\-List}}]{elem\-Var\-Decls, }
+\item[{{\bf Expression}}]{range\-Exp, }
+\item[{{\bf Expression}}]{query\-Exp}
+\end{DoxyParamCaption}
+) throws {\bf Exp\-Invalid\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a01cdecfd164f7a69130b3abbc025e2ea}
+
+
+Definition at line 70 of file Exp\-Query.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6661d84573da86756cc212ff6a00ee14}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!assert\-Boolean\-Query@{assert\-Boolean\-Query}}
+\index{assert\-Boolean\-Query@{assert\-Boolean\-Query}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{assert\-Boolean\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-assert\-Boolean\-Query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf Exp\-Invalid\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6661d84573da86756cc212ff6a00ee14}
+
+
+Definition at line 109 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab330ba12b0b9e7de85f7745172198cbe}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!child\-Expression\-Requires\-Pre\-State@{child\-Expression\-Requires\-Pre\-State}}
+\index{child\-Expression\-Requires\-Pre\-State@{child\-Expression\-Requires\-Pre\-State}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{child\-Expression\-Requires\-Pre\-State}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-child\-Expression\-Requires\-Pre\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab330ba12b0b9e7de85f7745172198cbe}
+
+
+Definition at line 105 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aec317e1342ceea7ded13a1e853c2936f}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Collect@{eval\-Collect}}
+\index{eval\-Collect@{eval\-Collect}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Collect}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Collect (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aec317e1342ceea7ded13a1e853c2936f}
+Collect without nesting 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 291 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6ec9c8ae4ba5a06558c4acca93109c55}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Collect\-Nested@{eval\-Collect\-Nested}}
+\index{eval\-Collect\-Nested@{eval\-Collect\-Nested}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Collect\-Nested}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Collect\-Nested (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a6ec9c8ae4ba5a06558c4acca93109c55}
+Evaluate collect expressions. 
+
+Definition at line 241 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aaf818c5e06fce51ea853f63134ef40c4}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Collect\-On\-Nested@{eval\-Collect\-On\-Nested}}
+\index{eval\-Collect\-On\-Nested@{eval\-Collect\-On\-Nested}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Collect\-On\-Nested}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Collect\-On\-Nested (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_aaf818c5e06fce51ea853f63134ef40c4}
+Collect without nesting the result 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 341 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a24a1116c552b98064461c4cfcf1945a4}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Exists\-Or\-For\-All@{eval\-Exists\-Or\-For\-All}}
+\index{eval\-Exists\-Or\-For\-All@{eval\-Exists\-Or\-For\-All}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Exists\-Or\-For\-All}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Exists\-Or\-For\-All (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx, }
+\item[{boolean}]{do\-Exists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a24a1116c552b98064461c4cfcf1945a4}
+Evaluate exists and for\-All expressions. The array {\ttfamily more\-Elem\-Vars} may be null if there is at most one element variable declared. 
+
+Definition at line 167 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a233064c7a9ea82602f08536d56eb71ca}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Is\-Unique@{eval\-Is\-Unique}}
+\index{eval\-Is\-Unique@{eval\-Is\-Unique}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Is\-Unique}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Is\-Unique (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a233064c7a9ea82602f08536d56eb71ca}
+Evaluate is\-Unique expression. 
+
+Definition at line 393 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2666872eca7df4760fec0d9694cf8898}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Select\-Or\-Reject@{eval\-Select\-Or\-Reject}}
+\index{eval\-Select\-Or\-Reject@{eval\-Select\-Or\-Reject}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Select\-Or\-Reject}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Select\-Or\-Reject (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx, }
+\item[{boolean}]{do\-Select}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2666872eca7df4760fec0d9694cf8898}
+Evaluate select and reject expressions. 
+
+Definition at line 120 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a38f40159ca8fb3500e77a84e869e35c8}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!eval\-Sorted\-By@{eval\-Sorted\-By}}
+\index{eval\-Sorted\-By@{eval\-Sorted\-By}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{eval\-Sorted\-By}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-eval\-Sorted\-By (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a38f40159ca8fb3500e77a84e869e35c8}
+Evaluate sorted\-By expressions. 
+
+Definition at line 431 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a36d640d07146c4a8e0b56b4d0de0a57d}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!get\-Query\-Expression@{get\-Query\-Expression}}
+\index{get\-Query\-Expression@{get\-Query\-Expression}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{get\-Query\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-get\-Query\-Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a36d640d07146c4a8e0b56b4d0de0a57d}
+
+
+Definition at line 516 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a974ab3755c0073b282a8d0085e038c4e}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!get\-Range\-Expression@{get\-Range\-Expression}}
+\index{get\-Range\-Expression@{get\-Range\-Expression}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{get\-Range\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-get\-Range\-Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a974ab3755c0073b282a8d0085e038c4e}
+
+
+Definition at line 512 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a351b36257afffa1ea67e3213fc3e7ab5}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!get\-Variable\-Declarations@{get\-Variable\-Declarations}}
+\index{get\-Variable\-Declarations@{get\-Variable\-Declarations}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{get\-Variable\-Declarations}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Var\-Decl\-List} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-get\-Variable\-Declarations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a351b36257afffa1ea67e3213fc3e7ab5}
+
+
+Definition at line 520 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab979d349ef0f6a5f4af255007686c395}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!name@{name}}
+\index{name@{name}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}abstract String org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ab979d349ef0f6a5f4af255007686c395}
+Return name of concrete query expression, e.\-g. `select'. Defined by subclasses. \hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a8b54a7233c059b9be36c666de5a2186b}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String\-Builder org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{String\-Builder}]{sb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a8b54a7233c059b9be36c666de5a2186b}
+Appends the string representation of this objects to the String\-Buffer. 
+
+The result should be the same as the operation \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression_a01192513b1b1adbc44727a67ae14d02e}{to\-String()} 
+
+\begin{DoxySince}{Since}
+3.\-0.\-0 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em sb} & The buffer to append \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The same String\-Builder that was provided which allows shorter implementations (cf. \hyperlink{}{String\-Builder\#append(\-String))} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1_buffered_to_string_aea95e4e53b18818d50ee253700e6e2d5}{org.\-tzi.\-use.\-util.\-Buffered\-To\-String}.
+
+
+
+Definition at line 497 of file Exp\-Query.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a7e40f4075438ec4592d115c2fe34eb73}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!f\-Elem\-Var\-Decls@{f\-Elem\-Var\-Decls}}
+\index{f\-Elem\-Var\-Decls@{f\-Elem\-Var\-Decls}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{f\-Elem\-Var\-Decls}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Var\-Decl\-List} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-f\-Elem\-Var\-Decls\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a7e40f4075438ec4592d115c2fe34eb73}
+List of element variables that will be bound to each range element (may be empty). 
+
+Definition at line 58 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ac5a43d4322a25df31d0094249a498b4f}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!f\-Query\-Exp@{f\-Query\-Exp}}
+\index{f\-Query\-Exp@{f\-Query\-Exp}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{f\-Query\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-f\-Query\-Exp\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_ac5a43d4322a25df31d0094249a498b4f}
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} combining elements with accumulator. 
+
+Definition at line 68 of file Exp\-Query.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2444567d3e10350a6c4936e1685b20fb}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}!f\-Range\-Exp@{f\-Range\-Exp}}
+\index{f\-Range\-Exp@{f\-Range\-Exp}!org::tzi::use::uml::ocl::expr::ExpQuery@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Exp\-Query}}
+\subsubsection[{f\-Range\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Exp\-Query.\-f\-Range\-Exp\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_query_a2444567d3e10350a6c4936e1685b20fb}
+Range providing elements to iterate over. 
+
+Definition at line 63 of file Exp\-Query.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/ocl/expr/\hyperlink{_exp_query_8java}{Exp\-Query.\-java}\end{DoxyCompactItemize}

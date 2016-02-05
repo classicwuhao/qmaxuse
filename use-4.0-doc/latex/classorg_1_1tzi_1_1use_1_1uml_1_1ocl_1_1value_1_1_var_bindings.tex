@@ -1,0 +1,194 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{\section{org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}\index{org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings@{org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_1_1_entry}{Entry}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_ad92a06517db2b2142a6e3c1e062ca587}{Var\-Bindings} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a57bf79edc446f497c68c11d139151693}{Var\-Bindings} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} visible\-State)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a1a1add81f24afabb422be77e9cc73c0b}{Var\-Bindings} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} bindings)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a18d8f47fdfa2985c25f8459816130f49}{add} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} bindings)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_aec5fea86e5f6e236314d1f91c3cbc49b}{push} (String varname, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} value)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a01ded44b6386e0b8e534b315673a3856}{set\-Peek\-Value} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} v)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a33fbc17360346e01e099f599a760f0cc}{pop} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a2c35682bab78eb232960973466e669d7}{remove} (String varname)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a3e344bf5d701fb63328754e3c8ff1cd5}{get\-Value} (String name)
+\item 
+Iterator$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_1_1_entry}{Entry} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a8e43c644b8dd0a540f703d961be5cb92}{iterator} ()
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a16258e11f34f2976df5fe12ea196be99}{to\-String} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Variable bindings bind names to values. Bindings are kept on a stack and can be retrieved by name. \hyperlink{class_main}{Main} use is for expression evaluation.
+
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file Var\-Bindings.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_ad92a06517db2b2142a6e3c1e062ca587}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!Var\-Bindings@{Var\-Bindings}}
+\index{Var\-Bindings@{Var\-Bindings}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{Var\-Bindings}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-Var\-Bindings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_ad92a06517db2b2142a6e3c1e062ca587}
+Creates an empty \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings}. 
+
+Definition at line 92 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a57bf79edc446f497c68c11d139151693}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!Var\-Bindings@{Var\-Bindings}}
+\index{Var\-Bindings@{Var\-Bindings}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{Var\-Bindings}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-Var\-Bindings (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System\-State}}]{visible\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a57bf79edc446f497c68c11d139151693}
+Creates an empty \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings}. 
+
+Definition at line 99 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a1a1add81f24afabb422be77e9cc73c0b}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!Var\-Bindings@{Var\-Bindings}}
+\index{Var\-Bindings@{Var\-Bindings}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{Var\-Bindings}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-Var\-Bindings (
+\begin{DoxyParamCaption}
+\item[{{\bf Var\-Bindings}}]{bindings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a1a1add81f24afabb422be77e9cc73c0b}
+Creates a \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} object and initializes it with the \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} object passed as parameter. 
+
+Definition at line 108 of file Var\-Bindings.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a18d8f47fdfa2985c25f8459816130f49}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!add@{add}}
+\index{add@{add}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf Var\-Bindings}}]{bindings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a18d8f47fdfa2985c25f8459816130f49}
+Adds all given bindings. 
+
+Definition at line 116 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a3e344bf5d701fb63328754e3c8ff1cd5}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-get\-Value (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a3e344bf5d701fb63328754e3c8ff1cd5}
+Searches current bindings for variable name. Visibility is determined by the order of elements. Variable bindings may thus be hidden by bindings at earlier positions.
+
+\begin{DoxyReturn}{Returns}
+value for name binding or null if not bound 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a8e43c644b8dd0a540f703d961be5cb92}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!iterator@{iterator}}
+\index{iterator@{iterator}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}Iterator$<${\bf Entry}$>$ org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a8e43c644b8dd0a540f703d961be5cb92}
+Returns an iterator over \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_1_1_entry}{Var\-Bindings.\-Entry} objects. 
+
+Definition at line 182 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a33fbc17360346e01e099f599a760f0cc}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!pop@{pop}}
+\index{pop@{pop}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a33fbc17360346e01e099f599a760f0cc}
+Removes the last varentry 
+
+Definition at line 139 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_aec5fea86e5f6e236314d1f91c3cbc49b}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!push@{push}}
+\index{push@{push}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-push (
+\begin{DoxyParamCaption}
+\item[{String}]{varname, }
+\item[{{\bf Value}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_aec5fea86e5f6e236314d1f91c3cbc49b}
+
+
+Definition at line 123 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a2c35682bab78eb232960973466e669d7}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!remove@{remove}}
+\index{remove@{remove}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-remove (
+\begin{DoxyParamCaption}
+\item[{String}]{varname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a2c35682bab78eb232960973466e669d7}
+Removes the latest added entry with given name. 
+
+Definition at line 146 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a01ded44b6386e0b8e534b315673a3856}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!set\-Peek\-Value@{set\-Peek\-Value}}
+\index{set\-Peek\-Value@{set\-Peek\-Value}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{set\-Peek\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-set\-Peek\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Value}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a01ded44b6386e0b8e534b315673a3856}
+Sets the value of the entry at the peek to {\ttfamily v}. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file Var\-Bindings.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a16258e11f34f2976df5fe12ea196be99}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::ocl::value::VarBindings@{org\-::tzi\-::use\-::uml\-::ocl\-::value\-::\-Var\-Bindings}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-ocl.\-value.\-Var\-Bindings.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings_a16258e11f34f2976df5fe12ea196be99}
+Returns string representation of bindings useful for debugging. 
+
+Definition at line 208 of file Var\-Bindings.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/ocl/value/\hyperlink{_var_bindings_8java}{Var\-Bindings.\-java}\end{DoxyCompactItemize}

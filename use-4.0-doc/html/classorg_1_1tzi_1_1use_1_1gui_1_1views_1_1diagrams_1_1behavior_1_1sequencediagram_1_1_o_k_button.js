@@ -1,0 +1,4 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_o_k_button =
+[
+    [ "OKButton", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_o_k_button.html#abf719191b065dee25a60d87fe783d98a", null ]
+];

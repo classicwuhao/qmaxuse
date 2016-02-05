@@ -1,0 +1,6 @@
+var classorg_1_1tzi_1_1use_1_1graph_1_1_directed_graph_base_3_01_n_00_01_e_01extends_01_directed_edga0eb44a48d9f4b55d4eaf2f0e7c0b6a9 =
+[
+    [ "NodeSetIteratorTarget", "classorg_1_1tzi_1_1use_1_1graph_1_1_directed_graph_base_3_01_n_00_01_e_01extends_01_directed_edga0eb44a48d9f4b55d4eaf2f0e7c0b6a9.html#aba5a2e6c06477c58e0583b6af32ecfa6", null ],
+    [ "getNodeSet", "classorg_1_1tzi_1_1use_1_1graph_1_1_directed_graph_base_3_01_n_00_01_e_01extends_01_directed_edga0eb44a48d9f4b55d4eaf2f0e7c0b6a9.html#a365746e6f331e65f9ed72606ba784169", null ],
+    [ "numEdges", "classorg_1_1tzi_1_1use_1_1graph_1_1_directed_graph_base_3_01_n_00_01_e_01extends_01_directed_edga0eb44a48d9f4b55d4eaf2f0e7c0b6a9.html#a822227425dd407c08c12de545c7075ed", null ]
+];

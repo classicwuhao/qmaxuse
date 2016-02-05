@@ -1,0 +1,192 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{\section{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}\index{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement@{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_src_pos}{Src\-Pos} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a32fcd00b9276e125771b3b4220a7fa5e}{get\-Source\-Position} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a38905f23b96569a5c495406ece65fd85}{set\-Source\-Position} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_src_pos}{Src\-Pos} source\-Position)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ac0bd4739bac373d5f27c5fe28f257326}{is\-Empty\-Statement} ()
+\item 
+abstract \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9a19ec8e169169d1b00e8b20c66e4c65}{execute} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context}{Soil\-Evaluation\-Context} context, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_statement_evaluation_result}{Statement\-Evaluation\-Result} result)  throws Evaluation\-Failed\-Exception
+\item 
+final String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a333b37a89c922332cd271681a0785a29}{get\-Shell\-Command} ()
+\item 
+abstract String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab6b5de3fe7a5b877234cfdd8d3b7f26d}{to\-String} ()
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a348cc960b94875bf23f9d14137aaab81}{to\-Concrete\-Syntax} (int indent, int indent\-Incr)
+\item 
+abstract void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a5d8926053bcd54109936779aab0b8452}{process\-With\-Visitor} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_visitor}{M\-Statement\-Visitor} v)  throws Exception
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab1898a38075adaf4a0b8c826a78552bd}{shell\-Command} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9f5f5820ac9df3c7cc513cab1600c225}{to\-Concrete\-Syntax} (String\-Builder indent, String indent\-Increase, String\-Builder target)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all S\-O\-I\-L statements. \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} instances provides the methods required for the interpretation of the statement, but do not hold state information themselves. The main method is \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9a19ec8e169169d1b00e8b20c66e4c65}{execute(\-Soil\-Evaluation\-Context, Statement\-Evaluation\-Result)}.
+
+\begin{DoxyAuthor}{Author}
+Fabian Buettner 
+
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file M\-Statement.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9a19ec8e169169d1b00e8b20c66e4c65}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!execute@{execute}}
+\index{execute@{execute}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Value} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Soil\-Evaluation\-Context}}]{context, }
+\item[{{\bf Statement\-Evaluation\-Result}}]{result}
+\end{DoxyParamCaption}
+) throws {\bf Evaluation\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9a19ec8e169169d1b00e8b20c66e4c65}
+Execute this statement in the given context. This modifies the system state. The result object captures additional data about the execution of the statement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\-Undo\-Statement} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Evaluation\-Failed\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a333b37a89c922332cd271681a0785a29}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!get\-Shell\-Command@{get\-Shell\-Command}}
+\index{get\-Shell\-Command@{get\-Shell\-Command}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{get\-Shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}final String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-get\-Shell\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a333b37a89c922332cd271681a0785a29}
+Returns the shell command for the statement prefixed by the shell prefix \hyperlink{}{S\-H\-E\-L\-L\-\_\-\-P\-R\-E\-F\-I\-X}. \begin{DoxyReturn}{Returns}
+The textual form of this statement for the U\-S\-E shell. 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a32fcd00b9276e125771b3b4220a7fa5e}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!get\-Source\-Position@{get\-Source\-Position}}
+\index{get\-Source\-Position@{get\-Source\-Position}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{get\-Source\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Src\-Pos} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-get\-Source\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a32fcd00b9276e125771b3b4220a7fa5e}
+Get the position of this statement in the source. 
+
+Definition at line 49 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ac0bd4739bac373d5f27c5fe28f257326}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!is\-Empty\-Statement@{is\-Empty\-Statement}}
+\index{is\-Empty\-Statement@{is\-Empty\-Statement}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{is\-Empty\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-is\-Empty\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ac0bd4739bac373d5f27c5fe28f257326}
+Is this statement a no-\/op statement? 
+
+Definition at line 63 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a5d8926053bcd54109936779aab0b8452}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!process\-With\-Visitor@{process\-With\-Visitor}}
+\index{process\-With\-Visitor@{process\-With\-Visitor}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{process\-With\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-process\-With\-Visitor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Statement\-Visitor}}]{v}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a5d8926053bcd54109936779aab0b8452}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a38905f23b96569a5c495406ece65fd85}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!set\-Source\-Position@{set\-Source\-Position}}
+\index{set\-Source\-Position@{set\-Source\-Position}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{set\-Source\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-set\-Source\-Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Src\-Pos}}]{source\-Position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a38905f23b96569a5c495406ece65fd85}
+Set the position of this statement in the source. 
+
+Definition at line 56 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab1898a38075adaf4a0b8c826a78552bd}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!shell\-Command@{shell\-Command}}
+\index{shell\-Command@{shell\-Command}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}abstract String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-shell\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab1898a38075adaf4a0b8c826a78552bd}
+Returns the shell command of this statement without the shell prefix. \begin{DoxyReturn}{Returns}
+The command text of this statement. 
+\end{DoxyReturn}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a348cc960b94875bf23f9d14137aaab81}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!to\-Concrete\-Syntax@{to\-Concrete\-Syntax}}
+\index{to\-Concrete\-Syntax@{to\-Concrete\-Syntax}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{to\-Concrete\-Syntax}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-to\-Concrete\-Syntax (
+\begin{DoxyParamCaption}
+\item[{int}]{indent, }
+\item[{int}]{indent\-Incr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a348cc960b94875bf23f9d14137aaab81}
+Returns the concrete representation of this statement in the concrete syntax. 
+\begin{DoxyParams}{Parameters}
+{\em indent} & Indentation \\
+\hline
+{\em indent\-Incr} & Indentation increment (for nested statements). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pretty-\/printed string representation. 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9f5f5820ac9df3c7cc513cab1600c225}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!to\-Concrete\-Syntax@{to\-Concrete\-Syntax}}
+\index{to\-Concrete\-Syntax@{to\-Concrete\-Syntax}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{to\-Concrete\-Syntax}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-to\-Concrete\-Syntax (
+\begin{DoxyParamCaption}
+\item[{String\-Builder}]{indent, }
+\item[{String}]{indent\-Increase, }
+\item[{String\-Builder}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_a9f5f5820ac9df3c7cc513cab1600c225}
+Returns the concrete representation of this statement in the concrete syntax. 
+\begin{DoxyParams}{Parameters}
+{\em indent} & Indentation \\
+\hline
+{\em indent\-Incr} & Indentation increment (for nested statements). \\
+\hline
+{\em target} & The result string is appended here \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file M\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab6b5de3fe7a5b877234cfdd8d3b7f26d}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::sys::soil::MStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Statement}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}abstract String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Statement.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_ab6b5de3fe7a5b877234cfdd8d3b7f26d}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/soil/\hyperlink{_m_statement_8java}{M\-Statement.\-java}\end{DoxyCompactItemize}

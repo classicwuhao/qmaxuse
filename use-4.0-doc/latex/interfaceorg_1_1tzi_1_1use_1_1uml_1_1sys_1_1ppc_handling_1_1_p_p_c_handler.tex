@@ -1,0 +1,136 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler}{\section{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler}\index{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler@{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.625698cm]{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_aa744045765bc399ed703649a3f6db553}{handle\-Pre\-Conditions} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} system, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_operation_call}{M\-Operation\-Call} operation\-Call)  throws Pre\-Condition\-Check\-Failed\-Exception
+\item 
+abstract void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a569c1b79db7ba6c570c6a7eaa9e9452c}{handle\-Post\-Conditions} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} system, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_operation_call}{M\-Operation\-Call} operation\-Call)  throws Post\-Condition\-Check\-Failed\-Exception
+\item 
+abstract void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_acae587b49e99d6468d65bedb0fc1c9df}{handle\-Transitions\-Pre} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} system, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_operation_call}{M\-Operation\-Call} operation\-Call)  throws Pre\-Condition\-Check\-Failed\-Exception
+\item 
+abstract void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a71517ed89c6459d4627fe70d143f965b}{handle\-Transitions\-Post} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} system, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_operation_call}{M\-Operation\-Call} operation\-Call)  throws Post\-Condition\-Check\-Failed\-Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface used by the validation engine to handle pre-\/ and post-\/conditions. \begin{DoxyAuthor}{Author}
+Daniel Gent 
+
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 34 of file P\-P\-C\-Handler.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a569c1b79db7ba6c570c6a7eaa9e9452c}{\index{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}!handle\-Post\-Conditions@{handle\-Post\-Conditions}}
+\index{handle\-Post\-Conditions@{handle\-Post\-Conditions}!org::tzi::use::uml::sys::ppcHandling::PPCHandler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}}
+\subsubsection[{handle\-Post\-Conditions}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler.\-handle\-Post\-Conditions (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system, }
+\item[{{\bf M\-Operation\-Call}}]{operation\-Call}
+\end{DoxyParamCaption}
+) throws {\bf Post\-Condition\-Check\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a569c1b79db7ba6c570c6a7eaa9e9452c}
+Called if the post conditions of an operation need to be handled. 
+\begin{DoxyParams}{Parameters}
+{\em system} & \\
+\hline
+{\em operation\-Call} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_post_condition_check_failed_exception}{Post\-Condition\-Check\-Failed\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell_a319e740bc330bd04e5501f2292455503}{org.\-tzi.\-use.\-main.\-shell.\-Shell}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_soil_p_p_c_handler_aaea33e054a0da2e1319c1b331927a23b}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Soil\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_expression_p_p_c_handler_a3056d89ae6e26b7e1d25b1d8209b943b}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Expression\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_op_enter_op_exit_p_p_c_handler_a2c894a05efa10a4cfc5637a7f160fb0e}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Op\-Enter\-Op\-Exit\-P\-P\-C\-Handler}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_do_nothing_p_p_c_handler_a0c9cdd50714082f209e12bc03daf2d07}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Do\-Nothing\-P\-P\-C\-Handler}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_aa744045765bc399ed703649a3f6db553}{\index{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}!handle\-Pre\-Conditions@{handle\-Pre\-Conditions}}
+\index{handle\-Pre\-Conditions@{handle\-Pre\-Conditions}!org::tzi::use::uml::sys::ppcHandling::PPCHandler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}}
+\subsubsection[{handle\-Pre\-Conditions}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler.\-handle\-Pre\-Conditions (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system, }
+\item[{{\bf M\-Operation\-Call}}]{operation\-Call}
+\end{DoxyParamCaption}
+) throws {\bf Pre\-Condition\-Check\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_aa744045765bc399ed703649a3f6db553}
+Called if the pre conditions of an operation need to be handled. 
+\begin{DoxyParams}{Parameters}
+{\em system} & \\
+\hline
+{\em operation\-Call} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_pre_condition_check_failed_exception}{Pre\-Condition\-Check\-Failed\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell_a74e0e3a62a24ea503b7e74a911cd5d79}{org.\-tzi.\-use.\-main.\-shell.\-Shell}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_op_enter_op_exit_p_p_c_handler_aad43b7e32882ad39eba65a5b9feb38d6}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Op\-Enter\-Op\-Exit\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_expression_p_p_c_handler_a1f4e271f0f32ba327dbe22e152740374}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Expression\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_soil_p_p_c_handler_a456a85cc6e00e4d750584cabf88abf54}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Soil\-P\-P\-C\-Handler}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_do_nothing_p_p_c_handler_a5901c0da9ea1f3ce2b518052fa2df40c}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Do\-Nothing\-P\-P\-C\-Handler}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a71517ed89c6459d4627fe70d143f965b}{\index{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}!handle\-Transitions\-Post@{handle\-Transitions\-Post}}
+\index{handle\-Transitions\-Post@{handle\-Transitions\-Post}!org::tzi::use::uml::sys::ppcHandling::PPCHandler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}}
+\subsubsection[{handle\-Transitions\-Post}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler.\-handle\-Transitions\-Post (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system, }
+\item[{{\bf M\-Operation\-Call}}]{operation\-Call}
+\end{DoxyParamCaption}
+) throws {\bf Post\-Condition\-Check\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_a71517ed89c6459d4627fe70d143f965b}
+Called after the transition to execute was calculated. 
+\begin{DoxyParams}{Parameters}
+{\em system} & \\
+\hline
+{\em operation\-Call} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_post_condition_check_failed_exception}{Post\-Condition\-Check\-Failed\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell_a82597a2d56482c31a6d24b46c05b9491}{org.\-tzi.\-use.\-main.\-shell.\-Shell}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_soil_p_p_c_handler_a484998c2f2a5e311af36e9844be0b59c}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Soil\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_expression_p_p_c_handler_a6522bef342e5d1a87a1909b00013bcb3}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Expression\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_op_enter_op_exit_p_p_c_handler_a13a316fd924e01ce64206059866bad7a}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Op\-Enter\-Op\-Exit\-P\-P\-C\-Handler}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_do_nothing_p_p_c_handler_acb4c790f6de149456bc6044a006db5f9}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Do\-Nothing\-P\-P\-C\-Handler}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_acae587b49e99d6468d65bedb0fc1c9df}{\index{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}!handle\-Transitions\-Pre@{handle\-Transitions\-Pre}}
+\index{handle\-Transitions\-Pre@{handle\-Transitions\-Pre}!org::tzi::use::uml::sys::ppcHandling::PPCHandler@{org\-::tzi\-::use\-::uml\-::sys\-::ppc\-Handling\-::\-P\-P\-C\-Handler}}
+\subsubsection[{handle\-Transitions\-Pre}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-P\-P\-C\-Handler.\-handle\-Transitions\-Pre (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system, }
+\item[{{\bf M\-Operation\-Call}}]{operation\-Call}
+\end{DoxyParamCaption}
+) throws {\bf Pre\-Condition\-Check\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_p_p_c_handler_acae587b49e99d6468d65bedb0fc1c9df}
+Called after the possible transitions of an operation call were calculated. 
+\begin{DoxyParams}{Parameters}
+{\em system} & \\
+\hline
+{\em operation\-Call} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_post_condition_check_failed_exception}{Post\-Condition\-Check\-Failed\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell_a49b5901588cc27d58da8ed45500e7c69}{org.\-tzi.\-use.\-main.\-shell.\-Shell}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_soil_p_p_c_handler_a75bbc34c615ea7c01b64c2b47cf7b25e}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Soil\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_expression_p_p_c_handler_ab74ca661ff213373425778d3f38532b3}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Expression\-P\-P\-C\-Handler}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_op_enter_op_exit_p_p_c_handler_a346b7d41477271d6dd554536f3833c30}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Op\-Enter\-Op\-Exit\-P\-P\-C\-Handler}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1ppc_handling_1_1_do_nothing_p_p_c_handler_a0fdb9098cb054316d4df136615878ad5}{org.\-tzi.\-use.\-uml.\-sys.\-ppc\-Handling.\-Do\-Nothing\-P\-P\-C\-Handler}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/ppc\-Handling/\hyperlink{_p_p_c_handler_8java}{P\-P\-C\-Handler.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+!create x, y:A
+!insert (x,y) into ac
+!insert (y,x) into ac
+
+*Warning: Insert has resulted in a cycle in the part-whole hierarchy. Object `y' is a direct or indirect part of `x'.
+exit

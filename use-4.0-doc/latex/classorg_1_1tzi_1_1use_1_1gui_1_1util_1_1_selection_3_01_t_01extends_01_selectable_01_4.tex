@@ -1,0 +1,234 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4}{\section{org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends Selectable $>$ Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4}\index{org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends Selectable $>$@{org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends Selectable $>$}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends Selectable $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Change\-Event}
+\item 
+interface \hyperlink{interfaceorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_1_1_change_listener}{Change\-Listener}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a989589bf9efae9d5319d3cbfcabf6f1e}{Selection} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4d55f7fcfca402261e09c4194bad184c}{add} (T sel)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acdbcd398ae1327a4c31d819902ec1d69}{add\-All} (Collection$<$?extends T $>$ sel)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2868b7a142dcee726967af8cb52e2ad3}{remove} (T sel)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a627ea46f5fa76b1e6a5a36074e6ef95e}{is\-Selected} (T sel)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acc94e266cb193f0de739de17dcbe2982}{clear} ()
+\item 
+int \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2dcb6b6d4abb771ab1ced590a4d4078f}{size} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a5eddf9ea81b1a5257782b90f367a8b49}{is\-Empty} ()
+\item 
+Iterator$<$ T $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a177609160cdceb70aad64d808dec54ec}{iterator} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ac54b8b944b63936c19f9dcdce0d6af11}{add\-Change\-Listener} (Change\-Listener l)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ae1ef31a0f9bf966ea1d32efc8af26529}{remove\-Change\-Listener} (Change\-Listener l)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4cba23829869524d13a7ac3dc6663fb0}{fire\-State\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Event\-Listener\-List \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_afa90c9be53d9dc2075b8fad59645ec1f}{f\-Listener\-List} = new Event\-Listener\-List()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A selection maintains a collection of objects that implement the {\ttfamily Selectable} interface. Clients may register for event notification when the selection changes.
+
+Note\-: All graphical presentation and updates have to be done by client classes.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 46 of file Selection.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a989589bf9efae9d5319d3cbfcabf6f1e}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!Selection@{Selection}}
+\index{Selection@{Selection}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{Selection}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a989589bf9efae9d5319d3cbfcabf6f1e}
+
+
+Definition at line 73 of file Selection.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4d55f7fcfca402261e09c4194bad184c}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!add@{add}}
+\index{add@{add}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.add (
+\begin{DoxyParamCaption}
+\item[{T}]{sel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4d55f7fcfca402261e09c4194bad184c}
+
+
+Definition at line 87 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acdbcd398ae1327a4c31d819902ec1d69}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!add\-All@{add\-All}}
+\index{add\-All@{add\-All}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{add\-All}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.add\-All (
+\begin{DoxyParamCaption}
+\item[{Collection$<$?extends T $>$}]{sel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acdbcd398ae1327a4c31d819902ec1d69}
+
+
+Definition at line 95 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ac54b8b944b63936c19f9dcdce0d6af11}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!add\-Change\-Listener@{add\-Change\-Listener}}
+\index{add\-Change\-Listener@{add\-Change\-Listener}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{add\-Change\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.add\-Change\-Listener (
+\begin{DoxyParamCaption}
+\item[{Change\-Listener}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ac54b8b944b63936c19f9dcdce0d6af11}
+
+
+Definition at line 162 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acc94e266cb193f0de739de17dcbe2982}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!clear@{clear}}
+\index{clear@{clear}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_acc94e266cb193f0de739de17dcbe2982}
+Remove all selections.
+
+\begin{DoxyReturn}{Returns}
+true if the selection was non-\/empty before. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4cba23829869524d13a7ac3dc6663fb0}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!fire\-State\-Changed@{fire\-State\-Changed}}
+\index{fire\-State\-Changed@{fire\-State\-Changed}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{fire\-State\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.fire\-State\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a4cba23829869524d13a7ac3dc6663fb0}
+
+
+Definition at line 177 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a5eddf9ea81b1a5257782b90f367a8b49}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a5eddf9ea81b1a5257782b90f367a8b49}
+Returns true if no element is selected. 
+
+Definition at line 149 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a627ea46f5fa76b1e6a5a36074e6ef95e}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!is\-Selected@{is\-Selected}}
+\index{is\-Selected@{is\-Selected}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{is\-Selected}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.is\-Selected (
+\begin{DoxyParamCaption}
+\item[{T}]{sel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a627ea46f5fa76b1e6a5a36074e6ef95e}
+Returns true if the specified object is currently selected. 
+
+Definition at line 115 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a177609160cdceb70aad64d808dec54ec}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}Iterator$<$T$>$ org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a177609160cdceb70aad64d808dec54ec}
+Returns an iterator over all selected components.
+
+\begin{DoxyReturn}{Returns}
+iterator over {\ttfamily Selectable} objects. 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2868b7a142dcee726967af8cb52e2ad3}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!remove@{remove}}
+\index{remove@{remove}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.remove (
+\begin{DoxyParamCaption}
+\item[{T}]{sel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2868b7a142dcee726967af8cb52e2ad3}
+
+
+Definition at line 105 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ae1ef31a0f9bf966ea1d32efc8af26529}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!remove\-Change\-Listener@{remove\-Change\-Listener}}
+\index{remove\-Change\-Listener@{remove\-Change\-Listener}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{remove\-Change\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.remove\-Change\-Listener (
+\begin{DoxyParamCaption}
+\item[{Change\-Listener}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_ae1ef31a0f9bf966ea1d32efc8af26529}
+
+
+Definition at line 166 of file Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2dcb6b6d4abb771ab1ced590a4d4078f}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!size@{size}}
+\index{size@{size}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_a2dcb6b6d4abb771ab1ced590a4d4078f}
+Returns the number of selected elements. 
+
+Definition at line 142 of file Selection.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_afa90c9be53d9dc2075b8fad59645ec1f}{\index{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}!f\-Listener\-List@{f\-Listener\-List}}
+\index{f\-Listener\-List@{f\-Listener\-List}!org::tzi::use::gui::util::Selection< T extends Selectable >@{org\-::tzi\-::use\-::gui\-::util\-::\-Selection$<$ T extends Selectable $>$}}
+\subsubsection[{f\-Listener\-List}]{\setlength{\rightskip}{0pt plus 5cm}Event\-Listener\-List org.\-tzi.\-use.\-gui.\-util.\-Selection$<$ T extends {\bf Selectable} $>$.f\-Listener\-List = new Event\-Listener\-List()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_afa90c9be53d9dc2075b8fad59645ec1f}
+The listeners 
+
+Definition at line 56 of file Selection.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/gui/org/tzi/use/gui/util/\hyperlink{_selection_8java}{Selection.\-java}\end{DoxyCompactItemize}

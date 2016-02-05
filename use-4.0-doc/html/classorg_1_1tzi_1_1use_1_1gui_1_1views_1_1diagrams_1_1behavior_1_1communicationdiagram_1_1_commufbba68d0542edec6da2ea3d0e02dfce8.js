@@ -1,0 +1,9 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8 =
+[
+    [ "CommunicationDiagramData", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#ade01ce2df2e26c010d00df8387e5e9a0", null ],
+    [ "clear", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#ad6567f780781716ea0ccf449ec8873fe", null ],
+    [ "copyTo", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#a3612f86258024b24740379834867f102", null ],
+    [ "getEdges", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#ac67ace76aa4995868cd75380d8042b88", null ],
+    [ "getNodes", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#af080e8eee846c2f49d2b71136fe085d8", null ],
+    [ "hasNodes", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commufbba68d0542edec6da2ea3d0e02dfce8.html#ac261066c3d193ee5dec22624bab0d9c1", null ]
+];

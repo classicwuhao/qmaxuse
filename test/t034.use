@@ -1,0 +1,17 @@
+model t034
+class A
+end
+
+class B
+end
+
+composition ac1 between
+  A[*] role r1
+  B[*] role r2
+end
+
+aggregation ac2 between
+  B[*]
+  A[*]
+end
+

@@ -1,0 +1,5 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_cmd_choose_window_com_diag =
+[
+    [ "CmdChooseWindowComDiag", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_cmd_choose_window_com_diag.html#a1527c5f6fbfd970015bbbb5c55ac002d", null ],
+    [ "actionPerformed", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_cmd_choose_window_com_diag.html#afbf579165a69dc2729f68e0e0c9b7617", null ]
+];

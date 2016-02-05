@@ -1,0 +1,225 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region}{\section{org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region}\index{org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region@{org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a66c6763b733a841cd4d24e090a3af462}{M\-Region} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state_machine}{M\-State\-Machine} owner)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state_machine}{M\-State\-Machine} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_af37eb9e1a2a6177c698b3cb1776e447e}{get\-State\-Machine} ()
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a64df5151d74a98fd55bab19e989d0adf}{get\-Transitions} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_ad43fc651ba2bc75726d990ab98b2f218}{add\-Transition} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition} t)  throws M\-System\-Exception 
+\item 
+Collection$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a56f364f63104fb81f3537540c1bd475a}{get\-Subvertices} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a0e7bd0fa534b9303fdd69df42524695e}{add\-Subvertex} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex} v)  throws M\-System\-Exception 
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a723ead4ddff4f56a6f309f1e18f9c6ad}{get\-Subvertex} (String name)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state}{M\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a70cbf40280897244e43520925d189ca4}{get\-Initial\-State} ()
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a9e3f6533ed94322d263330b3c5cfa463}{get\-Outgoing\-Transitions} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex} from)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state_machine}{M\-State\-Machine} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a97b6df0d73e6b6daa4c1684058a125c1}{state\-Machine}
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_abd3bcba4d92d06c6b0962474302e6eaa}{transition} = new Hash\-Set$<$\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition}$>$()
+\item 
+Map$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex}, Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition} $>$ $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aab3d4cbd873535285ab6cc0161cba8a5}{outgoing\-Trasitions} = new Hash\-Map$<$\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex}, Set$<$\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_transition}{M\-Transition}$>$$>$()
+\item 
+Map$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aae24f4f3b13d9d4d6af46decbdb25876}{subvertex} = new Hash\-Map$<$String,\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex}{M\-Vertex}$>$()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state}{M\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a4bc09b05d9e5273e351c92654494de8f}{initial\-State} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A region is an orthogonal part of either a composite state or a state machine. It contains states and transitions. \mbox{[}\href{http://www.omg.org/spec/UML/}{\tt U\-M\-L Superstructure 2.\-4.\-1}\mbox{]}
+
+\begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 40 of file M\-Region.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a66c6763b733a841cd4d24e090a3af462}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!M\-Region@{M\-Region}}
+\index{M\-Region@{M\-Region}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{M\-Region}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-M\-Region (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-State\-Machine}}]{owner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a66c6763b733a841cd4d24e090a3af462}
+
+
+Definition at line 66 of file M\-Region.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a0e7bd0fa534b9303fdd69df42524695e}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!add\-Subvertex@{add\-Subvertex}}
+\index{add\-Subvertex@{add\-Subvertex}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{add\-Subvertex}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-add\-Subvertex (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Vertex}}]{v}
+\end{DoxyParamCaption}
+) throws {\bf M\-System\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a0e7bd0fa534b9303fdd69df42524695e}
+
+
+Definition at line 128 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_ad43fc651ba2bc75726d990ab98b2f218}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!add\-Transition@{add\-Transition}}
+\index{add\-Transition@{add\-Transition}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{add\-Transition}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-add\-Transition (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Transition}}]{t}
+\end{DoxyParamCaption}
+) throws {\bf M\-System\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_ad43fc651ba2bc75726d990ab98b2f218}
+
+
+Definition at line 84 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a70cbf40280897244e43520925d189ca4}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-Initial\-State@{get\-Initial\-State}}
+\index{get\-Initial\-State@{get\-Initial\-State}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-Initial\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-State} org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-Initial\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a70cbf40280897244e43520925d189ca4}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 159 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a9e3f6533ed94322d263330b3c5cfa463}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-Outgoing\-Transitions@{get\-Outgoing\-Transitions}}
+\index{get\-Outgoing\-Transitions@{get\-Outgoing\-Transitions}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-Outgoing\-Transitions}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf M\-Transition}$>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-Outgoing\-Transitions (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Vertex}}]{from}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a9e3f6533ed94322d263330b3c5cfa463}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 167 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_af37eb9e1a2a6177c698b3cb1776e447e}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-State\-Machine@{get\-State\-Machine}}
+\index{get\-State\-Machine@{get\-State\-Machine}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-State\-Machine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-State\-Machine} org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-State\-Machine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_af37eb9e1a2a6177c698b3cb1776e447e}
+\begin{DoxyReturn}{Returns}
+the state\-Machine 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a723ead4ddff4f56a6f309f1e18f9c6ad}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-Subvertex@{get\-Subvertex}}
+\index{get\-Subvertex@{get\-Subvertex}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-Subvertex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Vertex} org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-Subvertex (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a723ead4ddff4f56a6f309f1e18f9c6ad}
+Returns the vertex with the given name or {\ttfamily null} if no vertex with this name is defined. 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 152 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a56f364f63104fb81f3537540c1bd475a}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-Subvertices@{get\-Subvertices}}
+\index{get\-Subvertices@{get\-Subvertices}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-Subvertices}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf M\-Vertex}$>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-Subvertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a56f364f63104fb81f3537540c1bd475a}
+\begin{DoxyReturn}{Returns}
+the subvertex 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a64df5151d74a98fd55bab19e989d0adf}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!get\-Transitions@{get\-Transitions}}
+\index{get\-Transitions@{get\-Transitions}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{get\-Transitions}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf M\-Transition}$>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-get\-Transitions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a64df5151d74a98fd55bab19e989d0adf}
+\begin{DoxyReturn}{Returns}
+the transition 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file M\-Region.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a4bc09b05d9e5273e351c92654494de8f}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!initial\-State@{initial\-State}}
+\index{initial\-State@{initial\-State}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{initial\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-State} org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-initial\-State = null\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a4bc09b05d9e5273e351c92654494de8f}
+
+
+Definition at line 64 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aab3d4cbd873535285ab6cc0161cba8a5}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!outgoing\-Trasitions@{outgoing\-Trasitions}}
+\index{outgoing\-Trasitions@{outgoing\-Trasitions}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{outgoing\-Trasitions}]{\setlength{\rightskip}{0pt plus 5cm}Map$<${\bf M\-Vertex}, Set$<${\bf M\-Transition}$>$ $>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-outgoing\-Trasitions = new Hash\-Map$<${\bf M\-Vertex}, Set$<${\bf M\-Transition}$>$$>$()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aab3d4cbd873535285ab6cc0161cba8a5}
+All outgoing transitions from the defined states. 
+
+Definition at line 56 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a97b6df0d73e6b6daa4c1684058a125c1}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!state\-Machine@{state\-Machine}}
+\index{state\-Machine@{state\-Machine}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{state\-Machine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-State\-Machine} org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-state\-Machine\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_a97b6df0d73e6b6daa4c1684058a125c1}
+The State\-Machine that owns the Region. If a Region is owned by a State\-Machine, then it cannot also be owned by a State. 
+
+Definition at line 46 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aae24f4f3b13d9d4d6af46decbdb25876}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!subvertex@{subvertex}}
+\index{subvertex@{subvertex}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{subvertex}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf M\-Vertex}$>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-subvertex = new Hash\-Map$<$String,{\bf M\-Vertex}$>$()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_aae24f4f3b13d9d4d6af46decbdb25876}
+The vertices that are owned by this region. Saved by name. 
+
+Definition at line 62 of file M\-Region.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_abd3bcba4d92d06c6b0962474302e6eaa}{\index{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}!transition@{transition}}
+\index{transition@{transition}!org::tzi::use::uml::mm::statemachines::MRegion@{org\-::tzi\-::use\-::uml\-::mm\-::statemachines\-::\-M\-Region}}
+\subsubsection[{transition}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf M\-Transition}$>$ org.\-tzi.\-use.\-uml.\-mm.\-statemachines.\-M\-Region.\-transition = new Hash\-Set$<${\bf M\-Transition}$>$()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region_abd3bcba4d92d06c6b0962474302e6eaa}
+The set of transitions owned by the region. 
+
+Definition at line 51 of file M\-Region.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/mm/statemachines/\hyperlink{_m_region_8java}{M\-Region.\-java}\end{DoxyCompactItemize}

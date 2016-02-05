@@ -1,0 +1,5 @@
+! Ada := new Person;
+! Bob := new Person;
+! Ada.birth('Ada', #female);
+! Bob.birth('Bob', #male);
+! Ada.marry(Bob)

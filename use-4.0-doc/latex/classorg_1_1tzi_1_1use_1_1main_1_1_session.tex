@@ -1,0 +1,179 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session}{\section{org.\-tzi.\-use.\-main.\-Session Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1main_1_1_session}\index{org.\-tzi.\-use.\-main.\-Session@{org.\-tzi.\-use.\-main.\-Session}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_1_1_evaluated_statement}{Evaluated\-Statement}
+\item 
+interface \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1_session_1_1_evaluated_statement_listener}{Evaluated\-Statement\-Listener}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a20896cc8ce7179ee5293b197c06973be}{Session} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a25707760da661d72d35150432cf615fb}{set\-System} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_af680aa872e2a12170d4eccea79bfc0df}{system})
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a938f935d0e0d22014bf5d570c94d8f61}{has\-System} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a78931e5af47aeaaf2096b38c87b1e3d8}{evaluated\-Statement} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} statement)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a2d66dd72e9ed80c3f9fac1e84a625b83}{reset} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_af680aa872e2a12170d4eccea79bfc0df}{system} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a45d4419436d9f0641368702e36d71505}{add\-Change\-Listener} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1_change_listener}{Change\-Listener} l)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_aa38e0682bf319e979572a385802a3a95}{remove\-Change\-Listener} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1_change_listener}{Change\-Listener} l)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a1c099f7be9c60053033d2508b09479df}{add\-Evaluated\-Statement\-Listener} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1_session_1_1_evaluated_statement_listener}{Evaluated\-Statement\-Listener} l)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session_a15cbfa2a5b475565870e64d79542d1fe}{remove\-Evaluated\-Statement\-Listener} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1_session_1_1_evaluated_statement_listener}{Evaluated\-Statement\-Listener} l)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A session manages a system and its model. System and model may change during a session. Interested listeners are then notified.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 39 of file Session.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a20896cc8ce7179ee5293b197c06973be}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!Session@{Session}}
+\index{Session@{Session}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{Session}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-main.\-Session.\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a20896cc8ce7179ee5293b197c06973be}
+
+
+Definition at line 59 of file Session.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a45d4419436d9f0641368702e36d71505}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!add\-Change\-Listener@{add\-Change\-Listener}}
+\index{add\-Change\-Listener@{add\-Change\-Listener}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{add\-Change\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-add\-Change\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Change\-Listener}}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a45d4419436d9f0641368702e36d71505}
+
+
+Definition at line 105 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a1c099f7be9c60053033d2508b09479df}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!add\-Evaluated\-Statement\-Listener@{add\-Evaluated\-Statement\-Listener}}
+\index{add\-Evaluated\-Statement\-Listener@{add\-Evaluated\-Statement\-Listener}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{add\-Evaluated\-Statement\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-add\-Evaluated\-Statement\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Evaluated\-Statement\-Listener}}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a1c099f7be9c60053033d2508b09479df}
+
+
+Definition at line 113 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a78931e5af47aeaaf2096b38c87b1e3d8}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!evaluated\-Statement@{evaluated\-Statement}}
+\index{evaluated\-Statement@{evaluated\-Statement}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{evaluated\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-evaluated\-Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Statement}}]{statement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a78931e5af47aeaaf2096b38c87b1e3d8}
+
+
+Definition at line 80 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a938f935d0e0d22014bf5d570c94d8f61}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!has\-System@{has\-System}}
+\index{has\-System@{has\-System}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{has\-System}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-main.\-Session.\-has\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a938f935d0e0d22014bf5d570c94d8f61}
+Returns true if we have a system. 
+
+Definition at line 76 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_aa38e0682bf319e979572a385802a3a95}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!remove\-Change\-Listener@{remove\-Change\-Listener}}
+\index{remove\-Change\-Listener@{remove\-Change\-Listener}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{remove\-Change\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-remove\-Change\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Change\-Listener}}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_aa38e0682bf319e979572a385802a3a95}
+
+
+Definition at line 109 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a15cbfa2a5b475565870e64d79542d1fe}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!remove\-Evaluated\-Statement\-Listener@{remove\-Evaluated\-Statement\-Listener}}
+\index{remove\-Evaluated\-Statement\-Listener@{remove\-Evaluated\-Statement\-Listener}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{remove\-Evaluated\-Statement\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-remove\-Evaluated\-Statement\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Evaluated\-Statement\-Listener}}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a15cbfa2a5b475565870e64d79542d1fe}
+
+
+Definition at line 117 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a2d66dd72e9ed80c3f9fac1e84a625b83}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!reset@{reset}}
+\index{reset@{reset}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a2d66dd72e9ed80c3f9fac1e84a625b83}
+Resets the system to its initial state. 
+
+Definition at line 87 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_a25707760da661d72d35150432cf615fb}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!set\-System@{set\-System}}
+\index{set\-System@{set\-System}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{set\-System}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-Session.\-set\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_a25707760da661d72d35150432cf615fb}
+Set application state for new system. The system parameter may be null. 
+
+Definition at line 68 of file Session.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1main_1_1_session_af680aa872e2a12170d4eccea79bfc0df}{\index{org\-::tzi\-::use\-::main\-::\-Session@{org\-::tzi\-::use\-::main\-::\-Session}!system@{system}}
+\index{system@{system}!org::tzi::use::main::Session@{org\-::tzi\-::use\-::main\-::\-Session}}
+\subsubsection[{system}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-System} org.\-tzi.\-use.\-main.\-Session.\-system (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1main_1_1_session_af680aa872e2a12170d4eccea79bfc0df}
+Returns the current system.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\-State\-Exception} & if no system available \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 99 of file Session.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/main/\hyperlink{_session_8java}{Session.\-java}\end{DoxyCompactItemize}

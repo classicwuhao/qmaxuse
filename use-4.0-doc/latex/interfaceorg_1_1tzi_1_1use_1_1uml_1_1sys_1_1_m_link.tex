@@ -1,0 +1,164 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link}{\section{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link}\index{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link@{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association}{M\-Association} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a674c99501fee72a6f67574512faf99c6}{association} ()
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_end}{M\-Link\-End} $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a924e58b6b95c8739f30369bfdfdb9f45}{link\-Ends} ()
+\item 
+List$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_object}{M\-Object} $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a4329bdd28c8ad602adb22262aa1b2eb3}{linked\-Objects} ()
+\item 
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_object}{M\-Object}\mbox{[}$\,$\mbox{]} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_ae9bd0263904b34ee17a7c1ef8d75818a}{linked\-Objects\-As\-Array} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_end}{M\-Link\-End} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a48d413588af85f2ca80c4e702e499b5c}{link\-End} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association_end}{M\-Association\-End} aend)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_end}{M\-Link\-End} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a0d60cfd261ed2c7528296c32fb2a9a93}{get\-Link\-End} (int index)
+\item 
+boolean \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a960f6022c66e77b85898d69fa472c696}{is\-Virtual} ()
+\item 
+List$<$ List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} $>$ $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_af0ac11c0086b893abeac398a90cde9cb}{get\-Qualifier} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A link is an instance of an association.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file M\-Link.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a674c99501fee72a6f67574512faf99c6}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!association@{association}}
+\index{association@{association}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{association}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Association} org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-association (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a674c99501fee72a6f67574512faf99c6}
+Returns the association describing this link. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a89d7272cdd62992370f50c30e1b4b6e8}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a0d60cfd261ed2c7528296c32fb2a9a93}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!get\-Link\-End@{get\-Link\-End}}
+\index{get\-Link\-End@{get\-Link\-End}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{get\-Link\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Link\-End} org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-get\-Link\-End (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a0d60cfd261ed2c7528296c32fb2a9a93}
+Returns the link end for the given index. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a48c1bfd6f7ccfbce45b5fd79fe863c63}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_af0ac11c0086b893abeac398a90cde9cb}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!get\-Qualifier@{get\-Qualifier}}
+\index{get\-Qualifier@{get\-Qualifier}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{get\-Qualifier}]{\setlength{\rightskip}{0pt plus 5cm}List$<$List$<${\bf Value}$>$ $>$ org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-get\-Qualifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_af0ac11c0086b893abeac398a90cde9cb}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a3438cca293084b2e9ab916d6e2be5d49}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a960f6022c66e77b85898d69fa472c696}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!is\-Virtual@{is\-Virtual}}
+\index{is\-Virtual@{is\-Virtual}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{is\-Virtual}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-is\-Virtual (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a960f6022c66e77b85898d69fa472c696}
+Returns {\ttfamily true} if the link is nor really present in the system state, i. e., it was not created by the user. 
+
+For example, derived association ends create such links.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this link is somehow derived. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a5612c41f2f048087a5c5d0e1a363e030}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a4329bdd28c8ad602adb22262aa1b2eb3}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!linked\-Objects@{linked\-Objects}}
+\index{linked\-Objects@{linked\-Objects}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{linked\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf M\-Object}$>$ org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-linked\-Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a4329bdd28c8ad602adb22262aa1b2eb3}
+Returns the set of objects participating in this link.
+
+\begin{DoxyReturn}{Returns}
+Set(\-M\-Object). 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_ae85fbbf9f09ed1e086c469e5eb011a68}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_ae9bd0263904b34ee17a7c1ef8d75818a}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!linked\-Objects\-As\-Array@{linked\-Objects\-As\-Array}}
+\index{linked\-Objects\-As\-Array@{linked\-Objects\-As\-Array}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{linked\-Objects\-As\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Object} \mbox{[}$\,$\mbox{]} org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-linked\-Objects\-As\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_ae9bd0263904b34ee17a7c1ef8d75818a}
+Returns the set of objects participating in this link.
+
+\begin{DoxyReturn}{Returns}
+Set(\-M\-Object). 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_af0f390d575856c036fa4940e819b190b}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a48d413588af85f2ca80c4e702e499b5c}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!link\-End@{link\-End}}
+\index{link\-End@{link\-End}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{link\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Link\-End} org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-link\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Association\-End}}]{aend}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a48d413588af85f2ca80c4e702e499b5c}
+Returns the link end for the given association end. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a9ec9de476da558ecd4a507af07644c27}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a924e58b6b95c8739f30369bfdfdb9f45}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}!link\-Ends@{link\-Ends}}
+\index{link\-Ends@{link\-Ends}!org::tzi::use::uml::sys::MLink@{org\-::tzi\-::use\-::uml\-::sys\-::\-M\-Link}}
+\subsubsection[{link\-Ends}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf M\-Link\-End}$>$ org.\-tzi.\-use.\-uml.\-sys.\-M\-Link.\-link\-Ends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_a924e58b6b95c8739f30369bfdfdb9f45}
+Returns all link ends of this link.
+
+\begin{DoxyReturn}{Returns}
+Set(\-M\-Link\-End) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_object_impl_a08613185a9fb06613197f10b015d41e4}{org.\-tzi.\-use.\-uml.\-sys.\-M\-Link\-Object\-Impl}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/\hyperlink{_m_link_8java}{M\-Link.\-java}\end{DoxyCompactItemize}

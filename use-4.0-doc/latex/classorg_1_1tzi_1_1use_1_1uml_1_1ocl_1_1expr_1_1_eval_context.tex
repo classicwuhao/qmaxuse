@@ -1,0 +1,158 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{\section{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}\index{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context@{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ab574451994f1afc6e70e2efc19b6d1e9}{Eval\-Context} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a6fb38133d57ae3d04bd314c3021b7f10}{pre\-State}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ac2aea50bc5b2d92d095ca6bd1f6207f5}{post\-State}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} global\-Bindings, Print\-Writer eval\-Log, String eval\-Log\-Indent)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a5b0cfc5f796e2f078aeb1fb9afc6a9c6}{Eval\-Context} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a6fb38133d57ae3d04bd314c3021b7f10}{pre\-State}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ac2aea50bc5b2d92d095ca6bd1f6207f5}{post\-State}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} global\-Bindings, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} src)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a144a2c54816b5d6d2d8ec4dc39aaa9bb}{is\-Enable\-Eval\-Tree} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_acdac1861de18a6cb8c45ce02002f21b5}{push\-Var\-Binding} (String varname, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} value)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_var_bindings}{Var\-Bindings} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ae65a1470800678e91b352ddf53288ccc}{var\-Bindings} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ac2aea50bc5b2d92d095ca6bd1f6207f5}{post\-State} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a6fb38133d57ae3d04bd314c3021b7f10}{pre\-State} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Context information used during evaluation.
+
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file Eval\-Context.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ab574451994f1afc6e70e2efc19b6d1e9}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!Eval\-Context@{Eval\-Context}}
+\index{Eval\-Context@{Eval\-Context}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{Eval\-Context}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-Eval\-Context (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System\-State}}]{pre\-State, }
+\item[{{\bf M\-System\-State}}]{post\-State, }
+\item[{{\bf Var\-Bindings}}]{global\-Bindings, }
+\item[{Print\-Writer}]{eval\-Log, }
+\item[{String}]{eval\-Log\-Indent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ab574451994f1afc6e70e2efc19b6d1e9}
+Creates new evaluation context. The parameter pre\-State may be {\ttfamily null}. 
+\begin{DoxyParams}{Parameters}
+{\em pre\-State} & the pre {\ttfamily M\-System\-State} for the evaluation. May be {\ttfamily null} \\
+\hline
+{\em post\-State} & the current {\ttfamily M\-System\-State} for the evaluation \\
+\hline
+{\em global\-Bindings} & the global {\ttfamily Var\-Bindings} \\
+\hline
+{\em eval\-Log} & {\ttfamily Print\-Writer} to print evaluation informations. May be {\ttfamily null} \\
+\hline
+{\em eval\-Log\-Indent} & used indent for the output, e.\-g., \char`\"{}   \char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Eval\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a5b0cfc5f796e2f078aeb1fb9afc6a9c6}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!Eval\-Context@{Eval\-Context}}
+\index{Eval\-Context@{Eval\-Context}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{Eval\-Context}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-Eval\-Context (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System\-State}}]{pre\-State, }
+\item[{{\bf M\-System\-State}}]{post\-State, }
+\item[{{\bf Var\-Bindings}}]{global\-Bindings, }
+\item[{{\bf Eval\-Context}}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a5b0cfc5f796e2f078aeb1fb9afc6a9c6}
+Copy constructor to create a new evaluation context with different states and bindings, but with the same setup, e.\-g., indent. 
+\begin{DoxyParams}{Parameters}
+{\em pre\-State} & The used pre state \\
+\hline
+{\em post\-State} & The used post state \\
+\hline
+{\em global\-Bindings} & the global {\ttfamily Var\-Bindings} \\
+\hline
+{\em src} & the {\ttfamily \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context}} to copy the settings from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file Eval\-Context.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a144a2c54816b5d6d2d8ec4dc39aaa9bb}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!is\-Enable\-Eval\-Tree@{is\-Enable\-Eval\-Tree}}
+\index{is\-Enable\-Eval\-Tree@{is\-Enable\-Eval\-Tree}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{is\-Enable\-Eval\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-is\-Enable\-Eval\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a144a2c54816b5d6d2d8ec4dc39aaa9bb}
+
+
+Definition at line 89 of file Eval\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ac2aea50bc5b2d92d095ca6bd1f6207f5}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!post\-State@{post\-State}}
+\index{post\-State@{post\-State}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{post\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-System\-State} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-post\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ac2aea50bc5b2d92d095ca6bd1f6207f5}
+Returns the current system state. 
+
+Definition at line 124 of file Eval\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a6fb38133d57ae3d04bd314c3021b7f10}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!pre\-State@{pre\-State}}
+\index{pre\-State@{pre\-State}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{pre\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-System\-State} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-pre\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_a6fb38133d57ae3d04bd314c3021b7f10}
+Returns the prestate. 
+
+Definition at line 131 of file Eval\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_acdac1861de18a6cb8c45ce02002f21b5}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!push\-Var\-Binding@{push\-Var\-Binding}}
+\index{push\-Var\-Binding@{push\-Var\-Binding}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{push\-Var\-Binding}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-push\-Var\-Binding (
+\begin{DoxyParamCaption}
+\item[{String}]{varname, }
+\item[{{\bf Value}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_acdac1861de18a6cb8c45ce02002f21b5}
+Pushes a new variable binding onto the binding stack. 
+
+Definition at line 94 of file Eval\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ae65a1470800678e91b352ddf53288ccc}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}!var\-Bindings@{var\-Bindings}}
+\index{var\-Bindings@{var\-Bindings}!org::tzi::use::uml::ocl::expr::EvalContext@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::\-Eval\-Context}}
+\subsubsection[{var\-Bindings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Var\-Bindings} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-Eval\-Context.\-var\-Bindings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context_ae65a1470800678e91b352ddf53288ccc}
+Returns current state of variable bindings (for debugging). 
+
+Definition at line 117 of file Eval\-Context.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/ocl/expr/\hyperlink{_eval_context_8java}{Eval\-Context.\-java}\end{DoxyCompactItemize}

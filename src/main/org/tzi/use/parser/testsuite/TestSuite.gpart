@@ -1,0 +1,173 @@
+grammar TestSuite;
+options {
+  superClass = BaseParser;
+}
+
+@header { 
+/*
+ * USE - UML based specification environment
+ * Copyright (C) 1999-2010 Mark Richters, University of Bremen
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  
+ */
+ 
+package org.tzi.use.parser.testsuite;
+
+import org.tzi.use.parser.base.BaseParser;
+import org.tzi.use.parser.soil.*;
+import org.tzi.use.parser.soil.ast.*;
+import org.tzi.use.parser.ocl.*;
+import java.util.Collections;
+import java.util.Arrays;
+}
+
+@lexer::header {
+/*
+ * USE - UML based specification environment
+ * Copyright (C) 1999-2004 Mark Richters, University of Bremen
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  
+ */
+ 
+package org.tzi.use.parser.testsuite;
+
+import org.tzi.use.parser.ParseErrorHandler;
+}
+
+@lexer::members {
+    private ParseErrorHandler fParseErrorHandler;
+
+    public String getFilename() {
+        return fParseErrorHandler.getFileName();
+    }
+    
+    @Override
+    public String getErrorHeader(RecognitionException e) {
+    	return "line " + e.line + ":" + e.charPositionInLine;
+    }
+    	
+    public void emitErrorMessage(String msg) {
+       	fParseErrorHandler.reportError(msg);
+	}
+ 
+    public void init(ParseErrorHandler handler) {
+        fParseErrorHandler = handler;
+    }
+}
+
+// grammar for testsuite
+
+/* ------------------------------------
+  testSuite ::= 'testsuite' IDENT 'for' 'model' filename
+  				['setup'  cmdList 'end']
+  				['finish' cmdList 'end']
+  				tests*
+*/
+testSuite returns [ASTTestSuite suite]
+@init{
+  List setupStatements = new ArrayList();
+}
+:
+  'testsuite'
+    suiteName = IDENT { $suite = new ASTTestSuite($suiteName); }
+    
+  'for' 'model' 
+    modelFile=filename { $suite.setModelFile($suiteName); }
+    
+  ('setup' 
+  	('!' c = shellCommandOnly { setupStatements.add($c.n); })* 'end' { $suite.setSetupStatements(setupStatements); }
+  )?
+     
+  tests = testCases { $suite.setTestCases($tests.testCases); }
+  
+  EOF
+;
+
+filename returns [String filename]
+:
+   name=IDENT '.' suffix=IDENT {$filename = $name.text + "." + $suffix.text;}
+;
+
+testCases returns [List testCases]
+@init { $testCases = new ArrayList(); }
+:
+  (test = testCase { $testCases.add($test.n); })+
+;
+
+testCase returns [ASTTestCase n]
+:
+  'testcase' name=IDENT { $n = new ASTTestCase($name); }
+  (
+      '!' c = shellCommandOnly { $n.addStatement($c.n); } 
+    |
+      a=assertStatement { $n.addStatement($a.n); }
+    |
+      b='beginVariation' { $n.addStatement(new ASTVariationStart($b)); }
+    |
+      e='endVariation' { $n.addStatement(new ASTVariationEnd($e)); }
+   )*
+  'end'
+;
+
+assertStatement returns [ASTAssert n]
+@init{ boolean valid = true; }
+:
+  s='assert'
+  ('valid' { valid = true; } | 'invalid' {valid = false; })
+  (
+      exp = expression { $n = new ASTAssertOclExpression($exp.n.getStartToken(), input.LT(-1), valid, $exp.n); }
+    |
+      'invs' { $n = new ASTAssertGlobalInvariants($s, input.LT(-1), valid); }
+    |
+      'invs' classname=IDENT { $n = new ASTAssertClassInvariants($s, input.LT(-1), valid, $classname); }
+    |
+      'inv' classname=IDENT COLON_COLON invname=IDENT { $n = new ASTAssertSingleInvariant($s, input.LT(-1), valid, $classname, $invname); }
+    |
+      pre = assertionStatementPre[s=$s, valid=valid] {$n = $pre.n; }
+    |
+      post = assertionStatementPost[s=$s, valid=valid] {$n = $post.n; }
+  )
+  (
+    COMMA msg=STRING { $n.setMessage($msg); }
+  )?
+;
+
+assertionStatementPre[Token s, boolean valid] returns [ASTAssertPre n]
+:
+  'pre' objExp=expression opName=IDENT { $n = new ASTAssertPre($s, null, $valid, $objExp.n, $opName); }
+  LPAREN 
+    ( e=expression { $n.addArg($e.n); } ( COMMA e=expression { $n.addArg($e.n); } )* )? 
+  RPAREN (COLON_COLON name=IDENT { $n.setConditionName($name); } )?
+  { $n.setEnd(input.LT(-1)); }
+;
+
+assertionStatementPost[Token s, boolean valid] returns [ASTAssertPost n]
+:
+  'post' { $n = new ASTAssertPost($s, null, $valid); }
+  (name=IDENT { $n.setConditionName($name); } )?
+  { $n.setEnd(input.LT(-1)); }
+;

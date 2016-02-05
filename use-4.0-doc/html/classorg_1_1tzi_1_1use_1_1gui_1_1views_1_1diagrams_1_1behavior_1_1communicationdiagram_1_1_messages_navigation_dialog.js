@@ -1,0 +1,5 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_messages_navigation_dialog =
+[
+    [ "MessagesNavigationDialog", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_messages_navigation_dialog.html#a21979b94591e32cb48da6a25b4e7d123", null ],
+    [ "stateChanged", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_messages_navigation_dialog.html#a2a878f361a2e0d8f51675bffe0d890d0", null ]
+];

@@ -1,0 +1,531 @@
+
+
+/* -----------------------------------------------------------------------------
+------------------------- start of file SoilBase.gpart ------------------------- 
+----------------------------------------------------------------------------- */
+
+/*
+ * USE - UML based specification environment
+ * Copyright (C) 1999-2010 University of Bremen
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  
+ */
+ 
+/* $Id: SoilBase.gpart 5494 2015-02-05 12:59:25Z lhamann $ */
+
+////////////////////////////////////////////////////////////////////////////////
+// Soil grammar
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// statOnly ::= statement followed by EOF
+////////////////////////////////////////////////////////////////////////////////
+statOnly returns [ASTStatement n]
+:
+  s = stat
+  EOF
+  
+  { $n = $s.n; }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// single statement or component statement
+////////////////////////////////////////////////////////////////////////////////
+stat returns [ASTStatement n]
+@init {
+  ASTSequenceStatement seq = new ASTSequenceStatement($start);
+}
+:
+  s = singleStat {seq.addStatement($s.n);}
+  (
+    SEMI
+    s2 = singleStat {seq.addStatement($s2.n); }
+  )* 
+  
+  { 
+    $n = seq.simplify();
+  }
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// 
+////////////////////////////////////////////////////////////////////////////////
+singleStat returns [ASTStatement n]
+: 
+    emp = emptyStat      { $n = $emp.n; } // i.    (empty statement)
+  // handled in stat rule                 // ii.   (sequence)
+  | (statStartingWithExpr)=> sse = statStartingWithExpr { $n = $sse.n; }
+  | vas = varAssignStat  { $n = $vas.n; } // iii.  (variable assignment)
+  | ocs = objCreateStat  { $n = $ocs.n; } // v.    (object creation) or (link object creation)
+  | ods = objDestroyStat { $n = $ods.n; } // vi.   (object destruction)
+  | lis = lnkInsStat     { $n = $lis.n; } // vii.  (link insertion)
+  | lds = lnkDelStat     { $n = $lds.n; } // viii. (link deletion)
+  | ces = condExStat     { $n = $ces.n; } // ix.   (conditional execution)
+  | its = iterStat       { $n = $its.n; } // x.    (iteration)
+  // handled in varAssignStat rule        // xii.  (operation call with result)
+  | whs = whileStat      { $n = $whs.n; } // (new, not in Buettner:2011:DISS)
+  | blk = blockStat      { $n = $blk.n; } // (ditto)
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+emptyStat returns [ASTEmptyStatement n]
+:
+  nothing
+  
+  { $n = new ASTEmptyStatement(); }
+;
+
+statStartingWithExpr returns [ASTStatement n]
+:
+  expr = inSoilExpression
+  (
+    aas = attAssignStat[$expr.n]  { $n = $aas.n; } // iv.   (attribute assignment)
+  )?
+  {
+    if (aas == null) {
+      $n = new ASTOperationCallStatement($start, $expr.n); 
+    }
+  }
+;
+	
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+varAssignStat returns [ASTStatement n]
+: 
+  varName = IDENT
+  COLON_EQUAL
+  rVal = rValue
+  {
+    $n = new ASTVariableAssignmentStatement($varName, $varName.text, $rVal.n);
+  }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n]
+:
+  DOT 
+  attName = IDENT
+  COLON_EQUAL
+  r = rValue
+  
+  { $n = new ASTAttributeAssignmentStatement($attName, $exp, $attName.text, $r.n); }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+objCreateStat returns [ASTStatement n]
+:
+  'new'
+  ident = simpleType
+  (
+    LPAREN
+      (objName = inSoilExpression)?
+    RPAREN
+  )?
+  
+  (
+    'between'
+      LPAREN
+        p = rValListMin2WithOptionalQualifiers
+      RPAREN
+    { 
+    $n = new ASTNewLinkObjectStatement($start, $ident.n, $p.participans, $p.qualifiers, $objName.n);
+    }
+  )?
+  
+  {
+    if ($n == null) {
+      $n = new ASTNewObjectStatement($start, $ident.n, $objName.n);
+    }
+  }
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+objDestroyStat returns [ASTStatement n]
+:
+  'destroy'
+  el = exprListMin1
+  
+  {
+    ASTSequenceStatement seq = new ASTSequenceStatement($start);
+    
+    for (ASTExpression expression : $el.n) {
+      seq.addStatement(
+        new ASTObjectDestructionStatement($start, expression));
+    }
+    
+    $n = seq.simplify();
+  }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// link insertion statement
+////////////////////////////////////////////////////////////////////////////////
+lnkInsStat returns [ASTLinkInsertionStatement n]
+:
+  'insert'
+  LPAREN
+    p = rValListMin2WithOptionalQualifiers
+  RPAREN
+  'into'
+  ass = IDENT
+
+  { $n = new ASTLinkInsertionStatement($start, $ass.text, $p.participans, $p.qualifiers); }
+;
+
+rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers]
+@init {
+  $participans = new ArrayList<ASTRValue>();
+  $qualifiers = new ArrayList<List<ASTRValue>>();
+  List<ASTRValue> currentQualifiers = Collections.emptyList();
+}
+:
+  r = rValue { $participans.add($r.n); }
+  (
+  	LBRACE
+  	qualifierValues = rValList {currentQualifiers = $qualifierValues.n;}
+  	RBRACE
+  )?
+  {
+    $qualifiers.add(currentQualifiers);
+    currentQualifiers = Collections.emptyList();
+  }
+  
+  COMMA
+  
+  r = rValue { $participans.add($r.n); }
+  (
+  	LBRACE
+  	qualifierValues = rValList {currentQualifiers = $qualifierValues.n;}
+  	RBRACE
+  )?
+  {
+    $qualifiers.add(currentQualifiers);
+    currentQualifiers = Collections.emptyList();
+  }
+  
+  (
+    COMMA
+    
+    r = rValue { $participans.add($r.n); }
+    
+    (
+  	  LBRACE
+  	  qualifierValues = rValList {currentQualifiers = $qualifierValues.n;}
+  	  RBRACE
+  	)?
+    
+    {
+      $qualifiers.add(currentQualifiers);
+      currentQualifiers = Collections.emptyList();
+    }	
+  )*
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// link deletion statement
+////////////////////////////////////////////////////////////////////////////////
+lnkDelStat returns [ASTLinkDeletionStatement n]
+:
+  'delete'
+  LPAREN
+    p = rValListMin2WithOptionalQualifiers
+  RPAREN
+  'from' 
+  ass = IDENT
+  
+  { $n = new ASTLinkDeletionStatement($start, $ass.text, $p.participans, $p.qualifiers); }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// conditional execution statement
+////////////////////////////////////////////////////////////////////////////////
+condExStat returns [ASTConditionalExecutionStatement n]
+@init {
+  ASTStatement elseStat = new ASTEmptyStatement();
+}
+:
+  'if' 
+  con = inSoilExpression
+  'then' 
+  ts = statOrImplicitBlock 
+  (
+    'else' 
+     es = statOrImplicitBlock  { elseStat = $es.n; }
+  )?
+  'end'
+  
+  { $n = new ASTConditionalExecutionStatement($start, $con.n, $ts.n, elseStat); }
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// iteration statement
+////////////////////////////////////////////////////////////////////////////////
+iterStat returns [ASTIterationStatement n]
+:
+  'for'
+  var = IDENT
+  'in'
+  set = inSoilExpression
+  'do'
+  s = statOrImplicitBlock 
+  'end'
+  
+  { $n = new ASTIterationStatement($start, $var.text, $set.n, $s.n); }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// while statement
+////////////////////////////////////////////////////////////////////////////////
+whileStat returns [ASTWhileStatement n]
+:
+  'while'
+  cond = inSoilExpression
+  'do'
+  s = statOrImplicitBlock 
+  'end'
+  
+  { $n = new ASTWhileStatement($start, $cond.n, $s.n); }
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// block statement
+////////////////////////////////////////////////////////////////////////////////
+blockStat returns [ASTBlockStatement n]
+@init {
+  $n = new ASTBlockStatement($start, org.tzi.use.config.Options.explicitVariableDeclarations);
+} 
+:
+ 'begin'
+ ( 'declare' vd = variableDeclaration { $n.addVariableDeclaration(vd);} ( COMMA vd1 = variableDeclaration { $n.addVariableDeclaration(vd1);} )* SEMI )?
+ s = stat { $n.setBody($s.n); }
+ 'end'
+; 
+
+
+////////////////////////////////////////////////////////////////////////////////
+// implicit block
+////////////////////////////////////////////////////////////////////////////////
+implicitBlockStat returns [ASTBlockStatement n]
+@init {
+  $n = new ASTBlockStatement($start, false);
+} 
+:
+  'declare' vd = variableDeclaration { $n.addVariableDeclaration(vd);} ( COMMA vd1 = variableDeclaration { $n.addVariableDeclaration(vd1);} )* SEMI 
+ s = stat { $n.setBody($s.n); }
+; 
+
+statOrImplicitBlock returns [ASTStatement n]
+:
+  (s1 = stat { n = $s1.n; } | s2 = implicitBlockStat { n = $s2.n; })
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// MISC HELPER RULES
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// dummy rule to make "nothing" choices more visible
+////////////////////////////////////////////////////////////////////////////////
+nothing
+:
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+rValue returns [ASTRValue n]
+:
+    e = inSoilExpression { $n = new ASTRValueExpressionOrOpCall($e.n); }
+  | oc = objCreateStat
+  { 
+    if ($oc.n instanceof ASTNewLinkObjectStatement)
+    	$n = new ASTRValueNewLinkObject((ASTNewLinkObjectStatement)$oc.n);
+    else
+    	$n = new ASTRValueNewObject((ASTNewObjectStatement)$oc.n);
+  }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+rValList returns [List<ASTRValue> n]
+:
+  nothing           
+  { $n = Collections.<ASTRValue>emptyList(); }
+  |
+  rl = rValListMin1 
+  { $n = $rl.n; }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+rValListMin1 returns [List<ASTRValue> n]
+@init {
+  $n = new ArrayList<ASTRValue>();
+}
+:
+  r = rValue
+  { $n.add($r.n); }
+  (
+    COMMA
+    r = rValue
+    { $n.add($r.n); }
+  )*
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+rValListMin2 returns [List<ASTRValue> n]
+@init {
+  $n = new ArrayList<ASTRValue>();
+}
+:
+  r = rValue
+  { $n.add($r.n); }
+  COMMA
+  r = rValue
+  { $n.add($r.n); }
+  (
+    COMMA
+    r = rValue
+    { $n.add($r.n); }
+  )*
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// 
+////////////////////////////////////////////////////////////////////////////////
+inSoilExpression returns [ASTExpression n]
+:
+  e = expression { if ($e.n != null) $e.n.setStringRep($e.text); } 
+  
+  { $n = $e.n; }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+exprList returns [List<ASTExpression> n]
+:
+  nothing 
+  { $n = new ArrayList<ASTExpression>(); }
+  | 
+  el = exprListMin1 
+  { $n = $el.n; }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// 
+////////////////////////////////////////////////////////////////////////////////
+exprListMin1 returns [List<ASTExpression> n]
+@init {
+  $n = new ArrayList<ASTExpression>();
+}
+:
+  e = inSoilExpression 
+  { if ($e.n != null) $n.add($e.n); }
+  (
+    COMMA
+    e = inSoilExpression 
+    { if ($e.n != null) $n.add($e.n); }
+  )*
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// 
+////////////////////////////////////////////////////////////////////////////////
+exprListMin2 returns [List<ASTExpression> n]
+@init {
+  $n = new ArrayList<ASTExpression>();
+}
+:
+  e = inSoilExpression
+  { if ($e.n != null) $n.add($e.n); }
+  COMMA
+  e = inSoilExpression
+  { if ($e.n != null) $n.add($e.n); }
+  (
+    COMMA
+    e = inSoilExpression
+    { if ($e.n != null) $n.add($e.n); }
+  )*
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// collects a list of comma separated identifiers. may be empty
+////////////////////////////////////////////////////////////////////////////////
+identList returns [List<String> n]
+:
+  nothing
+  { $n = new ArrayList<String>(); }
+  | 
+  il = identListMin1 
+  { $n = $il.n; }
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// collects a list of comma separated identifiers. may not be empty
+////////////////////////////////////////////////////////////////////////////////
+identListMin1 returns [List<String> n]
+@init {
+  $n = new ArrayList<String>();
+}
+: 
+  id = IDENT
+  { $n.add($id.text); }
+  (
+    COMMA
+    id = IDENT {
+    $n.add($id.text); }
+  )*
+;
+  
+/* -----------------------------------------------------------------------------
+-------------------------- end of file SoilBase.gpart --------------------------
+----------------------------------------------------------------------------- */

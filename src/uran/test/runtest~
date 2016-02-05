@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Running test cases for uran..."
+echo "testing formula construction and cnf translation..."
+./formula/test
+echo "testing SMT solving..."
+./smt/test
+echo "leaving all cases."
+
+

@@ -1,0 +1,156 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine}{\section{org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine}\index{org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine@{org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a74f234396fcdb10a1aba58b06a38b33e}{set\-Name} (Token t)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3eb5f210c0e9bb188d782d557e99fde1}{add\-State\-Definition} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_definition}{A\-S\-T\-State\-Definition} s)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_aee88b27e9afe02d0c923a1ad1b781ad0}{add\-Transition\-Definition} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_transition_definition}{A\-S\-T\-Transition\-Definition} t)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_state_machine}{M\-State\-Machine} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a9a81e6d525c322543ee2461f3fc19ce3}{gen} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx)  throws Semantic\-Exception 
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a596ecbfc5d5b30b0bcea580180331958}{gen\-Transitions\-And\-State\-Invariants} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx)  throws Semantic\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Token \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3be9ed130acdc430a1c4d65cea4d3093}{name}
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_definition}{A\-S\-T\-State\-Definition} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a0d9ff396ea362ee872af4f82b5ea2b0b}{state\-Definitions} = new Hash\-Set$<$\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_definition}{A\-S\-T\-State\-Definition}$>$()
+\item 
+Set$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_transition_definition}{A\-S\-T\-Transition\-Definition} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_ae67e67db748f8c7f84567c4137299b1b}{transition\-Definition} = new Hash\-Set$<$\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_transition_definition}{A\-S\-T\-Transition\-Definition}$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 35 of file A\-S\-T\-State\-Machine.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3eb5f210c0e9bb188d782d557e99fde1}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!add\-State\-Definition@{add\-State\-Definition}}
+\index{add\-State\-Definition@{add\-State\-Definition}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{add\-State\-Definition}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-add\-State\-Definition (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-S\-T\-State\-Definition}}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3eb5f210c0e9bb188d782d557e99fde1}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_aee88b27e9afe02d0c923a1ad1b781ad0}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!add\-Transition\-Definition@{add\-Transition\-Definition}}
+\index{add\-Transition\-Definition@{add\-Transition\-Definition}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{add\-Transition\-Definition}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-add\-Transition\-Definition (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-S\-T\-Transition\-Definition}}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_aee88b27e9afe02d0c923a1ad1b781ad0}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a9a81e6d525c322543ee2461f3fc19ce3}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!gen@{gen}}
+\index{gen@{gen}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{gen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-State\-Machine} org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-gen (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a9a81e6d525c322543ee2461f3fc19ce3}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a596ecbfc5d5b30b0bcea580180331958}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!gen\-Transitions\-And\-State\-Invariants@{gen\-Transitions\-And\-State\-Invariants}}
+\index{gen\-Transitions\-And\-State\-Invariants@{gen\-Transitions\-And\-State\-Invariants}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{gen\-Transitions\-And\-State\-Invariants}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-gen\-Transitions\-And\-State\-Invariants (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a596ecbfc5d5b30b0bcea580180331958}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 80 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a74f234396fcdb10a1aba58b06a38b33e}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-set\-Name (
+\begin{DoxyParamCaption}
+\item[{Token}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a74f234396fcdb10a1aba58b06a38b33e}
+Sets the name of the state machine. 
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file A\-S\-T\-State\-Machine.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3be9ed130acdc430a1c4d65cea4d3093}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!name@{name}}
+\index{name@{name}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Token org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a3be9ed130acdc430a1c4d65cea4d3093}
+The name of the state machine 
+
+Definition at line 40 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a0d9ff396ea362ee872af4f82b5ea2b0b}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!state\-Definitions@{state\-Definitions}}
+\index{state\-Definitions@{state\-Definitions}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{state\-Definitions}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf A\-S\-T\-State\-Definition}$>$ org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-state\-Definitions = new Hash\-Set$<${\bf A\-S\-T\-State\-Definition}$>$()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_a0d9ff396ea362ee872af4f82b5ea2b0b}
+
+
+Definition at line 42 of file A\-S\-T\-State\-Machine.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_ae67e67db748f8c7f84567c4137299b1b}{\index{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}!transition\-Definition@{transition\-Definition}}
+\index{transition\-Definition@{transition\-Definition}!org::tzi::use::parser::use::statemachines::ASTStateMachine@{org\-::tzi\-::use\-::parser\-::use\-::statemachines\-::\-A\-S\-T\-State\-Machine}}
+\subsubsection[{transition\-Definition}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf A\-S\-T\-Transition\-Definition}$>$ org.\-tzi.\-use.\-parser.\-use.\-statemachines.\-A\-S\-T\-State\-Machine.\-transition\-Definition = new Hash\-Set$<${\bf A\-S\-T\-Transition\-Definition}$>$()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_state_machine_ae67e67db748f8c7f84567c4137299b1b}
+
+
+Definition at line 44 of file A\-S\-T\-State\-Machine.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/parser/use/statemachines/\hyperlink{_a_s_t_state_machine_8java}{A\-S\-T\-State\-Machine.\-java}\end{DoxyCompactItemize}

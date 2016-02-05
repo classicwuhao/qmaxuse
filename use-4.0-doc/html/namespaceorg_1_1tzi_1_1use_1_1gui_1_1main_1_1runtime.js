@@ -1,0 +1,6 @@
+var namespaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime =
+[
+    [ "IPluginActionExtensionPoint", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_action_extension_point.html", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_action_extension_point" ],
+    [ "IPluginMModelExtensionPoint", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_m_model_extension_point.html", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_m_model_extension_point" ],
+    [ "IPluginMMVisitor", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_m_m_visitor.html", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1main_1_1runtime_1_1_i_plugin_m_m_visitor" ]
+];

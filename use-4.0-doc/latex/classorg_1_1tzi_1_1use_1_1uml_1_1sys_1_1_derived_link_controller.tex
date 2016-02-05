@@ -1,0 +1,208 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller}{\section{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller}\index{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller@{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.625000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a473424c94daeed50b72d644869e7c924}{Derived\-Link\-Controller} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2870a3282e4dfeb13685cc71956abf78}{state}, Map$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association}{M\-Association}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_set}{M\-Link\-Set} $>$ link\-Sets)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a10f7d9826cc6a88278ca4515448e4e26}{Derived\-Link\-Controller} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2870a3282e4dfeb13685cc71956abf78}{state}, Map$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association}{M\-Association}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_link_set}{M\-Link\-Set} $>$ link\-Sets, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller}{Derived\-Link\-Controller} derived\-Link\-Controller)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2e6137a2a303cb9dc99103ec7df2c0bf}{init\-State} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a17ae0c2ea352f7a70b6cd074d9ace400}{update\-State} ()
+\item 
+final void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a988cb659d5a72427a8e7530ad4ab9e32}{update\-State} (\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_difference}{State\-Difference} diff)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5f4ff83ec52ea895fb1a8418ae1762e6}{determine\-Derived\-Links} (Set$<$ M\-Derived\-Link $>$ links\-Sink, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association_end}{M\-Association\-End} association\-End)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association_end}{M\-Association\-End} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5533b8f417f76bddd4f3786bd952dd23}{determine\-Best\-End} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association_end}{M\-Association\-End} end)
+\item 
+abstract boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5d650ad9fdc7efe9e82546fe90288596}{handles} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association_end}{M\-Association\-End} end)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2870a3282e4dfeb13685cc71956abf78}{state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class controls the \char`\"{}virtual\char`\"{} links inside a system state. Virtual links are links which are derived by an O\-C\-L expression. We currently assume that\-: 
+\begin{DoxyItemize}
+\item Only one end is derived. 
+\item No qualifiers can be specified for a derived association 
+\end{DoxyItemize}\begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 41 of file Derived\-Link\-Controller.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a473424c94daeed50b72d644869e7c924}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!Derived\-Link\-Controller@{Derived\-Link\-Controller}}
+\index{Derived\-Link\-Controller@{Derived\-Link\-Controller}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{Derived\-Link\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-Derived\-Link\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System\-State}}]{state, }
+\item[{Map$<$ {\bf M\-Association}, {\bf M\-Link\-Set} $>$}]{link\-Sets}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a473424c94daeed50b72d644869e7c924}
+
+
+Definition at line 51 of file Derived\-Link\-Controller.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a10f7d9826cc6a88278ca4515448e4e26}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!Derived\-Link\-Controller@{Derived\-Link\-Controller}}
+\index{Derived\-Link\-Controller@{Derived\-Link\-Controller}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{Derived\-Link\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-Derived\-Link\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System\-State}}]{state, }
+\item[{Map$<$ {\bf M\-Association}, {\bf M\-Link\-Set} $>$}]{link\-Sets, }
+\item[{{\bf Derived\-Link\-Controller}}]{derived\-Link\-Controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a10f7d9826cc6a88278ca4515448e4e26}
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em derived\-Link\-Controller} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Derived\-Link\-Controller.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5533b8f417f76bddd4f3786bd952dd23}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!determine\-Best\-End@{determine\-Best\-End}}
+\index{determine\-Best\-End@{determine\-Best\-End}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{determine\-Best\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Association\-End} org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-determine\-Best\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Association\-End}}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5533b8f417f76bddd4f3786bd952dd23}
+Subclasses can override this method to change the association end the concrete derived link controller uses to calculate the derived links.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & The end selected by \hyperlink{}{determine\-Derived\-Associations()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A possible more suitable end of the same association, that should be used to calculate the derived links. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_union_ad406b48879375b5b2f41ad818f3422ed}{Derived\-Link\-Controller\-Union\-::determine\-Best\-End(\-M\-Association\-End)} 
+\end{DoxySeeAlso}
+
+
+Definition at line 126 of file Derived\-Link\-Controller.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5f4ff83ec52ea895fb1a8418ae1762e6}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!determine\-Derived\-Links@{determine\-Derived\-Links}}
+\index{determine\-Derived\-Links@{determine\-Derived\-Links}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{determine\-Derived\-Links}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-determine\-Derived\-Links (
+\begin{DoxyParamCaption}
+\item[{Set$<$ M\-Derived\-Link $>$}]{links\-Sink, }
+\item[{{\bf M\-Association\-End}}]{association\-End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5f4ff83ec52ea895fb1a8418ae1762e6}
+Calculates all derived links for a single derived association end. 
+\begin{DoxyParams}{Parameters}
+{\em association\-End} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5d650ad9fdc7efe9e82546fe90288596}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!handles@{handles}}
+\index{handles@{handles}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{handles}]{\setlength{\rightskip}{0pt plus 5cm}abstract boolean org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-handles (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Association\-End}}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a5d650ad9fdc7efe9e82546fe90288596}
+Used by \hyperlink{}{determine\-Derived\-Associations()} to determine, if an association end is handled by a concrete \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller}{Derived\-Link\-Controller}. For example, the \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_union}{Derived\-Link\-Controller\-Union} handles ends, that are marked as {\ttfamily \{union\}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & The end to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, if the concrete controller handles this end. 
+\end{DoxyReturn}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2e6137a2a303cb9dc99103ec7df2c0bf}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!init\-State@{init\-State}}
+\index{init\-State@{init\-State}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{init\-State}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-init\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2e6137a2a303cb9dc99103ec7df2c0bf}
+Initializes the derived link controller. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a8dcff1510558677f3e46b7beb884f375}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller}.
+
+
+
+Definition at line 71 of file Derived\-Link\-Controller.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a17ae0c2ea352f7a70b6cd074d9ace400}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!update\-State@{update\-State}}
+\index{update\-State@{update\-State}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{update\-State}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-update\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a17ae0c2ea352f7a70b6cd074d9ace400}
+Invoked after a statement changed the system state, but before external instances are notified about the change. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a7b713f1881420a6d9d665b362cbbe3e1}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller}.
+
+
+
+Definition at line 142 of file Derived\-Link\-Controller.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a988cb659d5a72427a8e7530ad4ab9e32}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!update\-State@{update\-State}}
+\index{update\-State@{update\-State}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{update\-State}]{\setlength{\rightskip}{0pt plus 5cm}final void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-update\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf State\-Difference}}]{diff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a988cb659d5a72427a8e7530ad4ab9e32}
+Invoked after a statement changed the system state, but before external instances are notified about the change. Implementors need to change the system state and add any changes into the state difference {\ttfamily diff}. 
+\begin{DoxyParams}{Parameters}
+{\em diff} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_ad31fa392471971e69fb557ad3af39fb1}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller}.
+
+
+
+Definition at line 162 of file Derived\-Link\-Controller.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2870a3282e4dfeb13685cc71956abf78}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}!state@{state}}
+\index{state@{state}!org::tzi::use::uml::sys::DerivedLinkController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Link\-Controller}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}final {\bf M\-System\-State} org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller.\-state\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2870a3282e4dfeb13685cc71956abf78}
+
+
+Definition at line 43 of file Derived\-Link\-Controller.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/\hyperlink{_derived_link_controller_8java}{Derived\-Link\-Controller.\-java}\end{DoxyCompactItemize}

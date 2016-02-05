@@ -1,0 +1,28 @@
+var classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data =
+[
+    [ "CoverageData", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#adc049e30d0a0807d4f1ce0eaaccf5510", null ],
+    [ "addUncoveredClasses", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a5c69b8bb656847efce6e3b41b23750d1", null ],
+    [ "calcHighestAttributeCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a48afa37eb3a806555250ccf78cd60a84", null ],
+    [ "calcHighestClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a99eb5fce934ab4ac91fae1fb3378ef0c", null ],
+    [ "calcHighestCompleteClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a6dc0e175d55bc6972c8c9386864f5f88", null ],
+    [ "calcLowestClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a8447464d6b3387f12d22a3194cfd5321", null ],
+    [ "getAssociationCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a3cb54d6421f43f16bf498c3427bf574b", null ],
+    [ "getAssociationEndCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#aa820121e4cee2fd19b2606d60915d7f4", null ],
+    [ "getAttributeAccessCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#abbc3525c28fa61c04085554065aa5807", null ],
+    [ "getAttributeCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a495a99d61c12fc3c324c1340fa32af40", null ],
+    [ "getClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#ae2bbbdffacb4f49f3beac1f109e85e53", null ],
+    [ "getCompleteClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#adbd005e49e3db6e7857a162031d8543b", null ],
+    [ "getCompleteCoveredClasses", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a20e5b58cfa14785d82f9891680b46ffe", null ],
+    [ "getCoveredClasses", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a6f6509fad30486cbb0cc54d826d6e2c5", null ],
+    [ "getOperationCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#afff5368dcb30d26b79a627da5131d0b4", null ],
+    [ "getPropertyCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a3df25bb4ac7e44e5b4317c07b37ba78f", null ],
+    [ "highestInt", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#ae71e610eec84f7741d60b75011674cf0", null ],
+    [ "lowestInt", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#ad881998879814146a9d408e8cc29d974", null ],
+    [ "associationCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#aeceb4250fb1a846e526d1fa1de5bdfd2", null ],
+    [ "associationEndCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#af50ffec81097e034e59fff02fe66e1d4", null ],
+    [ "attributeAccessCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#aae7aeb807c41253c9f0491ea2fa2f035", null ],
+    [ "attributeCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#ab16587c58b3ae78ad31f55e6c8856492", null ],
+    [ "classCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a2c12dd4e26ecc1eab266e709d5cb1761", null ],
+    [ "completeClassCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a6ebec40e9045adddb05a44d8acb53070", null ],
+    [ "operationCoverage", "classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a4bbfa0429081023f87fb921b33823450", null ]
+];

@@ -1,0 +1,67 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input}{\section{org.\-tzi.\-use.\-util.\-input.\-Line\-Input Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input}\index{org.\-tzi.\-use.\-util.\-input.\-Line\-Input@{org.\-tzi.\-use.\-util.\-input.\-Line\-Input}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a79db08e1247cac1d9c6a4b72e5a9515a}{get\-User\-Input\-Readline} (String error\-Message)
+\item 
+static \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a825d32bd8884ebd4b254c03dfc769a67}{get\-Stream\-Readline} (Buffered\-Reader reader, boolean do\-Echo, String string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for getting a suitable platform-\/dependent readline implementation. The G\-N\-U readline library is preferably used if installed.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file Line\-Input.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a825d32bd8884ebd4b254c03dfc769a67}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input@{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input}!get\-Stream\-Readline@{get\-Stream\-Readline}}
+\index{get\-Stream\-Readline@{get\-Stream\-Readline}!org::tzi::use::util::input::LineInput@{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input}}
+\subsubsection[{get\-Stream\-Readline}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Readline} org.\-tzi.\-use.\-util.\-input.\-Line\-Input.\-get\-Stream\-Readline (
+\begin{DoxyParamCaption}
+\item[{Buffered\-Reader}]{reader, }
+\item[{boolean}]{do\-Echo, }
+\item[{String}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a825d32bd8884ebd4b254c03dfc769a67}
+
+
+Definition at line 71 of file Line\-Input.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a79db08e1247cac1d9c6a4b72e5a9515a}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input@{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input}!get\-User\-Input\-Readline@{get\-User\-Input\-Readline}}
+\index{get\-User\-Input\-Readline@{get\-User\-Input\-Readline}!org::tzi::use::util::input::LineInput@{org\-::tzi\-::use\-::util\-::input\-::\-Line\-Input}}
+\subsubsection[{get\-User\-Input\-Readline}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Readline} org.\-tzi.\-use.\-util.\-input.\-Line\-Input.\-get\-User\-Input\-Readline (
+\begin{DoxyParamCaption}
+\item[{String}]{error\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_line_input_a79db08e1247cac1d9c6a4b72e5a9515a}
+Returns a readline implementation. If the native G\-N\-U readline library is available, return that. Otherwise, a stream readline implementation with System.\-in as source is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\-Message} & if not null print a message when the native G\-N\-U readline library is not available, otherwise fail silently. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Line\-Input.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/util/input/\hyperlink{_line_input_8java}{Line\-Input.\-java}\end{DoxyCompactItemize}

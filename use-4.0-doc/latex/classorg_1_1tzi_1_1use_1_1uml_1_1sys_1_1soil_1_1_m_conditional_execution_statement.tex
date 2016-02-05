@@ -1,0 +1,178 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement}{\section{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement}\index{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement@{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a8b14f4421b03f5361b62804e4371c446}{M\-Conditional\-Execution\-Statement} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} condition, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} then\-Statement, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} else\-Statement)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a7aea1a87cdf4e493e90c0b4ce759679f}{get\-Condition} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a1bc73008734e2c8293481938499e574f}{get\-Then\-Statement} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_ac3857655c85677889ec2a7f46478d9d4}{get\-Else\-Statement} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2ff1033ad19583b26436cdaf74007f70}{execute} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context}{Soil\-Evaluation\-Context} context, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_statement_evaluation_result}{Statement\-Evaluation\-Result} result)  throws Evaluation\-Failed\-Exception 
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aff4c32cc48445950a86a56ea261a85d9}{to\-String} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_adfbe6eb1dcf7c556b25cacf8afb67d69}{process\-With\-Visitor} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_visitor}{M\-Statement\-Visitor} v)  throws Exception 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aedafde1f290c29d235a220cd0d3aaccd}{shell\-Command} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2a04a37566082848c969bd90091af16e}{to\-Concrete\-Syntax} (String\-Builder indent, String indent\-Incr, String\-Builder target)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\char`\"{}\-Compiled\char`\"{} version of an {\ttfamily if ... then ... else ... end} statement. \begin{DoxyAuthor}{Author}
+Lars Hamann 
+
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 34 of file M\-Conditional\-Execution\-Statement.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a8b14f4421b03f5361b62804e4371c446}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!M\-Conditional\-Execution\-Statement@{M\-Conditional\-Execution\-Statement}}
+\index{M\-Conditional\-Execution\-Statement@{M\-Conditional\-Execution\-Statement}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{M\-Conditional\-Execution\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-M\-Conditional\-Execution\-Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression}}]{condition, }
+\item[{{\bf M\-Statement}}]{then\-Statement, }
+\item[{{\bf M\-Statement}}]{else\-Statement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a8b14f4421b03f5361b62804e4371c446}
+Constructs a new conditional execution statement. 
+\begin{DoxyParams}{Parameters}
+{\em condition} & \\
+\hline
+{\em then\-Statement} & \\
+\hline
+{\em else\-Statement} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file M\-Conditional\-Execution\-Statement.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2ff1033ad19583b26436cdaf74007f70}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!execute@{execute}}
+\index{execute@{execute}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Soil\-Evaluation\-Context}}]{context, }
+\item[{{\bf Statement\-Evaluation\-Result}}]{result}
+\end{DoxyParamCaption}
+) throws {\bf Evaluation\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2ff1033ad19583b26436cdaf74007f70}
+
+
+Definition at line 89 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a7aea1a87cdf4e493e90c0b4ce759679f}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!get\-Condition@{get\-Condition}}
+\index{get\-Condition@{get\-Condition}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{get\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-get\-Condition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a7aea1a87cdf4e493e90c0b4ce759679f}
+\begin{DoxyReturn}{Returns}
+the f\-Condition 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_ac3857655c85677889ec2a7f46478d9d4}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!get\-Else\-Statement@{get\-Else\-Statement}}
+\index{get\-Else\-Statement@{get\-Else\-Statement}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{get\-Else\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Statement} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-get\-Else\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_ac3857655c85677889ec2a7f46478d9d4}
+\begin{DoxyReturn}{Returns}
+the f\-Else\-Statement 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a1bc73008734e2c8293481938499e574f}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!get\-Then\-Statement@{get\-Then\-Statement}}
+\index{get\-Then\-Statement@{get\-Then\-Statement}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{get\-Then\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Statement} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-get\-Then\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a1bc73008734e2c8293481938499e574f}
+\begin{DoxyReturn}{Returns}
+the f\-Then\-Statement 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_adfbe6eb1dcf7c556b25cacf8afb67d69}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!process\-With\-Visitor@{process\-With\-Visitor}}
+\index{process\-With\-Visitor@{process\-With\-Visitor}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{process\-With\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-process\-With\-Visitor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Statement\-Visitor}}]{v}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_adfbe6eb1dcf7c556b25cacf8afb67d69}
+
+
+Definition at line 165 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aedafde1f290c29d235a220cd0d3aaccd}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!shell\-Command@{shell\-Command}}
+\index{shell\-Command@{shell\-Command}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-shell\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aedafde1f290c29d235a220cd0d3aaccd}
+
+
+Definition at line 112 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2a04a37566082848c969bd90091af16e}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!to\-Concrete\-Syntax@{to\-Concrete\-Syntax}}
+\index{to\-Concrete\-Syntax@{to\-Concrete\-Syntax}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{to\-Concrete\-Syntax}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-to\-Concrete\-Syntax (
+\begin{DoxyParamCaption}
+\item[{String\-Builder}]{indent, }
+\item[{String}]{indent\-Incr, }
+\item[{String\-Builder}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_a2a04a37566082848c969bd90091af16e}
+
+
+Definition at line 129 of file M\-Conditional\-Execution\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aff4c32cc48445950a86a56ea261a85d9}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::sys::soil::MConditionalExecutionStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Conditional\-Execution\-Statement}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Conditional\-Execution\-Statement.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_conditional_execution_statement_aff4c32cc48445950a86a56ea261a85d9}
+
+
+Definition at line 160 of file M\-Conditional\-Execution\-Statement.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/soil/\hyperlink{_m_conditional_execution_statement_8java}{M\-Conditional\-Execution\-Statement.\-java}\end{DoxyCompactItemize}

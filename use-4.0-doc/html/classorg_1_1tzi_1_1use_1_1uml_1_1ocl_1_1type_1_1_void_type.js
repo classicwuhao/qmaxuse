@@ -1,0 +1,27 @@
+var classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type =
+[
+    [ "allSupertypes", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a4ec436b5b1c6ae27c63c7f5dc072bc71", null ],
+    [ "conformsTo", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#afcac2f990fb6d76dfc7867498c5736dc", null ],
+    [ "equals", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a467bfee64a617a1a67c5957c1c003a32", null ],
+    [ "hashCode", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a2a59cfcc52fcdc5048b45cd0707862b0", null ],
+    [ "isKindOfAssociation", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ad30d10f05351af43d23fc4c9e8f4bbec", null ],
+    [ "isKindOfBag", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a930cc220f9349a775c9e001a5b6320f1", null ],
+    [ "isKindOfBoolean", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a08bcb18e2d319f1eb27b57eb8dc1a79f", null ],
+    [ "isKindOfClass", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ac073d028495a305e31ff339fb7694b9d", null ],
+    [ "isKindOfClassifier", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ae8129cb77e5b190762918eab3617d2db", null ],
+    [ "isKindOfCollection", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ab097067b82d349680d55a5ca4a9e90d2", null ],
+    [ "isKindOfEnum", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ada2cb5ab996cd07ebf22a1a15d8f6fe0", null ],
+    [ "isKindOfInteger", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a0a99c75e5812029421ec4c4b81c19763", null ],
+    [ "isKindOfNumber", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a125c411b516aedf62e8eb256ba1fa842", null ],
+    [ "isKindOfOclAny", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#aa036eedb5bf4cffe9f6e0b8fa5f99805", null ],
+    [ "isKindOfOrderedSet", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a536936edba9e28582ef107bc7d52d86d", null ],
+    [ "isKindOfReal", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ab2861a22665b4ca8191e136494ea4157", null ],
+    [ "isKindOfSequence", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a05acda89648834fcadd49ce19cd905de", null ],
+    [ "isKindOfSet", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#adec17f2d724acae0a7d534ec0e28203b", null ],
+    [ "isKindOfString", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#aec2f3a2db532ba200e82b122cb21d0f5", null ],
+    [ "isKindOfTupleType", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#ac4f90c31dc727102b00a3b744453b301", null ],
+    [ "isKindOfUnlimitedNatural", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#afc86d477ad5cae53a274e4cfa1855532", null ],
+    [ "isTypeOfVoidType", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a3e1431a48802f32d79fbb5e4d92cf6d9", null ],
+    [ "isVoidOrElementTypeIsVoid", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#a5345da14728aa01acda077ed3b8b1615", null ],
+    [ "toString", "classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_void_type.html#adf5d85892d936c0ae78f838df82ce576", null ]
+];

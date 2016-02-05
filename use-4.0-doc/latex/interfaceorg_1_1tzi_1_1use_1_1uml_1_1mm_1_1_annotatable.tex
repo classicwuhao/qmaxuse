@@ -1,0 +1,125 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable}{\section{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable}\index{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable@{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-mm.\-Annotatable\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.639246cm]{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a43e21576242037a5fa758f7ac4c407de}{is\-Annotated} ()
+\item 
+Map$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_ae840b759dc57fa42a22fe5e877a4dad3}{get\-All\-Annotations} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a4e879ecdfba35ae8f60d3990b1dafc1c}{get\-Annotation} (String name)
+\item 
+String \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa2b3f01fae754a10dd08d1d7581d9d76}{get\-Annotation\-Value} (String annotation\-Name, String attribute\-Name)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa12c075f592be18cc30cb92cac447880}{add\-Annotation} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} an)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for annotatable elements \begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 31 of file Annotatable.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa12c075f592be18cc30cb92cac447880}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}!add\-Annotation@{add\-Annotation}}
+\index{add\-Annotation@{add\-Annotation}!org::tzi::use::uml::mm::Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}}
+\subsubsection[{add\-Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-mm.\-Annotatable.\-add\-Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Element\-Annotation}}]{an}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa12c075f592be18cc30cb92cac447880}
+Adds an annotation 
+\begin{DoxyParams}{Parameters}
+{\em an} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3ac9627930b5459c759609810c7ea5ec}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_ae840b759dc57fa42a22fe5e877a4dad3}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}!get\-All\-Annotations@{get\-All\-Annotations}}
+\index{get\-All\-Annotations@{get\-All\-Annotations}!org::tzi::use::uml::mm::Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}}
+\subsubsection[{get\-All\-Annotations}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf M\-Element\-Annotation}$>$ org.\-tzi.\-use.\-uml.\-mm.\-Annotatable.\-get\-All\-Annotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_ae840b759dc57fa42a22fe5e877a4dad3}
+All defined annotations for this model element. The key is the name of the annotation, e. g., {\ttfamily Monitor} when annotated {\ttfamily (...)}. \begin{DoxyReturn}{Returns}
+A {\ttfamily Map} that relates annotation names to their annotation information. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4dabc4cf1e645f72f10bb07a0b853d55}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a4e879ecdfba35ae8f60d3990b1dafc1c}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}!get\-Annotation@{get\-Annotation}}
+\index{get\-Annotation@{get\-Annotation}!org::tzi::use::uml::mm::Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}}
+\subsubsection[{get\-Annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Element\-Annotation} org.\-tzi.\-use.\-uml.\-mm.\-Annotatable.\-get\-Annotation (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a4e879ecdfba35ae8f60d3990b1dafc1c}
+Returns the \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} object of this model element with the given {\ttfamily name}. If no annotation with the name was defined {\ttfamily null} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_add5d662d11c0e9e9e24a2e8e86cbdf33}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa2b3f01fae754a10dd08d1d7581d9d76}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}!get\-Annotation\-Value@{get\-Annotation\-Value}}
+\index{get\-Annotation\-Value@{get\-Annotation\-Value}!org::tzi::use::uml::mm::Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}}
+\subsubsection[{get\-Annotation\-Value}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-mm.\-Annotatable.\-get\-Annotation\-Value (
+\begin{DoxyParamCaption}
+\item[{String}]{annotation\-Name, }
+\item[{String}]{attribute\-Name}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa2b3f01fae754a10dd08d1d7581d9d76}
+Returns the value of the annotation attribute of the annotation given by {\ttfamily name} if it exists otherwise the empty string \char`\"{}\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em annotation\-Name} & \\
+\hline
+{\em attribute\-Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a9e9b330dc4f81c6dff24a9aff193cf13}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a43e21576242037a5fa758f7ac4c407de}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}!is\-Annotated@{is\-Annotated}}
+\index{is\-Annotated@{is\-Annotated}!org::tzi::use::uml::mm::Annotatable@{org\-::tzi\-::use\-::uml\-::mm\-::\-Annotatable}}
+\subsubsection[{is\-Annotated}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-mm.\-Annotatable.\-is\-Annotated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a43e21576242037a5fa758f7ac4c407de}
+True if the model element was defined with annotations, e. g., {\ttfamily (host=\char`\"{}localhost\char`\"{})}. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ace1ff71302c213e036e94e285a7e7e56}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/mm/\hyperlink{_annotatable_8java}{Annotatable.\-java}\end{DoxyCompactItemize}

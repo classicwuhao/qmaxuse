@@ -1,0 +1,28 @@
+var classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation =
+[
+    [ "MOperation", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#ae70aa7c89c6d955473423c53b82ad3e1", null ],
+    [ "cls", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a4e1a522d698db3b99bcc284e9f84f82e", null ],
+    [ "compareTo", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#aced490c08ef0ccff3bb626767dd3256a", null ],
+    [ "equals", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#aa1aa883b4ca0f8bb11ead0d2e89aa67a", null ],
+    [ "expression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a2b96916b8d1fed0a88095868e0e5357a", null ],
+    [ "getPositionInModel", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#ae08144345dfcb3a58ab562218c8c1b44", null ],
+    [ "getStatement", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a02a9ef42ef83a990ecae567e0d62b82e", null ],
+    [ "hasBody", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a6bc88e414e224abce9cbb1bbfcfd19d1", null ],
+    [ "hasExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#aa8f5542fbbd5be55f28cc3a61993e99c", null ],
+    [ "hasResultType", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a5f74070cdd65d0f64a2d984b8d23c0ca", null ],
+    [ "hasStatement", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a78de63b07ed257084c3827fa1f40133f", null ],
+    [ "isCallableFromOCL", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a59f0606e3aa8fa630e947f44c07cd1ec", null ],
+    [ "isValidOverrideOf", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a38b1352f3794bba375cbf60ef29fd0df", null ],
+    [ "paramList", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a6c9d87eda5fbf3fdbc156c42ad60c11f", null ],
+    [ "paramNames", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#aa04fc851f1367fe02d9911cadacc0a20", null ],
+    [ "postConditions", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#aa8798ad483537a714296bcc64af68e99", null ],
+    [ "postConditionsRequirePreState", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a6449279b8c5cb99d750525181f733f28", null ],
+    [ "preConditions", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a940ec63c56cab1355361d75807f8db15", null ],
+    [ "processWithVisitor", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a2ffb06d3c523e81a9561343d6d149ee9", null ],
+    [ "resultType", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a05101d3e2ad7b78e470772c7822af12d", null ],
+    [ "setExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#ae4e266e7850b2d50cd3f228a44781e98", null ],
+    [ "setPositionInModel", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a305cfc5618101518f53c40a79e3f8e8e", null ],
+    [ "setStatement", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a2fb01ad4013320ea85af48340890c3d8", null ],
+    [ "setTempExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a3179f525469e0de5e2361e824fdbc79d", null ],
+    [ "signature", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_operation.html#a001e3cd28b2d95ce118f929e07da5694", null ]
+];

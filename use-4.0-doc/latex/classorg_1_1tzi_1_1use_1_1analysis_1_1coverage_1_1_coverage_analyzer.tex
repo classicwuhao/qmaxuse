@@ -1,0 +1,49 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_analyzer}{\section{org.\-tzi.\-use.\-analysis.\-coverage.\-Coverage\-Analyzer Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_analyzer}\index{org.\-tzi.\-use.\-analysis.\-coverage.\-Coverage\-Analyzer@{org.\-tzi.\-use.\-analysis.\-coverage.\-Coverage\-Analyzer}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Map$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element}{M\-Model\-Element}, \\*
+\hyperlink{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data}{Coverage\-Data} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_analyzer_ab9598f2c47e980849e0374eae1c3dc8c}{calculate\-Model\-Coverage} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model}{M\-Model} model, boolean expand\-Oprations)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides operations to analyze the model coverage of O\-Cl expressions. \begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 38 of file Coverage\-Analyzer.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_analyzer_ab9598f2c47e980849e0374eae1c3dc8c}{\index{org\-::tzi\-::use\-::analysis\-::coverage\-::\-Coverage\-Analyzer@{org\-::tzi\-::use\-::analysis\-::coverage\-::\-Coverage\-Analyzer}!calculate\-Model\-Coverage@{calculate\-Model\-Coverage}}
+\index{calculate\-Model\-Coverage@{calculate\-Model\-Coverage}!org::tzi::use::analysis::coverage::CoverageAnalyzer@{org\-::tzi\-::use\-::analysis\-::coverage\-::\-Coverage\-Analyzer}}
+\subsubsection[{calculate\-Model\-Coverage}]{\setlength{\rightskip}{0pt plus 5cm}static Map$<${\bf M\-Model\-Element}, {\bf Coverage\-Data}$>$ org.\-tzi.\-use.\-analysis.\-coverage.\-Coverage\-Analyzer.\-calculate\-Model\-Coverage (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Model}}]{model, }
+\item[{boolean}]{expand\-Oprations}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_analyzer_ab9598f2c47e980849e0374eae1c3dc8c}
+Calculates the model coverage for the complete model and for each invariant. 
+\begin{DoxyParams}{Parameters}
+{\em model} & The \hyperlink{}{M\-Model} to calculate the coverage \\
+\hline
+{\em expand\-Oprations} & If {\ttfamily true}, operation expressions will also be considered. Otherwise, only the operation itself is marked as covered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{}{Map} which contains the data for each \hyperlink{}{M\-Class\-Invariant} and \hyperlink{}{M\-Pre\-Post\-Condition} and for the complete \hyperlink{}{M\-Model}. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Coverage\-Analyzer.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/analysis/coverage/\hyperlink{_coverage_analyzer_8java}{Coverage\-Analyzer.\-java}\end{DoxyCompactItemize}

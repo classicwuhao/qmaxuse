@@ -1,0 +1,30 @@
+-*- Text -*-
+$Date: Sun, 18 Mar 2001 19:41:39 +0100 $
+$ReleaseVersion: 2.3.1 $
+
+This file documents issues related to the implementation of OCL in
+USE.
+
+* OCL semantics:
+
+  - Note that some OCL operations are non-deterministic, e.g.,
+    Set(T)->asSequence. The result of these operations are
+    implementation dependent. The equation s1->asSequence =
+    s1->asSequence will therefore be wrong in general.
+
+
+* OCL extensions/variations:
+  - Invariants can be marked as "existential", e. g.,
+    context Person existential inv bossExists:
+        self.isBoss = true
+    When no instance of a person is created or no boss exists this 
+    invariant will evaluate to false (instead of regular invariants,
+    where the expression will evaluate to true, if no person is
+    instantiated).
+
+  - Invariants can have multiple variables, e. g.,
+    context p1, p2:Person inv nameUnique:
+        p1.name = p2.name implies p1 = p2
+  
+  - The undefined value (null) can be "upcasted" by specifying a type, e.g., 
+    null(Integer). This is the shorthand notation for let i:Integer = null in i

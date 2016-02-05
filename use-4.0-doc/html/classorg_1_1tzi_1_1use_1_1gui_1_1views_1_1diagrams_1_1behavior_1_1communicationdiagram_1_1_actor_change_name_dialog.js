@@ -1,0 +1,4 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_actor_change_name_dialog =
+[
+    [ "ActorChangeNameDialog", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_actor_change_name_dialog.html#a5dc6aea264367edd387d339db66afda1", null ]
+];

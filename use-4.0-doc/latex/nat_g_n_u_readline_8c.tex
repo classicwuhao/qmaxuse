@@ -1,0 +1,88 @@
+\hypertarget{nat_g_n_u_readline_8c}{\section{src/main/org/tzi/use/util/input/nat\-G\-N\-U\-Readline.c File Reference}
+\label{nat_g_n_u_readline_8c}\index{src/main/org/tzi/use/util/input/nat\-G\-N\-U\-Readline.\-c@{src/main/org/tzi/use/util/input/nat\-G\-N\-U\-Readline.\-c}}
+}
+{\ttfamily \#include $<$jni.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$readline/readline.\-h$>$}\\*
+{\ttfamily \#include $<$readline/history.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L \hyperlink{nat_g_n_u_readline_8c_ae5882f187197420351e7a5e2693510af}{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close} (J\-N\-I\-Env $\ast$env, jobject obj)
+\item 
+J\-N\-I\-E\-X\-P\-O\-R\-T jstring J\-N\-I\-C\-A\-L\-L \hyperlink{nat_g_n_u_readline_8c_a1061efca09914613b1205ffa73a05c73}{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline} (J\-N\-I\-Env $\ast$env, jobject obj, jstring prompt)
+\item 
+J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L \hyperlink{nat_g_n_u_readline_8c_aa2fb9995b73ab30bdcd9d9cd1fdd0616}{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History} (J\-N\-I\-Env $\ast$env, jobject obj)
+\item 
+J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L \hyperlink{nat_g_n_u_readline_8c_a151122f76c074804a4141c45d5a448bd}{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History} (J\-N\-I\-Env $\ast$env, jobject obj, jstring filename)
+\item 
+J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L \hyperlink{nat_g_n_u_readline_8c_ac0efd25df9b7d1a429980993005f18d9}{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History} (J\-N\-I\-Env $\ast$env, jobject obj, jstring filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{nat_g_n_u_readline_8c_ae5882f187197420351e7a5e2693510af}{\index{nat\-G\-N\-U\-Readline.\-c@{nat\-G\-N\-U\-Readline.\-c}!Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close}}
+\index{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close}!natGNUReadline.c@{nat\-G\-N\-U\-Readline.\-c}}
+\subsubsection[{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{J\-N\-I\-Env $\ast$}]{env, }
+\item[{jobject}]{obj}
+\end{DoxyParamCaption}
+)}}\label{nat_g_n_u_readline_8c_ae5882f187197420351e7a5e2693510af}
+
+
+Definition at line 35 of file nat\-G\-N\-U\-Readline.\-c.
+
+\hypertarget{nat_g_n_u_readline_8c_a151122f76c074804a4141c45d5a448bd}{\index{nat\-G\-N\-U\-Readline.\-c@{nat\-G\-N\-U\-Readline.\-c}!Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History}}
+\index{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History}!natGNUReadline.c@{nat\-G\-N\-U\-Readline.\-c}}
+\subsubsection[{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History}]{\setlength{\rightskip}{0pt plus 5cm}J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-read\-History (
+\begin{DoxyParamCaption}
+\item[{J\-N\-I\-Env $\ast$}]{env, }
+\item[{jobject}]{obj, }
+\item[{jstring}]{filename}
+\end{DoxyParamCaption}
+)}}\label{nat_g_n_u_readline_8c_a151122f76c074804a4141c45d5a448bd}
+
+
+Definition at line 93 of file nat\-G\-N\-U\-Readline.\-c.
+
+\hypertarget{nat_g_n_u_readline_8c_a1061efca09914613b1205ffa73a05c73}{\index{nat\-G\-N\-U\-Readline.\-c@{nat\-G\-N\-U\-Readline.\-c}!Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline}}
+\index{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline}!natGNUReadline.c@{nat\-G\-N\-U\-Readline.\-c}}
+\subsubsection[{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline}]{\setlength{\rightskip}{0pt plus 5cm}J\-N\-I\-E\-X\-P\-O\-R\-T jstring J\-N\-I\-C\-A\-L\-L Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-readline (
+\begin{DoxyParamCaption}
+\item[{J\-N\-I\-Env $\ast$}]{env, }
+\item[{jobject}]{obj, }
+\item[{jstring}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{nat_g_n_u_readline_8c_a1061efca09914613b1205ffa73a05c73}
+
+
+Definition at line 50 of file nat\-G\-N\-U\-Readline.\-c.
+
+\hypertarget{nat_g_n_u_readline_8c_aa2fb9995b73ab30bdcd9d9cd1fdd0616}{\index{nat\-G\-N\-U\-Readline.\-c@{nat\-G\-N\-U\-Readline.\-c}!Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History}}
+\index{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History}!natGNUReadline.c@{nat\-G\-N\-U\-Readline.\-c}}
+\subsubsection[{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History}]{\setlength{\rightskip}{0pt plus 5cm}J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-using\-History (
+\begin{DoxyParamCaption}
+\item[{J\-N\-I\-Env $\ast$}]{env, }
+\item[{jobject}]{obj}
+\end{DoxyParamCaption}
+)}}\label{nat_g_n_u_readline_8c_aa2fb9995b73ab30bdcd9d9cd1fdd0616}
+
+
+Definition at line 81 of file nat\-G\-N\-U\-Readline.\-c.
+
+\hypertarget{nat_g_n_u_readline_8c_ac0efd25df9b7d1a429980993005f18d9}{\index{nat\-G\-N\-U\-Readline.\-c@{nat\-G\-N\-U\-Readline.\-c}!Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History}}
+\index{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History@{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History}!natGNUReadline.c@{nat\-G\-N\-U\-Readline.\-c}}
+\subsubsection[{Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History}]{\setlength{\rightskip}{0pt plus 5cm}J\-N\-I\-E\-X\-P\-O\-R\-T void J\-N\-I\-C\-A\-L\-L Java\-\_\-org\-\_\-tzi\-\_\-use\-\_\-util\-\_\-input\-\_\-\-G\-N\-U\-Readline\-\_\-write\-History (
+\begin{DoxyParamCaption}
+\item[{J\-N\-I\-Env $\ast$}]{env, }
+\item[{jobject}]{obj, }
+\item[{jstring}]{filename}
+\end{DoxyParamCaption}
+)}}\label{nat_g_n_u_readline_8c_ac0efd25df9b7d1a429980993005f18d9}
+
+
+Definition at line 114 of file nat\-G\-N\-U\-Readline.\-c.
+

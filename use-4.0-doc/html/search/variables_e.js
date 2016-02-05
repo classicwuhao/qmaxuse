@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['object',['OBJECT',['../classorg_1_1tzi_1_1use_1_1gui_1_1xmlparser_1_1_layout_tags.html#a379e9ca35e31fc181aa75deca984f338',1,'org::tzi::use::gui::xmlparser::LayoutTags']]],
+  ['offset',['offset',['../classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1edges_1_1_edge_base.html#a5bd3c72d94b67ecd02f733f36dce3821',1,'org::tzi::use::gui::views::diagrams::elements::edges::EdgeBase']]],
+  ['offset_5fleft_5fmargin_5factor_5fcenter',['OFFSET_LEFT_MARGIN_ACTOR_CENTER',['../classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_sequence_diagram.html#a8755f9a3f30dcbd41c47d5bd0b2645eb',1,'org::tzi::use::gui::views::diagrams::behavior::sequencediagram::SequenceDiagram']]],
+  ['ok',['OK',['../enumorg_1_1tzi_1_1use_1_1parser_1_1testsuite_1_1_a_s_t_test_case_1_1_test_result.html#a2ef0c3f8667fb610ed48e7955663069a',1,'org::tzi::use::parser::testsuite::ASTTestCase::TestResult']]],
+  ['one',['ONE',['../classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_multiplicity.html#a89328dac434cd2a0ea8d48a6c75f54da',1,'org::tzi::use::uml::mm::MMultiplicity']]],
+  ['one_5fmany',['ONE_MANY',['../classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_multiplicity.html#a3e0668632a54eb3646309e411c1bd4ef',1,'org::tzi::use::uml::mm::MMultiplicity']]],
+  ['open',['OPEN',['../enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1edges_1_1_directed_edge_factory_1_1_arrow_style.html#a71eedeacc618ab89e7567623973c653b',1,'org::tzi::use::gui::views::diagrams::edges::DirectedEdgeFactory::ArrowStyle']]],
+  ['operation',['operation',['../classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1commonbehavior_1_1communications_1_1_m_call_event.html#a67369d0c495bd1db0963cb8018b2e7e8',1,'org.tzi.use.uml.mm.commonbehavior.communications.MCallEvent.operation()'],['../classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic.html#a6a5f036b56e41acf7fe556d9e1c988be',1,'org.tzi.use.uml.ocl.expr.operations.OpGeneric.OPERATION()']]],
+  ['operationargs',['operationArgs',['../classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_transition_definition.html#a638ba3f2bde228863b24f52ac7b021dd',1,'org::tzi::use::parser::use::statemachines::ASTTransitionDefinition']]],
+  ['operationcoverage',['operationCoverage',['../classorg_1_1tzi_1_1use_1_1analysis_1_1coverage_1_1_coverage_data.html#a4bbfa0429081023f87fb921b33823450',1,'org::tzi::use::analysis::coverage::CoverageData']]],
+  ['operationname',['operationName',['../classorg_1_1tzi_1_1use_1_1parser_1_1use_1_1statemachines_1_1_a_s_t_transition_definition.html#a5de7973e3771ac9b678693419c425ad7',1,'org::tzi::use::parser::use::statemachines::ASTTransitionDefinition']]],
+  ['operationsrect',['operationsRect',['../classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1classdiagram_1_1_classifier_node.html#a5f0ee530b78fa45045ebda6d4cb897cb',1,'org::tzi::use::gui::views::diagrams::classdiagram::ClassifierNode']]],
+  ['opmap',['opmap',['../classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_exp_std_op.html#aa5af8e26688221115b96321a98918b4f',1,'org::tzi::use::uml::ocl::expr::ExpStdOp']]],
+  ['opr_5falphabetic',['OPR_ALPHABETIC',['../classorg_1_1tzi_1_1use_1_1gui_1_1main_1_1_model_browser_sorting.html#ac8d1d2a1d2e05a00f44b44b50c7b183d',1,'org::tzi::use::gui::main::ModelBrowserSorting']]],
+  ['opr_5fuse_5forder',['OPR_USE_ORDER',['../classorg_1_1tzi_1_1use_1_1gui_1_1main_1_1_model_browser_sorting.html#afef24285ba4c614f9eced7fc91e01cb0',1,'org::tzi::use::gui::main::ModelBrowserSorting']]],
+  ['oprorder',['oprOrder',['../classorg_1_1tzi_1_1use_1_1gui_1_1main_1_1_model_browser_sorting.html#a720b167ed811a7277888f1f025d058a9',1,'org::tzi::use::gui::main::ModelBrowserSorting']]],
+  ['outgoing',['outgoing',['../classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_vertex.html#a7646c20fade1913bed03c4b056e92b08',1,'org::tzi::use::uml::mm::statemachines::MVertex']]],
+  ['outgoingtrasitions',['outgoingTrasitions',['../classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1statemachines_1_1_m_region.html#aab3d4cbd873535285ab6cc0161cba8a5',1,'org::tzi::use::uml::mm::statemachines::MRegion']]],
+  ['owner',['owner',['../classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_statefull_position_strategy.html#ac987ea0c7e5b6ddc09cc5afb41043dfd',1,'org::tzi::use::gui::views::diagrams::elements::positioning::StatefullPositionStrategy']]]
+];

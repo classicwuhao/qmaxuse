@@ -1,0 +1,273 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl}{\section{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl}\index{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl@{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.555555cm]{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Mutable\-Integer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}{name} ()
+\item 
+abstract void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_af313089787fae298741b655b66337ab4}{process\-With\-Visitor} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_m_visitor}{M\-M\-Visitor} v)
+\item 
+Map$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4dabc4cf1e645f72f10bb07a0b853d55}{get\-All\-Annotations} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ace1ff71302c213e036e94e285a7e7e56}{is\-Annotated} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_add5d662d11c0e9e9e24a2e8e86cbdf33}{get\-Annotation} (String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}{name})
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a9e9b330dc4f81c6dff24a9aff193cf13}{get\-Annotation\-Value} (String annotation\-Name, String attribute\-Name)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3ac9627930b5459c759609810c7ea5ec}{add\-Annotation} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} annotation)
+\item 
+int \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3d0dc8ebe4ad624e07a979c3db32fce2}{hash\-Code} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a10a72c60c40f1f725e6f8a35853d08f2}{equals} (Object obj)
+\item 
+int \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a6d774f95bb85ea72a694ae2a3edcce9a}{compare\-To} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element}{M\-Model\-Element} o)
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_aa81e8ee87fff00cba70c01a67121e7e1}{to\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4eb488c31a75ceb5e148359366c09b9c}{M\-Model\-Element\-Impl} (String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}{name})
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a8c37132b20e635b78cf6dd79d624e864}{M\-Model\-Element\-Impl} (String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}{name}, String prefix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all model elements.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 38 of file M\-Model\-Element\-Impl.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4eb488c31a75ceb5e148359366c09b9c}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!M\-Model\-Element\-Impl@{M\-Model\-Element\-Impl}}
+\index{M\-Model\-Element\-Impl@{M\-Model\-Element\-Impl}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{M\-Model\-Element\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-M\-Model\-Element\-Impl (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4eb488c31a75ceb5e148359366c09b9c}
+
+
+Definition at line 63 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a8c37132b20e635b78cf6dd79d624e864}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!M\-Model\-Element\-Impl@{M\-Model\-Element\-Impl}}
+\index{M\-Model\-Element\-Impl@{M\-Model\-Element\-Impl}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{M\-Model\-Element\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-M\-Model\-Element\-Impl (
+\begin{DoxyParamCaption}
+\item[{String}]{name, }
+\item[{String}]{prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a8c37132b20e635b78cf6dd79d624e864}
+Creates a new model element with optional name. If the name is null or empty a new name starting with {\ttfamily prefix} will be generated. Note that the generated names will be unique but they may still clash with some user defined name. 
+
+Definition at line 76 of file M\-Model\-Element\-Impl.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3ac9627930b5459c759609810c7ea5ec}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!add\-Annotation@{add\-Annotation}}
+\index{add\-Annotation@{add\-Annotation}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{add\-Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-add\-Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Element\-Annotation}}]{an}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3ac9627930b5459c759609810c7ea5ec}
+Adds an annotation 
+\begin{DoxyParams}{Parameters}
+{\em an} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa12c075f592be18cc30cb92cac447880}{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}.
+
+
+
+Definition at line 132 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a6d774f95bb85ea72a694ae2a3edcce9a}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!compare\-To@{compare\-To}}
+\index{compare\-To@{compare\-To}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{compare\-To}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-compare\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Model\-Element}}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a6d774f95bb85ea72a694ae2a3edcce9a}
+Compares just the model element's name. 
+
+Definition at line 165 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a10a72c60c40f1f725e6f8a35853d08f2}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!equals@{equals}}
+\index{equals@{equals}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-equals (
+\begin{DoxyParamCaption}
+\item[{Object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a10a72c60c40f1f725e6f8a35853d08f2}
+The default method defines model elements to be equal if their names are equal. 
+
+Definition at line 147 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4dabc4cf1e645f72f10bb07a0b853d55}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!get\-All\-Annotations@{get\-All\-Annotations}}
+\index{get\-All\-Annotations@{get\-All\-Annotations}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{get\-All\-Annotations}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf M\-Element\-Annotation}$>$ org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-get\-All\-Annotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a4dabc4cf1e645f72f10bb07a0b853d55}
+All defined annotations for this model element. The key is the name of the annotation, e. g., {\ttfamily Monitor} when annotated {\ttfamily (...)}. \begin{DoxyReturn}{Returns}
+A {\ttfamily Map} that relates annotation names to their annotation information. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_ae840b759dc57fa42a22fe5e877a4dad3}{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}.
+
+
+
+Definition at line 103 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_add5d662d11c0e9e9e24a2e8e86cbdf33}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!get\-Annotation@{get\-Annotation}}
+\index{get\-Annotation@{get\-Annotation}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{get\-Annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Element\-Annotation} org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-get\-Annotation (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_add5d662d11c0e9e9e24a2e8e86cbdf33}
+Returns the \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_element_annotation}{M\-Element\-Annotation} object of this model element with the given {\ttfamily name}. If no annotation with the name was defined {\ttfamily null} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a4e879ecdfba35ae8f60d3990b1dafc1c}{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}.
+
+
+
+Definition at line 113 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a9e9b330dc4f81c6dff24a9aff193cf13}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!get\-Annotation\-Value@{get\-Annotation\-Value}}
+\index{get\-Annotation\-Value@{get\-Annotation\-Value}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{get\-Annotation\-Value}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-get\-Annotation\-Value (
+\begin{DoxyParamCaption}
+\item[{String}]{annotation\-Name, }
+\item[{String}]{attribute\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a9e9b330dc4f81c6dff24a9aff193cf13}
+Returns the value of the annotation attribute of the annotation given by {\ttfamily name} if it exists otherwise the empty string \char`\"{}\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em annotation\-Name} & \\
+\hline
+{\em attribute\-Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_aa2b3f01fae754a10dd08d1d7581d9d76}{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}.
+
+
+
+Definition at line 122 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3d0dc8ebe4ad624e07a979c3db32fce2}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!hash\-Code@{hash\-Code}}
+\index{hash\-Code@{hash\-Code}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{hash\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-hash\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_a3d0dc8ebe4ad624e07a979c3db32fce2}
+
+
+Definition at line 138 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ace1ff71302c213e036e94e285a7e7e56}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!is\-Annotated@{is\-Annotated}}
+\index{is\-Annotated@{is\-Annotated}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{is\-Annotated}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-is\-Annotated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ace1ff71302c213e036e94e285a7e7e56}
+True if the model element was defined with annotations, e. g., {\ttfamily (host=\char`\"{}localhost\char`\"{})}. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_annotatable_a43e21576242037a5fa758f7ac4c407de}{org.\-tzi.\-use.\-uml.\-mm.\-Annotatable}.
+
+
+
+Definition at line 108 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!name@{name}}
+\index{name@{name}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_ac9997b04c10d247c21c22d431d99400d}
+Returns the name of this model element. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_named_element_af39159f41090d3cacd3dd088f8a6cc42}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Named\-Element}.
+
+
+
+Definition at line 93 of file M\-Model\-Element\-Impl.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_af313089787fae298741b655b66337ab4}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!process\-With\-Visitor@{process\-With\-Visitor}}
+\index{process\-With\-Visitor@{process\-With\-Visitor}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{process\-With\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-process\-With\-Visitor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-M\-Visitor}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_af313089787fae298741b655b66337ab4}
+Process this element with visitor. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_a2ba6a0dfc8f296de43eaef406e3ee5d2}{org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element}.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_aa81e8ee87fff00cba70c01a67121e7e1}{\index{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::mm::MModelElementImpl@{org\-::tzi\-::use\-::uml\-::mm\-::\-M\-Model\-Element\-Impl}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-mm.\-M\-Model\-Element\-Impl.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model_element_impl_aa81e8ee87fff00cba70c01a67121e7e1}
+Returns the name of this model element. 
+
+Definition at line 176 of file M\-Model\-Element\-Impl.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/mm/\hyperlink{_m_model_element_impl_8java}{M\-Model\-Element\-Impl.\-java}\end{DoxyCompactItemize}

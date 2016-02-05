@@ -1,0 +1,5 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commuf54f98cd7b651f04d6ed507c9c374b00 =
+[
+    [ "CommunicationDiagramLayout", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commuf54f98cd7b651f04d6ed507c9c374b00.html#a4d06ddcbaa7e680a28848ac760529c44", null ],
+    [ "layout", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_commuf54f98cd7b651f04d6ed507c9c374b00.html#a96e4fca5fc7da75e3c8be52b055037b1", null ]
+];

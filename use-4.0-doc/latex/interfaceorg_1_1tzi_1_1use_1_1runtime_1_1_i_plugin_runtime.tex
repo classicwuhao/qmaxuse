@@ -1,0 +1,135 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime}{\section{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime}\index{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime@{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Map$<$ String, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_descriptor}{I\-Plugin\-Descriptor} $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a8a62115e23838e5749982d76c07ea085}{get\-Plugins} ()
+\item 
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1service_1_1_i_plugin_service}{I\-Plugin\-Service} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a6c2ad685aacafd26b8c15cc931cbe68c}{get\-Service} (String plugin\-Service\-Class\-Name)
+\item 
+Map$<$ String, \\*
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1service_1_1_i_plugin_service_descriptor}{I\-Plugin\-Service\-Descriptor} $>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a4706489f7f6b6c7d022e626a112ea1e0}{get\-Services} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_ae20e0a52b98316f9622a0eb78aca04e6}{register\-Plugin} (String plugin\-Filename, U\-R\-L plugin\-U\-R\-L)
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a26ff264d31b1b14e9810ce22608b9463}{register\-Services} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_descriptor}{I\-Plugin\-Descriptor} current\-Plugin\-Descriptor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface provides the Plugin Runtime's behaviour. It extends the common I\-Runtime behaviour. -\/ This interface is also needed to give Plugin startup classes access to the Plugin Framework's functionality.
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 17 of file I\-Plugin\-Runtime.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a8a62115e23838e5749982d76c07ea085}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}!get\-Plugins@{get\-Plugins}}
+\index{get\-Plugins@{get\-Plugins}!org::tzi::use::runtime::IPluginRuntime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}}
+\subsubsection[{get\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf I\-Plugin\-Descriptor}$>$ org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime.\-get\-Plugins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a8a62115e23838e5749982d76c07ea085}
+Method to get all registered Plugins
+
+\begin{DoxyReturn}{Returns}
+A Map of Plugins 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_runtime_a759f96ecdb756610643c1ccfd95cf16f}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin\-Runtime}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a6c2ad685aacafd26b8c15cc931cbe68c}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}!get\-Service@{get\-Service}}
+\index{get\-Service@{get\-Service}!org::tzi::use::runtime::IPluginRuntime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}}
+\subsubsection[{get\-Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Plugin\-Service} org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime.\-get\-Service (
+\begin{DoxyParamCaption}
+\item[{String}]{plugin\-Service\-Class\-Name}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a6c2ad685aacafd26b8c15cc931cbe68c}
+Method to get a registered plugin Service by it's name
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Service\-Class\-Name} & The Service's name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Plugin Service 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_runtime_a0df4e14950daee558758c7a9a948f24b}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin\-Runtime}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a4706489f7f6b6c7d022e626a112ea1e0}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}!get\-Services@{get\-Services}}
+\index{get\-Services@{get\-Services}!org::tzi::use::runtime::IPluginRuntime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}}
+\subsubsection[{get\-Services}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf I\-Plugin\-Service\-Descriptor}$>$ org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime.\-get\-Services (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a4706489f7f6b6c7d022e626a112ea1e0}
+Method to get all registered Plugin Services
+
+\begin{DoxyReturn}{Returns}
+A Map of registered Plugin Services 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_runtime_acfa30113dbb9ff681d36fb8d6d493662}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin\-Runtime}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_ae20e0a52b98316f9622a0eb78aca04e6}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}!register\-Plugin@{register\-Plugin}}
+\index{register\-Plugin@{register\-Plugin}!org::tzi::use::runtime::IPluginRuntime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}}
+\subsubsection[{register\-Plugin}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime.\-register\-Plugin (
+\begin{DoxyParamCaption}
+\item[{String}]{plugin\-Filename, }
+\item[{U\-R\-L}]{plugin\-U\-R\-L}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_ae20e0a52b98316f9622a0eb78aca04e6}
+Method to register a Plugin by the given filename in the location path
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Filename} & the Plugin's filename \\
+\hline
+{\em plugin\-U\-R\-L} & the Plugin's location path as U\-R\-L \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_runtime_aabd2731bfd68939db56a4cd72c934ee9}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin\-Runtime}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a26ff264d31b1b14e9810ce22608b9463}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}!register\-Services@{register\-Services}}
+\index{register\-Services@{register\-Services}!org::tzi::use::runtime::IPluginRuntime@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Runtime}}
+\subsubsection[{register\-Services}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Runtime.\-register\-Services (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Plugin\-Descriptor}}]{current\-Plugin\-Descriptor}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime_a26ff264d31b1b14e9810ce22608b9463}
+Method to register all Services by Plugin\-Descriptor provided by a Plugin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Plugin\-Descriptor} & The Plugin\-Descriptor \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_runtime_af89264de1cc99d06ff1ef8a6c1abe755}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin\-Runtime}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/runtime/org/tzi/use/runtime/\hyperlink{_i_plugin_runtime_8java}{I\-Plugin\-Runtime.\-java}\end{DoxyCompactItemize}

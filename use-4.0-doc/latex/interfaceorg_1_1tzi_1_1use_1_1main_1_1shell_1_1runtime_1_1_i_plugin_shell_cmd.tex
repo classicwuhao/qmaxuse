@@ -1,0 +1,160 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd}{\section{org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd}\index{org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd@{org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad9f9b072c07d28f02c70127579571b69}{execute\-Cmd} (String cmd, String cmd\-Arguments, String\mbox{[}$\,$\mbox{]} arg\-List)
+\item 
+String \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_abd06aa821677bf6f1a7ad40b91be86a4}{get\-Cmd} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session}{Session} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a21945bfc57dbfa8f4937c8e1b710feea}{get\-Session} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a97d9bf4e525cae13c2410dc4b7d63c54}{get\-Shell} ()
+\item 
+String \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad1c05ba0af86cf17a9cc5f35ff038c36}{get\-Cmd\-Arguments} ()
+\item 
+String\mbox{[}$\,$\mbox{]} \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a8fb5007cf4ba4b2e04ddec03c8076993}{get\-Cmd\-Argument\-List} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command Proxies -\/ this interface should only be used internally
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 12 of file I\-Plugin\-Shell\-Cmd.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad9f9b072c07d28f02c70127579571b69}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!execute\-Cmd@{execute\-Cmd}}
+\index{execute\-Cmd@{execute\-Cmd}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{execute\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-execute\-Cmd (
+\begin{DoxyParamCaption}
+\item[{String}]{cmd, }
+\item[{String}]{cmd\-Arguments, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{arg\-List}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad9f9b072c07d28f02c70127579571b69}
+Method to execute a \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command with it's given arguments
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's name \\
+\hline
+{\em cmd\-Arguments} & The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's arguments \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_ae1c634c5c6e8e261a5dcf2fd7351f868}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_abd06aa821677bf6f1a7ad40b91be86a4}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!get\-Cmd@{get\-Cmd}}
+\index{get\-Cmd@{get\-Cmd}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{get\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-get\-Cmd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_abd06aa821677bf6f1a7ad40b91be86a4}
+Method to get the \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's name
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's name 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_a50d6ebc70eec64544e7dbe6b2683fcb1}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a8fb5007cf4ba4b2e04ddec03c8076993}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!get\-Cmd\-Argument\-List@{get\-Cmd\-Argument\-List}}
+\index{get\-Cmd\-Argument\-List@{get\-Cmd\-Argument\-List}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{get\-Cmd\-Argument\-List}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]} org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-get\-Cmd\-Argument\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a8fb5007cf4ba4b2e04ddec03c8076993}
+Method to get the \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's arguments as a split 
+\begin{DoxyCode}
+String array 
+\end{DoxyCode}
+ . The splitting handles single quoted, double quoted and arguments without quotes.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's arguments 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad1c05ba0af86cf17a9cc5f35ff038c36}{get\-Cmd\-Arguments()} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_a8b537c8644bccbe06575c9dfb05e39a9}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad1c05ba0af86cf17a9cc5f35ff038c36}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!get\-Cmd\-Arguments@{get\-Cmd\-Arguments}}
+\index{get\-Cmd\-Arguments@{get\-Cmd\-Arguments}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{get\-Cmd\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-get\-Cmd\-Arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_ad1c05ba0af86cf17a9cc5f35ff038c36}
+Method to get the \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's arguments as a plain
+\begin{DoxyCode}
+String 
+\end{DoxyCode}
+ .
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Command's arguments 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a8fb5007cf4ba4b2e04ddec03c8076993}{get\-Cmd\-Argument\-List()} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_a9841acba9950695df295d1be1b222948}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a21945bfc57dbfa8f4937c8e1b710feea}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!get\-Session@{get\-Session}}
+\index{get\-Session@{get\-Session}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{get\-Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Session} org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-get\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a21945bfc57dbfa8f4937c8e1b710feea}
+Method to get the \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session}{Session} Object
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session}{Session} object 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_a25e8eb450601753ed1f95b0ae3fc63b7}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a97d9bf4e525cae13c2410dc4b7d63c54}{\index{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}!get\-Shell@{get\-Shell}}
+\index{get\-Shell@{get\-Shell}!org::tzi::use::main::shell::runtime::IPluginShellCmd@{org\-::tzi\-::use\-::main\-::shell\-::runtime\-::\-I\-Plugin\-Shell\-Cmd}}
+\subsubsection[{get\-Shell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shell} org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Cmd.\-get\-Shell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_cmd_a97d9bf4e525cae13c2410dc4b7d63c54}
+Method to get the \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} Object
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} object 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_plugin_shell_cmd_a0341785e8bc05b61fa2f3522c008f084}{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Plugin\-Shell\-Cmd}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/main/shell/runtime/\hyperlink{_i_plugin_shell_cmd_8java}{I\-Plugin\-Shell\-Cmd.\-java}\end{DoxyCompactItemize}

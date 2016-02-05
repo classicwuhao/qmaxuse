@@ -1,0 +1,71 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin}{\section{org.\-tzi.\-use.\-runtime.\-I\-Plugin Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin}\index{org.\-tzi.\-use.\-runtime.\-I\-Plugin@{org.\-tzi.\-use.\-runtime.\-I\-Plugin}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-runtime.\-I\-Plugin\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_af374896f5eadf942155f9e91ccb49f15}{get\-Name} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_a9bd5bbe75819b47469608a6fec4dc269}{run} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_runtime}{I\-Plugin\-Runtime} plugin\-Runtime)  throws Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface provides the basic startup class behaviour for the Plugin's startup classes. -\/ This interface should be implemented by a Plugin class if the Plugin needs startup behaviour.
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 12 of file I\-Plugin.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_af374896f5eadf942155f9e91ccb49f15}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!org::tzi::use::runtime::IPlugin@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-runtime.\-I\-Plugin.\-get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_af374896f5eadf942155f9e91ccb49f15}
+Method to get the Plugin's name
+
+\begin{DoxyReturn}{Returns}
+The Plugin's name 
+\end{DoxyReturn}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_a9bd5bbe75819b47469608a6fec4dc269}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin}!run@{run}}
+\index{run@{run}!org::tzi::use::runtime::IPlugin@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-runtime.\-I\-Plugin.\-run (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Plugin\-Runtime}}]{plugin\-Runtime}
+\end{DoxyParamCaption}
+) throws Exception}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_a9bd5bbe75819b47469608a6fec4dc269}
+Method to execute the startup Class of the Plugin in the actual Plugin Runtime Environment.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Runtime} & The Plugin Runtime object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Throws errors if the Plugin's startup call fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1impl_1_1_plugin_a03fa8f2d7213ac7a7f62ba60adf90d62}{org.\-tzi.\-use.\-runtime.\-impl.\-Plugin}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/runtime/org/tzi/use/runtime/\hyperlink{_i_plugin_8java}{I\-Plugin.\-java}\end{DoxyCompactItemize}

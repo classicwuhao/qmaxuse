@@ -1,0 +1,2 @@
+t1a.use:5:5: Redefinition of `A'.
+t1a.use:3:5: `A' previously declared here.

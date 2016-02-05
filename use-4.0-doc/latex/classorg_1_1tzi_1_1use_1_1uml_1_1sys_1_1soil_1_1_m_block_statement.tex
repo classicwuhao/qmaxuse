@@ -1,0 +1,157 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement}{\section{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement}\index{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement@{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ae08994b343b17a837eafe6802467ce6c}{M\-Block\-Statement} (List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_var_decl}{Var\-Decl} $>$ var\-Decls, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} body)
+\item 
+List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_var_decl}{Var\-Decl} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_afe604d7c719097be350d165e4a0acbec}{get\-Variable\-Declarations} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_aff250b4495e7637222288e31cedbfc06}{get\-Body} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ad2a6253297bdee9737f4413a77004f17}{execute} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context}{Soil\-Evaluation\-Context} context, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_statement_evaluation_result}{Statement\-Evaluation\-Result} result)  throws Evaluation\-Failed\-Exception 
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a83afdf479b4b46dd9a39e506361235e5}{to\-String} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a052cdd9790a5b688c2117898f2babb8e}{process\-With\-Visitor} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement_visitor}{M\-Statement\-Visitor} v)  throws Exception 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a9de3b943c5d0411724a4cc71b77491e6}{shell\-Command} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a0f81a7c37f3078b836d59021c4cf55a8}{to\-Concrete\-Syntax} (String\-Builder indent, String indent\-Increase, String\-Builder target)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Statement for a block (a local scope of variables). \begin{DoxyAuthor}{Author}
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file M\-Block\-Statement.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ae08994b343b17a837eafe6802467ce6c}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!M\-Block\-Statement@{M\-Block\-Statement}}
+\index{M\-Block\-Statement@{M\-Block\-Statement}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{M\-Block\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-M\-Block\-Statement (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Var\-Decl} $>$}]{var\-Decls, }
+\item[{{\bf M\-Statement}}]{body}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ae08994b343b17a837eafe6802467ce6c}
+Constructs a new block statement. 
+\begin{DoxyParams}{Parameters}
+{\em var\-Decls} & The declared variables inside this block. \\
+\hline
+{\em body} & The body of the block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file M\-Block\-Statement.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ad2a6253297bdee9737f4413a77004f17}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!execute@{execute}}
+\index{execute@{execute}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Soil\-Evaluation\-Context}}]{context, }
+\item[{{\bf Statement\-Evaluation\-Result}}]{result}
+\end{DoxyParamCaption}
+) throws {\bf Evaluation\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_ad2a6253297bdee9737f4413a77004f17}
+
+
+Definition at line 71 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_aff250b4495e7637222288e31cedbfc06}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!get\-Body@{get\-Body}}
+\index{get\-Body@{get\-Body}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{get\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Statement} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-get\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_aff250b4495e7637222288e31cedbfc06}
+\begin{DoxyReturn}{Returns}
+the f\-Body 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_afe604d7c719097be350d165e4a0acbec}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!get\-Variable\-Declarations@{get\-Variable\-Declarations}}
+\index{get\-Variable\-Declarations@{get\-Variable\-Declarations}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{get\-Variable\-Declarations}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Var\-Decl}$>$ org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-get\-Variable\-Declarations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_afe604d7c719097be350d165e4a0acbec}
+\begin{DoxyReturn}{Returns}
+the f\-Variable\-Declarations 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a052cdd9790a5b688c2117898f2babb8e}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!process\-With\-Visitor@{process\-With\-Visitor}}
+\index{process\-With\-Visitor@{process\-With\-Visitor}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{process\-With\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-process\-With\-Visitor (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Statement\-Visitor}}]{v}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a052cdd9790a5b688c2117898f2babb8e}
+
+
+Definition at line 137 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a9de3b943c5d0411724a4cc71b77491e6}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!shell\-Command@{shell\-Command}}
+\index{shell\-Command@{shell\-Command}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-shell\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a9de3b943c5d0411724a4cc71b77491e6}
+
+
+Definition at line 84 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a0f81a7c37f3078b836d59021c4cf55a8}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!to\-Concrete\-Syntax@{to\-Concrete\-Syntax}}
+\index{to\-Concrete\-Syntax@{to\-Concrete\-Syntax}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{to\-Concrete\-Syntax}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-to\-Concrete\-Syntax (
+\begin{DoxyParamCaption}
+\item[{String\-Builder}]{indent, }
+\item[{String}]{indent\-Increase, }
+\item[{String\-Builder}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a0f81a7c37f3078b836d59021c4cf55a8}
+
+
+Definition at line 107 of file M\-Block\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a83afdf479b4b46dd9a39e506361235e5}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::uml::sys::soil::MBlockStatement@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-M\-Block\-Statement}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-sys.\-soil.\-M\-Block\-Statement.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_block_statement_a83afdf479b4b46dd9a39e506361235e5}
+
+
+Definition at line 132 of file M\-Block\-Statement.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/soil/\hyperlink{_m_block_statement_8java}{M\-Block\-Statement.\-java}\end{DoxyCompactItemize}

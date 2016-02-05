@@ -1,0 +1,153 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler}{\section{org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler}\index{org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler@{org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a0a9882b33afeb33b9c756adfaf7b40b7}{compile\-Shell\-Command} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model}{M\-Model} model, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} state, \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_variable_environment}{Variable\-Environment} variable\-Environment, String input, String input\-Name, Print\-Writer error\-Output, boolean verbose)
+\item 
+static \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_statement}{M\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a37fa766c6743181fbe8ecb9bb132cbf3}{compile\-Shell\-Command} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_model}{M\-Model} model, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} state, \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_variable_environment}{Variable\-Environment} variable\-Environment, Input\-Stream input, String input\-Name, Print\-Writer error\-Output, boolean verbose)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_statement}{A\-S\-T\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a297fc2c71eb3d67e4719d263c824d841}{construct\-A\-S\-T} (Input\-Stream input, String input\-Name, Print\-Writer error\-Output, boolean verbose)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Compiler for shell commands, which are handled by soil. \begin{DoxyAuthor}{Author}
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 50 of file Shell\-Command\-Compiler.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a0a9882b33afeb33b9c756adfaf7b40b7}{\index{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}!compile\-Shell\-Command@{compile\-Shell\-Command}}
+\index{compile\-Shell\-Command@{compile\-Shell\-Command}!org::tzi::use::parser::shell::ShellCommandCompiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}}
+\subsubsection[{compile\-Shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\-Statement} org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler.\-compile\-Shell\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Model}}]{model, }
+\item[{{\bf M\-System\-State}}]{state, }
+\item[{{\bf Variable\-Environment}}]{variable\-Environment, }
+\item[{String}]{input, }
+\item[{String}]{input\-Name, }
+\item[{Print\-Writer}]{error\-Output, }
+\item[{boolean}]{verbose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a0a9882b33afeb33b9c756adfaf7b40b7}
+Builds an \hyperlink{}{abstract syntax tree} which in turn generates an evaluable \hyperlink{}{soil statement}. 
+
+All checked exceptions that could happen during this process are handled. If the input was not a valid soil statement 
+\begin{DoxyCode}
+null 
+\end{DoxyCode}
+ is returned.
+
+Encapsulates the string {\ttfamily input} as an input stream and delegates to \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a37fa766c6743181fbe8ecb9bb132cbf3}{Shell\-Command\-Compiler\#compile\-Shell\-Command(\-M\-Model, M\-System\-State, Variable\-Environment, Input\-Stream, String, Print\-Writer, boolean)} 
+\begin{DoxyParams}{Parameters}
+{\em model} & the model \\
+\hline
+{\em state} & the system state \\
+\hline
+{\em variable\-Environment} & holds the existing variables \\
+\hline
+{\em input} & the input source \\
+\hline
+{\em input\-Name} & the name of the source \\
+\hline
+{\em error\-Output} & target for error messages \\
+\hline
+{\em verbose} & if true, additional information is produced in case of errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the input was a valid soil statement, an evaluable soil statement, null else 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Shell\-Command\-Compiler.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a37fa766c6743181fbe8ecb9bb132cbf3}{\index{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}!compile\-Shell\-Command@{compile\-Shell\-Command}}
+\index{compile\-Shell\-Command@{compile\-Shell\-Command}!org::tzi::use::parser::shell::ShellCommandCompiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}}
+\subsubsection[{compile\-Shell\-Command}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\-Statement} org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler.\-compile\-Shell\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Model}}]{model, }
+\item[{{\bf M\-System\-State}}]{state, }
+\item[{{\bf Variable\-Environment}}]{variable\-Environment, }
+\item[{Input\-Stream}]{input, }
+\item[{String}]{input\-Name, }
+\item[{Print\-Writer}]{error\-Output, }
+\item[{boolean}]{verbose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a37fa766c6743181fbe8ecb9bb132cbf3}
+Builds an \hyperlink{}{abstract syntax tree} which in turn generates an evaluable \hyperlink{}{soil statement}. 
+
+All checked exceptions that could happen during this process are handled. If the input was not a valid soil statement 
+\begin{DoxyCode}
+null 
+\end{DoxyCode}
+ is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model \\
+\hline
+{\em state} & the system state \\
+\hline
+{\em variable\-Environment} & holds the existing variables \\
+\hline
+{\em input} & the input source \\
+\hline
+{\em input\-Name} & the name of the source \\
+\hline
+{\em error\-Output} & target for error messages \\
+\hline
+{\em verbose} & if true, additional information is produced in case of errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the input was a valid soil statement, an evaluable soil statement, null else 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Shell\-Command\-Compiler.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a297fc2c71eb3d67e4719d263c824d841}{\index{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}!construct\-A\-S\-T@{construct\-A\-S\-T}}
+\index{construct\-A\-S\-T@{construct\-A\-S\-T}!org::tzi::use::parser::shell::ShellCommandCompiler@{org\-::tzi\-::use\-::parser\-::shell\-::\-Shell\-Command\-Compiler}}
+\subsubsection[{construct\-A\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-S\-T\-Statement} org.\-tzi.\-use.\-parser.\-shell.\-Shell\-Command\-Compiler.\-construct\-A\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Input\-Stream}]{input, }
+\item[{String}]{input\-Name, }
+\item[{Print\-Writer}]{error\-Output, }
+\item[{boolean}]{verbose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1shell_1_1_shell_command_compiler_a297fc2c71eb3d67e4719d263c824d841}
+Constructs an \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_a_s_t}{A\-S\-T} for a shell command represented as a soil statement from {\ttfamily input}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The shell input \\
+\hline
+{\em input\-Name} & Name of the in stream for error reporting. \\
+\hline
+{\em error\-Output} & Writer to log errors to. \\
+\hline
+{\em verbose} & If {\ttfamily true} additional information is written to {\ttfamily error\-Output}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Shell\-Command\-Compiler.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/parser/shell/\hyperlink{_shell_command_compiler_8java}{Shell\-Command\-Compiler.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,182 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection}{\section{org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection}\index{org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection@{org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Action\-Selected\-Association\-Path\-View}
+\item 
+class {\bfseries Action\-Selected\-Class\-Path\-View}
+\item 
+class {\bfseries Action\-Selection\-Class\-View}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af3b55e18233e2369047be2116f1db992}{Class\-Selection} (\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1classdiagram_1_1_class_diagram}{Class\-Diagram} diagram)
+\item 
+Action\-Selection\-Class\-View \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a983116718786198599bfa6fc4dd6ddde}{get\-Selection\-Class\-View} (String text)
+\item 
+Action\-Selected\-Association\-Path\-View \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a309b303f9ac283e39bd0b813582dc48c}{get\-Selected\-Association\-Path\-View} (String text, Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ sc, Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_association}{M\-Association} $>$ selected\-Associations)
+\item 
+Action\-Selected\-Class\-Path\-View \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ac7f77a175a134ddb59547a3f894ebd5d}{get\-Selected\-Class\-Path\-View} (String text, Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ sc)
+\item 
+Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a158f58b05cf2a50c5ddef6ea6373b081}{get\-All\-Kind\-Classes} (Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ selected\-Classes)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ad4a2cb65d41697edc4481be753812919}{class\-Has\-Displayed\-Objects} (Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ classes)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_aecd312dfd601038237f2ae26776d1cd1}{class\-Has\-Hidden\-Objects} (Set$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class}{M\-Class} $>$ classes)
+\item 
+J\-Menu \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a8670b3737442381088657b3fc3079501}{get\-Sub\-Menu\-Hide\-Class} ()
+\item 
+J\-Menu \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a1874919fc7b2c5e27092f044dc3132b8}{get\-Sub\-Menu\-Show\-Class} ()
+\item 
+J\-Menu \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af02c57d86224667ca0cca14e66606005}{get\-Sub\-Menu\-Show\-Association} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection}{Class\-Selection} is responsible for the new functions \char`\"{}\-Show\char`\"{}, \char`\"{}\-Crop\char`\"{} and \char`\"{}\-Hide\char`\"{} in the class diagram.
+
+\begin{DoxyAuthor}{Author}
+Jun Zhang 
+
+Jie Xu 
+\end{DoxyAuthor}
+
+
+Definition at line 43 of file Class\-Selection.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af3b55e18233e2369047be2116f1db992}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!Class\-Selection@{Class\-Selection}}
+\index{Class\-Selection@{Class\-Selection}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{Class\-Selection}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-Class\-Selection (
+\begin{DoxyParamCaption}
+\item[{{\bf Class\-Diagram}}]{diagram}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af3b55e18233e2369047be2116f1db992}
+Constructor for \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection}{Class\-Selection}. 
+
+Definition at line 50 of file Class\-Selection.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ad4a2cb65d41697edc4481be753812919}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!class\-Has\-Displayed\-Objects@{class\-Has\-Displayed\-Objects}}
+\index{class\-Has\-Displayed\-Objects@{class\-Has\-Displayed\-Objects}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{class\-Has\-Displayed\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-class\-Has\-Displayed\-Objects (
+\begin{DoxyParamCaption}
+\item[{Set$<$ {\bf M\-Class} $>$}]{classes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ad4a2cb65d41697edc4481be753812919}
+Returns true, if at least one object of a class given by the set classes is displayed in any object diagram 
+
+Definition at line 158 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_aecd312dfd601038237f2ae26776d1cd1}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!class\-Has\-Hidden\-Objects@{class\-Has\-Hidden\-Objects}}
+\index{class\-Has\-Hidden\-Objects@{class\-Has\-Hidden\-Objects}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{class\-Has\-Hidden\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-class\-Has\-Hidden\-Objects (
+\begin{DoxyParamCaption}
+\item[{Set$<$ {\bf M\-Class} $>$}]{classes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_aecd312dfd601038237f2ae26776d1cd1}
+Returns true, if at least one object of a class given by the set classes is hidden in any object diagram 
+
+Definition at line 189 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a158f58b05cf2a50c5ddef6ea6373b081}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-All\-Kind\-Classes@{get\-All\-Kind\-Classes}}
+\index{get\-All\-Kind\-Classes@{get\-All\-Kind\-Classes}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-All\-Kind\-Classes}]{\setlength{\rightskip}{0pt plus 5cm}Set$<${\bf M\-Class}$>$ org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-All\-Kind\-Classes (
+\begin{DoxyParamCaption}
+\item[{Set$<$ {\bf M\-Class} $>$}]{selected\-Classes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a158f58b05cf2a50c5ddef6ea6373b081}
+Method get\-All\-Kind\-Classes gives all classes, which contain it as well as all subclasses. 
+
+Definition at line 142 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a309b303f9ac283e39bd0b813582dc48c}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Selected\-Association\-Path\-View@{get\-Selected\-Association\-Path\-View}}
+\index{get\-Selected\-Association\-Path\-View@{get\-Selected\-Association\-Path\-View}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Selected\-Association\-Path\-View}]{\setlength{\rightskip}{0pt plus 5cm}Action\-Selected\-Association\-Path\-View org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Selected\-Association\-Path\-View (
+\begin{DoxyParamCaption}
+\item[{String}]{text, }
+\item[{Set$<$ {\bf M\-Class} $>$}]{sc, }
+\item[{Set$<$ {\bf M\-Association} $>$}]{selected\-Associations}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a309b303f9ac283e39bd0b813582dc48c}
+
+
+Definition at line 108 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ac7f77a175a134ddb59547a3f894ebd5d}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Selected\-Class\-Path\-View@{get\-Selected\-Class\-Path\-View}}
+\index{get\-Selected\-Class\-Path\-View@{get\-Selected\-Class\-Path\-View}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Selected\-Class\-Path\-View}]{\setlength{\rightskip}{0pt plus 5cm}Action\-Selected\-Class\-Path\-View org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Selected\-Class\-Path\-View (
+\begin{DoxyParamCaption}
+\item[{String}]{text, }
+\item[{Set$<$ {\bf M\-Class} $>$}]{sc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_ac7f77a175a134ddb59547a3f894ebd5d}
+
+
+Definition at line 135 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a983116718786198599bfa6fc4dd6ddde}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Selection\-Class\-View@{get\-Selection\-Class\-View}}
+\index{get\-Selection\-Class\-View@{get\-Selection\-Class\-View}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Selection\-Class\-View}]{\setlength{\rightskip}{0pt plus 5cm}Action\-Selection\-Class\-View org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Selection\-Class\-View (
+\begin{DoxyParamCaption}
+\item[{String}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a983116718786198599bfa6fc4dd6ddde}
+
+
+Definition at line 78 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a8670b3737442381088657b3fc3079501}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Sub\-Menu\-Hide\-Class@{get\-Sub\-Menu\-Hide\-Class}}
+\index{get\-Sub\-Menu\-Hide\-Class@{get\-Sub\-Menu\-Hide\-Class}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Sub\-Menu\-Hide\-Class}]{\setlength{\rightskip}{0pt plus 5cm}J\-Menu org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Sub\-Menu\-Hide\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a8670b3737442381088657b3fc3079501}
+Method get\-Sub\-Menu\-Hide\-Class supplies a list of the sorted classes in the context menu. which are not hidden. \begin{DoxyReturn}{Returns}
+J\-Menu 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af02c57d86224667ca0cca14e66606005}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Sub\-Menu\-Show\-Association@{get\-Sub\-Menu\-Show\-Association}}
+\index{get\-Sub\-Menu\-Show\-Association@{get\-Sub\-Menu\-Show\-Association}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Sub\-Menu\-Show\-Association}]{\setlength{\rightskip}{0pt plus 5cm}J\-Menu org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Sub\-Menu\-Show\-Association (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_af02c57d86224667ca0cca14e66606005}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 310 of file Class\-Selection.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a1874919fc7b2c5e27092f044dc3132b8}{\index{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}!get\-Sub\-Menu\-Show\-Class@{get\-Sub\-Menu\-Show\-Class}}
+\index{get\-Sub\-Menu\-Show\-Class@{get\-Sub\-Menu\-Show\-Class}!org::tzi::use::gui::views::selection::classselection::ClassSelection@{org\-::tzi\-::use\-::gui\-::views\-::selection\-::classselection\-::\-Class\-Selection}}
+\subsubsection[{get\-Sub\-Menu\-Show\-Class}]{\setlength{\rightskip}{0pt plus 5cm}J\-Menu org.\-tzi.\-use.\-gui.\-views.\-selection.\-classselection.\-Class\-Selection.\-get\-Sub\-Menu\-Show\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1selection_1_1classselection_1_1_class_selection_a1874919fc7b2c5e27092f044dc3132b8}
+This creates a J\-Menu with a sub menu for each currently hidden class to show it. \begin{DoxyReturn}{Returns}
+J\-Menu 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file Class\-Selection.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/gui/org/tzi/use/gui/views/selection/classselection/\hyperlink{_class_selection_8java}{Class\-Selection.\-java}\end{DoxyCompactItemize}

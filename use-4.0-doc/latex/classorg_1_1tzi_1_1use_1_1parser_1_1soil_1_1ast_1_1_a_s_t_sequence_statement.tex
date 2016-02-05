@@ -1,0 +1,174 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement}{\section{org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement}\index{org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement@{org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ae4ed9ce91a46c6968409cbe0cd9dec54}{A\-S\-T\-Sequence\-Statement} (Token start)
+\item 
+int \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a8e92057aa05ae9cdb3baff8ebf50371f}{get\-Num\-Statements} ()
+\item 
+List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_statement}{A\-S\-T\-Statement} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a0b3f7756dbaa15a7ff86f939095e72a0}{get\-Statements} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a568b2154447b3186831e06cdbeb028c2}{add\-Statement} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_statement}{A\-S\-T\-Statement} statement)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_statement}{A\-S\-T\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_aa942750d5b51032789ece6c741a6d909}{simplify} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a9e56da2830086c9b1fe0a9dbc28d110f}{flatten} ()
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ade7c68f8f5420ae181e24cd30a65985c}{to\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_m_sequence_statement}{M\-Sequence\-Statement} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a1b7049609ee399098d2f621774456a8a}{generate\-Statement} ()  throws Compilation\-Failed\-Exception 
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_afe31576623bf38b62c06dbeb4db0c5a3}{print\-Tree} (String\-Builder prelude, Print\-Writer target)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T-\/node representing a sequence of commands. \begin{DoxyAuthor}{Author}
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 43 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ae4ed9ce91a46c6968409cbe0cd9dec54}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!A\-S\-T\-Sequence\-Statement@{A\-S\-T\-Sequence\-Statement}}
+\index{A\-S\-T\-Sequence\-Statement@{A\-S\-T\-Sequence\-Statement}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{A\-S\-T\-Sequence\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-A\-S\-T\-Sequence\-Statement (
+\begin{DoxyParamCaption}
+\item[{Token}]{start}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ae4ed9ce91a46c6968409cbe0cd9dec54}
+Constructs a new A\-S\-T-\/node. 
+
+Definition at line 51 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a568b2154447b3186831e06cdbeb028c2}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!add\-Statement@{add\-Statement}}
+\index{add\-Statement@{add\-Statement}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{add\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-add\-Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-S\-T\-Statement}}]{statement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a568b2154447b3186831e06cdbeb028c2}
+Adds a new statement \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_a_s_t}{A\-S\-T} to the sequence. 
+\begin{DoxyParams}{Parameters}
+{\em statement} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a9e56da2830086c9b1fe0a9dbc28d110f}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!flatten@{flatten}}
+\index{flatten@{flatten}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{flatten}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-flatten (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a9e56da2830086c9b1fe0a9dbc28d110f}
+
+
+Definition at line 221 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a1b7049609ee399098d2f621774456a8a}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!generate\-Statement@{generate\-Statement}}
+\index{generate\-Statement@{generate\-Statement}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{generate\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-Sequence\-Statement} org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-generate\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf Compilation\-Failed\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a1b7049609ee399098d2f621774456a8a}
+
+
+Definition at line 84 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a8e92057aa05ae9cdb3baff8ebf50371f}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!get\-Num\-Statements@{get\-Num\-Statements}}
+\index{get\-Num\-Statements@{get\-Num\-Statements}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{get\-Num\-Statements}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-get\-Num\-Statements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a8e92057aa05ae9cdb3baff8ebf50371f}
+The number of statements in this sequence. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a0b3f7756dbaa15a7ff86f939095e72a0}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!get\-Statements@{get\-Statements}}
+\index{get\-Statements@{get\-Statements}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{get\-Statements}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf A\-S\-T\-Statement}$>$ org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-get\-Statements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_a0b3f7756dbaa15a7ff86f939095e72a0}
+Access to the sequence of statements. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 69 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_afe31576623bf38b62c06dbeb4db0c5a3}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!print\-Tree@{print\-Tree}}
+\index{print\-Tree@{print\-Tree}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{print\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-print\-Tree (
+\begin{DoxyParamCaption}
+\item[{String\-Builder}]{prelude, }
+\item[{Print\-Writer}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_afe31576623bf38b62c06dbeb4db0c5a3}
+
+
+Definition at line 171 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_aa942750d5b51032789ece6c741a6d909}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!simplify@{simplify}}
+\index{simplify@{simplify}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{simplify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-S\-T\-Statement} org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-simplify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_aa942750d5b51032789ece6c741a6d909}
+Simplifies the sequence statements by returning, 
+\begin{DoxyItemize}
+\item an empty statement if this sequence is empty, 
+\item the contained statement if {\ttfamily size() == 1} or  
+\item {\ttfamily this} if the sequence contains more than one statement. 
+\end{DoxyItemize}\begin{DoxyReturn}{Returns}
+A simplified statement or {\ttfamily this}. 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ade7c68f8f5420ae181e24cd30a65985c}{\index{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::tzi::use::parser::soil::ast::ASTSequenceStatement@{org\-::tzi\-::use\-::parser\-::soil\-::ast\-::\-A\-S\-T\-Sequence\-Statement}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-parser.\-soil.\-ast.\-A\-S\-T\-Sequence\-Statement.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1soil_1_1ast_1_1_a_s_t_sequence_statement_ade7c68f8f5420ae181e24cd30a65985c}
+
+
+Definition at line 246 of file A\-S\-T\-Sequence\-Statement.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/parser/soil/ast/\hyperlink{_a_s_t_sequence_statement_8java}{A\-S\-T\-Sequence\-Statement.\-java}\end{DoxyCompactItemize}

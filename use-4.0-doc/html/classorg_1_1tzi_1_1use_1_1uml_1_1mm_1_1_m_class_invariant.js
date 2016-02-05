@@ -1,0 +1,27 @@
+var classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant =
+[
+    [ "bodyExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#abf6f90a15535c1edcc5fb3a53c56623d", null ],
+    [ "cls", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#af0fbe95b13303de5d68865acb0c9694f", null ],
+    [ "compareTo", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a9fe635bb815a0c7766fad37debf402e5", null ],
+    [ "equals", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#ac250bca316df8ef4c44627c0559e4d38", null ],
+    [ "expandedExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a7b3d85eee64d723bd6115720e27c305a", null ],
+    [ "flaggedExpression", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a1876cfb18a5786370c0a1bd94e711d41", null ],
+    [ "getExpressionForSatisfyingInstances", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#ae88ee457f90ff6bc6194ffc66e9dae12", null ],
+    [ "getExpressionForViolatingInstances", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a0ab393f33bf0594ccd2ac0c8f053da27", null ],
+    [ "getPositionInModel", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a667c16649b69d03c67d5c088eeb4af83", null ],
+    [ "hasVar", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a8ed4eaf49d4ff3a68955830e2d71e7d5", null ],
+    [ "isActive", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a9367bf1d958b1802cc3c4596fd547b74", null ],
+    [ "isCheckedByBarrier", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a33e8cd4e797a8c7a1c43028661dc38a4", null ],
+    [ "isExistential", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a37e9ef6f4372076e0cd5a55bc32e173b", null ],
+    [ "isLoaded", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#aa6222605ae8ae2445dbf595195d75cd5", null ],
+    [ "isNegated", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a8d3e803f38fd9df1909512b6233e22a5", null ],
+    [ "processWithVisitor", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a32c908c001dfb3ddb1fe655075702dbc", null ],
+    [ "qualifiedName", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#ac5ce60d079e02e93c4e489a965d4f2ad", null ],
+    [ "setActive", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a6545ffaa1a5b6d5d6109db60a520088a", null ],
+    [ "setCheckedByBarrier", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a9c54908eddd23901466c190613dfd222", null ],
+    [ "setNegated", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#ab48032170a88a4c9e8a4d839a2ac3619", null ],
+    [ "setPositionInModel", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a4a2c16931a7e2f89c5288946fd3d69cd", null ],
+    [ "toString", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#aab7d69e1082d279ea143e6b1ded7c0d2", null ],
+    [ "var", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a99f4524370031282aafca1c07729fbee", null ],
+    [ "vars", "classorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_class_invariant.html#a237476cd0583baa4557763087f6557c5", null ]
+];

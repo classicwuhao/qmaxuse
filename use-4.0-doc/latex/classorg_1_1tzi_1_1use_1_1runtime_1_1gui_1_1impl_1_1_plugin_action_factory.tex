@@ -1,0 +1,77 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory}{\section{org.\-tzi.\-use.\-runtime.\-gui.\-impl.\-Plugin\-Action\-Factory Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory}\index{org.\-tzi.\-use.\-runtime.\-gui.\-impl.\-Plugin\-Action\-Factory@{org.\-tzi.\-use.\-runtime.\-gui.\-impl.\-Plugin\-Action\-Factory}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Map$<$ Map$<$ String, String $>$\\*
+, \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_proxy}{Plugin\-Action\-Proxy} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a4a7788c9f60e6b9a525766b11bdbe04f}{create\-Plugin\-Actions} (Vector$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1_i_plugin_action_descriptor}{I\-Plugin\-Action\-Descriptor} $>$ actions, \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session}{Session} session, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1main_1_1_main_window}{Main\-Window} main\-Window)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory}{Plugin\-Action\-Factory} \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a42a83445d26fadbafa87ec3213c927a3}{get\-Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the Plugin Action Proxy Factory to create Plugin Action Proxies.
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 19 of file Plugin\-Action\-Factory.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a4a7788c9f60e6b9a525766b11bdbe04f}{\index{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory@{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory}!create\-Plugin\-Actions@{create\-Plugin\-Actions}}
+\index{create\-Plugin\-Actions@{create\-Plugin\-Actions}!org::tzi::use::runtime::gui::impl::PluginActionFactory@{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory}}
+\subsubsection[{create\-Plugin\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$Map$<$String, String$>$, {\bf Plugin\-Action\-Proxy}$>$ org.\-tzi.\-use.\-runtime.\-gui.\-impl.\-Plugin\-Action\-Factory.\-create\-Plugin\-Actions (
+\begin{DoxyParamCaption}
+\item[{Vector$<$ {\bf I\-Plugin\-Action\-Descriptor} $>$}]{actions, }
+\item[{{\bf Session}}]{session, }
+\item[{{\bf Main\-Window}}]{main\-Window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a4a7788c9f60e6b9a525766b11bdbe04f}
+Method to create the Plugin Action Proxies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em actions} & The Plugin Action Descriptors \\
+\hline
+{\em session} & The application's Session object \\
+\hline
+{\em main\-Window} & The application's Main\-Window object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Map of Plugin Action Proxies 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Plugin\-Action\-Factory.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a42a83445d26fadbafa87ec3213c927a3}{\index{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory@{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!org::tzi::use::runtime::gui::impl::PluginActionFactory@{org\-::tzi\-::use\-::runtime\-::gui\-::impl\-::\-Plugin\-Action\-Factory}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Plugin\-Action\-Factory} org.\-tzi.\-use.\-runtime.\-gui.\-impl.\-Plugin\-Action\-Factory.\-get\-Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory_a42a83445d26fadbafa87ec3213c927a3}
+Method returning the Singleton instance of the \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory}{Plugin\-Action\-Factory}
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1gui_1_1impl_1_1_plugin_action_factory}{Plugin\-Action\-Factory} instance 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Plugin\-Action\-Factory.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/runtime/org/tzi/use/runtime/gui/impl/\hyperlink{_plugin_action_factory_8java}{Plugin\-Action\-Factory.\-java}\end{DoxyCompactItemize}

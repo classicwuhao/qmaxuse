@@ -1,0 +1,101 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation}{\section{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation}\index{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation@{org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a3f78df358e1268d6c3bd8ddb2edee7d4}{Insert\-Activation} (int start, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_lifeline}{Lifeline} owner, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1events_1_1_link_inserted_event}{Link\-Inserted\-Event} event, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_activation}{Activation} src, int y\-Value, \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_sequence_diagram}{Sequence\-Diagram} sequence\-Diagram)
+\item 
+int \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a2ca4941602023e021bd9c1bf17bf4ca2}{calculate\-End} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a219cbc636d48306819eed8f615eead5c}{f\-Nestings}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An special kind of \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_activation}{Activation} for an insert command. This is necessery because an insert command contains several objects which have to be notified.
+
+\begin{DoxyAuthor}{Author}
+Antje Werner 
+\end{DoxyAuthor}
+
+
+Definition at line 35 of file Insert\-Activation.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a3f78df358e1268d6c3bd8ddb2edee7d4}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}!Insert\-Activation@{Insert\-Activation}}
+\index{Insert\-Activation@{Insert\-Activation}!org::tzi::use::gui::views::diagrams::behavior::sequencediagram::InsertActivation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}}
+\subsubsection[{Insert\-Activation}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation.\-Insert\-Activation (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{{\bf Lifeline}}]{owner, }
+\item[{{\bf Link\-Inserted\-Event}}]{event, }
+\item[{{\bf Activation}}]{src, }
+\item[{int}]{y\-Value, }
+\item[{{\bf Sequence\-Diagram}}]{sequence\-Diagram}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a3f78df358e1268d6c3bd8ddb2edee7d4}
+Constructs a new \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation}{Insert\-Activation} by Calling the Construcor of the super-\/class \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_activation}{Activation} and initialising nesting with the correct values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & the position on the time axis on which the activation message is positioned \\
+\hline
+{\em owner} & the lifeline which is receiver of the activation message \\
+\hline
+{\em cmd} & the command which should be represented \\
+\hline
+{\em src} & the source-\/activation from which the command f\-Cmd has given \\
+\hline
+{\em y\-Value} & the y-\/value on which the activation message should be drawn \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Insert\-Activation.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a2ca4941602023e021bd9c1bf17bf4ca2}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}!calculate\-End@{calculate\-End}}
+\index{calculate\-End@{calculate\-End}!org::tzi::use::gui::views::diagrams::behavior::sequencediagram::InsertActivation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}}
+\subsubsection[{calculate\-End}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation.\-calculate\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a2ca4941602023e021bd9c1bf17bf4ca2}
+Calculates the y-\/value for the answer message of this \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_activation}{Activation} depending on the properties which are set in the f\-Properties object of the \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_sequence_diagram}{Sequence\-Diagram}. Contrary to the same method in \hyperlink{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_activation}{Activation} the messages to the object-\/lifelines musst also be regarded.
+
+\begin{DoxyReturn}{Returns}
+the y-\/position for the answer message 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file Insert\-Activation.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a219cbc636d48306819eed8f615eead5c}{\index{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}!f\-Nestings@{f\-Nestings}}
+\index{f\-Nestings@{f\-Nestings}!org::tzi::use::gui::views::diagrams::behavior::sequencediagram::InsertActivation@{org\-::tzi\-::use\-::gui\-::views\-::diagrams\-::behavior\-::sequencediagram\-::\-Insert\-Activation}}
+\subsubsection[{f\-Nestings}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} org.\-tzi.\-use.\-gui.\-views.\-diagrams.\-behavior.\-sequencediagram.\-Insert\-Activation.\-f\-Nestings\hspace{0.3cm}{\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_insert_activation_a219cbc636d48306819eed8f615eead5c}
+The nestings of the involved objects at the time of giving the command. 
+
+Definition at line 39 of file Insert\-Activation.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/gui/org/tzi/use/gui/views/diagrams/behavior/sequencediagram/\hyperlink{_insert_activation_8java}{Insert\-Activation.\-java}\end{DoxyCompactItemize}

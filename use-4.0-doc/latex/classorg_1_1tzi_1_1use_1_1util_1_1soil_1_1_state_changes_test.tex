@@ -1,0 +1,173 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test}{\section{org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test}\index{org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test@{org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_ab4ac32f1ab078dce0068f887bd79cb88}{set\-Up} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a65bb9b9094c9d999887040c33c98ea46}{test\-Clear\-Is\-Empty} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_abd4bb3193c1a21de5e2ad53a3031df96}{test\-Add\-Object} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a1b1ecfee9bcde1e53c03f003c0320d21}{test\-Add\-Link} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a0f579f0944cf94aa4a8eac7e2ce7b027}{test\-Add\-Link\-Object} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test cases for various methods of
+\begin{DoxyCode}
+StateChanges 
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{Author}
+Daniel Gent 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_difference}{State\-Difference} 
+\end{DoxySeeAlso}
+
+
+Definition at line 50 of file State\-Changes\-Test.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_ab4ac32f1ab078dce0068f887bd79cb88}{\index{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}!set\-Up@{set\-Up}}
+\index{set\-Up@{set\-Up}!org::tzi::use::util::soil::StateChangesTest@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}}
+\subsubsection[{set\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test.\-set\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_ab4ac32f1ab078dce0068f887bd79cb88}
+builds the fixture consisting of the
+\begin{DoxyCode}
+StateChanges 
+\end{DoxyCode}
+ object
+\begin{DoxyItemize}
+\item the objects to insert 
+\end{DoxyItemize}
+
+Definition at line 67 of file State\-Changes\-Test.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a1b1ecfee9bcde1e53c03f003c0320d21}{\index{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}!test\-Add\-Link@{test\-Add\-Link}}
+\index{test\-Add\-Link@{test\-Add\-Link}!org::tzi::use::util::soil::StateChangesTest@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}}
+\subsubsection[{test\-Add\-Link}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test.\-test\-Add\-Link (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a1b1ecfee9bcde1e53c03f003c0320d21}
+tests add\-New\-Link, add\-Deleted\-Link with a non-\/link-\/object link 
+
+
+\begin{DoxyItemize}
+\item after invoking one of the methods, the link is either in the set of new links or deleted links or in neither of those sets, but not in both\par
+
+\item adding a new link which was previously deleted leads to that link being in neither the set of new links nor the set of deleted links\par
+
+\item the same holds true for adding a deleted link which was previously new\par
+ 
+\end{DoxyItemize}
+
+Definition at line 201 of file State\-Changes\-Test.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a0f579f0944cf94aa4a8eac7e2ce7b027}{\index{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}!test\-Add\-Link\-Object@{test\-Add\-Link\-Object}}
+\index{test\-Add\-Link\-Object@{test\-Add\-Link\-Object}!org::tzi::use::util::soil::StateChangesTest@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}}
+\subsubsection[{test\-Add\-Link\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test.\-test\-Add\-Link\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a0f579f0944cf94aa4a8eac7e2ce7b027}
+tests add\-New(\-Link)(Object), add\-Deleted(\-Link)(Object) 
+
+
+\begin{DoxyItemize}
+\item invoking any of the
+\begin{DoxyCode}
+addNew... 
+\end{DoxyCode}
+ or
+\begin{DoxyCode}
+addDeleted... 
+\end{DoxyCode}
+ methods with a link object results in the link object being treated as an object and a link, i.\-E. it doesn't matter which version is used\par
+ 
+\end{DoxyItemize}
+
+Definition at line 233 of file State\-Changes\-Test.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_abd4bb3193c1a21de5e2ad53a3031df96}{\index{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}!test\-Add\-Object@{test\-Add\-Object}}
+\index{test\-Add\-Object@{test\-Add\-Object}!org::tzi::use::util::soil::StateChangesTest@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}}
+\subsubsection[{test\-Add\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test.\-test\-Add\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_abd4bb3193c1a21de5e2ad53a3031df96}
+tests add\-New\-Object, add\-Modified\-Object, add\-Deleted\-Object with a non-\/link-\/object object 
+
+
+\begin{DoxyItemize}
+\item after invoking any one method, the supplied object is either in exactly one or in none of the new-\/, modified-\/ or deleted sets\par
+
+\item two consecutive invocations of different
+\begin{DoxyCode}
+add...Object 
+\end{DoxyCode}
+ methods with the same object lead to certain outcomes\par
+ 
+\end{DoxyItemize}
+
+Definition at line 134 of file State\-Changes\-Test.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a65bb9b9094c9d999887040c33c98ea46}{\index{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}!test\-Clear\-Is\-Empty@{test\-Clear\-Is\-Empty}}
+\index{test\-Clear\-Is\-Empty@{test\-Clear\-Is\-Empty}!org::tzi::use::util::soil::StateChangesTest@{org\-::tzi\-::use\-::util\-::soil\-::\-State\-Changes\-Test}}
+\subsubsection[{test\-Clear\-Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-soil.\-State\-Changes\-Test.\-test\-Clear\-Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_changes_test_a65bb9b9094c9d999887040c33c98ea46}
+tests clear, is\-Empty 
+
+
+\begin{DoxyItemize}
+\item initially the object is empty\par
+
+\item invoking any
+\begin{DoxyCode}
+add 
+\end{DoxyCode}
+ method on an empty
+\begin{DoxyCode}
+StateChanges 
+\end{DoxyCode}
+ results in it being not empty anymore\par
+
+\item invoking
+\begin{DoxyCode}
+clear 
+\end{DoxyCode}
+ results in the
+\begin{DoxyCode}
+StateChanges 
+\end{DoxyCode}
+ being empty\par
+ 
+\end{DoxyItemize}
+
+Definition at line 99 of file State\-Changes\-Test.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/test/org/tzi/use/util/soil/\hyperlink{_state_changes_test_8java}{State\-Changes\-Test.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,206 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{\section{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}\index{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic@{org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.744548cm]{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a3e9ec221ff4b50fd7db10f79ec844107}{name} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a11e3a4dc9436300fcd0f4286b381e36f}{is\-Boolean\-Operation} ()
+\item 
+abstract int \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a13e911031cc8b2d960bd9053594a8c7c}{kind} ()
+\item 
+abstract boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ad93cdbd9972ee740f5ba9331a9ad4c1b}{is\-Infix\-Or\-Prefix} ()
+\item 
+abstract \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_type}{Type} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a9328e9b29678aa3a495023a4e30983ff}{matches} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_type}{Type} params\mbox{[}$\,$\mbox{]})
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ae473058d817dd0c6b0a940d7d6a14cbc}{check\-Warning\-Unrelated\-Types} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} args\mbox{[}$\,$\mbox{]})
+\item 
+abstract \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a76a9959ecbc69c69e05f4745ced50649}{eval} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_eval_context}{Eval\-Context} ctx, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1value_1_1_value}{Value} args\mbox{[}$\,$\mbox{]}, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_type}{Type} result\-Type)
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_aa6c77fb4ca8ba5a2361a96c7f1ea96bf}{string\-Rep} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} args\mbox{[}$\,$\mbox{]}, String at\-Pre)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a2f61875e8516f003f126466efa545a67}{register\-Operations} (Multimap$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} $>$ opmap)
+\item 
+static void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a5f9d657fe9f7c8e8268e067dd95c4af9}{register\-Operation} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} op, Multimap$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} $>$ opmap)
+\item 
+static void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ada73c6888d370f9c93f5899fbcaaa2a9}{register\-Operation} (String \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a3e9ec221ff4b50fd7db10f79ec844107}{name}, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} op, Multimap$<$ String, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} $>$ opmap)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a6a5f036b56e41acf7fe556d9e1c988be}{O\-P\-E\-R\-A\-T\-I\-O\-N} = 0
+\item 
+static final int \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a7a2ddd700331b8b06dc5482b7d288716}{S\-P\-E\-C\-I\-A\-L} = 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic} is the base class of a large group of individual operations. Each operation is implemented by its own class deriving from \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic}{Op\-Generic}. New Operations can easily be added by writing a new operation class and adding a single instance of the new class to the static list of operations in Class Exp\-Operation (see below). Also, this way the new operation symbol is immediately available to the specification compiler.
+
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 24 of file Op\-Generic.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ae473058d817dd0c6b0a940d7d6a14cbc}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!check\-Warning\-Unrelated\-Types@{check\-Warning\-Unrelated\-Types}}
+\index{check\-Warning\-Unrelated\-Types@{check\-Warning\-Unrelated\-Types}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{check\-Warning\-Unrelated\-Types}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-check\-Warning\-Unrelated\-Types (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression}}]{args\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ae473058d817dd0c6b0a940d7d6a14cbc}
+
+
+Definition at line 50 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a76a9959ecbc69c69e05f4745ced50649}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!eval@{eval}}
+\index{eval@{eval}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{eval}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Value} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-eval (
+\begin{DoxyParamCaption}
+\item[{{\bf Eval\-Context}}]{ctx, }
+\item[{{\bf Value}}]{args\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Type}}]{result\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a76a9959ecbc69c69e05f4745ced50649}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a11e3a4dc9436300fcd0f4286b381e36f}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!is\-Boolean\-Operation@{is\-Boolean\-Operation}}
+\index{is\-Boolean\-Operation@{is\-Boolean\-Operation}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{is\-Boolean\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-is\-Boolean\-Operation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a11e3a4dc9436300fcd0f4286b381e36f}
+
+
+Definition at line 40 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ad93cdbd9972ee740f5ba9331a9ad4c1b}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!is\-Infix\-Or\-Prefix@{is\-Infix\-Or\-Prefix}}
+\index{is\-Infix\-Or\-Prefix@{is\-Infix\-Or\-Prefix}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{is\-Infix\-Or\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}abstract boolean org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-is\-Infix\-Or\-Prefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ad93cdbd9972ee740f5ba9331a9ad4c1b}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a13e911031cc8b2d960bd9053594a8c7c}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!kind@{kind}}
+\index{kind@{kind}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}abstract int org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-kind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a13e911031cc8b2d960bd9053594a8c7c}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a9328e9b29678aa3a495023a4e30983ff}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!matches@{matches}}
+\index{matches@{matches}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{matches}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Type} org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-matches (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{params\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a9328e9b29678aa3a495023a4e30983ff}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a3e9ec221ff4b50fd7db10f79ec844107}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!name@{name}}
+\index{name@{name}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}abstract String org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a3e9ec221ff4b50fd7db10f79ec844107}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a5f9d657fe9f7c8e8268e067dd95c4af9}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!register\-Operation@{register\-Operation}}
+\index{register\-Operation@{register\-Operation}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{register\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}static void org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-register\-Operation (
+\begin{DoxyParamCaption}
+\item[{{\bf Op\-Generic}}]{op, }
+\item[{Multimap$<$ String, {\bf Op\-Generic} $>$}]{opmap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a5f9d657fe9f7c8e8268e067dd95c4af9}
+Puts an operation into the given Multi\-Map 
+\begin{DoxyParams}{Parameters}
+{\em op} & The operation to register \\
+\hline
+{\em opmap} & The multi map holding the operations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ada73c6888d370f9c93f5899fbcaaa2a9}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!register\-Operation@{register\-Operation}}
+\index{register\-Operation@{register\-Operation}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{register\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}static void org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-register\-Operation (
+\begin{DoxyParamCaption}
+\item[{String}]{name, }
+\item[{{\bf Op\-Generic}}]{op, }
+\item[{Multimap$<$ String, {\bf Op\-Generic} $>$}]{opmap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_ada73c6888d370f9c93f5899fbcaaa2a9}
+Puts an operation into the given Multi\-Map under the given name 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name under which the operation is referred to \\
+\hline
+{\em op} & The operation to register \\
+\hline
+{\em opmap} & The multi map holding the operations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a2f61875e8516f003f126466efa545a67}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!register\-Operations@{register\-Operations}}
+\index{register\-Operations@{register\-Operations}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{register\-Operations}]{\setlength{\rightskip}{0pt plus 5cm}static void org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-register\-Operations (
+\begin{DoxyParamCaption}
+\item[{Multimap$<$ String, {\bf Op\-Generic} $>$}]{opmap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a2f61875e8516f003f126466efa545a67}
+
+
+Definition at line 80 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_aa6c77fb4ca8ba5a2361a96c7f1ea96bf}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!string\-Rep@{string\-Rep}}
+\index{string\-Rep@{string\-Rep}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{string\-Rep}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-string\-Rep (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression}}]{args\mbox{[}$\,$\mbox{]}, }
+\item[{String}]{at\-Pre}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_aa6c77fb4ca8ba5a2361a96c7f1ea96bf}
+
+
+Definition at line 54 of file Op\-Generic.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a6a5f036b56e41acf7fe556d9e1c988be}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!O\-P\-E\-R\-A\-T\-I\-O\-N@{O\-P\-E\-R\-A\-T\-I\-O\-N}}
+\index{O\-P\-E\-R\-A\-T\-I\-O\-N@{O\-P\-E\-R\-A\-T\-I\-O\-N}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{O\-P\-E\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}final int org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-O\-P\-E\-R\-A\-T\-I\-O\-N = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a6a5f036b56e41acf7fe556d9e1c988be}
+
+
+Definition at line 34 of file Op\-Generic.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a7a2ddd700331b8b06dc5482b7d288716}{\index{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}!S\-P\-E\-C\-I\-A\-L@{S\-P\-E\-C\-I\-A\-L}}
+\index{S\-P\-E\-C\-I\-A\-L@{S\-P\-E\-C\-I\-A\-L}!org::tzi::use::uml::ocl::expr::operations::OpGeneric@{org\-::tzi\-::use\-::uml\-::ocl\-::expr\-::operations\-::\-Op\-Generic}}
+\subsubsection[{S\-P\-E\-C\-I\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}final int org.\-tzi.\-use.\-uml.\-ocl.\-expr.\-operations.\-Op\-Generic.\-S\-P\-E\-C\-I\-A\-L = 3\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1operations_1_1_op_generic_a7a2ddd700331b8b06dc5482b7d288716}
+
+
+Definition at line 36 of file Op\-Generic.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/ocl/expr/operations/\hyperlink{_op_generic_8java}{Op\-Generic.\-java}\end{DoxyCompactItemize}

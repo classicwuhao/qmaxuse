@@ -1,0 +1,231 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context}{\section{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context}\index{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context@{org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_ae63652d1a11ffce84ae9fc9e2def5fe3}{Soil\-Evaluation\-Context} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} system)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system}{M\-System} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_acceeda45a502b3d7b2cd9a1d2049fffe}{get\-System} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_m_system_state}{M\-System\-State} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_afb5502df19cb1c1999091bc0ea9e81c9}{get\-State} ()
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_variable_environment}{Variable\-Environment} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4e4489f99b81cae644a602015d52daf0}{get\-Var\-Env} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a43b742a539c18d5fac2a5624ffed5bdd}{is\-Undo} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aabe4a1e9ed062844d32c8b03617c80b5}{set\-Is\-Undo} (boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a43b742a539c18d5fac2a5624ffed5bdd}{is\-Undo})
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a59dc582118f6195ce909ba7e4127f7e2}{is\-Redo} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a34c61878dec976c7cff16acd8ced102e}{set\-Is\-Redo} (boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a59dc582118f6195ce909ba7e4127f7e2}{is\-Redo})
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aad0923d79d07d9b58fd1722d04141c1d}{enter\-Expression} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} expression)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a535fcabd6098ec31d4367f587dce7293}{exit\-Expression} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4ebc91643441ddce5c0980c5d583261f}{is\-In\-Expression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This context objects comprises everything that is required to execute statements.
+
+\begin{DoxyAuthor}{Author}
+Fabian Buettner 
+
+Daniel Gent 
+\end{DoxyAuthor}
+
+
+Definition at line 40 of file Soil\-Evaluation\-Context.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_ae63652d1a11ffce84ae9fc9e2def5fe3}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!Soil\-Evaluation\-Context@{Soil\-Evaluation\-Context}}
+\index{Soil\-Evaluation\-Context@{Soil\-Evaluation\-Context}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{Soil\-Evaluation\-Context}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-Soil\-Evaluation\-Context (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-System}}]{system}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_ae63652d1a11ffce84ae9fc9e2def5fe3}
+Constructs a new evaluation context for the given system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & The system of the context. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file Soil\-Evaluation\-Context.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aad0923d79d07d9b58fd1722d04141c1d}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!enter\-Expression@{enter\-Expression}}
+\index{enter\-Expression@{enter\-Expression}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{enter\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-enter\-Expression (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression}}]{expression}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aad0923d79d07d9b58fd1722d04141c1d}
+Pushes {\ttfamily expression} to the expression stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expression} & The expression to enter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a535fcabd6098ec31d4367f587dce7293}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!exit\-Expression@{exit\-Expression}}
+\index{exit\-Expression@{exit\-Expression}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{exit\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-exit\-Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a535fcabd6098ec31d4367f587dce7293}
+Pops the last entered expression from the expression stack.
+
+\begin{DoxyReturn}{Returns}
+The last entered expression. 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_afb5502df19cb1c1999091bc0ea9e81c9}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!get\-State@{get\-State}}
+\index{get\-State@{get\-State}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-System\-State} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-get\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_afb5502df19cb1c1999091bc0ea9e81c9}
+The system state the statement is evaluated on.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_acceeda45a502b3d7b2cd9a1d2049fffe}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!get\-System@{get\-System}}
+\index{get\-System@{get\-System}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{get\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-System} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-get\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_acceeda45a502b3d7b2cd9a1d2049fffe}
+The system the statement is evaluated on. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4e4489f99b81cae644a602015d52daf0}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!get\-Var\-Env@{get\-Var\-Env}}
+\index{get\-Var\-Env@{get\-Var\-Env}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{get\-Var\-Env}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Variable\-Environment} org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-get\-Var\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4e4489f99b81cae644a602015d52daf0}
+The variable environment of the system.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4ebc91643441ddce5c0980c5d583261f}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!is\-In\-Expression@{is\-In\-Expression}}
+\index{is\-In\-Expression@{is\-In\-Expression}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{is\-In\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-is\-In\-Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a4ebc91643441ddce5c0980c5d583261f}
+{\ttfamily true}, if an expression was entered before but not exited.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a59dc582118f6195ce909ba7e4127f7e2}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!is\-Redo@{is\-Redo}}
+\index{is\-Redo@{is\-Redo}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{is\-Redo}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-is\-Redo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a59dc582118f6195ce909ba7e4127f7e2}
+{\ttfamily true}, if the current context is a redo of a previously undone statement.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a43b742a539c18d5fac2a5624ffed5bdd}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!is\-Undo@{is\-Undo}}
+\index{is\-Undo@{is\-Undo}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{is\-Undo}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-is\-Undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a43b742a539c18d5fac2a5624ffed5bdd}
+{\ttfamily true}, if the current context is an undo of a previously executed statement.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 91 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a34c61878dec976c7cff16acd8ced102e}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!set\-Is\-Redo@{set\-Is\-Redo}}
+\index{set\-Is\-Redo@{set\-Is\-Redo}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{set\-Is\-Redo}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-set\-Is\-Redo (
+\begin{DoxyParamCaption}
+\item[{boolean}]{is\-Redo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_a34c61878dec976c7cff16acd8ced102e}
+Sets this context to a redo context. 
+\begin{DoxyParams}{Parameters}
+{\em is\-Redo} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file Soil\-Evaluation\-Context.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aabe4a1e9ed062844d32c8b03617c80b5}{\index{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}!set\-Is\-Undo@{set\-Is\-Undo}}
+\index{set\-Is\-Undo@{set\-Is\-Undo}!org::tzi::use::uml::sys::soil::SoilEvaluationContext@{org\-::tzi\-::use\-::uml\-::sys\-::soil\-::\-Soil\-Evaluation\-Context}}
+\subsubsection[{set\-Is\-Undo}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-soil.\-Soil\-Evaluation\-Context.\-set\-Is\-Undo (
+\begin{DoxyParamCaption}
+\item[{boolean}]{is\-Undo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1soil_1_1_soil_evaluation_context_aabe4a1e9ed062844d32c8b03617c80b5}
+Sets this context to an undo context. 
+\begin{DoxyParams}{Parameters}
+{\em is\-Undo} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file Soil\-Evaluation\-Context.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/soil/\hyperlink{_soil_evaluation_context_8java}{Soil\-Evaluation\-Context.\-java}\end{DoxyCompactItemize}

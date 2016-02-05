@@ -1,0 +1,319 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}{\section{org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}\index{org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression@{org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f8542500c4836f68a3bc2c737ea9515}{get\-String\-Rep} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9a81b7753c3171ada2030e3cca31c36d}{set\-String\-Rep} (String string\-Rep)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_acc7bab8748113d4465fb2c896cd043d3}{set\-Is\-Pre} ()
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a11eeddd378e947e6062319db7ff2b71c}{is\-Pre} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9f37c6dd0c525848dcb8e34c2ce63054}{set\-Start\-Token} (Token pos)
+\item 
+Token \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9e30d89695891d64ea309856134781e3}{get\-Start\-Token} ()
+\item 
+abstract \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a2867c2dce65ba7cc2b12f9fbe0f02f64}{gen} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx)  throws Semantic\-Exception
+\item 
+abstract void \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a741c9ab827921dbd69ed4846a403b76a}{get\-Free\-Variables} (Set$<$ String $>$ free\-Vars)
+\item 
+Set$<$ String $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a202e8a0eee4f9937506667b4d437e424}{get\-Free\-Variables} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a43a0639a0a606fca5c895196dd772a76}{gen\-Std\-Operation} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx, Token token, String opname, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression}\mbox{[}$\,$\mbox{]} args)  throws Semantic\-Exception     
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_af46c729f5cbe38b9a7063ff17597b721}{gen\-Std\-Operation} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx, Token token, String opname, \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}{A\-S\-T\-Expression}\mbox{[}$\,$\mbox{]} args)  throws Semantic\-Exception     
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a59e8f1202e6ca76054c958a549ee592f}{gen\-Std\-Operation} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx, Token token, String opname, List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}{A\-S\-T\-Expression} $>$ args)  throws Semantic\-Exception     
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_ac8002592796f9e5e027cdecef70a0a92}{gen\-Navigation} (Token rolename\-Token, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_classifier}{M\-Classifier} src\-Class, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} src\-Expr, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_navigable_element}{M\-Navigable\-Element} dst)  throws Semantic\-Exception 
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a5e3582962a43fee2189dfe0d2f273a87}{gen\-Navigation} (\hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_context}{Context} ctx, Token rolename\-Token, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_classifier}{M\-Classifier} src\-Class, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} src\-Expr, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_navigable_element}{M\-Navigable\-Element} dst, List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}{A\-S\-T\-Expression} $>$ explicit\-Rolename\-Or\-Qualifiers, List$<$ \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression}{A\-S\-T\-Expression} $>$ qualifiers)  throws Semantic\-Exception     
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f3c442d210a6c074e7ed092c4751e34}{navigation\-Needs\-Explicit\-Rolename} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_classifier}{M\-Classifier} src\-Class, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1mm_1_1_m_navigable_element}{M\-Navigable\-Element} dst)
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a1ff5aaffb83109fc813a116b90a3976c}{gen\-Implicit\-Collect} (\hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} src\-Expr, \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1expr_1_1_expression}{Expression} expr, \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1ocl_1_1type_1_1_type}{Type} elem\-Type)  throws Semantic\-Exception      
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a36641e96f36f61b0c658002ba01b3aaa}{M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Node of the abstract syntax tree constructed by the parser.
+
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 53 of file A\-S\-T\-Expression.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a2867c2dce65ba7cc2b12f9fbe0f02f64}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen@{gen}}
+\index{gen@{gen}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a2867c2dce65ba7cc2b12f9fbe0f02f64}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a1ff5aaffb83109fc813a116b90a3976c}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Implicit\-Collect@{gen\-Implicit\-Collect}}
+\index{gen\-Implicit\-Collect@{gen\-Implicit\-Collect}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Implicit\-Collect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Implicit\-Collect (
+\begin{DoxyParamCaption}
+\item[{{\bf Expression}}]{src\-Expr, }
+\item[{{\bf Expression}}]{expr, }
+\item[{{\bf Type}}]{elem\-Type}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a1ff5aaffb83109fc813a116b90a3976c}
+Transforms an expression {\ttfamily \$e.\-foo} into an expression {\ttfamily c-\/$>$collect(\$e $\vert$ \$e.\-foo)} or {\ttfamily c-\/$>$collect\-Nested(\$e $\vert$ \$e.\-foo)-\/$>$flatten} if the result of the collect is a nested collection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\-Expr} & the source collection \\
+\hline
+{\em expr} & the argument expression for collect \\
+\hline
+{\em elem\-Type} & type of elements of the source collection \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1_semantic_exception}{Semantic\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 311 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_ac8002592796f9e5e027cdecef70a0a92}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Navigation@{gen\-Navigation}}
+\index{gen\-Navigation@{gen\-Navigation}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Navigation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Navigation (
+\begin{DoxyParamCaption}
+\item[{Token}]{rolename\-Token, }
+\item[{{\bf M\-Classifier}}]{src\-Class, }
+\item[{{\bf Expression}}]{src\-Expr, }
+\item[{{\bf M\-Navigable\-Element}}]{dst}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_ac8002592796f9e5e027cdecef70a0a92}
+
+
+Definition at line 166 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a5e3582962a43fee2189dfe0d2f273a87}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Navigation@{gen\-Navigation}}
+\index{gen\-Navigation@{gen\-Navigation}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Navigation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Navigation (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx, }
+\item[{Token}]{rolename\-Token, }
+\item[{{\bf M\-Classifier}}]{src\-Class, }
+\item[{{\bf Expression}}]{src\-Expr, }
+\item[{{\bf M\-Navigable\-Element}}]{dst, }
+\item[{List$<$ {\bf A\-S\-T\-Expression} $>$}]{explicit\-Rolename\-Or\-Qualifiers, }
+\item[{List$<$ {\bf A\-S\-T\-Expression} $>$}]{qualifiers}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a5e3582962a43fee2189dfe0d2f273a87}
+
+
+Definition at line 174 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a43a0639a0a606fca5c895196dd772a76}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Std\-Operation@{gen\-Std\-Operation}}
+\index{gen\-Std\-Operation@{gen\-Std\-Operation}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Std\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Std\-Operation (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx, }
+\item[{Token}]{token, }
+\item[{String}]{opname, }
+\item[{{\bf Expression}\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a43a0639a0a606fca5c895196dd772a76}
+Generates a predefined standard operation expression. 
+
+Definition at line 121 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_af46c729f5cbe38b9a7063ff17597b721}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Std\-Operation@{gen\-Std\-Operation}}
+\index{gen\-Std\-Operation@{gen\-Std\-Operation}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Std\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Std\-Operation (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx, }
+\item[{Token}]{token, }
+\item[{String}]{opname, }
+\item[{{\bf A\-S\-T\-Expression}\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_af46c729f5cbe38b9a7063ff17597b721}
+Generates a predefined standard operation expression. 
+
+Definition at line 140 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a59e8f1202e6ca76054c958a549ee592f}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!gen\-Std\-Operation@{gen\-Std\-Operation}}
+\index{gen\-Std\-Operation@{gen\-Std\-Operation}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{gen\-Std\-Operation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression} org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-gen\-Std\-Operation (
+\begin{DoxyParamCaption}
+\item[{{\bf Context}}]{ctx, }
+\item[{Token}]{token, }
+\item[{String}]{opname, }
+\item[{List$<$ {\bf A\-S\-T\-Expression} $>$}]{args}
+\end{DoxyParamCaption}
+) throws {\bf Semantic\-Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a59e8f1202e6ca76054c958a549ee592f}
+
+
+Definition at line 154 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a741c9ab827921dbd69ed4846a403b76a}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!get\-Free\-Variables@{get\-Free\-Variables}}
+\index{get\-Free\-Variables@{get\-Free\-Variables}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{get\-Free\-Variables}]{\setlength{\rightskip}{0pt plus 5cm}abstract void org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-get\-Free\-Variables (
+\begin{DoxyParamCaption}
+\item[{Set$<$ String $>$}]{free\-Vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a741c9ab827921dbd69ed4846a403b76a}
+Used by template method \hyperlink{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a202e8a0eee4f9937506667b4d437e424}{get\-Free\-Variables()} to create a set of all free variables of an expression by asking its sub-\/expressions. 
+
+Implementors need to add all free variables to the provided set {\ttfamily free\-Vars}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em free\-Vars} & The {\ttfamily Set} of free variables. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a202e8a0eee4f9937506667b4d437e424}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!get\-Free\-Variables@{get\-Free\-Variables}}
+\index{get\-Free\-Variables@{get\-Free\-Variables}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{get\-Free\-Variables}]{\setlength{\rightskip}{0pt plus 5cm}Set$<$String$>$ org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-get\-Free\-Variables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a202e8a0eee4f9937506667b4d437e424}
+Returns the set of all unbound/free variables this expression. \begin{DoxyReturn}{Returns}
+A {\ttfamily Set} of all free variables. 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9e30d89695891d64ea309856134781e3}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!get\-Start\-Token@{get\-Start\-Token}}
+\index{get\-Start\-Token@{get\-Start\-Token}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{get\-Start\-Token}]{\setlength{\rightskip}{0pt plus 5cm}Token org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-get\-Start\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9e30d89695891d64ea309856134781e3}
+
+
+Definition at line 91 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f8542500c4836f68a3bc2c737ea9515}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!get\-String\-Rep@{get\-String\-Rep}}
+\index{get\-String\-Rep@{get\-String\-Rep}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{get\-String\-Rep}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-get\-String\-Rep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f8542500c4836f68a3bc2c737ea9515}
+
+
+Definition at line 68 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a11eeddd378e947e6062319db7ff2b71c}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!is\-Pre@{is\-Pre}}
+\index{is\-Pre@{is\-Pre}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{is\-Pre}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-is\-Pre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a11eeddd378e947e6062319db7ff2b71c}
+
+
+Definition at line 82 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f3c442d210a6c074e7ed092c4751e34}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!navigation\-Needs\-Explicit\-Rolename@{navigation\-Needs\-Explicit\-Rolename}}
+\index{navigation\-Needs\-Explicit\-Rolename@{navigation\-Needs\-Explicit\-Rolename}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{navigation\-Needs\-Explicit\-Rolename}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-navigation\-Needs\-Explicit\-Rolename (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-Classifier}}]{src\-Class, }
+\item[{{\bf M\-Navigable\-Element}}]{dst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a6f3c442d210a6c074e7ed092c4751e34}
+True if a navigation from an object of class {\ttfamily src\-Class} to the association end {\ttfamily dst} needs an explicit rolename.
+
+Only reflexive associations with more then two reachable ends can have an ambiguous path. 
+\begin{DoxyParams}{Parameters}
+{\em src\-Class} & The {\ttfamily M\-Class} to navigate from \\
+\hline
+{\em dst} & The {\ttfamily M\-Navigable\-Element} to navigate to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the navigation needs a rolename, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+Definition at line 283 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_acc7bab8748113d4465fb2c896cd043d3}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!set\-Is\-Pre@{set\-Is\-Pre}}
+\index{set\-Is\-Pre@{set\-Is\-Pre}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{set\-Is\-Pre}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-set\-Is\-Pre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_acc7bab8748113d4465fb2c896cd043d3}
+
+
+Definition at line 78 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9f37c6dd0c525848dcb8e34c2ce63054}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!set\-Start\-Token@{set\-Start\-Token}}
+\index{set\-Start\-Token@{set\-Start\-Token}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{set\-Start\-Token}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-set\-Start\-Token (
+\begin{DoxyParamCaption}
+\item[{Token}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9f37c6dd0c525848dcb8e34c2ce63054}
+
+
+Definition at line 87 of file A\-S\-T\-Expression.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9a81b7753c3171ada2030e3cca31c36d}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!set\-String\-Rep@{set\-String\-Rep}}
+\index{set\-String\-Rep@{set\-String\-Rep}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{set\-String\-Rep}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-set\-String\-Rep (
+\begin{DoxyParamCaption}
+\item[{String}]{string\-Rep}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a9a81b7753c3171ada2030e3cca31c36d}
+
+
+Definition at line 74 of file A\-S\-T\-Expression.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a36641e96f36f61b0c658002ba01b3aaa}{\index{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}!M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D@{M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D}}
+\index{M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D@{M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D}!org::tzi::use::parser::ocl::ASTExpression@{org\-::tzi\-::use\-::parser\-::ocl\-::\-A\-S\-T\-Expression}}
+\subsubsection[{M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}final String org.\-tzi.\-use.\-parser.\-ocl.\-A\-S\-T\-Expression.\-M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-S\-H\-O\-R\-T\-H\-A\-N\-D\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classorg_1_1tzi_1_1use_1_1parser_1_1ocl_1_1_a_s_t_expression_a36641e96f36f61b0c658002ba01b3aaa}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 
+        \textcolor{stringliteral}{"The OCL shorthand notation for collect has been disabled. "} +
+        \textcolor{stringliteral}{"Try `use -h' for help on enabling it."}
+\end{DoxyCode}
+
+
+Definition at line 54 of file A\-S\-T\-Expression.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/parser/ocl/\hyperlink{_a_s_t_expression_8java}{A\-S\-T\-Expression.\-java}\end{DoxyCompactItemize}

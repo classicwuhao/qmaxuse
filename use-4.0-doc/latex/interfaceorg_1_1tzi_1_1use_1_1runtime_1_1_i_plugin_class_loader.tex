@@ -1,0 +1,83 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader}{\section{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader}\index{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader@{org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a0e871be0a20d62042085819b426ecad2}{get\-Main\-Class\-Name} ()  throws I\-O\-Exception
+\item 
+Class$<$?$>$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a4ce9a892243007bc18dba3f43ab7fed9}{load\-Class} (String class\-Name)  throws Class\-Not\-Found\-Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface provides a common Plugin Class\-Loader behaviour for Plugin Class\-Loaders. -\/ This interface should only be used internally
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 12 of file I\-Plugin\-Class\-Loader.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a0e871be0a20d62042085819b426ecad2}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader}!get\-Main\-Class\-Name@{get\-Main\-Class\-Name}}
+\index{get\-Main\-Class\-Name@{get\-Main\-Class\-Name}!org::tzi::use::runtime::IPluginClassLoader@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader}}
+\subsubsection[{get\-Main\-Class\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader.\-get\-Main\-Class\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a0e871be0a20d62042085819b426ecad2}
+Method to get the Plugin's Startup Class name
+
+\begin{DoxyReturn}{Returns}
+The Plugin's startup class name 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\-O\-Exception} & Throws error if the file access fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1util_1_1_plugin_class_loader_a15fc4f79c524146a4dce4b7bcacbe133}{org.\-tzi.\-use.\-runtime.\-util.\-Plugin\-Class\-Loader}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a4ce9a892243007bc18dba3f43ab7fed9}{\index{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader}!load\-Class@{load\-Class}}
+\index{load\-Class@{load\-Class}!org::tzi::use::runtime::IPluginClassLoader@{org\-::tzi\-::use\-::runtime\-::\-I\-Plugin\-Class\-Loader}}
+\subsubsection[{load\-Class}]{\setlength{\rightskip}{0pt plus 5cm}Class$<$?$>$ org.\-tzi.\-use.\-runtime.\-I\-Plugin\-Class\-Loader.\-load\-Class (
+\begin{DoxyParamCaption}
+\item[{String}]{class\-Name}
+\end{DoxyParamCaption}
+) throws Class\-Not\-Found\-Exception}}\label{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1_i_plugin_class_loader_a4ce9a892243007bc18dba3f43ab7fed9}
+Method to load a specific class from the Plugin
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\-Name} & The class name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The class 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Class\-Not\-Found\-Exception} & Throws error if the class could not be found and loaded. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1util_1_1_plugin_class_loader_a6243bd9820cfd2fbd1aa3dc81c5abd7a}{org.\-tzi.\-use.\-runtime.\-util.\-Plugin\-Class\-Loader}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/runtime/org/tzi/use/runtime/\hyperlink{_i_plugin_class_loader_8java}{I\-Plugin\-Class\-Loader.\-java}\end{DoxyCompactItemize}

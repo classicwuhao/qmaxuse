@@ -1,0 +1,74 @@
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller}{\section{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller Interface Reference}
+\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller}\index{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller@{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.750000cm]{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a8dcff1510558677f3e46b7beb884f375}{init\-State} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a7b713f1881420a6d9d665b362cbbe3e1}{update\-State} ()
+\item 
+void \hyperlink{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_ad31fa392471971e69fb557ad3af39fb1}{update\-State} (\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1_state_difference}{State\-Difference} diff)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for controllers that calculate values after the system state has been changed. \begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 30 of file Derived\-Value\-Controller.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a8dcff1510558677f3e46b7beb884f375}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}!init\-State@{init\-State}}
+\index{init\-State@{init\-State}!org::tzi::use::uml::sys::DerivedValueController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}}
+\subsubsection[{init\-State}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller.\-init\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a8dcff1510558677f3e46b7beb884f375}
+Initializes the derived controller. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a2e6137a2a303cb9dc99103ec7df2c0bf}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_attribute_controller_ac4e02a6f53b61d5feb62e9a82826fa24}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Attribute\-Controller}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a7b713f1881420a6d9d665b362cbbe3e1}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}!update\-State@{update\-State}}
+\index{update\-State@{update\-State}!org::tzi::use::uml::sys::DerivedValueController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}}
+\subsubsection[{update\-State}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller.\-update\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_a7b713f1881420a6d9d665b362cbbe3e1}
+Invoked after a statement changed the system state, but before external instances are notified about the change. 
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a17ae0c2ea352f7a70b6cd074d9ace400}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_attribute_controller_a88590c4012e23e52dde68c54fc3ac9b6}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Attribute\-Controller}.
+
+\hypertarget{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_ad31fa392471971e69fb557ad3af39fb1}{\index{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}!update\-State@{update\-State}}
+\index{update\-State@{update\-State}!org::tzi::use::uml::sys::DerivedValueController@{org\-::tzi\-::use\-::uml\-::sys\-::\-Derived\-Value\-Controller}}
+\subsubsection[{update\-State}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Value\-Controller.\-update\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf State\-Difference}}]{diff}
+\end{DoxyParamCaption}
+)}}\label{interfaceorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_value_controller_ad31fa392471971e69fb557ad3af39fb1}
+Invoked after a statement changed the system state, but before external instances are notified about the change. Implementors need to change the system state and add any changes into the state difference {\ttfamily diff}. 
+\begin{DoxyParams}{Parameters}
+{\em diff} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_link_controller_a988cb659d5a72427a8e7530ad4ab9e32}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Link\-Controller}, and \hyperlink{classorg_1_1tzi_1_1use_1_1uml_1_1sys_1_1_derived_attribute_controller_aee4f80682417bbf325b926ac093feb11}{org.\-tzi.\-use.\-uml.\-sys.\-Derived\-Attribute\-Controller}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/uml/sys/\hyperlink{_derived_value_controller_8java}{Derived\-Value\-Controller.\-java}\end{DoxyCompactItemize}

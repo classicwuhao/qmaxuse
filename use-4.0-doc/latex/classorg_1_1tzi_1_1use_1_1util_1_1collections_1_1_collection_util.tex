@@ -1,0 +1,306 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util}{\section{org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util}\index{org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util@{org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{enumorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_1_1_unique_list}{Unique\-List}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static$<$ T $>$ List$<$ List$<$ T $>$ $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad039749af902c3423891994e6c49b466}{combinations} (List$<$ List$<$ T $>$$>$ list\-With\-Lists)
+\item 
+static$<$ T $>$ List$<$ List$<$ Pair\\*
+$<$ T $>$ $>$ $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad6a2f4cbb36b9e7a558f310274ae0db1}{combinations\-One} (List$<$ T $>$ first\-List, List$<$ T $>$ second\-List, \hyperlink{enumorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_1_1_unique_list}{Unique\-List} unique)
+\item 
+static$<$ T $>$ List$<$ T $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a19540d61ddd64e48680aaceae6a04a97}{empty\-List\-If\-Null} (final List$<$ T $>$ the\-List)
+\item 
+static$<$ T\-K, T\-V $>$ Map$<$ T\-K, T\-V $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_aa77c5c39d58ca6b05eee3896331a3b25}{empty\-Map\-If\-Null} (final Map$<$ T\-K, T\-V $>$ the\-Map)
+\item 
+static$<$ T $>$ Set$<$ T $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a3dda7c84f5067368780e7928a6227217}{empty\-Set\-If\-Null} (final Set$<$ T $>$ the\-Set)
+\item 
+static$<$ T $>$ List$<$ T $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1897c420788e85e3f4383d86fe40c87e}{init\-As\-Array\-List} (final List$<$ T $>$ the\-List)
+\item 
+static$<$ T\-K, T\-V $>$ Map$<$ T\-K, T\-V $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a406baf00e97c7ef82e3014ec41c90de3}{init\-As\-Hash\-Map} (final Map$<$ T\-K, T\-V $>$ the\-Map)
+\item 
+static$<$ T $>$ Set$<$ T $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a25e27cfb1cda707b93a2b7a033483b11}{init\-As\-Hash\-Set} (final Set$<$ T $>$ the\-Set)
+\item 
+static$<$ T, T\-Castextends\-T $>$ Set\\*
+$<$ T\-Cast $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a9cc99b0d85fa6d234204c47ce166d395}{down\-Cast\-Unsafe} (final Set$<$?extends T $>$ set)
+\item 
+static$<$ T $>$ T \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a7c18b5781e0416270e8b721171c2f0ae}{exactly\-One} (Collection$<$ T $>$ collection)  throws Illegal\-Argument\-Exception 
+\item 
+static$<$ T $>$ boolean \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ac9cbcb88346c46432e104b33349daaa2}{exists} (Iterable$<$ T $>$ source, Predicate$<$ T $>$ predicate)
+\item 
+static$<$ T $>$ boolean \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a584b9aa3996bbcf6959732d017212721}{exists} (Iterator$<$ T $>$ source, Predicate$<$ T $>$ predicate)
+\item 
+static$<$ T, T\-Cast $>$ Set$<$ T\-Cast $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1e1b427da6f481091ff4d845d2b6e082}{filter\-By\-Type} (final Set$<$ T $>$ source, final Class$<$ T\-Cast $>$ cls)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class with useful class operations for modifying collections.
+
+\begin{DoxyAuthor}{Author}
+Joern Bohling 
+
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 46 of file Collection\-Util.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad039749af902c3423891994e6c49b466}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!combinations@{combinations}}
+\index{combinations@{combinations}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{combinations}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ List$<$List$<$T$>$ $>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-combinations (
+\begin{DoxyParamCaption}
+\item[{List$<$ List$<$ T $>$$>$}]{list\-With\-Lists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad039749af902c3423891994e6c49b466}
+Computes of a given List with Lists the combinations. Example\-: Given \{ \{ a, b \} \{ 1, 2, 3\} \{ p, q\} \} Result is\-: \{ \{a,1,p\} \{a,1,q\} \{a,2,p\} \{a,2,q\} \{a,3,p\} ... \{b,2,q\} \{b,3,p\} \{b,3,q\} \} 
+
+Definition at line 78 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad6a2f4cbb36b9e7a558f310274ae0db1}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!combinations\-One@{combinations\-One}}
+\index{combinations\-One@{combinations\-One}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{combinations\-One}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ List$<$List$<$Pair$<$T$>$ $>$ $>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-combinations\-One (
+\begin{DoxyParamCaption}
+\item[{List$<$ T $>$}]{first\-List, }
+\item[{List$<$ T $>$}]{second\-List, }
+\item[{{\bf Unique\-List}}]{unique}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ad6a2f4cbb36b9e7a558f310274ae0db1}
+Computes of a given List with Lists the combinations. Example\-: Given \{ \{ a, b \} \{ 1, 2, 3\} \{ p, q\} \} Result is\-: \{ \{a,1,p\} \{a,1,q\} \{a,2,p\} \{a,2,q\} \{a,3,p\} ... \{b,2,q\} \{b,3,p\} \{b,3,q\} \} 
+
+Definition at line 94 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a9cc99b0d85fa6d234204c47ce166d395}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!down\-Cast\-Unsafe@{down\-Cast\-Unsafe}}
+\index{down\-Cast\-Unsafe@{down\-Cast\-Unsafe}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{down\-Cast\-Unsafe}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T,T\-Castextends\-T$>$ Set$<$T\-Cast$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-down\-Cast\-Unsafe (
+\begin{DoxyParamCaption}
+\item[{final Set$<$?extends T $>$}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a9cc99b0d85fa6d234204c47ce166d395}
+This operation needs to be used with care! It allows an unsafe downcast from a generic collection to another, which in general is not valid! 
+\begin{DoxyParams}{Parameters}
+{\em set} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 266 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a19540d61ddd64e48680aaceae6a04a97}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!empty\-List\-If\-Null@{empty\-List\-If\-Null}}
+\index{empty\-List\-If\-Null@{empty\-List\-If\-Null}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{empty\-List\-If\-Null}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ List$<$T$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-empty\-List\-If\-Null (
+\begin{DoxyParamCaption}
+\item[{final List$<$ T $>$}]{the\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a19540d61ddd64e48680aaceae6a04a97}
+Returns {\ttfamily the\-List} if it is not {\ttfamily null} or an unmodifiable singleton empty list (see \hyperlink{}{Collections\#empty\-List()}). 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T$>$} & \\
+\hline
+{\em the\-List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 158 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_aa77c5c39d58ca6b05eee3896331a3b25}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!empty\-Map\-If\-Null@{empty\-Map\-If\-Null}}
+\index{empty\-Map\-If\-Null@{empty\-Map\-If\-Null}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{empty\-Map\-If\-Null}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T\-K,T\-V$>$ Map$<$T\-K, T\-V$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-empty\-Map\-If\-Null (
+\begin{DoxyParamCaption}
+\item[{final Map$<$ T\-K, T\-V $>$}]{the\-Map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_aa77c5c39d58ca6b05eee3896331a3b25}
+Returns {\ttfamily the\-Map} if it is not {\ttfamily null} or an unmodifiable singleton empty map (see \hyperlink{}{Collections\#empty\-Map()}). 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T\-K$>$} & \\
+\hline
+{\em $<$\-T\-V$>$} & \\
+\hline
+{\em the\-Map} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 173 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a3dda7c84f5067368780e7928a6227217}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!empty\-Set\-If\-Null@{empty\-Set\-If\-Null}}
+\index{empty\-Set\-If\-Null@{empty\-Set\-If\-Null}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{empty\-Set\-If\-Null}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ Set$<$T$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-empty\-Set\-If\-Null (
+\begin{DoxyParamCaption}
+\item[{final Set$<$ T $>$}]{the\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a3dda7c84f5067368780e7928a6227217}
+Returns {\ttfamily the\-Set} if it is not {\ttfamily null} or an unmodifiable singleton empty set (see \hyperlink{}{Collections\#empty\-Set()}). 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T$>$} & \\
+\hline
+{\em the\-Set} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 187 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a7c18b5781e0416270e8b721171c2f0ae}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!exactly\-One@{exactly\-One}}
+\index{exactly\-One@{exactly\-One}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{exactly\-One}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ T org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-exactly\-One (
+\begin{DoxyParamCaption}
+\item[{Collection$<$ T $>$}]{collection}
+\end{DoxyParamCaption}
+) throws Illegal\-Argument\-Exception\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a7c18b5781e0416270e8b721171c2f0ae}
+Returns the single element from {\ttfamily collection{\ttfamily . If the collection has more than one element or is empty, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em collection} & The collection to retrieve the single element from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The single element. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\-Argument\-Exception} & If the collection is empty or has more than one element. \\
+\hline
+\end{DoxyExceptions}
+}}
+
+Definition at line 278 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ac9cbcb88346c46432e104b33349daaa2}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!exists@{exists}}
+\index{exists@{exists}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ boolean org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-exists (
+\begin{DoxyParamCaption}
+\item[{Iterable$<$ T $>$}]{source, }
+\item[{Predicate$<$ T $>$}]{predicate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_ac9cbcb88346c46432e104b33349daaa2}
+
+
+Definition at line 291 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a584b9aa3996bbcf6959732d017212721}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!exists@{exists}}
+\index{exists@{exists}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ boolean org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-exists (
+\begin{DoxyParamCaption}
+\item[{Iterator$<$ T $>$}]{source, }
+\item[{Predicate$<$ T $>$}]{predicate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a584b9aa3996bbcf6959732d017212721}
+
+
+Definition at line 296 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1e1b427da6f481091ff4d845d2b6e082}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!filter\-By\-Type@{filter\-By\-Type}}
+\index{filter\-By\-Type@{filter\-By\-Type}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{filter\-By\-Type}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T,T\-Cast$>$ Set$<$T\-Cast$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-filter\-By\-Type (
+\begin{DoxyParamCaption}
+\item[{final Set$<$ T $>$}]{source, }
+\item[{final Class$<$ T\-Cast $>$}]{cls}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1e1b427da6f481091ff4d845d2b6e082}
+
+
+Definition at line 309 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1897c420788e85e3f4383d86fe40c87e}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!init\-As\-Array\-List@{init\-As\-Array\-List}}
+\index{init\-As\-Array\-List@{init\-As\-Array\-List}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{init\-As\-Array\-List}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ List$<$T$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-init\-As\-Array\-List (
+\begin{DoxyParamCaption}
+\item[{final List$<$ T $>$}]{the\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a1897c420788e85e3f4383d86fe40c87e}
+Returns the same list {\ttfamily the\-List} if it has elements, otherwise it returns a new {\ttfamily Array\-List}. Can be used in combination with \hyperlink{}{Collection\-Util\#empty\-List\-If\-Null(\-List)} to use a singleton empty list as initial value. 
+
+{\bfseries Pre\-:} {\ttfamily the\-List != null} 
+
+{\bfseries Post\-:} {\ttfamily result} is writable. 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T$>$} & Element type of the List \\
+\hline
+{\em the\-List} & A {\ttfamily List} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The same list if {\ttfamily the\-List.\-size() $>$ 0} or a new {\ttfamily Array\-List} 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a406baf00e97c7ef82e3014ec41c90de3}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!init\-As\-Hash\-Map@{init\-As\-Hash\-Map}}
+\index{init\-As\-Hash\-Map@{init\-As\-Hash\-Map}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{init\-As\-Hash\-Map}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T\-K,T\-V$>$ Map$<$T\-K,T\-V$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-init\-As\-Hash\-Map (
+\begin{DoxyParamCaption}
+\item[{final Map$<$ T\-K, T\-V $>$}]{the\-Map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a406baf00e97c7ef82e3014ec41c90de3}
+Returns the same map {\ttfamily the\-Map} if it has elements, otherwise it returns a new {\ttfamily Hash\-Map}. Can be used in combination with \hyperlink{}{Collection\-Util\#empty\-Map\-If\-Null(\-List)} to use a singleton empty map as initial value. 
+
+{\bfseries Pre\-:} {\ttfamily the\-Map != null} 
+
+{\bfseries Post\-:} {\ttfamily result} is writable. 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T\-K$>$} & Element type of the keys \\
+\hline
+{\em $<$\-T\-V$>$} & Element type of the values \\
+\hline
+{\em the\-List} & A {\ttfamily List} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The same {\ttfamily Map} if {\ttfamily the\-Map.\-size() $>$ 0} or a new {\ttfamily Hash\-Map} 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file Collection\-Util.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a25e27cfb1cda707b93a2b7a033483b11}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}!init\-As\-Hash\-Set@{init\-As\-Hash\-Set}}
+\index{init\-As\-Hash\-Set@{init\-As\-Hash\-Set}!org::tzi::use::util::collections::CollectionUtil@{org\-::tzi\-::use\-::util\-::collections\-::\-Collection\-Util}}
+\subsubsection[{init\-As\-Hash\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static $<$T$>$ Set$<$T$>$ org.\-tzi.\-use.\-util.\-collections.\-Collection\-Util.\-init\-As\-Hash\-Set (
+\begin{DoxyParamCaption}
+\item[{final Set$<$ T $>$}]{the\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_a25e27cfb1cda707b93a2b7a033483b11}
+Returns the same set {\ttfamily the\-Set} if it has elements, otherwise it returns a new {\ttfamily Hash\-Set}. Can be used in combination with \hyperlink{}{Collection\-Util\#empty\-Set\-If\-Null(\-Set)} to use a singleton empty set as initial value. 
+
+{\bfseries Pre\-:} {\ttfamily the\-Set != null} 
+
+{\bfseries Post\-:} {\ttfamily result} is writable. 
+\begin{DoxyParams}{Parameters}
+{\em $<$\-T$>$} & Element type of the Set \\
+\hline
+{\em the\-Set} & A {\ttfamily Set} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The same set if {\ttfamily the\-Set.\-size() $>$ 0} or a new {\ttfamily Hash\-Set} 
+\end{DoxyReturn}
+
+
+Definition at line 251 of file Collection\-Util.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/util/collections/\hyperlink{_collection_util_8java}{Collection\-Util.\-java}\end{DoxyCompactItemize}

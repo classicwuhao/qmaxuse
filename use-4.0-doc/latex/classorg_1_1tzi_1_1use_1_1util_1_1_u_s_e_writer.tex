@@ -1,0 +1,107 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer}{\section{org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer}\index{org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer@{org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_1_1_logging_output_stream_decorator}{Logging\-Output\-Stream\-Decorator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Print\-Stream \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_abe664bfddee1eedc9b7f1f498f9e9238}{get\-Out} ()
+\item 
+Print\-Stream \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a64c412e56d975343af2e198583e2ebda}{get\-Err} ()
+\item 
+Print\-Stream \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_ad9d407a6e98ad2578473cc9b0a5c8999}{get\-No\-Protocol\-Out} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a2f3417dafffc4d879501b7ee98ac27cd}{protocol} (String line)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aefe28eebffa66b3b2397d68fa965f8f4}{write\-Protocol\-File} (Output\-Stream out)  throws I\-O\-Exception  
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer}{U\-S\-E\-Writer} \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aa6cc325cd10ceab55572e6370cd98d64}{get\-Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Replaces System.\-out and System.\-err by decorators that record all output to a protocol buffer. Access to the original out stream is available for bypass writes (such as a command prompt). 
+
+Definition at line 34 of file U\-S\-E\-Writer.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a64c412e56d975343af2e198583e2ebda}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!get\-Err@{get\-Err}}
+\index{get\-Err@{get\-Err}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{get\-Err}]{\setlength{\rightskip}{0pt plus 5cm}Print\-Stream org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-get\-Err (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a64c412e56d975343af2e198583e2ebda}
+
+
+Definition at line 63 of file U\-S\-E\-Writer.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aa6cc325cd10ceab55572e6370cd98d64}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}static synchronized {\bf U\-S\-E\-Writer} org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-get\-Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aa6cc325cd10ceab55572e6370cd98d64}
+
+
+Definition at line 37 of file U\-S\-E\-Writer.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_ad9d407a6e98ad2578473cc9b0a5c8999}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!get\-No\-Protocol\-Out@{get\-No\-Protocol\-Out}}
+\index{get\-No\-Protocol\-Out@{get\-No\-Protocol\-Out}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{get\-No\-Protocol\-Out}]{\setlength{\rightskip}{0pt plus 5cm}Print\-Stream org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-get\-No\-Protocol\-Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_ad9d407a6e98ad2578473cc9b0a5c8999}
+
+
+Definition at line 67 of file U\-S\-E\-Writer.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_abe664bfddee1eedc9b7f1f498f9e9238}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!get\-Out@{get\-Out}}
+\index{get\-Out@{get\-Out}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{get\-Out}]{\setlength{\rightskip}{0pt plus 5cm}Print\-Stream org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-get\-Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_abe664bfddee1eedc9b7f1f498f9e9238}
+
+
+Definition at line 59 of file U\-S\-E\-Writer.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a2f3417dafffc4d879501b7ee98ac27cd}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!protocol@{protocol}}
+\index{protocol@{protocol}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-protocol (
+\begin{DoxyParamCaption}
+\item[{String}]{line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_a2f3417dafffc4d879501b7ee98ac27cd}
+
+
+Definition at line 71 of file U\-S\-E\-Writer.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aefe28eebffa66b3b2397d68fa965f8f4}{\index{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}!write\-Protocol\-File@{write\-Protocol\-File}}
+\index{write\-Protocol\-File@{write\-Protocol\-File}!org::tzi::use::util::USEWriter@{org\-::tzi\-::use\-::util\-::\-U\-S\-E\-Writer}}
+\subsubsection[{write\-Protocol\-File}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-U\-S\-E\-Writer.\-write\-Protocol\-File (
+\begin{DoxyParamCaption}
+\item[{Output\-Stream}]{out}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1_u_s_e_writer_aefe28eebffa66b3b2397d68fa965f8f4}
+
+
+Definition at line 76 of file U\-S\-E\-Writer.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/util/\hyperlink{_u_s_e_writer_8java}{U\-S\-E\-Writer.\-java}\end{DoxyCompactItemize}

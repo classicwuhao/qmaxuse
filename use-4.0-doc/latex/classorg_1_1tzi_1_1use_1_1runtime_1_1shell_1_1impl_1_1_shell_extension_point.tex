@@ -1,0 +1,133 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point}{\section{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point}\index{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point@{org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Plugin\-Shell\-Cmd\-Container $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a372103db732a755b8211386ef7f920a1}{create\-Plugin\-Cmds} (\hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1_session}{Session} session, \hyperlink{classorg_1_1tzi_1_1use_1_1main_1_1shell_1_1_shell}{Shell} shell)
+\item 
+Vector$<$ \hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1_i_plugin_shell_cmd_descriptor}{I\-Plugin\-Shell\-Cmd\-Descriptor} $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_acb11fbfc485cc44f07b367c913fced6e}{get\-Registered\-Cmds} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a42a80942359184d0be85bcdfbb27d033}{register\-Cmd} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1_i_plugin_shell_cmd_descriptor}{I\-Plugin\-Shell\-Cmd\-Descriptor} plugin\-Cmd\-Descriptor)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a45cc3123d55ad39c72e18a4eb287d52f}{register\-Cmds} (\hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1runtime_1_1_i_descriptor}{I\-Descriptor} plugin\-Descriptor)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_extension_point}{I\-Plugin\-Shell\-Extension\-Point} \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_af094a6ad965e67c45e14f7e7bfc06307}{get\-Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the implementation of the Shell Command Extension Point. The referenced interface should be located in the application elsewhere.
+
+\begin{DoxyAuthor}{Author}
+Roman Asendorf 
+\end{DoxyAuthor}
+
+
+Definition at line 23 of file Shell\-Extension\-Point.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a372103db732a755b8211386ef7f920a1}{\index{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}!create\-Plugin\-Cmds@{create\-Plugin\-Cmds}}
+\index{create\-Plugin\-Cmds@{create\-Plugin\-Cmds}!org::tzi::use::runtime::shell::impl::ShellExtensionPoint@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}}
+\subsubsection[{create\-Plugin\-Cmds}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Plugin\-Shell\-Cmd\-Container$>$ org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point.\-create\-Plugin\-Cmds (
+\begin{DoxyParamCaption}
+\item[{{\bf Session}}]{session, }
+\item[{{\bf Shell}}]{shell}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a372103db732a755b8211386ef7f920a1}
+Method to create the Shell Command Proxies in the application
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & The Session object \\
+\hline
+{\em shell} & The Shell object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of created Shell Command Containers 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_extension_point_a1d6c421dab72c7f304e3f5ad35b2812d}{org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Extension\-Point}.
+
+
+
+Definition at line 44 of file Shell\-Extension\-Point.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_af094a6ad965e67c45e14f7e7bfc06307}{\index{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!org::tzi::use::runtime::shell::impl::ShellExtensionPoint@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Plugin\-Shell\-Extension\-Point} org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point.\-get\-Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_af094a6ad965e67c45e14f7e7bfc06307}
+Method returning the Singleton instance of the \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point}{Shell\-Extension\-Point}
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point}{Shell\-Extension\-Point} instance 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Shell\-Extension\-Point.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_acb11fbfc485cc44f07b367c913fced6e}{\index{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}!get\-Registered\-Cmds@{get\-Registered\-Cmds}}
+\index{get\-Registered\-Cmds@{get\-Registered\-Cmds}!org::tzi::use::runtime::shell::impl::ShellExtensionPoint@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}}
+\subsubsection[{get\-Registered\-Cmds}]{\setlength{\rightskip}{0pt plus 5cm}Vector$<${\bf I\-Plugin\-Shell\-Cmd\-Descriptor}$>$ org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point.\-get\-Registered\-Cmds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_acb11fbfc485cc44f07b367c913fced6e}
+
+
+Definition at line 49 of file Shell\-Extension\-Point.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a42a80942359184d0be85bcdfbb27d033}{\index{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}!register\-Cmd@{register\-Cmd}}
+\index{register\-Cmd@{register\-Cmd}!org::tzi::use::runtime::shell::impl::ShellExtensionPoint@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}}
+\subsubsection[{register\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point.\-register\-Cmd (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Plugin\-Shell\-Cmd\-Descriptor}}]{plugin\-Cmd\-Descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a42a80942359184d0be85bcdfbb27d033}
+
+
+Definition at line 56 of file Shell\-Extension\-Point.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a45cc3123d55ad39c72e18a4eb287d52f}{\index{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}!register\-Cmds@{register\-Cmds}}
+\index{register\-Cmds@{register\-Cmds}!org::tzi::use::runtime::shell::impl::ShellExtensionPoint@{org\-::tzi\-::use\-::runtime\-::shell\-::impl\-::\-Shell\-Extension\-Point}}
+\subsubsection[{register\-Cmds}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-runtime.\-shell.\-impl.\-Shell\-Extension\-Point.\-register\-Cmds (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Descriptor}}]{plugin\-Descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1runtime_1_1shell_1_1impl_1_1_shell_extension_point_a45cc3123d55ad39c72e18a4eb287d52f}
+Method to register Shell Commands from Plugin\-Descriptor
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Descriptor} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1main_1_1shell_1_1runtime_1_1_i_plugin_shell_extension_point_aeed2f9e5ed3df83c67ca021c92994c31}{org.\-tzi.\-use.\-main.\-shell.\-runtime.\-I\-Plugin\-Shell\-Extension\-Point}.
+
+
+
+Definition at line 62 of file Shell\-Extension\-Point.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/runtime/org/tzi/use/runtime/shell/impl/\hyperlink{_shell_extension_point_8java}{Shell\-Extension\-Point.\-java}\end{DoxyCompactItemize}

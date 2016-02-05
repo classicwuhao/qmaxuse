@@ -1,0 +1,85 @@
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++Written by: Hao Wu++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ *	This is a part of my research work.
+ *  haowu@cs.nuim.ie
+ *  APR-2015 
+ *  
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * ++++++++++++++++++++++++++++++Do or do not, there is no try.+++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+
+package uran.formula;
+
+import uran.formula.type.*;
+import uran.err.NullableFormulaException;
+import uran.err.TypeMissmatchException;
+import uran.err.ArgumentSizeException;
+import uran.formula.visitor.AbstractVisitor;
+
+/**	Abstract syntax tree for applied function */
+public class AppliedFunction extends AbstractFormula{
+	private Function function;
+	private Function[] arguments;
+
+	public AppliedFunction (Function fun){
+		function = fun;
+	}
+
+	public AppliedFunction(Function fun, Function...args){
+		function = fun;
+		assign(args);
+	}
+	
+	/*public AppliedFunction apply (AppliedFunction af){
+		return new AppliedFunction(this.function,af.getFunction());
+	}*/
+	
+	public Function getFunction(){return this.function;}
+	public Function[] getArgs(){return this.arguments;}
+	
+	public AppliedFunction apply(Function...functions){
+		return new AppliedFunction(this.function,functions);
+	}
+	
+	private void assign (Function...args){
+		arguments = new Function[args.length];
+		if (this.function.arity()!=args.length)	throw new ArgumentSizeException();
+		
+		for (int i=0;i<arguments.length;i++) {
+			if (args[i]==null) throw new NullableFormulaException("Function: an agrument is null.");
+			if (function.getArgs(i).equalsTo(args[i].getReturnType())) throw new TypeMissmatchException("Error: expected type is "+function.getArgs(i));
+			arguments[i]=args[i];
+		}
+	}
+
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder("(");
+		sb.append(function.name());
+		for (int i=0;i<arguments.length;i++){
+			sb.append(" ");
+			sb.append(arguments[i]);
+			sb.append(" ");
+		}
+		sb.append(")");
+		return sb.toString();
+	}
+	
+	@Override
+	public String toSMT2(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("( "+function.name());
+		for (int i=0;i<this.arguments.length;i++) sb.append(" "+this.arguments[i].name()+" ");
+		sb.append(") ");
+		return sb.toString();
+	}
+
+	@Override
+	public void accept (AbstractVisitor visitor){
+		visitor.visit(this);
+	}
+
+}

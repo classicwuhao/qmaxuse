@@ -1,0 +1,182 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline}{\section{org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline}\index{org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline@{org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf8b51694f1a6d790de3d7705f12863}{Socket\-Readline} (Socket socket, boolean echo\-Input, String static\-Prompt)
+\item 
+String \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a5eaedd2e489b9b85822c91fb2f1e6394}{readline} (String prompt)  throws I\-O\-Exception 
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_aeeb824723a3ca0a2dccce473665af851}{close} ()  throws I\-O\-Exception 
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf6fe17e0575f283558ca516193204a}{using\-History} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2cd42937717dcc9be5f2607c8a4680e3}{read\-History} (String filename)
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2f83b2bdf3276d04efa5863aecd5fce3}{write\-History} (String filename)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a3c972426ba8591fef9f377e90e714bc4}{do\-Echo} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} implementation using a socket as source.
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Project\-Version\-:}
+0.\-393 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mark Richters 
+\end{DoxyAuthor}
+
+
+Definition at line 33 of file Socket\-Readline.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf8b51694f1a6d790de3d7705f12863}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!Socket\-Readline@{Socket\-Readline}}
+\index{Socket\-Readline@{Socket\-Readline}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{Socket\-Readline}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-Socket\-Readline (
+\begin{DoxyParamCaption}
+\item[{Socket}]{socket, }
+\item[{boolean}]{echo\-Input, }
+\item[{String}]{static\-Prompt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf8b51694f1a6d790de3d7705f12863}
+Constructs a new \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline}{Socket\-Readline} object. If echo\-Input is true, each line read will be echoed back to the socket. static\-Prompt may be used to overwrite the prompt passed to the readline method. 
+
+Definition at line 46 of file Socket\-Readline.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_aeeb824723a3ca0a2dccce473665af851}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!close@{close}}
+\index{close@{close}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_aeeb824723a3ca0a2dccce473665af851}
+Closes the \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} stream. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_acef689c312cb817be8420063f89d0fc9}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 85 of file Socket\-Readline.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a3c972426ba8591fef9f377e90e714bc4}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!do\-Echo@{do\-Echo}}
+\index{do\-Echo@{do\-Echo}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{do\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-do\-Echo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a3c972426ba8591fef9f377e90e714bc4}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_af7d105becc13e41d90554f2b99b30bd6}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 101 of file Socket\-Readline.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2cd42937717dcc9be5f2607c8a4680e3}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!read\-History@{read\-History}}
+\index{read\-History@{read\-History}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{read\-History}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-read\-History (
+\begin{DoxyParamCaption}
+\item[{String}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2cd42937717dcc9be5f2607c8a4680e3}
+Reads a history file. The \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} implementation can use the information in the file to provide input from previous sessions.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\-O\-Exception} & If an I/\-O error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_aa9cbd25c27eb8cee3ab4c46b15864ca5}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 97 of file Socket\-Readline.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a5eaedd2e489b9b85822c91fb2f1e6394}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!readline@{readline}}
+\index{readline@{readline}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{readline}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-readline (
+\begin{DoxyParamCaption}
+\item[{String}]{prompt}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a5eaedd2e489b9b85822c91fb2f1e6394}
+Reads a line of text from the underlying socket.
+
+\begin{DoxyReturn}{Returns}
+A String containing the contents of the line, not including any line-\/termination characters, or null if the end of the stream has been reached.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\-O\-Exception} & If an I/\-O error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_afa2b0f3a094b518c6ae7bc95a24e52ac}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 63 of file Socket\-Readline.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf6fe17e0575f283558ca516193204a}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!using\-History@{using\-History}}
+\index{using\-History@{using\-History}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{using\-History}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-using\-History (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_acaf6fe17e0575f283558ca516193204a}
+Informs the \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline}{Readline} implementation that a history of input should be preserved. 
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_ab82cc5b433b657ddb10fcf4de8439eb5}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 95 of file Socket\-Readline.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2f83b2bdf3276d04efa5863aecd5fce3}{\index{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}!write\-History@{write\-History}}
+\index{write\-History@{write\-History}!org::tzi::use::util::input::SocketReadline@{org\-::tzi\-::use\-::util\-::input\-::\-Socket\-Readline}}
+\subsubsection[{write\-History}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-input.\-Socket\-Readline.\-write\-History (
+\begin{DoxyParamCaption}
+\item[{String}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1input_1_1_socket_readline_a2f83b2bdf3276d04efa5863aecd5fce3}
+Writes a history file with information from the current session.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\-O\-Exception} & If an I/\-O error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interfaceorg_1_1tzi_1_1use_1_1util_1_1input_1_1_readline_adbdefac48fea8074c4294e564951a9cf}{org.\-tzi.\-use.\-util.\-input.\-Readline}.
+
+
+
+Definition at line 99 of file Socket\-Readline.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/util/input/\hyperlink{_socket_readline_8java}{Socket\-Readline.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_message_choose_window =
+[
+    [ "MessageChooseWindow", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_message_choose_window.html#ab4ed5f8bcc3829d33b3afa5a15054901", null ],
+    [ "actionPerformed", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1communicationdiagram_1_1_message_choose_window.html#adeba5a5ae842a8b010bbe4fbfbeb532d", null ]
+];

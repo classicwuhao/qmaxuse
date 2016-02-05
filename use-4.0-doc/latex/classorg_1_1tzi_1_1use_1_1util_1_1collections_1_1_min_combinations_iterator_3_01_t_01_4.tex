@@ -1,0 +1,93 @@
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4}{\section{org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$ Class Reference}
+\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4}\index{org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$@{org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$}}
+}
+Inheritance diagram for org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_abee9ca3e7e346a4e0fd30cdb2cdbe2f3}{Min\-Combinations\-Iterator} (List$<$ T $>$ first\-List, List$<$ T $>$ second\-List, \hyperlink{enumorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_collection_util_1_1_unique_list}{Unique\-List} unique)
+\item 
+boolean \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_ac747dea0d0d64f04a0304208dd24e670}{has\-Next} ()
+\item 
+List$<$ Pair$<$ T $>$ $>$ \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a952572a38dfe6b843ffdda06c1691c06}{next} ()
+\item 
+void \hyperlink{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a8d9ea02840d314128be9094142d2d82b}{remove} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An iterator which iterates over generated partitions of two lists. One of the lists is specified as unique.
+
+Each returned partition contains only combinations from one element of the unique list e.\-g.\-:\par
+ {\ttfamily \{a,b\} \{c,d\}} (second list is marked as unique) results in\-:\par
+ {\ttfamily 0 = \{(a,c), (a,d)\}, 1 = \{(b,c), (b,d)\}}
+
+\begin{DoxyAuthor}{Author}
+Lars Hamann 
+\end{DoxyAuthor}
+
+
+Definition at line 46 of file Min\-Combinations\-Iterator.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_abee9ca3e7e346a4e0fd30cdb2cdbe2f3}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}!Min\-Combinations\-Iterator@{Min\-Combinations\-Iterator}}
+\index{Min\-Combinations\-Iterator@{Min\-Combinations\-Iterator}!org::tzi::use::util::collections::MinCombinationsIterator< T >@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}}
+\subsubsection[{Min\-Combinations\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$.Min\-Combinations\-Iterator (
+\begin{DoxyParamCaption}
+\item[{List$<$ T $>$}]{first\-List, }
+\item[{List$<$ T $>$}]{second\-List, }
+\item[{{\bf Unique\-List}}]{unique}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_abee9ca3e7e346a4e0fd30cdb2cdbe2f3}
+
+
+Definition at line 74 of file Min\-Combinations\-Iterator.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_ac747dea0d0d64f04a0304208dd24e670}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}!has\-Next@{has\-Next}}
+\index{has\-Next@{has\-Next}!org::tzi::use::util::collections::MinCombinationsIterator< T >@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}}
+\subsubsection[{has\-Next}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$.has\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_ac747dea0d0d64f04a0304208dd24e670}
+
+
+Definition at line 155 of file Min\-Combinations\-Iterator.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a952572a38dfe6b843ffdda06c1691c06}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}!next@{next}}
+\index{next@{next}!org::tzi::use::util::collections::MinCombinationsIterator< T >@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Pair$<$T$>$ $>$ org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$.next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a952572a38dfe6b843ffdda06c1691c06}
+
+
+Definition at line 163 of file Min\-Combinations\-Iterator.\-java.
+
+\hypertarget{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a8d9ea02840d314128be9094142d2d82b}{\index{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!org::tzi::use::util::collections::MinCombinationsIterator< T >@{org\-::tzi\-::use\-::util\-::collections\-::\-Min\-Combinations\-Iterator$<$ T $>$}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-tzi.\-use.\-util.\-collections.\-Min\-Combinations\-Iterator$<$ T $>$.remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classorg_1_1tzi_1_1use_1_1util_1_1collections_1_1_min_combinations_iterator_3_01_t_01_4_a8d9ea02840d314128be9094142d2d82b}
+
+
+Definition at line 173 of file Min\-Combinations\-Iterator.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/main/org/tzi/use/util/collections/\hyperlink{_min_combinations_iterator_8java}{Min\-Combinations\-Iterator.\-java}\end{DoxyCompactItemize}
