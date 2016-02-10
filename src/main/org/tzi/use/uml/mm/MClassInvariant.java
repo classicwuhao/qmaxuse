@@ -33,7 +33,7 @@ import org.tzi.use.uml.ocl.expr.ExpStdOp;
 import org.tzi.use.uml.ocl.expr.Expression;
 import org.tzi.use.uml.ocl.expr.VarDecl;
 import org.tzi.use.uml.ocl.expr.VarDeclList;
-
+import org.tzi.use.uran.weight.*;
 
 /**
  * A class invariant is a boolean expression that must hold in every
@@ -43,6 +43,8 @@ import org.tzi.use.uml.ocl.expr.VarDeclList;
  */
 public final class MClassInvariant extends MModelElementImpl implements UseFileLocatable {
 	
+	private AnnotationTag fTag;
+
     /**
      * context type
      */
@@ -402,4 +404,14 @@ public final class MClassInvariant extends MModelElementImpl implements UseFileL
     public void processWithVisitor(MMVisitor v) {
         v.visitClassInvariant(this);
     }
+
+    /**
+     * Add an annotation tag.
+     */
+    public void setAnnotationTag(AnnotationTag t) {
+		this.fTag=t;
+    }
+
+	public AnnotationTag getAnnotationTag(){return this.fTag;}
+	
 }

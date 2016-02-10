@@ -34,6 +34,7 @@ import org.tzi.use.uml.mm.MClassInvariant;
 import org.tzi.use.uml.mm.MInvalidModelException;
 import org.tzi.use.uml.ocl.expr.ExpInvalidException;
 import org.tzi.use.uml.ocl.expr.Expression;
+import org.tzi.use.uran.weight.*;
 
 /**
  * Node of the abstract syntax tree constructed by the parser.
@@ -44,6 +45,7 @@ import org.tzi.use.uml.ocl.expr.Expression;
 public class ASTInvariantClause extends ASTAnnotatable {
 	Token fName;      // optional
     ASTExpression fExpr;
+	AnnotationTag fTag;	
 
     public ASTInvariantClause(Token name, ASTExpression e) {
         fName = name;
@@ -54,6 +56,9 @@ public class ASTInvariantClause extends ASTAnnotatable {
         return fExpr.toString();
     }
 
+	public void setAnnotationTag(AnnotationTag tag){this.fTag=tag;}
+	public AnnotationTag getAnnotationTag(){return this.fTag;}
+	
     void gen(Context ctx, List<Token> varTokens, MClass cls) {
     	gen(ctx, varTokens, cls, true);
     }
@@ -90,7 +95,8 @@ public class ASTInvariantClause extends ASTAnnotatable {
 			}
             
             inv = onCreateMClassInvariant(ctx, cls, varNames, expr, invName);
-            
+			inv.setAnnotationTag(this.fTag);
+
             this.genAnnotations(inv);
             
             // sets the line position of the USE-Model in this  invarinat

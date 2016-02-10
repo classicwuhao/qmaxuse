@@ -4,6 +4,11 @@ package org.tzi.use.uran.weight;
 public class IntWeight extends AbstractWeight{
 	int weight;		
 	
+	public IntWeight(int weight){
+		checkWeight(weight);
+		this.weight = weight;
+	}
+
 	public IntWeight(int weight, WeightType type){
 		checkWeight(weight);
 		this.weight = weight;
@@ -17,7 +22,7 @@ public class IntWeight extends AbstractWeight{
 	}
 
 	private void checkWeight(int weight){
-		if (weight<0) throw new WeightException("Error: a weight cannot be negative.");
+		if (weight<-1) throw new WeightException("Error: a weight cannot be negative.");
 	}
 
 	@Override

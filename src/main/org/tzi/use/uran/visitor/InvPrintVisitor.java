@@ -16,6 +16,7 @@ import uran.formula.value.*;
 import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
+import org.tzi.use.uran.weight.*;
 import uran.solver.*;
 
 public final class InvPrintVisitor implements MMVisitor{
@@ -130,7 +131,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	public void visitModel (MModel e){
 		formulas.clear();inv_formulas.clear();		
 		MClassInvariant[] classInvariants = e.classInvariants().toArray(new MClassInvariant[0]);
-
+		
 		/* translate class */
 		Iterator it = e.classes().iterator();
 
@@ -150,18 +151,30 @@ public final class InvPrintVisitor implements MMVisitor{
 		for (MClassInvariant inv : classInvariants){
 			//ColorPrint.println("visitng invariant "+ ++i,Color.BLUE);
 			inv.processWithVisitor(this);
+			ColorPrint.println("Annotation Tag:"+inv.getAnnotationTag(),Color.YELLOW);
 			ColorPrint.println("leaving invariant "+ i++,Color.BLUE);
 			System.out.println();
 		}
+		
+		List<Pair<AbstractFormula, Integer>> pairs = new ArrayList<Pair<AbstractFormula, Integer>>();
 		
 		for (i=0;i<inv_formulas.size();i++){
 			Constant aux = factory.createConstant("aux"+ i, new Int());
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
 			AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
-			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
+			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));			
+			/* form formulas for weight */
+			pairs.add(new Pair<AbstractFormula, Integer>(inv_formulas.get(i),i+1));
+			Constant weight = factory.createConstant("weight"+i, new Int());
+			Pair<AbstractFormula, Integer> pair = pairs.get(i);
+			int w = (int)pair.second();
+			ImpliesFormula imp_formula0 = new ImpliesFormula(inv_formulas.get(i), new EqFormula(weight,new NumLiteral(w)));
+			ImpliesFormula imp_formula1 = new ImpliesFormula(new NegFormula(inv_formulas.get(i)), new EqFormula(weight,new NumLiteral(0)));
 			formulas.add (new OrFormula().merge(inv_formulas.get(i), formula1, formula2));
+			formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
 		}
 		
+
 		toSMT2File(e.name(),formulas, factory);
 	}
 

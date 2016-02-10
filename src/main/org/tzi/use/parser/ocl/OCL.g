@@ -29,6 +29,7 @@ package org.tzi.use.parser.ocl;
 // ------------------------------------
 //  USE OCL parser
 // ------------------------------------
+import org.tzi.use.uran.weight.*;
 import org.tzi.use.parser.base.BaseParser;
 }
 
@@ -64,6 +65,7 @@ import org.tzi.use.parser.ParseErrorHandler;
         fParseErrorHandler = handler;
     }
 }
+
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */

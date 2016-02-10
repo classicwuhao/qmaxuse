@@ -56,6 +56,7 @@ import org.tzi.use.parser.use.statemachines.*;
 import org.tzi.use.parser.ocl.*;
 import org.tzi.use.parser.use.tag.*;
 import org.tzi.use.parser.soil.ast.*;
+import org.tzi.use.uran.weight.*;
 import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
@@ -109,6 +110,7 @@ import org.tzi.use.parser.ParseErrorHandler;
         fParseErrorHandler = handler;
     }
 }
+
 /*
 --------- Start of file USEBase.gpart -------------------- 
 */
@@ -395,23 +397,33 @@ multiplicitySpec returns [int m]
     | STAR  { $m = -1; }
     ;
 
-annotationSpec:
-	block_annotation 
-	| line_annotation
+annotationSpec returns [AnnotationTag tag]
+@init{$tag= new AnnotationTag();}
+:
+	rtag=block_annotation {$tag=rtag;}
+	| rtag=line_annotation[tag] {$tag=rtag;}
 ;
 
-block_annotation:
+block_annotation returns [AnnotationTag tag] 
+@init{$tag = new AnnotationTag();}
+:
 	AT IDENT LBRACE
-		(annotation_tag)*
+		(annotation_tag[tag])* {$tag.setName($IDENT.getText());}
 	RBRACE
 ;
 
-line_annotation: AT (annotation_tag | annotation_override)
+line_annotation [AnnotationTag tag] returns [AnnotationTag rtag]
+@init{if ($tag==null) $tag= new AnnotationTag();}:
+	AT (annotation_tag[tag]) {$rtag=$tag;}
 ;
 
-annotation_tag:
-	annotation_comment EQUAL (NON_OCL_STRING | annotation_ref)
-	| annotation_weight EQUAL (annotation_def | INT | annotation_ref)
+annotation_tag [AnnotationTag tag]
+:
+	annotation_comment EQUAL (NON_OCL_STRING {$tag.setComments($NON_OCL_STRING.getText());})
+	| annotation_weight EQUAL (annotation_def {$tag.setWeight(new IntWeight(-1));} | INT {
+			if (Integer.parseInt($INT.getText())==-1){System.err.println("Error: an weight cannot be negative.");return;}
+			$tag.setWeight(new IntWeight(Integer.parseInt($INT.getText())));
+		})
 	| annotation_type EQUAL (annotation_enum_type | annotation_ref)
 ;
 
@@ -429,8 +441,9 @@ annotation_override:
 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN
 ;
 
-annotation_term:
-	annotation_tag (COMMA annotation_tag)*
+annotation_term returns [AnnotationTag tag]
+@init{$tag = new AnnotationTag();}:
+	annotation_tag[tag] (COMMA annotation_tag[tag])*
 ;
 
 annotation_ref:
@@ -464,11 +477,11 @@ annotation_enum_type :
 */
 invariant returns [ASTConstraintDefinition n]
 :
-    { $n = new ASTConstraintDefinition(); }
-	(block_annotation) ?
+    { $n = new ASTConstraintDefinition();}
+	(tag=block_annotation {$n.addBlockAnnotationTag(tag);}) ?
     'context'
-    ( v=IDENT { $n.addVarName($v); } 
-       (',' v=IDENT  { $n.addVarName($v); } )* COLON )? 
+    ( v=IDENT { $n.addVarName($v); }
+       (',' v=IDENT  { $n.addVarName($v); } )* COLON ) ?
     t=simpleType { $n.setType($t.n); }
     ( inv=invariantClause { $n.addInvariantClause($inv.n); } )* //+
     ;
@@ -478,13 +491,13 @@ invariant returns [ASTConstraintDefinition n]
     "inv" [ id ] ":" expression
 */
 invariantClause returns [ASTInvariantClause n]
-:
-	(line_annotation)*
+@init{tag = null;}:
+	(tag=line_annotation[tag])*
 	as = annotationSet
      'inv' ( name=IDENT )? COLON e=expression 
-      { $n = new ASTInvariantClause($name, $e.n); $n.setAnnotations($as.annotations); }
+      { $n = new ASTInvariantClause($name, $e.n); $n.setAnnotations($as.annotations);$n.setAnnotationTag(tag);}
     | 'existential' 'inv' ( name=IDENT )? COLON e=expression 
-      { $n = new ASTExistentialInvariantClause($name, $e.n); $n.setAnnotations($as.annotations); }
+      { $n = new ASTExistentialInvariantClause($name, $e.n); $n.setAnnotations($as.annotations);}
     ;
 
 

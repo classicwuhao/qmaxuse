@@ -36,7 +36,7 @@ expressionOnly returns [ASTExpression n]
     { "let" id [ : type ] "=" expression "in" } conditionalImpliesExpression
 */
 expression returns [ASTExpression n]
-init{ 
+@init{ 
   ASTLetExpression prevLet = null, firstLet = null;
   ASTExpression e2;
   Token tok = null;
