@@ -196,10 +196,10 @@ generalClassifierDefinition[ASTModel n]
   statemachines ::= "statemachines" { stateMachine }
 */
 classDefinition[boolean isAbstract] returns [ASTClass n]
-@init{ List idList; }
+@init{ List idList; tag=null;}
 :
-	(block_annotation) ?
-    keyClass name=IDENT { $n = new ASTClass($name, $isAbstract); }
+	(tag=block_annotation | tag=line_annotation[tag]) ?
+    keyClass name=IDENT { $n = new ASTClass($name, $isAbstract); $n.setAnnotationTag(tag);}
     ( LESS idListRes=idList { $n.addSuperClasses($idListRes.idList); } )?
     ( 'attributes' 
       ( a=attributeDefinition { $n.addAttribute($a.n); } )* 
@@ -453,9 +453,9 @@ annotation_ref:
 annotation_def:
 	'default';
 
-annotation_enum_type :
-	'Strong'
-	| 'Weak'
+annotation_enum_type:
+	'Soft'
+	| 'Hard'
 ;
 
 /* ------------------------------------

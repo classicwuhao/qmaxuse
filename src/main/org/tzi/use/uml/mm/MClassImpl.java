@@ -34,6 +34,7 @@ import java.util.TreeMap;
 import org.tzi.use.uml.mm.statemachines.MProtocolStateMachine;
 import org.tzi.use.uml.sys.MOperationCall;
 import org.tzi.use.util.collections.CollectionUtil;
+import org.tzi.use.uran.weight.*;
 
 /**
  * MClass instances represent classes in a model.
@@ -63,6 +64,8 @@ public class MClassImpl extends MClassifierImpl implements MClass {
      */
     private Set<MProtocolStateMachine> ownedProtocolStateMachines = Collections.emptySet();
     
+	private AnnotationTag tag = null;
+
     MClassImpl(String name, boolean isAbstract) {
         super(name, isAbstract);
         fAttributes = new TreeMap<String, MAttribute>();
@@ -430,6 +433,9 @@ public class MClassImpl extends MClassifierImpl implements MClass {
     public void processWithVisitor(MMVisitor v) {
         v.visitClass(this);
     }
+
+	public void setAnnotationTag (AnnotationTag tag){this.tag = tag;}
+	public AnnotationTag getAnnotationTag(){return this.tag;}
 
 	@Override
 	public List<MAssociationEnd> getAssociationEnd(String roleName) {

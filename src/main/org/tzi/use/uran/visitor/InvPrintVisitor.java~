@@ -137,6 +137,7 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
+			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
 			cls.processWithVisitor(this);
 		}
 		
@@ -163,7 +164,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
 			AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
 			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));			
-			/* form formulas for weight */
+			/* form formulas for the weight defined */
 			pairs.add(new Pair<AbstractFormula, Integer>(inv_formulas.get(i),i+1));
 			Constant weight = factory.createConstant("weight"+i, new Int());
 			Pair<AbstractFormula, Integer> pair = pairs.get(i);
@@ -174,7 +175,6 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
 		}
 		
-
 		toSMT2File(e.name(),formulas, factory);
 	}
 
