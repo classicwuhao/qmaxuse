@@ -343,7 +343,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 
 		if (operation.equals("not")){
 			if (formula.isQuantifiedFormula()){
-				/* For quantified formula, this is absolutely nonsense !!! 
+				/* For a quantified formula, this is absolutely nonsense !!! 
 				 * Negation has to be applied onto formula itself. Not the quantifiers.
 				 * That's why we need to modify this tree again !!!
 				 */
@@ -411,13 +411,19 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		
 		if (f1.isQuantifiedFormula() && !f2.isQuantifiedFormula()){
 			QuantifiedFormula f = makeQuantifiedFormula((QuantifiedFormula)f1,f2,formula);
-			if (operator.equals("<>")) f.setFormula(new NegFormula(formula));
+			if (operator.equals("<>") && f.getFormula().isBinaryFormula()){
+				BinaryFormula bformula = (BinaryFormula) f.getFormula();
+				bformula.setRight(new NegFormula(bformula.right()));
+			}
 			return f;
 		}
 
 		if (!f1.isQuantifiedFormula() && f2.isQuantifiedFormula()){
 			QuantifiedFormula f = makeQuantifiedFormula((QuantifiedFormula)f2,f1,formula);
-			if (operator.equals("<>")) f.setFormula(new NegFormula(formula));
+			if (operator.equals("<>") && f.getFormula().isBinaryFormula()){
+				BinaryFormula bformula = (BinaryFormula) f.getFormula();
+				bformula.setRight(new NegFormula(bformula.right()));		
+			}
 			return f;
 		}
 		

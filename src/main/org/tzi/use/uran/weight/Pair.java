@@ -13,7 +13,7 @@ public class Pair<U,V>{
 
 	public U first(){return this.u;}
 	public V second(){return this.v;}
-
+	
 	public String toString(){
 		return "("+this.u+" , "+this.v+")";
 	}

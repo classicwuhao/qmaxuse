@@ -24,7 +24,9 @@ public final class InvPrintVisitor implements MMVisitor{
 	private FunctionFactory factory = new FunctionFactory(512,0.75f);
 	private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
 	//private List<AbstractFormula> choices = new ArrayList<AbstractFormula>();
-	private List<AbstractFormula> inv_formulas = new ArrayList<AbstractFormula>();
+	private List<AbstractFormula> exist_formulas = new ArrayList<AbstractFormula>();
+	private List<Constant> auxs = new ArrayList<Constant>();	
+	private List<Pair<AbstractFormula, MClassInvariant>> pairs = new ArrayList<Pair<AbstractFormula, MClassInvariant>>();
 	
 	private HashMap <String, Function> uid_table = new HashMap<String, Function>();
 	private HashMap <String, String> type_table = new HashMap<String, String>();
@@ -66,7 +68,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	public void visitClass (MClass e){
 		String full_type_name="";
 		type_str = (TYPE+UUID.randomUUID()).replace('-','_');
-		Constant c = factory.createConstant(e.name(),new Int());
+		//Constant c = factory.createConstant(e.name(),new Int());
 		Function d = factory.createFunction(type_str+"_"+e.name(), new Int(), new Bool());
 		full_type_name = type_str+"_"+e.name();
 		
@@ -123,14 +125,15 @@ public final class InvPrintVisitor implements MMVisitor{
 		AbstractFormula formula = e.bodyExpression().accept(visitor);
 		ColorPrint.println(formula.toSMT2(),Color.RED);
 		ColorPrint.println("==================END====================",Color.GREEN);
-		inv_formulas.add(formula);
+		pairs.add(new Pair<AbstractFormula, MClassInvariant>(formula, e));
         fOut.flush();
 	}
 
 	@Override
 	public void visitModel (MModel e){
-		formulas.clear();inv_formulas.clear();		
+		auxs.clear();pairs.clear();formulas.clear();exist_formulas.clear();
 		MClassInvariant[] classInvariants = e.classInvariants().toArray(new MClassInvariant[0]);
+		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 		
 		/* translate class */
 		Iterator it = e.classes().iterator();
@@ -138,7 +141,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
 			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
-			cls.processWithVisitor(this);
+			cls.processWithVisitor(this);			
 		}
 		
 		it = e.associations().iterator();
@@ -146,7 +149,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			MAssociation a = (MAssociation) it.next();
 			a.processWithVisitor(this);
 		}
-
+		
 		System.out.println(factory);
 		int i=0;
 		for (MClassInvariant inv : classInvariants){
@@ -157,26 +160,61 @@ public final class InvPrintVisitor implements MMVisitor{
 			System.out.println();
 		}
 		
-		List<Pair<AbstractFormula, Integer>> pairs = new ArrayList<Pair<AbstractFormula, Integer>>();
-		
-		for (i=0;i<inv_formulas.size();i++){
+
+		for (i=0;i<pairs.size();i++){
 			Constant aux = factory.createConstant("aux"+ i, new Int());
+			auxs.add(aux);
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
 			AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
-			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));			
-			/* form formulas for the weight defined */
-			pairs.add(new Pair<AbstractFormula, Integer>(inv_formulas.get(i),i+1));
-			Constant weight = factory.createConstant("weight"+i, new Int());
-			Pair<AbstractFormula, Integer> pair = pairs.get(i);
-			int w = (int)pair.second();
-			ImpliesFormula imp_formula0 = new ImpliesFormula(inv_formulas.get(i), new EqFormula(weight,new NumLiteral(w)));
-			ImpliesFormula imp_formula1 = new ImpliesFormula(new NegFormula(inv_formulas.get(i)), new EqFormula(weight,new NumLiteral(0)));
-			formulas.add (new OrFormula().merge(inv_formulas.get(i), formula1, formula2));
-			formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
+			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
+			formulas.add(new OrFormula(new OrFormula(pairs.get(i).first(),formula1),formula2));
+			
+			/*form formulas for the weight defined */
+			/*AbstractWeight aw = pairs.get(i).second().getAnnotationTag().getWeight();
+			if (aw !=null ){
+				Constant weight = factory.createConstant("weight"+i, new Int());
+				if (aw.isIntWeight()){
+					IntWeight iw = (IntWeight)aw;
+					int w = iw.getWeight();
+					ImpliesFormula imp_formula0 = new ImpliesFormula(pairs.get(i).first(), new EqFormula(weight,new NumLiteral(w)));
+					ImpliesFormula imp_formula1 = new ImpliesFormula(new NegFormula(pairs.get(i).first()), 
+															new EqFormula(weight,new NumLiteral(0)));
+					formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
+				}
+			}*/
+			//formulas.add (pairs.get(i).first());
 		}
-		
+
+		/* add additional formulas for each class */
+		it = e.classes().iterator();
+
+		while (it.hasNext()){
+			MClass cls = (MClass) it.next();
+			tmp.clear();
+			Variable var = new Variable ("p", new Int());
+			if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
+			for (MClass c : cls.allParents())
+				if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
+
+			if (tmp.size()>0){
+				exist_formulas.add (
+					(tmp.size() > 1) ? 
+					new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
+							new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
+				:
+					new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0))
+				);
+			}		
+		}
+	
+		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
+
+		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		toSMT2File(e.name(),formulas, factory);
 	}
+
+
+	
 
 	@Override
 	public void visitOperation (MOperation e){}
