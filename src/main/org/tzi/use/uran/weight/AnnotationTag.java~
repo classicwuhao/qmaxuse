@@ -6,8 +6,12 @@ public class AnnotationTag{
 	private AbstractWeight weight;	
 	private String name;
 	
-
 	public AnnotationTag(){;}
+	/*public AnnotationTag(AnnotationTag tag){
+		this.comments = tag.comments;
+		this.weight = tag.getWeight();
+		this.name = tag.getName();
+	}*/
 	public AnnotationTag(AbstractWeight weight, String comments){
 		this.comments = comments;
 		this.weight = weight;

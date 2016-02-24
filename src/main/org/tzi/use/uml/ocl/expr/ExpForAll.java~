@@ -24,6 +24,7 @@ package org.tzi.use.uml.ocl.expr;
 import org.tzi.use.uml.ocl.type.TypeFactory;
 import org.tzi.use.uml.ocl.value.Value;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
+import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
 
 /** 
@@ -89,5 +90,11 @@ public class ExpForAll extends ExpQuery {
 	public AbstractFormula accept (AbstractExprVisitor visitor){
 		return visitor.visitForAll(this);
 	}
+
+	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitForAll(this);
+	}
+
 }
 

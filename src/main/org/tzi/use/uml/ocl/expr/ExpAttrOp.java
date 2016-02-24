@@ -108,6 +108,11 @@ public final class ExpAttrOp extends Expression {
 	}
 
 	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitAttrOp(this);
+	}
+
+	@Override
 	protected boolean childExpressionRequiresPreState() {		
 		return fObjExp.requiresPreState();
 	}

@@ -29,6 +29,7 @@ import org.tzi.use.parser.SemanticException;
 import org.tzi.use.parser.Symtable;
 import org.tzi.use.util.StringUtil;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
+import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
 
 /** 
@@ -185,6 +186,10 @@ public class VarDeclList implements Iterable<VarDecl> {
 	}
 
 	public List<AbstractFormula> accept(AbstractExprVisitor visitor){
+		return visitor.visitVarDeclList(this);
+	}
+
+	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitVarDeclList(this);
 	}
 

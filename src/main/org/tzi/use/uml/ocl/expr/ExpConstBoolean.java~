@@ -73,6 +73,11 @@ public final class ExpConstBoolean extends Expression {
 		return visitor.visitConstBoolean(this);
 	}
 
+	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitConstBoolean(this);
+	}
+
 	/* (non-Javadoc)
 	 * @see org.tzi.use.uml.ocl.expr.Expression#childExpressionRequiresPreState()
 	 */

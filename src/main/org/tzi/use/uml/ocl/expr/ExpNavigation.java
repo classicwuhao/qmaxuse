@@ -38,6 +38,7 @@ import org.tzi.use.uml.sys.MSystemState;
 import org.tzi.use.util.StringUtil;
 
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
+import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
 
 /**
@@ -193,6 +194,11 @@ public final class ExpNavigation extends Expression {
 
 	@Override
 	public AbstractFormula accept (AbstractExprVisitor visitor){
+		return visitor.visitNavigation(this);
+	}
+
+	@Override
+	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitNavigation(this);
 	}
 

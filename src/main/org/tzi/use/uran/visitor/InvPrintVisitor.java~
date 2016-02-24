@@ -27,7 +27,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	private List<AbstractFormula> exist_formulas = new ArrayList<AbstractFormula>();
 	private List<Constant> auxs = new ArrayList<Constant>();	
 	private List<Pair<AbstractFormula, MClassInvariant>> pairs = new ArrayList<Pair<AbstractFormula, MClassInvariant>>();
-	
+	private HashMap <MClass, Integer> clsRank = new HashMap<MClass, Integer>();
 	private HashMap <String, Function> uid_table = new HashMap<String, Function>();
 	private HashMap <String, String> type_table = new HashMap<String, String>();
 	private final String OBJ="obj_";
@@ -53,6 +53,11 @@ public final class InvPrintVisitor implements MMVisitor{
 		rel_str = rel_str + "_" + e.name();
 		Function f2 = factory.createFunction(rel_str, new Int(), new Int(), new Bool());
 		uid_table.put(e.name(),f2);
+
+		for (MAssociationEnd a : e.associationEnds()){
+			if (clsRank.containsKey(a.cls()))
+				clsRank.put(a.cls(),clsRank.get(a.cls())+1);
+		}
 	}
 	
 	@Override
@@ -77,6 +82,9 @@ public final class InvPrintVisitor implements MMVisitor{
 		
 		Iterator it = e.attributes().iterator();
 		Function f;
+		
+		if (!clsRank.containsKey(e)) clsRank.put(e, e.allAttributes().size());
+		
 		while (it.hasNext()){
 			MAttribute attr = (MAttribute) it.next();
 			org.tzi.use.uml.ocl.type.Type t = attr.type();
@@ -123,7 +131,20 @@ public final class InvPrintVisitor implements MMVisitor{
 		ColorPrint.println("==============Final Formula==============",Color.GREEN);
 		AbstractExprVisitor visitor = new OclExprVisitor(this);
 		AbstractFormula formula = e.bodyExpression().accept(visitor);
+		
+		AnnotationTag tag = e.getAnnotationTag();
+		if (tag!=null){
+			AbstractWeight weight = tag.getWeight();
+			if (weight!=null){
+				IntWeight iweight = (IntWeight) e.getAnnotationTag().getWeight();
+				if (iweight.getWeight()==IntWeight.DEFAULT) {
+					AbstractRankVisitor rvisitor = new OclRankVisitor();
+					iweight.setWeight(e.bodyExpression().accept(rvisitor));
+				}
+			}
+		}
 		ColorPrint.println(formula.toSMT2(),Color.RED);
+		ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
 		ColorPrint.println("==================END====================",Color.GREEN);
 		pairs.add(new Pair<AbstractFormula, MClassInvariant>(formula, e));
         fOut.flush();
@@ -160,6 +181,16 @@ public final class InvPrintVisitor implements MMVisitor{
 			System.out.println();
 		}
 		
+		it = e.classes().iterator();
+		while (it.hasNext()){
+			MClass cls = (MClass) it.next();
+			/* check if this is a default weight */
+			AbstractWeight weight = cls.getAnnotationTag().getWeight();
+			if (weight.isIntWeight()) {
+				IntWeight iweight = (IntWeight) weight;
+				if (iweight.getWeight()==-1) iweight.setWeight(clsRank.get(cls));
+			}
+		}
 
 		for (i=0;i<pairs.size();i++){
 			Constant aux = factory.createConstant("aux"+ i, new Int());
@@ -195,7 +226,6 @@ public final class InvPrintVisitor implements MMVisitor{
 			if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
 			for (MClass c : cls.allParents())
 				if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
-
 			if (tmp.size()>0){
 				exist_formulas.add (
 					(tmp.size() > 1) ? 
@@ -204,8 +234,8 @@ public final class InvPrintVisitor implements MMVisitor{
 				:
 					new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0))
 				);
-			}		
-		}
+			}
+		} // end of while
 	
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
 

@@ -77,6 +77,11 @@ public final class ExpVariable extends Expression  {
 	}
 
 	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitVariable(this);
+	}
+
+	@Override
 	protected boolean childExpressionRequiresPreState() {
 		return false;
 	}

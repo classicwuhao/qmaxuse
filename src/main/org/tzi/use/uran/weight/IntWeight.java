@@ -3,7 +3,9 @@ package org.tzi.use.uran.weight;
 
 public class IntWeight extends AbstractWeight{
 	int weight;		
+	public final static int DEFAULT=-1;
 	
+	public IntWeight(){}
 	public IntWeight(int weight){
 		checkWeight(weight);
 		this.weight = weight;

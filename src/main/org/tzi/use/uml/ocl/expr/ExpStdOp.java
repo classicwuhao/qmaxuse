@@ -338,4 +338,9 @@ public final class ExpStdOp extends Expression {
 		return visitor.visitStdOp(this);
 	}
 
+	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitStdOp(this);
+	}
+	
 }

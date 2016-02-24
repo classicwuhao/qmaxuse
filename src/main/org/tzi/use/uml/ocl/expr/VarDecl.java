@@ -25,6 +25,7 @@ import org.antlr.runtime.Token;
 import org.tzi.use.parser.SrcPos;
 import org.tzi.use.uml.ocl.type.Type;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
+import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
 
 /** 
@@ -110,9 +111,13 @@ public class VarDecl {
 		v.visitVarDecl(this);
 	}
 	
-	
 	public AbstractFormula accept(AbstractExprVisitor visitor){
 		return visitor.visitVarDecl(this);
 	}
+
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitVarDecl(this);
+	}
+	
 }
 

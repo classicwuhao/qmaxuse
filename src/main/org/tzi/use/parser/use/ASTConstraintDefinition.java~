@@ -91,7 +91,17 @@ public class ASTConstraintDefinition extends AST {
 				if(inv != null){
 					invs.add(inv);
 					if (blockTag!=null && inv.getAnnotationTag()==null){
-						inv.setAnnotationTag(blockTag);
+						AbstractWeight weight = blockTag.getWeight();
+						if (weight!=null){
+							AnnotationTag newTag = new AnnotationTag();
+							IntWeight newWeight = new IntWeight();
+							if (weight.isIntWeight()){
+								int w = ((IntWeight) weight).getWeight();
+								newWeight.setWeight(w);
+							}
+							newTag.setWeight(newWeight);
+							inv.setAnnotationTag(newTag);
+						}
 					}
 				}
 				

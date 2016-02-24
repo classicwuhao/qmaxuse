@@ -72,6 +72,11 @@ public final class ExpConstInteger extends Expression {
 	}
 
 	@Override
+	public int accept (AbstractRankVisitor visitor){
+		return visitor.visitConstInteger(this);
+	}
+
+	@Override
 	protected boolean childExpressionRequiresPreState() {
 		return false;
 	}
