@@ -181,5 +181,5 @@ public abstract class Expression implements BufferedToString {
     
     public abstract void processWithVisitor(ExpressionVisitor visitor);
 	public AbstractFormula accept (AbstractExprVisitor visitor){return null;};
-	public int accept (AbstractRankVisitor visitor){return 0;};
+	public int accept (AbstractRankVisitor visitor){return 1;};
 }

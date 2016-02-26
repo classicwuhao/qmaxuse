@@ -144,7 +144,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			}
 		}
 		ColorPrint.println(formula.toSMT2(),Color.RED);
-		ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
+		//ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
 		ColorPrint.println("==================END====================",Color.GREEN);
 		pairs.add(new Pair<AbstractFormula, MClassInvariant>(formula, e));
         fOut.flush();
@@ -190,6 +190,7 @@ public final class InvPrintVisitor implements MMVisitor{
 				IntWeight iweight = (IntWeight) weight;
 				if (iweight.getWeight()==-1) iweight.setWeight(clsRank.get(cls));
 			}
+			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
 		}
 
 		for (i=0;i<pairs.size();i++){

@@ -104,10 +104,7 @@ public class ASTConstraintDefinition extends AST {
 						}
 					}
 				}
-				
-
 			}
-            
         } catch (SemanticException ex) {
             ctx.reportError(ex);
         } finally {
