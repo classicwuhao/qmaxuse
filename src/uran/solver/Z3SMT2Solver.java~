@@ -43,6 +43,11 @@ public final class Z3SMT2Solver{
 	}
 
 	/**
+	 *	Returns the current formula writer.
+	 */
+	public SMT2Writer getWriter(){return this.writer;}
+	
+	/**
 	 * Use Z3 Java APIs to perform solving.
 	 */
 	public Result solve(){
@@ -95,7 +100,7 @@ public final class Z3SMT2Solver{
 			for (int j=0;j<entry.length;j++){
 				Expr e = entry[j].getValue();
 				if (e.isBool()){
-					factory.updateValue(func[i].getName().toString(), new BoolValue(e.isTrue()));
+					factory.updateValue(func[i].getName(), new BoolValue(e.isTrue()));
 				}
 				else if (e.isInt()){
 					factory.updateValue(func[i].getName().toString(),

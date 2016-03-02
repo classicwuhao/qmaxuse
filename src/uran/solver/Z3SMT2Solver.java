@@ -43,6 +43,11 @@ public final class Z3SMT2Solver{
 	}
 
 	/**
+	 *	Returns the current formula writer.
+	 */
+	public SMT2Writer getWriter(){return this.writer;}
+	
+	/**
 	 * Use Z3 Java APIs to perform solving.
 	 */
 	public Result solve(){

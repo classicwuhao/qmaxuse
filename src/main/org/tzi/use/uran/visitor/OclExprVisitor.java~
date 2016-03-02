@@ -86,7 +86,15 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		
 		System.out.println("leaving exists...");
 		System.out.println("scope:"+s);
-		return new QuantifiedFormula(Quantifier.EXISTS,new Decls(cons),formula);
+		
+		
+		
+		
+		return formula.isImpliesFormula() ? 
+			new QuantifiedFormula(Quantifier.EXISTS, new Decls(cons), 
+				new AndFormula(((ImpliesFormula)formula).left(),((ImpliesFormula)formula).right()))
+			:
+			new QuantifiedFormula(Quantifier.EXISTS,new Decls(cons),formula);
 	}
 	
 	private AbstractFormula visitQuery(ExpQuery expr, Scope s){

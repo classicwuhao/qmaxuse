@@ -412,6 +412,13 @@ public final class MClassInvariant extends MModelElementImpl implements UseFileL
 		this.fTag=t;
     }
 
+	/**
+	 * Get an annotation tag.
+	 */
 	public AnnotationTag getAnnotationTag(){return this.fTag;}
 	
+	/**
+	 * check if tag is null.
+	 */
+	public boolean isTagNull (){return fTag == null;}
 }

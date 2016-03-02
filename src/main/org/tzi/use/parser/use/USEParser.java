@@ -1,4 +1,4 @@
-// $ANTLR 3.4 USE.g 2016-02-16 16:17:26
+// $ANTLR 3.4 USE.g 2016-03-02 16:49:27
  
 /*
  * USE - UML based specification environment
@@ -27,7 +27,6 @@ package org.tzi.use.parser.use;
 import org.tzi.use.parser.base.BaseParser;
 import org.tzi.use.parser.use.statemachines.*;
 import org.tzi.use.parser.ocl.*;
-import org.tzi.use.parser.use.tag.*;
 import org.tzi.use.parser.soil.ast.*;
 import org.tzi.use.uran.weight.*;
 import java.util.Collections;
@@ -185,7 +184,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "model"
-    // USE.g:131:1: model returns [ASTModel n] : as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF ;
+    // USE.g:130:1: model returns [ASTModel n] : as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF ;
     public final ASTModel model() throws RecognitionException {
         ASTModel n = null;
 
@@ -203,8 +202,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:132:2: (as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF )
-            // USE.g:133:2: as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF
+            // USE.g:131:2: (as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF )
+            // USE.g:132:2: as= annotationSet 'model' modelName= IDENT ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )* EOF
             {
             pushFollow(FOLLOW_annotationSet_in_model71);
             as=annotationSet();
@@ -218,14 +217,14 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTModel(modelName); n.setAnnotations(as); }
 
-            // USE.g:135:5: ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )*
+            // USE.g:134:5: ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )*
             loop2:
             do {
                 int alt2=5;
                 alt2 = dfa2.predict(input);
                 switch (alt2) {
             	case 1 :
-            	    // USE.g:135:9: generalClassifierDefinition[$n]
+            	    // USE.g:134:9: generalClassifierDefinition[$n]
             	    {
             	    pushFollow(FOLLOW_generalClassifierDefinition_in_model93);
             	    generalClassifierDefinition(n);
@@ -236,7 +235,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 2 :
-            	    // USE.g:136:9: a= associationDefinition
+            	    // USE.g:135:9: a= associationDefinition
             	    {
             	    pushFollow(FOLLOW_associationDefinition_in_model106);
             	    a=associationDefinition();
@@ -249,21 +248,21 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 3 :
-            	    // USE.g:137:9: ( 'constraints' (cons= invariant |ppc= prePost )* )
+            	    // USE.g:136:9: ( 'constraints' (cons= invariant |ppc= prePost )* )
             	    {
-            	    // USE.g:137:9: ( 'constraints' (cons= invariant |ppc= prePost )* )
-            	    // USE.g:137:11: 'constraints' (cons= invariant |ppc= prePost )*
+            	    // USE.g:136:9: ( 'constraints' (cons= invariant |ppc= prePost )* )
+            	    // USE.g:136:11: 'constraints' (cons= invariant |ppc= prePost )*
             	    {
             	    match(input,66,FOLLOW_66_in_model120); if (state.failed) return n;
 
-            	    // USE.g:138:11: (cons= invariant |ppc= prePost )*
+            	    // USE.g:137:11: (cons= invariant |ppc= prePost )*
             	    loop1:
             	    do {
             	        int alt1=3;
             	        alt1 = dfa1.predict(input);
             	        switch (alt1) {
             	    	case 1 :
-            	    	    // USE.g:138:15: cons= invariant
+            	    	    // USE.g:137:15: cons= invariant
             	    	    {
             	    	    pushFollow(FOLLOW_invariant_in_model138);
             	    	    cons=invariant();
@@ -276,7 +275,7 @@ public class USEParser extends BaseParser {
             	    	    }
             	    	    break;
             	    	case 2 :
-            	    	    // USE.g:139:15: ppc= prePost
+            	    	    // USE.g:138:15: ppc= prePost
             	    	    {
             	    	    pushFollow(FOLLOW_prePost_in_model159);
             	    	    ppc=prePost();
@@ -301,7 +300,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 4 :
-            	    // USE.g:142:9: e= enumTypeDefinition
+            	    // USE.g:141:9: e= enumTypeDefinition
             	    {
             	    pushFollow(FOLLOW_enumTypeDefinition_in_model199);
             	    e=enumTypeDefinition();
@@ -340,7 +339,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "enumTypeDefinition"
-    // USE.g:151:1: enumTypeDefinition returns [ASTEnumTypeDefinition n] : as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )? ;
+    // USE.g:150:1: enumTypeDefinition returns [ASTEnumTypeDefinition n] : as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )? ;
     public final ASTEnumTypeDefinition enumTypeDefinition() throws RecognitionException {
         ASTEnumTypeDefinition n = null;
 
@@ -352,8 +351,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:152:2: (as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )? )
-            // USE.g:153:2: as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )?
+            // USE.g:151:2: (as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )? )
+            // USE.g:152:2: as= annotationSet 'enum' name= IDENT LBRACE idListRes= idList RBRACE ( SEMI )?
             {
             pushFollow(FOLLOW_annotationSet_in_enumTypeDefinition242);
             as=annotationSet();
@@ -375,7 +374,7 @@ public class USEParser extends BaseParser {
 
             match(input,RBRACE,FOLLOW_RBRACE_in_enumTypeDefinition260); if (state.failed) return n;
 
-            // USE.g:154:54: ( SEMI )?
+            // USE.g:153:54: ( SEMI )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -384,7 +383,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt3) {
                 case 1 :
-                    // USE.g:154:56: SEMI
+                    // USE.g:153:56: SEMI
                     {
                     match(input,SEMI,FOLLOW_SEMI_in_enumTypeDefinition264); if (state.failed) return n;
 
@@ -414,7 +413,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "generalClassifierDefinition"
-    // USE.g:163:1: generalClassifierDefinition[ASTModel n] : as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] ) ;
+    // USE.g:162:1: generalClassifierDefinition[ASTModel n] : as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] ) ;
     public final void generalClassifierDefinition(ASTModel n) throws RecognitionException {
         Set<ASTAnnotation> as =null;
 
@@ -429,8 +428,8 @@ public class USEParser extends BaseParser {
           boolean isAbstract = false;
 
         try {
-            // USE.g:167:2: (as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] ) )
-            // USE.g:168:2: as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] )
+            // USE.g:166:2: (as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] ) )
+            // USE.g:167:2: as= annotationSet ( 'abstract' )? (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] )
             {
             pushFollow(FOLLOW_annotationSet_in_generalClassifierDefinition302);
             as=annotationSet();
@@ -438,7 +437,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return ;
 
-            // USE.g:169:5: ( 'abstract' )?
+            // USE.g:168:5: ( 'abstract' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -447,7 +446,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt4) {
                 case 1 :
-                    // USE.g:169:7: 'abstract'
+                    // USE.g:168:7: 'abstract'
                     {
                     match(input,57,FOLLOW_57_in_generalClassifierDefinition310); if (state.failed) return ;
 
@@ -459,7 +458,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:170:5: (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] )
+            // USE.g:169:5: (c= classDefinition[isAbstract] |ac= associationClassDefinition[isAbstract] |s= signalDefinition[isAbstract] )
             int alt5=3;
             switch ( input.LA(1) ) {
             case AT:
@@ -504,7 +503,7 @@ public class USEParser extends BaseParser {
 
             switch (alt5) {
                 case 1 :
-                    // USE.g:171:9: c= classDefinition[isAbstract]
+                    // USE.g:170:9: c= classDefinition[isAbstract]
                     {
                     pushFollow(FOLLOW_classDefinition_in_generalClassifierDefinition338);
                     c=classDefinition(isAbstract);
@@ -517,7 +516,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:174:9: ac= associationClassDefinition[isAbstract]
+                    // USE.g:173:9: ac= associationClassDefinition[isAbstract]
                     {
                     pushFollow(FOLLOW_associationClassDefinition_in_generalClassifierDefinition376);
                     ac=associationClassDefinition(isAbstract);
@@ -530,7 +529,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:177:9: s= signalDefinition[isAbstract]
+                    // USE.g:176:9: s= signalDefinition[isAbstract]
                     {
                     pushFollow(FOLLOW_signalDefinition_in_generalClassifierDefinition421);
                     s=signalDefinition(isAbstract);
@@ -564,7 +563,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "classDefinition"
-    // USE.g:198:1: classDefinition[boolean isAbstract] returns [ASTClass n] : (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end' ;
+    // USE.g:197:1: classDefinition[boolean isAbstract] returns [ASTClass n] : (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end' ;
     public final ASTClass classDefinition(boolean isAbstract) throws RecognitionException {
         ASTClass n = null;
 
@@ -585,10 +584,10 @@ public class USEParser extends BaseParser {
 
          List idList; tag=null;
         try {
-            // USE.g:200:2: ( (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end' )
-            // USE.g:201:2: (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end'
+            // USE.g:199:2: ( (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end' )
+            // USE.g:200:2: (tag= block_annotation |tag= line_annotation[tag] )? keyClass name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? 'end'
             {
-            // USE.g:201:2: (tag= block_annotation |tag= line_annotation[tag] )?
+            // USE.g:200:2: (tag= block_annotation |tag= line_annotation[tag] )?
             int alt6=3;
             int LA6_0 = input.LA(1);
 
@@ -604,7 +603,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt6) {
                 case 1 :
-                    // USE.g:201:3: tag= block_annotation
+                    // USE.g:200:3: tag= block_annotation
                     {
                     pushFollow(FOLLOW_block_annotation_in_classDefinition475);
                     tag=block_annotation();
@@ -615,7 +614,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:201:26: tag= line_annotation[tag]
+                    // USE.g:200:26: tag= line_annotation[tag]
                     {
                     pushFollow(FOLLOW_line_annotation_in_classDefinition481);
                     tag=line_annotation(tag);
@@ -639,7 +638,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTClass(name, isAbstract); n.setAnnotationTag(tag);}
 
-            // USE.g:203:5: ( LESS idListRes= idList )?
+            // USE.g:202:5: ( LESS idListRes= idList )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -648,7 +647,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt7) {
                 case 1 :
-                    // USE.g:203:7: LESS idListRes= idList
+                    // USE.g:202:7: LESS idListRes= idList
                     {
                     match(input,LESS,FOLLOW_LESS_in_classDefinition505); if (state.failed) return n;
 
@@ -666,7 +665,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:204:5: ( 'attributes' (a= attributeDefinition )* )?
+            // USE.g:203:5: ( 'attributes' (a= attributeDefinition )* )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -675,11 +674,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt9) {
                 case 1 :
-                    // USE.g:204:7: 'attributes' (a= attributeDefinition )*
+                    // USE.g:203:7: 'attributes' (a= attributeDefinition )*
                     {
                     match(input,62,FOLLOW_62_in_classDefinition522); if (state.failed) return n;
 
-                    // USE.g:205:7: (a= attributeDefinition )*
+                    // USE.g:204:7: (a= attributeDefinition )*
                     loop8:
                     do {
                         int alt8=2;
@@ -692,7 +691,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // USE.g:205:9: a= attributeDefinition
+                    	    // USE.g:204:9: a= attributeDefinition
                     	    {
                     	    pushFollow(FOLLOW_attributeDefinition_in_classDefinition535);
                     	    a=attributeDefinition();
@@ -717,7 +716,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:207:5: ( 'operations' (op= operationDefinition )* )?
+            // USE.g:206:5: ( 'operations' (op= operationDefinition )* )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -726,11 +725,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt11) {
                 case 1 :
-                    // USE.g:207:7: 'operations' (op= operationDefinition )*
+                    // USE.g:206:7: 'operations' (op= operationDefinition )*
                     {
                     match(input,101,FOLLOW_101_in_classDefinition556); if (state.failed) return n;
 
-                    // USE.g:208:7: (op= operationDefinition )*
+                    // USE.g:207:7: (op= operationDefinition )*
                     loop10:
                     do {
                         int alt10=2;
@@ -743,7 +742,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // USE.g:208:9: op= operationDefinition
+                    	    // USE.g:207:9: op= operationDefinition
                     	    {
                     	    pushFollow(FOLLOW_operationDefinition_in_classDefinition569);
                     	    op=operationDefinition();
@@ -768,7 +767,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:210:5: ( 'constraints' (inv= invariantClause )* )?
+            // USE.g:209:5: ( 'constraints' (inv= invariantClause )* )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -777,11 +776,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt13) {
                 case 1 :
-                    // USE.g:210:7: 'constraints' (inv= invariantClause )*
+                    // USE.g:209:7: 'constraints' (inv= invariantClause )*
                     {
                     match(input,66,FOLLOW_66_in_classDefinition590); if (state.failed) return n;
 
-                    // USE.g:211:7: (inv= invariantClause )*
+                    // USE.g:210:7: (inv= invariantClause )*
                     loop12:
                     do {
                         int alt12=2;
@@ -794,7 +793,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // USE.g:212:9: inv= invariantClause
+                    	    // USE.g:211:9: inv= invariantClause
                     	    {
                     	    pushFollow(FOLLOW_invariantClause_in_classDefinition610);
                     	    inv=invariantClause();
@@ -819,7 +818,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:215:5: ( 'statemachines' (sm= stateMachine )* )?
+            // USE.g:214:5: ( 'statemachines' (sm= stateMachine )* )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -828,11 +827,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt15) {
                 case 1 :
-                    // USE.g:215:7: 'statemachines' (sm= stateMachine )*
+                    // USE.g:214:7: 'statemachines' (sm= stateMachine )*
                     {
                     match(input,110,FOLLOW_110_in_classDefinition636); if (state.failed) return n;
 
-                    // USE.g:216:7: (sm= stateMachine )*
+                    // USE.g:215:7: (sm= stateMachine )*
                     loop14:
                     do {
                         int alt14=2;
@@ -845,7 +844,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // USE.g:217:9: sm= stateMachine
+                    	    // USE.g:216:9: sm= stateMachine
                     	    {
                     	    pushFollow(FOLLOW_stateMachine_in_classDefinition656);
                     	    sm=stateMachine();
@@ -890,7 +889,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "associationClassDefinition"
-    // USE.g:238:1: associationClassDefinition[boolean isAbstract] returns [ASTAssociationClass n] : classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end' ;
+    // USE.g:237:1: associationClassDefinition[boolean isAbstract] returns [ASTAssociationClass n] : classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end' ;
     public final ASTAssociationClass associationClassDefinition(boolean isAbstract) throws RecognitionException {
         ASTAssociationClass n = null;
 
@@ -912,8 +911,8 @@ public class USEParser extends BaseParser {
 
         List idList; Token t = null;
         try {
-            // USE.g:240:5: (classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end' )
-            // USE.g:241:5: classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end'
+            // USE.g:239:5: (classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end' )
+            // USE.g:240:5: classKW= ( 'associationClass' | 'associationclass' ) name= IDENT ( LESS idListRes= idList )? ( 'between' ae= associationEnd (ae= associationEnd )+ )? ( 'attributes' (a= attributeDefinition )* )? ( 'operations' (op= operationDefinition )* )? ( 'constraints' (inv= invariantClause )* )? ( 'statemachines' (sm= stateMachine )* )? ( ( keyAggregation | keyComposition ) )? 'end'
             {
             classKW=(Token)input.LT(1);
 
@@ -940,7 +939,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTAssociationClass(name, isAbstract); }
 
-            // USE.g:250:5: ( LESS idListRes= idList )?
+            // USE.g:249:5: ( LESS idListRes= idList )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -949,7 +948,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt16) {
                 case 1 :
-                    // USE.g:250:7: LESS idListRes= idList
+                    // USE.g:249:7: LESS idListRes= idList
                     {
                     match(input,LESS,FOLLOW_LESS_in_associationClassDefinition749); if (state.failed) return n;
 
@@ -967,7 +966,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:251:5: ( 'between' ae= associationEnd (ae= associationEnd )+ )?
+            // USE.g:250:5: ( 'between' ae= associationEnd (ae= associationEnd )+ )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -976,7 +975,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt18) {
                 case 1 :
-                    // USE.g:251:6: 'between' ae= associationEnd (ae= associationEnd )+
+                    // USE.g:250:6: 'between' ae= associationEnd (ae= associationEnd )+
                     {
                     match(input,64,FOLLOW_64_in_associationClassDefinition765); if (state.failed) return n;
 
@@ -988,7 +987,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addEnd(ae); }
 
-                    // USE.g:253:5: (ae= associationEnd )+
+                    // USE.g:252:5: (ae= associationEnd )+
                     int cnt17=0;
                     loop17:
                     do {
@@ -1011,7 +1010,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // USE.g:253:7: ae= associationEnd
+                    	    // USE.g:252:7: ae= associationEnd
                     	    {
                     	    pushFollow(FOLLOW_associationEnd_in_associationClassDefinition785);
                     	    ae=associationEnd();
@@ -1041,7 +1040,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:255:5: ( 'attributes' (a= attributeDefinition )* )?
+            // USE.g:254:5: ( 'attributes' (a= attributeDefinition )* )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1050,11 +1049,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt20) {
                 case 1 :
-                    // USE.g:255:7: 'attributes' (a= attributeDefinition )*
+                    // USE.g:254:7: 'attributes' (a= attributeDefinition )*
                     {
                     match(input,62,FOLLOW_62_in_associationClassDefinition805); if (state.failed) return n;
 
-                    // USE.g:256:7: (a= attributeDefinition )*
+                    // USE.g:255:7: (a= attributeDefinition )*
                     loop19:
                     do {
                         int alt19=2;
@@ -1076,7 +1075,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // USE.g:256:9: a= attributeDefinition
+                    	    // USE.g:255:9: a= attributeDefinition
                     	    {
                     	    pushFollow(FOLLOW_attributeDefinition_in_associationClassDefinition818);
                     	    a=attributeDefinition();
@@ -1101,7 +1100,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:258:5: ( 'operations' (op= operationDefinition )* )?
+            // USE.g:257:5: ( 'operations' (op= operationDefinition )* )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -1110,11 +1109,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt22) {
                 case 1 :
-                    // USE.g:258:7: 'operations' (op= operationDefinition )*
+                    // USE.g:257:7: 'operations' (op= operationDefinition )*
                     {
                     match(input,101,FOLLOW_101_in_associationClassDefinition839); if (state.failed) return n;
 
-                    // USE.g:259:7: (op= operationDefinition )*
+                    // USE.g:258:7: (op= operationDefinition )*
                     loop21:
                     do {
                         int alt21=2;
@@ -1136,7 +1135,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt21) {
                     	case 1 :
-                    	    // USE.g:259:9: op= operationDefinition
+                    	    // USE.g:258:9: op= operationDefinition
                     	    {
                     	    pushFollow(FOLLOW_operationDefinition_in_associationClassDefinition852);
                     	    op=operationDefinition();
@@ -1161,7 +1160,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:261:5: ( 'constraints' (inv= invariantClause )* )?
+            // USE.g:260:5: ( 'constraints' (inv= invariantClause )* )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -1170,11 +1169,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt24) {
                 case 1 :
-                    // USE.g:261:7: 'constraints' (inv= invariantClause )*
+                    // USE.g:260:7: 'constraints' (inv= invariantClause )*
                     {
                     match(input,66,FOLLOW_66_in_associationClassDefinition873); if (state.failed) return n;
 
-                    // USE.g:262:7: (inv= invariantClause )*
+                    // USE.g:261:7: (inv= invariantClause )*
                     loop23:
                     do {
                         int alt23=2;
@@ -1187,7 +1186,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt23) {
                     	case 1 :
-                    	    // USE.g:263:9: inv= invariantClause
+                    	    // USE.g:262:9: inv= invariantClause
                     	    {
                     	    pushFollow(FOLLOW_invariantClause_in_associationClassDefinition893);
                     	    inv=invariantClause();
@@ -1212,7 +1211,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:266:5: ( 'statemachines' (sm= stateMachine )* )?
+            // USE.g:265:5: ( 'statemachines' (sm= stateMachine )* )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -1221,11 +1220,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt26) {
                 case 1 :
-                    // USE.g:266:7: 'statemachines' (sm= stateMachine )*
+                    // USE.g:265:7: 'statemachines' (sm= stateMachine )*
                     {
                     match(input,110,FOLLOW_110_in_associationClassDefinition919); if (state.failed) return n;
 
-                    // USE.g:267:7: (sm= stateMachine )*
+                    // USE.g:266:7: (sm= stateMachine )*
                     loop25:
                     do {
                         int alt25=2;
@@ -1238,7 +1237,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // USE.g:268:9: sm= stateMachine
+                    	    // USE.g:267:9: sm= stateMachine
                     	    {
                     	    pushFollow(FOLLOW_stateMachine_in_associationClassDefinition939);
                     	    sm=stateMachine();
@@ -1263,7 +1262,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:272:5: ( ( keyAggregation | keyComposition ) )?
+            // USE.g:271:5: ( ( keyAggregation | keyComposition ) )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -1272,11 +1271,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt28) {
                 case 1 :
-                    // USE.g:272:7: ( keyAggregation | keyComposition )
+                    // USE.g:271:7: ( keyAggregation | keyComposition )
                     {
                     if ( state.backtracking==0 ) { t = input.LT(1); }
 
-                    // USE.g:273:7: ( keyAggregation | keyComposition )
+                    // USE.g:272:7: ( keyAggregation | keyComposition )
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -1308,7 +1307,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt27) {
                         case 1 :
-                            // USE.g:273:9: keyAggregation
+                            // USE.g:272:9: keyAggregation
                             {
                             pushFollow(FOLLOW_keyAggregation_in_associationClassDefinition980);
                             keyAggregation();
@@ -1319,7 +1318,7 @@ public class USEParser extends BaseParser {
                             }
                             break;
                         case 2 :
-                            // USE.g:273:26: keyComposition
+                            // USE.g:272:26: keyComposition
                             {
                             pushFollow(FOLLOW_keyComposition_in_associationClassDefinition984);
                             keyComposition();
@@ -1361,7 +1360,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "attributeDefinition"
-    // USE.g:283:1: attributeDefinition returns [ASTAttribute n] : as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )? ;
+    // USE.g:282:1: attributeDefinition returns [ASTAttribute n] : as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )? ;
     public final ASTAttribute attributeDefinition() throws RecognitionException {
         ASTAttribute n = null;
 
@@ -1377,8 +1376,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:284:2: (as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )? )
-            // USE.g:285:2: as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )?
+            // USE.g:283:2: (as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )? )
+            // USE.g:284:2: as= annotationSet name= IDENT COLON t= type ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )? ( SEMI )?
             {
             pushFollow(FOLLOW_annotationSet_in_attributeDefinition1035);
             as=annotationSet();
@@ -1396,7 +1395,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return n;
 
-            // USE.g:288:5: ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )?
+            // USE.g:287:5: ( ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression ) | ( keyInit ( COLON | EQUAL ) initExpression= expression ) )?
             int alt30=3;
             int LA30_0 = input.LA(1);
 
@@ -1412,12 +1411,12 @@ public class USEParser extends BaseParser {
             }
             switch (alt30) {
                 case 1 :
-                    // USE.g:289:9: ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression )
+                    // USE.g:288:9: ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression )
                     {
-                    // USE.g:289:9: ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression )
-                    // USE.g:289:10: ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression
+                    // USE.g:288:9: ( ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression )
+                    // USE.g:288:10: ( keyDerive | keyDerived ) ( COLON | EQUAL ) deriveExpression= expression
                     {
-                    // USE.g:289:10: ( keyDerive | keyDerived )
+                    // USE.g:288:10: ( keyDerive | keyDerived )
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -1449,7 +1448,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt29) {
                         case 1 :
-                            // USE.g:289:11: keyDerive
+                            // USE.g:288:11: keyDerive
                             {
                             pushFollow(FOLLOW_keyDerive_in_attributeDefinition1073);
                             keyDerive();
@@ -1460,7 +1459,7 @@ public class USEParser extends BaseParser {
                             }
                             break;
                         case 2 :
-                            // USE.g:289:21: keyDerived
+                            // USE.g:288:21: keyDerived
                             {
                             pushFollow(FOLLOW_keyDerived_in_attributeDefinition1075);
                             keyDerived();
@@ -1498,10 +1497,10 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:291:9: ( keyInit ( COLON | EQUAL ) initExpression= expression )
+                    // USE.g:290:9: ( keyInit ( COLON | EQUAL ) initExpression= expression )
                     {
-                    // USE.g:291:9: ( keyInit ( COLON | EQUAL ) initExpression= expression )
-                    // USE.g:291:10: keyInit ( COLON | EQUAL ) initExpression= expression
+                    // USE.g:290:9: ( keyInit ( COLON | EQUAL ) initExpression= expression )
+                    // USE.g:290:10: keyInit ( COLON | EQUAL ) initExpression= expression
                     {
                     pushFollow(FOLLOW_keyInit_in_attributeDefinition1108);
                     keyInit();
@@ -1536,7 +1535,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:293:5: ( SEMI )?
+            // USE.g:292:5: ( SEMI )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -1545,7 +1544,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt31) {
                 case 1 :
-                    // USE.g:293:5: SEMI
+                    // USE.g:292:5: SEMI
                     {
                     match(input,SEMI,FOLLOW_SEMI_in_attributeDefinition1138); if (state.failed) return n;
 
@@ -1580,7 +1579,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "operationDefinition"
-    // USE.g:307:1: operationDefinition returns [ASTOperation n] : as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )? ;
+    // USE.g:306:1: operationDefinition returns [ASTOperation n] : as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )? ;
     public final ASTOperation operationDefinition() throws RecognitionException {
         ASTOperation n = null;
 
@@ -1600,8 +1599,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:308:2: (as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )? )
-            // USE.g:309:2: as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )?
+            // USE.g:307:2: (as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )? )
+            // USE.g:308:2: as= annotationSet name= IDENT pl= paramList ( COLON t= type )? ( ( EQUAL e= expression ) | (s= blockStat ) )? (ppc= prePostClause )* ( SEMI )?
             {
             pushFollow(FOLLOW_annotationSet_in_operationDefinition1169);
             as=annotationSet();
@@ -1617,7 +1616,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return n;
 
-            // USE.g:315:5: ( COLON t= type )?
+            // USE.g:314:5: ( COLON t= type )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -1626,7 +1625,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt32) {
                 case 1 :
-                    // USE.g:315:7: COLON t= type
+                    // USE.g:314:7: COLON t= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_operationDefinition1203); if (state.failed) return n;
 
@@ -1644,7 +1643,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTOperation(name, pl, t); n.setAnnotations(as); }
 
-            // USE.g:317:5: ( ( EQUAL e= expression ) | (s= blockStat ) )?
+            // USE.g:316:5: ( ( EQUAL e= expression ) | (s= blockStat ) )?
             int alt33=3;
             int LA33_0 = input.LA(1);
 
@@ -1656,10 +1655,10 @@ public class USEParser extends BaseParser {
             }
             switch (alt33) {
                 case 1 :
-                    // USE.g:318:9: ( EQUAL e= expression )
+                    // USE.g:317:9: ( EQUAL e= expression )
                     {
-                    // USE.g:318:9: ( EQUAL e= expression )
-                    // USE.g:318:11: EQUAL e= expression
+                    // USE.g:317:9: ( EQUAL e= expression )
+                    // USE.g:317:11: EQUAL e= expression
                     {
                     match(input,EQUAL,FOLLOW_EQUAL_in_operationDefinition1237); if (state.failed) return n;
 
@@ -1677,10 +1676,10 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:319:9: (s= blockStat )
+                    // USE.g:318:9: (s= blockStat )
                     {
-                    // USE.g:319:9: (s= blockStat )
-                    // USE.g:319:11: s= blockStat
+                    // USE.g:318:9: (s= blockStat )
+                    // USE.g:318:11: s= blockStat
                     {
                     pushFollow(FOLLOW_blockStat_in_operationDefinition1265);
                     s=blockStat();
@@ -1699,14 +1698,14 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:321:5: (ppc= prePostClause )*
+            // USE.g:320:5: (ppc= prePostClause )*
             loop34:
             do {
                 int alt34=2;
                 alt34 = dfa34.predict(input);
                 switch (alt34) {
             	case 1 :
-            	    // USE.g:321:7: ppc= prePostClause
+            	    // USE.g:320:7: ppc= prePostClause
             	    {
             	    pushFollow(FOLLOW_prePostClause_in_operationDefinition1287);
             	    ppc=prePostClause();
@@ -1725,7 +1724,7 @@ public class USEParser extends BaseParser {
             } while (true);
 
 
-            // USE.g:322:5: ( SEMI )?
+            // USE.g:321:5: ( SEMI )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -1734,7 +1733,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt35) {
                 case 1 :
-                    // USE.g:322:7: SEMI
+                    // USE.g:321:7: SEMI
                     {
                     match(input,SEMI,FOLLOW_SEMI_in_operationDefinition1300); if (state.failed) return n;
 
@@ -1762,7 +1761,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "associationDefinition"
-    // USE.g:332:1: associationDefinition returns [ASTAssociation n] : as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end' ;
+    // USE.g:331:1: associationDefinition returns [ASTAssociation n] : as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end' ;
     public final ASTAssociation associationDefinition() throws RecognitionException {
         ASTAssociation n = null;
 
@@ -1775,8 +1774,8 @@ public class USEParser extends BaseParser {
 
          Token t = null; 
         try {
-            // USE.g:334:2: (as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end' )
-            // USE.g:335:2: as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end'
+            // USE.g:333:2: (as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end' )
+            // USE.g:334:2: as= annotationSet ( keyAssociation | keyAggregation | keyComposition ) name= IDENT 'between' ae= associationEnd (ae= associationEnd )+ 'end'
             {
             pushFollow(FOLLOW_annotationSet_in_associationDefinition1331);
             as=annotationSet();
@@ -1786,7 +1785,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { t = input.LT(1); }
 
-            // USE.g:337:5: ( keyAssociation | keyAggregation | keyComposition )
+            // USE.g:336:5: ( keyAssociation | keyAggregation | keyComposition )
             int alt36=3;
             int LA36_0 = input.LA(1);
 
@@ -1821,7 +1820,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt36) {
                 case 1 :
-                    // USE.g:337:7: keyAssociation
+                    // USE.g:336:7: keyAssociation
                     {
                     pushFollow(FOLLOW_keyAssociation_in_associationDefinition1345);
                     keyAssociation();
@@ -1832,7 +1831,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:337:24: keyAggregation
+                    // USE.g:336:24: keyAggregation
                     {
                     pushFollow(FOLLOW_keyAggregation_in_associationDefinition1349);
                     keyAggregation();
@@ -1843,7 +1842,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:337:41: keyComposition
+                    // USE.g:336:41: keyComposition
                     {
                     pushFollow(FOLLOW_keyComposition_in_associationDefinition1353);
                     keyComposition();
@@ -1871,7 +1870,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.addEnd(ae); }
 
-            // USE.g:341:5: (ae= associationEnd )+
+            // USE.g:340:5: (ae= associationEnd )+
             int cnt37=0;
             loop37:
             do {
@@ -1885,7 +1884,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // USE.g:341:7: ae= associationEnd
+            	    // USE.g:340:7: ae= associationEnd
             	    {
             	    pushFollow(FOLLOW_associationEnd_in_associationDefinition1391);
             	    ae=associationEnd();
@@ -1929,7 +1928,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "associationEnd"
-    // USE.g:350:1: associationEnd returns [ASTAssociationEnd n] : as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )? ;
+    // USE.g:349:1: associationEnd returns [ASTAssociationEnd n] : as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )? ;
     public final ASTAssociationEnd associationEnd() throws RecognitionException {
         ASTAssociationEnd n = null;
 
@@ -1950,8 +1949,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:351:2: (as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )? )
-            // USE.g:352:2: as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )?
+            // USE.g:350:2: (as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )? )
+            // USE.g:351:2: as= annotationSet name= IDENT LBRACK m= multiplicity RBRACK ( keyRole rn= IDENT )? ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )* ( SEMI )?
             {
             pushFollow(FOLLOW_annotationSet_in_associationEnd1427);
             as=annotationSet();
@@ -1973,7 +1972,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTAssociationEnd(name, m); n.setAnnotations(as); }
 
-            // USE.g:354:5: ( keyRole rn= IDENT )?
+            // USE.g:353:5: ( keyRole rn= IDENT )?
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -1990,7 +1989,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt38) {
                 case 1 :
-                    // USE.g:354:7: keyRole rn= IDENT
+                    // USE.g:353:7: keyRole rn= IDENT
                     {
                     pushFollow(FOLLOW_keyRole_in_associationEnd1454);
                     keyRole();
@@ -2008,7 +2007,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:355:5: ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )*
+            // USE.g:354:5: ( 'ordered' | 'subsets' sr= IDENT | keyUnion | 'redefines' rd= IDENT | ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression | keyQualifier qualifiers= paramList )*
             loop41:
             do {
                 int alt41=7;
@@ -2050,7 +2049,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt41) {
             	case 1 :
-            	    // USE.g:356:9: 'ordered'
+            	    // USE.g:355:9: 'ordered'
             	    {
             	    match(input,103,FOLLOW_103_in_associationEnd1479); if (state.failed) return n;
 
@@ -2059,7 +2058,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 2 :
-            	    // USE.g:357:9: 'subsets' sr= IDENT
+            	    // USE.g:356:9: 'subsets' sr= IDENT
             	    {
             	    match(input,112,FOLLOW_112_in_associationEnd1491); if (state.failed) return n;
 
@@ -2070,7 +2069,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 3 :
-            	    // USE.g:358:9: keyUnion
+            	    // USE.g:357:9: keyUnion
             	    {
             	    pushFollow(FOLLOW_keyUnion_in_associationEnd1507);
             	    keyUnion();
@@ -2083,7 +2082,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 4 :
-            	    // USE.g:359:9: 'redefines' rd= IDENT
+            	    // USE.g:358:9: 'redefines' rd= IDENT
             	    {
             	    match(input,107,FOLLOW_107_in_associationEnd1519); if (state.failed) return n;
 
@@ -2094,9 +2093,9 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 5 :
-            	    // USE.g:360:9: ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression
+            	    // USE.g:359:9: ( keyDerived | keyDerive ) ( LPAREN parameter= elemVarsDeclaration RPAREN )? EQUAL exp= expression
             	    {
-            	    // USE.g:360:9: ( keyDerived | keyDerive )
+            	    // USE.g:359:9: ( keyDerived | keyDerive )
             	    int alt39=2;
             	    int LA39_0 = input.LA(1);
 
@@ -2128,7 +2127,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt39) {
             	        case 1 :
-            	            // USE.g:360:10: keyDerived
+            	            // USE.g:359:10: keyDerived
             	            {
             	            pushFollow(FOLLOW_keyDerived_in_associationEnd1536);
             	            keyDerived();
@@ -2139,7 +2138,7 @@ public class USEParser extends BaseParser {
             	            }
             	            break;
             	        case 2 :
-            	            // USE.g:360:21: keyDerive
+            	            // USE.g:359:21: keyDerive
             	            {
             	            pushFollow(FOLLOW_keyDerive_in_associationEnd1538);
             	            keyDerive();
@@ -2153,7 +2152,7 @@ public class USEParser extends BaseParser {
             	    }
 
 
-            	    // USE.g:360:32: ( LPAREN parameter= elemVarsDeclaration RPAREN )?
+            	    // USE.g:359:32: ( LPAREN parameter= elemVarsDeclaration RPAREN )?
             	    int alt40=2;
             	    int LA40_0 = input.LA(1);
 
@@ -2162,7 +2161,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt40) {
             	        case 1 :
-            	            // USE.g:360:34: LPAREN parameter= elemVarsDeclaration RPAREN
+            	            // USE.g:359:34: LPAREN parameter= elemVarsDeclaration RPAREN
             	            {
             	            match(input,LPAREN,FOLLOW_LPAREN_in_associationEnd1543); if (state.failed) return n;
 
@@ -2193,7 +2192,7 @@ public class USEParser extends BaseParser {
             	    }
             	    break;
             	case 6 :
-            	    // USE.g:361:9: keyQualifier qualifiers= paramList
+            	    // USE.g:360:9: keyQualifier qualifiers= paramList
             	    {
             	    pushFollow(FOLLOW_keyQualifier_in_associationEnd1571);
             	    keyQualifier();
@@ -2218,7 +2217,7 @@ public class USEParser extends BaseParser {
             } while (true);
 
 
-            // USE.g:363:5: ( SEMI )?
+            // USE.g:362:5: ( SEMI )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -2227,7 +2226,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt42) {
                 case 1 :
-                    // USE.g:363:7: SEMI
+                    // USE.g:362:7: SEMI
                     {
                     match(input,SEMI,FOLLOW_SEMI_in_associationEnd1594); if (state.failed) return n;
 
@@ -2255,7 +2254,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "multiplicity"
-    // USE.g:377:1: multiplicity returns [ASTMultiplicity n] :mr= multiplicityRange ( COMMA mr= multiplicityRange )* ;
+    // USE.g:376:1: multiplicity returns [ASTMultiplicity n] :mr= multiplicityRange ( COMMA mr= multiplicityRange )* ;
     public final ASTMultiplicity multiplicity() throws RecognitionException {
         ASTMultiplicity n = null;
 
@@ -2264,8 +2263,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:378:5: (mr= multiplicityRange ( COMMA mr= multiplicityRange )* )
-            // USE.g:379:5: mr= multiplicityRange ( COMMA mr= multiplicityRange )*
+            // USE.g:377:5: (mr= multiplicityRange ( COMMA mr= multiplicityRange )* )
+            // USE.g:378:5: mr= multiplicityRange ( COMMA mr= multiplicityRange )*
             {
             if ( state.backtracking==0 ) { 
             	Token t = input.LT(1); // remember start position of expression
@@ -2280,7 +2279,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.addRange(mr); }
 
-            // USE.g:384:5: ( COMMA mr= multiplicityRange )*
+            // USE.g:383:5: ( COMMA mr= multiplicityRange )*
             loop43:
             do {
                 int alt43=2;
@@ -2293,7 +2292,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt43) {
             	case 1 :
-            	    // USE.g:384:7: COMMA mr= multiplicityRange
+            	    // USE.g:383:7: COMMA mr= multiplicityRange
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_multiplicity1639); if (state.failed) return n;
 
@@ -2332,7 +2331,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "multiplicityRange"
-    // USE.g:387:1: multiplicityRange returns [ASTMultiplicityRange n] : ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )? ;
+    // USE.g:386:1: multiplicityRange returns [ASTMultiplicityRange n] : ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )? ;
     public final ASTMultiplicityRange multiplicityRange() throws RecognitionException {
         ASTMultiplicityRange n = null;
 
@@ -2343,8 +2342,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:388:5: (ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )? )
-            // USE.g:389:5: ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )?
+            // USE.g:387:5: (ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )? )
+            // USE.g:388:5: ms1= multiplicitySpec ( DOTDOT ms2= multiplicitySpec )?
             {
             pushFollow(FOLLOW_multiplicitySpec_in_multiplicityRange1672);
             ms1=multiplicitySpec();
@@ -2354,7 +2353,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTMultiplicityRange(ms1); }
 
-            // USE.g:390:5: ( DOTDOT ms2= multiplicitySpec )?
+            // USE.g:389:5: ( DOTDOT ms2= multiplicitySpec )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -2363,7 +2362,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt44) {
                 case 1 :
-                    // USE.g:390:7: DOTDOT ms2= multiplicitySpec
+                    // USE.g:389:7: DOTDOT ms2= multiplicitySpec
                     {
                     match(input,DOTDOT,FOLLOW_DOTDOT_in_multiplicityRange1682); if (state.failed) return n;
 
@@ -2399,7 +2398,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "multiplicitySpec"
-    // USE.g:393:1: multiplicitySpec returns [int m] : (i= INT | STAR );
+    // USE.g:392:1: multiplicitySpec returns [int m] : (i= INT | STAR );
     public final int multiplicitySpec() throws RecognitionException {
         int m = 0;
 
@@ -2408,7 +2407,7 @@ public class USEParser extends BaseParser {
 
          m = -1; 
         try {
-            // USE.g:395:7: (i= INT | STAR )
+            // USE.g:394:7: (i= INT | STAR )
             int alt45=2;
             int LA45_0 = input.LA(1);
 
@@ -2428,7 +2427,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt45) {
                 case 1 :
-                    // USE.g:396:7: i= INT
+                    // USE.g:395:7: i= INT
                     {
                     i=(Token)match(input,INT,FOLLOW_INT_in_multiplicitySpec1720); if (state.failed) return m;
 
@@ -2437,7 +2436,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:397:7: STAR
+                    // USE.g:396:7: STAR
                     {
                     match(input,STAR,FOLLOW_STAR_in_multiplicitySpec1730); if (state.failed) return m;
 
@@ -2463,7 +2462,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotationSpec"
-    // USE.g:400:1: annotationSpec returns [AnnotationTag tag] : (rtag= block_annotation |rtag= line_annotation[tag] );
+    // USE.g:399:1: annotationSpec returns [AnnotationTag tag] : (rtag= block_annotation |rtag= line_annotation[tag] );
     public final AnnotationTag annotationSpec() throws RecognitionException {
         AnnotationTag tag = null;
 
@@ -2473,7 +2472,7 @@ public class USEParser extends BaseParser {
 
         tag = new AnnotationTag();
         try {
-            // USE.g:402:2: (rtag= block_annotation |rtag= line_annotation[tag] )
+            // USE.g:401:2: (rtag= block_annotation |rtag= line_annotation[tag] )
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -2505,7 +2504,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt46) {
                 case 1 :
-                    // USE.g:403:2: rtag= block_annotation
+                    // USE.g:402:2: rtag= block_annotation
                     {
                     pushFollow(FOLLOW_block_annotation_in_annotationSpec1757);
                     rtag=block_annotation();
@@ -2518,7 +2517,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:404:4: rtag= line_annotation[tag]
+                    // USE.g:403:4: rtag= line_annotation[tag]
                     {
                     pushFollow(FOLLOW_line_annotation_in_annotationSpec1766);
                     rtag=line_annotation(tag);
@@ -2548,7 +2547,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "block_annotation"
-    // USE.g:407:1: block_annotation returns [AnnotationTag tag] : AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE ;
+    // USE.g:406:1: block_annotation returns [AnnotationTag tag] : AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE ;
     public final AnnotationTag block_annotation() throws RecognitionException {
         AnnotationTag tag = null;
 
@@ -2557,8 +2556,8 @@ public class USEParser extends BaseParser {
 
         tag = new AnnotationTag();
         try {
-            // USE.g:409:2: ( AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE )
-            // USE.g:410:2: AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE
+            // USE.g:408:2: ( AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE )
+            // USE.g:409:2: AT IDENT LBRACE ( annotation_tag[tag] )* RBRACE
             {
             match(input,AT,FOLLOW_AT_in_block_annotation1788); if (state.failed) return tag;
 
@@ -2566,7 +2565,7 @@ public class USEParser extends BaseParser {
 
             match(input,LBRACE,FOLLOW_LBRACE_in_block_annotation1792); if (state.failed) return tag;
 
-            // USE.g:411:3: ( annotation_tag[tag] )*
+            // USE.g:410:3: ( annotation_tag[tag] )*
             loop47:
             do {
                 int alt47=2;
@@ -2579,7 +2578,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt47) {
             	case 1 :
-            	    // USE.g:411:4: annotation_tag[tag]
+            	    // USE.g:410:4: annotation_tag[tag]
             	    {
             	    pushFollow(FOLLOW_annotation_tag_in_block_annotation1797);
             	    annotation_tag(tag);
@@ -2618,20 +2617,20 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "line_annotation"
-    // USE.g:415:1: line_annotation[AnnotationTag tag] returns [AnnotationTag rtag] : AT ( annotation_tag[tag] ) ;
+    // USE.g:414:1: line_annotation[AnnotationTag tag] returns [AnnotationTag rtag] : AT ( annotation_tag[tag] ) ;
     public final AnnotationTag line_annotation(AnnotationTag tag) throws RecognitionException {
         AnnotationTag rtag = null;
 
 
         if (tag==null) tag = new AnnotationTag();
         try {
-            // USE.g:416:50: ( AT ( annotation_tag[tag] ) )
-            // USE.g:417:2: AT ( annotation_tag[tag] )
+            // USE.g:415:50: ( AT ( annotation_tag[tag] ) )
+            // USE.g:416:2: AT ( annotation_tag[tag] )
             {
             match(input,AT,FOLLOW_AT_in_line_annotation1824); if (state.failed) return rtag;
 
-            // USE.g:417:5: ( annotation_tag[tag] )
-            // USE.g:417:6: annotation_tag[tag]
+            // USE.g:416:5: ( annotation_tag[tag] )
+            // USE.g:416:6: annotation_tag[tag]
             {
             pushFollow(FOLLOW_annotation_tag_in_line_annotation1827);
             annotation_tag(tag);
@@ -2662,13 +2661,13 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_tag"
-    // USE.g:420:1: annotation_tag[AnnotationTag tag] : ( annotation_comment EQUAL ( NON_OCL_STRING ) | annotation_weight EQUAL ( annotation_def | INT ) | annotation_type EQUAL ( annotation_enum_type | annotation_ref ) );
+    // USE.g:419:1: annotation_tag[AnnotationTag tag] : ( annotation_comment EQUAL ( NON_OCL_STRING ) | annotation_weight EQUAL ( annotation_def | INT ) | annotation_type EQUAL ( annotation_enum_type | annotation_ref ) );
     public final void annotation_tag(AnnotationTag tag) throws RecognitionException {
         Token NON_OCL_STRING2=null;
         Token INT3=null;
 
         try {
-            // USE.g:421:2: ( annotation_comment EQUAL ( NON_OCL_STRING ) | annotation_weight EQUAL ( annotation_def | INT ) | annotation_type EQUAL ( annotation_enum_type | annotation_ref ) )
+            // USE.g:420:2: ( annotation_comment EQUAL ( NON_OCL_STRING ) | annotation_weight EQUAL ( annotation_def | INT ) | annotation_type EQUAL ( annotation_enum_type | annotation_ref ) )
             int alt50=3;
             switch ( input.LA(1) ) {
             case 46:
@@ -2697,7 +2696,7 @@ public class USEParser extends BaseParser {
 
             switch (alt50) {
                 case 1 :
-                    // USE.g:422:2: annotation_comment EQUAL ( NON_OCL_STRING )
+                    // USE.g:421:2: annotation_comment EQUAL ( NON_OCL_STRING )
                     {
                     pushFollow(FOLLOW_annotation_comment_in_annotation_tag1843);
                     annotation_comment();
@@ -2707,8 +2706,8 @@ public class USEParser extends BaseParser {
 
                     match(input,EQUAL,FOLLOW_EQUAL_in_annotation_tag1845); if (state.failed) return ;
 
-                    // USE.g:422:27: ( NON_OCL_STRING )
-                    // USE.g:422:28: NON_OCL_STRING
+                    // USE.g:421:27: ( NON_OCL_STRING )
+                    // USE.g:421:28: NON_OCL_STRING
                     {
                     NON_OCL_STRING2=(Token)match(input,NON_OCL_STRING,FOLLOW_NON_OCL_STRING_in_annotation_tag1848); if (state.failed) return ;
 
@@ -2720,7 +2719,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:423:4: annotation_weight EQUAL ( annotation_def | INT )
+                    // USE.g:422:4: annotation_weight EQUAL ( annotation_def | INT )
                     {
                     pushFollow(FOLLOW_annotation_weight_in_annotation_tag1856);
                     annotation_weight();
@@ -2730,7 +2729,7 @@ public class USEParser extends BaseParser {
 
                     match(input,EQUAL,FOLLOW_EQUAL_in_annotation_tag1858); if (state.failed) return ;
 
-                    // USE.g:423:28: ( annotation_def | INT )
+                    // USE.g:422:28: ( annotation_def | INT )
                     int alt48=2;
                     int LA48_0 = input.LA(1);
 
@@ -2750,7 +2749,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt48) {
                         case 1 :
-                            // USE.g:423:29: annotation_def
+                            // USE.g:422:29: annotation_def
                             {
                             pushFollow(FOLLOW_annotation_def_in_annotation_tag1861);
                             annotation_def();
@@ -2763,7 +2762,7 @@ public class USEParser extends BaseParser {
                             }
                             break;
                         case 2 :
-                            // USE.g:423:83: INT
+                            // USE.g:422:83: INT
                             {
                             INT3=(Token)match(input,INT,FOLLOW_INT_in_annotation_tag1867); if (state.failed) return ;
 
@@ -2781,7 +2780,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:427:4: annotation_type EQUAL ( annotation_enum_type | annotation_ref )
+                    // USE.g:426:4: annotation_type EQUAL ( annotation_enum_type | annotation_ref )
                     {
                     pushFollow(FOLLOW_annotation_type_in_annotation_tag1875);
                     annotation_type();
@@ -2791,7 +2790,7 @@ public class USEParser extends BaseParser {
 
                     match(input,EQUAL,FOLLOW_EQUAL_in_annotation_tag1877); if (state.failed) return ;
 
-                    // USE.g:427:26: ( annotation_enum_type | annotation_ref )
+                    // USE.g:426:26: ( annotation_enum_type | annotation_ref )
                     int alt49=2;
                     int LA49_0 = input.LA(1);
 
@@ -2811,7 +2810,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt49) {
                         case 1 :
-                            // USE.g:427:27: annotation_enum_type
+                            // USE.g:426:27: annotation_enum_type
                             {
                             pushFollow(FOLLOW_annotation_enum_type_in_annotation_tag1880);
                             annotation_enum_type();
@@ -2822,7 +2821,7 @@ public class USEParser extends BaseParser {
                             }
                             break;
                         case 2 :
-                            // USE.g:427:50: annotation_ref
+                            // USE.g:426:50: annotation_ref
                             {
                             pushFollow(FOLLOW_annotation_ref_in_annotation_tag1884);
                             annotation_ref();
@@ -2856,10 +2855,10 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_predefined"
-    // USE.g:430:1: annotation_predefined : ( 'Comment' | 'Weight' | 'Type' );
+    // USE.g:429:1: annotation_predefined : ( 'Comment' | 'Weight' | 'Type' );
     public final void annotation_predefined() throws RecognitionException {
         try {
-            // USE.g:430:22: ( 'Comment' | 'Weight' | 'Type' )
+            // USE.g:429:22: ( 'Comment' | 'Weight' | 'Type' )
             // USE.g:
             {
             if ( input.LA(1)==46||input.LA(1)==54||input.LA(1)==56 ) {
@@ -2892,11 +2891,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_comment"
-    // USE.g:436:1: annotation_comment : 'Comment' ;
+    // USE.g:435:1: annotation_comment : 'Comment' ;
     public final void annotation_comment() throws RecognitionException {
         try {
-            // USE.g:436:19: ( 'Comment' )
-            // USE.g:436:21: 'Comment'
+            // USE.g:435:19: ( 'Comment' )
+            // USE.g:435:21: 'Comment'
             {
             match(input,46,FOLLOW_46_in_annotation_comment1912); if (state.failed) return ;
 
@@ -2918,11 +2917,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_weight"
-    // USE.g:437:1: annotation_weight : 'Weight' ;
+    // USE.g:436:1: annotation_weight : 'Weight' ;
     public final void annotation_weight() throws RecognitionException {
         try {
-            // USE.g:437:18: ( 'Weight' )
-            // USE.g:437:20: 'Weight'
+            // USE.g:436:18: ( 'Weight' )
+            // USE.g:436:20: 'Weight'
             {
             match(input,56,FOLLOW_56_in_annotation_weight1919); if (state.failed) return ;
 
@@ -2944,11 +2943,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_type"
-    // USE.g:438:1: annotation_type : 'Type' ;
+    // USE.g:437:1: annotation_type : 'Type' ;
     public final void annotation_type() throws RecognitionException {
         try {
-            // USE.g:438:16: ( 'Type' )
-            // USE.g:438:18: 'Type'
+            // USE.g:437:16: ( 'Type' )
+            // USE.g:437:18: 'Type'
             {
             match(input,54,FOLLOW_54_in_annotation_type1926); if (state.failed) return ;
 
@@ -2970,11 +2969,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_override"
-    // USE.g:440:1: annotation_override : 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN ;
+    // USE.g:439:1: annotation_override : 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN ;
     public final void annotation_override() throws RecognitionException {
         try {
-            // USE.g:440:20: ( 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN )
-            // USE.g:441:1: 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN
+            // USE.g:439:20: ( 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN )
+            // USE.g:440:1: 'Override' LPAREN LBRACE annotation_term RBRACE RPAREN
             {
             match(input,49,FOLLOW_49_in_annotation_override1935); if (state.failed) return ;
 
@@ -3010,15 +3009,15 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_term"
-    // USE.g:444:1: annotation_term returns [AnnotationTag tag] : annotation_tag[tag] ( COMMA annotation_tag[tag] )* ;
+    // USE.g:443:1: annotation_term returns [AnnotationTag tag] : annotation_tag[tag] ( COMMA annotation_tag[tag] )* ;
     public final AnnotationTag annotation_term() throws RecognitionException {
         AnnotationTag tag = null;
 
 
         tag = new AnnotationTag();
         try {
-            // USE.g:445:35: ( annotation_tag[tag] ( COMMA annotation_tag[tag] )* )
-            // USE.g:446:2: annotation_tag[tag] ( COMMA annotation_tag[tag] )*
+            // USE.g:444:35: ( annotation_tag[tag] ( COMMA annotation_tag[tag] )* )
+            // USE.g:445:2: annotation_tag[tag] ( COMMA annotation_tag[tag] )*
             {
             pushFollow(FOLLOW_annotation_tag_in_annotation_term1962);
             annotation_tag(tag);
@@ -3026,7 +3025,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return tag;
 
-            // USE.g:446:22: ( COMMA annotation_tag[tag] )*
+            // USE.g:445:22: ( COMMA annotation_tag[tag] )*
             loop51:
             do {
                 int alt51=2;
@@ -3039,7 +3038,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt51) {
             	case 1 :
-            	    // USE.g:446:23: COMMA annotation_tag[tag]
+            	    // USE.g:445:23: COMMA annotation_tag[tag]
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_annotation_term1966); if (state.failed) return tag;
 
@@ -3076,11 +3075,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_ref"
-    // USE.g:449:1: annotation_ref : AT IDENT DOT annotation_predefined ;
+    // USE.g:448:1: annotation_ref : AT IDENT DOT annotation_predefined ;
     public final void annotation_ref() throws RecognitionException {
         try {
-            // USE.g:449:15: ( AT IDENT DOT annotation_predefined )
-            // USE.g:450:2: AT IDENT DOT annotation_predefined
+            // USE.g:448:15: ( AT IDENT DOT annotation_predefined )
+            // USE.g:449:2: AT IDENT DOT annotation_predefined
             {
             match(input,AT,FOLLOW_AT_in_annotation_ref1980); if (state.failed) return ;
 
@@ -3112,11 +3111,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_def"
-    // USE.g:453:1: annotation_def : 'default' ;
+    // USE.g:452:1: annotation_def : 'default' ;
     public final void annotation_def() throws RecognitionException {
         try {
-            // USE.g:453:15: ( 'default' )
-            // USE.g:454:2: 'default'
+            // USE.g:452:15: ( 'default' )
+            // USE.g:453:2: 'default'
             {
             match(input,70,FOLLOW_70_in_annotation_def1995); if (state.failed) return ;
 
@@ -3138,10 +3137,10 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation_enum_type"
-    // USE.g:456:1: annotation_enum_type : ( 'Soft' | 'Hard' );
+    // USE.g:455:1: annotation_enum_type : ( 'Soft' | 'Hard' );
     public final void annotation_enum_type() throws RecognitionException {
         try {
-            // USE.g:456:21: ( 'Soft' | 'Hard' )
+            // USE.g:455:21: ( 'Soft' | 'Hard' )
             // USE.g:
             {
             if ( input.LA(1)==47||input.LA(1)==52 ) {
@@ -3174,7 +3173,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "invariant"
-    // USE.g:478:1: invariant returns [ASTConstraintDefinition n] : (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )* ;
+    // USE.g:477:1: invariant returns [ASTConstraintDefinition n] : (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )* ;
     public final ASTConstraintDefinition invariant() throws RecognitionException {
         ASTConstraintDefinition n = null;
 
@@ -3188,12 +3187,12 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:479:5: ( (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )* )
-            // USE.g:480:5: (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )*
+            // USE.g:478:5: ( (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )* )
+            // USE.g:479:5: (tag= block_annotation )? 'context' (v= IDENT ( ',' v= IDENT )* COLON )? t= simpleType (inv= invariantClause )*
             {
             if ( state.backtracking==0 ) { n = new ASTConstraintDefinition();}
 
-            // USE.g:481:2: (tag= block_annotation )?
+            // USE.g:480:2: (tag= block_annotation )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -3202,7 +3201,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt52) {
                 case 1 :
-                    // USE.g:481:3: tag= block_annotation
+                    // USE.g:480:3: tag= block_annotation
                     {
                     pushFollow(FOLLOW_block_annotation_in_invariant2041);
                     tag=block_annotation();
@@ -3220,7 +3219,7 @@ public class USEParser extends BaseParser {
 
             match(input,67,FOLLOW_67_in_invariant2052); if (state.failed) return n;
 
-            // USE.g:483:5: (v= IDENT ( ',' v= IDENT )* COLON )?
+            // USE.g:482:5: (v= IDENT ( ',' v= IDENT )* COLON )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -3233,13 +3232,13 @@ public class USEParser extends BaseParser {
             }
             switch (alt54) {
                 case 1 :
-                    // USE.g:483:7: v= IDENT ( ',' v= IDENT )* COLON
+                    // USE.g:482:7: v= IDENT ( ',' v= IDENT )* COLON
                     {
                     v=(Token)match(input,IDENT,FOLLOW_IDENT_in_invariant2062); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n.addVarName(v); }
 
-                    // USE.g:484:8: ( ',' v= IDENT )*
+                    // USE.g:483:8: ( ',' v= IDENT )*
                     loop53:
                     do {
                         int alt53=2;
@@ -3252,7 +3251,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt53) {
                     	case 1 :
-                    	    // USE.g:484:9: ',' v= IDENT
+                    	    // USE.g:483:9: ',' v= IDENT
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_invariant2074); if (state.failed) return n;
 
@@ -3285,14 +3284,14 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setType(t); }
 
-            // USE.g:486:5: (inv= invariantClause )*
+            // USE.g:485:5: (inv= invariantClause )*
             loop55:
             do {
                 int alt55=2;
                 alt55 = dfa55.predict(input);
                 switch (alt55) {
             	case 1 :
-            	    // USE.g:486:7: inv= invariantClause
+            	    // USE.g:485:7: inv= invariantClause
             	    {
             	    pushFollow(FOLLOW_invariantClause_in_invariant2110);
             	    inv=invariantClause();
@@ -3329,7 +3328,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "invariantClause"
-    // USE.g:493:1: invariantClause returns [ASTInvariantClause n] : ( (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression | 'existential' 'inv' (name= IDENT )? COLON e= expression );
+    // USE.g:492:1: invariantClause returns [ASTInvariantClause n] : ( (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression | 'existential' 'inv' (name= IDENT )? COLON e= expression );
     public final ASTInvariantClause invariantClause() throws RecognitionException {
         ASTInvariantClause n = null;
 
@@ -3344,7 +3343,7 @@ public class USEParser extends BaseParser {
 
         tag = null;
         try {
-            // USE.g:494:19: ( (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression | 'existential' 'inv' (name= IDENT )? COLON e= expression )
+            // USE.g:493:19: ( (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression | 'existential' 'inv' (name= IDENT )? COLON e= expression )
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -3364,9 +3363,9 @@ public class USEParser extends BaseParser {
             }
             switch (alt59) {
                 case 1 :
-                    // USE.g:495:2: (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression
+                    // USE.g:494:2: (tag= line_annotation[tag] )* as= annotationSet 'inv' (name= IDENT )? COLON e= expression
                     {
-                    // USE.g:495:2: (tag= line_annotation[tag] )*
+                    // USE.g:494:2: (tag= line_annotation[tag] )*
                     loop56:
                     do {
                         int alt56=2;
@@ -3385,7 +3384,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt56) {
                     	case 1 :
-                    	    // USE.g:495:3: tag= line_annotation[tag]
+                    	    // USE.g:494:3: tag= line_annotation[tag]
                     	    {
                     	    pushFollow(FOLLOW_line_annotation_in_invariantClause2142);
                     	    tag=line_annotation(tag);
@@ -3410,7 +3409,7 @@ public class USEParser extends BaseParser {
 
                     match(input,88,FOLLOW_88_in_invariantClause2159); if (state.failed) return n;
 
-                    // USE.g:497:12: (name= IDENT )?
+                    // USE.g:496:12: (name= IDENT )?
                     int alt57=2;
                     int LA57_0 = input.LA(1);
 
@@ -3419,7 +3418,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt57) {
                         case 1 :
-                            // USE.g:497:14: name= IDENT
+                            // USE.g:496:14: name= IDENT
                             {
                             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_invariantClause2165); if (state.failed) return n;
 
@@ -3442,13 +3441,13 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:499:7: 'existential' 'inv' (name= IDENT )? COLON e= expression
+                    // USE.g:498:7: 'existential' 'inv' (name= IDENT )? COLON e= expression
                     {
                     match(input,79,FOLLOW_79_in_invariantClause2191); if (state.failed) return n;
 
                     match(input,88,FOLLOW_88_in_invariantClause2193); if (state.failed) return n;
 
-                    // USE.g:499:27: (name= IDENT )?
+                    // USE.g:498:27: (name= IDENT )?
                     int alt58=2;
                     int LA58_0 = input.LA(1);
 
@@ -3457,7 +3456,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt58) {
                         case 1 :
-                            // USE.g:499:29: name= IDENT
+                            // USE.g:498:29: name= IDENT
                             {
                             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_invariantClause2199); if (state.failed) return n;
 
@@ -3497,7 +3496,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "prePost"
-    // USE.g:511:1: prePost returns [ASTPrePost n] : 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+ ;
+    // USE.g:510:1: prePost returns [ASTPrePost n] : 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+ ;
     public final ASTPrePost prePost() throws RecognitionException {
         ASTPrePost n = null;
 
@@ -3512,8 +3511,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:512:5: ( 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+ )
-            // USE.g:513:5: 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+
+            // USE.g:511:5: ( 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+ )
+            // USE.g:512:5: 'context' classname= IDENT COLON_COLON opname= IDENT pl= paramList ( COLON rt= type )? (ppc= prePostClause )+
             {
             match(input,67,FOLLOW_67_in_prePost2241); if (state.failed) return n;
 
@@ -3529,7 +3528,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return n;
 
-            // USE.g:513:69: ( COLON rt= type )?
+            // USE.g:512:69: ( COLON rt= type )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -3538,7 +3537,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt60) {
                 case 1 :
-                    // USE.g:513:71: COLON rt= type
+                    // USE.g:512:71: COLON rt= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_prePost2259); if (state.failed) return n;
 
@@ -3556,7 +3555,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTPrePost(classname, opname, pl, rt); }
 
-            // USE.g:515:5: (ppc= prePostClause )+
+            // USE.g:514:5: (ppc= prePostClause )+
             int cnt61=0;
             loop61:
             do {
@@ -3564,7 +3563,7 @@ public class USEParser extends BaseParser {
                 alt61 = dfa61.predict(input);
                 switch (alt61) {
             	case 1 :
-            	    // USE.g:515:7: ppc= prePostClause
+            	    // USE.g:514:7: ppc= prePostClause
             	    {
             	    pushFollow(FOLLOW_prePostClause_in_prePost2282);
             	    ppc=prePostClause();
@@ -3606,7 +3605,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "prePostClause"
-    // USE.g:522:1: prePostClause returns [ASTPrePostClause n] : as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression ;
+    // USE.g:521:1: prePostClause returns [ASTPrePostClause n] : as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression ;
     public final ASTPrePostClause prePostClause() throws RecognitionException {
         ASTPrePostClause n = null;
 
@@ -3619,8 +3618,8 @@ public class USEParser extends BaseParser {
 
          Token t = null; 
         try {
-            // USE.g:524:2: (as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression )
-            // USE.g:525:2: as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression
+            // USE.g:523:2: (as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression )
+            // USE.g:524:2: as= annotationSet ( 'pre' | 'post' ) (name= IDENT )? COLON e= expression
             {
             pushFollow(FOLLOW_annotationSet_in_prePostClause2316);
             as=annotationSet();
@@ -3642,7 +3641,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:527:25: (name= IDENT )?
+            // USE.g:526:25: (name= IDENT )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -3651,7 +3650,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt62) {
                 case 1 :
-                    // USE.g:527:27: name= IDENT
+                    // USE.g:526:27: name= IDENT
                     {
                     name=(Token)match(input,IDENT,FOLLOW_IDENT_in_prePostClause2343); if (state.failed) return n;
 
@@ -3689,7 +3688,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotationSet"
-    // USE.g:531:1: annotationSet returns [Set<ASTAnnotation> annotations] : (an= annotation )* ;
+    // USE.g:530:1: annotationSet returns [Set<ASTAnnotation> annotations] : (an= annotation )* ;
     public final Set<ASTAnnotation> annotationSet() throws RecognitionException {
         Set<ASTAnnotation> annotations = null;
 
@@ -3699,10 +3698,10 @@ public class USEParser extends BaseParser {
 
          annotations = new HashSet<ASTAnnotation>(); 
         try {
-            // USE.g:533:2: ( (an= annotation )* )
-            // USE.g:534:2: (an= annotation )*
+            // USE.g:532:2: ( (an= annotation )* )
+            // USE.g:533:2: (an= annotation )*
             {
-            // USE.g:534:2: (an= annotation )*
+            // USE.g:533:2: (an= annotation )*
             loop63:
             do {
                 int alt63=2;
@@ -3727,7 +3726,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt63) {
             	case 1 :
-            	    // USE.g:534:3: an= annotation
+            	    // USE.g:533:3: an= annotation
             	    {
             	    pushFollow(FOLLOW_annotation_in_annotationSet2379);
             	    an=annotation();
@@ -3764,7 +3763,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotation"
-    // USE.g:537:1: annotation returns [ASTAnnotation n] : AT name= IDENT LPAREN values= annotationValues RPAREN ;
+    // USE.g:536:1: annotation returns [ASTAnnotation n] : AT name= IDENT LPAREN values= annotationValues RPAREN ;
     public final ASTAnnotation annotation() throws RecognitionException {
         ASTAnnotation n = null;
 
@@ -3774,8 +3773,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:537:37: ( AT name= IDENT LPAREN values= annotationValues RPAREN )
-            // USE.g:538:2: AT name= IDENT LPAREN values= annotationValues RPAREN
+            // USE.g:536:37: ( AT name= IDENT LPAREN values= annotationValues RPAREN )
+            // USE.g:537:2: AT name= IDENT LPAREN values= annotationValues RPAREN
             {
             match(input,AT,FOLLOW_AT_in_annotation2398); if (state.failed) return n;
 
@@ -3813,7 +3812,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotationValues"
-    // USE.g:544:1: annotationValues returns [Map<Token, Token> values] : (firstVal= annotationValue )? ( COMMA val= annotationValue )* ;
+    // USE.g:543:1: annotationValues returns [Map<Token, Token> values] : (firstVal= annotationValue )? ( COMMA val= annotationValue )* ;
     public final Map<Token, Token> annotationValues() throws RecognitionException {
         Map<Token, Token> values = null;
 
@@ -3825,10 +3824,10 @@ public class USEParser extends BaseParser {
 
          values = new HashMap<Token, Token>(); 
         try {
-            // USE.g:546:2: ( (firstVal= annotationValue )? ( COMMA val= annotationValue )* )
-            // USE.g:547:2: (firstVal= annotationValue )? ( COMMA val= annotationValue )*
+            // USE.g:545:2: ( (firstVal= annotationValue )? ( COMMA val= annotationValue )* )
+            // USE.g:546:2: (firstVal= annotationValue )? ( COMMA val= annotationValue )*
             {
-            // USE.g:547:2: (firstVal= annotationValue )?
+            // USE.g:546:2: (firstVal= annotationValue )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -3837,7 +3836,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt64) {
                 case 1 :
-                    // USE.g:547:3: firstVal= annotationValue
+                    // USE.g:546:3: firstVal= annotationValue
                     {
                     pushFollow(FOLLOW_annotationValue_in_annotationValues2445);
                     firstVal=annotationValue();
@@ -3853,7 +3852,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:548:2: ( COMMA val= annotationValue )*
+            // USE.g:547:2: ( COMMA val= annotationValue )*
             loop65:
             do {
                 int alt65=2;
@@ -3866,7 +3865,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt65) {
             	case 1 :
-            	    // USE.g:548:3: COMMA val= annotationValue
+            	    // USE.g:547:3: COMMA val= annotationValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_annotationValues2453); if (state.failed) return values;
 
@@ -3910,7 +3909,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "annotationValue"
-    // USE.g:551:1: annotationValue returns [Token name, Token value] : aName= IDENT EQUAL aValue= NON_OCL_STRING ;
+    // USE.g:550:1: annotationValue returns [Token name, Token value] : aName= IDENT EQUAL aValue= NON_OCL_STRING ;
     public final USEParser.annotationValue_return annotationValue() throws RecognitionException {
         USEParser.annotationValue_return retval = new USEParser.annotationValue_return();
         retval.start = input.LT(1);
@@ -3920,8 +3919,8 @@ public class USEParser extends BaseParser {
         Token aValue=null;
 
         try {
-            // USE.g:551:50: (aName= IDENT EQUAL aValue= NON_OCL_STRING )
-            // USE.g:552:2: aName= IDENT EQUAL aValue= NON_OCL_STRING
+            // USE.g:550:50: (aName= IDENT EQUAL aValue= NON_OCL_STRING )
+            // USE.g:551:2: aName= IDENT EQUAL aValue= NON_OCL_STRING
             {
             aName=(Token)match(input,IDENT,FOLLOW_IDENT_in_annotationValue2476); if (state.failed) return retval;
 
@@ -3954,7 +3953,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "stateMachine"
-    // USE.g:557:1: stateMachine returns [ASTStateMachine n] : ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end' ;
+    // USE.g:556:1: stateMachine returns [ASTStateMachine n] : ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end' ;
     public final ASTStateMachine stateMachine() throws RecognitionException {
         ASTStateMachine n = null;
 
@@ -3966,11 +3965,11 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:558:5: ( ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end' )
-            // USE.g:559:5: ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end'
+            // USE.g:557:5: ( ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end' )
+            // USE.g:558:5: ( 'psm' ) smName= IDENT 'states' (s= stateDefinition )+ 'transitions' (t= transitionDefinition )+ 'end'
             {
-            // USE.g:559:5: ( 'psm' )
-            // USE.g:560:8: 'psm'
+            // USE.g:558:5: ( 'psm' )
+            // USE.g:559:8: 'psm'
             {
             match(input,106,FOLLOW_106_in_stateMachine2517); if (state.failed) return n;
 
@@ -3985,7 +3984,7 @@ public class USEParser extends BaseParser {
 
             match(input,111,FOLLOW_111_in_stateMachine2563); if (state.failed) return n;
 
-            // USE.g:567:10: (s= stateDefinition )+
+            // USE.g:566:10: (s= stateDefinition )+
             int cnt66=0;
             loop66:
             do {
@@ -3999,7 +3998,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt66) {
             	case 1 :
-            	    // USE.g:567:11: s= stateDefinition
+            	    // USE.g:566:11: s= stateDefinition
             	    {
             	    pushFollow(FOLLOW_stateDefinition_in_stateMachine2579);
             	    s=stateDefinition();
@@ -4025,7 +4024,7 @@ public class USEParser extends BaseParser {
 
             match(input,114,FOLLOW_114_in_stateMachine2589); if (state.failed) return n;
 
-            // USE.g:569:10: (t= transitionDefinition )+
+            // USE.g:568:10: (t= transitionDefinition )+
             int cnt67=0;
             loop67:
             do {
@@ -4039,7 +4038,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt67) {
             	case 1 :
-            	    // USE.g:569:11: t= transitionDefinition
+            	    // USE.g:568:11: t= transitionDefinition
             	    {
             	    pushFollow(FOLLOW_transitionDefinition_in_stateMachine2605);
             	    t=transitionDefinition();
@@ -4083,7 +4082,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "stateDefinition"
-    // USE.g:573:1: stateDefinition returns [ASTStateDefinition n] : sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )? ;
+    // USE.g:572:1: stateDefinition returns [ASTStateDefinition n] : sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )? ;
     public final ASTStateDefinition stateDefinition() throws RecognitionException {
         ASTStateDefinition n = null;
 
@@ -4094,14 +4093,14 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:573:47: (sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )? )
-            // USE.g:574:3: sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )?
+            // USE.g:572:47: (sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )? )
+            // USE.g:573:3: sn= IDENT ( COLON stateType= IDENT )? ( LBRACK stateInv= expression RBRACK )?
             {
             sn=(Token)match(input,IDENT,FOLLOW_IDENT_in_stateDefinition2631); if (state.failed) return n;
 
             if ( state.backtracking==0 ) {n = new ASTStateDefinition(sn); }
 
-            // USE.g:575:3: ( COLON stateType= IDENT )?
+            // USE.g:574:3: ( COLON stateType= IDENT )?
             int alt68=2;
             int LA68_0 = input.LA(1);
 
@@ -4110,7 +4109,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt68) {
                 case 1 :
-                    // USE.g:575:5: COLON stateType= IDENT
+                    // USE.g:574:5: COLON stateType= IDENT
                     {
                     match(input,COLON,FOLLOW_COLON_in_stateDefinition2639); if (state.failed) return n;
 
@@ -4124,7 +4123,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:576:3: ( LBRACK stateInv= expression RBRACK )?
+            // USE.g:575:3: ( LBRACK stateInv= expression RBRACK )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -4133,7 +4132,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt69) {
                 case 1 :
-                    // USE.g:576:5: LBRACK stateInv= expression RBRACK
+                    // USE.g:575:5: LBRACK stateInv= expression RBRACK
                     {
                     match(input,LBRACK,FOLLOW_LBRACK_in_stateDefinition2654); if (state.failed) return n;
 
@@ -4171,7 +4170,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "transitionDefinition"
-    // USE.g:579:1: transitionDefinition returns [ASTTransitionDefinition n] : source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )? ;
+    // USE.g:578:1: transitionDefinition returns [ASTTransitionDefinition n] : source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )? ;
     public final ASTTransitionDefinition transitionDefinition() throws RecognitionException {
         ASTTransitionDefinition n = null;
 
@@ -4189,8 +4188,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:579:57: (source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )? )
-            // USE.g:580:3: source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )?
+            // USE.g:578:57: (source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )? )
+            // USE.g:579:3: source= IDENT ARROW target= IDENT ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )?
             {
             source=(Token)match(input,IDENT,FOLLOW_IDENT_in_transitionDefinition2683); if (state.failed) return n;
 
@@ -4200,7 +4199,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTTransitionDefinition(source, target); }
 
-            // USE.g:581:5: ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )?
+            // USE.g:580:5: ( LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE )?
             int alt74=2;
             int LA74_0 = input.LA(1);
 
@@ -4209,11 +4208,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt74) {
                 case 1 :
-                    // USE.g:581:6: LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE
+                    // USE.g:580:6: LBRACE ( LBRACK pre= expression RBRACK )? (e= event |o= IDENT LPAREN (args= paramList )? RPAREN ) ( LBRACK post= expression RBRACK )? RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_transitionDefinition2699); if (state.failed) return n;
 
-                    // USE.g:582:7: ( LBRACK pre= expression RBRACK )?
+                    // USE.g:581:7: ( LBRACK pre= expression RBRACK )?
                     int alt70=2;
                     int LA70_0 = input.LA(1);
 
@@ -4222,7 +4221,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt70) {
                         case 1 :
-                            // USE.g:582:8: LBRACK pre= expression RBRACK
+                            // USE.g:581:8: LBRACK pre= expression RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_transitionDefinition2709); if (state.failed) return n;
 
@@ -4242,7 +4241,7 @@ public class USEParser extends BaseParser {
                     }
 
 
-                    // USE.g:583:7: (e= event |o= IDENT LPAREN (args= paramList )? RPAREN )
+                    // USE.g:582:7: (e= event |o= IDENT LPAREN (args= paramList )? RPAREN )
                     int alt72=2;
                     int LA72_0 = input.LA(1);
 
@@ -4262,7 +4261,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt72) {
                         case 1 :
-                            // USE.g:584:11: e= event
+                            // USE.g:583:11: e= event
                             {
                             pushFollow(FOLLOW_event_in_transitionDefinition2741);
                             e=event();
@@ -4275,7 +4274,7 @@ public class USEParser extends BaseParser {
                             }
                             break;
                         case 2 :
-                            // USE.g:585:11: o= IDENT LPAREN (args= paramList )? RPAREN
+                            // USE.g:584:11: o= IDENT LPAREN (args= paramList )? RPAREN
                             {
                             o=(Token)match(input,IDENT,FOLLOW_IDENT_in_transitionDefinition2757); if (state.failed) return n;
 
@@ -4283,7 +4282,7 @@ public class USEParser extends BaseParser {
 
                             match(input,LPAREN,FOLLOW_LPAREN_in_transitionDefinition2761); if (state.failed) return n;
 
-                            // USE.g:585:50: (args= paramList )?
+                            // USE.g:584:50: (args= paramList )?
                             int alt71=2;
                             int LA71_0 = input.LA(1);
 
@@ -4292,7 +4291,7 @@ public class USEParser extends BaseParser {
                             }
                             switch (alt71) {
                                 case 1 :
-                                    // USE.g:585:51: args= paramList
+                                    // USE.g:584:51: args= paramList
                                     {
                                     pushFollow(FOLLOW_paramList_in_transitionDefinition2766);
                                     args=paramList();
@@ -4316,7 +4315,7 @@ public class USEParser extends BaseParser {
                     }
 
 
-                    // USE.g:587:7: ( LBRACK post= expression RBRACK )?
+                    // USE.g:586:7: ( LBRACK post= expression RBRACK )?
                     int alt73=2;
                     int LA73_0 = input.LA(1);
 
@@ -4325,7 +4324,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt73) {
                         case 1 :
-                            // USE.g:587:8: LBRACK post= expression RBRACK
+                            // USE.g:586:8: LBRACK post= expression RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_transitionDefinition2790); if (state.failed) return n;
 
@@ -4371,7 +4370,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "event"
-    // USE.g:591:1: event returns [Token t] : tcr= 'create' ;
+    // USE.g:590:1: event returns [Token t] : tcr= 'create' ;
     public final Token event() throws RecognitionException {
         Token t = null;
 
@@ -4379,8 +4378,8 @@ public class USEParser extends BaseParser {
         Token tcr=null;
 
         try {
-            // USE.g:591:24: (tcr= 'create' )
-            // USE.g:592:5: tcr= 'create'
+            // USE.g:590:24: (tcr= 'create' )
+            // USE.g:591:5: tcr= 'create'
             {
             tcr=(Token)match(input,68,FOLLOW_68_in_event2828); if (state.failed) return t;
 
@@ -4404,7 +4403,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "signalDefinition"
-    // USE.g:595:1: signalDefinition[boolean isAbstract] returns [ASTSignal n] : keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end' ;
+    // USE.g:594:1: signalDefinition[boolean isAbstract] returns [ASTSignal n] : keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end' ;
     public final ASTSignal signalDefinition(boolean isAbstract) throws RecognitionException {
         ASTSignal n = null;
 
@@ -4418,8 +4417,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:595:59: ( keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end' )
-            // USE.g:596:5: keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end'
+            // USE.g:594:59: ( keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end' )
+            // USE.g:595:5: keySignal name= IDENT ( LESS idListRes= idList )? ( 'attributes' (a= attributeDefinition )* )? ( 'constraints' (inv= invariantClause )* )? 'end'
             {
             pushFollow(FOLLOW_keySignal_in_signalDefinition2848);
             keySignal();
@@ -4431,7 +4430,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTSignal(name, isAbstract); }
 
-            // USE.g:598:5: ( LESS idListRes= idList )?
+            // USE.g:597:5: ( LESS idListRes= idList )?
             int alt75=2;
             int LA75_0 = input.LA(1);
 
@@ -4440,7 +4439,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt75) {
                 case 1 :
-                    // USE.g:598:7: LESS idListRes= idList
+                    // USE.g:597:7: LESS idListRes= idList
                     {
                     match(input,LESS,FOLLOW_LESS_in_signalDefinition2867); if (state.failed) return n;
 
@@ -4458,7 +4457,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:599:5: ( 'attributes' (a= attributeDefinition )* )?
+            // USE.g:598:5: ( 'attributes' (a= attributeDefinition )* )?
             int alt77=2;
             int LA77_0 = input.LA(1);
 
@@ -4467,11 +4466,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt77) {
                 case 1 :
-                    // USE.g:599:7: 'attributes' (a= attributeDefinition )*
+                    // USE.g:598:7: 'attributes' (a= attributeDefinition )*
                     {
                     match(input,62,FOLLOW_62_in_signalDefinition2884); if (state.failed) return n;
 
-                    // USE.g:600:7: (a= attributeDefinition )*
+                    // USE.g:599:7: (a= attributeDefinition )*
                     loop76:
                     do {
                         int alt76=2;
@@ -4484,7 +4483,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt76) {
                     	case 1 :
-                    	    // USE.g:600:9: a= attributeDefinition
+                    	    // USE.g:599:9: a= attributeDefinition
                     	    {
                     	    pushFollow(FOLLOW_attributeDefinition_in_signalDefinition2897);
                     	    a=attributeDefinition();
@@ -4509,7 +4508,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:602:5: ( 'constraints' (inv= invariantClause )* )?
+            // USE.g:601:5: ( 'constraints' (inv= invariantClause )* )?
             int alt79=2;
             int LA79_0 = input.LA(1);
 
@@ -4518,11 +4517,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt79) {
                 case 1 :
-                    // USE.g:602:7: 'constraints' (inv= invariantClause )*
+                    // USE.g:601:7: 'constraints' (inv= invariantClause )*
                     {
                     match(input,66,FOLLOW_66_in_signalDefinition2918); if (state.failed) return n;
 
-                    // USE.g:603:7: (inv= invariantClause )*
+                    // USE.g:602:7: (inv= invariantClause )*
                     loop78:
                     do {
                         int alt78=2;
@@ -4535,7 +4534,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt78) {
                     	case 1 :
-                    	    // USE.g:604:9: inv= invariantClause
+                    	    // USE.g:603:9: inv= invariantClause
                     	    {
                     	    pushFollow(FOLLOW_invariantClause_in_signalDefinition2938);
                     	    inv=invariantClause();
@@ -4580,11 +4579,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyUnion"
-    // USE.g:610:1: keyUnion :{...}? IDENT ;
+    // USE.g:609:1: keyUnion :{...}? IDENT ;
     public final void keyUnion() throws RecognitionException {
         try {
-            // USE.g:610:9: ({...}? IDENT )
-            // USE.g:611:3: {...}? IDENT
+            // USE.g:609:9: ({...}? IDENT )
+            // USE.g:610:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("union"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4611,11 +4610,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyAssociation"
-    // USE.g:613:1: keyAssociation :{...}? IDENT ;
+    // USE.g:612:1: keyAssociation :{...}? IDENT ;
     public final void keyAssociation() throws RecognitionException {
         try {
-            // USE.g:613:15: ({...}? IDENT )
-            // USE.g:614:3: {...}? IDENT
+            // USE.g:612:15: ({...}? IDENT )
+            // USE.g:613:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("association"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4642,11 +4641,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyRole"
-    // USE.g:616:1: keyRole :{...}? IDENT ;
+    // USE.g:615:1: keyRole :{...}? IDENT ;
     public final void keyRole() throws RecognitionException {
         try {
-            // USE.g:616:8: ({...}? IDENT )
-            // USE.g:617:3: {...}? IDENT
+            // USE.g:615:8: ({...}? IDENT )
+            // USE.g:616:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("role"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4673,11 +4672,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyComposition"
-    // USE.g:619:1: keyComposition :{...}? IDENT ;
+    // USE.g:618:1: keyComposition :{...}? IDENT ;
     public final void keyComposition() throws RecognitionException {
         try {
-            // USE.g:619:15: ({...}? IDENT )
-            // USE.g:620:3: {...}? IDENT
+            // USE.g:618:15: ({...}? IDENT )
+            // USE.g:619:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("composition"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4704,11 +4703,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyAggregation"
-    // USE.g:622:1: keyAggregation :{...}? IDENT ;
+    // USE.g:621:1: keyAggregation :{...}? IDENT ;
     public final void keyAggregation() throws RecognitionException {
         try {
-            // USE.g:622:15: ({...}? IDENT )
-            // USE.g:623:3: {...}? IDENT
+            // USE.g:621:15: ({...}? IDENT )
+            // USE.g:622:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("aggregation"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4735,11 +4734,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyClass"
-    // USE.g:625:1: keyClass :{...}? IDENT ;
+    // USE.g:624:1: keyClass :{...}? IDENT ;
     public final void keyClass() throws RecognitionException {
         try {
-            // USE.g:625:9: ({...}? IDENT )
-            // USE.g:626:3: {...}? IDENT
+            // USE.g:624:9: ({...}? IDENT )
+            // USE.g:625:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("class"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4766,11 +4765,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keySignal"
-    // USE.g:628:1: keySignal :{...}? IDENT ;
+    // USE.g:627:1: keySignal :{...}? IDENT ;
     public final void keySignal() throws RecognitionException {
         try {
-            // USE.g:628:10: ({...}? IDENT )
-            // USE.g:629:3: {...}? IDENT
+            // USE.g:627:10: ({...}? IDENT )
+            // USE.g:628:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("signal"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4797,11 +4796,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyDerived"
-    // USE.g:631:1: keyDerived :{...}? IDENT ;
+    // USE.g:630:1: keyDerived :{...}? IDENT ;
     public final void keyDerived() throws RecognitionException {
         try {
-            // USE.g:631:11: ({...}? IDENT )
-            // USE.g:632:3: {...}? IDENT
+            // USE.g:630:11: ({...}? IDENT )
+            // USE.g:631:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("derived"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4828,11 +4827,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyDerive"
-    // USE.g:634:1: keyDerive :{...}? IDENT ;
+    // USE.g:633:1: keyDerive :{...}? IDENT ;
     public final void keyDerive() throws RecognitionException {
         try {
-            // USE.g:634:10: ({...}? IDENT )
-            // USE.g:635:3: {...}? IDENT
+            // USE.g:633:10: ({...}? IDENT )
+            // USE.g:634:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("derive"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4859,11 +4858,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyInit"
-    // USE.g:637:1: keyInit :{...}? IDENT ;
+    // USE.g:636:1: keyInit :{...}? IDENT ;
     public final void keyInit() throws RecognitionException {
         try {
-            // USE.g:637:8: ({...}? IDENT )
-            // USE.g:638:3: {...}? IDENT
+            // USE.g:636:8: ({...}? IDENT )
+            // USE.g:637:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("init"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4890,11 +4889,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "keyQualifier"
-    // USE.g:640:1: keyQualifier :{...}? IDENT ;
+    // USE.g:639:1: keyQualifier :{...}? IDENT ;
     public final void keyQualifier() throws RecognitionException {
         try {
-            // USE.g:640:13: ({...}? IDENT )
-            // USE.g:641:3: {...}? IDENT
+            // USE.g:639:13: ({...}? IDENT )
+            // USE.g:640:3: {...}? IDENT
             {
             if ( !((input.LT(1).getText().equals("qualifier"))) ) {
                 if (state.backtracking>0) {state.failed=true; return ;}
@@ -4921,7 +4920,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "expressionOnly"
-    // USE.g:670:1: expressionOnly returns [ASTExpression n] : nExp= expression EOF ;
+    // USE.g:669:1: expressionOnly returns [ASTExpression n] : nExp= expression EOF ;
     public final ASTExpression expressionOnly() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4930,8 +4929,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:671:5: (nExp= expression EOF )
-            // USE.g:672:5: nExp= expression EOF
+            // USE.g:670:5: (nExp= expression EOF )
+            // USE.g:671:5: nExp= expression EOF
             {
             pushFollow(FOLLOW_expression_in_expressionOnly3142);
             nExp=expression();
@@ -4965,7 +4964,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "expression"
-    // USE.g:679:1: expression returns [ASTExpression n] : ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression ;
+    // USE.g:678:1: expression returns [ASTExpression n] : ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression ;
     public final USEParser.expression_return expression() throws RecognitionException {
         USEParser.expression_return retval = new USEParser.expression_return();
         retval.start = input.LT(1);
@@ -4985,12 +4984,12 @@ public class USEParser extends BaseParser {
           Token tok = null;
 
         try {
-            // USE.g:685:5: ( ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression )
-            // USE.g:686:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression
+            // USE.g:684:5: ( ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression )
+            // USE.g:685:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of expression */ }
 
-            // USE.g:687:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )*
+            // USE.g:686:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )*
             loop83:
             do {
                 int alt83=2;
@@ -5003,13 +5002,13 @@ public class USEParser extends BaseParser {
 
                 switch (alt83) {
             	case 1 :
-            	    // USE.g:688:7: 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in'
+            	    // USE.g:687:7: 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in'
             	    {
             	    match(input,90,FOLLOW_90_in_expression3192); if (state.failed) return retval;
 
             	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression3203); if (state.failed) return retval;
 
-            	    // USE.g:689:18: ( COLON t= type )?
+            	    // USE.g:688:18: ( COLON t= type )?
             	    int alt80=2;
             	    int LA80_0 = input.LA(1);
 
@@ -5018,7 +5017,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt80) {
             	        case 1 :
-            	            // USE.g:689:20: COLON t= type
+            	            // USE.g:688:20: COLON t= type
             	            {
             	            match(input,COLON,FOLLOW_COLON_in_expression3207); if (state.failed) return retval;
 
@@ -5050,7 +5049,7 @@ public class USEParser extends BaseParser {
             	             prevLet = nextLet;
             	          }
 
-            	    // USE.g:699:7: ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )*
+            	    // USE.g:698:7: ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )*
             	    loop82:
             	    do {
             	        int alt82=2;
@@ -5063,13 +5062,13 @@ public class USEParser extends BaseParser {
 
             	        switch (alt82) {
             	    	case 1 :
-            	    	    // USE.g:700:7: COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression
+            	    	    // USE.g:699:7: COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression
             	    	    {
             	    	    match(input,COMMA,FOLLOW_COMMA_in_expression3258); if (state.failed) return retval;
 
             	    	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression3270); if (state.failed) return retval;
 
-            	    	    // USE.g:701:20: ( COLON t= type )?
+            	    	    // USE.g:700:20: ( COLON t= type )?
             	    	    int alt81=2;
             	    	    int LA81_0 = input.LA(1);
 
@@ -5078,7 +5077,7 @@ public class USEParser extends BaseParser {
             	    	    }
             	    	    switch (alt81) {
             	    	        case 1 :
-            	    	            // USE.g:701:22: COLON t= type
+            	    	            // USE.g:700:22: COLON t= type
             	    	            {
             	    	            match(input,COLON,FOLLOW_COLON_in_expression3274); if (state.failed) return retval;
 
@@ -5169,7 +5168,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "paramList"
-    // USE.g:733:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
+    // USE.g:732:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
     public final List<ASTVariableDeclaration> paramList() throws RecognitionException {
         List<ASTVariableDeclaration> paramList = null;
 
@@ -5179,12 +5178,12 @@ public class USEParser extends BaseParser {
 
          paramList = new ArrayList<ASTVariableDeclaration>(); 
         try {
-            // USE.g:735:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
-            // USE.g:736:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
+            // USE.g:734:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
+            // USE.g:735:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
             {
             match(input,LPAREN,FOLLOW_LPAREN_in_paramList3377); if (state.failed) return paramList;
 
-            // USE.g:737:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
+            // USE.g:736:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
             int alt85=2;
             int LA85_0 = input.LA(1);
 
@@ -5193,7 +5192,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt85) {
                 case 1 :
-                    // USE.g:738:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
+                    // USE.g:737:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
                     {
                     pushFollow(FOLLOW_variableDeclaration_in_paramList3394);
                     v=variableDeclaration();
@@ -5203,7 +5202,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { paramList.add(v); }
 
-                    // USE.g:739:7: ( COMMA v= variableDeclaration )*
+                    // USE.g:738:7: ( COMMA v= variableDeclaration )*
                     loop84:
                     do {
                         int alt84=2;
@@ -5216,7 +5215,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt84) {
                     	case 1 :
-                    	    // USE.g:739:9: COMMA v= variableDeclaration
+                    	    // USE.g:738:9: COMMA v= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_paramList3406); if (state.failed) return paramList;
 
@@ -5263,7 +5262,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "idList"
-    // USE.g:747:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
+    // USE.g:746:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
     public final List idList() throws RecognitionException {
         List idList = null;
 
@@ -5273,14 +5272,14 @@ public class USEParser extends BaseParser {
 
          idList = new ArrayList(); 
         try {
-            // USE.g:749:5: (id0= IDENT ( COMMA idn= IDENT )* )
-            // USE.g:750:5: id0= IDENT ( COMMA idn= IDENT )*
+            // USE.g:748:5: (id0= IDENT ( COMMA idn= IDENT )* )
+            // USE.g:749:5: id0= IDENT ( COMMA idn= IDENT )*
             {
             id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList3459); if (state.failed) return idList;
 
             if ( state.backtracking==0 ) { idList.add(id0); }
 
-            // USE.g:751:5: ( COMMA idn= IDENT )*
+            // USE.g:750:5: ( COMMA idn= IDENT )*
             loop86:
             do {
                 int alt86=2;
@@ -5293,7 +5292,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt86) {
             	case 1 :
-            	    // USE.g:751:7: COMMA idn= IDENT
+            	    // USE.g:750:7: COMMA idn= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_idList3469); if (state.failed) return idList;
 
@@ -5328,7 +5327,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "variableDeclaration"
-    // USE.g:759:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
+    // USE.g:758:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
     public final ASTVariableDeclaration variableDeclaration() throws RecognitionException {
         ASTVariableDeclaration n = null;
 
@@ -5338,8 +5337,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:760:5: (name= IDENT COLON t= type )
-            // USE.g:761:5: name= IDENT COLON t= type
+            // USE.g:759:5: (name= IDENT COLON t= type )
+            // USE.g:760:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration3504); if (state.failed) return n;
 
@@ -5371,7 +5370,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "conditionalImpliesExpression"
-    // USE.g:769:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
+    // USE.g:768:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
     public final ASTExpression conditionalImpliesExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5383,8 +5382,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:770:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
-            // USE.g:771:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
+            // USE.g:769:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
+            // USE.g:770:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
             {
             pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression3546);
             nCndOrExp=conditionalOrExpression();
@@ -5394,7 +5393,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndOrExp;}
 
-            // USE.g:772:5: (op= 'implies' n1= conditionalOrExpression )*
+            // USE.g:771:5: (op= 'implies' n1= conditionalOrExpression )*
             loop87:
             do {
                 int alt87=2;
@@ -5407,7 +5406,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt87) {
             	case 1 :
-            	    // USE.g:772:7: op= 'implies' n1= conditionalOrExpression
+            	    // USE.g:771:7: op= 'implies' n1= conditionalOrExpression
             	    {
             	    op=(Token)match(input,84,FOLLOW_84_in_conditionalImpliesExpression3559); if (state.failed) return n;
 
@@ -5446,7 +5445,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "conditionalOrExpression"
-    // USE.g:781:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
+    // USE.g:780:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
     public final ASTExpression conditionalOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5458,8 +5457,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:782:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
-            // USE.g:783:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
+            // USE.g:781:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
+            // USE.g:782:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
             {
             pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression3608);
             nCndXorExp=conditionalXOrExpression();
@@ -5469,7 +5468,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndXorExp;}
 
-            // USE.g:784:5: (op= 'or' n1= conditionalXOrExpression )*
+            // USE.g:783:5: (op= 'or' n1= conditionalXOrExpression )*
             loop88:
             do {
                 int alt88=2;
@@ -5482,7 +5481,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt88) {
             	case 1 :
-            	    // USE.g:784:7: op= 'or' n1= conditionalXOrExpression
+            	    // USE.g:783:7: op= 'or' n1= conditionalXOrExpression
             	    {
             	    op=(Token)match(input,102,FOLLOW_102_in_conditionalOrExpression3621); if (state.failed) return n;
 
@@ -5521,7 +5520,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "conditionalXOrExpression"
-    // USE.g:793:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
+    // USE.g:792:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
     public final ASTExpression conditionalXOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5533,8 +5532,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:794:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
-            // USE.g:795:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
+            // USE.g:793:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
+            // USE.g:794:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
             {
             pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression3669);
             nCndAndExp=conditionalAndExpression();
@@ -5544,7 +5543,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndAndExp;}
 
-            // USE.g:796:5: (op= 'xor' n1= conditionalAndExpression )*
+            // USE.g:795:5: (op= 'xor' n1= conditionalAndExpression )*
             loop89:
             do {
                 int alt89=2;
@@ -5557,7 +5556,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt89) {
             	case 1 :
-            	    // USE.g:796:7: op= 'xor' n1= conditionalAndExpression
+            	    // USE.g:795:7: op= 'xor' n1= conditionalAndExpression
             	    {
             	    op=(Token)match(input,117,FOLLOW_117_in_conditionalXOrExpression3682); if (state.failed) return n;
 
@@ -5596,7 +5595,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "conditionalAndExpression"
-    // USE.g:805:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
+    // USE.g:804:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
     public final ASTExpression conditionalAndExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5608,8 +5607,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:806:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
-            // USE.g:807:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
+            // USE.g:805:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
+            // USE.g:806:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
             {
             pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression3730);
             nEqExp=equalityExpression();
@@ -5619,7 +5618,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nEqExp;}
 
-            // USE.g:808:5: (op= 'and' n1= equalityExpression )*
+            // USE.g:807:5: (op= 'and' n1= equalityExpression )*
             loop90:
             do {
                 int alt90=2;
@@ -5632,7 +5631,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt90) {
             	case 1 :
-            	    // USE.g:808:7: op= 'and' n1= equalityExpression
+            	    // USE.g:807:7: op= 'and' n1= equalityExpression
             	    {
             	    op=(Token)match(input,59,FOLLOW_59_in_conditionalAndExpression3743); if (state.failed) return n;
 
@@ -5671,7 +5670,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "equalityExpression"
-    // USE.g:817:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
+    // USE.g:816:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
     public final ASTExpression equalityExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5683,8 +5682,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:819:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
-            // USE.g:820:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // USE.g:818:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
+            // USE.g:819:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             {
             pushFollow(FOLLOW_relationalExpression_in_equalityExpression3795);
             nRelExp=relationalExpression();
@@ -5694,7 +5693,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nRelExp;}
 
-            // USE.g:821:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // USE.g:820:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             loop91:
             do {
                 int alt91=2;
@@ -5707,7 +5706,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt91) {
             	case 1 :
-            	    // USE.g:821:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
+            	    // USE.g:820:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5758,7 +5757,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "relationalExpression"
-    // USE.g:831:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
+    // USE.g:830:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
     public final ASTExpression relationalExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5770,8 +5769,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:833:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
-            // USE.g:834:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // USE.g:832:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
+            // USE.g:833:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             {
             pushFollow(FOLLOW_additiveExpression_in_relationalExpression3873);
             nAddiExp=additiveExpression();
@@ -5781,7 +5780,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nAddiExp;}
 
-            // USE.g:835:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // USE.g:834:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             loop92:
             do {
                 int alt92=2;
@@ -5794,7 +5793,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt92) {
             	case 1 :
-            	    // USE.g:835:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
+            	    // USE.g:834:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5845,7 +5844,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "additiveExpression"
-    // USE.g:845:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
+    // USE.g:844:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
     public final ASTExpression additiveExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5857,8 +5856,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:847:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
-            // USE.g:848:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // USE.g:846:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
+            // USE.g:847:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             {
             pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression3959);
             nMulExp=multiplicativeExpression();
@@ -5868,7 +5867,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nMulExp;}
 
-            // USE.g:849:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // USE.g:848:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             loop93:
             do {
                 int alt93=2;
@@ -5881,7 +5880,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt93) {
             	case 1 :
-            	    // USE.g:849:7: ( PLUS | MINUS ) n1= multiplicativeExpression
+            	    // USE.g:848:7: ( PLUS | MINUS ) n1= multiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5932,7 +5931,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // USE.g:860:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
+    // USE.g:859:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
     public final ASTExpression multiplicativeExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5944,8 +5943,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:862:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
-            // USE.g:863:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // USE.g:861:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
+            // USE.g:862:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             {
             pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression4037);
             nUnExp=unaryExpression();
@@ -5955,7 +5954,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nUnExp;}
 
-            // USE.g:864:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // USE.g:863:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             loop94:
             do {
                 int alt94=2;
@@ -5968,7 +5967,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt94) {
             	case 1 :
-            	    // USE.g:864:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
+            	    // USE.g:863:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -6019,7 +6018,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "unaryExpression"
-    // USE.g:876:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
+    // USE.g:875:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
     public final ASTExpression unaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -6031,7 +6030,7 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:878:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
+            // USE.g:877:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -6051,10 +6050,10 @@ public class USEParser extends BaseParser {
             }
             switch (alt95) {
                 case 1 :
-                    // USE.g:879:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // USE.g:878:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
                     {
-                    // USE.g:879:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
-                    // USE.g:879:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
+                    // USE.g:878:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // USE.g:878:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
                     {
                     if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -6084,7 +6083,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:883:7: nPosExp= postfixExpression
+                    // USE.g:882:7: nPosExp= postfixExpression
                     {
                     pushFollow(FOLLOW_postfixExpression_in_unaryExpression4175);
                     nPosExp=postfixExpression();
@@ -6114,7 +6113,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "postfixExpression"
-    // USE.g:891:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
+    // USE.g:890:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
     public final ASTExpression postfixExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -6126,8 +6125,8 @@ public class USEParser extends BaseParser {
 
          boolean arrow = false; 
         try {
-            // USE.g:893:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
-            // USE.g:894:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // USE.g:892:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
+            // USE.g:893:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             {
             pushFollow(FOLLOW_primaryExpression_in_postfixExpression4208);
             nPrimExp=primaryExpression();
@@ -6137,7 +6136,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nPrimExp; }
 
-            // USE.g:895:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // USE.g:894:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             loop97:
             do {
                 int alt97=2;
@@ -6168,9 +6167,9 @@ public class USEParser extends BaseParser {
 
                 switch (alt97) {
             	case 1 :
-            	    // USE.g:896:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
+            	    // USE.g:895:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
             	    {
-            	    // USE.g:896:6: ( ARROW | DOT )
+            	    // USE.g:895:6: ( ARROW | DOT )
             	    int alt96=2;
             	    int LA96_0 = input.LA(1);
 
@@ -6190,7 +6189,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt96) {
             	        case 1 :
-            	            // USE.g:896:8: ARROW
+            	            // USE.g:895:8: ARROW
             	            {
             	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression4226); if (state.failed) return n;
 
@@ -6199,7 +6198,7 @@ public class USEParser extends BaseParser {
             	            }
             	            break;
             	        case 2 :
-            	            // USE.g:896:34: DOT
+            	            // USE.g:895:34: DOT
             	            {
             	            match(input,DOT,FOLLOW_DOT_in_postfixExpression4232); if (state.failed) return n;
 
@@ -6246,7 +6245,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "primaryExpression"
-    // USE.g:912:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
+    // USE.g:911:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
     public final ASTExpression primaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -6267,7 +6266,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:913:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
+            // USE.g:912:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
             int alt101=7;
             switch ( input.LA(1) ) {
             case HASH:
@@ -6438,7 +6437,7 @@ public class USEParser extends BaseParser {
 
             switch (alt101) {
                 case 1 :
-                    // USE.g:914:7: nLit= literal
+                    // USE.g:913:7: nLit= literal
                     {
                     pushFollow(FOLLOW_literal_in_primaryExpression4283);
                     nLit=literal();
@@ -6451,7 +6450,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:915:7: nOr= objectReference
+                    // USE.g:914:7: nOr= objectReference
                     {
                     pushFollow(FOLLOW_objectReference_in_primaryExpression4297);
                     nOr=objectReference();
@@ -6464,7 +6463,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:916:7: nPc= propertyCall[null, false]
+                    // USE.g:915:7: nPc= propertyCall[null, false]
                     {
                     pushFollow(FOLLOW_propertyCall_in_primaryExpression4309);
                     nPc=propertyCall(null, false);
@@ -6477,7 +6476,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // USE.g:917:7: LPAREN nExp= expression RPAREN
+                    // USE.g:916:7: LPAREN nExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression4320); if (state.failed) return n;
 
@@ -6494,7 +6493,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // USE.g:918:7: nIfExp= ifExpression
+                    // USE.g:917:7: nIfExp= ifExpression
                     {
                     pushFollow(FOLLOW_ifExpression_in_primaryExpression4338);
                     nIfExp=ifExpression();
@@ -6507,7 +6506,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // USE.g:919:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
+                    // USE.g:918:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
                     {
                     id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression4350); if (state.failed) return n;
 
@@ -6517,7 +6516,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTAllInstancesExpression(id1); }
 
-                    // USE.g:921:9: ( AT 'pre' )?
+                    // USE.g:920:9: ( AT 'pre' )?
                     int alt98=2;
                     int LA98_0 = input.LA(1);
 
@@ -6530,7 +6529,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt98) {
                         case 1 :
-                            // USE.g:921:11: AT 'pre'
+                            // USE.g:920:11: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression4377); if (state.failed) return n;
 
@@ -6544,7 +6543,7 @@ public class USEParser extends BaseParser {
                     }
 
 
-                    // USE.g:922:9: ( LPAREN RPAREN )?
+                    // USE.g:921:9: ( LPAREN RPAREN )?
                     int alt99=2;
                     int LA99_0 = input.LA(1);
 
@@ -6553,7 +6552,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt99) {
                         case 1 :
-                            // USE.g:922:11: LPAREN RPAREN
+                            // USE.g:921:11: LPAREN RPAREN
                             {
                             match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression4397); if (state.failed) return n;
 
@@ -6568,7 +6567,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // USE.g:923:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
+                    // USE.g:922:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
                     {
                     id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression4412); if (state.failed) return n;
 
@@ -6576,8 +6575,8 @@ public class USEParser extends BaseParser {
 
                     match(input,65,FOLLOW_65_in_primaryExpression4416); if (state.failed) return n;
 
-                    // USE.g:923:31: ( LPAREN idExp= expression RPAREN )
-                    // USE.g:923:33: LPAREN idExp= expression RPAREN
+                    // USE.g:922:31: ( LPAREN idExp= expression RPAREN )
+                    // USE.g:922:33: LPAREN idExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression4420); if (state.failed) return n;
 
@@ -6594,7 +6593,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTObjectByUseIdExpression(id2, (idExp!=null?idExp.n:null)); }
 
-                    // USE.g:925:7: ( AT 'pre' )?
+                    // USE.g:924:7: ( AT 'pre' )?
                     int alt100=2;
                     int LA100_0 = input.LA(1);
 
@@ -6607,7 +6606,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt100) {
                         case 1 :
-                            // USE.g:925:9: AT 'pre'
+                            // USE.g:924:9: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression4446); if (state.failed) return n;
 
@@ -6641,7 +6640,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "objectReference"
-    // USE.g:929:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
+    // USE.g:928:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
     public final ASTExpression objectReference() throws RecognitionException {
         ASTExpression n = null;
 
@@ -6649,8 +6648,8 @@ public class USEParser extends BaseParser {
         Token objectName=null;
 
         try {
-            // USE.g:930:3: ( AT objectName= IDENT )
-            // USE.g:931:3: AT objectName= IDENT
+            // USE.g:929:3: ( AT objectName= IDENT )
+            // USE.g:930:3: AT objectName= IDENT
             {
             match(input,AT,FOLLOW_AT_in_objectReference4474); if (state.failed) return n;
 
@@ -6676,7 +6675,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "propertyCall"
-    // USE.g:945:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
+    // USE.g:944:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
     public final ASTExpression propertyCall(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTExpression n = null;
 
@@ -6693,7 +6692,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:946:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
+            // USE.g:945:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
             int alt102=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -6746,7 +6745,7 @@ public class USEParser extends BaseParser {
 
             switch (alt102) {
                 case 1 :
-                    // USE.g:950:7: {...}?{...}?nExpQuery= queryExpression[source]
+                    // USE.g:949:7: {...}?{...}?nExpQuery= queryExpression[source]
                     {
                     if ( !(( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )) ) {
                         if (state.backtracking>0) {state.failed=true; return n;}
@@ -6769,7 +6768,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:953:7: nExpIterate= iterateExpression[source]
+                    // USE.g:952:7: nExpIterate= iterateExpression[source]
                     {
                     pushFollow(FOLLOW_iterateExpression_in_propertyCall4560);
                     nExpIterate=iterateExpression(source);
@@ -6782,7 +6781,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:954:7: nExpOperation= operationExpression[source, followsArrow]
+                    // USE.g:953:7: nExpOperation= operationExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_operationExpression_in_propertyCall4573);
                     nExpOperation=operationExpression(source, followsArrow);
@@ -6795,7 +6794,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // USE.g:955:7: nExpType= typeExpression[source, followsArrow]
+                    // USE.g:954:7: nExpType= typeExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_typeExpression_in_propertyCall4586);
                     nExpType=typeExpression(source, followsArrow);
@@ -6808,7 +6807,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // USE.g:956:7: nExpInState= inStateExpression[source, followsArrow]
+                    // USE.g:955:7: nExpInState= inStateExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_inStateExpression_in_propertyCall4599);
                     nExpInState=inStateExpression(source, followsArrow);
@@ -6838,7 +6837,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "queryExpression"
-    // USE.g:965:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
+    // USE.g:964:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
     public final ASTExpression queryExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -6851,14 +6850,14 @@ public class USEParser extends BaseParser {
 
         ASTElemVarsDeclaration decl = new ASTElemVarsDeclaration(); 
         try {
-            // USE.g:966:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
-            // USE.g:967:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
+            // USE.g:965:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
+            // USE.g:966:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
             {
             op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression4634); if (state.failed) return n;
 
             match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression4641); if (state.failed) return n;
 
-            // USE.g:969:5: (decls= elemVarsDeclaration BAR )?
+            // USE.g:968:5: (decls= elemVarsDeclaration BAR )?
             int alt103=2;
             int LA103_0 = input.LA(1);
 
@@ -6871,7 +6870,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt103) {
                 case 1 :
-                    // USE.g:969:7: decls= elemVarsDeclaration BAR
+                    // USE.g:968:7: decls= elemVarsDeclaration BAR
                     {
                     pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression4652);
                     decls=elemVarsDeclaration();
@@ -6917,7 +6916,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "iterateExpression"
-    // USE.g:983:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
+    // USE.g:982:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
     public final ASTExpression iterateExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -6931,8 +6930,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:983:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
-            // USE.g:984:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
+            // USE.g:982:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
+            // USE.g:983:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
             {
             i=(Token)match(input,89,FOLLOW_89_in_iterateExpression4705); if (state.failed) return n;
 
@@ -6986,7 +6985,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "operationExpression"
-    // USE.g:1005:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
+    // USE.g:1004:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
     public final USEParser.operationExpression_return operationExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         USEParser.operationExpression_return retval = new USEParser.operationExpression_return();
         retval.start = input.LT(1);
@@ -6999,14 +6998,14 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1007:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
-            // USE.g:1008:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // USE.g:1006:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
+            // USE.g:1007:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression4789); if (state.failed) return retval;
 
             if ( state.backtracking==0 ) { retval.n = new ASTOperationExpression(name, source, followsArrow); }
 
-            // USE.g:1014:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
+            // USE.g:1013:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
             int alt107=2;
             int LA107_0 = input.LA(1);
 
@@ -7015,7 +7014,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt107) {
                 case 1 :
-                    // USE.g:1014:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // USE.g:1013:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     {
                     match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression4811); if (state.failed) return retval;
 
@@ -7027,7 +7026,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addExplicitRolenameOrQualifier((rolename!=null?rolename.n:null)); }
 
-                    // USE.g:1016:9: ( COMMA rolename= expression )*
+                    // USE.g:1015:9: ( COMMA rolename= expression )*
                     loop104:
                     do {
                         int alt104=2;
@@ -7040,7 +7039,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt104) {
                     	case 1 :
-                    	    // USE.g:1016:10: COMMA rolename= expression
+                    	    // USE.g:1015:10: COMMA rolename= expression
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression4837); if (state.failed) return retval;
 
@@ -7063,7 +7062,7 @@ public class USEParser extends BaseParser {
 
                     match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression4853); if (state.failed) return retval;
 
-                    // USE.g:1019:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // USE.g:1018:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     int alt106=2;
                     int LA106_0 = input.LA(1);
 
@@ -7072,7 +7071,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt106) {
                         case 1 :
-                            // USE.g:1019:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
+                            // USE.g:1018:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression4870); if (state.failed) return retval;
 
@@ -7084,7 +7083,7 @@ public class USEParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addQualifier((rolename!=null?rolename.n:null)); }
 
-                            // USE.g:1021:11: ( COMMA rolename= expression )*
+                            // USE.g:1020:11: ( COMMA rolename= expression )*
                             loop105:
                             do {
                                 int alt105=2;
@@ -7097,7 +7096,7 @@ public class USEParser extends BaseParser {
 
                                 switch (alt105) {
                             	case 1 :
-                            	    // USE.g:1021:12: COMMA rolename= expression
+                            	    // USE.g:1020:12: COMMA rolename= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression4900); if (state.failed) return retval;
 
@@ -7132,7 +7131,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:1026:5: ( AT 'pre' )?
+            // USE.g:1025:5: ( AT 'pre' )?
             int alt108=2;
             int LA108_0 = input.LA(1);
 
@@ -7145,7 +7144,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt108) {
                 case 1 :
-                    // USE.g:1026:7: AT 'pre'
+                    // USE.g:1025:7: AT 'pre'
                     {
                     match(input,AT,FOLLOW_AT_in_operationExpression4943); if (state.failed) return retval;
 
@@ -7159,7 +7158,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:1028:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // USE.g:1027:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             int alt111=2;
             int LA111_0 = input.LA(1);
 
@@ -7168,13 +7167,13 @@ public class USEParser extends BaseParser {
             }
             switch (alt111) {
                 case 1 :
-                    // USE.g:1029:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
+                    // USE.g:1028:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression4970); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.hasParentheses(); }
 
-                    // USE.g:1030:7: (e= expression ( COMMA e= expression )* )?
+                    // USE.g:1029:7: (e= expression ( COMMA e= expression )* )?
                     int alt110=2;
                     int LA110_0 = input.LA(1);
 
@@ -7183,7 +7182,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt110) {
                         case 1 :
-                            // USE.g:1031:7: e= expression ( COMMA e= expression )*
+                            // USE.g:1030:7: e= expression ( COMMA e= expression )*
                             {
                             pushFollow(FOLLOW_expression_in_operationExpression4991);
                             e=expression();
@@ -7193,7 +7192,7 @@ public class USEParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addArg((e!=null?e.n:null)); }
 
-                            // USE.g:1032:7: ( COMMA e= expression )*
+                            // USE.g:1031:7: ( COMMA e= expression )*
                             loop109:
                             do {
                                 int alt109=2;
@@ -7206,7 +7205,7 @@ public class USEParser extends BaseParser {
 
                                 switch (alt109) {
                             	case 1 :
-                            	    // USE.g:1032:9: COMMA e= expression
+                            	    // USE.g:1031:9: COMMA e= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression5003); if (state.failed) return retval;
 
@@ -7264,7 +7263,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "inStateExpression"
-    // USE.g:1039:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
+    // USE.g:1038:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
     public final ASTInStateExpression inStateExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTInStateExpression n = null;
 
@@ -7273,8 +7272,8 @@ public class USEParser extends BaseParser {
         Token s=null;
 
         try {
-            // USE.g:1040:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
-            // USE.g:1041:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
+            // USE.g:1039:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
+            // USE.g:1040:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
             {
             opToken=(Token)match(input,97,FOLLOW_97_in_inStateExpression5064); if (state.failed) return n;
 
@@ -7304,7 +7303,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "typeExpression"
-    // USE.g:1053:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
+    // USE.g:1052:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
     public final ASTTypeArgExpression typeExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTTypeArgExpression n = null;
 
@@ -7314,8 +7313,8 @@ public class USEParser extends BaseParser {
 
          Token opToken = null; 
         try {
-            // USE.g:1056:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
-            // USE.g:1057:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
+            // USE.g:1055:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
+            // USE.g:1056:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
             {
             if ( state.backtracking==0 ) { opToken = input.LT(1); }
 
@@ -7361,7 +7360,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "elemVarsDeclaration"
-    // USE.g:1068:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
+    // USE.g:1067:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
     public final ASTElemVarsDeclaration elemVarsDeclaration() throws RecognitionException {
         ASTElemVarsDeclaration n = null;
 
@@ -7374,14 +7373,14 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1069:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
-            // USE.g:1070:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // USE.g:1068:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
+            // USE.g:1069:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
             {
             if ( state.backtracking==0 ) { n = new ASTElemVarsDeclaration(); }
 
             var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration5187); if (state.failed) return n;
 
-            // USE.g:1071:17: ( COLON t= type )?
+            // USE.g:1070:17: ( COLON t= type )?
             int alt112=2;
             int LA112_0 = input.LA(1);
 
@@ -7390,7 +7389,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt112) {
                 case 1 :
-                    // USE.g:1071:18: COLON t= type
+                    // USE.g:1070:18: COLON t= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration5190); if (state.failed) return n;
 
@@ -7408,7 +7407,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n.addDeclaration(var1, t);}
 
-            // USE.g:1072:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // USE.g:1071:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
             loop114:
             do {
                 int alt114=2;
@@ -7421,13 +7420,13 @@ public class USEParser extends BaseParser {
 
                 switch (alt114) {
             	case 1 :
-            	    // USE.g:1072:5: COMMA varN= IDENT ( COLON tN= type )?
+            	    // USE.g:1071:5: COMMA varN= IDENT ( COLON tN= type )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration5204); if (state.failed) return n;
 
             	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration5210); if (state.failed) return n;
 
-            	    // USE.g:1072:24: ( COLON tN= type )?
+            	    // USE.g:1071:24: ( COLON tN= type )?
             	    int alt113=2;
             	    int LA113_0 = input.LA(1);
 
@@ -7436,7 +7435,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt113) {
             	        case 1 :
-            	            // USE.g:1072:25: COLON tN= type
+            	            // USE.g:1071:25: COLON tN= type
             	            {
             	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration5213); if (state.failed) return n;
 
@@ -7481,7 +7480,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "variableInitialization"
-    // USE.g:1080:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
+    // USE.g:1079:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
     public final ASTVariableInitialization variableInitialization() throws RecognitionException {
         ASTVariableInitialization n = null;
 
@@ -7493,8 +7492,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1081:5: (name= IDENT COLON t= type EQUAL e= expression )
-            // USE.g:1082:5: name= IDENT COLON t= type EQUAL e= expression
+            // USE.g:1080:5: (name= IDENT COLON t= type EQUAL e= expression )
+            // USE.g:1081:5: name= IDENT COLON t= type EQUAL e= expression
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization5247); if (state.failed) return n;
 
@@ -7534,7 +7533,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "ifExpression"
-    // USE.g:1091:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
+    // USE.g:1090:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
     public final ASTExpression ifExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -7548,8 +7547,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1092:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
-            // USE.g:1093:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
+            // USE.g:1091:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
+            // USE.g:1092:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
             {
             i=(Token)match(input,83,FOLLOW_83_in_ifExpression5291); if (state.failed) return n;
 
@@ -7597,7 +7596,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "literal"
-    // USE.g:1112:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
+    // USE.g:1111:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
     public final ASTExpression literal() throws RecognitionException {
         ASTExpression n = null;
 
@@ -7620,7 +7619,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1113:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
+            // USE.g:1112:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
             int alt115=12;
             switch ( input.LA(1) ) {
             case 115:
@@ -7715,7 +7714,7 @@ public class USEParser extends BaseParser {
 
             switch (alt115) {
                 case 1 :
-                    // USE.g:1114:7: t= 'true'
+                    // USE.g:1113:7: t= 'true'
                     {
                     t=(Token)match(input,115,FOLLOW_115_in_literal5348); if (state.failed) return n;
 
@@ -7724,7 +7723,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1115:7: f= 'false'
+                    // USE.g:1114:7: f= 'false'
                     {
                     f=(Token)match(input,80,FOLLOW_80_in_literal5362); if (state.failed) return n;
 
@@ -7733,7 +7732,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:1116:7: i= INT
+                    // USE.g:1115:7: i= INT
                     {
                     i=(Token)match(input,INT,FOLLOW_INT_in_literal5375); if (state.failed) return n;
 
@@ -7742,7 +7741,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // USE.g:1117:7: r= REAL
+                    // USE.g:1116:7: r= REAL
                     {
                     r=(Token)match(input,REAL,FOLLOW_REAL_in_literal5390); if (state.failed) return n;
 
@@ -7751,7 +7750,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // USE.g:1118:7: s= STRING
+                    // USE.g:1117:7: s= STRING
                     {
                     s=(Token)match(input,STRING,FOLLOW_STRING_in_literal5404); if (state.failed) return n;
 
@@ -7760,7 +7759,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // USE.g:1119:7: HASH enumLit= IDENT
+                    // USE.g:1118:7: HASH enumLit= IDENT
                     {
                     match(input,HASH,FOLLOW_HASH_in_literal5414); if (state.failed) return n;
 
@@ -7771,7 +7770,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // USE.g:1120:7: enumName= IDENT '::' enumLit= IDENT
+                    // USE.g:1119:7: enumName= IDENT '::' enumLit= IDENT
                     {
                     enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal5430); if (state.failed) return n;
 
@@ -7784,7 +7783,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // USE.g:1121:7: nColIt= collectionLiteral
+                    // USE.g:1120:7: nColIt= collectionLiteral
                     {
                     pushFollow(FOLLOW_collectionLiteral_in_literal5448);
                     nColIt=collectionLiteral();
@@ -7797,7 +7796,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // USE.g:1122:7: nEColIt= emptyCollectionLiteral
+                    // USE.g:1121:7: nEColIt= emptyCollectionLiteral
                     {
                     pushFollow(FOLLOW_emptyCollectionLiteral_in_literal5460);
                     nEColIt=emptyCollectionLiteral();
@@ -7810,7 +7809,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // USE.g:1123:7: nUndLit= undefinedLiteral
+                    // USE.g:1122:7: nUndLit= undefinedLiteral
                     {
                     pushFollow(FOLLOW_undefinedLiteral_in_literal5472);
                     nUndLit=undefinedLiteral();
@@ -7823,7 +7822,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // USE.g:1124:7: nTupleLit= tupleLiteral
+                    // USE.g:1123:7: nTupleLit= tupleLiteral
                     {
                     pushFollow(FOLLOW_tupleLiteral_in_literal5484);
                     nTupleLit=tupleLiteral();
@@ -7836,7 +7835,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 12 :
-                    // USE.g:1125:7: un= STAR
+                    // USE.g:1124:7: un= STAR
                     {
                     un=(Token)match(input,STAR,FOLLOW_STAR_in_literal5496); if (state.failed) return n;
 
@@ -7862,7 +7861,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "collectionLiteral"
-    // USE.g:1133:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
+    // USE.g:1132:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
     public final ASTCollectionLiteral collectionLiteral() throws RecognitionException {
         ASTCollectionLiteral n = null;
 
@@ -7872,8 +7871,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:1135:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
-            // USE.g:1136:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
+            // USE.g:1134:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
+            // USE.g:1135:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -7893,7 +7892,7 @@ public class USEParser extends BaseParser {
 
             match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral5563); if (state.failed) return n;
 
-            // USE.g:1140:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
+            // USE.g:1139:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
             int alt117=2;
             int LA117_0 = input.LA(1);
 
@@ -7902,7 +7901,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt117) {
                 case 1 :
-                    // USE.g:1141:7: ci= collectionItem ( COMMA ci= collectionItem )*
+                    // USE.g:1140:7: ci= collectionItem ( COMMA ci= collectionItem )*
                     {
                     pushFollow(FOLLOW_collectionItem_in_collectionLiteral5580);
                     ci=collectionItem();
@@ -7912,7 +7911,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addItem(ci); }
 
-                    // USE.g:1142:7: ( COMMA ci= collectionItem )*
+                    // USE.g:1141:7: ( COMMA ci= collectionItem )*
                     loop116:
                     do {
                         int alt116=2;
@@ -7925,7 +7924,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt116) {
                     	case 1 :
-                    	    // USE.g:1142:9: COMMA ci= collectionItem
+                    	    // USE.g:1141:9: COMMA ci= collectionItem
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral5593); if (state.failed) return n;
 
@@ -7972,7 +7971,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "collectionItem"
-    // USE.g:1151:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
+    // USE.g:1150:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
     public final ASTCollectionItem collectionItem() throws RecognitionException {
         ASTCollectionItem n = null;
 
@@ -7982,8 +7981,8 @@ public class USEParser extends BaseParser {
 
          n = new ASTCollectionItem(); 
         try {
-            // USE.g:1153:5: (e= expression ( DOTDOT e= expression )? )
-            // USE.g:1154:5: e= expression ( DOTDOT e= expression )?
+            // USE.g:1152:5: (e= expression ( DOTDOT e= expression )? )
+            // USE.g:1153:5: e= expression ( DOTDOT e= expression )?
             {
             pushFollow(FOLLOW_expression_in_collectionItem5645);
             e=expression();
@@ -7993,7 +7992,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setFirst((e!=null?e.n:null)); }
 
-            // USE.g:1155:5: ( DOTDOT e= expression )?
+            // USE.g:1154:5: ( DOTDOT e= expression )?
             int alt118=2;
             int LA118_0 = input.LA(1);
 
@@ -8002,7 +8001,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt118) {
                 case 1 :
-                    // USE.g:1155:7: DOTDOT e= expression
+                    // USE.g:1154:7: DOTDOT e= expression
                     {
                     match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem5656); if (state.failed) return n;
 
@@ -8038,7 +8037,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "emptyCollectionLiteral"
-    // USE.g:1165:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
+    // USE.g:1164:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
     public final ASTEmptyCollectionLiteral emptyCollectionLiteral() throws RecognitionException {
         ASTEmptyCollectionLiteral n = null;
 
@@ -8047,7 +8046,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1166:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
+            // USE.g:1165:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
             int alt119=2;
             int LA119_0 = input.LA(1);
 
@@ -8067,7 +8066,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt119) {
                 case 1 :
-                    // USE.g:1167:5: 'oclEmpty' LPAREN t= collectionType RPAREN
+                    // USE.g:1166:5: 'oclEmpty' LPAREN t= collectionType RPAREN
                     {
                     match(input,96,FOLLOW_96_in_emptyCollectionLiteral5689); if (state.failed) return n;
 
@@ -8086,7 +8085,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1170:5: t= collectionType LBRACE RBRACE
+                    // USE.g:1169:5: t= collectionType LBRACE RBRACE
                     {
                     pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral5713);
                     t=collectionType();
@@ -8120,7 +8119,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "undefinedLiteral"
-    // USE.g:1181:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
+    // USE.g:1180:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
     public final ASTUndefinedLiteral undefinedLiteral() throws RecognitionException {
         ASTUndefinedLiteral n = null;
 
@@ -8129,7 +8128,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1182:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
+            // USE.g:1181:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
             int alt120=4;
             switch ( input.LA(1) ) {
             case 100:
@@ -8173,7 +8172,7 @@ public class USEParser extends BaseParser {
 
             switch (alt120) {
                 case 1 :
-                    // USE.g:1183:5: 'oclUndefined' LPAREN t= type RPAREN
+                    // USE.g:1182:5: 'oclUndefined' LPAREN t= type RPAREN
                     {
                     match(input,100,FOLLOW_100_in_undefinedLiteral5747); if (state.failed) return n;
 
@@ -8192,7 +8191,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1186:5: 'Undefined'
+                    // USE.g:1185:5: 'Undefined'
                     {
                     match(input,55,FOLLOW_55_in_undefinedLiteral5769); if (state.failed) return n;
 
@@ -8201,7 +8200,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:1189:5: 'null' LPAREN t= type RPAREN
+                    // USE.g:1188:5: 'null' LPAREN t= type RPAREN
                     {
                     match(input,94,FOLLOW_94_in_undefinedLiteral5783); if (state.failed) return n;
 
@@ -8220,7 +8219,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // USE.g:1192:5: 'null'
+                    // USE.g:1191:5: 'null'
                     {
                     match(input,94,FOLLOW_94_in_undefinedLiteral5805); if (state.failed) return n;
 
@@ -8246,7 +8245,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "tupleLiteral"
-    // USE.g:1202:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
+    // USE.g:1201:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
     public final ASTTupleLiteral tupleLiteral() throws RecognitionException {
         ASTTupleLiteral n = null;
 
@@ -8256,8 +8255,8 @@ public class USEParser extends BaseParser {
 
          List tiList = new ArrayList(); 
         try {
-            // USE.g:1204:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
-            // USE.g:1205:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
+            // USE.g:1203:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
+            // USE.g:1204:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
             {
             match(input,53,FOLLOW_53_in_tupleLiteral5844); if (state.failed) return n;
 
@@ -8271,7 +8270,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tiList.add(ti); }
 
-            // USE.g:1208:5: ( COMMA ti= tupleItem )*
+            // USE.g:1207:5: ( COMMA ti= tupleItem )*
             loop121:
             do {
                 int alt121=2;
@@ -8284,7 +8283,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt121) {
             	case 1 :
-            	    // USE.g:1208:7: COMMA ti= tupleItem
+            	    // USE.g:1207:7: COMMA ti= tupleItem
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral5869); if (state.failed) return n;
 
@@ -8327,7 +8326,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "tupleItem"
-    // USE.g:1216:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
+    // USE.g:1215:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
     public final ASTTupleItem tupleItem() throws RecognitionException {
         ASTTupleItem n = null;
 
@@ -8339,12 +8338,12 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1217:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
-            // USE.g:1218:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // USE.g:1216:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
+            // USE.g:1217:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem5915); if (state.failed) return n;
 
-            // USE.g:1219:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // USE.g:1218:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             int alt122=2;
             int LA122_0 = input.LA(1);
 
@@ -8379,7 +8378,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt122) {
                 case 1 :
-                    // USE.g:1222:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
+                    // USE.g:1221:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
                     {
                     match(input,COLON,FOLLOW_COLON_in_tupleItem5954); if (state.failed) return n;
 
@@ -8402,7 +8401,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1225:7: ( COLON | EQUAL ) e= expression
+                    // USE.g:1224:7: ( COLON | EQUAL ) e= expression
                     {
                     if ( input.LA(1)==COLON||input.LA(1)==EQUAL ) {
                         input.consume();
@@ -8448,7 +8447,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "type"
-    // USE.g:1236:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
+    // USE.g:1235:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
     public final ASTType type() throws RecognitionException {
         ASTType n = null;
 
@@ -8462,12 +8461,12 @@ public class USEParser extends BaseParser {
 
          Token tok = null; 
         try {
-            // USE.g:1238:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
-            // USE.g:1239:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // USE.g:1237:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
+            // USE.g:1238:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of type */ }
 
-            // USE.g:1240:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // USE.g:1239:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             int alt123=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -8500,7 +8499,7 @@ public class USEParser extends BaseParser {
 
             switch (alt123) {
                 case 1 :
-                    // USE.g:1241:7: nTSimple= simpleType
+                    // USE.g:1240:7: nTSimple= simpleType
                     {
                     pushFollow(FOLLOW_simpleType_in_type6062);
                     nTSimple=simpleType();
@@ -8513,7 +8512,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1242:7: nTCollection= collectionType
+                    // USE.g:1241:7: nTCollection= collectionType
                     {
                     pushFollow(FOLLOW_collectionType_in_type6074);
                     nTCollection=collectionType();
@@ -8526,7 +8525,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:1243:7: nTTuple= tupleType
+                    // USE.g:1242:7: nTTuple= tupleType
                     {
                     pushFollow(FOLLOW_tupleType_in_type6086);
                     nTTuple=tupleType();
@@ -8560,7 +8559,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "typeOnly"
-    // USE.g:1248:1: typeOnly returns [ASTType n] : nT= type EOF ;
+    // USE.g:1247:1: typeOnly returns [ASTType n] : nT= type EOF ;
     public final ASTType typeOnly() throws RecognitionException {
         ASTType n = null;
 
@@ -8569,8 +8568,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1249:5: (nT= type EOF )
-            // USE.g:1250:5: nT= type EOF
+            // USE.g:1248:5: (nT= type EOF )
+            // USE.g:1249:5: nT= type EOF
             {
             pushFollow(FOLLOW_type_in_typeOnly6118);
             nT=type();
@@ -8600,7 +8599,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "simpleType"
-    // USE.g:1260:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
+    // USE.g:1259:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
     public final ASTSimpleType simpleType() throws RecognitionException {
         ASTSimpleType n = null;
 
@@ -8608,8 +8607,8 @@ public class USEParser extends BaseParser {
         Token name=null;
 
         try {
-            // USE.g:1261:5: (name= IDENT )
-            // USE.g:1262:5: name= IDENT
+            // USE.g:1260:5: (name= IDENT )
+            // USE.g:1261:5: name= IDENT
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType6148); if (state.failed) return n;
 
@@ -8633,7 +8632,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "collectionType"
-    // USE.g:1270:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
+    // USE.g:1269:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
     public final ASTCollectionType collectionType() throws RecognitionException {
         ASTCollectionType n = null;
 
@@ -8643,8 +8642,8 @@ public class USEParser extends BaseParser {
 
          Token op = null; 
         try {
-            // USE.g:1272:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
-            // USE.g:1273:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
+            // USE.g:1271:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
+            // USE.g:1272:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -8690,7 +8689,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "tupleType"
-    // USE.g:1283:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
+    // USE.g:1282:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
     public final ASTTupleType tupleType() throws RecognitionException {
         ASTTupleType n = null;
 
@@ -8700,8 +8699,8 @@ public class USEParser extends BaseParser {
 
          List tpList = new ArrayList(); 
         try {
-            // USE.g:1285:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
-            // USE.g:1286:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
+            // USE.g:1284:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
+            // USE.g:1285:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
             {
             match(input,53,FOLLOW_53_in_tupleType6253); if (state.failed) return n;
 
@@ -8715,7 +8714,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tpList.add(tp); }
 
-            // USE.g:1288:5: ( COMMA tp= tuplePart )*
+            // USE.g:1287:5: ( COMMA tp= tuplePart )*
             loop124:
             do {
                 int alt124=2;
@@ -8728,7 +8727,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt124) {
             	case 1 :
-            	    // USE.g:1288:7: COMMA tp= tuplePart
+            	    // USE.g:1287:7: COMMA tp= tuplePart
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleType6275); if (state.failed) return n;
 
@@ -8771,7 +8770,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "tuplePart"
-    // USE.g:1297:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
+    // USE.g:1296:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
     public final ASTTuplePart tuplePart() throws RecognitionException {
         ASTTuplePart n = null;
 
@@ -8781,8 +8780,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1298:5: (name= IDENT COLON t= type )
-            // USE.g:1299:5: name= IDENT COLON t= type
+            // USE.g:1297:5: (name= IDENT COLON t= type )
+            // USE.g:1298:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart6323); if (state.failed) return n;
 
@@ -8814,7 +8813,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "statOnly"
-    // USE.g:1338:1: statOnly returns [ASTStatement n] : s= stat EOF ;
+    // USE.g:1337:1: statOnly returns [ASTStatement n] : s= stat EOF ;
     public final ASTStatement statOnly() throws RecognitionException {
         ASTStatement n = null;
 
@@ -8823,8 +8822,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1339:3: (s= stat EOF )
-            // USE.g:1340:3: s= stat EOF
+            // USE.g:1338:3: (s= stat EOF )
+            // USE.g:1339:3: s= stat EOF
             {
             pushFollow(FOLLOW_stat_in_statOnly6378);
             s=stat();
@@ -8858,7 +8857,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "stat"
-    // USE.g:1350:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
+    // USE.g:1349:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
     public final USEParser.stat_return stat() throws RecognitionException {
         USEParser.stat_return retval = new USEParser.stat_return();
         retval.start = input.LT(1);
@@ -8873,8 +8872,8 @@ public class USEParser extends BaseParser {
           ASTSequenceStatement seq = new ASTSequenceStatement(((Token)retval.start));
 
         try {
-            // USE.g:1354:3: (s= singleStat ( SEMI s2= singleStat )* )
-            // USE.g:1355:3: s= singleStat ( SEMI s2= singleStat )*
+            // USE.g:1353:3: (s= singleStat ( SEMI s2= singleStat )* )
+            // USE.g:1354:3: s= singleStat ( SEMI s2= singleStat )*
             {
             pushFollow(FOLLOW_singleStat_in_stat6417);
             s=singleStat();
@@ -8884,7 +8883,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) {seq.addStatement(s);}
 
-            // USE.g:1356:3: ( SEMI s2= singleStat )*
+            // USE.g:1355:3: ( SEMI s2= singleStat )*
             loop125:
             do {
                 int alt125=2;
@@ -8897,7 +8896,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt125) {
             	case 1 :
-            	    // USE.g:1357:5: SEMI s2= singleStat
+            	    // USE.g:1356:5: SEMI s2= singleStat
             	    {
             	    match(input,SEMI,FOLLOW_SEMI_in_stat6429); if (state.failed) return retval;
 
@@ -8943,7 +8942,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "singleStat"
-    // USE.g:1369:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
+    // USE.g:1368:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
     public final ASTStatement singleStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -8972,7 +8971,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1370:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
+            // USE.g:1369:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
             int alt126=11;
             int LA126_0 = input.LA(1);
 
@@ -9109,7 +9108,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt126) {
                 case 1 :
-                    // USE.g:1371:5: emp= emptyStat
+                    // USE.g:1370:5: emp= emptyStat
                     {
                     pushFollow(FOLLOW_emptyStat_in_singleStat6479);
                     emp=emptyStat();
@@ -9122,7 +9121,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1373:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
+                    // USE.g:1372:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
                     {
                     pushFollow(FOLLOW_statStartingWithExpr_in_singleStat6505);
                     sse=statStartingWithExpr();
@@ -9135,7 +9134,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // USE.g:1374:5: vas= varAssignStat
+                    // USE.g:1373:5: vas= varAssignStat
                     {
                     pushFollow(FOLLOW_varAssignStat_in_singleStat6517);
                     vas=varAssignStat();
@@ -9148,7 +9147,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // USE.g:1375:5: ocs= objCreateStat
+                    // USE.g:1374:5: ocs= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_singleStat6531);
                     ocs=objCreateStat();
@@ -9161,7 +9160,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // USE.g:1376:5: ods= objDestroyStat
+                    // USE.g:1375:5: ods= objDestroyStat
                     {
                     pushFollow(FOLLOW_objDestroyStat_in_singleStat6545);
                     ods=objDestroyStat();
@@ -9174,7 +9173,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // USE.g:1377:5: lis= lnkInsStat
+                    // USE.g:1376:5: lis= lnkInsStat
                     {
                     pushFollow(FOLLOW_lnkInsStat_in_singleStat6558);
                     lis=lnkInsStat();
@@ -9187,7 +9186,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // USE.g:1378:5: lds= lnkDelStat
+                    // USE.g:1377:5: lds= lnkDelStat
                     {
                     pushFollow(FOLLOW_lnkDelStat_in_singleStat6575);
                     lds=lnkDelStat();
@@ -9200,7 +9199,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // USE.g:1379:5: ces= condExStat
+                    // USE.g:1378:5: ces= condExStat
                     {
                     pushFollow(FOLLOW_condExStat_in_singleStat6592);
                     ces=condExStat();
@@ -9213,7 +9212,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // USE.g:1380:5: its= iterStat
+                    // USE.g:1379:5: its= iterStat
                     {
                     pushFollow(FOLLOW_iterStat_in_singleStat6609);
                     its=iterStat();
@@ -9226,7 +9225,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // USE.g:1382:5: whs= whileStat
+                    // USE.g:1381:5: whs= whileStat
                     {
                     pushFollow(FOLLOW_whileStat_in_singleStat6631);
                     whs=whileStat();
@@ -9239,7 +9238,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // USE.g:1383:5: blk= blockStat
+                    // USE.g:1382:5: blk= blockStat
                     {
                     pushFollow(FOLLOW_blockStat_in_singleStat6649);
                     blk=blockStat();
@@ -9269,14 +9268,14 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "emptyStat"
-    // USE.g:1390:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
+    // USE.g:1389:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
     public final ASTEmptyStatement emptyStat() throws RecognitionException {
         ASTEmptyStatement n = null;
 
 
         try {
-            // USE.g:1391:3: ( nothing )
-            // USE.g:1392:3: nothing
+            // USE.g:1390:3: ( nothing )
+            // USE.g:1391:3: nothing
             {
             pushFollow(FOLLOW_nothing_in_emptyStat6676);
             nothing();
@@ -9308,7 +9307,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "statStartingWithExpr"
-    // USE.g:1397:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
+    // USE.g:1396:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
     public final USEParser.statStartingWithExpr_return statStartingWithExpr() throws RecognitionException {
         USEParser.statStartingWithExpr_return retval = new USEParser.statStartingWithExpr_return();
         retval.start = input.LT(1);
@@ -9320,8 +9319,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1398:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
-            // USE.g:1399:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
+            // USE.g:1397:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
+            // USE.g:1398:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
             {
             pushFollow(FOLLOW_inSoilExpression_in_statStartingWithExpr6702);
             expr=inSoilExpression();
@@ -9329,7 +9328,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // USE.g:1400:3: (aas= attAssignStat[$expr.n] )?
+            // USE.g:1399:3: (aas= attAssignStat[$expr.n] )?
             int alt127=2;
             int LA127_0 = input.LA(1);
 
@@ -9338,7 +9337,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt127) {
                 case 1 :
-                    // USE.g:1401:5: aas= attAssignStat[$expr.n]
+                    // USE.g:1400:5: aas= attAssignStat[$expr.n]
                     {
                     pushFollow(FOLLOW_attAssignStat_in_statStartingWithExpr6716);
                     aas=attAssignStat(expr);
@@ -9381,7 +9380,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "varAssignStat"
-    // USE.g:1413:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
+    // USE.g:1412:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
     public final ASTStatement varAssignStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -9391,8 +9390,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1414:3: (varName= IDENT COLON_EQUAL rVal= rValue )
-            // USE.g:1415:3: varName= IDENT COLON_EQUAL rVal= rValue
+            // USE.g:1413:3: (varName= IDENT COLON_EQUAL rVal= rValue )
+            // USE.g:1414:3: varName= IDENT COLON_EQUAL rVal= rValue
             {
             varName=(Token)match(input,IDENT,FOLLOW_IDENT_in_varAssignStat6754); if (state.failed) return n;
 
@@ -9426,7 +9425,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "attAssignStat"
-    // USE.g:1427:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
+    // USE.g:1426:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
     public final ASTAttributeAssignmentStatement attAssignStat(ASTExpression exp) throws RecognitionException {
         ASTAttributeAssignmentStatement n = null;
 
@@ -9436,8 +9435,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1428:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
-            // USE.g:1429:3: DOT attName= IDENT COLON_EQUAL r= rValue
+            // USE.g:1427:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
+            // USE.g:1428:3: DOT attName= IDENT COLON_EQUAL r= rValue
             {
             match(input,DOT,FOLLOW_DOT_in_attAssignStat6790); if (state.failed) return n;
 
@@ -9475,7 +9474,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "objCreateStat"
-    // USE.g:1441:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
+    // USE.g:1440:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
     public final USEParser.objCreateStat_return objCreateStat() throws RecognitionException {
         USEParser.objCreateStat_return retval = new USEParser.objCreateStat_return();
         retval.start = input.LT(1);
@@ -9489,8 +9488,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1442:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
-            // USE.g:1443:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // USE.g:1441:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
+            // USE.g:1442:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             {
             match(input,92,FOLLOW_92_in_objCreateStat6837); if (state.failed) return retval;
 
@@ -9500,7 +9499,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // USE.g:1445:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
+            // USE.g:1444:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
             int alt129=2;
             int LA129_0 = input.LA(1);
 
@@ -9509,11 +9508,11 @@ public class USEParser extends BaseParser {
             }
             switch (alt129) {
                 case 1 :
-                    // USE.g:1446:5: LPAREN (objName= inSoilExpression )? RPAREN
+                    // USE.g:1445:5: LPAREN (objName= inSoilExpression )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_objCreateStat6855); if (state.failed) return retval;
 
-                    // USE.g:1447:7: (objName= inSoilExpression )?
+                    // USE.g:1446:7: (objName= inSoilExpression )?
                     int alt128=2;
                     int LA128_0 = input.LA(1);
 
@@ -9522,7 +9521,7 @@ public class USEParser extends BaseParser {
                     }
                     switch (alt128) {
                         case 1 :
-                            // USE.g:1447:8: objName= inSoilExpression
+                            // USE.g:1446:8: objName= inSoilExpression
                             {
                             pushFollow(FOLLOW_inSoilExpression_in_objCreateStat6868);
                             objName=inSoilExpression();
@@ -9544,7 +9543,7 @@ public class USEParser extends BaseParser {
             }
 
 
-            // USE.g:1451:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // USE.g:1450:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             int alt130=2;
             int LA130_0 = input.LA(1);
 
@@ -9553,7 +9552,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt130) {
                 case 1 :
-                    // USE.g:1452:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
+                    // USE.g:1451:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
                     {
                     match(input,64,FOLLOW_64_in_objCreateStat6894); if (state.failed) return retval;
 
@@ -9608,7 +9607,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "objDestroyStat"
-    // USE.g:1471:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
+    // USE.g:1470:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
     public final USEParser.objDestroyStat_return objDestroyStat() throws RecognitionException {
         USEParser.objDestroyStat_return retval = new USEParser.objDestroyStat_return();
         retval.start = input.LT(1);
@@ -9618,8 +9617,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1472:3: ( 'destroy' el= exprListMin1 )
-            // USE.g:1473:3: 'destroy' el= exprListMin1
+            // USE.g:1471:3: ( 'destroy' el= exprListMin1 )
+            // USE.g:1472:3: 'destroy' el= exprListMin1
             {
             match(input,72,FOLLOW_72_in_objDestroyStat6960); if (state.failed) return retval;
 
@@ -9665,7 +9664,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "lnkInsStat"
-    // USE.g:1492:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
+    // USE.g:1491:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
     public final USEParser.lnkInsStat_return lnkInsStat() throws RecognitionException {
         USEParser.lnkInsStat_return retval = new USEParser.lnkInsStat_return();
         retval.start = input.LT(1);
@@ -9676,8 +9675,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1493:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
-            // USE.g:1494:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
+            // USE.g:1492:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
+            // USE.g:1493:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
             {
             match(input,86,FOLLOW_86_in_lnkInsStat6994); if (state.failed) return retval;
 
@@ -9723,7 +9722,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2WithOptionalQualifiers"
-    // USE.g:1504:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
+    // USE.g:1503:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
     public final USEParser.rValListMin2WithOptionalQualifiers_return rValListMin2WithOptionalQualifiers() throws RecognitionException {
         USEParser.rValListMin2WithOptionalQualifiers_return retval = new USEParser.rValListMin2WithOptionalQualifiers_return();
         retval.start = input.LT(1);
@@ -9740,8 +9739,8 @@ public class USEParser extends BaseParser {
           List<ASTRValue> currentQualifiers = Collections.emptyList();
 
         try {
-            // USE.g:1510:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
-            // USE.g:1511:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // USE.g:1509:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
+            // USE.g:1510:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin2WithOptionalQualifiers7053);
             r=rValue();
@@ -9751,7 +9750,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // USE.g:1512:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // USE.g:1511:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt131=2;
             int LA131_0 = input.LA(1);
 
@@ -9760,7 +9759,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt131) {
                 case 1 :
-                    // USE.g:1513:4: LBRACE qualifierValues= rValList RBRACE
+                    // USE.g:1512:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers7064); if (state.failed) return retval;
 
@@ -9795,7 +9794,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // USE.g:1525:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // USE.g:1524:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt132=2;
             int LA132_0 = input.LA(1);
 
@@ -9804,7 +9803,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt132) {
                 case 1 :
-                    // USE.g:1526:4: LBRACE qualifierValues= rValList RBRACE
+                    // USE.g:1525:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers7118); if (state.failed) return retval;
 
@@ -9829,7 +9828,7 @@ public class USEParser extends BaseParser {
                 currentQualifiers = Collections.emptyList();
               }
 
-            // USE.g:1535:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // USE.g:1534:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             loop134:
             do {
                 int alt134=2;
@@ -9842,7 +9841,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt134) {
             	case 1 :
-            	    // USE.g:1536:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // USE.g:1535:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin2WithOptionalQualifiers7156); if (state.failed) return retval;
 
@@ -9854,7 +9853,7 @@ public class USEParser extends BaseParser {
 
             	    if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            	    // USE.g:1540:5: ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // USE.g:1539:5: ( LBRACE qualifierValues= rValList RBRACE )?
             	    int alt133=2;
             	    int LA133_0 = input.LA(1);
 
@@ -9863,7 +9862,7 @@ public class USEParser extends BaseParser {
             	    }
             	    switch (alt133) {
             	        case 1 :
-            	            // USE.g:1541:6: LBRACE qualifierValues= rValList RBRACE
+            	            // USE.g:1540:6: LBRACE qualifierValues= rValList RBRACE
             	            {
             	            match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers7191); if (state.failed) return retval;
 
@@ -9922,7 +9921,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "lnkDelStat"
-    // USE.g:1556:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
+    // USE.g:1555:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
     public final USEParser.lnkDelStat_return lnkDelStat() throws RecognitionException {
         USEParser.lnkDelStat_return retval = new USEParser.lnkDelStat_return();
         retval.start = input.LT(1);
@@ -9933,8 +9932,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1557:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
-            // USE.g:1558:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
+            // USE.g:1556:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
+            // USE.g:1557:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
             {
             match(input,71,FOLLOW_71_in_lnkDelStat7252); if (state.failed) return retval;
 
@@ -9979,7 +9978,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "condExStat"
-    // USE.g:1572:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
+    // USE.g:1571:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
     public final USEParser.condExStat_return condExStat() throws RecognitionException {
         USEParser.condExStat_return retval = new USEParser.condExStat_return();
         retval.start = input.LT(1);
@@ -9996,8 +9995,8 @@ public class USEParser extends BaseParser {
           ASTStatement elseStat = new ASTEmptyStatement();
 
         try {
-            // USE.g:1576:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
-            // USE.g:1577:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
+            // USE.g:1575:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
+            // USE.g:1576:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
             {
             match(input,83,FOLLOW_83_in_condExStat7314); if (state.failed) return retval;
 
@@ -10015,7 +10014,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // USE.g:1581:3: ( 'else' es= statOrImplicitBlock )?
+            // USE.g:1580:3: ( 'else' es= statOrImplicitBlock )?
             int alt135=2;
             int LA135_0 = input.LA(1);
 
@@ -10024,7 +10023,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt135) {
                 case 1 :
-                    // USE.g:1582:5: 'else' es= statOrImplicitBlock
+                    // USE.g:1581:5: 'else' es= statOrImplicitBlock
                     {
                     match(input,75,FOLLOW_75_in_condExStat7347); if (state.failed) return retval;
 
@@ -10071,7 +10070,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "iterStat"
-    // USE.g:1593:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // USE.g:1592:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final USEParser.iterStat_return iterStat() throws RecognitionException {
         USEParser.iterStat_return retval = new USEParser.iterStat_return();
         retval.start = input.LT(1);
@@ -10084,8 +10083,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1594:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // USE.g:1595:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // USE.g:1593:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // USE.g:1594:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,81,FOLLOW_81_in_iterStat7396); if (state.failed) return retval;
 
@@ -10136,7 +10135,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "whileStat"
-    // USE.g:1610:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // USE.g:1609:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final USEParser.whileStat_return whileStat() throws RecognitionException {
         USEParser.whileStat_return retval = new USEParser.whileStat_return();
         retval.start = input.LT(1);
@@ -10148,8 +10147,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1611:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // USE.g:1612:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // USE.g:1610:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // USE.g:1611:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,116,FOLLOW_116_in_whileStat7459); if (state.failed) return retval;
 
@@ -10196,7 +10195,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "blockStat"
-    // USE.g:1624:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
+    // USE.g:1623:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
     public final USEParser.blockStat_return blockStat() throws RecognitionException {
         USEParser.blockStat_return retval = new USEParser.blockStat_return();
         retval.start = input.LT(1);
@@ -10213,12 +10212,12 @@ public class USEParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), org.tzi.use.config.Options.explicitVariableDeclarations);
 
         try {
-            // USE.g:1628:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
-            // USE.g:1629:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
+            // USE.g:1627:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
+            // USE.g:1628:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
             {
             match(input,63,FOLLOW_63_in_blockStat7514); if (state.failed) return retval;
 
-            // USE.g:1630:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
+            // USE.g:1629:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
             int alt137=2;
             int LA137_0 = input.LA(1);
 
@@ -10227,7 +10226,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt137) {
                 case 1 :
-                    // USE.g:1630:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
+                    // USE.g:1629:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
                     {
                     match(input,69,FOLLOW_69_in_blockStat7519); if (state.failed) return retval;
 
@@ -10239,7 +10238,7 @@ public class USEParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-                    // USE.g:1630:73: ( COMMA vd1= variableDeclaration )*
+                    // USE.g:1629:73: ( COMMA vd1= variableDeclaration )*
                     loop136:
                     do {
                         int alt136=2;
@@ -10252,7 +10251,7 @@ public class USEParser extends BaseParser {
 
                         switch (alt136) {
                     	case 1 :
-                    	    // USE.g:1630:75: COMMA vd1= variableDeclaration
+                    	    // USE.g:1629:75: COMMA vd1= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_blockStat7531); if (state.failed) return retval;
 
@@ -10316,7 +10315,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "implicitBlockStat"
-    // USE.g:1639:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
+    // USE.g:1638:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
     public final USEParser.implicitBlockStat_return implicitBlockStat() throws RecognitionException {
         USEParser.implicitBlockStat_return retval = new USEParser.implicitBlockStat_return();
         retval.start = input.LT(1);
@@ -10333,8 +10332,8 @@ public class USEParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), false);
 
         try {
-            // USE.g:1643:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
-            // USE.g:1644:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
+            // USE.g:1642:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
+            // USE.g:1643:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
             {
             match(input,69,FOLLOW_69_in_implicitBlockStat7585); if (state.failed) return retval;
 
@@ -10346,7 +10345,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-            // USE.g:1644:72: ( COMMA vd1= variableDeclaration )*
+            // USE.g:1643:72: ( COMMA vd1= variableDeclaration )*
             loop138:
             do {
                 int alt138=2;
@@ -10359,7 +10358,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt138) {
             	case 1 :
-            	    // USE.g:1644:74: COMMA vd1= variableDeclaration
+            	    // USE.g:1643:74: COMMA vd1= variableDeclaration
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_implicitBlockStat7597); if (state.failed) return retval;
 
@@ -10411,7 +10410,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "statOrImplicitBlock"
-    // USE.g:1648:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
+    // USE.g:1647:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
     public final ASTStatement statOrImplicitBlock() throws RecognitionException {
         ASTStatement n = null;
 
@@ -10422,10 +10421,10 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1649:3: ( (s1= stat |s2= implicitBlockStat ) )
-            // USE.g:1650:3: (s1= stat |s2= implicitBlockStat )
+            // USE.g:1648:3: ( (s1= stat |s2= implicitBlockStat ) )
+            // USE.g:1649:3: (s1= stat |s2= implicitBlockStat )
             {
-            // USE.g:1650:3: (s1= stat |s2= implicitBlockStat )
+            // USE.g:1649:3: (s1= stat |s2= implicitBlockStat )
             int alt139=2;
             int LA139_0 = input.LA(1);
 
@@ -10445,7 +10444,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt139) {
                 case 1 :
-                    // USE.g:1650:4: s1= stat
+                    // USE.g:1649:4: s1= stat
                     {
                     pushFollow(FOLLOW_stat_in_statOrImplicitBlock7641);
                     s1=stat();
@@ -10458,7 +10457,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1650:31: s2= implicitBlockStat
+                    // USE.g:1649:31: s2= implicitBlockStat
                     {
                     pushFollow(FOLLOW_implicitBlockStat_in_statOrImplicitBlock7651);
                     s2=implicitBlockStat();
@@ -10492,11 +10491,11 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "nothing"
-    // USE.g:1664:1: nothing :;
+    // USE.g:1663:1: nothing :;
     public final void nothing() throws RecognitionException {
         try {
-            // USE.g:1665:1: ()
-            // USE.g:1666:1: 
+            // USE.g:1664:1: ()
+            // USE.g:1665:1: 
             {
             }
 
@@ -10511,7 +10510,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "rValue"
-    // USE.g:1672:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
+    // USE.g:1671:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
     public final ASTRValue rValue() throws RecognitionException {
         ASTRValue n = null;
 
@@ -10522,7 +10521,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1673:5: (e= inSoilExpression |oc= objCreateStat )
+            // USE.g:1672:5: (e= inSoilExpression |oc= objCreateStat )
             int alt140=2;
             int LA140_0 = input.LA(1);
 
@@ -10542,7 +10541,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt140) {
                 case 1 :
-                    // USE.g:1674:5: e= inSoilExpression
+                    // USE.g:1673:5: e= inSoilExpression
                     {
                     pushFollow(FOLLOW_inSoilExpression_in_rValue7697);
                     e=inSoilExpression();
@@ -10555,7 +10554,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1675:5: oc= objCreateStat
+                    // USE.g:1674:5: oc= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_rValue7709);
                     oc=objCreateStat();
@@ -10590,7 +10589,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "rValList"
-    // USE.g:1688:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
+    // USE.g:1687:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
     public final List<ASTRValue> rValList() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -10599,7 +10598,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1689:3: ( nothing |rl= rValListMin1 )
+            // USE.g:1688:3: ( nothing |rl= rValListMin1 )
             int alt141=2;
             int LA141_0 = input.LA(1);
 
@@ -10619,7 +10618,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt141) {
                 case 1 :
-                    // USE.g:1690:3: nothing
+                    // USE.g:1689:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_rValList7732);
                     nothing();
@@ -10632,7 +10631,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1693:3: rl= rValListMin1
+                    // USE.g:1692:3: rl= rValListMin1
                     {
                     pushFollow(FOLLOW_rValListMin1_in_rValList7759);
                     rl=rValListMin1();
@@ -10662,7 +10661,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin1"
-    // USE.g:1701:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
+    // USE.g:1700:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin1() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -10674,8 +10673,8 @@ public class USEParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // USE.g:1705:3: (r= rValue ( COMMA r= rValue )* )
-            // USE.g:1706:3: r= rValue ( COMMA r= rValue )*
+            // USE.g:1704:3: (r= rValue ( COMMA r= rValue )* )
+            // USE.g:1705:3: r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin17792);
             r=rValue();
@@ -10685,7 +10684,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // USE.g:1708:3: ( COMMA r= rValue )*
+            // USE.g:1707:3: ( COMMA r= rValue )*
             loop142:
             do {
                 int alt142=2;
@@ -10698,7 +10697,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt142) {
             	case 1 :
-            	    // USE.g:1709:5: COMMA r= rValue
+            	    // USE.g:1708:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin17806); if (state.failed) return n;
 
@@ -10737,7 +10736,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2"
-    // USE.g:1719:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
+    // USE.g:1718:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin2() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -10749,8 +10748,8 @@ public class USEParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // USE.g:1723:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
-            // USE.g:1724:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
+            // USE.g:1722:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
+            // USE.g:1723:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin27855);
             r=rValue();
@@ -10770,7 +10769,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // USE.g:1729:3: ( COMMA r= rValue )*
+            // USE.g:1728:3: ( COMMA r= rValue )*
             loop143:
             do {
                 int alt143=2;
@@ -10783,7 +10782,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt143) {
             	case 1 :
-            	    // USE.g:1730:5: COMMA r= rValue
+            	    // USE.g:1729:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin27885); if (state.failed) return n;
 
@@ -10822,7 +10821,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "inSoilExpression"
-    // USE.g:1740:1: inSoilExpression returns [ASTExpression n] : e= expression ;
+    // USE.g:1739:1: inSoilExpression returns [ASTExpression n] : e= expression ;
     public final ASTExpression inSoilExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -10831,8 +10830,8 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1741:3: (e= expression )
-            // USE.g:1742:3: e= expression
+            // USE.g:1740:3: (e= expression )
+            // USE.g:1741:3: e= expression
             {
             pushFollow(FOLLOW_expression_in_inSoilExpression7929);
             e=expression();
@@ -10862,7 +10861,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "exprList"
-    // USE.g:1751:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
+    // USE.g:1750:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
     public final List<ASTExpression> exprList() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -10871,7 +10870,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1752:3: ( nothing |el= exprListMin1 )
+            // USE.g:1751:3: ( nothing |el= exprListMin1 )
             int alt144=2;
             int LA144_0 = input.LA(1);
 
@@ -10891,7 +10890,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt144) {
                 case 1 :
-                    // USE.g:1753:3: nothing
+                    // USE.g:1752:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_exprList7958);
                     nothing();
@@ -10904,7 +10903,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1756:3: el= exprListMin1
+                    // USE.g:1755:3: el= exprListMin1
                     {
                     pushFollow(FOLLOW_exprListMin1_in_exprList7976);
                     el=exprListMin1();
@@ -10934,7 +10933,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin1"
-    // USE.g:1764:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // USE.g:1763:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin1() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -10946,8 +10945,8 @@ public class USEParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // USE.g:1768:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // USE.g:1769:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // USE.g:1767:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // USE.g:1768:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin18009);
             e=inSoilExpression();
@@ -10957,7 +10956,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // USE.g:1771:3: ( COMMA e= inSoilExpression )*
+            // USE.g:1770:3: ( COMMA e= inSoilExpression )*
             loop145:
             do {
                 int alt145=2;
@@ -10970,7 +10969,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt145) {
             	case 1 :
-            	    // USE.g:1772:5: COMMA e= inSoilExpression
+            	    // USE.g:1771:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin18024); if (state.failed) return n;
 
@@ -11009,7 +11008,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin2"
-    // USE.g:1782:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // USE.g:1781:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin2() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -11021,8 +11020,8 @@ public class USEParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // USE.g:1786:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // USE.g:1787:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // USE.g:1785:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // USE.g:1786:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin28074);
             e=inSoilExpression();
@@ -11042,7 +11041,7 @@ public class USEParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // USE.g:1792:3: ( COMMA e= inSoilExpression )*
+            // USE.g:1791:3: ( COMMA e= inSoilExpression )*
             loop146:
             do {
                 int alt146=2;
@@ -11055,7 +11054,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt146) {
             	case 1 :
-            	    // USE.g:1793:5: COMMA e= inSoilExpression
+            	    // USE.g:1792:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin28104); if (state.failed) return n;
 
@@ -11094,7 +11093,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "identList"
-    // USE.g:1803:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
+    // USE.g:1802:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
     public final List<String> identList() throws RecognitionException {
         List<String> n = null;
 
@@ -11103,7 +11102,7 @@ public class USEParser extends BaseParser {
 
 
         try {
-            // USE.g:1804:3: ( nothing |il= identListMin1 )
+            // USE.g:1803:3: ( nothing |il= identListMin1 )
             int alt147=2;
             int LA147_0 = input.LA(1);
 
@@ -11123,7 +11122,7 @@ public class USEParser extends BaseParser {
             }
             switch (alt147) {
                 case 1 :
-                    // USE.g:1805:3: nothing
+                    // USE.g:1804:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_identList8144);
                     nothing();
@@ -11136,7 +11135,7 @@ public class USEParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // USE.g:1808:3: il= identListMin1
+                    // USE.g:1807:3: il= identListMin1
                     {
                     pushFollow(FOLLOW_identListMin1_in_identList8161);
                     il=identListMin1();
@@ -11166,7 +11165,7 @@ public class USEParser extends BaseParser {
 
 
     // $ANTLR start "identListMin1"
-    // USE.g:1816:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
+    // USE.g:1815:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
     public final List<String> identListMin1() throws RecognitionException {
         List<String> n = null;
 
@@ -11177,14 +11176,14 @@ public class USEParser extends BaseParser {
           n = new ArrayList<String>();
 
         try {
-            // USE.g:1820:3: (id= IDENT ( COMMA id= IDENT )* )
-            // USE.g:1821:3: id= IDENT ( COMMA id= IDENT )*
+            // USE.g:1819:3: (id= IDENT ( COMMA id= IDENT )* )
+            // USE.g:1820:3: id= IDENT ( COMMA id= IDENT )*
             {
             id=(Token)match(input,IDENT,FOLLOW_IDENT_in_identListMin18195); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n.add((id!=null?id.getText():null)); }
 
-            // USE.g:1823:3: ( COMMA id= IDENT )*
+            // USE.g:1822:3: ( COMMA id= IDENT )*
             loop148:
             do {
                 int alt148=2;
@@ -11197,7 +11196,7 @@ public class USEParser extends BaseParser {
 
                 switch (alt148) {
             	case 1 :
-            	    // USE.g:1824:5: COMMA id= IDENT
+            	    // USE.g:1823:5: COMMA id= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_identListMin18209); if (state.failed) return n;
 
@@ -11232,8 +11231,8 @@ public class USEParser extends BaseParser {
 
     // $ANTLR start synpred1_USE
     public final void synpred1_USE_fragment() throws RecognitionException {
-        // USE.g:1222:7: ( COLON type EQUAL )
-        // USE.g:1222:8: COLON type EQUAL
+        // USE.g:1221:7: ( COLON type EQUAL )
+        // USE.g:1221:8: COLON type EQUAL
         {
         match(input,COLON,FOLLOW_COLON_in_synpred1_USE5945); if (state.failed) return ;
 
@@ -11252,8 +11251,8 @@ public class USEParser extends BaseParser {
 
     // $ANTLR start synpred2_USE
     public final void synpred2_USE_fragment() throws RecognitionException {
-        // USE.g:1373:5: ( statStartingWithExpr )
-        // USE.g:1373:6: statStartingWithExpr
+        // USE.g:1372:5: ( statStartingWithExpr )
+        // USE.g:1372:6: statStartingWithExpr
         {
         pushFollow(FOLLOW_statStartingWithExpr_in_synpred2_USE6497);
         statStartingWithExpr();
@@ -11374,7 +11373,7 @@ public class USEParser extends BaseParser {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "()* loopback of 135:5: ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )*";
+            return "()* loopback of 134:5: ( generalClassifierDefinition[$n] |a= associationDefinition | ( 'constraints' (cons= invariant |ppc= prePost )* ) |e= enumTypeDefinition )*";
         }
     }
     static final String DFA1_eotS =
@@ -11450,7 +11449,7 @@ public class USEParser extends BaseParser {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "()* loopback of 138:11: (cons= invariant |ppc= prePost )*";
+            return "()* loopback of 137:11: (cons= invariant |ppc= prePost )*";
         }
     }
     static final String DFA34_eotS =
@@ -11515,7 +11514,7 @@ public class USEParser extends BaseParser {
             this.transition = DFA34_transition;
         }
         public String getDescription() {
-            return "()* loopback of 321:5: (ppc= prePostClause )*";
+            return "()* loopback of 320:5: (ppc= prePostClause )*";
         }
     }
     static final String DFA55_eotS =
@@ -11598,7 +11597,7 @@ public class USEParser extends BaseParser {
             this.transition = DFA55_transition;
         }
         public String getDescription() {
-            return "()* loopback of 486:5: (inv= invariantClause )*";
+            return "()* loopback of 485:5: (inv= invariantClause )*";
         }
     }
     static final String DFA61_eotS =
@@ -11666,7 +11665,7 @@ public class USEParser extends BaseParser {
             this.transition = DFA61_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 515:5: (ppc= prePostClause )+";
+            return "()+ loopback of 514:5: (ppc= prePostClause )+";
         }
     }
  

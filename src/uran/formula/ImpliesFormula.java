@@ -46,6 +46,8 @@ public final class ImpliesFormula extends BinaryFormula{
 		}
 		return formula;
 	}
-
 	
+	@Override
+	public boolean isImpliesFormula(){return true;}
+
 }

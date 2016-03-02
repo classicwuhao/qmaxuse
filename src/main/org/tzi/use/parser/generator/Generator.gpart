@@ -30,7 +30,6 @@ import org.tzi.use.parser.base.BaseParser;
 import org.tzi.use.parser.use.statemachines.*;
 import org.tzi.use.parser.use.*;
 import org.tzi.use.parser.ocl.*;
-import org.tzi.use.parser.use.tag.*;
 import org.tzi.use.parser.soil.ast.*;
 import org.tzi.use.uran.weight.*;
 import java.util.Collections;

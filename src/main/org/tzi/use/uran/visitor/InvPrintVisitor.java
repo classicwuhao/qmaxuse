@@ -11,6 +11,7 @@ import org.tzi.use.uml.ocl.type.*;
 import org.tzi.use.uml.ocl.expr.*;
 import org.tzi.use.uml.mm.commonbehavior.communications.*;
 import uran.test.util.*;
+import uran.solver.*;
 import uran.formula.*;
 import uran.formula.value.*;
 import uran.formula.type.*;
@@ -25,7 +26,8 @@ public final class InvPrintVisitor implements MMVisitor{
 	private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
 	//private List<AbstractFormula> choices = new ArrayList<AbstractFormula>();
 	private List<AbstractFormula> exist_formulas = new ArrayList<AbstractFormula>();
-	private List<Constant> auxs = new ArrayList<Constant>();	
+	private List<Constant> auxs = new ArrayList<Constant>();
+	private List<Constant> weights = new ArrayList<Constant>();
 	private List<Pair<AbstractFormula, MClassInvariant>> pairs = new ArrayList<Pair<AbstractFormula, MClassInvariant>>();
 	private HashMap <MClass, Integer> clsRank = new HashMap<MClass, Integer>();
 	private HashMap <String, Function> uid_table = new HashMap<String, Function>();
@@ -33,9 +35,9 @@ public final class InvPrintVisitor implements MMVisitor{
 	private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
-	private String obj_str=(OBJ+UUID.randomUUID()).replace('-','_');
-	private String type_str=(TYPE+UUID.randomUUID()).replace('-','_');
-	private String rel_str=(REL+UUID.randomUUID()).replace('-','_');
+	private String obj_str=(OBJ+""+UUID.randomUUID()).replace('-','_');
+	private String type_str=(TYPE+""+UUID.randomUUID()).replace('-','_');
+	private String rel_str=(REL+""+UUID.randomUUID()).replace('-','_');
 	
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
@@ -58,6 +60,12 @@ public final class InvPrintVisitor implements MMVisitor{
 			if (clsRank.containsKey(a.cls()))
 				clsRank.put(a.cls(),clsRank.get(a.cls())+1);
 		}
+
+		/* we need to add extra axiom to state that (f a b) is the same as (f b a) */
+		Variable a = new Variable("a", new Int());
+		Variable b = new Variable("b", new Int());
+		formulas.add (new QuantifiedFormula(Quantifier.FORALL, new Decls(a,b), new EqFormula(f2.apply(a,b), f2.apply(b,a))));
+		
 	}
 	
 	@Override
@@ -72,7 +80,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	@Override
 	public void visitClass (MClass e){
 		String full_type_name="";
-		type_str = (TYPE+UUID.randomUUID()).replace('-','_');
+		type_str =(TYPE+UUID.randomUUID()).replace('-','_');
 		//Constant c = factory.createConstant(e.name(),new Int());
 		Function d = factory.createFunction(type_str+"_"+e.name(), new Int(), new Bool());
 		full_type_name = type_str+"_"+e.name();
@@ -152,10 +160,11 @@ public final class InvPrintVisitor implements MMVisitor{
 
 	@Override
 	public void visitModel (MModel e){
-		auxs.clear();pairs.clear();formulas.clear();exist_formulas.clear();
+		weights.clear();auxs.clear();pairs.clear();formulas.clear();exist_formulas.clear();
 		MClassInvariant[] classInvariants = e.classInvariants().toArray(new MClassInvariant[0]);
 		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
-		
+		int totalWeight = 0;		
+
 		/* translate class */
 		Iterator it = e.classes().iterator();
 
@@ -185,10 +194,12 @@ public final class InvPrintVisitor implements MMVisitor{
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
 			/* check if this is a default weight */
-			AbstractWeight weight = cls.getAnnotationTag().getWeight();
-			if (weight.isIntWeight()) {
-				IntWeight iweight = (IntWeight) weight;
-				if (iweight.getWeight()==-1) iweight.setWeight(clsRank.get(cls));
+			if (cls.getAnnotationTag()!=null){
+				AbstractWeight weight = cls.getAnnotationTag().getWeight();
+				if (weight.isIntWeight()) {
+					IntWeight iweight = (IntWeight) weight;
+					if (iweight.getWeight()==-1) iweight.setWeight(clsRank.get(cls));
+				}
 			}
 			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
 		}
@@ -202,19 +213,27 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add(new OrFormula(new OrFormula(pairs.get(i).first(),formula1),formula2));
 			
 			/*form formulas for the weight defined */
-			/*AbstractWeight aw = pairs.get(i).second().getAnnotationTag().getWeight();
-			if (aw !=null ){
-				Constant weight = factory.createConstant("weight"+i, new Int());
-				if (aw.isIntWeight()){
-					IntWeight iw = (IntWeight)aw;
-					int w = iw.getWeight();
-					ImpliesFormula imp_formula0 = new ImpliesFormula(pairs.get(i).first(), new EqFormula(weight,new NumLiteral(w)));
-					ImpliesFormula imp_formula1 = new ImpliesFormula(new NegFormula(pairs.get(i).first()), 
-															new EqFormula(weight,new NumLiteral(0)));
-					formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
+			if (!pairs.get(i).second().isTagNull()){
+				AbstractWeight aw = pairs.get(i).second().getAnnotationTag().getWeight();
+				if (aw !=null ){
+					Constant weight = factory.createConstant("weight"+i, new Int());
+					weights.add(weight);
+					if (aw.isIntWeight()){
+						IntWeight iw = (IntWeight)aw;
+						int w = iw.getWeight();
+						totalWeight+=w;
+						ImpliesFormula imp_formula0 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(0)), 
+															new EqFormula(weight,new NumLiteral(w)));
+						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
+														new EqFormula(weight,new NumLiteral(0)));
+						formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
+					}
 				}
-			}*/
-			//formulas.add (pairs.get(i).first());
+			}else
+			{
+				formulas.add (pairs.get(i).first());
+			}
+			
 		}
 
 		/* add additional formulas for each class */
@@ -223,29 +242,43 @@ public final class InvPrintVisitor implements MMVisitor{
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
 			tmp.clear();
-			Variable var = new Variable ("p", new Int());
-			if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
-			for (MClass c : cls.allParents())
-				if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
-			if (tmp.size()>0){
-				exist_formulas.add (
-					(tmp.size() > 1) ? 
-					new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
-							new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
-				:
-					new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0))
-				);
+			if (cls.getAnnotationTag()!=null){
+				AbstractWeight weight = cls.getAnnotationTag().getWeight();
+				if (weight.isIntWeight()) {
+					IntWeight iweight = (IntWeight) weight;
+					int w = iweight.getWeight();
+					totalWeight+=w;
+					Constant aux = factory.createConstant("aux"+ i, new Int());
+					Constant cweight = factory.createConstant("weight"+ i++, new Int());
+					auxs.add(aux);weights.add(cweight);
+					formulas.add (FormulaBuilder.range(0,1,aux,true));
+					AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
+					AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
+					Variable var = new Variable ("p", new Int());
+					if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
+					for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
+					if (tmp.size()>0){
+						QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
+							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
+									new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
+						:
+							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0));
+						exist_formulas.add (new OrFormula(new OrFormula(quan_formula,formula1),formula2));
+
+						ImpliesFormula imp_formula0 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(0)), 
+															new EqFormula(cweight,new NumLiteral(w)));
+						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
+														new EqFormula(cweight,new NumLiteral(0)));
+						exist_formulas.add (new AndFormula().merge(imp_formula0, imp_formula1));
+					}
+				}
 			}
 		} // end of while
-	
+		
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
-
-		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
-		toSMT2File(e.name(),formulas, factory);
+		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));	
+		toSMT2File(e.name(),formulas, factory, totalWeight);
 	}
-
-
-	
 
 	@Override
 	public void visitOperation (MOperation e){}
@@ -270,8 +303,69 @@ public final class InvPrintVisitor implements MMVisitor{
 	public Function getTypeFunction(String name){return uid_table.get(type_table.get(name));}
 	public Function getRelFunction(String name){return uid_table.get(name);}
 	
-	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory){
-		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);		
+	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
+		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
+		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
+		if (solver.solve()==Result.UNSAT){
+			ColorPrint.println("Need to perform max use.", Color.BLUE);
+			maxsmt (solver,weight);
+		}
+	}
+
+	private void maxsmt (Z3SMT2Solver solver, int weight){
+		int max = weight, min = 0, mid = (max+min)/2;
+		List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
+		
+		SMT2Writer writer = solver.getWriter();
+		formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
+		writer.overwrite(formulas,3);
+		int totalSolutions=0;
+		while (min<=max){
+			mid = (max+min)/2;
+			formulas.clear();
+			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
+			writer.overwrite(formulas,1);
+			if (solver.solve() == Result.SAT){
+				min = mid+1;
+				formulas.clear();
+				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
+				writer.overwrite(formulas,1);
+				if (solver.solve()==Result.UNSAT){
+					ColorPrint.println("Max Weight found:"+mid, Color.RED);
+					formulas.clear();
+					formulas.add(FormulaBuilder.sum(mid, weights));
+					writer.overwrite(formulas,1);
+					/* Use this model as a guidence for enumerating all other solutions. */
+					while (solver.solve()==Result.SAT){
+						ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
+						writer.append(blockFormula(weights,writer.getFactory()));
+						totalSolutions++;
+					}
+					ColorPrint.println("Total Solutions: \n"+totalSolutions, Color.WHITE);
+					return;
+				}
+			}
+			else if (solver.solve()==Result.UNSAT){
+				max = mid-1;
+			}
+			else{
+				ColorPrint.println("Error: Solver cannot handle formulas.", Color.RED);
+				break;
+			}
+		}
+		ColorPrint.println("Max Weight cannot be found.",Color.RED);
+	}
+
+	private AbstractFormula blockFormula (List<Constant> weights, FunctionFactory factory){
+		List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
+
+		for (Constant c : weights){
+			Value value = factory.getValue(c.name());
+			if (value==null) throw new VisitorException("Error: cannot retrieve values from solver.");
+			if (value.IsInt()) formulas.add (new EqFormula(c, new NumLiteral( ((IntValue)value).getValue())));
+		}
+		
+		return FormulaBuilder.neg(new AndFormula().merge(formulas.toArray(new EqFormula[formulas.size()])));
 	}
 	
 }

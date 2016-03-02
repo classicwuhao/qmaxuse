@@ -24,6 +24,7 @@ public abstract class AbstractFormula{
 	public boolean isLiteral(){return false;}
 	public boolean isQuantifiedFormula(){return false;}
 	public boolean isBinaryFormula(){return false;}
+	public boolean isImpliesFormula(){return false;}
 	public boolean isConstant(){return false;}
 	public boolean isFunction(){return false;}
 	public boolean isVariable(){return false;}

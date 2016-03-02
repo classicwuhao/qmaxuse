@@ -111,7 +111,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 		for (int i=0;i<decls.size();i++)
 			writer.write("(declare-fun "+decls.get(i).toSMT2_decl()+" )\n");
 
-		writer.write("\n;formulas generated\n");
+		writer.write("\n;formula(s) generated\n");
 		for (int i=0;i<formulas.size();i++) formulas.get(i).accept(this);
 		writer.write("\n ;end of formula ");
 		
@@ -151,12 +151,13 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 			int k=0;
 			// discard the last newline
 			if ((char)raf.read()=='\n') pos--;
-			for (;pos>=0; --pos){
+			for (;pos>=0; pos--){
 				raf.seek(pos);
 				if (k>=line) break;
-				if ((char)raf.read()=='\n') k++;	
+				if ((char)raf.read()=='\n') k++;
 			}
-			raf.setLength(pos);
+			raf.setLength(pos+1);
+			raf.seek(pos+1);
 			raf.writeBytes("\n");
 			for (AbstractFormula formula : formulas)
 				raf.writeBytes("("+ASSERT+" "+formula.toSMT2()+")\n");
