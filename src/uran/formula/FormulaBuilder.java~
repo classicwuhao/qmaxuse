@@ -43,7 +43,12 @@ public final class FormulaBuilder{
 	}
 	
 	public static AbstractFormula sum(int k, AbstractFormula...formulas){
-		return new EqFormula(new ArithmeticFormula(Connective.PLUS).merge(formulas),new NumLiteral(new IntValue(k)));
+		return 
+			(formulas.length > 1) ?
+				new EqFormula(new ArithmeticFormula(Connective.PLUS).merge(formulas),new NumLiteral(new IntValue(k)))
+			:
+				new EqFormula(formulas[0], new NumLiteral(new IntValue(k)))
+			;
 	}
 
 	public static AbstractFormula none(AbstractFormula...formulas){

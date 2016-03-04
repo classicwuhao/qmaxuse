@@ -236,6 +236,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			
 		}
 
+		System.out.println("additional constraints...");
 		/* add additional formulas for each class */
 		it = e.classes().iterator();
 
@@ -273,10 +274,25 @@ public final class InvPrintVisitor implements MMVisitor{
 					}
 				}
 			}
+			else{
+				/* hard constraints */
+				Variable var = new Variable ("o", new Int());
+				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
+				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
+				if (tmp.size()>0){
+					QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
+						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
+								new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
+						:
+						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0));
+
+					exist_formulas.add(quan_formula);
+				}
+			}
 		} // end of while
-		
+
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
-		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));	
+		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		toSMT2File(e.name(),formulas, factory, totalWeight);
 	}
 
@@ -307,8 +323,10 @@ public final class InvPrintVisitor implements MMVisitor{
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
 		if (solver.solve()==Result.UNSAT){
-			ColorPrint.println("Need to perform max use.", Color.BLUE);
-			maxsmt (solver,weight);
+			if (weights.size()>0)
+				maxsmt (solver,weight);
+			else
+				ColorPrint.println("This model doesnot have any soft constraints to be removed.", Color.BLUE);				
 		}
 	}
 
@@ -335,7 +353,7 @@ public final class InvPrintVisitor implements MMVisitor{
 					formulas.clear();
 					formulas.add(FormulaBuilder.sum(mid, weights));
 					writer.overwrite(formulas,1);
-					/* Use this model as a guidence for enumerating all other solutions. */
+					// Use this model as a guidence for enumerating all other solutions. 
 					while (solver.solve()==Result.SAT){
 						ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
 						writer.append(blockFormula(weights,writer.getFactory()));
@@ -353,7 +371,8 @@ public final class InvPrintVisitor implements MMVisitor{
 				break;
 			}
 		}
-		ColorPrint.println("Max Weight cannot be found.",Color.RED);
+		
+		ColorPrint.println("Max Weight cannot be found."+mid,Color.RED);
 	}
 
 	private AbstractFormula blockFormula (List<Constant> weights, FunctionFactory factory){
