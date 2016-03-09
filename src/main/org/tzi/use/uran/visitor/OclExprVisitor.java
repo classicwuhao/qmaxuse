@@ -14,7 +14,7 @@ import java.util.*;
 public final class OclExprVisitor implements AbstractExprVisitor{
 	private FunctionFactory factory;
 	private InvPrintVisitor modelVisitor;	
-	private Variable boundedVar = new Variable ("p", new Int()); //default variable for self keyword.
+	private Variable boundedVar = new Variable ("v", new Int()); //default variable for self keyword.
 	private Scope _scope=null;
 	private String navname="";
 
@@ -230,7 +230,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	
 	@Override
 	public AbstractFormula visitVarDecl(VarDecl var){
-
+		System.out.println("visiting varDecl...");
 		if (var.type().isTypeOfInteger())
 			return new Variable (var.name(), new Int());
 		else if (var.type().isTypeOfBoolean())
@@ -238,8 +238,10 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		else if (var.type().isTypeOfClass())
 			return new Variable (var.name(), new Int());
 
+		System.out.println("leaving varDecl...");
 		/* default: just return an integer type */
 		return new Variable (var.name(), new Int());
+
 	}
 
 	@Override
@@ -254,10 +256,21 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	}
 
 	@Override
+	public AbstractFormula visitConstEnum (ExpConstEnum expr){
+		System.out.println("visiting const enum...");
+		return new NumLiteral(new IntValue(modelVisitor.getEnumValueIndex((EnumType)expr.type(),expr.value())));
+	}
+
+	@Override
 	public AbstractFormula visitAttrOp(ExpAttrOp expr){
 		System.out.println("visiting attrop...");
 		MAttribute attr = expr.attr();
-		Function fun = this.factory.funLookup(attr.owner().name().toLowerCase()+"_"+attr.name());
+		Function fun;
+		if (!attr.type().isTypeOfEnum())
+			fun = this.factory.funLookup(attr.owner().name().toLowerCase()+"_"+attr.name());
+		else
+			fun = modelVisitor.getEnumFunction((EnumType)attr.type());
+				
 		AbstractFormula formula = expr.objExp().accept(this);
 		List<Function> typeFun = new ArrayList<Function>();
 		MClass context;
@@ -335,6 +348,8 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			} else {
 				System.out.println("visiting args[0]...");
 				AbstractFormula arg_formula=args[0].accept(this);
+				System.out.println("arg_formula:"+arg_formula);
+				System.out.println("args[0]:"+args[0]);
 				System.out.println("leaving args[0]...");
 				expr_formula = TranslateOperation(arg_formula,expr.opname(),args[0]);
 				for (int i=0;i<args.length;i++) System.out.println("arg :"+args[i]);
@@ -342,6 +357,20 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		}
 		System.out.println("leave StdOp...");
 		return expr_formula;
+	}
+
+	@Override
+	public AbstractFormula visitObjAsSet (ExpObjAsSet exp){
+		System.out.println("visit obj as set...");
+		if (exp.getObjectExpression() instanceof ExpNavigation){
+			System.out.println("leave obj as set...");
+			return visitNavigation((ExpNavigation)exp.getObjectExpression());
+		}
+		else{
+			System.out.println("leave obj as set...");
+			throw new VisitorException("Error: "+exp.getObjectExpression()+" cannot be supported.");
+		}
+
 	}
 	
 	private AbstractFormula TranslateOperation(AbstractFormula formula, String operation){
@@ -371,11 +400,24 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 					return CollectionOperationNotEmpty(formula, (ExpNavigation) expr);
 				else
 					return CollectionOperationNotEmpty(formula, null);
-			case "Empty":
-				if (expr instanceof ExpNavigation)
+
+			case "isEmpty":
+				if (expr instanceof ExpNavigation){
 					return new NegFormula(CollectionOperationNotEmpty(formula, (ExpNavigation) expr));
-				else
+				}
+				else if (expr instanceof ExpObjAsSet){
+					ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
+					if (oas_expr.getObjectExpression() instanceof ExpNavigation){
+						ExpNavigation nav_expr = (ExpNavigation)oas_expr.getObjectExpression();
+						return new NegFormula(CollectionOperationNotEmpty(formula, nav_expr));
+					}
+					else{
+						return new NegFormula(CollectionOperationNotEmpty(formula, null));
+					}
+				}
+				else{
 					return new NegFormula(CollectionOperationNotEmpty(formula, null));
+				}
 			default: ;
 		}
 		return null;

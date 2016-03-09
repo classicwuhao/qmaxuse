@@ -32,6 +32,8 @@ public final class InvPrintVisitor implements MMVisitor{
 	private HashMap <MClass, Integer> clsRank = new HashMap<MClass, Integer>();
 	private HashMap <String, Function> uid_table = new HashMap<String, Function>();
 	private HashMap <String, String> type_table = new HashMap<String, String>();
+	private HashMap <EnumType, Function> enum_table = new HashMap<EnumType, Function>();
+	private HashMap <EnumType, Integer> enum_size = new HashMap<EnumType, Integer>();
 	private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
@@ -48,7 +50,25 @@ public final class InvPrintVisitor implements MMVisitor{
 		Function f1 = factory.createFunction(obj_str,new Int(), new Int());		
 		uid_table.put(obj_str,f1);
 	}
+	
+
+	@Override
+	public void visitEnum(EnumType enumType) {
+		Iterator<String> it = enumType.literals();
+		int k=-1;
 		
+		while (it.hasNext()) { 
+			it.next();
+			k++;
+		}
+
+		// skip an empty enum type
+		if (k==-1) return;
+		Function f = factory.createFunction(enumType.name(), new Int(), new Int());
+		enum_size.put(enumType, k+1);
+		enum_table.put(enumType, f);
+	}
+	
 	@Override 
 	public void visitAssociation (MAssociation e){
 		rel_str = (REL+UUID.randomUUID()).replace('-','_');
@@ -101,6 +121,19 @@ public final class InvPrintVisitor implements MMVisitor{
 				f = factory.createFunction(e.name().toLowerCase()+"_"+attr.name(),new Int(), new Bool());
 			else if (attr.type().isTypeOfInteger())
 				f = factory.createFunction(e.name().toLowerCase()+"_"+attr.name(),new Int(), new Int());
+			else if (attr.type().isTypeOfEnum()){
+				Function enumFun =  enum_table.get((EnumType)attr.type());
+				if (enumFun==null) throw new VisitorException("Error: enum function cannot be found.");
+				Function typeFun = uid_table.get(type_str+"_"+attr.owner().name());
+				Variable p = new Variable("p", new Int());
+				formulas.add(new QuantifiedFormula(Quantifier.FORALL, new Decls(p), 
+							new ImpliesFormula(typeFun.apply(p),  
+							new AndFormula(
+								new ComparisonFormula(Connective.GEQ, enumFun.apply(getObjFunction().apply(p)), new NumLiteral(0)),
+								new ComparisonFormula(Connective.LEQ, enumFun.apply(getObjFunction().apply(p)), 
+								new NumLiteral(enum_size.get((EnumType)attr.type())-1)))
+							)));
+			}
 			else;
 		}
 	}
@@ -165,6 +198,12 @@ public final class InvPrintVisitor implements MMVisitor{
 		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 		int totalWeight = 0;		
 
+		EnumType[] enumTypes = e.enumTypes().toArray(new EnumType[0]);
+		for (EnumType t : enumTypes){
+        	visitEnum(t);
+        }
+		
+		System.out.println("visiting class...");
 		/* translate class */
 		Iterator it = e.classes().iterator();
 
@@ -236,7 +275,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			
 		}
 
-		System.out.println("additional constraints...");
+		System.out.println("add additional formulas...");
 		/* add additional formulas for each class */
 		it = e.classes().iterator();
 
@@ -292,7 +331,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		} // end of while
 
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
-		formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
+		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		toSMT2File(e.name(),formulas, factory, totalWeight);
 	}
 
@@ -307,27 +346,44 @@ public final class InvPrintVisitor implements MMVisitor{
 
 	@Override
 	public void visitSignal (MSignal a){}
-	
-	@Override
-	public void visitEnum (EnumType enumType){}
 
 	@Override
 	public void visitGeneralization (MGeneralization e){}
-
+	public Function getEnumFunction(EnumType e){return enum_table.get(e);}
 	public FunctionFactory getFactory(){return factory;}
 	public Function getObjFunction(){return uid_table.get(obj_str);}
 	public Function getTypeFunction(String name){return uid_table.get(type_table.get(name));}
 	public Function getRelFunction(String name){return uid_table.get(name);}
+	public int getEnumValueIndex(EnumType e, String str){
+		int k=-1;	
+		Iterator<String> it = e.literals();
+		
+		while (it.hasNext()){
+			k++;
+			String s = (String)it.next();
+			if (s.equals(str)) return k;
+		}
+
+		return -1;
+	}
+
 	
 	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
+		long current = System.currentTimeMillis();	
 		if (solver.solve()==Result.UNSAT){
 			if (weights.size()>0)
 				maxsmt (solver,weight);
 			else
-				ColorPrint.println("This model doesnot have any soft constraints to be removed.", Color.BLUE);				
+				ColorPrint.println("At least one constraint cannot be satisfied,"+
+					 "but this model does not have any soft constraints to be removed.", Color.BLUE);				
 		}
+		else{
+			ColorPrint.println("All constraints of this model can be satisfied.", Color.BLUE);
+		}
+		long timeUsed = System.currentTimeMillis()-current;
+		ColorPrint.println("Time Elapsed:"+timeUsed+" ms ", Color.RED);
 	}
 
 	private void maxsmt (Z3SMT2Solver solver, int weight){

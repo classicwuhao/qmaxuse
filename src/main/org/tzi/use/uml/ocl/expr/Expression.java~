@@ -180,6 +180,9 @@ public abstract class Expression implements BufferedToString {
     }
     
     public abstract void processWithVisitor(ExpressionVisitor visitor);
-	public AbstractFormula accept (AbstractExprVisitor visitor){return null;};
+	public AbstractFormula accept (AbstractExprVisitor visitor){
+		System.out.println("this:"+this+" "+this.name()+" "+this.type());
+		return null;
+	}
 	public int accept (AbstractRankVisitor visitor){return 1;};
 }

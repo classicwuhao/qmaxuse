@@ -17,7 +17,7 @@ public interface AbstractExprVisitor{
 	//void visitCollect (ExpCollect exp);
 	//void visitCollectNested (ExpCollectNested exp);
 	AbstractFormula visitConstBoolean (ExpConstBoolean exp);
-	//void visitConstEnum (ExpConstEnum exp);
+	AbstractFormula visitConstEnum (ExpConstEnum exp);
 	AbstractFormula visitConstInteger (ExpConstInteger exp);
 	//void visitConstReal (ExpConstReal exp);
 	//void visitConstString (ExpConstString exp);
@@ -31,7 +31,7 @@ public interface AbstractExprVisitor{
 	//void visitIterate (ExpIterate exp);
 	//void visitLet (ExpLet exp);
 	AbstractFormula visitNavigation (ExpNavigation exp);
-	//void visitObjAsSet (ExpObjAsSet exp);
+	AbstractFormula visitObjAsSet (ExpObjAsSet exp);
 	//void visitObjOp (ExpObjOp exp);
 	//void visitObjRef (ExpObjRef exp);
 	//void visitOne (ExpOne exp);
