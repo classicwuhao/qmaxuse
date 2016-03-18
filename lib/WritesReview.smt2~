@@ -11,7 +11,6 @@
 (declare-fun paper_studentPaper ( Int) Bool )
 (declare-fun type_9e1bc67a_e02a_455e_a80c_5d2a39f917b6_Paper ( Int) Bool )
 (declare-fun researcher_isStudent ( Int) Bool )
-
 ;formulas generated
 
  ;end of formula 

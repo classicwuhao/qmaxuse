@@ -218,12 +218,13 @@ operationDefinition returns [ASTOperation n]
     "end"
 */
 associationDefinition returns [ASTAssociation n]
-@init{ Token t = null; }
+@init{ Token t = null; tag=null;}
 :
 	as = annotationSet
+	(tag=line_annotation[tag])?
     { t = input.LT(1); }
     ( keyAssociation | keyAggregation | keyComposition )
-    name=IDENT { $n = new ASTAssociation(t, $name); $n.setAnnotations($as.annotations); }
+    name=IDENT { $n = new ASTAssociation(t, $name); $n.setAnnotations($as.annotations);$n.setAnnotationTag(tag);}
     'between'
     ae=associationEnd { $n.addEnd($ae.n); }
     ( ae=associationEnd { $n.addEnd($ae.n); } )+

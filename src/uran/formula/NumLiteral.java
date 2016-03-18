@@ -18,9 +18,11 @@ import uran.formula.visitor.AbstractVisitor;
 public class NumLiteral extends Literal{
 	private IntValue value;
 	
+
 	public NumLiteral(){
 		//default constructor
 		value=new IntValue();
+		
 	}
 
 	public NumLiteral(IntValue v){

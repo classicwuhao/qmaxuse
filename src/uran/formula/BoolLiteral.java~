@@ -20,6 +20,7 @@ public class BoolLiteral extends Literal{
 	
 	public BoolLiteral(){
 		//default constructor
+		super("",new Bool());
 		value=new BoolValue();
 	}
 

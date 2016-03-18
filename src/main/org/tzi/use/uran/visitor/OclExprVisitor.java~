@@ -194,9 +194,9 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		Function objfun = modelVisitor.getObjFunction();
 		Function relfun = modelVisitor.getRelFunction(name);
 		
-		for (int i=0,c=0;i<vars1.length;i++)
-			for (int j=0;j<vars2.length;j++)
-				f[c++] = relfun.apply (objfun.apply(vars1[i]),objfun.apply(vars2[j]));
+		for (int i=0,c=0;i<vars2.length;i++)
+			for (int j=0;j<vars1.length;j++)
+				f[c++] = relfun.apply (objfun.apply(vars2[i]),objfun.apply(vars1[j]));
 		
 		return f.length==1 ? f[0] : new AndFormula().merge(f);
 	}
@@ -418,11 +418,44 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 				else{
 					return new NegFormula(CollectionOperationNotEmpty(formula, null));
 				}
+
+			case "size":
+				if (expr instanceof ExpNavigation){
+					System.out.println("process navigation with size...");
+				}
+				else if (expr instanceof ExpObjAsSet){
+					ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
+					if (oas_expr.getObjectExpression() instanceof ExpNavigation){
+						ExpNavigation nav_expr = (ExpNavigation)oas_expr.getObjectExpression();
+						return CollectionOperationSize(formula, nav_expr);
+					}
+				}
+				else{
+					
+				}
 			default: ;
 		}
 		return null;
 	}
+	
+	private AbstractFormula CollectionOperationSize(AbstractFormula formula, ExpNavigation expr){
+		AbstractFormula f1 = null;
+
+		if (_scope!=null){
+			Variable v = _scope.lookupF(expr.getObjectExpression().toString());
+			Variable[] v1 = new Variable[1];v1[0]=v;
+			Constant[] v2 = new Constant[1];v2[0]=boundedVar;
+			AbstractFormula relFormula = makeRelations(navname, v2,v1);
+			AbstractFormula typeFormula = getAllChildren(expr.getDestination().cls(),boundedVar);
+			navname="";
+			f1 = modelVisitor.getCardFun().apply(modelVisitor.getConFun().apply(boundedVar));;
+			return new QuantifiedFormula(Quantifier.FORALL,
+				new Decls(boundedVar), new AndFormula (new AndFormula(typeFormula, relFormula),f1));
+		}
 		
+		return f1;
+	}
+
 	private AbstractFormula CollectionOperationNotEmpty(AbstractFormula formula, ExpNavigation expr){
 		/* change the original variable to a new bounded variable. */
 		if (formula.isFunction())

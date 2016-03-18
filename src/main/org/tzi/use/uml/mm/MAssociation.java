@@ -26,6 +26,7 @@ import java.util.Set;
 
 import org.eclipse.jdt.annotation.NonNull;
 
+import org.tzi.use.uran.weight.*;
 /** 
  * An association connects two or more classes.
  *
@@ -290,4 +291,7 @@ public interface MAssociation extends MClassifier, UseFileLocatable {
 	 * @return A sorted <code>List</code> of the owned association ends.
 	 */
 	//List<MAssociationEnd> getParentAlignedEnds(MAssociation parentAssociation);
+
+	void setAnnotationTag(AnnotationTag tag);
+	AnnotationTag getAnnotationTag();
 }

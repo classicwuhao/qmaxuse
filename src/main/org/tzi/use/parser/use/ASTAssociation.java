@@ -33,6 +33,7 @@ import org.tzi.use.uml.mm.MInvalidModelException;
 import org.tzi.use.uml.mm.MModel;
 import org.tzi.use.uml.mm.MNavigableElement;
 import org.tzi.use.util.StringUtil;
+import org.tzi.use.uran.weight.*;
 
 /**
  * Node of the abstract syntax tree constructed by the parser.
@@ -47,6 +48,8 @@ public class ASTAssociation extends ASTAnnotatable {
     
     private List<ASTAssociationEnd> fAssociationEnds;
 
+	protected AnnotationTag tag=null;
+
     public ASTAssociation(Token kind, Token name) {
         fKind = kind;
         fName = name;
@@ -56,6 +59,8 @@ public class ASTAssociation extends ASTAnnotatable {
     public void addEnd(ASTAssociationEnd ae) {
         fAssociationEnds.add(ae);
     }
+
+	public void setAnnotationTag(AnnotationTag tag){this.tag = tag;}
 
     public MAssociation gen(Context ctx, MModel model) throws SemanticException 
     {
@@ -85,6 +90,9 @@ public class ASTAssociation extends ASTAnnotatable {
                 // association end
                 MAssociationEnd aend = ae.gen(ctx, kind);
                 assoc.addAssociationEnd(aend);
+
+				// set annotation tag for this association
+				assoc.setAnnotationTag(this.tag);
 
                 // further ends are plain ends
                 kind = MAggregationKind.NONE;
