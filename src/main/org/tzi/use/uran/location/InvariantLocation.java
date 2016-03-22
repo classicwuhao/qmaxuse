@@ -19,7 +19,7 @@ public final class InvariantLocation extends Location{
 	}
 
 	@Override
-	public String name(){return "inv:"+invar.name();}
+	public String name(){return invar.name();}
 
 	@Override
 	public boolean isEnabled(){

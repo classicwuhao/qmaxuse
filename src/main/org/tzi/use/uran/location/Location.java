@@ -18,6 +18,7 @@ public abstract class Location{
 	public abstract String toString();
 	public boolean isClassLocation(){return false;}	
 	public boolean isInvaraintLocation(){return false;}
+	public boolean isAssocLocation(){return false;}
 
 	public abstract boolean isEnabled();
 	public abstract String name();

@@ -162,7 +162,7 @@ public final class FunctionFactory{
 		/* try function */
 		if (fun == null){
 			fun = this.funLookup(name);
-			if (fun==null) System.err.println("Warning: the function:"+name+" does not exist, update is ignored");				
+			//if (fun==null) System.err.println("Warning: the function:"+name+" does not exist, update is ignored");				
 		}
 		sym_table.put(fun, value);
 	}

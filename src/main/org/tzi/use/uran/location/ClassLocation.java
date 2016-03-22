@@ -19,7 +19,7 @@ public final class ClassLocation extends Location{
 	}
 
 	@Override
-	public String name(){return "class:"+cls.name();}
+	public String name(){return cls.name();}
 
 	@Override
 	public boolean isEnabled(){

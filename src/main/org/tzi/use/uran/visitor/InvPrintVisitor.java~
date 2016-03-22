@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.HashSet;
 import org.tzi.use.uml.mm.*;
 import org.tzi.use.uml.mm.MMultiplicity.Range;
 import org.tzi.use.uml.ocl.type.*;
@@ -33,13 +34,18 @@ public final class InvPrintVisitor implements MMVisitor{
 	private List<Constant> weights = new ArrayList<Constant>();
 	private List<Pair<AbstractFormula, MClassInvariant>> pairs = new ArrayList<Pair<AbstractFormula, MClassInvariant>>();
 	private List<Location> locations = new ArrayList<Location>();
+	private List<Solution> solutions = new ArrayList<Solution>();
 	private HashMap <MClass, Integer> clsRank = new HashMap<MClass, Integer>();
 	private HashMap <String, Function> uid_table = new HashMap<String, Function>();
 	private HashMap <String, String> type_table = new HashMap<String, String>();
 	private HashMap <EnumType, Function> enum_table = new HashMap<EnumType, Function>();
 	private HashMap <EnumType, Integer> enum_size = new HashMap<EnumType, Integer>();
 	private HashMap <MClass, Integer> clsType = new HashMap<MClass, Integer>();
+	private HashMap <String, Set<MAssociation>> assoc_table = new HashMap<String, Set<MAssociation>>();
 	private int typeid=0;
+	private int auxCounter=0;
+	private int weightCounter=0;
+	private int totalWeight = 0;
 	private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
@@ -50,8 +56,8 @@ public final class InvPrintVisitor implements MMVisitor{
 	private String con_str=CON;//(CON+""+UUID.randomUUID()).replace('-','_');
 	private String car_str="Cardinality";//("cardinality"+UUID.randomUUID()).replace('-','_');
 	private Function conFun = factory.createFunction(con_str,new Int(),new Int());
-	private Function cardFun = factory.createFunction(car_str,new Int(),new Int());
-	
+	private Function cardFun = factory.createFunction(car_str,new Int(),new Int());	
+
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
 		extraFunctions();
@@ -86,18 +92,15 @@ public final class InvPrintVisitor implements MMVisitor{
 		rel_str = rel_str + "_" + e.name();
 		Function f2 = factory.createFunction(rel_str, new Int(), new Int(), new Bool());
 		uid_table.put(e.name(),f2);
+		//int sum=1;
 
-		for (MAssociationEnd a : e.associationEnds()){
-			if (clsRank.containsKey(a.cls()))
-				clsRank.put(a.cls(),clsRank.get(a.cls())+1);
-		}
-
-		/* we need to add extra axiom to state that (f a b) is the same as (f b a) */
+		//for (MAssociationEnd a : e.associationEnds()) sum += clsRank.get(a.cls());
+		
+		/* we need to add an extra axiom stating that (f a b) is the same as (f b a) */
 		Variable a = new Variable("a", new Int());
 		Variable b = new Variable("b", new Int());
 		AbstractFormula t1 = f2.apply(getObjFunction().apply(a), getObjFunction().apply(b));
 		AbstractFormula t2 = f2.apply(getObjFunction().apply(b), getObjFunction().apply(a));
-
 
 		List<MAssociationEnd> ends = e.associationEnds();
 		/*if (ends.size()==2){
@@ -113,25 +116,8 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add (new QuantifiedFormula(Quantifier.FORALL, new Decls(a,b), new EqFormula(t1, t2)));
 		}*/
 
-		System.out.println("Association Annotation Tag:"+e.getAnnotationTag());
-		
-		AnnotationTag tag = e.getAnnotationTag();
-		if (tag!=null){
-			AbstractWeight weight = tag.getWeight();
-			if (weight!=null){
-				if (weight.isIntWeight()){
-					IntWeight iweight = (IntWeight) weight;
-					if (iweight.getWeight()==IntWeight.DEFAULT){
-						// assign a new weight based on two associationends.
-						//iweight.setWeight();
-					}
-				}
-			}
-		}else{
-			//ColorPrint.println(computeAEM(e).toSMT2(),Color.YELLOW);
-			formulas.add(computeAEM(e));
-		}
-		
+		System.out.println("Association Annotation Tag:"+e.getAnnotationTag());		
+
 	}
 	
 	private AbstractFormula computeAEM(MAssociation e){
@@ -142,11 +128,14 @@ public final class InvPrintVisitor implements MMVisitor{
 		QuantifiedFormula qformula1=null;
 		QuantifiedFormula qformula2=null;
 		AbstractFormula formula = null;
-		boolean flag=false;
+		boolean flaga=true;
+		boolean flagb=true;
 		Variable var_enda;
 		Variable var_endb;
 		
 		if (ends.size()==2){
+			
+
 			var_enda = new Variable("x",new Int());
 			var_endb = new Variable("y", new Int());
 			//qformula2 = new QuantifiedFormula(Quantifier.FORALL, new Decls(var_endb),null);
@@ -173,7 +162,18 @@ public final class InvPrintVisitor implements MMVisitor{
 			else
 				var_endb = factory.createConstant(endb.cls().name(),new Int());*/
 
-			//formulas.add(new EqFormula(var_endb, new NumLiteral(clsType.get(endb.cls()))));	
+			//formulas.add(new EqFormula(var_endb, new NumLiteral(clsType.get(endb.cls()))));
+
+			if (!assoc_table.containsKey(enda.cls().name()+endb.cls().name())){
+				Set<MAssociation> set = new HashSet<MAssociation>();
+				set.add(e);
+				assoc_table.put(enda.cls().name()+endb.cls().name(),set);
+			}else{
+				Set<MAssociation> set = assoc_table.get(enda.cls().name()+endb.cls().name());
+				set.add(e);
+				assoc_table.put(enda.cls().name()+endb.cls().name(),set);
+			}
+
 			for (Range r : ranges){
 				listb.add(r.getLower());
 				listb.add(r.getUpper());
@@ -194,6 +194,7 @@ public final class InvPrintVisitor implements MMVisitor{
 						AbstractFormula f;
 						if (a==-1 && b!=-1){
 							Constant var_k = factory.createConstant(uniqueName("k"),new Int());
+							flaga=false;
 							f = new AndFormula(
 									new EqFormula (
 										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_enda)), new NumLiteral(b)),
@@ -202,6 +203,7 @@ public final class InvPrintVisitor implements MMVisitor{
 						}
 						else if (a!=-1 && b==-1){
 							Constant var_k = factory.createConstant(uniqueName("k"),new Int());
+							flagb=false;
 							f = new AndFormula(
 									new EqFormula (
 										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_endb)), new NumLiteral(a)),
@@ -223,7 +225,8 @@ public final class InvPrintVisitor implements MMVisitor{
 						assoc_formulas.add(f);
 					}
 					else{
-						//if (a>0 && b >0) flag=true;
+						if (a==0 || b==0) flaga=flagb=false;
+
 						AbstractFormula f = new EqFormula(
 								new ArithmeticFormula(Connective.MUL,cardFun.apply(conFun.apply(var_enda)), new NumLiteral(b)),
 								new ArithmeticFormula(Connective.MUL,cardFun.apply(conFun.apply(var_endb)), new NumLiteral(a)));
@@ -237,15 +240,65 @@ public final class InvPrintVisitor implements MMVisitor{
 			AbstractFormula typeFormula2 = getAllChildren(endb.cls(), var_endb);
 			AbstractFormula final_typeFormula = new AndFormula( getRelFunction(e.name()).apply( getObjFunction().apply(var_enda), 
 												getObjFunction().apply(var_endb)),new AndFormula(typeFormula1, typeFormula2));
+			AbstractFormula cardFormula1 = new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(var_enda)), new NumLiteral(1));
+			AbstractFormula cardFormula2 = new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(var_endb)), new NumLiteral(1));
+
 			qformula1.setFormula(new ImpliesFormula(final_typeFormula,orFormula));
 
-			//if (flag) formulas.add(new QuantifiedFormula(Quantifier.EXISTS, new Decls(var_enda, var_endb), final_typeFormula));
-
+			if (flaga) 
+				formulas.add(new QuantifiedFormula(Quantifier.EXISTS, new Decls(var_enda, var_endb), new AndFormula(final_typeFormula,cardFormula1)));
+			if (flagb)
+				formulas.add(new QuantifiedFormula(Quantifier.EXISTS, new Decls(var_enda, var_endb), new AndFormula(final_typeFormula,cardFormula2)));
+			
+			/* in case multiple associations defined */
+			computeSet(e,enda.cls(),endb.cls());
 			return qformula1;
 		}
 		else{
 			throw new VisitorException("Error: Sorry, we don't support this type of association.");
 		}
+		
+	}
+
+	private void computeSet(MAssociation e, MClass enda, MClass endb){
+		Set<MAssociation> set = assoc_table.get(enda.name()+endb.name());
+		if (set.size()<=0) return;
+		boolean flag = true;
+		for (MAssociation a : set){
+			flag=true;
+			if (a!=e){
+				List<MAssociationEnd> ends = a.associationEnds();
+				if (ends.size()==2){
+					List<Range> ranges = ends.get(0).multiplicity().getRanges();
+					for (Range r : ranges) if (r.getLower()==0 || r.getLower()==-1) flag=false;
+						if (flag){ 
+							ranges = ends.get(1).multiplicity().getRanges();
+							for (Range r: ranges) if (r.getLower()==0 || r.getLower()==-1) flag =false;
+						}
+
+					/* Very Important formula generation. */
+					/* Now we DO generate additional formulas stating that if assoc_a exists, this means it also imples assoc_b */
+					/* In this case, it is also possible to formulate an equality formula.*/
+					if (flag){
+						Function f1 = uid_table.get(e.name());
+						Function f2 = uid_table.get(a.name());
+						Variable vara = new Variable("a", new Int());
+						Variable varb = new Variable("b", new Int());
+						Function type1 = getTypeFunction(enda.name());
+						Function type2 = getTypeFunction(endb.name());
+						AbstractFormula rel1 = new AndFormula (f1.apply(getObjFunction().apply(vara),getObjFunction().apply(varb)),
+								new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb))));
+						AbstractFormula rel2 = new AndFormula (f2.apply(getObjFunction().apply(vara),getObjFunction().apply(varb)),
+								new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb))));
+
+						AbstractFormula enable_formula = f1.apply(getObjFunction().apply(vara),getObjFunction().apply(varb));
+						AbstractFormula enable_type = new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb)));
+						formulas.add (new QuantifiedFormula(Quantifier.FORALL, new Decls(vara,varb), new ImpliesFormula(rel1, rel2)));
+						
+					}
+				}// end of binary association
+			}// end of outter if
+		}//end of for
 		
 	}
 
@@ -298,9 +351,23 @@ public final class InvPrintVisitor implements MMVisitor{
 		Iterator it = e.attributes().iterator();
 		Function f;
 		
-		if (!clsRank.containsKey(e)) clsRank.put(e, e.allAttributes().size());
+		if (!clsRank.containsKey(e)) {
+			if (e.allAttributes().size()<=0)
+				clsRank.put(e, 1);
+			else
+				clsRank.put(e, e.allAttributes().size());
+		}
 		//if (!clsType.containsKey(e)) clsType.put(e, typeid++);
 		
+			/* check if this is a default weight */
+		if (e.getAnnotationTag()!=null){
+				AbstractWeight weight = e.getAnnotationTag().getWeight();
+				if (weight.isIntWeight()) {
+					IntWeight iweight = (IntWeight) weight;
+					if (iweight.getWeight()==IntWeight.DEFAULT) iweight.setWeight(clsRank.get(e));
+				}
+		}
+
 		while (it.hasNext()){
 			MAttribute attr = (MAttribute) it.next();
 			org.tzi.use.uml.ocl.type.Type t = attr.type();
@@ -385,11 +452,13 @@ public final class InvPrintVisitor implements MMVisitor{
 
 	@Override
 	public void visitModel (MModel e){
-		weights.clear();auxs.clear();pairs.clear();formulas.clear();exist_formulas.clear();locations.clear();
+		weights.clear();auxs.clear();
+		pairs.clear();formulas.clear();exist_formulas.clear();locations.clear();
 		MClassInvariant[] classInvariants = e.classInvariants().toArray(new MClassInvariant[0]);
 		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
-		int totalWeight = 0;
-
+		totalWeight = 0;
+		int i=0;
+		
 		EnumType[] enumTypes = e.enumTypes().toArray(new EnumType[0]);
 		for (EnumType t : enumTypes){
         	visitEnum(t);
@@ -407,12 +476,48 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		it = e.associations().iterator();
 		while (it.hasNext()){
-			MAssociation a = (MAssociation) it.next();
-			a.processWithVisitor(this);
+			MAssociation assoc = (MAssociation) it.next();
+			assoc.processWithVisitor(this);
+			AnnotationTag tag = assoc.getAnnotationTag();
+			Constant aux = CreateAux();
+			int sum=0;
+
+			AbstractFormula formula = computeAEM(assoc);
+			formulas.add (FormulaBuilder.range(0,1,aux,true));
+			AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
+			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
+			formulas.add(new OrFormula(new OrFormula(formula,formula1),formula2));
+			formulas.add(formula);
+			sum = getSum(assoc);
+
+			if (tag!=null){
+				AbstractWeight weight = tag.getWeight();
+				if (weight!=null){
+					if (weight.isIntWeight()){
+						IntWeight iweight = (IntWeight) weight;
+						if (iweight.getWeight()==IntWeight.DEFAULT){
+							iweight.setWeight(sum); // assign a new weight based on two associationends.
+						}
+						else{
+							sum = iweight.getWeight();
+						}
+
+						Constant cweight = CreateWeight();
+						totalWeight+=sum;
+						ImpliesFormula imp_formula0 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(0)), 
+																new EqFormula(cweight,new NumLiteral(sum)));
+						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
+														new EqFormula(cweight,new NumLiteral(0)));
+
+						formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
+						locations.add(new AssocLocation(factory,assoc,aux,cweight));
+					}
+				}
+			}
 		}
 		
-		System.out.println(factory);
-		int i=0;
+		//System.out.println(factory);
+
 		for (MClassInvariant inv : classInvariants){
 			//ColorPrint.println("visitng invariant "+ ++i,Color.BLUE);
 			inv.processWithVisitor(this);
@@ -420,35 +525,18 @@ public final class InvPrintVisitor implements MMVisitor{
 			ColorPrint.println("leaving invariant "+ i++,Color.BLUE);
 			System.out.println();
 		}
-		
-		it = e.classes().iterator();
-		while (it.hasNext()){
-			MClass cls = (MClass) it.next();
-			/* check if this is a default weight */
-			if (cls.getAnnotationTag()!=null){
-				AbstractWeight weight = cls.getAnnotationTag().getWeight();
-				if (weight.isIntWeight()) {
-					IntWeight iweight = (IntWeight) weight;
-					if (iweight.getWeight()==-1) iweight.setWeight(clsRank.get(cls));
-				}
-			}
-			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
-		}
 
 		for (i=0;i<pairs.size();i++){
-			Constant aux = factory.createConstant("aux"+ i, new Int());
-			auxs.add(aux);
+			Constant aux = CreateAux();
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
 			AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
 			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
 			formulas.add(new OrFormula(new OrFormula(pairs.get(i).first(),formula1),formula2));
-			
 			/*form formulas for the weight defined */
 			if (!pairs.get(i).second().isTagNull()){
 				AbstractWeight aw = pairs.get(i).second().getAnnotationTag().getWeight();
 				if (aw !=null ){
-					Constant weight = factory.createConstant("weight"+i, new Int());
-					weights.add(weight);
+					Constant weight = CreateWeight();
 					locations.add(new InvariantLocation(factory,pairs.get(i).second(),aux,weight)); // add invariant location
 					if (aw.isIntWeight()){
 						IntWeight iw = (IntWeight)aw;
@@ -458,10 +546,13 @@ public final class InvPrintVisitor implements MMVisitor{
 															new EqFormula(weight,new NumLiteral(w)));
 						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
 														new EqFormula(weight,new NumLiteral(0)));
+
+					
 						formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
 					}
 				}
-			}else
+			}
+			else
 			{
 				formulas.add (pairs.get(i).first());
 			}
@@ -481,22 +572,27 @@ public final class InvPrintVisitor implements MMVisitor{
 					IntWeight iweight = (IntWeight) weight;
 					int w = iweight.getWeight();
 					totalWeight+=w;
-					Constant aux = factory.createConstant("aux"+ i, new Int());
-					Constant cweight = factory.createConstant("weight"+ i++, new Int());
-					auxs.add(aux);weights.add(cweight);
+					Constant aux = CreateAux();
+					Constant cweight = CreateWeight();
 					locations.add(new ClassLocation(factory,cls,aux,cweight)); // remember the location
 					formulas.add (FormulaBuilder.range(0,1,aux,true));
 					AbstractFormula formula1 = new AndFormula(new EqFormula(aux,new NumLiteral(1)), new BoolLiteral(true));
 					AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
 					Variable var = new Variable ("p", new Int());
-					if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
-					for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
+					if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
+					for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
 					if (tmp.size()>0){
 						QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
-							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
-									new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
+
+							/*new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
+									new AndFormula(new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])), 
+										new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(getObjFunction().apply(var))), new NumLiteral(1))))*/
+							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
 						:
-							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0));
+							/*new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), new AndFormula (tmp.get(0),
+								new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(getObjFunction().apply(var))), new NumLiteral(1))));*/
+							new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), (tmp.get(0)));
+
 						exist_formulas.add (new OrFormula(new OrFormula(quan_formula,formula1),formula2));
 
 						ImpliesFormula imp_formula0 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(0)), 
@@ -504,6 +600,7 @@ public final class InvPrintVisitor implements MMVisitor{
 						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
 														new EqFormula(cweight,new NumLiteral(0)));
 						exist_formulas.add (new AndFormula().merge(imp_formula0, imp_formula1));
+						
 					}
 				}
 			}
@@ -530,6 +627,15 @@ public final class InvPrintVisitor implements MMVisitor{
 		toSMT2File(e.name(),formulas, factory, totalWeight);
 	}
 
+	private int getSum(MAssociation assoc){
+		int sum=0;
+	
+		for (MAssociationEnd a : assoc.associationEnds()) 
+			sum += ((IntWeight)a.cls().getAnnotationTag().getWeight()).getWeight(); // may cause an error
+		
+		return sum;
+	}
+
 	@Override
 	public void visitOperation (MOperation e){}
 	
@@ -544,6 +650,19 @@ public final class InvPrintVisitor implements MMVisitor{
 	
 	@Override
 	public void visitGeneralization (MGeneralization e){}
+
+	private Constant CreateAux(){
+		Constant aux = factory.createConstant("aux"+ auxCounter++, new Int());
+		auxs.add (aux);		
+		return aux;
+	}
+
+	private Constant CreateWeight(){
+		Constant weight = factory.createConstant("weight"+weightCounter++, new Int());
+		weights.add(weight);
+		return weight;
+	}
+
 	public Constant getTypeID(MClass cls){return factory.conLookup(cls.name());}
 	public Function getEnumFunction(EnumType e){return enum_table.get(e);}
 	public FunctionFactory getFactory(){return factory;}
@@ -569,6 +688,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
+		ColorPrint.println("total weight:"+weight,Color.BLUE);
 		ColorPrint.println("Solving...",Color.BLUE);
 		long current = System.currentTimeMillis();
 		if (solver.solve()==Result.UNSAT){
@@ -576,7 +696,7 @@ public final class InvPrintVisitor implements MMVisitor{
 				maxsmt (solver,weight);
 			else
 				ColorPrint.println("At least one constraint cannot be satisfied,"+
-					 "but this model does not have any soft constraints to be removed.", Color.BLUE);				
+					 "but this model does not have any soft constraints to be removed.", Color.RED);				
 		}
 		else{
 			ColorPrint.println("All constraints of this model can be satisfied.", Color.BLUE);
@@ -585,7 +705,8 @@ public final class InvPrintVisitor implements MMVisitor{
 		ColorPrint.println("Finished.",Color.BLUE);
 		ColorPrint.println("Time Elapsed:"+timeUsed+" ms ", Color.BLUE);
 
-		PrintReport();
+		Report report = new HTMLReport(filename+".html",solutions);
+		
 	}
 
 	private void maxsmt (Z3SMT2Solver solver, int weight){
@@ -616,6 +737,7 @@ public final class InvPrintVisitor implements MMVisitor{
 						ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
 						writer.append(blockFormula(weights,writer.getFactory()));
 						totalSolutions++;
+						PrintReport();
 					}
 					ColorPrint.println("Total Solutions: \n"+totalSolutions, Color.WHITE);
 					return;
@@ -650,7 +772,9 @@ public final class InvPrintVisitor implements MMVisitor{
 			ColorPrint.println("No specified weights found.",Color.GREEN);
 			return;
 		}
+		
 		ColorPrint.println("===============Summary=================",Color.GREEN);
+		Solution solution = new Solution();
 		for (Location loc : locations){
 			ColorPrint.print(loc.name()+" is ",Color.WHITE);
 			if (loc.isEnabled()){
@@ -662,9 +786,18 @@ public final class InvPrintVisitor implements MMVisitor{
 				ColorPrint.print("weight:("+loc.getWeight()+")",Color.YELLOW);
 			}
 			ColorPrint.println("",Color.WHITE);
+			if (loc.isClassLocation())
+				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.CLASS));
+			else if (loc.isInvaraintLocation())
+				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.INVAR));
+			else if (loc.isAssocLocation())
+				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.ASSOC));
+			else
+				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.UNKNOWN));
 		}
+		solutions.add(solution);
 		ColorPrint.println("=================END===================",Color.GREEN);
 	}
-
+	
 }
 
