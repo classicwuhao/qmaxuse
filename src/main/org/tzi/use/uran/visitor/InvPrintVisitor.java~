@@ -50,6 +50,10 @@ public final class InvPrintVisitor implements MMVisitor{
 	private final String TYPE="type_";
 	private final String REL="rel_";
 	private final String CON="container_";
+	private final String excludes_str="oclExcludes";
+	private final String includes_str="oclIncludes";
+	private final String objat="ObjAt";
+	private final String select_str="oclSelect";
 	private String obj_str=(OBJ+""+UUID.randomUUID()).replace('-','_');
 	private String type_str=(TYPE+""+UUID.randomUUID()).replace('-','_');
 	private String rel_str=(REL+""+UUID.randomUUID()).replace('-','_');
@@ -57,6 +61,10 @@ public final class InvPrintVisitor implements MMVisitor{
 	private String car_str="Cardinality";//("cardinality"+UUID.randomUUID()).replace('-','_');
 	private Function conFun = factory.createFunction(con_str,new Int(),new Int());
 	private Function cardFun = factory.createFunction(car_str,new Int(),new Int());	
+	private Function excludesFun = factory.createFunction(excludes_str, new Int(), new Int(), new Bool()); 
+	private Function includesFun = factory.createFunction(includes_str, new Int(), new Int(), new Bool());
+	private Function selectFun = factory.createFunction(select_str, new Int(), new Bool(), new Int());
+	private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
 
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
@@ -68,6 +76,31 @@ public final class InvPrintVisitor implements MMVisitor{
 		uid_table.put(obj_str,f1);
 	}
 	
+	public void addExcludesAxiom(){
+		Variable x = new Variable("x",new Int());
+		Variable y = new Variable("y",new Int());
+		Variable i = new Variable("i", new Int());
+
+		AbstractFormula f1 = new EqFormula(objatFun.apply(conFun.apply(getObjFunction().apply(x)),i), getObjFunction().apply(y));
+
+		AbstractFormula axiom = new QuantifiedFormula (Quantifier.FORALL, new Decls(x,y),
+				new NegFormula(new QuantifiedFormula(Quantifier.EXISTS, new Decls(i),f1)));
+
+		formulas.add(axiom);
+	}
+
+	public void addIncludesAxiom(){
+		Variable x = new Variable("x",new Int());
+		Variable y = new Variable("y",new Int());
+		Variable i = new Variable("i", new Int());
+
+		AbstractFormula f1 = new EqFormula(objatFun.apply(conFun.apply(getObjFunction().apply(x)),i), getObjFunction().apply(y));
+
+		AbstractFormula axiom = new QuantifiedFormula (Quantifier.FORALL, new Decls(x,y),new QuantifiedFormula(Quantifier.EXISTS, new Decls(i),f1));
+
+		formulas.add(axiom);
+	}
+
 
 	@Override
 	public void visitEnum(EnumType enumType) {
@@ -488,12 +521,13 @@ public final class InvPrintVisitor implements MMVisitor{
 			AbstractFormula formula2 = new AndFormula(new EqFormula(aux,new NumLiteral(0)), new BoolLiteral(false));
 			formulas.add(new OrFormula(new OrFormula(formula,formula1),formula2));
 			formulas.add(formula);
-			sum = getSum(assoc);
+
 
 			if (tag!=null){
 				AbstractWeight weight = tag.getWeight();
 				if (weight!=null){
 					if (weight.isIntWeight()){
+						sum = getSum(assoc);
 						IntWeight iweight = (IntWeight) weight;
 						if (iweight.getWeight()==IntWeight.DEFAULT){
 							iweight.setWeight(sum); // assign a new weight based on two associationends.
@@ -670,7 +704,9 @@ public final class InvPrintVisitor implements MMVisitor{
 	public Function getCardFun(){return cardFun;}
 	public Function getObjFunction(){return uid_table.get(obj_str);}
 	public Function getTypeFunction(String name){return uid_table.get(type_table.get(name));}
+	public Function getExcludesFunction(){return excludesFun;}
 	public Function getRelFunction(String name){return uid_table.get(name);}
+	public Function getSelectFunction(){return selectFun;}
 	public int getEnumValueIndex(EnumType e, String str){
 		int k=-1;
 		Iterator<String> it = e.literals();

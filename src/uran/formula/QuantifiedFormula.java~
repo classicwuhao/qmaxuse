@@ -29,6 +29,7 @@ public final class QuantifiedFormula extends AbstractFormula{
 	public Quantifier getQuantifier(){return quan;}
 	public AbstractFormula getFormula(){return formula;}
 	public Constant[] getVariables(){return vars.get();}
+	public Decls getDecls(){return vars;}
 	public void setVariables (Decls d){vars=d;}
 	public void setFormula (AbstractFormula f){formula=f;}
 	

@@ -66,6 +66,11 @@ public final class OclRankVisitor implements AbstractRankVisitor{
 	}
 
 	@Override
+	public int visitSelect(ExpSelect expr){
+		return expr.getRangeExpression().accept(this)+expr.getQueryExpression().accept(this)+1;
+	}
+
+	@Override
 	public int visitStdOp(ExpStdOp expr){
 		Expression[] args = expr.args();
 		int size=1;

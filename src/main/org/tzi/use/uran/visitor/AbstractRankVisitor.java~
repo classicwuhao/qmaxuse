@@ -38,7 +38,7 @@ public interface AbstractRankVisitor{
 	//void visitQuery (ExpQuery exp);
 	//void visitReject (ExpReject exp);
 	//void visitWithValue (ExpressionWithValue exp);
-	//void visitSelect (ExpSelect exp);
+	int visitSelect (ExpSelect exp);
 	//void visitSequenceLiteral (ExpSequenceLiteral exp);
 	//void visitSetLiteral (ExpSetLiteral exp);
 	//void visitSortedBy (ExpSortedBy exp);

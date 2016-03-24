@@ -18,6 +18,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	private Scope _scope=null;
 	private String navname="";
 
+
 	public OclExprVisitor(InvPrintVisitor v){
 		this.factory = v.getFactory();
 		modelVisitor=v;
@@ -270,8 +271,9 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			fun = this.factory.funLookup(attr.owner().name().toLowerCase()+"_"+attr.name());
 		else
 			fun = modelVisitor.getEnumFunction((EnumType)attr.type());
-				
+		
 		AbstractFormula formula = expr.objExp().accept(this);
+		
 		List<Function> typeFun = new ArrayList<Function>();
 		MClass context;
 		
@@ -346,13 +348,18 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			if(args.length == 0){
 				System.out.println("arg is one...");
 			} else {
-				System.out.println("visiting args[0]...");
+				System.out.println("visiting args[0]..."+args[0].type());
 				AbstractFormula arg_formula=args[0].accept(this);
 				System.out.println("arg_formula:"+arg_formula);
 				System.out.println("args[0]:"+args[0]);
 				System.out.println("leaving args[0]...");
 				expr_formula = TranslateOperation(arg_formula,expr.opname(),args[0]);
-				for (int i=0;i<args.length;i++) System.out.println("arg :"+args[i]);
+				if (args.length>1){
+					for (int i=1;i<args.length;i++){ 
+						System.out.println("arg :"+args[i]);
+						expr_formula = TranslateOperation(expr_formula,expr.opname(),args[0],args[i]);
+					}
+				}
 			}
 		}
 		System.out.println("leave StdOp...");
@@ -372,25 +379,91 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		}
 
 	}
-	
+
+	@Override
+	public AbstractFormula visitSelect (ExpSelect exp){
+		System.out.println("visiting select...");
+		AbstractFormula formula=null;
+		Scope s;
+					
+		if (_scope==null){
+			_scope=s=new Scope();
+		}else{
+			s=_scope.tail();
+			Scope newScope = new Scope();
+			s.next = newScope;
+			newScope.prev = s;
+			s = newScope;
+		}
+
+		formula = visitQuery((ExpQuery) exp, s);
+		
+		/* setup bounded variables */
+		Constant[] cons = new Constant[_scope.size()];
+		Variable[] vars = _scope.tail().allCurrentContents();
+
+		for (int i=0;i<vars.length;i++) cons[i]=vars[i];
+
+		if (s==_scope)
+			s=_scope=null;
+		else
+			s.shrink();		
+		
+		
+		
+		if (formula.isImpliesFormula()){
+			ImpliesFormula impFormula = (ImpliesFormula) formula;
+			if (impFormula.right().isFunction()){
+				Function fun = (Function) impFormula.right();
+				AbstractFormula f1 = modelVisitor.getSelectFunction().apply(modelVisitor.getObjFunction().apply(cons[0]),fun);
+				impFormula.setRight(f1);
+				System.out.println("leaving select...");
+				return new QuantifiedFormula(Quantifier.FORALL, new Decls(cons),impFormula);
+			}
+		}
+
+		System.out.println("leaving select...");
+		return new QuantifiedFormula(Quantifier.FORALL,new Decls(cons),modelVisitor.getSelectFunction().apply(cons[0], (Function)formula));
+		
+	}
+
 	private AbstractFormula TranslateOperation(AbstractFormula formula, String operation){
 
 		if (operation.equals("not")){
+			System.out.println("compute not...");
+			System.out.println("formula:"+formula);
 			if (formula.isQuantifiedFormula()){
 				/* For a quantified formula, this is absolutely nonsense !!! 
 				 * Negation has to be applied onto formula itself. Not the quantifiers.
 				 * That's why we need to modify this tree again !!!
 				 */
 				//((QuantifiedFormula)formula).setFormula(new NegFormula( ((QuantifiedFormula)formula).getFormula())); 
+				
 				AbstractFormula bformula = ((QuantifiedFormula) formula).getFormula();
 				if (bformula.isBinaryFormula())
 					((BinaryFormula) bformula).setRight(new NegFormula (((BinaryFormula) bformula).right()));
+				return formula;
 			}
-			return formula;
+			else{
+				return new NegFormula(formula);
+			}
 		}
-		else
-			return new NegFormula(formula);
-			//throw new VisitorException("Exception: operator ["+ operation +"] is not supported in the translation.");
+		
+		throw new VisitorException("Exception: operator ["+ operation +"] is not supported in the translation.");
+	}
+
+	private AbstractFormula TranslateOperation(AbstractFormula formula, String operation, Expression expr, Expression arg){
+		if (operation.equals("excludes")){
+			if (expr instanceof ExpObjAsSet && arg instanceof ExpNavigation){
+				ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
+				if (oas_expr.getObjectExpression() instanceof ExpNavigation){
+					ExpNavigation newexpr = (ExpNavigation)oas_expr.getObjectExpression();
+					return CollectionOperationExcludesComplete(formula, newexpr, (ExpNavigation)arg);
+				}
+			}
+		}
+		
+		return null;
 	}
 
 	private AbstractFormula TranslateOperation(AbstractFormula formula, String operation, Expression expr){
@@ -431,15 +504,69 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 					}
 				}
 				else{
-					
+					//throw new VisitorException("Exception: this operation is not supported in this version.");
+					return CollectionOperationSize(formula, null);
+				}
+			case "excludes":
+				if (expr instanceof ExpNavigation){
+					System.out.println("process navigation with size...");
+				}
+				else if (expr instanceof ExpObjAsSet){
+					ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
+					if (oas_expr.getObjectExpression() instanceof ExpNavigation){
+						ExpNavigation nav_expr = (ExpNavigation)oas_expr.getObjectExpression();
+						return CollectionOperationExcludesIncomplete(formula, nav_expr);
+					}
+				}
+				else{
+					throw new VisitorException("Exception: this operation is not supported in this version.");
 				}
 			default: ;
 		}
 		return null;
 	}
 	
+	private AbstractFormula CollectionOperationExcludesIncomplete(AbstractFormula formula, ExpNavigation expr){
+		return new QuantifiedFormula(Quantifier.FORALL, new Decls(boundedVar), null);
+	}
+
+	/* works on navigation only */
+	private AbstractFormula CollectionOperationExcludesComplete(AbstractFormula formula, ExpNavigation expr1, ExpNavigation expr2){
+		System.out.println("computing excludes operation...");
+		QuantifiedFormula newFormula;
+		if (formula.isQuantifiedFormula()){
+			newFormula = (QuantifiedFormula) formula;
+			if (_scope!=null){
+				Variable v = _scope.lookupF(expr1.getObjectExpression().toString());
+				Variable[] v1 = new Variable[1];v1[0]=v;
+				Constant[] v2 = new Constant[1];v2[0]=boundedVar;
+				AbstractFormula relFormula = makeRelations(navname,v2,v1);
+				AbstractFormula typeFormula = getAllChildren(expr2.getDestination().cls(),boundedVar);
+				Function objFun = modelVisitor.getObjFunction();
+				AbstractFormula excludesFormula = modelVisitor.getExcludesFunction().apply(objFun.apply(v),objFun.apply(boundedVar));
+				newFormula.setFormula(new ImpliesFormula(new AndFormula().merge(relFormula, typeFormula), excludesFormula));
+				modelVisitor.addExcludesAxiom();
+				return newFormula;
+			}
+		}
+		return null;
+	}
+
 	private AbstractFormula CollectionOperationSize(AbstractFormula formula, ExpNavigation expr){
 		AbstractFormula f1 = null;
+
+		if (expr==null) {
+			if (formula.isQuantifiedFormula()){
+				QuantifiedFormula qf = (QuantifiedFormula) formula;
+				Constant[] vars = qf.getVariables();
+				if (qf.getFormula().isImpliesFormula()){
+					ImpliesFormula impFormula = (ImpliesFormula) qf.getFormula();
+					AbstractFormula sizeFormula = modelVisitor.getCardFun().apply((Function)impFormula.right());
+					impFormula.setRight(sizeFormula);
+					return new QuantifiedFormula(Quantifier.FORALL, new Decls(vars),impFormula);
+				}
+			}
+		}
 
 		if (_scope!=null){
 			Variable v = _scope.lookupF(expr.getObjectExpression().toString());
@@ -452,7 +579,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			return new QuantifiedFormula(Quantifier.FORALL,
 				new Decls(boundedVar), new AndFormula (new AndFormula(typeFormula, relFormula),f1));
 		}
-		
+				
 		return f1;
 	}
 
