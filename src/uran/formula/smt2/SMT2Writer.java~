@@ -166,5 +166,30 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 		}
 		catch (IOException e){throw new RuntimeException("Error: failed to overwrite formulas: "+file+" "+e.getMessage());}	
 	}
+
+	public synchronized void remove(int line){
+		if (line<=0) return;
+		try{
+			raf = new RandomAccessFile(this.file,"rw");
+			long pos = raf.length()-1;
+			raf.seek(pos);
+			int k=0;
+
+			if ((char)raf.read()=='\n') pos--;
+			for (;pos>=0; pos--){
+				raf.seek(pos);
+				if (k>line) break;
+				if ((char)raf.read()=='\n') k++;
+			}
+			raf.setLength(pos+1);
+			raf.seek(pos+1);
+			//raf.writeBytes("\n");
+			raf.close();
+		}
+		catch(IOException e){
+			throw new RuntimeException("Error: failed to delete lines in "+file+" "+e.getMessage());
+		}
+
+	}
 	
 }

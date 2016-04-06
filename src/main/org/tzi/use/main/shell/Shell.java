@@ -378,8 +378,8 @@ public final class Shell implements Runnable, PPCHandler {
 
         if (line.startsWith("help") || line.endsWith("--help"))
             cmdHelp(line);
-		else if (line.equals("show conflict"))
-			cmdShowConflict();
+		else if (line.equals("maxuse"))
+			cmdMaxuse();
         else if (line.equals("q") || line.equals("quit") || line.equals("exit"))
             cmdExit();
         else if (line.startsWith("??"))
@@ -876,7 +876,7 @@ public final class Shell implements Runnable, PPCHandler {
     }
 
 
-	private void cmdShowConflict() throws NoSystemException{
+	private void cmdMaxuse() throws NoSystemException{
 		System.out.println("Show Conflict command starts...");
         MSystem system = system();
 		InvPrintVisitor v = new InvPrintVisitor(new PrintWriter(System.out, true));

@@ -522,14 +522,15 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add(new OrFormula(new OrFormula(formula,formula1),formula2));
 			formulas.add(formula);
 
-
+			weight:
 			if (tag!=null){
 				AbstractWeight weight = tag.getWeight();
 				if (weight!=null){
 					if (weight.isIntWeight()){
-						sum = getSum(assoc);
 						IntWeight iweight = (IntWeight) weight;
 						if (iweight.getWeight()==IntWeight.DEFAULT){
+							sum = getSum(assoc);
+							if (sum==0) break weight;
 							iweight.setWeight(sum); // assign a new weight based on two associationends.
 						}
 						else{
@@ -548,6 +549,7 @@ public final class InvPrintVisitor implements MMVisitor{
 					}
 				}
 			}
+
 		}
 		
 		//System.out.println(factory);
@@ -664,9 +666,13 @@ public final class InvPrintVisitor implements MMVisitor{
 	private int getSum(MAssociation assoc){
 		int sum=0;
 	
-		for (MAssociationEnd a : assoc.associationEnds()) 
+		for (MAssociationEnd a : assoc.associationEnds()){ 
+			if (a.cls().getAnnotationTag()==null){
+				ColorPrint.println("Warning: The weight for class "+a.cls().name()+" does not exist, so it is ignored.",Color.YELLOW);
+				continue;
+			}
 			sum += ((IntWeight)a.cls().getAnnotationTag().getWeight()).getWeight(); // may cause an error
-		
+		}
 		return sum;
 	}
 
