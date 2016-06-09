@@ -123,7 +123,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 		try{
 			raf = new RandomAccessFile(this.file,"rw");
 			raf.seek(raf.length());
-			raf.writeBytes("\n");
+			//raf.writeBytes("\n");
 			raf.writeBytes("("+ASSERT+" "+formula.toSMT2()+")\n");
 			raf.close();
 		}
@@ -178,12 +178,11 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 			if ((char)raf.read()=='\n') pos--;
 			for (;pos>=0; pos--){
 				raf.seek(pos);
-				if (k>line) break;
+				if (k>=line) break;
 				if ((char)raf.read()=='\n') k++;
 			}
 			raf.setLength(pos+1);
 			raf.seek(pos+1);
-			//raf.writeBytes("\n");
 			raf.close();
 		}
 		catch(IOException e){

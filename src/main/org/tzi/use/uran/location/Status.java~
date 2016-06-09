@@ -6,10 +6,10 @@ public final class Status {
 	private int weight;
 	private int type;
 
-	private static final int CLASS=0;	
-	private static final int ASSOC=1;
-	private static final int INVAR=2;
-	private static final int UNKNOWN=2;
+	public static final int CLASS=0;	
+	public static final int ASSOC=1;
+	public static final int INVAR=2;
+	public static final int UNKNOWN=2;
 
 	public Status(boolean b, String n, int w, int t){
 		this.enabled = b;

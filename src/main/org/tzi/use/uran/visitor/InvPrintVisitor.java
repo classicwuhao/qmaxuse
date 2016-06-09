@@ -20,6 +20,7 @@ import uran.formula.value.*;
 import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
+import org.tzi.use.uran.msc.*;
 import org.tzi.use.uran.location.*;
 import org.tzi.use.uran.weight.*;
 import uran.solver.*;
@@ -742,12 +743,55 @@ public final class InvPrintVisitor implements MMVisitor{
 		}
 		else{
 			ColorPrint.println("All constraints of this model can be satisfied.", Color.BLUE);
+			return;
 		}
 		long timeUsed = System.currentTimeMillis()-current;
 		ColorPrint.println("Finished.",Color.BLUE);
 		ColorPrint.println("Time Elapsed:"+timeUsed+" ms ", Color.BLUE);
-
+		if (solutions.size()==0) {
+			ColorPrint.println(" No solutions found. :-(",Color.RED);
+			return;
+		}
 		Report report = new HTMLReport(filename+".html",solutions);
+
+		/* compute all conflicts */
+		BoolMatrix bmatrix = new BoolMatrix(solutions);
+		ColorPrint.println(bmatrix.toString(),Color.WHITE);
+		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
+		current = System.currentTimeMillis();		
+		mscsolver.solve(mscsolver.formalise());
+		ColorPrint.println("Time spent:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
+		/* collect conflicts */
+		report.addConflicts(conflicts(mscsolver.getSubsets()));
+
+		report.generate();
+		report.finalise();
+	}
+
+	private List<List<Status>> conflicts(List<List<Integer>> sets){
+		List<List<Status>> conflicts = new ArrayList<List<Status>>();
+		Solution solution = solutions.get(0);
+		
+		for (int i=0;i<sets.size();i++){
+			List<Integer> subsets = sets.get(i);
+			List<Status> conflict = new ArrayList<Status>();
+			for (int j=0;j<subsets.size();j++){
+				conflict.add(solution.get(subsets.get(j)));
+			}
+			conflicts.add(conflict);
+		}
+		
+		return conflicts;
+		/*for (int i=0;i<conflicts.size();i++){
+			List<Status> conflict = conflicts.get(i);
+			ColorPrint.print("(",Color.WHITE);
+			for (int j=0;j<conflict.size()-1;j++){
+				ColorPrint.print(conflict.get(j).name()+",",Color.WHITE);
+			}
+			ColorPrint.print(conflict.get(conflict.size()-1).name(),Color.WHITE);
+			ColorPrint.print(")",Color.WHITE);
+		}
+		System.out.println();*/
 		
 	}
 
@@ -776,7 +820,7 @@ public final class InvPrintVisitor implements MMVisitor{
 					writer.overwrite(formulas,1);
 					// Use this model as a guidence for enumerating all other solutions. 
 					while (solver.solve()==Result.SAT){
-						ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
+						//ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
 						writer.append(blockFormula(weights,writer.getFactory()));
 						totalSolutions++;
 						PrintReport();
@@ -840,6 +884,6 @@ public final class InvPrintVisitor implements MMVisitor{
 		solutions.add(solution);
 		ColorPrint.println("=================END===================",Color.GREEN);
 	}
-	
+
 }
 

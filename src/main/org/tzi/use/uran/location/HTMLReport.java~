@@ -5,40 +5,53 @@ import java.io.*;
 public final class HTMLReport extends Report{
 	private String file;
 	private PrintWriter writer;
-	List<Solution> solutions;
+	private List<Solution> solutions;
+	private List<List<Status>> conflicts;
 	
 	public HTMLReport(String file, List<Solution> solutions){
 		try{
 			this.file = file;
 			this.solutions = solutions;
 			writer = new PrintWriter (new BufferedWriter (new FileWriter(this.file)));
-			generate();
-			writer.flush();
-			writer.close();
+			//generate();
 		}
 		catch(IOException e){
 			System.err.println("Error:"+e.getMessage());
 		}
-
 	}
-
+	
+	public void finalise(){
+		writer.flush();
+		writer.close();
+	}
+	
 	private void head(){
-		writer.println("<html> \n"); 
+		writer.println("<html> \n");
 		writer.println("<head> \n");
 		writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/helper.css\"/>");
 		writer.println("</head> \n");
 		writer.println("<body>\n");
+		writer.println("<p>");
+		writer.println("Total Max Weighted Solution(s): "+solutions.size());
+		writer.println("</p>");
+		if (conflicts==null) return;
+		//writer.println("Conflict(s) detection is switched off.");
+		writer.println("<p>");
+		writer.println("Total Conflict(s): "+conflicts.size());
+		writer.println("</p>");
+		
 	}
-
+	
 	public void generate(){
 		head();
 		solution();
+		genReport4Conflicts();
 		end();
 	}
 
 	private void solution(){
 		for (int i=0;i<solutions.size();i++){
-			writer.println("<span id=\"solution\"> Solution "+ (i+1) + ":</span>");
+			writer.println("<span id=\"solution\"> Max Weighted Solution "+ (i+1) + ":</span>");
 			table(solutions.get(i));
 			writer.println("<p></p>");
 		}
@@ -93,6 +106,24 @@ public final class HTMLReport extends Report{
 		writer.println("</tr>");
 		writer.println("</table>");
 		
+	}
+	
+	public void addConflicts (List<List<Status>> sets){
+		this.conflicts = sets;
+	}
+
+	private void genReport4Conflicts(){
+		if (conflicts==null) return;
+		for (int i=0;i<conflicts.size();i++){
+			writer.println("<span id=\"conflict\"> Conflict "+ (i+1) + ":</span>");
+			List<Status> conflict = conflicts.get(i);
+			writer.print("(");
+			for (int j=0;j<conflict.size()-1;j++){
+				writer.print(conflict.get(j).name()+",");	
+			}
+			writer.println(conflict.get(conflict.size()-1).name()+")");
+			writer.println("<p></p>");
+		}
 	}
 
 	private void end(){writer.println("\n</body></html>\n");}

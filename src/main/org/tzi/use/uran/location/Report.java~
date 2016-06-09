@@ -1,6 +1,10 @@
 package org.tzi.use.uran.location;
+import java.util.List;
 
 public abstract class Report{
 
-	abstract void generate(String name);
+	public abstract void generate();
+	public abstract void addConflicts(List<List<Status>> sets);
+	//public abstract void gen4Conflicts();
+	//public abstract void finalise();
 }

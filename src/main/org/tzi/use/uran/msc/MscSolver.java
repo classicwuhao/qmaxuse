@@ -16,6 +16,7 @@ public final class MscSolver{
 	private Constant atoms[];
 	private Constant subsets[];
 	private FunctionFactory factory = new FunctionFactory(512,0.75f);
+	private List<List<Integer>> solutions = new ArrayList<List<Integer>>();
 
 	public MscSolver(int m[][]){
 		sets=m;
@@ -125,27 +126,61 @@ public final class MscSolver{
 
 	public void solve(List<AbstractFormula> formulas){
 		List<AbstractFormula> newformulas = new ArrayList<AbstractFormula>();
+		List<AbstractFormula> blockformulas = new ArrayList<AbstractFormula>();
 		System.out.println("ready to solve...");
 		SMT2Writer writer = new SMT2Writer("./msc.smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
 
 		int k=1;int j=1;
-		newformulas.add (FormulaBuilder.sum(k,subsets));
-		writer.overwrite(newformulas,3);
-
+		//newformulas.add (FormulaBuilder.sum(k,subsets));
+		//writer.overwrite(newformulas,3);
+		writer.remove(2);
+		
 		while (k<=subsets.length){
 			j=0;
 			while (solver.solve()==Result.SAT){
-				ColorPrint.println("Minimum " +k+" Set(s): ",Color.BLUE);
-				ColorPrint.println(factory.toString(),Color.WHITE);
-				writer.append(factory.negConstants());	
+				//ColorPrint.println(k+" Set(s): ",Color.BLUE);
+				//ColorPrint.println(factory.toString(),Color.WHITE);
+				AbstractFormula f = blockFormula();
+				writer.append(f);
+				newformulas.add(f);
 				j++;
 			}
-			writer.remove(j);
-			newformulas.clear();
 			newformulas.add(FormulaBuilder.sum(++k,subsets));
-			writer.overwrite(newformulas,1);
+			writer.overwrite(newformulas,j+1);
+			newformulas.clear();
 		}
+		
+	}
+
+	private AbstractFormula blockFormula(){
+		List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
+		List<Integer> sol = new ArrayList<Integer>();
+		for (int i=0;i<sets[0].length;i++){
+			Value v = factory.getValue("s"+i);
+			IntValue iv = (IntValue)v;
+			Constant s = factory.conLookup("s"+i);
+			if (iv.getValue()==1) {
+				formulas.add(new EqFormula(s, new NumLiteral(1)));
+				sol.add(i);
+			}
+		}
+		solutions.add(sol);
+		return (formulas.size()<=1) ? 
+				new NegFormula(formulas.get(0)) 
+			: 
+				new NegFormula(new AndFormula().merge(formulas.toArray(new AbstractFormula[formulas.size()])));
+	}
+
+	public List<List<Integer>> getSubsets(){
+		/*for (int i=0;i<solutions.size();i++){
+			List<Integer> sol = solutions.get(i);
+			for (int j=0;j<sol.size();j++){
+				System.out.print(sol.get(j)+" ");
+			}
+			System.out.println();
+		}*/
+		return solutions;
 	}
 
 	public static void main (String args[]){
@@ -156,10 +191,34 @@ public final class MscSolver{
 			{0,1,1,1},
 			{0,0,0,1}
 		};
-			
-		MscSolver solver = new MscSolver(matrix);
+
+		int[][] matrix1={
+			{0,1,0,0,1,0,0,0},
+			{0,1,0,0,0,1,0,0},
+			{0,1,0,0,0,0,1,0},
+			{1,0,0,0,1,0,0,0},
+			{0,1,0,0,0,0,0,1},
+			{1,0,0,0,0,1,0,0},
+			{1,0,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,1}
+		};		
+
+		int [][] matrix2={
+			{0,0,1,0,0,1,0,0},
+			{0,1,0,0,0,1,0,0},
+			{0,0,1,0,0,0,0,1},
+			{1,0,1,0,0,0,0,0},
+			{0,0,1,0,0,0,1,0},
+			{0,1,0,0,0,0,0,1},
+			{1,1,0,0,0,0,0,0},
+			{0,1,0,0,0,0,1,0}
+		};
+	
+		MscSolver solver = new MscSolver(matrix2);
+
 		long current = System.currentTimeMillis();		
 		solver.solve(solver.formalise());
+		List<List<Integer>> sets = solver.getSubsets();
 		
 		ColorPrint.println("Time spent:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
 		

@@ -15,6 +15,18 @@
 	border-radius: 5px;
 }
 
+#conflict{
+	color:white;
+	font-weight:bold;
+	background-color: #6600ff;
+	border-right:2px solid  #6600ff;
+	border-left:2px solid  #6600ff;
+	border-top:2px solid  #6600ff;
+	border-bottom:2px solid  #6600ff;
+	padding: 5px 5px;
+	border-radius: 5px;
+}
+
 #on{
 	color:white;
 	font-weight:bold;
