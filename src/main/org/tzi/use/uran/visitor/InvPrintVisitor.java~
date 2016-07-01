@@ -644,8 +644,8 @@ public final class InvPrintVisitor implements MMVisitor{
 			else{
 				/* hard constraints */
 				Variable var = new Variable ("o", new Int());
-				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(var));
-				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(var));
+				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
+				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
 				if (tmp.size()>0){
 					QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
 						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 

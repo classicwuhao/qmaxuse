@@ -493,6 +493,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 				}
 
 			case "size":
+				System.out.println("size operator detected...");
 				if (expr instanceof ExpNavigation){
 					System.out.println("process navigation with size...");
 				}
@@ -503,9 +504,14 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 						return CollectionOperationSize(formula, nav_expr);
 					}
 				}
+				else if (expr instanceof ExpAllInstances){
+					System.out.println("size operator allInstances...");
+					ExpAllInstances all_instances_expr = (ExpAllInstances) expr;
+					return CollectionOperationSize(formula, all_instances_expr);
+				}
 				else{
-					//throw new VisitorException("Exception: this operation is not supported in this version.");
-					return CollectionOperationSize(formula, null);
+					throw new VisitorException("Exception: this operation is not supported in this version.");
+					//return CollectionOperationSize(formula, null);
 				}
 			case "excludes":
 				if (expr instanceof ExpNavigation){
@@ -551,6 +557,21 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		}
 		return null;
 	}
+
+	private AbstractFormula CollectionOperationSize(AbstractFormula formula, ExpAllInstances expr){
+		Function conFun = modelVisitor.getConFun();
+		Function sizeFun = modelVisitor.getCardFun();
+		Function objFun = modelVisitor.getObjFunction();
+		Function typeFun = modelVisitor.getTypeFunction(expr.getSourceType().name());
+		
+		ImpliesFormula impFormula = new ImpliesFormula(typeFun.apply(objFun.apply(boundedVar)), 
+										sizeFun.apply(conFun.apply(objFun.apply(boundedVar))));
+		AbstractFormula newFormula = new QuantifiedFormula (Quantifier.FORALL, new Decls(boundedVar), impFormula);
+		
+		return newFormula;
+
+	}
+
 
 	private AbstractFormula CollectionOperationSize(AbstractFormula formula, ExpNavigation expr){
 		AbstractFormula f1 = null;
