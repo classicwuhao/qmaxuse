@@ -11,7 +11,7 @@ public final class BoolMatrix{
 
 	public BoolMatrix(List<Solution> solutions){
 		this.solutions=solutions;	
-		genMatrix();
+		this.matrix=genMatrix();
 	}
 		
 	private int[][] genMatrix(){
@@ -30,20 +30,58 @@ public final class BoolMatrix{
 			}
 		}
 
-		return matrix;
+
+		/* take out the columns that have all 1s */
+		boolean flag=true;
+		int k=0;
+		int[][] bmatrix= new int[m][n];
+
+		for (int i=0;i<matrix[0].length;i++){
+			flag=true;
+			for (int j=0;j<matrix.length;j++){
+				if (matrix[j][i]==0) {flag=false;break;}
+			}
+
+			if (!flag){
+				for (int p = 0;p<bmatrix.length;p++) bmatrix[p][k]=matrix[p][i];
+				k++;
+			}
+		}
+
+		
+		int[][] new_matrix = new int[m][k];
+
+		for (int i=0;i<bmatrix.length;i++)
+			for (int j=0;j<k;j++) new_matrix[i][j]=bmatrix[i][j];
+		
+		return new_matrix;
 	}
 	
 	public int[][] matrix(){return this.matrix;}
 	
+	public String name(){
+		StringBuilder sb = new StringBuilder();
+		
+		for (int i=0;i<solutions.size();i++){
+			Solution s = solutions.get(i);
+			for (int j=0;j<s.size();j++){
+				Status t= s.get(j);
+				sb.append( (t.enabled() ? t.name()+"("+0+") "  : t.name()+"("+1+") " ) );
+			}
+			sb.append("\n");
+		}
+		return sb.toString();
+	}
+
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
+		
 		for (int i=0;i<matrix.length;i++){
 			for (int j=0;j<matrix[i].length;j++){
 				sb.append( (matrix[i][j] == 1) ? " 1 " : " 0 "  );
 			}
 			sb.append("\n");
 		}
-	
 		return sb.toString();
 	}
 	

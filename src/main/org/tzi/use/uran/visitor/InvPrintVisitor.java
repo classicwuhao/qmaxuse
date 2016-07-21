@@ -756,6 +756,8 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		/* compute all conflicts */
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
+		ColorPrint.println(bmatrix.name(),Color.WHITE);
+
 		ColorPrint.println(bmatrix.toString(),Color.WHITE);
 		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
 		current = System.currentTimeMillis();		

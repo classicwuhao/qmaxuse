@@ -510,8 +510,9 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 					return CollectionOperationSize(formula, all_instances_expr);
 				}
 				else{
-					throw new VisitorException("Exception: this operation is not supported in this version.");
-					//return CollectionOperationSize(formula, null);
+					//throw new VisitorException("Exception: this operation is not supported in this version.");
+					ExpNavigation nav_expr = null;
+					return CollectionOperationSize(formula, nav_expr);
 				}
 			case "excludes":
 				if (expr instanceof ExpNavigation){
