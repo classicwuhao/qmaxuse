@@ -756,7 +756,7 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		/* compute all conflicts */
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
-		ColorPrint.println(bmatrix.toString(),Color.WHITE);
+		ColorPrint.println(bmatrix.name(),Color.WHITE);
 
 		ColorPrint.println(bmatrix.toString(),Color.WHITE);
 		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
@@ -765,7 +765,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		ColorPrint.println("Time spent:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
 		/* collect conflicts */
 		report.addConflicts(conflicts(mscsolver.getSubsets()));
-
+		
 		report.generate();
 		report.finalise();
 	}

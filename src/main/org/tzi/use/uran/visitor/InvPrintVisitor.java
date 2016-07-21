@@ -765,7 +765,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		ColorPrint.println("Time spent:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
 		/* collect conflicts */
 		report.addConflicts(conflicts(mscsolver.getSubsets()));
-
+		
 		report.generate();
 		report.finalise();
 	}

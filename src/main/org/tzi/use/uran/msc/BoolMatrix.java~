@@ -45,15 +45,19 @@ public final class BoolMatrix{
 			if (!flag){
 				for (int p = 0;p<bmatrix.length;p++) bmatrix[p][k]=matrix[p][i];
 				k++;
+			}else{
+				for (int p=0;p<solutions.size();p++)
+					solution.get(p).remove(i);
 			}
 		}
-
 		
 		int[][] new_matrix = new int[m][k];
 
 		for (int i=0;i<bmatrix.length;i++)
 			for (int j=0;j<k;j++) new_matrix[i][j]=bmatrix[i][j];
 		
+		System.out.println();
+
 		return new_matrix;
 	}
 	
