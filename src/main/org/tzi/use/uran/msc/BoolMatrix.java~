@@ -20,7 +20,11 @@ public final class BoolMatrix{
 		int n = solution.size();
 
 		matrix = new int[m][n];
+		int[] index = new int[n];
+		
+		for (int i=0;i<n;i++) index[i]=-1;
 		for (int i=0;i<m;i++) for (int j=0;j<n;j++) matrix[i][j]=0;
+		
 		
 		for (int i=0;i<solutions.size();i++){
 			Solution s = solutions.get(i);
@@ -30,13 +34,14 @@ public final class BoolMatrix{
 			}
 		}
 
+		if (solutions.size()==1) return matrix;
 
 		/* take out the columns that have all 1s */
 		boolean flag=true;
 		int k=0;
 		int[][] bmatrix= new int[m][n];
 
-		for (int i=0;i<matrix[0].length;i++){
+		for (int i=0,c=0;i<matrix[0].length;i++){
 			flag=true;
 			for (int j=0;j<matrix.length;j++){
 				if (matrix[j][i]==0) {flag=false;break;}
@@ -46,11 +51,21 @@ public final class BoolMatrix{
 				for (int p = 0;p<bmatrix.length;p++) bmatrix[p][k]=matrix[p][i];
 				k++;
 			}else{
-				for (int p=0;p<solutions.size();p++)
-					solution.get(p).remove(i);
+				index[c++]=i;
+				//System.out.println("i:"+i);
+				/*for (int p=0;p<solutions.size();p++)
+					solutions.get(p).remove(i);*/
 			}
 		}
 		
+		for (int i=0;i<solutions.size();i++){
+			Solution s = solutions.get(i);
+			for (int j=0;index[j]!=-1;j++) {
+				if (index[j]<s.size())
+					s.remove(index[j]);
+			}
+		}
+
 		int[][] new_matrix = new int[m][k];
 
 		for (int i=0;i<bmatrix.length;i++)

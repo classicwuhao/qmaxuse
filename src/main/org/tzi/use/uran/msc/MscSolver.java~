@@ -135,12 +135,12 @@ public final class MscSolver{
 		//newformulas.add (FormulaBuilder.sum(k,subsets));
 		//writer.overwrite(newformulas,3);
 		writer.remove(2);
-		
+		long current = System.currentTimeMillis();
 		while (k<=subsets.length){
 			j=0;
 			while (solver.solve()==Result.SAT){
 				//ColorPrint.println(k+" Set(s): ",Color.BLUE);
-				//ColorPrint.println(factory.toString(),Color.WHITE);
+				ColorPrint.println("Single solution:"+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				AbstractFormula f = blockFormula();
 				writer.append(f);
 				newformulas.add(f);

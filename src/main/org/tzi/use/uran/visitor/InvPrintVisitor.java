@@ -756,7 +756,7 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		/* compute all conflicts */
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
-		ColorPrint.println(bmatrix.name(),Color.WHITE);
+		//ColorPrint.println(bmatrix.name(),Color.WHITE);
 
 		ColorPrint.println(bmatrix.toString(),Color.WHITE);
 		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
@@ -800,7 +800,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	private void maxsmt (Z3SMT2Solver solver, int weight){
 		int max = weight, min = 0, mid = (max+min)/2;
 		List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
-		
+		long current = System.currentTimeMillis();
 		SMT2Writer writer = solver.getWriter();
 		formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
 		writer.overwrite(formulas,3);
@@ -811,6 +811,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
 			writer.overwrite(formulas,1);
 			if (solver.solve() == Result.SAT){
+				ColorPrint.println("Single solution (MaxSMT):"+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
@@ -861,10 +862,10 @@ public final class InvPrintVisitor implements MMVisitor{
 			return;
 		}
 		
-		ColorPrint.println("===============Summary=================",Color.GREEN);
+		//ColorPrint.println("===============Summary=================",Color.GREEN);
 		Solution solution = new Solution();
 		for (Location loc : locations){
-			ColorPrint.print(loc.name()+" is ",Color.WHITE);
+			/*ColorPrint.print(loc.name()+" is ",Color.WHITE);
 			if (loc.isEnabled()){
 				ColorPrint.print("ON ",Color.GREEN);
 				ColorPrint.print("weight:("+loc.getWeight()+")",Color.YELLOW);
@@ -873,7 +874,7 @@ public final class InvPrintVisitor implements MMVisitor{
 				ColorPrint.print("OFF ",Color.RED);
 				ColorPrint.print("weight:("+loc.getWeight()+")",Color.YELLOW);
 			}
-			ColorPrint.println("",Color.WHITE);
+			ColorPrint.println("",Color.WHITE);*/
 			if (loc.isClassLocation())
 				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.CLASS));
 			else if (loc.isInvaraintLocation())
@@ -884,7 +885,7 @@ public final class InvPrintVisitor implements MMVisitor{
 				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.UNKNOWN));
 		}
 		solutions.add(solution);
-		ColorPrint.println("=================END===================",Color.GREEN);
+		//ColorPrint.println("=================END===================",Color.GREEN);
 	}
 
 }
