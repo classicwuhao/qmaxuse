@@ -7,6 +7,8 @@ import org.tzi.use.uran.location.*;
 public final class BoolMatrix{
 
 	private List<Solution> solutions;
+	private List<Solution> newsolutions = new ArrayList<Solution>();
+	
 	private int[][] matrix;
 
 	public BoolMatrix(List<Solution> solutions){
@@ -58,25 +60,38 @@ public final class BoolMatrix{
 			}
 		}
 		
+		/* create a new set of solutions without all 1s in the columns */
 		for (int i=0;i<solutions.size();i++){
 			Solution s = solutions.get(i);
-			for (int j=0;index[j]!=-1;j++) {
-				if (index[j]<s.size())
-					s.remove(index[j]);
+			Solution sol = new Solution();
+			for (int l=0;l<s.size();l++){
+				if (index[0]!=-1){ // no columns with all 1s.
+					for (int j=0;index[j]!=-1;j++) {
+						if (l!=index[j]){
+							Status stat = s.get(l);
+							sol.addStatus(stat);
+						}
+					}
+				}
+				else{
+					sol.addStatus(s.get(l));
+				}
 			}
+			newsolutions.add(sol);
 		}
-
+		
 		int[][] new_matrix = new int[m][k];
-
+		
 		for (int i=0;i<bmatrix.length;i++)
 			for (int j=0;j<k;j++) new_matrix[i][j]=bmatrix[i][j];
 		
-		System.out.println();
+		//System.out.println();
 
 		return new_matrix;
 	}
 	
 	public int[][] matrix(){return this.matrix;}
+	public List<Solution> getSolutions(){return this.newsolutions;}
 	
 	public String name(){
 		StringBuilder sb = new StringBuilder();

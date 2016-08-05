@@ -127,7 +127,7 @@ public final class MscSolver{
 	public void solve(List<AbstractFormula> formulas){
 		List<AbstractFormula> newformulas = new ArrayList<AbstractFormula>();
 		List<AbstractFormula> blockformulas = new ArrayList<AbstractFormula>();
-		System.out.println("ready to solve...");
+		ColorPrint.println("Solving SC...",Color.WHITE);
 		SMT2Writer writer = new SMT2Writer("./msc.smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
 
@@ -140,7 +140,7 @@ public final class MscSolver{
 			j=0;
 			while (solver.solve()==Result.SAT){
 				//ColorPrint.println(k+" Set(s): ",Color.BLUE);
-				ColorPrint.println("Single solution:"+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
+				ColorPrint.println("Single SC Solution:"+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				AbstractFormula f = blockFormula();
 				writer.append(f);
 				newformulas.add(f);

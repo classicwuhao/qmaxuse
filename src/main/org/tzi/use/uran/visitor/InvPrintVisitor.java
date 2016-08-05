@@ -596,7 +596,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			
 		}
 
-		System.out.println("add additional formulas...");
+		//System.out.println("add additional formulas...");
 		/* add additional formulas for each class */
 		it = e.classes().iterator();
 
@@ -731,8 +731,8 @@ public final class InvPrintVisitor implements MMVisitor{
 	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
-		ColorPrint.println("total weight:"+weight,Color.BLUE);
-		ColorPrint.println("Solving...",Color.BLUE);
+		ColorPrint.println("Total Weight:"+weight,Color.BLUE);
+		ColorPrint.println("Solving Weighted MaxSMT...",Color.BLUE);
 		long current = System.currentTimeMillis();
 		if (solver.solve()==Result.UNSAT){
 			if (weights.size()>0)
@@ -746,33 +746,36 @@ public final class InvPrintVisitor implements MMVisitor{
 			return;
 		}
 		long timeUsed = System.currentTimeMillis()-current;
-		ColorPrint.println("Finished.",Color.BLUE);
-		ColorPrint.println("Time Elapsed:"+timeUsed+" ms ", Color.BLUE);
+		ColorPrint.println("Solving Finished.",Color.BLUE);
+		ColorPrint.println("Time elapsed:"+timeUsed+" ms ", Color.BLUE);
+		ColorPrint.println("-----------------------------------------------------",Color.YELLOW);
 		if (solutions.size()==0) {
 			ColorPrint.println(" No solutions found. :-(",Color.RED);
 			return;
 		}
-		Report report = new HTMLReport(filename+".html",solutions);
-
-		/* compute all conflicts */
+		
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
-		//ColorPrint.println(bmatrix.name(),Color.WHITE);
-
+		this.solutions = bmatrix.getSolutions();
+		Report report = new HTMLReport(filename+".html",solutions);
+		
+		/* compute all conflicts */
+		ColorPrint.println("Now processing matrix...",Color.WHITE);
 		ColorPrint.println(bmatrix.toString(),Color.WHITE);
 		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
-		current = System.currentTimeMillis();		
+		current = System.currentTimeMillis();
 		mscsolver.solve(mscsolver.formalise());
-		ColorPrint.println("Time spent:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
+		ColorPrint.println("Solving Finished.",Color.BLUE);
+		ColorPrint.println("Time elapsed:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
 		/* collect conflicts */
 		report.addConflicts(conflicts(mscsolver.getSubsets()));
-		
 		report.generate();
 		report.finalise();
+		ColorPrint.println("Report is generated.",Color.BLUE);
 	}
 
 	private List<List<Status>> conflicts(List<List<Integer>> sets){
 		List<List<Status>> conflicts = new ArrayList<List<Status>>();
-		Solution solution = solutions.get(0);
+		Solution solution = this.solutions.get(0);
 		
 		for (int i=0;i<sets.size();i++){
 			List<Integer> subsets = sets.get(i);
@@ -811,7 +814,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
 			writer.overwrite(formulas,1);
 			if (solver.solve() == Result.SAT){
-				ColorPrint.println("Single solution (MaxSMT):"+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
+				ColorPrint.println("Approaching Solution"+" @ "+ mid +" uses "+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
@@ -828,7 +831,7 @@ public final class InvPrintVisitor implements MMVisitor{
 						totalSolutions++;
 						PrintReport();
 					}
-					ColorPrint.println("Total Solutions: \n"+totalSolutions, Color.WHITE);
+					ColorPrint.println("Total Solutions: "+totalSolutions, Color.WHITE);
 					return;
 				}
 			}
