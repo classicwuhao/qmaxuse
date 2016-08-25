@@ -25,7 +25,7 @@ import org.tzi.use.uran.location.*;
 import org.tzi.use.uran.weight.*;
 import uran.solver.*;
 
-public final class InvPrintVisitor implements MMVisitor{
+public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private PrintWriter fOut;	
 	private FunctionFactory factory = new FunctionFactory(512,0.75f);
 	private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
@@ -47,6 +47,7 @@ public final class InvPrintVisitor implements MMVisitor{
 	private int auxCounter=0;
 	private int weightCounter=0;
 	private int totalWeight = 0;
+	private String model_name="";
 	private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
@@ -661,6 +662,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		System.out.println("Ready to Solve...");
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
 		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
+		this.model_name = e.name();
 		toSMT2File(e.name(),formulas, factory, totalWeight);
 	}
 
@@ -726,11 +728,16 @@ public final class InvPrintVisitor implements MMVisitor{
 
 		return -1;
 	}
-
+	
+	public void run(){
+		toSMT2File(this.model_name,formulas, factory, totalWeight);
+		System.out.println("Finished.");
+	}
 	
 	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
+		ColorPrint.println("Number of formulas generated:"+writer.size(), Color.BLUE);
 		ColorPrint.println("Total Weight:"+weight,Color.BLUE);
 		ColorPrint.println("Solving Weighted MaxSMT...",Color.BLUE);
 		long current = System.currentTimeMillis();
@@ -756,7 +763,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
 		this.solutions = bmatrix.getSolutions();
-		Report report = new HTMLReport(filename+".html",solutions);
+		Report report = new HTMLReport("./html/"+filename+".html",solutions);
 		
 		/* compute all conflicts */
 		ColorPrint.println("Now processing matrix...",Color.WHITE);
@@ -770,7 +777,7 @@ public final class InvPrintVisitor implements MMVisitor{
 		report.addConflicts(conflicts(mscsolver.getSubsets()));
 		report.generate();
 		report.finalise();
-		ColorPrint.println("Report is generated.",Color.BLUE);
+		ColorPrint.println("Report is generated ( "+this.model_name+" )",Color.BLUE);
 	}
 
 	private List<List<Status>> conflicts(List<List<Integer>> sets){
@@ -797,7 +804,6 @@ public final class InvPrintVisitor implements MMVisitor{
 			ColorPrint.print(")",Color.WHITE);
 		}
 		System.out.println();*/
-		
 	}
 
 	private void maxsmt (Z3SMT2Solver solver, int weight){
@@ -844,7 +850,7 @@ public final class InvPrintVisitor implements MMVisitor{
 			}
 		}
 		
-		ColorPrint.println("Max Weight cannot be found."+mid,Color.RED);
+		ColorPrint.println("Max Weight cannot be found @ "+mid,Color.RED);
 	}
 
 	private AbstractFormula blockFormula (List<Constant> weights, FunctionFactory factory){

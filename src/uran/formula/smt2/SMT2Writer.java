@@ -51,6 +51,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 	private RandomAccessFile raf;
 	private FunctionFactory factory;
 	private List<AbstractFormula> formulas;
+	private int size;
 	private final static String ASSERT="assert";
 	
 	/* disable the default constructor to prevent it from creating a null writer */
@@ -91,6 +92,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 	}
 	
 	private void assemble(AbstractFormula formula){
+		size++;
 		writer.println("("+ASSERT+" "+formula.toSMT2()+ ")");
 	}
 	
@@ -190,5 +192,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 		}
 
 	}
+	
+	public int size(){return this.size;}
 	
 }

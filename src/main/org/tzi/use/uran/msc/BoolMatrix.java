@@ -36,7 +36,10 @@ public final class BoolMatrix{
 			}
 		}
 
-		if (solutions.size()==1) return matrix;
+		if (solutions.size()==1) {
+			this.newsolutions=this.solutions;
+			return matrix;
+		}
 
 		/* take out the columns that have all 1s */
 		boolean flag=true;

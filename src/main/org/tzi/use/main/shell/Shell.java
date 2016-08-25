@@ -877,10 +877,13 @@ public final class Shell implements Runnable, PPCHandler {
 
 
 	private void cmdMaxuse() throws NoSystemException{
-		System.out.println("Show Conflict command starts...");
+		//System.out.println("Maxuse starts...");
         MSystem system = system();
 		InvPrintVisitor v = new InvPrintVisitor(new PrintWriter(System.out, true));
+		Thread threadCounter = new ThreadCounter(v,600);
         system.model().processWithVisitor(v);
+        //v.start();
+        //threadCounter.start();
 	}
 
     /**

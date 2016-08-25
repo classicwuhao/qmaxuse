@@ -495,7 +495,9 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			case "size":
 				System.out.println("size operator detected...");
 				if (expr instanceof ExpNavigation){
-					System.out.println("process navigation with size...");
+					//System.out.println("process navigation with size...");
+					ExpNavigation nav_expr = (ExpNavigation) expr;
+					return CollectionOperationSize(formula,nav_expr);
 				}
 				else if (expr instanceof ExpObjAsSet){
 					ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
@@ -516,7 +518,9 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 				}
 			case "excludes":
 				if (expr instanceof ExpNavigation){
-					System.out.println("process navigation with size...");
+					//System.out.println("process navigation with size...");
+					ExpNavigation nav_expr = (ExpNavigation)expr;
+					return CollectionOperationExcludesIncomplete(formula, nav_expr);
 				}
 				else if (expr instanceof ExpObjAsSet){
 					ExpObjAsSet oas_expr = (ExpObjAsSet) expr;
