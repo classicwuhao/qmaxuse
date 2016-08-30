@@ -35,7 +35,7 @@ public final class BoolMatrix{
 				if (!t.enabled()) matrix[i][j] = 1;
 			}
 		}
-
+		
 		if (solutions.size()==1) {
 			this.newsolutions=this.solutions;
 			return matrix;
