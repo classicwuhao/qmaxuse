@@ -7,6 +7,7 @@ public final class HTMLReport extends Report{
 	private PrintWriter writer;
 	private List<Solution> solutions;
 	private List<List<Status>> conflicts;
+	private List<Status> single;
 	
 	public HTMLReport(String file, List<Solution> solutions){
 		try{
@@ -37,9 +38,8 @@ public final class HTMLReport extends Report{
 		if (conflicts==null) return;
 		//writer.println("Conflict(s) detection is switched off.");
 		writer.println("<p>");
-		writer.println("Total Conflict(s): "+conflicts.size());
+		writer.println("Total Conflict(s): "+(conflicts.size()+single.size()));
 		writer.println("</p>");
-		
 	}
 	
 	public void generate(){
@@ -111,10 +111,15 @@ public final class HTMLReport extends Report{
 	public void addConflicts (List<List<Status>> sets){
 		this.conflicts = sets;
 	}
+	
+	public void addSingleConflicts(List<Status> single){
+		this.single = single;
+	}
 
 	private void genReport4Conflicts(){
+		int counter =0;
 		if (conflicts==null) return;
-		for (int i=0;i<conflicts.size();i++){
+		for (int i=0;i<conflicts.size();i++,counter++){
 			writer.println("<span id=\"conflict\"> Conflict "+ (i+1) + ":</span>");
 			List<Status> conflict = conflicts.get(i);
 			writer.print("(");
@@ -124,6 +129,16 @@ public final class HTMLReport extends Report{
 			writer.println(conflict.get(conflict.size()-1).name()+")");
 			writer.println("<p></p>");
 		}
+		
+		counter++;
+		if (this.single==null) return;
+		for (int i=0;i<single.size();i++,counter++){
+			writer.println("<span id=\"conflict\"> Conflict "+ counter + ":</span>");
+			writer.print("("+single.get(i).name()+")");
+			writer.println();
+			writer.println("<p></p>");
+		}
+		
 	}
 
 	private void end(){writer.println("\n</body></html>\n");}

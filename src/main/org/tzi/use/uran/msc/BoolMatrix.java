@@ -8,6 +8,7 @@ public final class BoolMatrix{
 
 	private List<Solution> solutions;
 	private List<Solution> newsolutions = new ArrayList<Solution>();
+	private List<Status> conflicts = new ArrayList<Status>();
 	
 	private int[][] matrix;
 
@@ -17,6 +18,7 @@ public final class BoolMatrix{
 	}
 		
 	private int[][] genMatrix(){
+		newsolutions.clear();conflicts.clear();
 		Solution solution = solutions.get(0);
 		int m = solutions.size();
 		int n = solution.size();
@@ -24,9 +26,10 @@ public final class BoolMatrix{
 		matrix = new int[m][n];
 		int[] index = new int[n];
 		
+		//System.out.println("old solution size:"+solutions.get(0).size());
+		
 		for (int i=0;i<n;i++) index[i]=-1;
 		for (int i=0;i<m;i++) for (int j=0;j<n;j++) matrix[i][j]=0;
-		
 		
 		for (int i=0;i<solutions.size();i++){
 			Solution s = solutions.get(i);
@@ -57,44 +60,48 @@ public final class BoolMatrix{
 				k++;
 			}else{
 				index[c++]=i;
-				//System.out.println("i:"+i);
-				/*for (int p=0;p<solutions.size();p++)
-					solutions.get(p).remove(i);*/
 			}
 		}
 		
+		System.out.println();		
+		for (int i=0;index[i]!=-1;i++)
+			System.out.print(index[i]+",");
+		System.out.println();
+		
+		for (int j=0;index[j]!=-1;j++)
+			conflicts.add(solutions.get(0).get(index[j]));
+			
 		/* create a new set of solutions without all 1s in the columns */
+		flag=true;
 		for (int i=0;i<solutions.size();i++){
 			Solution s = solutions.get(i);
 			Solution sol = new Solution();
 			for (int l=0;l<s.size();l++){
-				if (index[0]!=-1){ // no columns with all 1s.
-					for (int j=0;index[j]!=-1;j++) {
-						if (l!=index[j]){
-							Status stat = s.get(l);
-							sol.addStatus(stat);
-						}
+				flag=true;
+					for (int j=0;index[j]!=-1;j++){
+						if (l==index[j]){flag=false;break;}
 					}
-				}
-				else{
-					sol.addStatus(s.get(l));
-				}
+					if (flag){
+						Status stat = s.get(l);
+						sol.addStatus(stat);						
+					}
 			}
-			newsolutions.add(sol);
+			if (sol.size()!=0) newsolutions.add(sol);
 		}
+		
+		//System.out.println("new solution size:"+newsolutions.get(0).size());
 		
 		int[][] new_matrix = new int[m][k];
 		
 		for (int i=0;i<bmatrix.length;i++)
 			for (int j=0;j<k;j++) new_matrix[i][j]=bmatrix[i][j];
-		
-		//System.out.println();
-
+				
 		return new_matrix;
 	}
 	
 	public int[][] matrix(){return this.matrix;}
 	public List<Solution> getSolutions(){return this.newsolutions;}
+	public List<Status> getSingleConflicts(){return this.conflicts;}
 	
 	public String name(){
 		StringBuilder sb = new StringBuilder();

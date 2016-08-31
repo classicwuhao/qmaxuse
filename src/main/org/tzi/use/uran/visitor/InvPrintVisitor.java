@@ -760,21 +760,44 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			ColorPrint.println(" No solutions found. :-(",Color.RED);
 			return;
 		}
+
+		/*for (Solution sol : solutions){
+			for (int i=0;i<sol.size();i++){
+				ColorPrint.print(sol.get(i).name()+",",Color.WHITE);
+			}
+		}*/
+		
+		System.out.println("size:"+solutions.size());
 		
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
 		this.solutions = bmatrix.getSolutions();
 		Report report = new HTMLReport("./html/"+filename+".html",solutions);
 		
+		/*System.out.println();
+		System.out.println("after processing solutions set...");
+		System.out.println();
+		
+		for (Solution sol : solutions){
+			for (int i=0;i<sol.size();i++){
+				ColorPrint.print(sol.get(i).name()+",",Color.WHITE);
+			}
+		}
+		System.out.println("size:"+solutions.size());*/
+		
+		System.out.println();
 		/* compute all conflicts */
 		ColorPrint.println("Now processing matrix...",Color.WHITE);
+		
 		ColorPrint.println(bmatrix.toString(),Color.WHITE);
 		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
 		current = System.currentTimeMillis();
 		mscsolver.solve(mscsolver.formalise());
 		ColorPrint.println("Solving Finished.",Color.BLUE);
 		ColorPrint.println("Time elapsed:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
+		
 		/* collect conflicts */
 		report.addConflicts(conflicts(mscsolver.getSubsets()));
+		report.addSingleConflicts(bmatrix.getSingleConflicts());
 		report.generate();
 		report.finalise();
 		ColorPrint.println("Report is generated ( "+this.model_name+" )",Color.BLUE);
