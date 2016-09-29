@@ -767,7 +767,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 		}*/
 		
-		System.out.println("size:"+solutions.size());
+		//System.out.println("size:"+solutions.size());
 		
 		BoolMatrix bmatrix = new BoolMatrix(solutions);
 		this.solutions = bmatrix.getSolutions();

@@ -150,7 +150,6 @@ public final class MscSolver{
 			writer.overwrite(newformulas,j+1);
 			newformulas.clear();
 		}
-		
 	}
 
 	private AbstractFormula blockFormula(){
