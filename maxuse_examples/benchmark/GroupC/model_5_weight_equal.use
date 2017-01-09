@@ -1,0 +1,966 @@
+model model_groupC_5_weight_equal
+
+enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2, Enum0Elem3 } 
+
+enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1Elem5, Enum1Elem6, Enum1Elem7, Enum1Elem8, Enum1Elem9, Enum1Elem10, Enum1Elem11, Enum1Elem12, Enum1Elem13 } 
+
+enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
+
+@Weight = 1
+class Class0 < Class44
+attributes 
+	Class0BoolAttr0 : Boolean 
+	Class0BoolAttr1 : Boolean 
+	Class0BoolAttr2 : Boolean 
+	Class0IntAttr3 : Integer 
+	Class0IntAttr4 : Integer 
+	Class0EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class1
+attributes 
+	Class1BoolAttr0 : Boolean 
+	Class1BoolAttr1 : Boolean 
+	Class1BoolAttr2 : Boolean 
+	Class1IntAttr3 : Integer 
+	Class1IntAttr4 : Integer 
+	Class1EnumAttr5 : Enum1 
+end 
+
+@Weight = 1
+class Class2 < Class54
+attributes 
+	Class2BoolAttr0 : Boolean 
+	Class2BoolAttr1 : Boolean 
+	Class2BoolAttr2 : Boolean 
+	Class2IntAttr3 : Integer 
+	Class2IntAttr4 : Integer 
+	Class2EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class3
+attributes 
+	Class3BoolAttr0 : Boolean 
+	Class3BoolAttr1 : Boolean 
+	Class3BoolAttr2 : Boolean 
+	Class3IntAttr3 : Integer 
+	Class3IntAttr4 : Integer 
+	Class3EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class4 < Class44
+attributes 
+	Class4BoolAttr0 : Boolean 
+	Class4BoolAttr1 : Boolean 
+	Class4BoolAttr2 : Boolean 
+	Class4IntAttr3 : Integer 
+	Class4IntAttr4 : Integer 
+	Class4EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class5 < Class15
+attributes 
+	Class5BoolAttr0 : Boolean 
+	Class5BoolAttr1 : Boolean 
+	Class5BoolAttr2 : Boolean 
+	Class5IntAttr3 : Integer 
+	Class5IntAttr4 : Integer 
+	Class5EnumAttr5 : Enum0 
+end 
+
+@Weight = 1
+class Class6 < Class22
+attributes 
+	Class6BoolAttr0 : Boolean 
+	Class6BoolAttr1 : Boolean 
+	Class6BoolAttr2 : Boolean 
+	Class6IntAttr3 : Integer 
+	Class6IntAttr4 : Integer 
+	Class6EnumAttr5 : Enum1 
+end 
+
+@Weight = 1
+class Class7
+attributes 
+	Class7BoolAttr0 : Boolean 
+	Class7BoolAttr1 : Boolean 
+	Class7BoolAttr2 : Boolean 
+	Class7IntAttr3 : Integer 
+	Class7IntAttr4 : Integer 
+	Class7EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class8
+attributes 
+	Class8BoolAttr0 : Boolean 
+	Class8BoolAttr1 : Boolean 
+	Class8BoolAttr2 : Boolean 
+	Class8IntAttr3 : Integer 
+	Class8IntAttr4 : Integer 
+	Class8EnumAttr5 : Enum1 
+end 
+
+@Weight = 1
+class Class9 < Class35
+attributes 
+	Class9BoolAttr0 : Boolean 
+	Class9BoolAttr1 : Boolean 
+	Class9BoolAttr2 : Boolean 
+	Class9IntAttr3 : Integer 
+	Class9IntAttr4 : Integer 
+	Class9EnumAttr5 : Enum0 
+end 
+
+@Weight = 1
+class Class10 < Class21
+attributes 
+	Class10BoolAttr0 : Boolean 
+	Class10BoolAttr1 : Boolean 
+	Class10BoolAttr2 : Boolean 
+	Class10IntAttr3 : Integer 
+	Class10IntAttr4 : Integer 
+	Class10EnumAttr5 : Enum1 
+end 
+
+@Weight = 1
+class Class11
+attributes 
+	Class11BoolAttr0 : Boolean 
+	Class11BoolAttr1 : Boolean 
+	Class11BoolAttr2 : Boolean 
+	Class11IntAttr3 : Integer 
+	Class11IntAttr4 : Integer 
+	Class11EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class12 < Class33
+attributes 
+	Class12BoolAttr0 : Boolean 
+	Class12BoolAttr1 : Boolean 
+	Class12BoolAttr2 : Boolean 
+	Class12IntAttr3 : Integer 
+	Class12IntAttr4 : Integer 
+	Class12EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class13
+attributes 
+	Class13BoolAttr0 : Boolean 
+	Class13BoolAttr1 : Boolean 
+	Class13BoolAttr2 : Boolean 
+	Class13IntAttr3 : Integer 
+	Class13IntAttr4 : Integer 
+	Class13EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class14 < Class9
+attributes 
+	Class14BoolAttr0 : Boolean 
+	Class14BoolAttr1 : Boolean 
+	Class14BoolAttr2 : Boolean 
+	Class14IntAttr3 : Integer 
+	Class14IntAttr4 : Integer 
+	Class14EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class15
+attributes 
+	Class15BoolAttr0 : Boolean 
+	Class15BoolAttr1 : Boolean 
+	Class15BoolAttr2 : Boolean 
+	Class15IntAttr3 : Integer 
+	Class15IntAttr4 : Integer 
+	Class15EnumAttr5 : Enum2 
+end 
+
+@Weight = 1
+class Class16
+attributes 
+	Class16BoolAttr0 : Boolean 
+	Class16BoolAttr1 : Boolean 
+	Class16BoolAttr2 : Boolean 
+	Class16IntAttr3 : Integer 
+	Class16IntAttr4 : Integer 
+	Class16EnumAttr5 : Enum0 
+end 
+
+@Weight = 1
+class Class17 < Class44
+attributes 
+	Class17BoolAttr0 : Boolean 
+	Class17BoolAttr1 : Boolean 
+	Class17IntAttr2 : Integer 
+	Class17IntAttr3 : Integer 
+	Class17EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class18
+attributes 
+	Class18BoolAttr0 : Boolean 
+	Class18BoolAttr1 : Boolean 
+	Class18IntAttr2 : Integer 
+	Class18IntAttr3 : Integer 
+	Class18EnumAttr4 : Enum2 
+end 
+
+@Weight = 1
+class Class19 < Class9
+attributes 
+	Class19BoolAttr0 : Boolean 
+	Class19BoolAttr1 : Boolean 
+	Class19IntAttr2 : Integer 
+	Class19IntAttr3 : Integer 
+	Class19EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class20 < Class15
+attributes 
+	Class20BoolAttr0 : Boolean 
+	Class20BoolAttr1 : Boolean 
+	Class20IntAttr2 : Integer 
+	Class20IntAttr3 : Integer 
+	Class20EnumAttr4 : Enum2 
+end 
+
+@Weight = 1
+class Class21 < Class15
+attributes 
+	Class21BoolAttr0 : Boolean 
+	Class21BoolAttr1 : Boolean 
+	Class21IntAttr2 : Integer 
+	Class21IntAttr3 : Integer 
+	Class21EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class22 < Class43,Class48
+attributes 
+	Class22BoolAttr0 : Boolean 
+	Class22BoolAttr1 : Boolean 
+	Class22IntAttr2 : Integer 
+	Class22IntAttr3 : Integer 
+	Class22EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class23
+attributes 
+	Class23BoolAttr0 : Boolean 
+	Class23BoolAttr1 : Boolean 
+	Class23IntAttr2 : Integer 
+	Class23IntAttr3 : Integer 
+	Class23EnumAttr4 : Enum2 
+end 
+
+@Weight = 1
+class Class24
+attributes 
+	Class24BoolAttr0 : Boolean 
+	Class24BoolAttr1 : Boolean 
+	Class24IntAttr2 : Integer 
+	Class24EnumAttr3 : Enum2 
+end 
+
+@Weight = 1
+class Class25 < Class12
+attributes 
+	Class25BoolAttr0 : Boolean 
+	Class25BoolAttr1 : Boolean 
+	Class25IntAttr2 : Integer 
+	Class25EnumAttr3 : Enum2 
+end 
+
+@Weight = 1
+class Class26
+attributes 
+	Class26BoolAttr0 : Boolean 
+	Class26BoolAttr1 : Boolean 
+	Class26IntAttr2 : Integer 
+	Class26EnumAttr3 : Enum1 
+end 
+
+@Weight = 1
+class Class27 < Class15
+attributes 
+	Class27BoolAttr0 : Boolean 
+	Class27BoolAttr1 : Boolean 
+	Class27IntAttr2 : Integer 
+	Class27EnumAttr3 : Enum0 
+end 
+
+@Weight = 1
+class Class28 < Class27
+attributes 
+	Class28BoolAttr0 : Boolean 
+	Class28BoolAttr1 : Boolean 
+	Class28IntAttr2 : Integer 
+	Class28EnumAttr3 : Enum2 
+end 
+
+@Weight = 1
+class Class29 < Class35
+attributes 
+	Class29BoolAttr0 : Boolean 
+	Class29BoolAttr1 : Boolean 
+	Class29IntAttr2 : Integer 
+	Class29EnumAttr3 : Enum0 
+end 
+
+@Weight = 1
+class Class30 < Class33
+attributes 
+	Class30IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class31 < Class36,Class54
+attributes 
+	Class31IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class32
+attributes 
+	Class32IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class33 < Class15
+attributes 
+	Class33IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class34
+attributes 
+	Class34IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class35 < Class36
+attributes 
+	Class35IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class36 < Class28
+attributes 
+	Class36IntAttr0 : Integer 
+end 
+
+@Weight = 1
+class Class37 < Class15
+attributes 
+	Class37BoolAttr0 : Boolean 
+	Class37BoolAttr1 : Boolean 
+	Class37IntAttr2 : Integer 
+	Class37IntAttr3 : Integer 
+	Class37IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class38 < Class22
+attributes 
+	Class38BoolAttr0 : Boolean 
+	Class38BoolAttr1 : Boolean 
+	Class38IntAttr2 : Integer 
+	Class38IntAttr3 : Integer 
+	Class38IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class39
+attributes 
+	Class39BoolAttr0 : Boolean 
+	Class39BoolAttr1 : Boolean 
+	Class39IntAttr2 : Integer 
+	Class39IntAttr3 : Integer 
+	Class39IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class40
+attributes 
+	Class40BoolAttr0 : Boolean 
+	Class40BoolAttr1 : Boolean 
+	Class40IntAttr2 : Integer 
+	Class40IntAttr3 : Integer 
+	Class40IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class41
+attributes 
+	Class41BoolAttr0 : Boolean 
+	Class41BoolAttr1 : Boolean 
+	Class41IntAttr2 : Integer 
+	Class41IntAttr3 : Integer 
+	Class41IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class42
+attributes 
+	Class42BoolAttr0 : Boolean 
+	Class42BoolAttr1 : Boolean 
+	Class42IntAttr2 : Integer 
+	Class42IntAttr3 : Integer 
+	Class42IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class43 < Class15
+attributes 
+	Class43BoolAttr0 : Boolean 
+	Class43BoolAttr1 : Boolean 
+	Class43IntAttr2 : Integer 
+	Class43IntAttr3 : Integer 
+	Class43IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class44 < Class35
+attributes 
+	Class44BoolAttr0 : Boolean 
+	Class44BoolAttr1 : Boolean 
+	Class44IntAttr2 : Integer 
+	Class44EnumAttr4 : Enum2 
+	Class44EnumAttr3 : Enum0 
+end 
+
+@Weight = 1
+class Class45 < Class9
+attributes 
+	Class45BoolAttr0 : Boolean 
+	Class45BoolAttr1 : Boolean 
+	Class45IntAttr2 : Integer 
+	Class45EnumAttr3 : Enum0 
+	Class45EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class46 < Class5
+attributes 
+	Class46BoolAttr0 : Boolean 
+	Class46BoolAttr1 : Boolean 
+	Class46IntAttr2 : Integer 
+	Class46EnumAttr4 : Enum2 
+	Class46EnumAttr3 : Enum2 
+end 
+
+@Weight = 1
+class Class47
+attributes 
+	Class47BoolAttr0 : Boolean 
+	Class47BoolAttr1 : Boolean 
+	Class47IntAttr2 : Integer 
+	Class47EnumAttr4 : Enum0 
+	Class47EnumAttr3 : Enum1 
+end 
+
+@Weight = 1
+class Class48 < Class15
+attributes 
+	Class48BoolAttr0 : Boolean 
+	Class48BoolAttr1 : Boolean 
+	Class48IntAttr2 : Integer 
+	Class48EnumAttr3 : Enum0 
+	Class48EnumAttr4 : Enum2 
+end 
+
+@Weight = 1
+class Class49
+attributes 
+	Class49BoolAttr0 : Boolean 
+	Class49BoolAttr1 : Boolean 
+	Class49IntAttr2 : Integer 
+	Class49EnumAttr4 : Enum2 
+	Class49EnumAttr3 : Enum1 
+end 
+
+@Weight = 1
+class Class50
+attributes 
+	Class50BoolAttr0 : Boolean 
+	Class50IntAttr1 : Integer 
+	Class50EnumAttr2 : Enum2 
+end 
+
+@Weight = 1
+class Class51
+attributes 
+	Class51BoolAttr0 : Boolean 
+	Class51IntAttr1 : Integer 
+	Class51EnumAttr2 : Enum2 
+end 
+
+@Weight = 1
+class Class52
+attributes 
+	Class52BoolAttr0 : Boolean 
+	Class52IntAttr1 : Integer 
+	Class52EnumAttr2 : Enum2 
+end 
+
+@Weight = 1
+class Class53
+attributes 
+	Class53BoolAttr0 : Boolean 
+	Class53IntAttr1 : Integer 
+	Class53EnumAttr2 : Enum2 
+end 
+
+@Weight = 1
+class Class54 < Class35
+attributes 
+	Class54BoolAttr0 : Boolean 
+	Class54IntAttr1 : Integer 
+	Class54EnumAttr2 : Enum2 
+end 
+
+@Weight = 1
+class Class55
+attributes 
+	Class55BoolAttr0 : Boolean 
+	Class55IntAttr1 : Integer 
+	Class55EnumAttr2 : Enum1 
+end 
+
+@Weight = 1
+class Class56
+attributes 
+	Class56BoolAttr0 : Boolean 
+	Class56IntAttr1 : Integer 
+	Class56EnumAttr2 : Enum1 
+end 
+
+@Weight = 1
+association Class1_Class16 between 
+	 Class1 [1..4] role role2
+	 Class16 [1..*] role role3
+end 
+
+@Weight = 1
+association Class3_Class24 between 
+	 Class3 [2..*] role role6
+	 Class24 [2..4] role role7
+end 
+
+@Weight = 1
+association Class4_Class26 between 
+	 Class4 [*] role role8
+	 Class26 [1..*] role role9
+end 
+
+@Weight = 1
+association Class5_Class39 between 
+	 Class5 [0..4] role role10
+	 Class39 [0..4] role role11
+end 
+
+@Weight = 1
+association Class6_Class18 between 
+	 Class6 [2..*] role role12
+	 Class18 [1..2] role role13
+end 
+
+@Weight = 1
+association Class7_Class56 between 
+	 Class7 [1..2] role role14
+	 Class56 [1..3] role role15
+end 
+
+@Weight = 1
+association Class8_Class0 between 
+	 Class8 [2..*] role role16
+	 Class0 [0..4] role role17
+end 
+
+@Weight = 1
+association Class9_Class9 between 
+	 Class9 [2] role role18
+	 Class9 [3..4] role role19
+end 
+
+@Weight = 1
+association Class10_Class51 between 
+	 Class10 [1..*] role role20
+	 Class51 [3..4] role role21
+end 
+
+@Weight = 1
+association Class11_Class28 between 
+	 Class11 [1..3] role role22
+	 Class28 [3] role role23
+end 
+
+@Weight = 1
+association Class13_Class7 between 
+	 Class13 [0..2] role role26
+	 Class7 [1..4] role role27
+end 
+
+@Weight = 1
+association Class16_Class50 between 
+	 Class16 [2] role role32
+	 Class50 [4] role role33
+end 
+
+@Weight = 1
+association Class17_Class17 between 
+	 Class17 [0..4] role role34
+	 Class17 [1..3] role role35
+end 
+
+@Weight = 1
+association Class18_Class35 between 
+	 Class18 [3] role role36
+	 Class35 [2..4] role role37
+end 
+
+@Weight = 1
+association Class19_Class55 between 
+	 Class19 [1..2] role role38
+	 Class55 [1..2] role role39
+end 
+
+constraints 
+
+@Class0{Weight = 1} 
+context Class0
+	 inv: self.Class0IntAttr4 > 6
+	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr4 < c0_2.Class0IntAttr3 ) 
+	 inv: self.Class0BoolAttr2
+
+@Class1{Weight = 1} 
+context Class1
+	 inv: self.Class1IntAttr3 <> 8
+	 inv: Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr4 < c1_2.Class1IntAttr3 ) 
+	 inv: self.Class1BoolAttr0 and self.Class1BoolAttr1
+
+@Class2{Weight = 1} 
+context Class2
+	 inv: self.Class2IntAttr3 > 6
+	 inv: Class2.allInstances()->forAll( c2_1,c2_2 | c2_1.Class2IntAttr4 < c2_2.Class2IntAttr3 ) 
+	 inv: self.Class2BoolAttr1 and self.Class2BoolAttr0
+
+@Class3{Weight = 1} 
+context Class3
+	 inv: self.Class3IntAttr4 <= 5
+	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr3 <> c3_2.Class3IntAttr4 ) 
+	 inv: not self.Class3BoolAttr2
+
+@Class4{Weight = 1} 
+context Class4
+	 inv: self.Class4IntAttr4 < 13
+	 inv: Class4.allInstances()->forAll( c4_1,c4_2 | c4_1.Class4IntAttr4 >= c4_2.Class4IntAttr3 ) 
+	 inv: not self.Class4BoolAttr1
+
+@Class5{Weight = 1} 
+context Class5
+	 inv: Class5.allInstances()->forAll( c5_1,c5_2 | c5_1.Class5IntAttr3 > c5_2.Class5IntAttr4 ) 
+	 inv: Class5.allInstances()->forAll( c5_1,c5_2 | c5_1.Class5IntAttr4 > c5_2.Class5IntAttr3 ) 
+	 inv: Class5.allInstances()->forAll( c5_1,c5_2 | c5_1.Class5IntAttr4 < c5_2.Class5IntAttr3 ) and self.Class5IntAttr3 < 18 xor self.Class5IntAttr4 >= 10
+	 inv: Class5.allInstances()->exists(c1 | c1.Class5EnumAttr5 <> #Enum0Elem1) 
+	 inv: Class5.allInstances()->forAll(c1 | c1.Class5IntAttr4 > 9) 
+
+@Class6{Weight = 1} 
+context Class6
+	 inv: Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr3 <> c6_2.Class6IntAttr4 ) 
+	 inv: Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr4 = c6_2.Class6IntAttr3 ) 
+	 inv: self.Class6IntAttr3 < 5 xor self.Class6BoolAttr0 and self.Class6BoolAttr1
+	 inv: Class6.allInstances()->forAll(c1,c2|c1.Class6IntAttr3 < Class6IntAttr4) 
+	 inv: Class6.allInstances()->forAll(c1 | c1.Class6EnumAttr5 = #Enum1Elem7) 
+
+@Class7{Weight = 1} 
+context Class7
+	 inv: Class7.allInstances()->forAll( c7_1,c7_2 | c7_1.Class7IntAttr3 < c7_2.Class7IntAttr4 ) 
+	 inv: Class7.allInstances()->forAll( c7_1,c7_2 | c7_1.Class7IntAttr4 <= c7_2.Class7IntAttr3 ) 
+	 inv: self.Class7BoolAttr2 or self.Class7IntAttr3 = 11
+	 inv: Class7.allInstances()->forAll(c1,c2 | c1.Class7BoolAttr0 xor c2.Class7BoolAttr1) 
+	 inv: Class7.allInstances()->forAll(c1 | c1.Class7EnumAttr5 <> #Enum2Elem1) 
+
+@Class8{Weight = 1} 
+context Class8
+	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr4 <= c8_2.Class8IntAttr3 ) 
+	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr4 > c8_2.Class8IntAttr3 ) 
+	 inv: self.Class8IntAttr3 <= 11 xor self.Class8IntAttr4 <= 0
+	 inv: Class8.allInstances()->exists(c1,c2 | c1.Class8BoolAttr0 xor c2.Class8BoolAttr2) 
+	 inv: Class8.allInstances()->exists(c1,c2|c1.Class8IntAttr3 > Class8IntAttr4) 
+
+@Class9{Weight = 1} 
+context Class9
+	 inv: Class9.allInstances()->forAll( c9_1,c9_2 | c9_1.Class9IntAttr4 = c9_2.Class9IntAttr3 ) 
+	 inv: Class9.allInstances()->forAll( c9_1,c9_2 | c9_1.Class9IntAttr4 <> c9_2.Class9IntAttr3 ) 
+	 inv: self.Class9EnumAttr5 <> #Enum0Elem2 xor self.Class9IntAttr3 <= 6
+	 inv: Class9.allInstances()->exists(c1 | c1.Class9EnumAttr5 = #Enum0Elem1) 
+	 inv: Class9.allInstances()->forAll(c1,c2|c1.Class9IntAttr3 > Class9IntAttr4) 
+
+@Class10{Weight = 1} 
+context Class10
+	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr4 <= c0_2.Class10IntAttr3 ) 
+	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr4 <> c0_2.Class10IntAttr3 ) 
+	 inv: self.Class10EnumAttr5 = #Enum1Elem8 or self.Class10IntAttr3 <= 19 or self.Class10IntAttr3 <= 10
+	 inv: Class10.allInstances()->exists(c1 | c1.Class10EnumAttr5 <> #Enum1Elem8) 
+	 inv: Class10.allInstances()->exists(c1,c2|c1.Class10IntAttr4 > Class10IntAttr3) 
+
+@Class11{Weight = 1} 
+context Class11
+	 inv: self.Class11IntAttr3 <= 13
+	 inv: self.Class11BoolAttr1 or self.Class11BoolAttr2
+	 inv: Class11.allInstances()->forAll(c1,c2|c1.Class11IntAttr3 < Class11IntAttr4) 
+
+@Class12{Weight = 1} 
+context Class12
+	 inv: self.Class12IntAttr4 > 15
+	 inv: not self.Class12BoolAttr0
+	 inv: Class12.allInstances()->forAll(c1 | c1.Class12IntAttr3 <> 16) 
+
+@Class13{Weight = 1} 
+context Class13
+	 inv: self.Class13IntAttr4 <= 10
+	 inv: self.Class13BoolAttr0 and self.Class13BoolAttr2
+	 inv: Class13.allInstances()->forAll(c1 | c1.Class13IntAttr4 = 17) 
+
+@Class14{Weight = 1} 
+context Class14
+	 inv: self.Class14IntAttr4 < 1
+	 inv: not self.Class14BoolAttr1
+	 inv: Class14.allInstances()->forAll(c1 | c1.Class14IntAttr3 <= 1) 
+
+@Class15{Weight = 1} 
+context Class15
+	 inv: self.Class15IntAttr3 < 12
+	 inv: self.Class15BoolAttr0 or self.Class15BoolAttr1
+	 inv: Class15.allInstances()->exists(c1,c2 | c1.Class15BoolAttr0 and c2.Class15BoolAttr2) 
+
+@Class16{Weight = 1} 
+context Class16
+	 inv: self.Class16IntAttr4 <> 6
+	 inv: self.Class16BoolAttr1 xor self.Class16BoolAttr2
+	 inv: Class16.allInstances()->exists(c1 | c1.Class16IntAttr3 < 5) 
+
+@Class17{Weight = 1} 
+context Class17
+	 inv: self.Class17IntAttr2 >= 15
+	 inv: Class17.allInstances()->forAll( c7_1,c7_2 | c7_1.Class17IntAttr3 <= c7_2.Class17IntAttr2 ) 
+	 inv: Class17.allInstances()->forAll( c7_1,c7_2 | c7_1.Class17IntAttr2 > c7_2.Class17IntAttr3 ) xor self.Class17BoolAttr1 and self.Class17BoolAttr0 and self.Class17IntAttr3 <= 13
+	 inv: Class17.allInstances()->forAll(c1 | c1.Class17EnumAttr4 = #Enum1Elem10) 
+
+@Class18{Weight = 1} 
+context Class18
+	 inv: self.Class18IntAttr3 >= 3
+	 inv: Class18.allInstances()->forAll( c8_1,c8_2 | c8_1.Class18IntAttr3 >= c8_2.Class18IntAttr2 ) 
+	 inv: self.Class18EnumAttr4 = #Enum2Elem0 or not self.Class18BoolAttr1 or self.Class18IntAttr3 = 7
+	 inv: Class18.allInstances()->forAll(c1 | c1.Class18BoolAttr1) 
+
+@Class19{Weight = 1} 
+context Class19
+	 inv: self.Class19IntAttr2 >= 7
+	 inv: Class19.allInstances()->forAll( c9_1,c9_2 | c9_1.Class19IntAttr2 <= c9_2.Class19IntAttr3 ) 
+	 inv: self.Class19IntAttr3 >= 17 or self.Class19IntAttr3 < 7
+	 inv: Class19.allInstances()->exists(c1 | c1.Class19IntAttr3 > 17) 
+
+@Class20{Weight = 1} 
+context Class20
+	 inv: self.Class20IntAttr2 = 18
+	 inv: Class20.allInstances()->forAll( c0_1,c0_2 | c0_1.Class20IntAttr2 <> c0_2.Class20IntAttr3 ) 
+	 inv: self.Class20BoolAttr1 xor self.Class20BoolAttr0
+	 inv: Class20.allInstances()->forAll(c1 | c1.Class20BoolAttr0) 
+
+@Class21{Weight = 1} 
+context Class21
+	 inv: self.Class21IntAttr2 < 19
+	 inv: Class21.allInstances()->forAll( c1_1,c1_2 | c1_1.Class21IntAttr3 < c1_2.Class21IntAttr2 ) 
+	 inv: self.Class21IntAttr3 <= 1 or self.Class21IntAttr2 <> 19 xor Class21.allInstances()->forAll( c1_1,c1_2 | c1_1.Class21IntAttr3 >= c1_2.Class21IntAttr2 )
+	 inv: Class21.allInstances()->exists(c1,c2 | c1.Class21BoolAttr0 or c2.Class21BoolAttr1) 
+
+@Class22{Weight = 1} 
+context Class22
+	 inv: self.Class22IntAttr3 <= 1
+	 inv: Class22.allInstances()->forAll( c2_1,c2_2 | c2_1.Class22IntAttr3 > c2_2.Class22IntAttr2 ) 
+	 inv: self.Class22BoolAttr0 or self.Class22BoolAttr1 and self.Class22IntAttr3 <> 19
+	 inv: Class22.allInstances()->forAll(c1 | c1.Class22IntAttr3 <> 12) 
+
+@Class23{Weight = 1} 
+context Class23
+	 inv: self.Class23IntAttr3 < 4
+	 inv: Class23.allInstances()->forAll( c3_1,c3_2 | c3_1.Class23IntAttr3 <> c3_2.Class23IntAttr2 ) 
+	 inv: self.Class23IntAttr2 <> 7 and self.Class23BoolAttr1 and self.Class23BoolAttr0
+	 inv: Class23.allInstances()->exists(c1 | c1.Class23BoolAttr1) 
+
+@Class24{Weight = 1} 
+context Class24
+	 inv: self.Class24EnumAttr3 = #Enum2Elem5
+
+@Class25{Weight = 1} 
+context Class25
+	 inv: self.Class25EnumAttr3 = #Enum2Elem2
+
+@Class26{Weight = 1} 
+context Class26
+	 inv: self.Class26EnumAttr3 <> #Enum1Elem4
+
+@Class27{Weight = 1} 
+context Class27
+	 inv: self.Class27EnumAttr3 <> #Enum0Elem2
+
+@Class28{Weight = 1} 
+context Class28
+	 inv: self.Class28EnumAttr3 <> #Enum2Elem2
+
+@Class29{Weight = 1} 
+context Class29
+	 inv: self.Class29EnumAttr3 <> #Enum0Elem2
+
+@Class30{Weight = 1} 
+context Class30
+	 inv: Class30.allInstances()->forAll(c1 | c1.Class30IntAttr0 <> 0) 
+
+@Class31{Weight = 1} 
+context Class31
+	 inv: Class31.allInstances()->exists(c1 | c1.Class31IntAttr0 = 0) 
+
+@Class32{Weight = 1} 
+context Class32
+	 inv: Class32.allInstances()->forAll(c1 | c1.Class32IntAttr0 <= 10) 
+
+@Class33{Weight = 1} 
+context Class33
+	 inv: Class33.allInstances()->forAll(c1 | c1.Class33IntAttr0 >= 18) 
+
+@Class34{Weight = 1} 
+context Class34
+	 inv: Class34.allInstances()->forAll(c1 | c1.Class34IntAttr0 >= 4) 
+
+@Class35{Weight = 1} 
+context Class35
+	 inv: Class35.allInstances()->exists(c1 | c1.Class35IntAttr0 <> 1) 
+	 inv: Class35.allInstances()->forAll(c_35|Class54.allInstances()->forAll(c_54|c_35<>c_54))
+
+@Class36{Weight = 1} 
+context Class36
+	 inv: Class36.allInstances()->forAll(c1 | c1.Class36IntAttr0 <> 1) 
+	 inv: Class36.allInstances()->forAll(c_36|Class54.allInstances()->forAll(c_54|c_36<>c_54 and Class35.allInstances()->forAll(c_35|c_54<>c_35)))
+	 inv: Class36.allInstances()->forAll(c_36|Class28.allInstances()->forAll(c_28|c_36<>c_28))
+
+@Class37{Weight = 1} 
+context Class37
+	 inv: Class37.allInstances()->forAll( c7_1,c7_2 | c7_1.Class37IntAttr4 <> c7_2.Class37IntAttr3 ) 
+	 inv: Class37.allInstances()->exists(c1,c2 | c1.Class37BoolAttr0 and c2.Class37BoolAttr1) 
+	 inv: Class37.allInstances()->exists(c1,c2|c1.Class37IntAttr2 = Class37IntAttr3) 
+
+@Class38{Weight = 1} 
+context Class38
+	 inv: Class38.allInstances()->forAll( c8_1,c8_2 | c8_1.Class38IntAttr4 <> c8_2.Class38IntAttr2 ) 
+	 inv: Class38.allInstances()->exists(c1,c2 | c1.Class38BoolAttr1 or c2.Class38BoolAttr0) 
+	 inv: Class38.allInstances()->exists(c1,c2 | c1.Class38BoolAttr0 or c2.Class38BoolAttr1) 
+
+@Class39{Weight = 1} 
+context Class39
+	 inv: Class39.allInstances()->forAll( c9_1,c9_2 | c9_1.Class39IntAttr2 < c9_2.Class39IntAttr3 ) 
+	 inv: Class39.allInstances()->exists(c1,c2|c1.Class39IntAttr2 < Class39IntAttr4) 
+	 inv: Class39.allInstances()->exists(c1 | not c1.Class39BoolAttr0) 
+
+@Class40{Weight = 1} 
+context Class40
+	 inv: Class40.allInstances()->forAll( c0_1,c0_2 | c0_1.Class40IntAttr2 >= c0_2.Class40IntAttr4 ) 
+	 inv: Class40.allInstances()->exists(c1,c2|c1.Class40IntAttr3 = Class40IntAttr4) 
+	 inv: Class40.allInstances()->exists(c1,c2|c1.Class40IntAttr3 >= Class40IntAttr4) 
+
+@Class41{Weight = 1} 
+context Class41
+	 inv: Class41.allInstances()->forAll( c1_1,c1_2 | c1_1.Class41IntAttr4 <> c1_2.Class41IntAttr2 ) 
+	 inv: Class41.allInstances()->exists(c1,c2 | c1.Class41BoolAttr1 and c2.Class41BoolAttr0) 
+	 inv: Class41.allInstances()->forAll(c1,c2 | c1.Class41BoolAttr0 xor c2.Class41BoolAttr1) 
+
+@Class42{Weight = 1} 
+context Class42
+	 inv: Class42.allInstances()->forAll( c2_1,c2_2 | c2_1.Class42IntAttr3 < c2_2.Class42IntAttr4 ) 
+	 inv: Class42.allInstances()->exists(c1,c2 | c1.Class42BoolAttr1 xor c2.Class42BoolAttr0) 
+	 inv: Class42.allInstances()->exists(c1 | c1.Class42IntAttr2 < 3) 
+
+@Class43{Weight = 1} 
+context Class43
+	 inv: Class43.allInstances()->forAll( c3_1,c3_2 | c3_1.Class43IntAttr3 = c3_2.Class43IntAttr4 ) 
+	 inv: Class43.allInstances()->exists(c1,c2 | c1.Class43BoolAttr0 xor c2.Class43BoolAttr1) 
+	 inv: Class43.allInstances()->forAll(c1,c2|c1.Class43IntAttr4 >= Class43IntAttr2) 
+
+@Class44{Weight = 1} 
+context Class44
+	 inv: self.Class44IntAttr2 < 7
+	 inv: Class44.allInstances()->forAll(c1 | c1.Class44IntAttr2 <> 11) 
+
+@Class45{Weight = 1} 
+context Class45
+	 inv: self.Class45IntAttr2 = 0
+	 inv: Class45.allInstances()->exists(c1 | c1.Class45BoolAttr1) 
+
+@Class46{Weight = 1} 
+context Class46
+	 inv: self.Class46IntAttr2 < 2
+	 inv: Class46.allInstances()->forAll(c1 | c1.Class46IntAttr2 > 7) 
+
+@Class47{Weight = 1} 
+context Class47
+	 inv: self.Class47IntAttr2 > 12
+	 inv: Class47.allInstances()->forAll(c1 | c1.Class47EnumAttr4 <> #Enum0Elem2) 
+
+@Class48{Weight = 1} 
+context Class48
+	 inv: self.Class48IntAttr2 <> 19
+	 inv: Class48.allInstances()->exists(c1 | c1.Class48EnumAttr4 <> #Enum2Elem1) 
+
+@Class49{Weight = 1} 
+context Class49
+	 inv: self.Class49IntAttr2 = 15
+	 inv: Class49.allInstances()->forAll(c1 | c1.Class49EnumAttr3 = #Enum1Elem7) 
+
+@Class50{Weight = 1} 
+context Class50
+	 inv: self.Class50IntAttr1 < 8
+	 inv: self.Class50BoolAttr0
+	 inv: Class50.allInstances()->exists(c1 | c1.Class50IntAttr1 = 14) 
+
+@Class51{Weight = 1} 
+context Class51
+	 inv: self.Class51IntAttr1 < 9
+	 inv: Class51.allInstances()->forAll(c1 | c1.Class51EnumAttr2 <> #Enum2Elem2) 
+
+@Class52{Weight = 1} 
+context Class52
+	 inv: self.Class52IntAttr1 <= 8
+	 inv: self.Class52BoolAttr0
+	 inv: Class52.allInstances()->exists(c1 | c1.Class52IntAttr1 <> 7) 
+
+@Class53{Weight = 1} 
+context Class53
+	 inv: self.Class53IntAttr1 <> 19
+	 inv: Class53.allInstances()->forAll(c1 | not c1.Class53BoolAttr0) 
+
+@Class54{Weight = 1} 
+context Class54
+	 inv: self.Class54IntAttr1 <> 11
+	 inv: Class54.allInstances()->exists(c1 | c1.Class54IntAttr1 <= 5) 
+
+@Class55{Weight = 1} 
+context Class55
+	 inv: self.Class55IntAttr1 <> 3
+	 inv: Class55.allInstances()->forAll(c1 | c1.Class55IntAttr1 <= 12) 
+
+@Class56{Weight = 1} 
+context Class56
+	 inv: self.Class56IntAttr1 > 16
+	 inv: Class56.allInstances()->forAll(c1 | c1.Class56IntAttr1 > 1) 
+

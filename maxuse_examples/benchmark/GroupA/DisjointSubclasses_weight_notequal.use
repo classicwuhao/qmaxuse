@@ -1,0 +1,23 @@
+model DisjointSubclasses
+
+@Weight = 2
+class A
+end
+
+@Weight = 2
+class B < A
+end
+
+@Weight = 2
+class C < A
+end
+
+@Weight = 2
+class D < B, C
+end
+
+constraints
+
+context B
+	@Weight = 8
+	inv: B.allInstances()->forAll(b|C.allInstances()->forAll(c|b<>c))

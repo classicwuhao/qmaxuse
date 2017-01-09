@@ -1,0 +1,41 @@
+model WritesReviews
+--a simple demo model taken from Initiating a Benchmark for UML and OCL Analysis Tools
+--WritesReviews (WR)
+
+class Paper
+attributes
+	wordCount:	Integer
+	studentPaper: Boolean
+end
+
+class Researcher
+attributes
+	isStudent:	Boolean
+end
+
+@Weight = 1
+association Writes between
+	Paper [0..1] role manuscript
+	Researcher [1..2] role author
+end
+
+@Weight = 1
+association Reviews between
+	Paper [0..1] role submission
+	Researcher [3] role referee
+end
+
+constraints
+@Researcher{Weight = 1}
+context Researcher
+	inv oneManuscript: Researcher.allInstances()->forAll(r|r.manuscript->size()=1)
+	inv oneSubmission: Researcher.allInstances()->forAll(r|r.submission->size()=1)
+	inv: Researcher.allInstances()->forAll(r|r.submission->excludes(r.manuscript))
+
+@Paper{Weight = 1}
+context Paper
+	inv: self.wordCount < 10000
+	inv: Paper.allInstances()->forAll(p|p.studentPaper=p.author->exists(x|x.isStudent))
+	inv: Paper.allInstances()->forAll(p|p.referee->forAll(r|not r.isStudent))
+	inv: Paper.allInstances()->exists(p|p.studentPaper) and Paper.allInstances()->select(p|p.studentPaper)->size < 5
+

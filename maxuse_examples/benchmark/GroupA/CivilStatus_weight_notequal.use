@@ -1,0 +1,30 @@
+model CivilStatus
+
+enum Gender {male, female}
+enum CivilStatus {single, married, divorced, windowed}
+
+@Weight = default
+class Person
+attributes
+	name : Integer
+	gender : Gender
+	civstat : CivilStatus
+operations
+	spouse() : Person
+end
+
+@Weight = 5
+association Marriage between
+	Person [0..1] role husband
+	Person [0..1] role wife
+end
+
+constraints
+
+@PaperWeight{Weight = default}
+context Person
+inv: Person.allInstances()->forAll(p1,p2:Person|p1<>p2 implies p1.name <> p2.name)
+inv: Person.allInstances()->forAll(p|p.gender=#male implies p.husband->isEmpty())
+@Weight = 7
+inv: Person.allInstances()->forAll(p|p.gender=#female implies p.wife->isEmpty())
+

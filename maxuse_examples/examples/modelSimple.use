@@ -1,0 +1,69 @@
+model modelSimple
+
+@Weight = 1
+class Class0
+attributes 
+	Class0BoolAttr0 : Boolean 
+	Class0BoolAttr1 : Boolean 
+	Class0IntAttr2 : Integer 
+	Class0IntAttr3 : Integer 
+end 
+
+@Weight = 1
+class Class1
+attributes 
+	Class1BoolAttr0 : Boolean 
+	Class1BoolAttr1 : Boolean 
+	Class1IntAttr2 : Integer 
+	Class1IntAttr3 : Integer 
+end 
+
+@Weight = 1
+class Class2
+attributes 
+	Class2BoolAttr0 : Boolean 
+	Class2BoolAttr1 : Boolean 
+	Class2IntAttr2 : Integer 
+	Class2IntAttr3 : Integer 
+end 
+
+@Weight = 1
+association Class0_Class2 between 
+	 Class0 [1] role role0
+	 Class2 [1] role role1
+end 
+
+@Weight = 1
+association Class1_Class1 between 
+	 Class1 [1] role role2
+	 Class1 [1] role role3
+end 
+
+constraints 
+
+@Class0{Weight = 1} 
+context Class0
+	 inv: Class0IntAttr3 <> 15
+	 inv: Class0IntAttr2 >= 12
+ 	 inv: Class0IntAttr2 = 10
+	 inv: Class0BoolAttr1 xor Class0BoolAttr0
+	 inv: Class0BoolAttr0  
+	 inv: Class0BoolAttr0 and not Class0BoolAttr0
+
+@Class1{Weight = 1} 
+context Class1
+	 inv: Class1IntAttr2 <> 1
+	 inv: Class1IntAttr3 = 13
+ 	 inv: Class1IntAttr3 < 13
+	 inv: Class1BoolAttr1 or Class1BoolAttr0
+ 	 --inv: Class1BoolAttr1 and not Class1BoolAttr1
+	 inv: Class1BoolAttr0 xor Class1BoolAttr1
+
+
+@Class2{Weight = 1} 
+context Class2
+	 inv: Class2IntAttr2 < 5
+	 inv: Class2IntAttr2 <> 4
+	 inv: Class2BoolAttr1  
+	 inv: not Class2BoolAttr0
+

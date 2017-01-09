@@ -1,0 +1,316 @@
+model model_groupE_2_weight_euqal
+
+enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2, Enum0Elem3, Enum0Elem4, Enum0Elem5, Enum0Elem6, Enum0Elem7 } 
+
+@Weight = 1
+class Class0
+attributes 
+	Class0BoolAttr0 : Boolean 
+	Class0IntAttr1 : Integer 
+	Class0IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class1
+attributes 
+	Class1BoolAttr0 : Boolean 
+	Class1IntAttr1 : Integer 
+	Class1IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class2
+attributes 
+	Class2BoolAttr0 : Boolean 
+	Class2IntAttr1 : Integer 
+	Class2IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class3
+attributes 
+	Class3BoolAttr0 : Boolean 
+	Class3IntAttr1 : Integer 
+	Class3IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class4
+attributes 
+	Class4BoolAttr0 : Boolean 
+	Class4IntAttr1 : Integer 
+	Class4IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class5
+attributes 
+	Class5BoolAttr0 : Boolean 
+	Class5IntAttr1 : Integer 
+	Class5IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class6
+attributes 
+	Class6BoolAttr0 : Boolean 
+	Class6IntAttr1 : Integer 
+	Class6IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class7
+attributes 
+	Class7BoolAttr0 : Boolean 
+	Class7IntAttr1 : Integer 
+	Class7IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class8
+attributes 
+	Class8BoolAttr0 : Boolean 
+	Class8IntAttr1 : Integer 
+	Class8IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class9
+attributes 
+	Class9BoolAttr0 : Boolean 
+	Class9IntAttr1 : Integer 
+	Class9IntAttr2 : Integer 
+end 
+
+@Weight = 1
+class Class10
+attributes 
+	Class10BoolAttr0 : Boolean 
+	Class10IntAttr1 : Integer 
+	Class10EnumAttr2 : Enum0 
+end 
+
+@Weight = 1
+class Class11
+attributes 
+	Class11BoolAttr0 : Boolean 
+	Class11IntAttr1 : Integer 
+	Class11EnumAttr2 : Enum0 
+end 
+
+@Weight = 1
+class Class12 < Class14
+attributes 
+	Class12BoolAttr0 : Boolean 
+	Class12IntAttr1 : Integer 
+	Class12EnumAttr2 : Enum0 
+end 
+
+@Weight = 1
+class Class13 < Class14
+attributes 
+	Class13BoolAttr0 : Boolean 
+	Class13IntAttr1 : Integer 
+	Class13EnumAttr2 : Enum0 
+end 
+
+@Weight = 1
+class Class14 < Class0
+attributes 
+	Class14BoolAttr0 : Boolean 
+	Class14IntAttr1 : Integer 
+	Class14EnumAttr2 : Enum0 
+end 
+
+@Weight = 1
+association Class0_Class5 between 
+	 Class0 [1..*] role role0
+	 Class5 [0..2] role role1
+end 
+
+@Weight = 1
+association Class1_Class13 between 
+	 Class1 [1..3] role role2
+	 Class13 [2..*] role role3
+end 
+
+@Weight = 1
+association Class2_Class11 between 
+	 Class2 [0..*] role role4
+	 Class11 [0..4] role role5
+end 
+
+@Weight = 1
+association Class3_Class4 between 
+	 Class3 [3..4] role role6
+	 Class4 [0..2] role role7
+end 
+
+@Weight = 1
+association Class4_Class9 between 
+	 Class4 [1..4] role role8
+	 Class9 [2..4] role role9
+end 
+
+@Weight = 1
+association Class5_Class3 between 
+	 Class5 [1..3] role role10
+	 Class3 [2] role role11
+end 
+
+@Weight = 1
+association Class6_Class12 between 
+	 Class6 [0..1] role role12
+	 Class12 [0..*] role role13
+end 
+
+@Weight = 1
+association Class7_Class10 between 
+	 Class7 [0..4] role role14
+	 Class10 [2] role role15
+end 
+
+@Weight = 1
+association Class8_Class6 between 
+	 Class8 [1..2] role role16
+	 Class6 [1..3] role role17
+end 
+
+@Weight = 1
+association Class9_Class14 between 
+	 Class9 [1..*] role role18
+	 Class14 [1..3] role role19
+end 
+
+@Weight = 1
+association Class10_Class7 between 
+	 Class10 [0..2] role role20
+	 Class7 [1..4] role role21
+end 
+
+@Weight = 1
+association Class11_Class1 between 
+	 Class11 [0..*] role role22
+	 Class1 [0..*] role role23
+end 
+
+constraints 
+
+context Class0
+	 @Weight= 1
+	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr2 <> c0_2.Class0IntAttr1 ) or self.Class0IntAttr1 >= 6 xor self.Class0IntAttr2 > 6
+	 @Weight= 1 
+	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr1 > c0_2.Class0IntAttr2 ) and self.Class0IntAttr1 > 0 or self.Class0IntAttr2 <> 11
+	 @Weight= 1
+ 	 inv: Class0.allInstances()->forAll( c0_1|c0_1.role1->notEmpty())
+
+@Class1{Weight = 1} 
+context Class1
+	 @Weight= 1 
+	 inv: self.Class1BoolAttr0 or self.Class1IntAttr2 <= 1 xor Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr2 >= c1_2.Class1IntAttr1 )
+	 @Weight= 1 
+	 inv: self.Class1IntAttr2 <= 12 xor self.Class1IntAttr1 <= 12 and Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr2 > c1_2.Class1IntAttr1 )
+	 @Weight= 1
+	 inv: Class1.allInstances()->forAll( c1_1|c1_1.role3->size()=3)
+	 @Weight= 1
+	 inv: Class1.allInstances()->forAll( c1_1|c1_1.role3->size()<2)
+	 
+	 
+@Class2{Weight = 1} 
+context Class2
+	 @Weight= 1 
+	 inv: self.Class2IntAttr1 < 3 xor self.Class2BoolAttr0
+	 @Weight= 1 
+	 inv: Class2.allInstances()->forAll( c2_1,c2_2 | c2_1.Class2IntAttr1 < c2_2.Class2IntAttr2 ) and self.Class2IntAttr1 > 5 or self.Class2BoolAttr0
+
+@Class3{Weight = 1} 
+context Class3
+	 @Weight= 1 
+	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr1 = c3_2.Class3IntAttr2 ) xor not self.Class3BoolAttr0
+	 @Weight= 1 
+	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr1 >= c3_2.Class3IntAttr2 ) xor Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr2 <= c3_2.Class3IntAttr1 ) or self.Class3IntAttr1 = 8
+
+@Class4{Weight = 1} 
+context Class4
+	 @Weight= 1 
+	 inv: self.Class4IntAttr2 <> 6 and Class4.allInstances()->forAll( c4_1,c4_2 | c4_1.Class4IntAttr2 > c4_2.Class4IntAttr1 )
+	 @Weight= 1 
+	 inv: self.Class4IntAttr2 = 8 xor self.Class4IntAttr2 > 9 and self.Class4IntAttr1 > 2
+
+@Class5{Weight = 1} 
+context Class5
+	 @Weight= 1 
+	 inv: self.Class5IntAttr1 > 18 xor self.Class5IntAttr2 > 17
+	 @Weight= 1 
+	 inv: Class5.allInstances()->forAll( c5_1,c5_2 | c5_1.Class5IntAttr2 <= c5_2.Class5IntAttr1 ) and self.Class5IntAttr1 >= 3
+
+@Class6{Weight = 1} 
+context Class6
+	 @Weight= 1 
+	 inv: self.Class6IntAttr2 < 0 and Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr1 >= c6_2.Class6IntAttr2 ) xor self.Class6BoolAttr0
+	 @Weight= 1 
+	 inv: Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr2 <= c6_2.Class6IntAttr1 ) xor self.Class6IntAttr2 <> 16
+
+@Class7{Weight = 1} 
+context Class7
+	 @Weight= 1 
+	 inv: self.Class7BoolAttr0 or self.Class7IntAttr2 <> 3 and Class7.allInstances()->forAll( c7_1,c7_2 | c7_1.Class7IntAttr2 = c7_2.Class7IntAttr1 )
+	 @Weight= 1 
+	 inv: self.Class7IntAttr2 = 18 xor self.Class7IntAttr2 > 18 or self.Class7IntAttr1 <> 7
+
+@Class8{Weight = 1} 
+context Class8
+	 @Weight= 1 
+	 inv: self.Class8IntAttr1 = 14 xor self.Class8IntAttr1 < 2 or self.Class8IntAttr2 <= 17
+	 @Weight= 1 
+	 inv: self.Class8IntAttr1 = 2 or not self.Class8BoolAttr0
+
+@Class9{Weight = 1} 
+context Class9
+	 @Weight= 1 
+	 inv: self.Class9IntAttr2 < 16 or self.Class9IntAttr1 <= 1
+	 @Weight= 1 
+	 inv: Class9.allInstances()->forAll( c9_1,c9_2 | c9_1.Class9IntAttr1 < c9_2.Class9IntAttr2 ) xor self.Class9IntAttr1 > 19 and self.Class9IntAttr1 <> 8
+	 @Weight= 1
+	 inv: Class9.allInstances()->forAll( c9_1|c9_1.role8->size()=1)
+
+@Class10{Weight = 1} 
+context Class10
+	 inv: self.Class10IntAttr1 <= 4
+	 @Weight= 1 
+	 inv: self.Class10IntAttr1 > 15 xor self.Class10IntAttr1 >= 14 xor not self.Class10BoolAttr0
+	 @Weight= 1 
+	 inv: self.Class10IntAttr1 >= 3 xor self.Class10IntAttr1 = 7 or self.Class10EnumAttr2 <> #Enum0Elem5
+
+@Class11{Weight = 1} 
+context Class11
+	 inv: self.Class11IntAttr1 > 1
+	 @Weight= 1 
+	 inv: self.Class11IntAttr1 < 1 and self.Class11EnumAttr2 <> #Enum0Elem7 xor not self.Class11BoolAttr0
+	 @Weight= 1 
+	 inv: self.Class11IntAttr1 >= 19 and self.Class11IntAttr1 >= 13
+
+@Class12{Weight = 1} 
+context Class12
+	 inv: self.Class12IntAttr1 < 4
+	 @Weight= 1 
+	 inv: self.Class12IntAttr1 <= 11 xor self.Class12EnumAttr2 <> #Enum0Elem7 or self.Class12IntAttr1 <> 6
+	 @Weight= 1 
+	 inv: self.Class12IntAttr1 <= 0 or not self.Class12BoolAttr0
+
+@Class13{Weight = 1} 
+context Class13
+	 inv: self.Class13IntAttr1 > 18
+	 @Weight= 1 
+	 inv: self.Class13IntAttr1 <> 0 xor self.Class13EnumAttr2 <> #Enum0Elem5 and self.Class13IntAttr1 > 9
+	 @Weight= 1 
+	 inv: self.Class13EnumAttr2 = #Enum0Elem5 xor self.Class13IntAttr1 <= 13 or self.Class13IntAttr1 <= 13
+
+@Class14{Weight = 1} 
+context Class14
+	 inv: self.Class14IntAttr1 <> 4
+	 @Weight= 1 
+	 inv: self.Class14EnumAttr2 = #Enum0Elem2 and self.Class14IntAttr1 <= 0
+	 @Weight= 1 
+	 inv: self.Class14EnumAttr2 = #Enum0Elem2 or self.Class14EnumAttr2 = #Enum0Elem2 and self.Class14IntAttr1 = 17
+

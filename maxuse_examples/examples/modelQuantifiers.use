@@ -1,0 +1,168 @@
+model modelQuantifiers
+
+enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2 } 
+
+enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1Elem5, Enum1Elem6 } 
+
+@Weight = 1
+class Class0
+attributes 
+	Class0BoolAttr0 : Boolean 
+	Class0BoolAttr1 : Boolean 
+	Class0IntAttr2 : Integer 
+	Class0IntAttr3 : Integer 
+	Class0EnumAttr4 : Enum1 
+end 
+
+@Weight = 1
+class Class1
+attributes 
+	Class1BoolAttr0 : Boolean 
+	Class1BoolAttr1 : Boolean 
+	Class1IntAttr2 : Integer 
+	Class1IntAttr3 : Integer 
+	Class1EnumAttr4 : Enum0 
+end 
+
+@Weight = 1
+class Class2
+attributes 
+	Class2BoolAttr0 : Boolean 
+	Class2BoolAttr1 : Boolean 
+	Class2IntAttr2 : Integer 
+	Class2IntAttr3 : Integer 
+	Class2EnumAttr4 : Enum0 
+end 
+
+@Weight = 1
+class Class3
+attributes 
+	Class3BoolAttr0 : Boolean 
+	Class3BoolAttr1 : Boolean 
+	Class3IntAttr2 : Integer 
+	Class3IntAttr3 : Integer 
+	Class3IntAttr4 : Integer 
+end 
+
+@Weight = 1
+class Class4
+attributes 
+	Class4BoolAttr0 : Boolean 
+	Class4BoolAttr1 : Boolean 
+	Class4IntAttr2 : Integer 
+	Class4IntAttr3 : Integer 
+	Class4IntAttr4 : Integer 
+end 
+
+@Weight = 1
+association Class0_Class0 between 
+	 Class0 [1] role role0
+	 Class0 [1] role role1
+end 
+
+@Weight = 1
+association Class1_Class4 between 
+	 Class1 [1] role role2
+	 Class4 [1] role role3
+end 
+
+@Weight = 1
+association Class2_Class3 between 
+	 Class2 [1] role role4
+	 Class3 [1] role role5
+end 
+
+@Weight = 1
+association Class3_Class1 between 
+	 Class3 [1] role role6
+	 Class1 [1] role role7
+end 
+
+@Weight = 1
+association Class4_Class2 between 
+	 Class4 [1] role role8
+	 Class2 [1] role role9
+end 
+
+constraints 
+
+@Class0{Weight = 1} 
+context Class0
+	 inv: self.Class0IntAttr3 <> 18
+	 inv: self.Class0IntAttr2 = 5
+	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr3 >= c0_2.Class0IntAttr2 ) 
+	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr2 <> c0_2.Class0IntAttr3 ) 
+	 inv: not self.Class0BoolAttr1
+	 inv: self.Class0EnumAttr4 <> #Enum1Elem0
+	 inv: self.Class0IntAttr2 >= 19 or self.Class0IntAttr3 <> 14 or self.Class0IntAttr3 = 1
+	 inv: self.Class0BoolAttr1 and self.Class0BoolAttr0 or self.Class0IntAttr2 <= 4
+	 inv: self.Class0IntAttr2 <= 7 and not self.Class0BoolAttr0
+	 inv: Class0.allInstances()->exists(c1 | c1.Class0IntAttr2 > 2) 
+	 inv: Class0.allInstances()->forAll(c1 | c1.Class0BoolAttr1) 
+	 inv: Class0.allInstances()->forAll(c1 | c1.Class0IntAttr3 > 2) 
+	 inv: Class0.allInstances()->exists(c1,c2 | c1.Class0BoolAttr1 and c2.Class0BoolAttr0) 
+
+@Class1{Weight = 1} 
+context Class1
+	 inv: self.Class1IntAttr3 <= 10
+	 inv: self.Class1IntAttr3 = 14
+	 inv: Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr2 <> c1_2.Class1IntAttr3 ) 
+	 inv: Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr3 > c1_2.Class1IntAttr2 ) 
+	 inv: not self.Class1BoolAttr1
+	 inv: self.Class1EnumAttr4 <> #Enum0Elem2
+	 inv: self.Class1EnumAttr4 <> #Enum0Elem0 and self.Class1IntAttr2 >= 19 or self.Class1IntAttr2 < 15
+	 inv: self.Class1BoolAttr0 and self.Class1BoolAttr1 or self.Class1IntAttr3 > 11
+	 inv: self.Class1IntAttr2 >= 19 and self.Class1IntAttr2 <= 10
+	 inv: Class1.allInstances()->exists(c1 | c1.Class1IntAttr2 > 9) 
+	 inv: Class1.allInstances()->exists(c1 | c1.Class1BoolAttr1) 
+	 inv: Class1.allInstances()->forAll(c1,c2 | c1.Class1BoolAttr0 xor c2.Class1BoolAttr1) 
+	 inv: Class1.allInstances()->forAll(c1 | c1.Class1IntAttr2 < 14) 
+
+@Class2{Weight = 1} 
+context Class2
+	 inv: self.Class2IntAttr3 > 8
+	 inv: self.Class2IntAttr2 <= 16
+	 inv: Class2.allInstances()->forAll( c2_1,c2_2 | c2_1.Class2IntAttr2 > c2_2.Class2IntAttr3 ) 
+	 inv: Class2.allInstances()->forAll( c2_1,c2_2 | c2_1.Class2IntAttr2 < c2_2.Class2IntAttr3 ) 
+	 inv: self.Class2BoolAttr0
+	 inv: self.Class2EnumAttr4 = #Enum0Elem2
+	 inv: self.Class2BoolAttr0 or self.Class2BoolAttr1 or self.Class2IntAttr2 > 7
+	 inv: self.Class2IntAttr2 >= 19 or self.Class2IntAttr3 >= 19
+	 inv: self.Class2IntAttr2 <= 13 xor self.Class2BoolAttr1 xor self.Class2BoolAttr0
+	 inv: Class2.allInstances()->forAll(c1 | c1.Class2IntAttr2 < 3) 
+	 inv: Class2.allInstances()->exists(c1 | c1.Class2IntAttr2 = 7) 
+	 inv: Class2.allInstances()->forAll(c1 | c1.Class2IntAttr3 >= 0) 
+	 inv: Class2.allInstances()->forAll(c1 | c1.Class2IntAttr3 = 11) 
+
+@Class3{Weight = 1} 
+context Class3
+	 inv: self.Class3IntAttr3 <= 5
+	 inv: self.Class3IntAttr2 > 7
+	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr2 > c3_2.Class3IntAttr3 ) 
+	 inv: self.Class3BoolAttr1
+	 inv: self.Class3BoolAttr0 or self.Class3BoolAttr1
+	 inv: self.Class3BoolAttr0 and self.Class3BoolAttr1 or self.Class3BoolAttr0 xor self.Class3BoolAttr1
+	 inv: self.Class3IntAttr4 = 13 xor self.Class3IntAttr2 <= 12 xor self.Class3IntAttr4 <> 4
+	 inv: self.Class3IntAttr4 = 2 and self.Class3IntAttr3 <= 17 and self.Class3IntAttr2 <> 13
+	 inv: self.Class3IntAttr4 >= 18 or self.Class3IntAttr3 < 19 xor self.Class3BoolAttr0 xor self.Class3BoolAttr1
+	 inv: Class3.allInstances()->forAll(c1 | c1.Class3IntAttr4 <= 0) 
+	 inv: Class3.allInstances()->exists(c1 | not c1.Class3BoolAttr1) 
+	 inv: Class3.allInstances()->exists(c1 | c1.Class3IntAttr2 > 9) 
+	 inv: Class3.allInstances()->exists(c1 | c1.Class3IntAttr4 >= 3) 
+
+@Class4{Weight = 1} 
+context Class4
+	 inv: self.Class4IntAttr2 <> 1
+	 inv: self.Class4IntAttr3 > 12
+	 inv: Class4.allInstances()->forAll( c4_1,c4_2 | c4_1.Class4IntAttr2 = c4_2.Class4IntAttr4 ) 
+	 inv: self.Class4BoolAttr1
+	 inv: self.Class4BoolAttr1 xor self.Class4BoolAttr0
+	 inv: self.Class4IntAttr2 <= 19 xor self.Class4IntAttr2 <= 10 xor self.Class4IntAttr2 >= 0
+	 inv: self.Class4IntAttr3 <= 16 xor self.Class4IntAttr2 <= 17 and self.Class4IntAttr2 = 15
+	 inv: not self.Class4BoolAttr0 xor self.Class4IntAttr3 >= 10
+	 inv: self.Class4IntAttr2 < 7 and self.Class4IntAttr2 <= 7 xor self.Class4IntAttr3 = 10
+	 inv: Class4.allInstances()->exists(c1 | c1.Class4IntAttr4 < 10) 
+	 inv: Class4.allInstances()->exists(c1 | c1.Class4IntAttr3 >= 7) 
+	 inv: Class4.allInstances()->exists(c1,c2 | c1.Class4BoolAttr0 or c2.Class4BoolAttr1) 
+	 inv: Class4.allInstances()->forAll(c1,c2 | c1.Class4BoolAttr1 and c2.Class4BoolAttr0) 
+
