@@ -35,4 +35,3 @@ MaxUSE is a tool that satisfies the number of invariants (constraints) as many a
 * A more complete report generation template is being added.
 * MaxUSE supports OCL constructs used in the benchmark, not all OCL constructs are supported, and we are currently adding more. 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) will be considered and added to interact with MaxUSE.
-
