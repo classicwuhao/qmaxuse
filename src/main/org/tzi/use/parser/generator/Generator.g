@@ -695,12 +695,12 @@ annotation_tag [AnnotationTag tag]
 
 annotation_predefined:
 	'Comment'
-	| 'Weight'
+	| 'Rank'
 	| 'Type'
 ;
 
 annotation_comment: 'Comment' ;
-annotation_weight: 'Weight' ;
+annotation_weight: 'Rank' ;
 annotation_type: 'Type' ;
 
 annotation_override: 

@@ -3,7 +3,7 @@ model CivilStatus
 enum Gender {male, female}
 enum CivilStatus {single, married, divorced, windowed}
 
-@Weight = 3
+@Rank = 3
 class Person
 attributes
 	name : Integer
@@ -13,7 +13,7 @@ operations
 	spouse() : Person
 end
 
-@Weight = 3
+@Rank = 3
 association Marriage between
 	Person [0..1] role husband
 	Person [0..1] role wife
@@ -21,7 +21,7 @@ end
 
 constraints
 
-@PaperWeight{Weight = 3}
+@PaperRank{Rank = 3}
 context Person
 inv: Person.allInstances()->forAll(p1,p2:Person|p1<>p2 implies p1.name <> p2.name)
 inv: Person.allInstances()->forAll(p|p.gender=#male implies p.husband->isEmpty())

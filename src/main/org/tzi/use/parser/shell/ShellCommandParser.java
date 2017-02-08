@@ -1,4 +1,4 @@
-// $ANTLR 3.4 ShellCommand.g 2016-03-14 16:32:07
+// $ANTLR 3.4 ShellCommand.g 2017-02-08 15:55:09
 
 /*
  * USE - UML based specification environment
@@ -3449,7 +3449,7 @@ public class ShellCommandParser extends BaseParser {
                 {
                 int LA31_1 = input.LA(2);
 
-                if ( (((( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))&&( input.LA(2) == LPAREN ))) ) {
+                if ( (((( input.LA(2) == LPAREN )&&( input.LA(2) == LPAREN ))&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))) ) {
                     alt31=1;
                 }
                 else if ( (true) ) {
@@ -8093,53 +8093,11 @@ public class ShellCommandParser extends BaseParser {
 
     // Delegated rules
 
-    public final boolean synpred7_ShellCommand() {
+    public final boolean synpred4_ShellCommand() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred7_ShellCommand_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred2_ShellCommand() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred2_ShellCommand_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred6_ShellCommand() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_ShellCommand_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred5_ShellCommand() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred5_ShellCommand_fragment(); // can never throw exception
+            synpred4_ShellCommand_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -8163,11 +8121,11 @@ public class ShellCommandParser extends BaseParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred4_ShellCommand() {
+    public final boolean synpred5_ShellCommand() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred4_ShellCommand_fragment(); // can never throw exception
+            synpred5_ShellCommand_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -8182,6 +8140,48 @@ public class ShellCommandParser extends BaseParser {
         int start = input.mark();
         try {
             synpred1_ShellCommand_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred2_ShellCommand() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_ShellCommand_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred7_ShellCommand() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_ShellCommand_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred6_ShellCommand() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_ShellCommand_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

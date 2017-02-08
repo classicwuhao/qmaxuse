@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Soil.g 2016-03-14 16:32:03
+// $ANTLR 3.4 Soil.g 2017-02-08 15:55:07
 
 /*
  * USE - UML based specification environment
@@ -4325,7 +4325,7 @@ public class SoilParser extends BaseParser {
                 {
                 int LA47_1 = input.LA(2);
 
-                if ( (((( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))&&( input.LA(2) == LPAREN ))) ) {
+                if ( (((( input.LA(2) == LPAREN )&&( input.LA(2) == LPAREN ))&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))) ) {
                     alt47=1;
                 }
                 else if ( (true) ) {
@@ -6470,11 +6470,11 @@ public class SoilParser extends BaseParser {
 
     // Delegated rules
 
-    public final boolean synpred1_Soil() {
+    public final boolean synpred2_Soil() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_Soil_fragment(); // can never throw exception
+            synpred2_Soil_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6484,11 +6484,11 @@ public class SoilParser extends BaseParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred2_Soil() {
+    public final boolean synpred1_Soil() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred2_Soil_fragment(); // can never throw exception
+            synpred1_Soil_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

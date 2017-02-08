@@ -1,4 +1,4 @@
-// $ANTLR 3.4 ShellCommand.g 2016-03-14 16:32:08
+// $ANTLR 3.4 ShellCommand.g 2017-02-08 15:55:09
 
 /*
  * USE - UML based specification environment
@@ -3845,11 +3845,11 @@ public class ShellCommandLexer extends Lexer {
     }
     // $ANTLR end synpred2_ShellCommand
 
-    public final boolean synpred2_ShellCommand() {
+    public final boolean synpred1_ShellCommand() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred2_ShellCommand_fragment(); // can never throw exception
+            synpred1_ShellCommand_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -3859,11 +3859,11 @@ public class ShellCommandLexer extends Lexer {
         state.failed=false;
         return success;
     }
-    public final boolean synpred1_ShellCommand() {
+    public final boolean synpred2_ShellCommand() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_ShellCommand_fragment(); // can never throw exception
+            synpred2_ShellCommand_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

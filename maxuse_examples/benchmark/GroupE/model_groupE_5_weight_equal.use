@@ -1,4 +1,4 @@
-model model_groupE_5_weight_equal
+model model_groupE_5_Rank_equal
 
 enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2, Enum0Elem3, Enum0Elem4 } 
 
@@ -6,7 +6,7 @@ enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1El
 
 enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
 
-@Weight = 1
+@Rank = 1
 class Class0
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -14,7 +14,7 @@ attributes
 	Class0EnumAttr2 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class1
 attributes 
 	Class1BoolAttr0 : Boolean 
@@ -22,7 +22,7 @@ attributes
 	Class1EnumAttr2 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class2
 attributes 
 	Class2BoolAttr0 : Boolean 
@@ -30,7 +30,7 @@ attributes
 	Class2EnumAttr2 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class3
 attributes 
 	Class3BoolAttr0 : Boolean 
@@ -38,7 +38,7 @@ attributes
 	Class3EnumAttr2 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class4
 attributes 
 	Class4BoolAttr0 : Boolean 
@@ -46,7 +46,7 @@ attributes
 	Class4EnumAttr2 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class5
 attributes 
 	Class5BoolAttr0 : Boolean 
@@ -54,7 +54,7 @@ attributes
 	Class5EnumAttr2 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class6
 attributes 
 	Class6BoolAttr0 : Boolean 
@@ -66,7 +66,7 @@ attributes
 	Class6EnumAttr6 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class7
 attributes 
 	Class7BoolAttr0 : Boolean 
@@ -78,7 +78,7 @@ attributes
 	Class7EnumAttr5 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class8
 attributes 
 	Class8BoolAttr0 : Boolean 
@@ -90,7 +90,7 @@ attributes
 	Class8EnumAttr5 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class9
 attributes 
 	Class9BoolAttr0 : Boolean 
@@ -102,7 +102,7 @@ attributes
 	Class9EnumAttr4 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class10 < Class16
 attributes 
 	Class10BoolAttr0 : Boolean 
@@ -114,7 +114,7 @@ attributes
 	Class10EnumAttr6 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class11
 attributes 
 	Class11BoolAttr0 : Boolean 
@@ -126,7 +126,7 @@ attributes
 	Class11EnumAttr5 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class12
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -138,7 +138,7 @@ attributes
 	Class12EnumAttr5 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class13
 attributes 
 	Class13BoolAttr0 : Boolean 
@@ -156,7 +156,7 @@ attributes
 	Class13EnumAttr10 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class14
 attributes 
 	Class14BoolAttr0 : Boolean 
@@ -174,7 +174,7 @@ attributes
 	Class14EnumAttr9 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class15
 attributes 
 	Class15BoolAttr0 : Boolean 
@@ -192,7 +192,7 @@ attributes
 	Class15EnumAttr11 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class16 < Class14
 attributes 
 	Class16BoolAttr0 : Boolean 
@@ -210,7 +210,7 @@ attributes
 	Class16EnumAttr10 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class17
 attributes 
 	Class17BoolAttr0 : Boolean 
@@ -228,109 +228,109 @@ attributes
 	Class17EnumAttr9 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 association Class0_Class0 between 
 	 Class0 [0..*] role role0
 	 Class0 [1..*] role role1
 end 
 
-@Weight = 1
+@Rank = 1
 association Class1_Class12 between 
 	 Class1 [1] role role2
 	 Class12 [1..3] role role3
 end 
 
-@Weight = 1
+@Rank = 1
 association Class2_Class1 between 
 	 Class2 [1] role role4
 	 Class1 [4] role role5
 end 
 
-@Weight = 1
+@Rank = 1
 association Class3_Class10 between 
 	 Class3 [1..*] role role6
 	 Class10 [0..*] role role7
 end 
 
-@Weight = 1
+@Rank = 1
 association Class4_Class14 between 
 	 Class4 [1] role role8
 	 Class14 [1] role role9
 end 
 
-@Weight = 1
+@Rank = 1
 association Class5_Class3 between 
 	 Class5 [0..*] role role10
 	 Class3 [1..2] role role11
 end 
 
-@Weight = 1
+@Rank = 1
 association Class6_Class4 between 
 	 Class6 [1..*] role role12
 	 Class4 [1] role role13
 end 
 
-@Weight = 1
+@Rank = 1
 association Class7_Class8 between 
 	 Class7 [0..1] role role14
 	 Class8 [*] role role15
 end 
 
-@Weight = 1
+@Rank = 1
 association Class8_Class17 between 
 	 Class8 [1..*] role role16
 	 Class17 [1] role role17
 end 
 
-@Weight = 1
+@Rank = 1
 association Class9_Class16 between 
 	 Class9 [3..4] role role18
 	 Class16 [1] role role19
 end 
 
-@Weight = 1
+@Rank = 1
 association Class10_Class9 between 
 	 Class10 [1] role role20
 	 Class9 [1..4] role role21
 end 
 
-@Weight = 1
+@Rank = 1
 association Class11_Class2 between 
 	 Class11 [1..*] role role22
 	 Class2 [1..*] role role23
 end 
 
-@Weight = 1
+@Rank = 1
 association Class12_Class5 between 
 	 Class12 [3..4] role role24
 	 Class5 [0..*] role role25
 end 
 
-@Weight = 1
+@Rank = 1
 association Class13_Class7 between 
 	 Class13 [1] role role26
 	 Class7 [0..4] role role27
 end 
 
-@Weight = 1
+@Rank = 1
 association Class14_Class13 between 
 	 Class14 [1..4] role role28
 	 Class13 [1..3] role role29
 end 
 
-@Weight = 1
+@Rank = 1
 association Class15_Class15 between 
 	 Class15 [2..4] role role30
 	 Class15 [1..*] role role31
 end 
 
-@Weight = 1
+@Rank = 1
 association Class16_Class6 between 
 	 Class16 [1..*] role role32
 	 Class6 [2..4] role role33
 end 
 
-@Weight = 1
+@Rank = 1
 association Class17_Class11 between 
 	 Class17 [4] role role34
 	 Class11 [0..1] role role35
@@ -338,37 +338,37 @@ end
 
 constraints 
 
-@Class0{Weight = 1} 
+@Class0{Rank = 1} 
 context Class0
 	 inv: self.Class0EnumAttr2 <> #Enum2Elem3 or self.Class0IntAttr1 < 4 xor self.Class0IntAttr1 > 19
 	 inv: self.Class0EnumAttr2 <> #Enum2Elem0 and self.Class0IntAttr1 <> 0
 
-@Class1{Weight = 1} 
+@Class1{Rank = 1} 
 context Class1
 	 inv: not self.Class1BoolAttr0 and self.Class1IntAttr1 >= 11
 	 inv: self.Class1IntAttr1 = 11 or self.Class1IntAttr1 < 9 and self.Class1IntAttr1 > 17
 
-@Class2{Weight = 1} 
+@Class2{Rank = 1} 
 context Class2
 	 inv: self.Class2IntAttr1 > 11 xor self.Class2EnumAttr2 <> #Enum0Elem4
 	 inv: self.Class2IntAttr1 = 0 and self.Class2EnumAttr2 <> #Enum0Elem1 or self.Class2BoolAttr0
 
-@Class3{Weight = 1} 
+@Class3{Rank = 1} 
 context Class3
 	 inv: self.Class3IntAttr1 = 1 or self.Class3IntAttr1 <= 4
 	 inv: self.Class3IntAttr1 <= 16 and self.Class3IntAttr1 < 8 and self.Class3EnumAttr2 = #Enum2Elem3
 
-@Class4{Weight = 1} 
+@Class4{Rank = 1} 
 context Class4
 	 inv: self.Class4IntAttr1 = 8 and self.Class4IntAttr1 < 18
 	 inv: self.Class4EnumAttr2 <> #Enum2Elem1 xor self.Class4EnumAttr2 = #Enum2Elem2 xor self.Class4IntAttr1 < 14
 
-@Class5{Weight = 1} 
+@Class5{Rank = 1} 
 context Class5
 	 inv: not self.Class5BoolAttr0 or self.Class5EnumAttr2 = #Enum1Elem0 and self.Class5EnumAttr2 <> #Enum1Elem0
 	 inv: self.Class5IntAttr1 >= 0 or self.Class5EnumAttr2 = #Enum1Elem2
 
-@Class6{Weight = 1} 
+@Class6{Rank = 1} 
 context Class6
 	 inv: Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr3 <> c6_2.Class6IntAttr2 ) 
 	 inv: Class6.allInstances()->forAll( c6_1,c6_2 | c6_1.Class6IntAttr2 <= c6_2.Class6IntAttr3 ) 
@@ -386,7 +386,7 @@ context Class6
 	 inv: Class6.allInstances()->forAll(c1,c2 | c1.Class6BoolAttr1 or c2.Class6BoolAttr0) 
 	 inv: Class6.allInstances()->forAll(c1 | not c1.Class6BoolAttr1) 
 
-@Class7{Weight = 1} 
+@Class7{Rank = 1} 
 context Class7
 	 inv: Class7.allInstances()->forAll( c7_1,c7_2 | c7_1.Class7IntAttr2 > c7_2.Class7IntAttr3 ) 
 	 inv: Class7.allInstances()->forAll( c7_1,c7_2 | c7_1.Class7IntAttr2 <> c7_2.Class7IntAttr3 ) 
@@ -404,7 +404,7 @@ context Class7
 	 inv: Class7.allInstances()->exists(c1,c2|c1.Class7IntAttr3 <= Class7IntAttr2) 
 	 inv: Class7.allInstances()->exists(c1,c2 | c1.Class7BoolAttr1 and c2.Class7BoolAttr0) 
 
-@Class8{Weight = 1} 
+@Class8{Rank = 1} 
 context Class8
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr2 > c8_2.Class8IntAttr3 ) 
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr2 <= c8_2.Class8IntAttr3 ) 
@@ -422,7 +422,7 @@ context Class8
 	 inv: Class8.allInstances()->forAll(c1 | c1.Class8EnumAttr4 = #Enum1Elem0) 
 	 inv: Class8.allInstances()->forAll(c1,c2|c1.Class8IntAttr3 > Class8IntAttr2) 
 
-@Class9{Weight = 1} 
+@Class9{Rank = 1} 
 context Class9
 	 inv: Class9.allInstances()->forAll( c9_1,c9_2 | c9_1.Class9IntAttr3 > c9_2.Class9IntAttr2 ) 
 	 inv: Class9.allInstances()->forAll( c9_1,c9_2 | c9_1.Class9IntAttr3 >= c9_2.Class9IntAttr2 ) 
@@ -440,7 +440,7 @@ context Class9
 	 inv: Class9.allInstances()->exists(c1 | c1.Class9IntAttr2 = 3) 
 	 inv: Class9.allInstances()->forAll(c1,c2 | c1.Class9BoolAttr0 or c2.Class9BoolAttr1) 
 
-@Class10{Weight = 1} 
+@Class10{Rank = 1} 
 context Class10
 	 inv: self.Class10IntAttr4 <= 4
 	 inv: self.Class10IntAttr3 <= 6
@@ -450,7 +450,7 @@ context Class10
 	 inv: self.Class10EnumAttr6 = #Enum0Elem3 and Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr4 = c0_2.Class10IntAttr3 )
 	 inv: self.Class10IntAttr4 <= 15 xor self.Class10BoolAttr0 or self.Class10BoolAttr2 or self.Class10EnumAttr6 <> #Enum0Elem0
 
-@Class11{Weight = 1} 
+@Class11{Rank = 1} 
 context Class11
 	 inv: self.Class11IntAttr4 < 19
 	 inv: self.Class11IntAttr3 < 8
@@ -460,7 +460,7 @@ context Class11
 	 inv: self.Class11EnumAttr6 = #Enum2Elem4 and self.Class11BoolAttr1 and self.Class11BoolAttr0
 	 inv: self.Class11BoolAttr2 xor self.Class11BoolAttr0 and self.Class11IntAttr3 < 13 xor self.Class11IntAttr4 < 14
 
-@Class12{Weight = 1} 
+@Class12{Rank = 1} 
 context Class12
 	 inv: self.Class12IntAttr4 = 3
 	 inv: self.Class12IntAttr3 > 18
@@ -468,10 +468,10 @@ context Class12
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr4 < c2_2.Class12IntAttr3 ) 
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr3 < c2_2.Class12IntAttr4 ) 
 	 inv: self.Class12BoolAttr1 xor self.Class12BoolAttr0 or self.Class12BoolAttr2 xor self.Class12IntAttr3 <= 7
-	 @Weight= default 
+	 @Rank= default 
 	 inv: self.Class12EnumAttr6 <> #Enum0Elem2 or self.Class12BoolAttr1 or self.Class12BoolAttr0 or self.Class12IntAttr4 < 18
 
-@Class13{Weight = 1} 
+@Class13{Rank = 1} 
 context Class13
 	 inv: self.Class13IntAttr4 = 1
 	 inv: Class13.allInstances()->forAll( c3_1,c3_2 | c3_1.Class13IntAttr4 = c3_2.Class13IntAttr6 ) 
@@ -489,7 +489,7 @@ context Class13
 	 inv: Class13.allInstances()->forAll(c1 | c1.Class13EnumAttr7 = #Enum0Elem1) 
 	 inv: Class13.allInstances()->exists(c1 | c1.Class13EnumAttr8 = #Enum1Elem0) 
 
-@Class14{Weight = 1} 
+@Class14{Rank = 1} 
 context Class14
 	 inv: Class14.allInstances()->forAll( c4_1,c4_2 | c4_1.Class14IntAttr6 < c4_2.Class14IntAttr5 ) 
 	 inv: not self.Class14BoolAttr3
@@ -506,7 +506,7 @@ context Class14
 	 inv: Class14.allInstances()->exists(c1 | c1.Class14BoolAttr2) 
 	 inv: Class14.allInstances()->forAll(c1,c2 | c1.Class14BoolAttr2 xor c2.Class14BoolAttr1) 
 
-@Class15{Weight = 1} 
+@Class15{Rank = 1} 
 context Class15
 	 inv: Class15.allInstances()->forAll( c5_1,c5_2 | c5_1.Class15IntAttr4 <> c5_2.Class15IntAttr5 ) 
 	 inv: not self.Class15BoolAttr1
@@ -523,7 +523,7 @@ context Class15
 	 inv: Class15.allInstances()->forAll(c1 | c1.Class15IntAttr4 < 11) 
 	 inv: Class15.allInstances()->exists(c1 | c1.Class15IntAttr4 >= 15) 
 
-@Class16{Weight = 1} 
+@Class16{Rank = 1} 
 context Class16
 	 inv: self.Class16IntAttr6 <> 3
 	 inv: self.Class16IntAttr5 = 10
@@ -542,7 +542,7 @@ context Class16
 	 inv: Class16.allInstances()->forAll(c1 | c1.Class16IntAttr4 > 12) 
 	 inv: Class16.allInstances()->exists(c1 | c1.Class16IntAttr4 <= 0) 
 
-@Class17{Weight = 1} 
+@Class17{Rank = 1} 
 context Class17
 	 inv: self.Class17IntAttr6 <= 9
 	 inv: Class17.allInstances()->forAll( c7_1,c7_2 | c7_1.Class17IntAttr5 = c7_2.Class17IntAttr6 ) 

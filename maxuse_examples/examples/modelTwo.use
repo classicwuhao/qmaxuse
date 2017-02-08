@@ -6,7 +6,7 @@ enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2 }
 
 enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
 
-@Weight = 1
+@Rank = 1
 class Class0
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -14,7 +14,7 @@ attributes
 	Class0IntAttr2 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class1
 attributes 
 	Class1BoolAttr0 : Boolean 
@@ -22,7 +22,7 @@ attributes
 	Class1IntAttr2 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class2
 attributes 
 	Class2BoolAttr0 : Boolean 
@@ -30,7 +30,7 @@ attributes
 	Class2IntAttr2 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class3
 attributes 
 	Class3IntAttr0 : Integer 
@@ -39,7 +39,7 @@ attributes
 	Class3EnumAttr3 : Enum2 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class4
 attributes 
 	Class4IntAttr0 : Integer 
@@ -48,31 +48,31 @@ attributes
 	Class4EnumAttr3 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 association Class0_Class1 between 
 	 Class0 [1] role role0
 	 Class1 [1] role role1
 end 
 
-@Weight = 1
+@Rank = 1
 association Class1_Class4 between 
 	 Class1 [1] role role2
 	 Class4 [1] role role3
 end 
 
-@Weight = 1
+@Rank = 1
 association Class2_Class2 between 
 	 Class2 [1] role role4
 	 Class2 [1] role role5
 end 
 
-@Weight = 1
+@Rank = 1
 association Class3_Class3 between 
 	 Class3 [1] role role6
 	 Class3 [1] role role7
 end 
 
-@Weight = 1
+@Rank = 1
 association Class4_Class0 between 
 	 Class4 [1] role role8
 	 Class0 [1] role role9
@@ -80,7 +80,7 @@ end
 
 constraints 
 
-@Class0{Weight = 1} 
+@Class0{Rank = 1} 
 context Class0
 	 inv: self.Class0IntAttr2 > 19
 	 inv: self.Class0IntAttr2 <> 4
@@ -91,7 +91,7 @@ context Class0
 	 inv: self.Class0IntAttr2 >= 8 xor self.Class0IntAttr2 = 5
 	 inv: self.Class0BoolAttr1 or self.Class0BoolAttr0 and self.Class0IntAttr2 > 16 and self.Class0IntAttr2 >= 16
 
-@Class1{Weight = 1} 
+@Class1{Rank = 1} 
 context Class1
 	 inv: self.Class1IntAttr2 <> 3
 	 inv: self.Class1IntAttr2 > 17
@@ -102,7 +102,7 @@ context Class1
 	 inv: self.Class1IntAttr2 >= 13 xor self.Class1BoolAttr1 xor self.Class1BoolAttr0
 	 inv: self.Class1IntAttr2 > 7 or self.Class1BoolAttr0 xor self.Class1BoolAttr1
 
-@Class2{Weight = 1} 
+@Class2{Rank = 1} 
 context Class2
 	 inv: self.Class2IntAttr2 < 3 
 	 inv: self.Class2IntAttr2 > 11
@@ -113,7 +113,7 @@ context Class2
 	 inv: self.Class2IntAttr2 = 19 and self.Class2BoolAttr0 xor self.Class2BoolAttr1
 	 inv: self.Class2IntAttr2 < 14 xor self.Class2IntAttr2 > 9
 
-@Class3{Weight = 1} 
+@Class3{Rank = 1} 
 context Class3
 	 inv: self.Class3IntAttr0 > 18
 	 inv: self.Class3IntAttr2 > 17
@@ -125,7 +125,7 @@ context Class3
 	 inv: self.Class3IntAttr2 >= 11 or self.Class3IntAttr1 > 11 and self.Class3IntAttr1 > 6
 	 inv: self.Class3IntAttr0 > 1 xor self.Class3IntAttr1 <= 9 and self.Class3EnumAttr3 = #Enum2Elem3
 
-@Class4{Weight = 1} 
+@Class4{Rank = 1} 
 context Class4
 	 inv: self.Class4IntAttr2 = 19
 	 inv: self.Class4IntAttr2 <= 9

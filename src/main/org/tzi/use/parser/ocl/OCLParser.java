@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2016-03-14 16:32:01
+// $ANTLR 3.4 OCL.g 2017-02-08 15:55:07
  
 /*
  * USE - UML based specification environment
@@ -1862,7 +1862,7 @@ public class OCLParser extends BaseParser {
                 {
                 int LA23_1 = input.LA(2);
 
-                if ( (((( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))&&( input.LA(2) == LPAREN ))) ) {
+                if ( (((( input.LA(2) == LPAREN )&&( input.LA(2) == LPAREN ))&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))) ) {
                     alt23=1;
                 }
                 else if ( (true) ) {

@@ -13,26 +13,26 @@ attributes
 	isStudent:	Boolean
 end
 
-@Weight = 1
+@Rank = 1
 association Writes between
 	Paper [0..1] role manuscript
 	Researcher [1..2] role author
 end
 
-@Weight = 1
+@Rank = 1
 association Reviews between
 	Paper [0..1] role submission
 	Researcher [3] role referee
 end
 
 constraints
-@Researcher{Weight = 1}
+@Researcher{Rank = 1}
 context Researcher
 	inv oneManuscript: Researcher.allInstances()->forAll(r|r.manuscript->size()=1)
 	inv oneSubmission: Researcher.allInstances()->forAll(r|r.submission->size()=1)
 	inv: Researcher.allInstances()->forAll(r|r.submission->excludes(r.manuscript))
 
-@Paper{Weight = 1}
+@Paper{Rank = 1}
 context Paper
 	inv: self.wordCount < 10000
 	inv: Paper.allInstances()->forAll(p|p.studentPaper=p.author->exists(x|x.isStudent))

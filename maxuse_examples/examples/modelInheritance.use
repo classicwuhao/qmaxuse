@@ -4,7 +4,7 @@ enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2 }
 
 enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1Elem5, Enum1Elem6 } 
 
-@Weight = 1
+@Rank = 1
 class Class0
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -14,7 +14,7 @@ attributes
 	Class0EnumAttr4 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class1 < Class7
 attributes 
 	Class1BoolAttr0 : Boolean 
@@ -24,7 +24,7 @@ attributes
 	Class1EnumAttr4 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class2 < Class6
 attributes 
 	Class2BoolAttr0 : Boolean 
@@ -34,7 +34,7 @@ attributes
 	Class2EnumAttr4 : Enum0 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class3 < Class6,Class7
 attributes 
 	Class3BoolAttr0 : Boolean 
@@ -44,7 +44,7 @@ attributes
 	Class3EnumAttr4 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class4
 attributes 
 	Class4BoolAttr0 : Boolean 
@@ -54,7 +54,7 @@ attributes
 	Class4EnumAttr4 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class5 < Class9
 attributes 
 	Class5BoolAttr0 : Boolean 
@@ -64,7 +64,7 @@ attributes
 	Class5EnumAttr4 : Enum1 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class6 < Class8
 attributes 
 	Class6BoolAttr0 : Boolean 
@@ -74,7 +74,7 @@ attributes
 	Class6IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class7 < Class2
 attributes 
 	Class7BoolAttr0 : Boolean 
@@ -84,7 +84,7 @@ attributes
 	Class7IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class8
 attributes 
 	Class8BoolAttr0 : Boolean 
@@ -94,7 +94,7 @@ attributes
 	Class8IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class9 < Class2,Class11
 attributes 
 	Class9BoolAttr0 : Boolean 
@@ -104,7 +104,7 @@ attributes
 	Class9IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class10
 attributes 
 	Class10BoolAttr0 : Boolean 
@@ -114,7 +114,7 @@ attributes
 	Class10IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class11 < Class6
 attributes 
 	Class11BoolAttr0 : Boolean 
@@ -124,7 +124,7 @@ attributes
 	Class11IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 class Class12
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -134,25 +134,25 @@ attributes
 	Class12IntAttr4 : Integer 
 end 
 
-@Weight = 1
+@Rank = 1
 association Class0_Class2 between 
 	 Class0 [1] role role0
 	 Class2 [1] role role1
 end 
 
-@Weight = 1
+@Rank = 1
 association Class1_Class12 between 
 	 Class1 [1] role role2
 	 Class12 [1] role role3
 end 
 
-@Weight = 1
+@Rank = 1
 association Class2_Class10 between 
 	 Class2 [1] role role4
 	 Class10 [1] role role5
 end 
 
-@Weight = 1
+@Rank = 1
 association Class4_Class4 between 
 	 Class4 [1] role role8
 	 Class4 [1] role role9
@@ -160,7 +160,7 @@ end
 
 constraints 
 
-@Class0{Weight = 1} 
+@Class0{Rank = 1} 
 context Class0
 	 inv: self.Class0IntAttr2 >= 7
 	 inv: self.Class0IntAttr2 <> 15
@@ -178,7 +178,7 @@ context Class0
 	 inv: Class0.allInstances()->exists(c1 | c1.Class0IntAttr3 > 12) 
 	 inv: Class0.allInstances()->exists(c1,c2|c1.Class0IntAttr3 = Class0IntAttr2) 
 
-@Class1{Weight = 1} 
+@Class1{Rank = 1} 
 context Class1
 	 inv: self.Class1IntAttr2 > 18
 	 inv: self.Class1IntAttr2 >= 15
@@ -196,7 +196,7 @@ context Class1
 	 inv: Class1.allInstances()->exists(c1,c2 | c1.Class1BoolAttr0 xor c2.Class1BoolAttr1) 
 	 inv: Class1.allInstances()->exists(c1,c2 | c1.Class1BoolAttr0 and c2.Class1BoolAttr1) 
 
-@Class2{Weight = 1} 
+@Class2{Rank = 1} 
 context Class2
 	 inv: self.Class2IntAttr3 = 3
 	 inv: self.Class2IntAttr2 < 19
@@ -214,7 +214,7 @@ context Class2
 	 inv: Class2.allInstances()->exists(c1,c2|c1.Class2IntAttr3 > Class2IntAttr2) 
 	 inv: Class2.allInstances()->exists(c1 | c1.Class2IntAttr2 > 3) 
 
-@Class3{Weight = 1} 
+@Class3{Rank = 1} 
 context Class3
 	 inv: self.Class3IntAttr2 > 14
 	 inv: self.Class3IntAttr3 >= 13
@@ -232,7 +232,7 @@ context Class3
 	 inv: Class3.allInstances()->exists(c1 | c1.Class3EnumAttr4 = #Enum1Elem3) 
 	 inv: Class3.allInstances()->forAll(c1 | c1.Class3EnumAttr4 = #Enum1Elem5) 
 
-@Class4{Weight = 1} 
+@Class4{Rank = 1} 
 context Class4
 	 inv: self.Class4IntAttr3 <= 4
 	 inv: self.Class4IntAttr3 = 3
@@ -250,7 +250,7 @@ context Class4
 	 inv: Class4.allInstances()->exists(c1,c2 | c1.Class4BoolAttr1 or c2.Class4BoolAttr0) 
 	 inv: Class4.allInstances()->exists(c1 | c1.Class4IntAttr2 >= 16) 
 
-@Class5{Weight = 1} 
+@Class5{Rank = 1} 
 context Class5
 	 inv: self.Class5IntAttr3 >= 8
 	 inv: self.Class5IntAttr2 <> 3
@@ -272,7 +272,7 @@ context Class5
 	 inv: Class5.allInstances()->forAll(c1,c2 | c1.Class5BoolAttr1 or c2.Class5BoolAttr0) 
 	 inv: Class5.allInstances()->forAll(c1,c2|c1.Class5IntAttr2 < Class5IntAttr3) 
 
-@Class6{Weight = 1} 
+@Class6{Rank = 1} 
 context Class6
 
 	inv: Class6.allInstances()->forAll(c6|Class7.allInstances()->forAll(c7|c6<>c7))
@@ -292,7 +292,7 @@ context Class6
 	 inv: Class6.allInstances()->forAll(c1,c2 | c1.Class6BoolAttr1 xor c2.Class6BoolAttr0) 
 	 inv: Class6.allInstances()->exists(c1,c2|c1.Class6IntAttr2 >= Class6IntAttr3) 
 
-@Class7{Weight = 1} 
+@Class7{Rank = 1} 
 context Class7
 	 inv: self.Class7IntAttr2 < 9
 	 inv: self.Class7IntAttr2 = 9
@@ -309,7 +309,7 @@ context Class7
 	 inv: Class7.allInstances()->exists(c1,c2 | c1.Class7BoolAttr0 xor c2.Class7BoolAttr1) 
 	 inv: Class7.allInstances()->exists(c1 | c1.Class7IntAttr2 < 14) 
 
-@Class8{Weight = 1} 
+@Class8{Rank = 1} 
 context Class8
 	 inv: self.Class8IntAttr4 = 16
 	 inv: self.Class8IntAttr4 <> 19
@@ -326,7 +326,7 @@ context Class8
 	 inv: Class8.allInstances()->forAll(c1,c2|c1.Class8IntAttr4 <= Class8IntAttr2) 
 	 inv: Class8.allInstances()->exists(c1 | c1.Class8IntAttr2 = 18) 
 
-@Class9{Weight = 1} 
+@Class9{Rank = 1} 
 context Class9
 	 inv: self.Class9IntAttr2 <= 17
 	 inv: self.Class9IntAttr2 < 17
@@ -343,7 +343,7 @@ context Class9
 	 inv: Class9.allInstances()->exists(c1 | c1.Class9IntAttr3 <> 9) 
 	 inv: Class9.allInstances()->exists(c1,c2 | c1.Class9BoolAttr0 xor c2.Class9BoolAttr1) 
 
-@Class10{Weight = 1} 
+@Class10{Rank = 1} 
 context Class10
 	 inv: self.Class10IntAttr2 <> 0
 	 inv: self.Class10IntAttr3 > 17
@@ -360,7 +360,7 @@ context Class10
 	 inv: Class10.allInstances()->forAll(c1 | c1.Class10IntAttr3 <= 14) 
 	 inv: Class10.allInstances()->exists(c1 | c1.Class10IntAttr3 > 16) 
 
-@Class11{Weight = 1} 
+@Class11{Rank = 1} 
 context Class11
 	
 	inv: Class11.allInstances()->forAll(c11|Class2.allInstances()->forAll(c2|c11<>c2))
@@ -380,7 +380,7 @@ context Class11
 	 inv: Class11.allInstances()->exists(c1,c2 | c1.Class11BoolAttr1 and c2.Class11BoolAttr0) 
 	 inv: Class11.allInstances()->exists(c1 | c1.Class11IntAttr4 = 2) 
 
-@Class12{Weight = 1} 
+@Class12{Rank = 1} 
 context Class12
 	 inv: self.Class12IntAttr4 > 3
 	 inv: self.Class12IntAttr2 <= 13

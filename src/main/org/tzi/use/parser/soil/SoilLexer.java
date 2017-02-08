@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Soil.g 2016-03-14 16:32:03
+// $ANTLR 3.4 Soil.g 2017-02-08 15:55:08
 
 /*
  * USE - UML based specification environment
@@ -3653,11 +3653,11 @@ public class SoilLexer extends Lexer {
     }
     // $ANTLR end synpred2_Soil
 
-    public final boolean synpred1_Soil() {
+    public final boolean synpred2_Soil() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_Soil_fragment(); // can never throw exception
+            synpred2_Soil_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -3667,11 +3667,11 @@ public class SoilLexer extends Lexer {
         state.failed=false;
         return success;
     }
-    public final boolean synpred2_Soil() {
+    public final boolean synpred1_Soil() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred2_Soil_fragment(); // can never throw exception
+            synpred1_Soil_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2016-03-14 16:32:02
+// $ANTLR 3.4 OCL.g 2017-02-08 15:55:07
 
 package org.tzi.use.parser.ocl; 
 
@@ -3223,11 +3223,11 @@ public class OCLLexer extends Lexer {
     }
     // $ANTLR end synpred2_OCL
 
-    public final boolean synpred2_OCL() {
+    public final boolean synpred1_OCL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred2_OCL_fragment(); // can never throw exception
+            synpred1_OCL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -3237,11 +3237,11 @@ public class OCLLexer extends Lexer {
         state.failed=false;
         return success;
     }
-    public final boolean synpred1_OCL() {
+    public final boolean synpred2_OCL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_OCL_fragment(); // can never throw exception
+            synpred2_OCL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

@@ -21,7 +21,7 @@ attributes
 	year:	Integer
 end
 
-@Weight = default
+@Rank = default
 association study between
 	Student [1..1] role student
 	Module [0..*] role modules
@@ -29,11 +29,11 @@ end
 
 constraints
 
-@Person{Weight = 1}
+@Person{Rank = 1}
 context Person
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 
-@Student{Weight = 1}
+@Student{Rank = 1}
 context Student
 	inv: self.age > 18
 	inv: self.year>=1 and self.year<=6
@@ -42,6 +42,6 @@ context Student
 	inv: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
 	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
 
-@Module{Weight = 1}
+@Module{Rank = 1}
 context Module
 	inv: self.year>=1 and self.year<=5

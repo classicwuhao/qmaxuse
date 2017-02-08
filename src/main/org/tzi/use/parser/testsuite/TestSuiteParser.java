@@ -1,4 +1,4 @@
-// $ANTLR 3.4 TestSuite.g 2016-03-14 16:32:12
+// $ANTLR 3.4 TestSuite.g 2017-02-08 15:55:11
  
 /*
  * USE - UML based specification environment
@@ -2750,7 +2750,7 @@ public class TestSuiteParser extends BaseParser {
                 {
                 int LA34_1 = input.LA(2);
 
-                if ( (((( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))&&( input.LA(2) == LPAREN ))) ) {
+                if ( (((( input.LA(2) == LPAREN )&&( input.LA(2) == LPAREN ))&&( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) ))) ) {
                     alt34=1;
                 }
                 else if ( (true) ) {
@@ -8948,39 +8948,25 @@ public class TestSuiteParser extends BaseParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred4_TestSuite() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_TestSuite_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred6_TestSuite() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_TestSuite_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred5_TestSuite() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred5_TestSuite_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred7_TestSuite() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_TestSuite_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -9004,11 +8990,25 @@ public class TestSuiteParser extends BaseParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred7_TestSuite() {
+    public final boolean synpred4_TestSuite() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred7_TestSuite_fragment(); // can never throw exception
+            synpred4_TestSuite_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred6_TestSuite() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_TestSuite_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
