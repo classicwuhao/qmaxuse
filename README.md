@@ -10,12 +10,12 @@ MaxUSE is a tool that satisfies the number of invariants (constraints) as many a
 * Use *ant* to build MaxUSE.
 
 ##3. USEAGE
-###3.1 Find the Maximum Rank 
+###3.1 Find All Achievable Features (based on their rankings) 
 * Specify *@Rank=c* annotation to rank individual model features. For more details, please see all sample files [here](maxuse_examples/).
 * Load annotated model into USE, at the USE command prompt type *maxuse* to maixmise the number of achievable features based on their rankings.
-* Relevant information will be printed on screen or a report will be generated (Currently, it generates a primitive html-basd report and more templates are coming up.). An example can be found [here](http://htmlpreview.github.io/?https://github.com/anonymous100001/maxuse/blob/master/lib/html/UNIVERSITY.html).  More examples can be found [here] (lib/html/).
+* Relevant information will be printed on screen or a report will be generated (Currently, it generates a primitive html-basd report and more templates are coming up.). An example can be found [here](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/UNIVERSITY.html).  More examples can be found [here] (lib/html/).
 
-###3.2 Find the Conflicts
+###3.2 Find Constraint Conflicts
    * Rank equally for each metamodel feature (class, association, invariant).
    * Run maxuse again (type *maxuse* at USE command prompt).
    * MaxUSE will find constraint conflicts among the features.
