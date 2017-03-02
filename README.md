@@ -28,7 +28,7 @@ MaxUSE is a tool that satisfies the number of invariants (constraints) as many a
 
 ##5. SOURCE CODE
 * The core part of the source code can be found [here](src/main/org/tzi/use/uran).
-* MaxUSE uses an SMT solving engine called uran to construct/generate SMT2 formulas and incremently and efficiently solve them.
+* MaxUSE uses an SMT solving engine called [uran] (https://github.com/classicwuhao/uran) to construct/generate SMT2 formulas and incremently and efficiently solve them.
 
 ##6. DEVELOPMENT IN PROGRESS
 * Automatic compiling scripts with Z3 is under development.
@@ -36,4 +36,4 @@ MaxUSE is a tool that satisfies the number of invariants (constraints) as many a
 * MaxUSE supports OCL constructs used in the benchmark, not all OCL constructs are supported, and we are currently adding more. 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) will be considered and added to interact with MaxUSE.
 
-Last updated: 08-FEB-2017
+Last updated: 02-MARCH-2017
