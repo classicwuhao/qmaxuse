@@ -451,7 +451,7 @@ annotation_ref:
 ;
 
 annotation_def:
-	'default';
+	'automatic';
 
 annotation_enum_type:
 	'Soft'
