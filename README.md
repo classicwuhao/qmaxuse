@@ -1,4 +1,4 @@
-#MaxUSE README
+# MaxUSE README
 
 ## 1. OVERVIEW
 MaxUSE is a tool that satisfies the number of invariants (constraints) as many as possible when a model (metamodel) is not consistent. MaxUSE allows users to rank individual model features based on their own domain specific knowledge or using automatic ranking.  MaxUSE is built on top of USE modelling tool, it currently uses [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its reasoning engine and incremently solves long nested complicated logic formulas to maximise the number of invariants based on their rankings. Moreover, MaxUSE also finds all constraint conflicts among the features by further solving the [set cover problem] (https://en.wikipedia.org/wiki/Set_cover_problem).
