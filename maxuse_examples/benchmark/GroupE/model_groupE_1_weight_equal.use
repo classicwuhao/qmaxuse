@@ -1,4 +1,4 @@
-model model_groupE_1_Rank_notequal
+model model_groupE_1_weight_equal
 
 enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2, Enum0Elem3 } 
 
