@@ -4,7 +4,7 @@ enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2, Enum0Elem3 }
 
 enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1Elem5, Enum1Elem6 } 
 
-@Rank = default
+@Rank = automatic
 class Class0 < Class19
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -103,7 +103,7 @@ attributes
 	Class9EnumAttr3 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class10
 attributes 
 	Class10BoolAttr0 : Boolean 
@@ -221,7 +221,7 @@ attributes
 	Class21EnumAttr2 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class22
 attributes 
 	Class22BoolAttr0 : Boolean 
@@ -229,7 +229,7 @@ attributes
 	Class22EnumAttr2 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class23
 attributes 
 	Class23BoolAttr0 : Boolean 
@@ -237,7 +237,7 @@ attributes
 	Class23EnumAttr2 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 association Class0_Class13 between 
 	 Class0 [0..4] role role0
 	 Class13 [2] role role1
@@ -297,7 +297,7 @@ association Class10_Class18 between
 	 Class18 [2..*] role role21
 end 
 
-@Rank = default
+@Rank = automatic
 association Class11_Class19 between 
 	 Class11 [0..1] role role22
 	 Class19 [*] role role23
@@ -325,7 +325,7 @@ context Class3
 	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr2 <= c3_2.Class3IntAttr3 ) 
 	 inv: Class3.allInstances()->exists(c1 | c1.Class3IntAttr3 >= 5) 
 
-@Class4{Rank = default} 
+@Class4{Rank = automatic} 
 context Class4
 	 inv: Class4.allInstances()->forAll( c4_1,c4_2 | c4_1.Class4IntAttr2 >= c4_2.Class4IntAttr3 ) 
 	 inv: Class4.allInstances()->forAll(c1,c2|c1.Class4IntAttr2 <= Class4IntAttr3) 
@@ -412,7 +412,7 @@ context Class20
 context Class21
 	 inv: Class21.allInstances()->forAll(c1 | c1.Class21IntAttr1 < 18) 
 
-@Class22{Rank = default} 
+@Class22{Rank = automatic} 
 context Class22
 	 inv: Class22.allInstances()->forAll(c1 | c1.Class22EnumAttr2 <> #Enum0Elem1) 
 

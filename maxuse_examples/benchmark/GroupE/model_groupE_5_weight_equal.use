@@ -467,8 +467,7 @@ context Class12
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr4 > c2_2.Class12IntAttr3 ) 
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr4 < c2_2.Class12IntAttr3 ) 
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr3 < c2_2.Class12IntAttr4 ) 
-	 inv: self.Class12BoolAttr1 xor self.Class12BoolAttr0 or self.Class12BoolAttr2 xor self.Class12IntAttr3 <= 7
-	 @Rank= default 
+	 inv: self.Class12BoolAttr1 xor self.Class12BoolAttr0 or self.Class12BoolAttr2 xor self.Class12IntAttr3 <= 7 
 	 inv: self.Class12EnumAttr6 <> #Enum0Elem2 or self.Class12BoolAttr1 or self.Class12BoolAttr0 or self.Class12IntAttr4 < 18
 
 @Class13{Rank = 1} 

@@ -14,7 +14,7 @@ attributes
 	Class0EnumAttr2 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class1
 attributes 
 	Class1BoolAttr0 : Boolean 
@@ -66,7 +66,7 @@ attributes
 	Class6EnumAttr6 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class7
 attributes 
 	Class7BoolAttr0 : Boolean 
@@ -138,7 +138,7 @@ attributes
 	Class12EnumAttr5 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class13
 attributes 
 	Class13BoolAttr0 : Boolean 
@@ -240,7 +240,7 @@ association Class1_Class12 between
 	 Class12 [1..*] role role3
 end 
 
-@Rank = default
+@Rank = automatic
 association Class2_Class1 between 
 	 Class2 [1] role role4
 	 Class1 [0..*] role role5
@@ -300,7 +300,7 @@ association Class11_Class2 between
 	 Class2 [4] role role23
 end 
 
-@Rank = default
+@Rank = automatic
 association Class12_Class5 between 
 	 Class12 [3..4] role role24
 	 Class5 [1..*] role role25
@@ -338,7 +338,7 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: self.Class0EnumAttr2 <> #Enum2Elem3 or self.Class0IntAttr1 < 4 xor self.Class0IntAttr1 > 19
 	 inv: self.Class0EnumAttr2 <> #Enum2Elem0 and self.Class0IntAttr1 <> 0
@@ -388,7 +388,7 @@ context Class7
 	 inv: Class7.allInstances()->exists(c1,c2|c1.Class7IntAttr2 <> Class7IntAttr3) 
 	 inv: Class7.allInstances()->exists(c1,c2 | c1.Class7BoolAttr1 and c2.Class7BoolAttr0) 
 
-@Class8{Rank = default} 
+@Class8{Rank = automatic} 
 context Class8
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr2 > c8_2.Class8IntAttr3 ) 
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr2 <= c8_2.Class8IntAttr3 ) 

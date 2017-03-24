@@ -4,7 +4,7 @@ enum Enum0 { Enum0Elem0, Enum0Elem1, Enum0Elem2 }
 
 enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1Elem5, Enum1Elem6, Enum1Elem7, Enum1Elem8, Enum1Elem9 } 
 
-@Rank = default
+@Rank = automatic
 class Class0 < Class1,Class6
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -140,7 +140,7 @@ attributes
 	Class11EnumAttr5 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class12 < Class3
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -184,7 +184,7 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: self.Class0IntAttr4 >= 11
 	 inv: self.Class0IntAttr3 <> 13
@@ -196,7 +196,7 @@ context Class1
 	 @Rank = 5
 	 inv: self.Class1IntAttr3 > 17
 
-@Class2{Rank = default} 
+@Class2{Rank = automatic} 
 context Class2
 	 @Rank = 4
 	 inv: self.Class2IntAttr4 < 0
@@ -208,7 +208,7 @@ context Class3
 	 inv: self.Class3IntAttr3 <= 3
 	 inv: self.Class3IntAttr4 = 6
 
-@Class4{Rank = default} 
+@Class4{Rank = automatic} 
 context Class4
 	 inv: self.Class4BoolAttr0 or self.Class4BoolAttr1 or self.Class4BoolAttr1 xor self.Class4BoolAttr0 or self.Class4EnumAttr5 = #Enum0Elem1
 
@@ -226,7 +226,7 @@ context Class7
 	 inv: self.Class7BoolAttr1
 	 inv: self.Class7BoolAttr0 xor self.Class7BoolAttr1
 
-@Class8{Rank = default} 
+@Class8{Rank = automatic} 
 context Class8
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr3 > c8_2.Class8IntAttr2 ) 
 	 inv: Class8.allInstances()->forAll( c8_1,c8_2 | c8_1.Class8IntAttr4 <= c8_2.Class8IntAttr2 ) 

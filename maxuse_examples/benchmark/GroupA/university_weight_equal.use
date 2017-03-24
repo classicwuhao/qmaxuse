@@ -21,7 +21,7 @@ attributes
 	year:	Integer
 end
 
-@Rank = default
+@Rank = automatic
 association study between
 	Student [1..1] role student
 	Module [0..*] role modules

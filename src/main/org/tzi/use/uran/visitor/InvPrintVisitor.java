@@ -493,6 +493,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 		totalWeight = 0;
 		int i=0;
+		long time_count = System.currentTimeMillis();
 		
 		EnumType[] enumTypes = e.enumTypes().toArray(new EnumType[0]);
 		for (EnumType t : enumTypes){
@@ -663,7 +664,9 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
 		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		this.model_name = e.name();
+		ColorPrint.println("Formula Generations Time Spent:"+(System.currentTimeMillis()-time_count)+" ms",Color.BLUE);
 		toSMT2File(e.name(),formulas, factory, totalWeight);
+		
 	}
 
 	private int getSum(MAssociation assoc){
@@ -742,11 +745,12 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		ColorPrint.println("Solving Weighted MaxSMT...",Color.BLUE);
 		long current = System.currentTimeMillis();
 		if (solver.solve()==Result.UNSAT){
+			ColorPrint.println("Consistency Checking Time Spent:"+ (System.currentTimeMillis()-current)+" ms",Color.BLUE);
 			if (weights.size()>0)
 				maxsmt (solver,weight);
 			else
 				ColorPrint.println("At least one constraint cannot be satisfied,"+
-					 "but this model does not have any soft constraints to be removed.", Color.RED);				
+					 "but this model does not have any soft constraints to be removed.", Color.RED);
 		}
 		else{
 			ColorPrint.println("All constraints of this model can be satisfied.", Color.BLUE);
@@ -847,11 +851,13 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
-				writer.overwrite(formulas,1);
+				writer.append(formulas);
+				//writer.overwrite(formulas,1);
 				if (solver.solve()==Result.UNSAT){
 					ColorPrint.println("Max Weight found:"+mid, Color.RED);
 					formulas.clear();
 					formulas.add(FormulaBuilder.sum(mid, weights));
+					//writer.append(formulas);
 					writer.overwrite(formulas,1);
 					// Use this model as a guidence for enumerating all other solutions. 
 					while (solver.solve()==Result.SAT){

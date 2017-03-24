@@ -166,7 +166,7 @@ association Class3_Class8 between
 	 Class8 [1..*] role role7
 end 
 
-@Rank = default
+@Rank = automatic
 association Class4_Class10 between 
 	 Class4 [1..3] role role8
 	 Class10 [2..*] role role9
@@ -180,12 +180,12 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: Class0.allInstances()->forAll(c1 | c1.Class0IntAttr4 = 1)
 	 inv: Class0.allInstances()->forAll(c1 | Class4.allInstances()->forAll(c4| c4.Class4IntAttr2 > c1.Class0IntAttr4))
 
-@Class1{Rank = default} 
+@Class1{Rank = automatic} 
 context Class1
 	 inv: Class1.allInstances()->forAll(c1,c2|c1.Class1IntAttr4 <> Class1IntAttr3) 
 

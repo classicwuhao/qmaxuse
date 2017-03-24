@@ -26,7 +26,7 @@ association Reviews between
 end
 
 constraints
-@Researcher{Rank = default}
+@Researcher{Rank = automatic}
 context Researcher
 	@Rank = 3
 	inv oneManuscript: Researcher.allInstances()->forAll(r|r.manuscript->size()=1)
@@ -34,7 +34,7 @@ context Researcher
 	inv oneSubmission: Researcher.allInstances()->forAll(r|r.submission->size()=1)
 	inv: Researcher.allInstances()->forAll(r|r.submission->excludes(r.manuscript))
 
-@Paper{Rank = default}
+@Paper{Rank = automatic}
 context Paper
 	inv: self.wordCount < 10000
 	inv: Paper.allInstances()->forAll(p|p.studentPaper=p.author->exists(x|x.isStudent))

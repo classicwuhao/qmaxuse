@@ -37,7 +37,7 @@ attributes
 	Class2EnumAttr5 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class3 < Class2,Class5,Class11
 attributes 
 	Class3BoolAttr0 : Boolean 
@@ -88,7 +88,7 @@ attributes
 	Class7EnumAttr5 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class8
 attributes 
 	Class8BoolAttr0 : Boolean 
@@ -154,7 +154,7 @@ association Class3_Class8 between
 	 Class8 [3] role role7
 end 
 
-@Rank = default
+@Rank = automatic
 association Class4_Class4 between 
 	 Class4 [1..2] role role8
 	 Class4 [1..3] role role9
@@ -162,7 +162,7 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: self.Class0IntAttr3 > 6
 

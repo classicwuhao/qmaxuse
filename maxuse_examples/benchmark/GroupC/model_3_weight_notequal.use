@@ -92,7 +92,7 @@ attributes
 	Class7EnumAttr4 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class8 < Class15
 attributes 
 	Class8BoolAttr0 : Boolean 
@@ -131,7 +131,7 @@ attributes
 	Class11EnumAttr3 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class12
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -351,13 +351,13 @@ association Class0_Class16 between
 	 Class16 [1..3] role role1
 end 
 
-@Rank = default
+@Rank = automatic
 association Class2_Class32 between 
 	 Class2 [0..3] role role4
 	 Class32 [2..*] role role5
 end 
 
-@Rank = default
+@Rank = automatic
 association Class3_Class18 between 
 	 Class3 [3..4] role role6
 	 Class18 [1..3] role role7
@@ -449,7 +449,7 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr4 > c0_2.Class0IntAttr3 ) 
 	 inv: Class0.allInstances()->exists(c1 | c1.Class0IntAttr3 >= 18) 
@@ -515,7 +515,7 @@ context Class12
 	 inv: not self.Class12BoolAttr1
 	 inv: Class12.allInstances()->forAll(c_12|Class1.allInstances()->forAll(c_1|c_12<>c_1 and Class13.allInstances()->forAll(c_13|c_1<>c_13)))
 
-@Class13{Rank = default} 
+@Class13{Rank = automatic} 
 context Class13
 	 inv: self.Class13IntAttr2 < 10
 	 inv: self.Class13BoolAttr0 and self.Class13BoolAttr1
@@ -600,7 +600,7 @@ context Class30
 	 inv: self.Class30EnumAttr2 <> #Enum0Elem2
 	 inv: Class30.allInstances()->exists(c1 | c1.Class30IntAttr1 > 13) 
 
-@Class31{Rank = default} 
+@Class31{Rank = automatic} 
 context Class31
 	 inv: self.Class31EnumAttr2 <> #Enum0Elem1
 	 inv: Class31.allInstances()->exists(c1 | c1.Class31IntAttr1 = 18) 

@@ -6,7 +6,7 @@ enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1El
 
 enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
 
-@Rank = default
+@Rank = automatic
 class Class0 < Class39
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -116,7 +116,7 @@ attributes
 	Class9EnumAttr5 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class10 < Class41
 attributes 
 	Class10BoolAttr0 : Boolean 
@@ -156,7 +156,7 @@ attributes
 	Class13EnumAttr4 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class14 < Class39
 attributes 
 	Class14BoolAttr0 : Boolean 
@@ -258,7 +258,7 @@ attributes
 	Class25IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class26 < Class18
 attributes 
 	Class26IntAttr0 : Integer 
@@ -270,7 +270,7 @@ attributes
 	Class27IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class28 < Class16
 attributes 
 	Class28IntAttr0 : Integer 
@@ -302,7 +302,7 @@ attributes
 	Class31IntAttr4 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class32 < Class0
 attributes 
 	Class32BoolAttr0 : Boolean 
@@ -359,7 +359,7 @@ attributes
 	Class37EnumAttr3 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class38 < Class8,Class34
 attributes 
 	Class38BoolAttr0 : Boolean 
@@ -368,7 +368,7 @@ attributes
 	Class38EnumAttr3 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class39 < Class45
 attributes 
 	Class39BoolAttr0 : Boolean 
@@ -456,7 +456,7 @@ association Class14_Class3 between
 	 Class3 [1..2] role role29
 end 
 
-@Rank = default
+@Rank = automatic
 association Class17_Class35 between 
 	 Class17 [1..2] role role34
 	 Class35 [1..4] role role35
@@ -482,7 +482,7 @@ end
 
 constraints 
 
-@Class0{Rank = default} 
+@Class0{Rank = automatic} 
 context Class0
 	 inv: self.Class0IntAttr4 >= 3
 	 inv: Class0.allInstances()->forAll( c0_1,c0_2 | c0_1.Class0IntAttr4 <> c0_2.Class0IntAttr3 ) 
@@ -511,7 +511,7 @@ context Class4
 context Class5
 	 inv: self.Class5BoolAttr0 and self.Class5BoolAttr2
 
-@Class6{Rank = default} 
+@Class6{Rank = automatic} 
 context Class6
 	 inv: self.Class6BoolAttr1
 	 inv: Class6.allInstances()->forAll(c_6|Class39.allInstances()->forAll(c_39|c_6<>c_39))
@@ -586,7 +586,7 @@ context Class19
 context Class20
 	 inv: self.Class20EnumAttr3 <> #Enum2Elem2
 
-@Class21{Rank = default} 
+@Class21{Rank = automatic} 
 context Class21
 	 inv: self.Class21EnumAttr3 <> #Enum0Elem1
 
@@ -674,7 +674,7 @@ context Class38
 	 inv: self.Class38IntAttr2 >= 13
 	 inv: self.Class38EnumAttr3 = #Enum1Elem13
 
-@Class39{Rank = default}
+@Class39{Rank = automatic}
 context Class39
 	 inv: self.Class39IntAttr2 <> 9
 	 inv: self.Class39IntAttr2 = 11
@@ -701,7 +701,7 @@ context Class41
 context Class42
 	 inv: self.Class42IntAttr1 > 7
 
-@Class43{Rank = default} 
+@Class43{Rank = automatic} 
 context Class43
 	 inv: self.Class43IntAttr1 < 14
 

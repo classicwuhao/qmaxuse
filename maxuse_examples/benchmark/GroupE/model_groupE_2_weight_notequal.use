@@ -42,7 +42,7 @@ attributes
 	Class4IntAttr2 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class5
 attributes 
 	Class5BoolAttr0 : Boolean 
@@ -106,7 +106,7 @@ attributes
 	Class12EnumAttr2 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class13 < Class14
 attributes 
 	Class13BoolAttr0 : Boolean 
@@ -134,13 +134,13 @@ association Class1_Class13 between
 	 Class13 [2..*] role role3
 end 
 
-@Rank = default
+@Rank = automatic
 association Class2_Class11 between 
 	 Class2 [0..*] role role4
 	 Class11 [0..4] role role5
 end 
 
-@Rank = default
+@Rank = automatic
 association Class3_Class4 between 
 	 Class3 [3..4] role role6
 	 Class4 [0..2] role role7
@@ -182,7 +182,7 @@ association Class9_Class14 between
 	 Class14 [1..3] role role19
 end 
 
-@Rank = default
+@Rank = automatic
 association Class10_Class7 between 
 	 Class10 [0..2] role role20
 	 Class7 [1..4] role role21
@@ -204,13 +204,13 @@ context Class0
 	 @Rank= 3
  	 inv: Class0.allInstances()->forAll( c0_1|c0_1.role1->notEmpty())
 
-@Class1{Rank = default} 
+@Class1{Rank = automatic} 
 context Class1
 	 @Rank= 1 
 	 inv: self.Class1BoolAttr0 or self.Class1IntAttr2 <= 1 xor Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr2 >= c1_2.Class1IntAttr1 )
 	 @Rank= 3 
 	 inv: self.Class1IntAttr2 <= 12 xor self.Class1IntAttr1 <= 12 and Class1.allInstances()->forAll( c1_1,c1_2 | c1_1.Class1IntAttr2 > c1_2.Class1IntAttr1 )
-	 @Rank= default
+	 @Rank= automatic
 	 inv: Class1.allInstances()->forAll( c1_1|c1_1.role3->size()=3)
 	 @Rank= 1
 	 inv: Class1.allInstances()->forAll( c1_1|c1_1.role3->size()<2)
@@ -226,7 +226,7 @@ context Class3
 	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr1 = c3_2.Class3IntAttr2 ) xor not self.Class3BoolAttr0
 	 inv: Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr1 >= c3_2.Class3IntAttr2 ) xor Class3.allInstances()->forAll( c3_1,c3_2 | c3_1.Class3IntAttr2 <= c3_2.Class3IntAttr1 ) or self.Class3IntAttr1 = 8
 
-@Class4{Rank = default} 
+@Class4{Rank = automatic} 
 context Class4
 	 inv: self.Class4IntAttr2 <> 6 and Class4.allInstances()->forAll( c4_1,c4_2 | c4_1.Class4IntAttr2 > c4_2.Class4IntAttr1 )
 	 @Rank= 1 
@@ -278,7 +278,7 @@ context Class10
 @Class11{Rank = 2} 
 context Class11
 	 inv: self.Class11IntAttr1 > 1
-	 @Rank= default 
+	 @Rank= automatic 
 	 inv: self.Class11IntAttr1 < 1 and self.Class11EnumAttr2 <> #Enum0Elem7 xor not self.Class11BoolAttr0
 	 @Rank= 4 
 	 inv: self.Class11IntAttr1 >= 19 and self.Class11IntAttr1 >= 13

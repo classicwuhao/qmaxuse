@@ -3,7 +3,7 @@ model CivilStatus
 enum Gender {male, female}
 enum CivilStatus {single, married, divorced, windowed}
 
-@Rank = default
+@Rank = automatic
 class Person
 attributes
 	name : Integer
@@ -21,7 +21,7 @@ end
 
 constraints
 
-@PaperRank{Rank = default}
+@PaperRank{Rank = automatic}
 context Person
 inv: Person.allInstances()->forAll(p1,p2:Person|p1<>p2 implies p1.name <> p2.name)
 inv: Person.allInstances()->forAll(p|p.gender=#male implies p.husband->isEmpty())

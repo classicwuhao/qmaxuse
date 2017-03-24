@@ -28,7 +28,7 @@ attributes
 	Class1EnumAttr5 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class2 < Class16
 attributes 
 	Class2BoolAttr0 : Boolean 
@@ -129,7 +129,7 @@ attributes
 	Class11EnumAttr3 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class12 < Class1
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -216,7 +216,7 @@ attributes
 	Class20IntAttr4 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class21 < Class1
 attributes 
 	Class21BoolAttr0 : Boolean 
@@ -256,7 +256,7 @@ attributes
 	Class24EnumAttr3 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class25 < Class2
 attributes 
 	Class25BoolAttr0 : Boolean 
@@ -326,19 +326,19 @@ attributes
 	Class32EnumAttr2 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 association Class9_Class20 between 
 	 Class9 [1..4] role role18
 	 Class20 [3..4] role role19
 end 
 
-@Rank = default
+@Rank = automatic
 association Class18_Class10 between 
 	 Class18 [3] role role36
 	 Class10 [0..4] role role37
 end 
 
-@Rank = default
+@Rank = automatic
 association Class21_Class9 between 
 	 Class21 [0..2] role role42
 	 Class9 [*] role role43
@@ -366,7 +366,7 @@ context Class2
 	 inv: Class2.allInstances()->forAll(c_2|Class16.allInstances()->forAll(c_16|c_2<>c_16))
 	 inv: Class2.allInstances()->forAll(c_2|Class10.allInstances()->forAll(c_10|c_2<>c_10 and Class16.allInstances()->forAll(c_16|c_10<>c_16)))
 
-@Class3{Rank = default} 
+@Class3{Rank = automatic} 
 context Class3
 	 inv: self.Class3IntAttr3 <> 0
 	 inv: self.Class3BoolAttr2
@@ -427,7 +427,7 @@ context Class12
 context Class13
 	 inv: self.Class13EnumAttr3 = #Enum1Elem13
 
-@Class14{Rank = default} 
+@Class14{Rank = automatic} 
 context Class14
 	 inv: self.Class14EnumAttr3 <> #Enum2Elem2
 	 inv: self.Class14EnumAttr3 = #Enum2Elem2
@@ -478,7 +478,7 @@ context Class24
 context Class25
 	 inv: Class25.allInstances()->forAll(c1 | c1.Class25EnumAttr3 = #Enum2Elem5) 
 
-@Class26{Rank = default} 
+@Class26{Rank = automatic} 
 context Class26
 	 inv: Class26.allInstances()->forAll(c1 | c1.Class26IntAttr2 > 18) 
 
@@ -486,7 +486,7 @@ context Class26
 context Class27
 	 inv: Class27.allInstances()->forAll(c1,c2 | c1.Class27BoolAttr1 xor c2.Class27BoolAttr0) 
 
-@Class28{Rank = default} 
+@Class28{Rank = automatic} 
 context Class28
 	 inv: self.Class28IntAttr1 >= 4
 
@@ -494,7 +494,7 @@ context Class28
 context Class29
 	 inv: self.Class29IntAttr1 >= 13
 
-@Class30{Rank = default} 
+@Class30{Rank = automatic} 
 context Class30
 	 inv: self.Class30IntAttr1 <> 18
 

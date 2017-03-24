@@ -6,7 +6,7 @@ enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1El
 
 enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
 
-@Rank = default
+@Rank = automatic
 class Class0 < Class22
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -17,7 +17,7 @@ attributes
 	Class0EnumAttr5 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class1
 attributes 
 	Class1BoolAttr0 : Boolean 
@@ -136,7 +136,7 @@ attributes
 	Class11EnumAttr4 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class12 < Class0
 attributes 
 	Class12BoolAttr0 : Boolean 
@@ -166,7 +166,7 @@ attributes
 	Class14EnumAttr4 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class15 < Class2
 attributes 
 	Class15BoolAttr0 : Boolean 
@@ -246,7 +246,7 @@ attributes
 	Class23IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class24 < Class26
 attributes 
 	Class24IntAttr0 : Integer 
@@ -258,7 +258,7 @@ attributes
 	Class25IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class26 < Class32
 attributes 
 	Class26IntAttr0 : Integer 
@@ -270,7 +270,7 @@ attributes
 	Class27IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class28
 attributes 
 	Class28IntAttr0 : Integer 
@@ -282,7 +282,7 @@ attributes
 	Class29IntAttr0 : Integer 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class30 < Class2
 attributes 
 	Class30BoolAttr0 : Boolean 
@@ -372,7 +372,7 @@ attributes
 	Class38EnumAttr3 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class39
 attributes 
 	Class39BoolAttr0 : Boolean 
@@ -444,7 +444,7 @@ association Class1_Class16 between
 	 Class16 [1] role role3
 end 
 
-@Rank = default
+@Rank = automatic
 association Class3_Class40 between 
 	 Class3 [1..3] role role6
 	 Class40 [1..2] role role7
@@ -516,7 +516,7 @@ association Class21_Class30 between
 	 Class30 [1..5] role role43
 end 
 
-@Rank = default
+@Rank = automatic
 association Class22_Class26 between 
 	 Class22 [0..*] role role44
 	 Class26 [0..*] role role45
@@ -575,7 +575,7 @@ context Class9
 	 inv: self.Class9IntAttr3 > 2
 	 inv: not self.Class9BoolAttr2
 
-@Class10{Rank = default} 
+@Class10{Rank = automatic} 
 context Class10
 	 inv: self.Class10IntAttr3 < 17
 	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr3 = c0_2.Class10IntAttr2 ) or self.Class10IntAttr3 < 11 or self.Class10IntAttr3 < 0
@@ -634,11 +634,11 @@ context Class21
 context Class22
 	 inv: self.Class22BoolAttr0
 
-@Class23{Rank = default} 
+@Class23{Rank = automatic} 
 context Class23
 	 inv: Class23.allInstances()->exists(c1 | c1.Class23IntAttr0 < 15) 
 
-@Class24{Rank = default} 
+@Class24{Rank = automatic} 
 context Class24
 	 inv: Class24.allInstances()->forAll(c1 | c1.Class24IntAttr0 >= 17) 
 
@@ -662,7 +662,7 @@ context Class28
 context Class29
 	 inv: Class29.allInstances()->forAll(c1 | c1.Class29IntAttr0 >= 4) 
 
-@Class30{Rank = default} 
+@Class30{Rank = automatic} 
 context Class30
 	 inv: self.Class30IntAttr3 < 0
 	 inv: not self.Class30BoolAttr1 xor self.Class30IntAttr3 < 7 xor self.Class30IntAttr4 >= 5
@@ -710,7 +710,7 @@ context Class37
 	 inv: self.Class37EnumAttr3 = #Enum2Elem2 xor self.Class37BoolAttr1 and self.Class37BoolAttr0
 	 inv: self.Class37EnumAttr4 <> #Enum1Elem1 xor self.Class37BoolAttr1 or self.Class37BoolAttr0
 
-@Class38{Rank = default} 
+@Class38{Rank = automatic} 
 context Class38
 	 inv: self.Class38EnumAttr4 <> #Enum1Elem7
 	 inv: self.Class38BoolAttr1 xor self.Class38BoolAttr0 or self.Class38IntAttr2 > 2
@@ -729,7 +729,7 @@ context Class40
 	 inv: self.Class40EnumAttr4 = #Enum0Elem1 and self.Class40IntAttr2 < 12
 	 inv: self.Class40BoolAttr1 or self.Class40BoolAttr0 and self.Class40IntAttr2 >= 6 xor self.Class40IntAttr2 <> 14
 
-@Class41{Rank = default} 
+@Class41{Rank = automatic} 
 context Class41
 	 inv: self.Class41IntAttr1 > 8
 
@@ -742,12 +742,12 @@ context Class43
 	 inv: self.Class43IntAttr1 < 7
 	 inv: not self.Class43BoolAttr0
 
-@Class44{Rank = default} 
+@Class44{Rank = automatic} 
 context Class44
 	 inv: self.Class44IntAttr1 < 3
 	 inv: self.Class44BoolAttr0
 
-@Class45{Rank = default} 
+@Class45{Rank = automatic} 
 context Class45
 	 inv: self.Class45IntAttr1 >= 8
 	 inv: self.Class45BoolAttr0

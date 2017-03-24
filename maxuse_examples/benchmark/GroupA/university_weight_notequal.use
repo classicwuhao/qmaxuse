@@ -1,6 +1,6 @@
 model UNIVERSITY
 
-@Rank = default
+@Rank = automatic
 class Module
 attributes
 	code:			Integer
@@ -9,7 +9,7 @@ attributes
 	description:	Integer
 end
 
-@Rank = default
+@Rank = automatic
 class Person
 attributes
 	age:	Integer
@@ -17,7 +17,7 @@ attributes
 	name:	Integer
 end
 
-@Rank = default
+@Rank = automatic
 class Student < Person
 attributes
 	id:		Integer
@@ -32,11 +32,11 @@ end
 
 constraints
 
-@Person{Rank = default}
+@Person{Rank = automatic}
 context Person
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 
-@Student{Rank = default}
+@Student{Rank = automatic}
 context Student
 	inv: self.age > 18
 	inv: self.year>=1 and self.year<=6
@@ -46,7 +46,7 @@ context Student
 	@Rank = 8
 	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
 
-@Module{Rank = default}
+@Module{Rank = automatic}
 context Module
 	inv: self.year>=1 and self.year<=5
 
