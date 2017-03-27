@@ -841,20 +841,22 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
 		writer.overwrite(formulas,3);
 		int totalSolutions=0;
+		int calls =0;
 		while (min<=max){
 			mid = (max+min)/2;
 			formulas.clear();
 			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
 			writer.overwrite(formulas,1);
 			if (solver.solve() == Result.SAT){
+				calls++;
 				ColorPrint.println("Approaching Solution"+" @ "+ mid +" uses "+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
-				writer.append(formulas);
-				//writer.overwrite(formulas,1);
+				//writer.append(formulas);
+				writer.overwrite(formulas,1);
 				if (solver.solve()==Result.UNSAT){
-					ColorPrint.println("Max Weight found:"+mid, Color.RED);
+					ColorPrint.println("Max Weight found:"+mid+" with "+ calls + " calls.", Color.RED);
 					formulas.clear();
 					formulas.add(FormulaBuilder.sum(mid, weights));
 					//writer.append(formulas);
@@ -871,6 +873,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 				}
 			}
 			else if (solver.solve()==Result.UNSAT){
+				calls++;
 				max = mid-1;
 			}
 			else{
