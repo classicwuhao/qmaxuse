@@ -43,27 +43,26 @@ constraints
 
 @Class0{Rank = 1} 
 context Class0
-	 inv: Class0IntAttr3 <> 15
-	 inv: Class0IntAttr2 >= 12
- 	 inv: Class0IntAttr2 = 10
-	 inv: Class0BoolAttr1 xor Class0BoolAttr0
-	 inv: Class0BoolAttr0  
-	 inv: Class0BoolAttr0 and not Class0BoolAttr0
+	 inv: Class0.allInstances()->forAll(c|c.Class0BoolAttr0=true)
+	 
+--	 inv: Class0IntAttr2 >= 12
+-- 	 inv: Class0IntAttr2 = 10
+--	 inv: Class0BoolAttr1 xor Class0BoolAttr0
+--	 inv: Class0BoolAttr0  
+--	 inv: Class0BoolAttr0 and not Class0BoolAttr0
 
 @Class1{Rank = 1} 
 context Class1
-	 inv: Class1IntAttr2 <> 1
-	 inv: Class1IntAttr3 = 13
- 	 inv: Class1IntAttr3 < 13
-	 inv: Class1BoolAttr1 or Class1BoolAttr0
- 	 --inv: Class1BoolAttr1 and not Class1BoolAttr1
-	 inv: Class1BoolAttr0 xor Class1BoolAttr1
-
+--	 inv: Class1IntAttr2 <> 1
+--	 inv: Class1IntAttr3 = 13
+-- 	 inv: Class1IntAttr3 < 13
+--	 inv: Class1BoolAttr1 or Class1BoolAttr0
+--	inv: Class1BoolAttr1 and not Class1BoolAttr1
+--	 inv: Class1BoolAttr0 xor Class1BoolAttr1
 
 @Class2{Rank = 1} 
 context Class2
-	 inv: Class2IntAttr2 < 5
-	 inv: Class2IntAttr2 <> 4
-	 inv: Class2BoolAttr1  
-	 inv: not Class2BoolAttr0
-
+--	 inv: Class2IntAttr2 < 5
+--	 inv: Class2IntAttr2 <> 4
+--	 inv: Class2BoolAttr1  
+--	 inv: not Class2BoolAttr0

@@ -846,21 +846,22 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			mid = (max+min)/2;
 			formulas.clear();
 			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
-			writer.overwrite(formulas,1);
+			//writer.overwrite(formulas,1);
+			writer.append(formulas);
 			if (solver.solve() == Result.SAT){
 				calls++;
 				ColorPrint.println("Approaching Solution"+" @ "+ mid +" uses "+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
-				//writer.append(formulas);
-				writer.overwrite(formulas,1);
+				writer.append(formulas);
+				//writer.overwrite(formulas,1);
 				if (solver.solve()==Result.UNSAT){
 					ColorPrint.println("Max Weight found:"+mid+" with "+ calls + " calls.", Color.RED);
 					formulas.clear();
 					formulas.add(FormulaBuilder.sum(mid, weights));
-					//writer.append(formulas);
-					writer.overwrite(formulas,1);
+					writer.append(formulas);
+					//writer.overwrite(formulas,1);
 					// Use this model as a guidence for enumerating all other solutions. 
 					while (solver.solve()==Result.SAT){
 						//ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
