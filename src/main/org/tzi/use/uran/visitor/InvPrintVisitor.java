@@ -740,6 +740,8 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private void toSMT2File(String filename, List<AbstractFormula> formulas, FunctionFactory factory, int weight){
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
+		MscSolver mscsolver;
+		
 		ColorPrint.println("Number of formulas generated:"+writer.size(), Color.BLUE);
 		ColorPrint.println("Total Weight:"+weight,Color.BLUE);
 		ColorPrint.println("Solving Weighted MaxSMT...",Color.BLUE);
@@ -771,37 +773,28 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 		}*/
 		
-		//System.out.println("size:"+solutions.size());
-		
-		BoolMatrix bmatrix = new BoolMatrix(solutions);
-		this.solutions = bmatrix.getSolutions();
 		Report report = new HTMLReport("./html/"+filename+".html",solutions);
+		//System.out.println("size:"+solutions.size());
+		if (equalWeights()){
+			BoolMatrix bmatrix = new BoolMatrix(solutions);
+			this.solutions = bmatrix.getSolutions();
+	
+			System.out.println();
+			/* compute all conflicts */
+			ColorPrint.println("Now processing matrix...",Color.WHITE);
 		
-		/*System.out.println();
-		System.out.println("after processing solutions set...");
-		System.out.println();
-		
-		for (Solution sol : solutions){
-			for (int i=0;i<sol.size();i++){
-				ColorPrint.print(sol.get(i).name()+",",Color.WHITE);
-			}
+			ColorPrint.println(bmatrix.toString(),Color.WHITE);
+			mscsolver = new MscSolver(bmatrix.matrix());
+			current = System.currentTimeMillis();
+			mscsolver.solve(mscsolver.formalise());
+			ColorPrint.println("Solving Finished.",Color.BLUE);
+			ColorPrint.println("Time elapsed:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
+			
+			/* collect conflicts */
+			report.addConflicts(conflicts(mscsolver.getSubsets()));
+			report.addSingleConflicts(bmatrix.getSingleConflicts());
 		}
-		System.out.println("size:"+solutions.size());*/
 		
-		System.out.println();
-		/* compute all conflicts */
-		ColorPrint.println("Now processing matrix...",Color.WHITE);
-		
-		ColorPrint.println(bmatrix.toString(),Color.WHITE);
-		MscSolver mscsolver = new MscSolver(bmatrix.matrix());
-		current = System.currentTimeMillis();
-		mscsolver.solve(mscsolver.formalise());
-		ColorPrint.println("Solving Finished.",Color.BLUE);
-		ColorPrint.println("Time elapsed:"+(System.currentTimeMillis()-current)+" ms",Color.BLUE);
-		
-		/* collect conflicts */
-		report.addConflicts(conflicts(mscsolver.getSubsets()));
-		report.addSingleConflicts(bmatrix.getSingleConflicts());
 		report.generate();
 		report.finalise();
 		ColorPrint.println("Report is generated ( "+this.model_name+" )",Color.BLUE);
@@ -846,22 +839,22 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			mid = (max+min)/2;
 			formulas.clear();
 			formulas.add (FormulaBuilder.above(FormulaBuilder.plus(weights),mid,true));
-			//writer.overwrite(formulas,1);
-			writer.append(formulas);
+			writer.overwrite(formulas,1);
+			//writer.append(formulas);
 			if (solver.solve() == Result.SAT){
 				calls++;
 				ColorPrint.println("Approaching Solution"+" @ "+ mid +" uses "+(System.currentTimeMillis()-current)+" ms.",Color.BLUE);
 				min = mid+1;
 				formulas.clear();
 				formulas.add(FormulaBuilder.above(FormulaBuilder.plus(weights),mid,false));
-				writer.append(formulas);
-				//writer.overwrite(formulas,1);
+				//writer.append(formulas);
+				writer.overwrite(formulas,1);
 				if (solver.solve()==Result.UNSAT){
 					ColorPrint.println("Max Weight found:"+mid+" with "+ calls + " calls.", Color.RED);
 					formulas.clear();
 					formulas.add(FormulaBuilder.sum(mid, weights));
-					writer.append(formulas);
-					//writer.overwrite(formulas,1);
+					//writer.append(formulas);
+					writer.overwrite(formulas,1);
 					// Use this model as a guidence for enumerating all other solutions. 
 					while (solver.solve()==Result.SAT){
 						//ColorPrint.println("model: \n"+writer.getFactory().toString(),Color.WHITE);
@@ -898,6 +891,19 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		return FormulaBuilder.neg(new AndFormula().merge(formulas.toArray(new EqFormula[formulas.size()])));
 	}
 	
+	
+	/* check weights to decide whether we should use MSC Solver to find conflicts */
+	private boolean equalWeights(){
+		if (locations.size()<=0) return false;
+		
+		int w = locations.get(0).getWeight();
+				
+		for (int i=1;i<locations.size();i++)
+			if (w - locations.get(i).getWeight()!=0) return false;
+		
+		return true;
+	}
+	
 	private void PrintReport(){
 		if (locations.size()<=0){
 			ColorPrint.println("No specified weights found.",Color.GREEN);
@@ -920,6 +926,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			if (loc.isClassLocation())
 				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.CLASS));
 			else if (loc.isInvaraintLocation())
+				//System.out.println(loc.name()+" is added.");
 				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.INVAR));
 			else if (loc.isAssocLocation())
 				solution.addStatus(new Status(loc.isEnabled(),loc.name(),loc.getWeight(),Status.ASSOC));
