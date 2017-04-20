@@ -1,4 +1,0 @@
-var interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1statemachine_1_1_state_machine_diagram_1_1_vertex_node_creator =
-[
-    [ "create", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1statemachine_1_1_state_machine_diagram_1_1_vertex_node_creator.html#ade5dd79a7238fc94d8bb7ace4fbe79f7", null ]
-];

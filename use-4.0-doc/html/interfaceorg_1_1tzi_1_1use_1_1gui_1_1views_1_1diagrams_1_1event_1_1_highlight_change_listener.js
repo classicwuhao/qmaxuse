@@ -1,4 +1,0 @@
-var interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1event_1_1_highlight_change_listener =
-[
-    [ "stateChanged", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1event_1_1_highlight_change_listener.html#ad6fc7614342d2e545092637f3a1143fb", null ]
-];

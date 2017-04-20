@@ -1,4 +1,0 @@
-var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_cancel_button =
-[
-    [ "CancelButton", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_cancel_button.html#af5bc52dcc6555e4d8ab8527469542e24", null ]
-];

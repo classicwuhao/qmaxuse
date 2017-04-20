@@ -1,5 +1,0 @@
-var namespaceorg_1_1tzi_1_1use_1_1util_1_1soil_1_1exceptions =
-[
-    [ "CompilationFailedException", "classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1exceptions_1_1_compilation_failed_exception.html", "classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1exceptions_1_1_compilation_failed_exception" ],
-    [ "EvaluationFailedException", "classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1exceptions_1_1_evaluation_failed_exception.html", "classorg_1_1tzi_1_1use_1_1util_1_1soil_1_1exceptions_1_1_evaluation_failed_exception" ]
-];

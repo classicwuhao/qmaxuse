@@ -1,5 +1,0 @@
-var enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_1_1_placement =
-[
-    [ "BOTTOM", "enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_1_1_placement.html#a72a4f16c41a68bea4d537af8487d0ad7", null ],
-    [ "TOP", "enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_attached_1_1_placement.html#a8bf659c4e653d3cfb842b97fcbe9f66b", null ]
-];

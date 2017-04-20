@@ -1,4 +1,0 @@
-var interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1edges_1_1_association_edge =
-[
-    [ "getAssociation", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1edges_1_1_association_edge.html#aebefd778738df15adebc4d1dd523cec2", null ]
-];

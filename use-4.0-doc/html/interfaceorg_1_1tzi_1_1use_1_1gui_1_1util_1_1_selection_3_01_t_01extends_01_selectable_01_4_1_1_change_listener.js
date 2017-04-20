@@ -1,4 +1,0 @@
-var interfaceorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_1_1_change_listener =
-[
-    [ "stateChanged", "interfaceorg_1_1tzi_1_1use_1_1gui_1_1util_1_1_selection_3_01_t_01extends_01_selectable_01_4_1_1_change_listener.html#a8a813d64e3a30a179bbf6cfca6724030", null ]
-];

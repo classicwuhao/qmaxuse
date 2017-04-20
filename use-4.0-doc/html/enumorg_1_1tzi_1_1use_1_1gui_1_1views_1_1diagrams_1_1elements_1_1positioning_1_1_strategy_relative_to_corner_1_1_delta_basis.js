@@ -1,5 +1,0 @@
-var enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_1_1_delta_basis =
-[
-    [ "ABSOLUTE", "enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_1_1_delta_basis.html#af542ba02644f6632ccf02e23f36b5698", null ],
-    [ "RELATIVE", "enumorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1elements_1_1positioning_1_1_strategy_relative_to_corner_1_1_delta_basis.html#aef7cb165c38172db4d8eaae2b6da9c80", null ]
-];

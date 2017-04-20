@@ -1,5 +1,0 @@
-var classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_cmd_choose_window_seq_diag =
-[
-    [ "CmdChooseWindowSeqDiag", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_cmd_choose_window_seq_diag.html#a89bd54aa40d70f59e473f1a4443e52f9", null ],
-    [ "actionPerformed", "classorg_1_1tzi_1_1use_1_1gui_1_1views_1_1diagrams_1_1behavior_1_1sequencediagram_1_1_cmd_choose_window_seq_diag.html#a30060c9f797620b4f71d7c785699f6dc", null ]
-];
