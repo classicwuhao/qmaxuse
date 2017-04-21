@@ -81,7 +81,7 @@ MaxUSE integrates USE with Z3 SMT solver. However, it uses [uran](https://github
 
 ## 6. SOURCE CODE
 So you are here and want to see the code :-). Here is a brief description: 
-* MaxUSE uses an SMT solving engine called [uran](https://github.com/classicwuhao/uran) to construct/generate SMT2 assertions and incremently and efficiently solve them. In summary, MaxUSE computes the set of achievable model features by a solving weighted MaxSMT problem, and finds all constraint conflicts by solving [set cover problem](https://en.wikipedia.org/wiki/Set_cover_problem).
+* MaxUSE uses an SMT solving engine called [uran](https://github.com/classicwuhao/uran) to construct/generate SMT2 assertions and incremently and efficiently solve them. In summary, MaxUSE computes the set of achievable model features by solving a weighted MaxSMT problem, and finds all constraint conflicts by solving the [set cover problem](https://en.wikipedia.org/wiki/Set_cover_problem).
 * The core source code consists of two parts:
 	1. The main procedure for computing the set of achievable model features is [here](src/main/org/tzi/use/uran/visitor).
 	2. The main procedure for computing all constraint conflicts is [here](src/main/org/tzi/use/uran/msc).
