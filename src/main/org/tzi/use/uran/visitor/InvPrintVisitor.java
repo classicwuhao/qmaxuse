@@ -586,7 +586,6 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 						ImpliesFormula imp_formula1 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(1)), 
 														new EqFormula(weight,new NumLiteral(0)));
 
-					
 						formulas.add(new AndFormula().merge(imp_formula0, imp_formula1));
 					}
 				}
@@ -894,12 +893,15 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	
 	/* check weights to decide whether we should use MSC Solver to find conflicts */
 	private boolean equalWeights(){
-		if (locations.size()<=0) return false;
+		/*if (locations.size()<=0) return false;
 		
 		int w = locations.get(0).getWeight();
-				
-		for (int i=1;i<locations.size();i++)
+		System.out.println(locations.get(0).name()+" : "+locations.get(0).getWeight());
+		
+		for (int i=1;i<locations.size();i++){
+			System.out.println(locations.get(i).name()+" : "+locations.get(i).getWeight());
 			if (w - locations.get(i).getWeight()!=0) return false;
+		}*/
 		
 		return true;
 	}
