@@ -1,7 +1,7 @@
 # MaxUSE README
 
 ## 1. OVERVIEW
-MaxUSE is a tool that finds the set of achievable features and constraint constraints for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely rank individual model features or use automatic ranking. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with Z3.
+MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely rank individual model features or use automatic ranking. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with Z3.
 
 ## 2. BUILD (UBUNTU 15.10/16.04)
 * To use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
@@ -12,7 +12,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint constr
 ## 3. USEAGE
 
 ### 3.1 Ranking Your Model Features
-	Currently, MaxUSE supports ranking over: classes, associations, OCL invariants. MaxUSE considers all ranked features as *soft features* and unranked features as *hard features*. A soft constraint might or might not be switched off depends on the optimisation. A hard constraint must hold, no matter what. A user could use rank a model in three different ways (depends on the requirements):
+Currently, MaxUSE supports ranking over: classes, associations, OCL invariants. MaxUSE considers all ranked features as *soft features* and unranked features as *hard features*. A soft constraint might or might not be switched off depends on the optimisation. A hard constraint must hold, no matter what. A user could use rank a model in three different ways (depends on the requirements):
   1. Fully ranked (soft features only)
   2. Not ranked at all (hard features only) 
   3. Partially ranked (a mixture of soft and hard features)
@@ -70,7 +70,7 @@ MaxUSE integrates USE with Z3 SMT solver. However, it uses [uran](https://github
 * Note that [msc.smt2](maxuse_examples/benchmark/smt2/msc.smt2) will be changed everytime a new model is solved by MaxUSE.
 
 ## 6. SOURCE CODE
-Finally, you are here and want to see the code :-). Here is a brief description: 
+So you are here and want to see the code :-). Here is a brief description: 
 * MaxUSE uses an SMT solving engine called [uran](https://github.com/classicwuhao/uran) to construct/generate SMT2 assertions and incremently and efficiently solve them. In summary, MaxUSE computes the set of achievable model features by a solving weighted MaxSMT problem, and finds all constraint conflicts by solving [set cover problem](https://en.wikipedia.org/wiki/Set_cover_problem).
 * The core source code consists of two parts:
 	1. The main procedure for computing the set of achievable model features is [here](src/main/org/tzi/use/uran/visitor).
