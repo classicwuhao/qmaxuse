@@ -56,7 +56,7 @@ We provide the following ways for ranking your model features.
 * More examples about using *@Rank* annotation can be found [here](maxuse_examples/).
 
 ### 3.2 Finding All Achievable Features
-* Load your specification into USE, at the USE command prompt type *maxuse*.
+* Load your specification into MaxUSE, at the command prompt type *maxuse*.
 	1. If your model is *partially* or *fully* ranked, MaxUSE will find set of achievable model features based on their rankings.
 	2. If your model is *not* ranked at all, MaxUSE will verify the consistency of your model.
 * The results will be printed on screen or a report will be generated. An example can be found [here](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/UNIVERSITY.html). More examples can be found [here](lib/html/).
