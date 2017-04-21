@@ -13,7 +13,12 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 * Copy generated *com.microsoft.z3.jar* to lib directory. Note that the build script has already been configured, it always looks for the .jar files in lib directory.
 * If you want to use the latest version of uran, download uran source code and overwrites the uran directory.
 * Use *ant* to build MaxUSE.
-
+* In lib directory type:
+	```
+	java -jar maxuse.jar
+	```  
+	to lanuch MaxUSE. Currently, MaxUSE is command line based.
+	
 ## 3. USEAGE
 
 ### 3.1 Ranking Your Model Features
@@ -62,7 +67,7 @@ We provide the following ways for ranking your model features.
 * MaxUSE will find:
    		1. *all* constraint conflicts among the features.
    		2. all possible ways of achieving a *maximum* number of features 
-* Check out the [result](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
+* Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. Technical Details
 * If you are interested in theories and algorithms we used in MaxUSE, see my research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.
@@ -82,7 +87,7 @@ So you are here and want to see the code :-). Here is a brief description:
 	2. The main procedure for computing all constraint conflicts is [here](src/main/org/tzi/use/uran/msc).
 
 ## 7. REMARKS
-* The implementation of MaxUSE spans over the past 2 years, and we are still working on it to add more features such as customized ranking schemes,fast string reasoning,concurrent solving,constraint synthesizing, and much more to come.
+* The implementation of MaxUSE spans over the past 2 years, and we are still working on it to add more features such as GUI, customized ranking schemes,fast string reasoning,concurrent solving,constraint synthesizing, and much more to come.
 * MaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
