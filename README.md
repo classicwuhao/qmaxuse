@@ -65,8 +65,8 @@ We provide the following ways for ranking your model features.
 * Rank equally for each model feature (class, association, invariant).
 * Run *maxuse*.
 * MaxUSE will find:
-   		1. *all* constraint conflicts among the features.
-   		2. all possible ways of achieving a *maximum* number of features 
+   1. *all* constraint conflicts among the features.
+   2. all possible ways of achieving a *maximum* number of features 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. TECHNIAL DETAILS
