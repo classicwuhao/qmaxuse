@@ -5,8 +5,13 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 
 ## 2. BUILD (UBUNTU 15.10/16.04)
 * To use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
-* Set up *LD_LIBRARY_PATH* to contain *.so* files.
-* Copy *com.microsoft.z3.jar* to lib directory.
+* Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
+	```
+	LD_LIBRARY_PATH=<your directory that contains.so files>
+	export LD_LIBRARY_PATH
+	```
+* Copy generated *com.microsoft.z3.jar* to lib directory. Note that the build script has already been configured, it always looks for the .jar files in lib directory.
+* If you want to use the latest version of uran, download uran source code and overwrites the uran directory.
 * Use *ant* to build MaxUSE.
 
 ## 3. USEAGE
