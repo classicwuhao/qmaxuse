@@ -61,12 +61,12 @@ We provide the following ways for ranking your model features.
 	2. If your model is *not* ranked at all, MaxUSE will verify the consistency of your model.
 * The results will be printed on screen or a report will be generated. An example can be found [here](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/UNIVERSITY.html). More examples can be found [here](lib/html/).
 
-### 3.2 Find All Constraint Conflicts
+### 3.2 Finding All Constraint Conflicts
 * Rank equally for each model feature (class, association, invariant).
 * Run *maxuse*.
 * MaxUSE will find:
    1. *all* constraint conflicts among the features.
-   2. all possible ways of achieving a *maximum* number of features 
+   2. *all* possible ways of achieving a *maximum* number of features. 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. TECHNIAL DETAILS
