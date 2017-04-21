@@ -33,7 +33,7 @@ public final class HTMLReport extends Report{
 		writer.println("</head> \n");
 		writer.println("<body>\n");
 		writer.println("<p>");
-		writer.println("Total Max Weighted Solution(s): "+solutions.size());
+		writer.println("Total Weighted Solution(s): "+solutions.size());
 		writer.println("</p>");
 		if (conflicts==null) return;
 		//writer.println("Conflict(s) detection is switched off.");
@@ -51,7 +51,7 @@ public final class HTMLReport extends Report{
 
 	private void solution(){
 		for (int i=0;i<solutions.size();i++){
-			writer.println("<span id=\"solution\"> Max Weighted Solution "+ (i+1) + ":</span>");
+			writer.println("<span id=\"solution\"> Weighted Solution "+ (i+1) + ":</span>");
 			table(solutions.get(i));
 			writer.println("<p></p>");
 		}
