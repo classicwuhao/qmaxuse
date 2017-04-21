@@ -25,7 +25,7 @@ We provide the following ways for ranking your model features.
 * Use *@Rank=c* annotation to rank individual model features, where *c* must be a non-zero integer. For example,
 	```
 	context Person
-	@Rank = 2 
+		@Rank = 2 
 		inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 	```
 	inv1 now is ranked with 2.
@@ -33,7 +33,7 @@ We provide the following ways for ranking your model features.
 * Use *@Rank=automatic* for automatic ranking. The actual rank is decided by the size of an abstract syntax tree. For example,
 	```
 	context Person
-	@Rank = automatic
+		@Rank = automatic
 		inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 	```
 	inv1 now is ranked using automatic ranking.	
