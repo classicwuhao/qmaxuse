@@ -8,7 +8,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 * To use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
 * Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
 	```
-	LD_LIBRARY_PATH=<your directory that contains.so files>
+	LD_LIBRARY_PATH=<the directory that contains .so files>
 	export LD_LIBRARY_PATH
 	```
 * Copy generated *com.microsoft.z3.jar* to lib directory. Note that the build script has already been configured, it always looks for the .jar files in lib directory.
