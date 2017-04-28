@@ -514,20 +514,20 @@
 	</target>
 	
 	<!-- run other tests via make -->
-	<!-- target name="test-other" description="run scripted tests" depends="build">
-		< exec executable="make" dir="${test.dir}" failonerror="true" >
-			< arg value="clean"/>
+	<target name="test-other" description="run scripted tests" depends="build">
+		<!--exec executable="make" dir="${test.dir}" failonerror="true" >
+			<arg value="clean"/>
 			<arg value="test"/>
-		</exec>
+		</exec-->
 		<exec executable="make" dir="${test.dir}/state" failonerror="true">
 			<arg value="clean"/>
 			<arg value="test"/>
-		</exec>
+		</exec >
 		<exec executable="make" dir="${examples.dir}" failonerror="true">
 			<arg value="clean"/>
 			<arg value="test"/>
 		</exec>
-	</target-->
+	</target>
 	
 	<!-- perform classcycle checks -->
 	<target name="check-classcycles-available">
