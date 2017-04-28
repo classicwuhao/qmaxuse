@@ -1,5 +1,6 @@
 # MaxUSE README 
 [![Build Status](https://travis-ci.org/classicwuhao/maxuse.svg?branch=master)](https://travis-ci.org/classicwuhao/maxuse)
+
 ## 1. OVERVIEW
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely rank individual model features or use automatic ranking. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with Z3.
 
