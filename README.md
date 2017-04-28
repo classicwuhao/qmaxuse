@@ -22,7 +22,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 	
 ## 3. USEAGE
 
-### 3.1 Ranking Your Model Features
+### 3.1 Rank Model Features
 Currently, MaxUSE supports ranking over: classes, associations, OCL invariants. MaxUSE considers all ranked features as *soft features* and unranked features as *hard features*. A soft constraint might or might not be switched off depends on the optimisation. A hard constraint must hold, no matter what. A user could use rank a model in three different ways (depends on the requirements):
   1. Fully ranked (soft features only)
   2. Not ranked at all (hard features only) 
