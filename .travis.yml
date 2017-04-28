@@ -7,7 +7,7 @@ jdk:
   - openjdk6
 
 notifications:
-  slack:
+  email:
     on_success: change
 	on_failure: change
 
