@@ -70,7 +70,7 @@ We provide the following ways for ranking your model features.
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. TECHNIAL DETAILS
-* If you are interested in theories and algorithms we used in MaxUSE, see my research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.
+* If you are interested in theories and algorithms we used in MaxUSE, see our research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.
 * If you are a geek and love coding, see Section 6.
    		   
 ## 5. SMT2 ASSERTIONS
