@@ -92,4 +92,7 @@ So you are here and want to see the code :-). Here is a brief description:
 * MaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
-Last updated: 21-APRIL-2017
+## 8. ACKNOWLEDGEMENTS
+We woud like to thank [Marie Farrell](https://github.com/mariefarrell) and [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. We would also like to thank [Andrea Balogh](https://github.com/baloghAndi) for helping with the benchmark generation.
+
+Last updated: 02-May-2017
