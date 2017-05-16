@@ -344,6 +344,24 @@ public class MainWindow extends JFrame {
         fMenuItemEditRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
                 Event.CTRL_MASK + Event.SHIFT_MASK));
         
+        //'maxuse' submenu
+        menu = new JMenu("MaxUSE");
+        menu.setMnemonic('M');
+        fMenuBar.add(menu);
+        JMenuItem max_submenu = new JMenuItem("Find Achievable Features");
+        max_submenu.setMnemonic('A');
+        menu.add(max_submenu);
+        max_submenu = new JMenuItem("Find Constriant Conflicts");
+        menu.add(max_submenu);
+        max_submenu.setMnemonic('C');
+        JMenu max_opt_menu = new JMenu("Options");
+        JCheckBoxMenuItem single = new JCheckBoxMenuItem("Single Solution");
+        JCheckBoxMenuItem all = new JCheckBoxMenuItem("All Solutions");
+        menu.add(max_opt_menu);
+        max_opt_menu.add(single);
+        max_opt_menu.add(all);
+        
+        
         // `State' submenu
         menu = new JMenu("State");
         menu.setMnemonic('S');
