@@ -71,8 +71,8 @@ We provide the following ways for ranking your model features.
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. TECHNIAL DETAILS
-* If you are interested in theories and algorithms we used in MaxUSE, see our research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.
-* If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool demo paper (to appear in [iFM 2017](http://ifm2017.di.unito.it/)): MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.
+* If you are interested in theories and algorithms we used in MaxUSE, see our research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
+* If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool demo paper (to appear in [iFM 2017](http://ifm2017.di.unito.it/)): **MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.**
 * If you are a geek and love coding, see Section 6.
    		   
 ## 5. SMT2 ASSERTIONS
@@ -96,4 +96,4 @@ So you are here and want to see the code :-). Here is a brief description:
 ## 8. ACKNOWLEDGEMENTS
 We woud like to thank [Marie Farrell](https://github.com/mariefarrell) and [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. We would also like to thank [Andrea Balogh](https://github.com/baloghAndi) for helping the benchmark generation.
 
-Last updated: 02-May-2017
+Last updated: 16-June-2017
