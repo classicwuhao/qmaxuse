@@ -70,7 +70,7 @@ We provide the following ways for ranking your model features.
    2. *all* possible ways of achieving a *maximum* number of features. 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
-## 4. TECHNIAL DETAILS
+## 4. THEORIES & TECHNIAL DETAILS
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (to appear in ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
 * If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool demo paper (to appear in [iFM 2017](http://ifm2017.di.unito.it/)): **MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.**
 * If you are a geek and love coding, see Section 6.
