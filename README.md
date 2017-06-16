@@ -1,5 +1,5 @@
 # MaxUSE
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/classicwuhao/maxuse.svg?branch=master)](https://travis-ci.org/classicwuhao/maxuse) [![paper](https://img.shields.io/badge/paper(preprint)-ecmfa%202017-f39C12.svg)](http://www.cs.nuim.ie/~haowu/pubs/ECMFA2017/ecmfa.pdf)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/classicwuhao/maxuse.svg?branch=master)](https://travis-ci.org/classicwuhao/maxuse) [![paper](https://img.shields.io/badge/paper(preprint)-ecmfa%202017-f39C12.svg)](http://www.cs.nuim.ie/~haowu/pubs/ECMFA2017/ecmfa.pdf) [![paper](https://img.shields.io/badge/paper(preprint)-iFM%202017-orange.svg)](http://www.cs.nuim.ie/~haowu/pubs/iFM2017/paper.pdf)
 
 ## 1. OVERVIEW
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely rank individual model features or use automatic ranking. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with Z3.
