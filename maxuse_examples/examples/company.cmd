@@ -1,4 +1,3 @@
-
 !create ibm : Company
 !create joe : Person
 !set joe.name := 'Joe'
@@ -6,4 +5,3 @@
 
 !insert (joe, ibm) into WorksFor
 !set joe.salary := 2000
-
