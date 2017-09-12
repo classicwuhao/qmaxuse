@@ -16,8 +16,8 @@ attributes
   name : String
   location : String
 operations
-  hire(p : Person)
-  fire(p : Person)
+  hire(p : Person) : Boolean
+  fire(p : Person) : Boolean
 end
 
 -- associations
@@ -34,20 +34,20 @@ context Person
 	inv: self.salary >= 1500 and self.salary <= 5000
 
 context Person::raiseSalary(rate: Real) : Real
-	pre: rate > 0
+	pre:  rate > 0
 	post: salary = salary@pre*(1.0+rate)
 	post: result = salary
 
 context Person::reduceSalary(rate: Real) : Real
-	pre: rate > 0 and rate < 1
+	pre:  rate > 0 and rate < 1
 	post: salary = salary@pre*(1.0-rate)
 	post: result = salary
 	
 context Company::hire(p : Person)
-  pre  hirePre1: p.isDefined()
-  pre  hirePre2: employee->excludes(p)
-  post hirePost: employee->includes(p)
+	pre  hirePre1: p.isDefined()
+	pre  hirePre2: employee->excludes(p)
+	post hirePost: employee->includes(p)
 
 context Company::fire(p : Person)
-  pre  firePre:  employee->includes(p)
-  post firePost: employee->excludes(p)
+	pre  firePre:  employee->includes(p)
+	post firePost: employee->excludes(p)
