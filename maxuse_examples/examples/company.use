@@ -43,11 +43,11 @@ context Person::reduceSalary(rate: Real) : Real
 	post: salary = salary@pre*(1.0-rate)
 	post: result = salary
 	
-context Company::hire(p : Person)
+context Company::hire(p : Person) : Boolean
 	pre  hirePre1: p.isDefined()
 	pre  hirePre2: employee->excludes(p)
 	post hirePost: employee->includes(p)
 
-context Company::fire(p : Person)
+context Company::fire(p : Person) : Boolean
 	pre  firePre:  employee->includes(p)
 	post firePost: employee->excludes(p)

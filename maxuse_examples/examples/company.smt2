@@ -7,6 +7,9 @@
 (declare-fun salary (Int) Int)
 (declare-fun hire (Int) Bool)
 (declare-fun fire (Int) Bool)
+(declare-fun __Collection (Int) Int)
+(declare-fun __includes (Int) Bool)
+(declare-fun __excludes (Int) Bool)
 
 ;inital state
 (declare-fun state0_op_0 () Int)
