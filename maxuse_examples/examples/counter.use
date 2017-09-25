@@ -1,0 +1,22 @@
+model COUNTER
+
+class Counter
+attributes
+	value : Integer
+operations
+	inc()
+	dec()
+end
+
+constraints
+
+context Counter::inc()
+	pre:	self.value > 0
+	post:	value = value@pre + 1
+	
+context Counter::dec()
+	pre:	self.value > 0
+	post:	value = value@pre - 1
+
+
+	
