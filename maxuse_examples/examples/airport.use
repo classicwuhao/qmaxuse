@@ -1,0 +1,75 @@
+model AIRPORT
+
+enum Area_Status{occupied, available}
+enum Airplane_Status{free,busy,landing,landed,takingoff,takenoff}
+enum Command{hold,land,takeoff}
+
+class Airplane
+attributes
+	id : String	
+	status : Airplane_Status
+	message : Command
+operations
+	land(w:Runway)
+	takeoff(w:Runway)
+	wait(w:Taxiway)
+end
+
+class ControlTower
+operations
+	issue(a:Airplane,c:Command) : Boolean
+end
+
+class Area
+attributes
+	name : String
+	status : Area_Status
+end
+
+class Runway < Area
+end
+
+class Taxiway < Area
+end
+
+association ListensTo between
+  Airplane[0..*] role airplanes
+  ControlTower[1] role control
+end
+
+association Check between
+	ControlTower[1] role control
+	Area [0..*] role area
+end
+
+constraints
+
+context Airplane::land(w:Runway)
+		-- window[duration]
+		pre:  self.message=#land and w.status=#available
+			--window[duration]
+				-- self.status=#landing
+				-- w.status=#occupied
+			--end window
+		post: self.status=#landed
+		--end window
+		post: w.status=available
+
+	
+context Airplane::takeoff(w:Runway)
+		-- window[duration]
+		pre: self.message=#takeoff and w.status=#available
+			--window[duration]
+				-- self.status=#takingoff
+				-- w.status=#occupied
+			--end window
+		post: self.status=#takenoff
+		--end window
+		post: w.status=available
+		
+context ControlTower::issue(a:Airplane, c:Command) : Boolean
+	pre:  a.status=#free
+	post: a.message=c
+	post: result=true
+	
+
