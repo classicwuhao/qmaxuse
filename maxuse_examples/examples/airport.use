@@ -1,18 +1,19 @@
 model AIRPORT
 
 enum Area_Status{occupied, available}
-enum Airplane_Status{free,busy,landing,landed,takingoff,takenoff}
+enum Airplane_Status{wait,free,busy,landing,landed,takingoff,takenoff}
 enum Command{hold,land,takeoff}
 
 class Airplane
 attributes
-	id : String	
+	id : String
 	status : Airplane_Status
 	message : Command
+	runwayid : Runway
 operations
 	land(w:Runway)
 	takeoff(w:Runway)
-	wait(w:Taxiway)
+	wait(t:Taxiway)
 end
 
 class ControlTower
@@ -44,32 +45,38 @@ end
 
 constraints
 
+context Airplane
+		inv: Airplane.allInstances()->forAll(a1,a2| 
+		(a1 <> a2) and (a1.status=#landing and a2.status=#landing) implies a1.runwayid <> a2.runwayid)
+					
+		inv: Airplane.allInstances()->forAll(a1,a2| 
+			(a1 <> a2) and (a1.status=#takingoff and a2.status=#takingoff) implies a1.runwayid <> a2.runwayid)
+		
 context Airplane::land(w:Runway)
-		-- window[duration]
 		pre:  self.message=#land and w.status=#available
 			--window[duration]
 				-- self.status=#landing
 				-- w.status=#occupied
+				-- self.runwayid=w
 			--end window
 		post: self.status=#landed
-		--end window
-		post: w.status=available
-
+		post: w.status=#available
 	
 context Airplane::takeoff(w:Runway)
-		-- window[duration]
 		pre: self.message=#takeoff and w.status=#available
 			--window[duration]
 				-- self.status=#takingoff
 				-- w.status=#occupied
+				-- self.runwayid=w
 			--end window
 		post: self.status=#takenoff
-		--end window
-		post: w.status=available
-		
+		post: w.status=#available
+
+context Airplane::wait(t:Taxiway)
+	pre: 	self.control.area->forAll(a|a.oclIsTypeOf(Runway) and a.status=#occupied)
+	post: 	self.status = #wait
+
 context ControlTower::issue(a:Airplane, c:Command) : Boolean
-	pre:  a.status=#free
 	post: a.message=c
 	post: result=true
-	
 

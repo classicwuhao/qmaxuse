@@ -29,8 +29,8 @@
   <node id="Runway" sizeCalculated="true" type="Class">
     <name>Runway</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-      <x>706.0</x>
-      <y>161.0</y>
+      <x>738.0</x>
+      <y>166.0</y>
     </strategy>
     <hidden>false</hidden>
   </node>
@@ -45,8 +45,8 @@
   <node id="Taxiway" sizeCalculated="true" type="Class">
     <name>Taxiway</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-      <x>603.0</x>
-      <y>156.0</y>
+      <x>630.0</x>
+      <y>162.0</y>
     </strategy>
     <hidden>false</hidden>
   </node>
