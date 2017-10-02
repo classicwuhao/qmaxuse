@@ -45,13 +45,16 @@ end
 
 constraints
 
+-- no two airplanes should takeoff/land on the same runway at the same time.
 context Airplane
-		inv: Airplane.allInstances()->forAll(a1,a2| 
+		inv1: Airplane.allInstances()->forAll(a1,a2| 
 		(a1 <> a2) and (a1.status=#landing and a2.status=#landing) implies a1.runwayid <> a2.runwayid)
 					
-		inv: Airplane.allInstances()->forAll(a1,a2| 
+		inv2: Airplane.allInstances()->forAll(a1,a2| 
 			(a1 <> a2) and (a1.status=#takingoff and a2.status=#takingoff) implies a1.runwayid <> a2.runwayid)
-		
+
+-- landing airplane on a specific runway w
+-- window constructs here allow us to describe a specific time peirod. This is a new feature to add into OCL.
 context Airplane::land(w:Runway)
 		pre:  self.message=#land and w.status=#available
 			--window[duration]
@@ -61,7 +64,9 @@ context Airplane::land(w:Runway)
 			--end window
 		post: self.status=#landed
 		post: w.status=#available
-	
+
+-- take off from a specific runway w
+
 context Airplane::takeoff(w:Runway)
 		pre: self.message=#takeoff and w.status=#available
 			--window[duration]
