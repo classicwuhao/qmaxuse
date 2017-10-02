@@ -47,10 +47,10 @@ constraints
 
 -- no two airplanes should takeoff/land on the same runway at the same time.
 context Airplane
-		inv1: Airplane.allInstances()->forAll(a1,a2| 
-		(a1 <> a2) and (a1.status=#landing and a2.status=#landing) implies a1.runwayid <> a2.runwayid)
+		inv: Airplane.allInstances()->forAll(a1,a2| 
+			(a1 <> a2) and (a1.status=#landing and a2.status=#landing) implies a1.runwayid <> a2.runwayid)
 					
-		inv2: Airplane.allInstances()->forAll(a1,a2| 
+		inv: Airplane.allInstances()->forAll(a1,a2| 
 			(a1 <> a2) and (a1.status=#takingoff and a2.status=#takingoff) implies a1.runwayid <> a2.runwayid)
 
 -- landing airplane on a specific runway w
@@ -66,7 +66,6 @@ context Airplane::land(w:Runway)
 		post: w.status=#available
 
 -- take off from a specific runway w
-
 context Airplane::takeoff(w:Runway)
 		pre: self.message=#takeoff and w.status=#available
 			--window[duration]
@@ -77,6 +76,7 @@ context Airplane::takeoff(w:Runway)
 		post: self.status=#takenoff
 		post: w.status=#available
 
+-- An airplane waits at a specific taxiway.
 context Airplane::wait(t:Taxiway)
 	pre: 	self.control.area->forAll(a|a.oclIsTypeOf(Runway) and a.status=#occupied)
 	post: 	self.status = #wait
