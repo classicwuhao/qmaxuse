@@ -1,0 +1,40 @@
+model test
+
+class A
+attributes
+	a_attr1 : Integer
+	a_attr2 : Boolean	
+end
+
+class B < A
+attributes
+	b_attr1 : Integer
+	b_attr2 : Boolean
+end
+
+class C
+attributes
+	c_attr1 : Integer
+	c_attr2 : Boolean
+end
+
+class D < C
+attributes
+	d_attr1 : Integer
+	d_attr2 : Boolean
+end
+
+association r1 between
+	A [1..*] role role_a
+	C [2..4] role role_c
+end
+
+association r between
+	B [1..1] role role_b
+	D [2..4] role role_d
+end
+
+constraints
+
+context A
+	inv: self.role_c->size()>5
