@@ -1,0 +1,41 @@
+model CallSequence
+
+enum ParaType{Int,Bool}
+
+class Seq
+attributes
+	id: String
+	length: Integer
+operations
+	getCalls() : Sequence(Call)=self.calls->asSequence()
+	callA() : Integer=callB()
+	callB() : Integer=callA()
+	fac(n:Integer) : Integer = if n=1 then 1 else n*self.fac(n-1) endif
+end
+
+class Call
+attributes
+	name: String
+	para: Set(Parameter)
+end
+
+class Parameter
+attributes
+	name: String
+	type: ParaType
+end
+
+association has between
+	Seq [1..1] role sequence
+	Call [0..*] role calls
+end
+
+constraints
+
+context Seq::getCalls():Sequence(Call)
+	pre: self.length > 0
+	
+context Seq::fac(n:Integer):Integer
+	pre: n>=0
+	
+	

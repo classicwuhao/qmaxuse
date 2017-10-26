@@ -33,7 +33,6 @@ constraints
 context Person
 	inv: self.salary >= 1500 and self.salary <= 5000
 
-
 context Person::raiseSalary(rate: Real) : Real
 	pre:  rate > 0
 	post: salary = salary@pre*(1.0+rate)
