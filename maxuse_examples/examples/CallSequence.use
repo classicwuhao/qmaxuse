@@ -17,6 +17,12 @@ class Call
 attributes
 	name: String
 	para: Set(Parameter)
+	pre_cond: OCL_BooleanExpr
+	post_cond: OCL_BooleanExpr
+end
+
+class OCL_BooleanExpr
+	
 end
 
 class Parameter
