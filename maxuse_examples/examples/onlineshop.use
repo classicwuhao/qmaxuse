@@ -1,0 +1,116 @@
+model ONLINESHOP
+
+class Person
+attributes
+name : String
+end
+
+class Customer < Person
+attributes
+	card : Membership
+operations
+	addItem (item:Item) : Bag(Item) = self.cart.items->including(item)->asBag()
+	removeItem (item:Item) : Bag(Item) = self.cart.items->excluding(item)->asBag()
+	checkout() : Boolean = self.cart.submitted = true
+	confirmOrder() : Boolean = self.cart.confirmed = true
+	cancel():Boolean
+end
+
+class Membership
+attributes
+	id : Integer
+operations
+	isValid(id:Integer) : Boolean
+end
+
+class ShoppingCart
+attributes
+	id: Integer
+	submitted: Boolean
+	confirmed: Boolean
+operations
+	size() : Integer = self.items->size()
+end
+
+class Item
+attributes
+	id: Integer
+	OutOfStock : Boolean
+end
+
+class ProcessOrder
+attributes
+	id : Integer
+operations
+	createOrder() : Order
+	Pay(order: Order)
+	deleteOrder(order: Order)
+end
+
+class Order
+attributes
+	id: Integer
+end
+
+class Delivery
+attributes
+
+operations
+	deliver(customer: Customer,order:Order)
+end
+
+association placeOrder between
+	Customer [1..1] role customer
+	ShoppingCart [1..1] role cart
+end
+
+association memberships between
+	Customer [1..1] role customer
+	Membership [1..1] role memberships
+end
+
+association ConsistsOf between
+	ShoppingCart [1..1] role cart
+	Item [1..*] role items
+end
+
+association checkout between
+	ShoppingCart [1..1] role cart
+	ProcessOrder [1..1] role process_order
+end
+
+association process between
+	ProcessOrder [1..1] role process_order
+	Order [1..*] role order
+end
+
+association assoc between
+	ProcessOrder [1..1] role process_order
+	Delivery [1..1] role delivery
+end
+
+constraints
+
+context Customer
+	inv: Customer.allInstances()->forAll(c1,c2 | c1<>c2 implies c1.card <> c2.card)
+
+context Membership::isValid (id:Integer) : Boolean
+	post: result=id>0
+
+context ShoppingCart::size() : Integer
+	post: result = self.items->size()
+
+context Customer::addItem (item : Item) : Bag(Item)
+	post: self.cart.items->includes(item)
+
+context Customer::removeItem (item: Item) : Bag(Item)
+	pre: self.cart.items->includes(item)
+	post: self.cart.items->excludes(item)
+
+context Customer::checkout() : Boolean
+	pre: self.cart.size()>0
+	post: result=true
+
+context Customer::confirmOrder() : Boolean
+	pre: self.checkout()=true
+	post: result = true
