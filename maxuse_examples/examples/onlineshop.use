@@ -12,7 +12,7 @@ operations
 	addItem (item:Item) : Bag(Item) = self.cart.items->including(item)->asBag()
 	removeItem (item:Item) : Bag(Item) = self.cart.items->excluding(item)->asBag()
 	checkout() : Boolean = self.cart.submitted = true
-	confirmOrder() : Boolean = self.cart.confirmed = true
+	confirmOrder() : Boolean
 	cancel():Boolean
 end
 
@@ -108,9 +108,14 @@ context Customer::removeItem (item: Item) : Bag(Item)
 	post: self.cart.items->excludes(item)
 
 context Customer::checkout() : Boolean
-	pre: self.cart.size()>0
-	post: result=true
+	pre: self.cart.items->size()>0
+	post: self.cart.submitted=true
 
 context Customer::confirmOrder() : Boolean
-	pre: self.checkout()=true
-	post: result = true
+	pre: self.cart.submitted=true
+	post: self.cart.confirmed=true
+	post: self.cart.items->size()=self.cart.items@pre->size()
+	
+context Customer::cancel() : Boolean
+	pre: self.cart.confirmed=false
+	
