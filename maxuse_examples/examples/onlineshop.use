@@ -102,10 +102,12 @@ context ShoppingCart::size() : Integer
 
 context Customer::addItem (item : Item) : Bag(Item)
 	post: self.cart.items->includes(item)
+	post: self.cart.items->size()=self.cart.items@pre->size()+1
 
 context Customer::removeItem (item: Item) : Bag(Item)
 	pre: self.cart.items->includes(item)
 	post: self.cart.items->excludes(item)
+	post: self.cart.items->size()=self.cart.items@pre->size()-1
 
 context Customer::checkout() : Boolean
 	pre: self.cart.items->size()>0
