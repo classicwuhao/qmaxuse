@@ -19,6 +19,7 @@ public final class Matrix{
 	private final int UB=1;
 	private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
 	private FunctionFactory factory = new FunctionFactory(512,0.75f);
+	private HashMap<Constant, AbstractFormula> map =  new HashMap<Constant, AbstractFormula>();
 	
 	public Matrix (int n, int k){
 		this.deltaSize = n;
@@ -80,6 +81,5 @@ public final class Matrix{
 		matrix.solve();
 		ColorPrint.print(matrix.toValue(),Color.WHITE);
 	}
-
-		
+	
 }
