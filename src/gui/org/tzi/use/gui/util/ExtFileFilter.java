@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ExtFileFilter.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ExtFileFilter.java 5574 2015-03-09 15:07:18Z fhilken $
 
 /* 
  * This code is a modified version of a file from the JDK to which the
@@ -166,7 +166,7 @@ public class ExtFileFilter extends FileFilter {
                 return true;
             }
             String extension = getExtension(f);
-            if (extension != null && filters.get(extension) != null) {
+            if (extension != null && filters.containsKey(extension)) {
                 return true;
             }
         }
@@ -230,9 +230,9 @@ public class ExtFileFilter extends FileFilter {
                 // build the description from the extension list
                 Iterator<String> extensions = filters.keySet().iterator();
                 if (extensions != null) {
-                    fullDescription += "." + (String) extensions.next();
+                    fullDescription += "." + extensions.next();
                     while (extensions.hasNext()) {
-                        fullDescription += ", " + (String) extensions.next();
+                        fullDescription += ", ." + extensions.next();
                     }
                 }
                 fullDescription += ")";

@@ -35,13 +35,13 @@ context Person
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 	
 context Student
-	--inv: self.age > 18
-	--inv: self.year>=1 and self.year<=6
-	--inv: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
+	inv: self.age > 18
+	inv: self.year>=1 and self.year<=6
+	inv: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
 	inv: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
 	inv: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
 	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
-	inv: Student.allInstances()->collect(s|s.modules.credits)->sum()>=60
+	--inv: Student.allInstances()->collect(s|s.modules.credits)->sum()>=60
 
 context Module
 	inv: self.year>=1 and self.year<=5

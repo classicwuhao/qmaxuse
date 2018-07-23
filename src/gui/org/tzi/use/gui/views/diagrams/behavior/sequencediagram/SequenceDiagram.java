@@ -1080,7 +1080,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 			// get last activation
 			Activation srcAct = null;
 			if (!activationStack.empty()) {
-				srcAct = (Activation) activationStack.peek();
+				srcAct = activationStack.peek();
 			}
 			// if the source-lifeline is not marked to be hidden
 			if (srcAct == null || !srcAct.owner().isHidden()) {
@@ -1228,7 +1228,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 		if ((fProperties.showSet() && !ll.isHidden()) || !fProperties.compactDisplay()) {
 			Activation srcAct = null;
 			if (!activationStack.empty())
-				srcAct = (Activation) activationStack.peek();
+				srcAct = activationStack.peek();
 
 			if (srcAct == null || !srcAct.owner().isHidden()) {
 				ObjectBox objBox = ll.getObjectBox();
@@ -1245,7 +1245,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 					a.calculateMessLength();
 					ll.exitActivation();
 					activationStack.push(a);
-					a = (Activation) activationStack.pop();
+					a = activationStack.pop();
 				}
 
 				fNumSteps++;
@@ -1381,7 +1381,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 			Activation srcAct = null;
 
 			if (!activationStack.empty()) {
-				srcAct = (Activation) activationStack.peek();
+				srcAct = activationStack.peek();
 			}
 			if (srcAct == null || !srcAct.owner().isHidden()) {
 				yValue = calculateNextMessPosition(yValue, event, ll);
@@ -1485,7 +1485,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 		if (fProperties.showDelete() && !ll.isHidden()) {
 			Activation srcAct = null;
 			if (!activationStack.empty()) {
-				srcAct = (Activation) activationStack.peek();
+				srcAct = activationStack.peek();
 			}
 			if (srcAct == null || !srcAct.owner().isHidden()) {
 				if (srcAct == null || !srcAct.owner().isHidden()) {
@@ -1509,7 +1509,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 					activationStack.push(a);
 					fNumSteps++;
 
-					a = (Activation) activationStack.pop();
+					a = activationStack.pop();
 					a.setEnd(0);
 					yValue = calculateNextMessPosition(lastYValue, event, ll);
 
@@ -1673,13 +1673,13 @@ public class SequenceDiagram extends JPanel implements Printable {
 
 		public void mousePressed(MouseEvent event) {
 
-			int modifiers = event.getModifiers();
+			int modifiers = event.getModifiersEx();
 			// The last selected lifeline
 			Lifeline pickedLifeline = getLifeline(event.getX(), event.getY());
 
 			switch (modifiers) {
 			// If only left key of mouse is clicked
-			case InputEvent.BUTTON1_MASK:
+			case InputEvent.BUTTON1_DOWN_MASK:
 				if (pickedLifeline != null) {
 					if (!choosedLifelines.isSelected(pickedLifeline)) {
 						choosedLifelines.clear();
@@ -1695,7 +1695,7 @@ public class SequenceDiagram extends JPanel implements Printable {
 				}
 				break;
 			// If shift key with left key of mouse are clicked
-			case InputEvent.SHIFT_MASK + InputEvent.BUTTON1_MASK:
+			case InputEvent.SHIFT_DOWN_MASK | InputEvent.BUTTON1_DOWN_MASK:
 				if (pickedLifeline != null) {
 					// add or remove this component to the selection
 					if (choosedLifelines.isSelected(pickedLifeline))

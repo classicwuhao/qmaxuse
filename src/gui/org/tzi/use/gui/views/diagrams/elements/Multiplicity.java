@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: Multiplicity.java 4735 2014-01-20 17:22:23Z lhamann $
+// $Id: Multiplicity.java 5782 2015-11-19 16:04:10Z ms $
 
 package org.tzi.use.gui.views.diagrams.elements;
 
@@ -54,4 +54,8 @@ public final class Multiplicity extends EdgeProperty {
     public String toString() {
     	return "Multiplicity: " + fAssocEnd.multiplicity().toString();
     }
+    
+    //public MAssociationEnd get_fAssocEnd() {
+    //	return fAssocEnd;
+    //}
 }

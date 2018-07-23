@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: DiamondNode.java 4579 2013-07-24 08:42:07Z lhamann $
+// $Id: DiamondNode.java 5953 2016-05-11 14:00:02Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.elements;
 
@@ -189,6 +189,18 @@ public class DiamondNode extends PlaceableNode {
 		super.setDraggedPosition(deltaX, deltaY);
 	}
 
+	public void resetPositionStrategy(){
+		Set<PlaceableNode> related = new HashSet<PlaceableNode>();
+		
+		for (EdgeBase edgeBase : fHalfEdges) {
+			related.add(edgeBase.target());
+		}
+		
+		if(related.size() > 1){
+			this.setStrategy(new StrategyInBetween(this, related.toArray(new PlaceableNode[0]), 0, 0));
+		}
+	}
+	
 	@Override
 	public PlaceableNode getRelatedNode(double x, double y) {
 		if (fAssocName != null && fAssocName.occupies(x, y))

@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: BinaryAssociationClassOrObject.java 4579 2013-07-24 08:42:07Z lhamann $
+// $Id: BinaryAssociationClassOrObject.java 6192 2017-03-23 17:18:42Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.elements.edges;
 
@@ -203,4 +203,9 @@ public class BinaryAssociationClassOrObject extends BinaryAssociationOrLinkEdge 
 		BinaryAssociationClassOrObject edge = new BinaryAssociationClassOrObject(source, target, sourceEnd, targetEnd, linkObjectNode, diagram, link);
 		return edge;
     }
+	
+	public PlaceableNode getClassOrObjectNode() {
+		return fAssociationClassOrObjectNode;
+	}
+	
 }

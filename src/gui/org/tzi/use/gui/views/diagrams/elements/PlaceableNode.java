@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: PlaceableNode.java 5489 2015-02-05 11:26:16Z lhamann $
+// $Id: PlaceableNode.java 5782 2015-11-19 16:04:10Z ms $
 
 package org.tzi.use.gui.views.diagrams.elements;
 
@@ -625,7 +625,11 @@ public abstract class PlaceableNode implements Layoutable, Selectable {
     }
     
     public void moveToPosition(Point2D position) {
-    	this.strategy.moveTo(this, position.getX(), position.getY());
+    	moveToPosition(position.getX(), position.getY());
+    }
+    
+    public void moveToPosition(double x, double y) {
+    	this.strategy.moveTo(this, x, y);
     }
     
     /**

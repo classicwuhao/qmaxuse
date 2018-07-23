@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: DiagramOptions.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: DiagramOptions.java 6118 2016-12-20 18:29:04Z fhilken $
 
 package org.tzi.use.gui.views.diagrams;
 
@@ -44,12 +44,13 @@ public abstract class DiagramOptions {
 	public static int XML_LAYOUT_VERSION = 13;
 	
     protected boolean fDoAutoLayout = false;
-    protected boolean fShowRolenames = false;
-    protected boolean fShowAssocNames = true;
+    protected boolean fShowRolenames = true;
+    protected boolean fShowAssocNames = false;
     protected boolean fDoAntiAliasing = false;
     protected boolean fShowMutliplicities = false;
-    protected boolean fShowAttributes = false;
+    protected boolean fShowAttributes = true;
     protected boolean fShowOperations = false;
+    protected boolean fGroupMR = false;
     protected boolean fShowGrid = false;
     protected boolean fGrayscale = false;
 
@@ -163,6 +164,14 @@ public abstract class DiagramOptions {
     public void setShowOperations( boolean showOperations ) {
         fShowOperations = showOperations;
         onOptionChanged("SHOWOPERATIONS");
+    }
+    
+    public boolean isGroupMR() {
+        return fGroupMR;
+    }
+    public void setGroupMR( boolean groupMR ) {
+        fGroupMR = groupMR;
+        onOptionChanged("GROUPMR");
     }
 	
 	public boolean showGrid() {

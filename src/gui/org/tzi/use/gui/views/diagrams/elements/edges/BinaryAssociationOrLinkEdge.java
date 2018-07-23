@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: BinaryAssociationOrLinkEdge.java 4566 2013-07-10 11:45:19Z lhamann $
+// $Id: BinaryAssociationOrLinkEdge.java 5826 2016-02-18 14:42:09Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.elements.edges;
 
@@ -31,6 +31,7 @@ import org.tzi.use.gui.views.diagrams.edges.DirectedEdgeFactory;
 import org.tzi.use.gui.views.diagrams.elements.AssociationName;
 import org.tzi.use.gui.views.diagrams.elements.EdgeProperty;
 import org.tzi.use.gui.views.diagrams.elements.Multiplicity;
+import org.tzi.use.gui.views.diagrams.elements.MultiplicityRolenameWrapper;
 import org.tzi.use.gui.views.diagrams.elements.PlaceableNode;
 import org.tzi.use.gui.views.diagrams.elements.Rolename;
 import org.tzi.use.gui.views.diagrams.elements.positioning.PositionStrategy;
@@ -58,6 +59,11 @@ import com.google.common.collect.Multimap;
  * @author Lars Hamann
  */
 public class BinaryAssociationOrLinkEdge extends AssociationOrLinkPartEdge {
+	
+	/**
+	 * Source and target wrapper to keep multiplicity and role name close.
+	 */
+	MultiplicityRolenameWrapper fSourceMRWrapper;
 
 	/**
      * Association name / link name of this edge.
@@ -72,7 +78,8 @@ public class BinaryAssociationOrLinkEdge extends AssociationOrLinkPartEdge {
     /**
      * Multiplicity which is on the source side of this edge.
      */
-    EdgeProperty fSourceMultiplicity;
+    //EdgeProperty fSourceMultiplicity;
+    Multiplicity fSourceMultiplicity;
     
     /**
      * The represented association end.
@@ -142,6 +149,8 @@ public class BinaryAssociationOrLinkEdge extends AssociationOrLinkPartEdge {
 		
 		fAssocName = new AssociationName(getId() + "::AssociationName", fAssoc.name(), fSourceWayPoint, fTargetWayPoint, fOpt, this, fAssoc, link);
 		properties.put(PropertyOwner.EDGE, fAssocName);
+		
+		fSourceMRWrapper = new MultiplicityRolenameWrapper(fSourceMultiplicity, fSourceRolename, PropertyOwner.SOURCE, fOpt); 
 	}
 	
 	/**

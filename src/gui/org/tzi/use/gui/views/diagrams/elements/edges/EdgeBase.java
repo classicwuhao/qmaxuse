@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: EdgeBase.java 5489 2015-02-05 11:26:16Z lhamann $
+// $Id: EdgeBase.java 6271 2017-08-23 15:00:33Z nisha $
 
 package org.tzi.use.gui.views.diagrams.elements.edges;
 
@@ -235,10 +235,12 @@ public abstract class EdgeBase extends DirectedEdgeBase<PlaceableNode> implement
     }
     
     public final void initialize() {
-        initializeWayPoints();
-        this.edgeProperties = HashMultimap.create(3, 3);
-        initializeProperties(this.edgeProperties);
-        initializeFinal();
+		if (!initialized) {
+			initializeWayPoints();
+			this.edgeProperties = HashMultimap.create(3, 3);
+			initializeProperties(this.edgeProperties);
+			initializeFinal();
+		}
         this.initialized = true;
     }
     

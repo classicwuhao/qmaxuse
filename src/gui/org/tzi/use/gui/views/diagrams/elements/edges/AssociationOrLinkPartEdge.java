@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: AssociationOrLinkPartEdge.java 4675 2013-11-20 13:57:56Z lhamann $
+// $Id: AssociationOrLinkPartEdge.java 5790 2016-01-20 09:37:45Z ms $
 
 package org.tzi.use.gui.views.diagrams.elements.edges;
 
@@ -31,6 +31,7 @@ import org.tzi.use.gui.views.diagrams.DiagramView;
 import org.tzi.use.gui.views.diagrams.edges.DirectedEdgeFactory;
 import org.tzi.use.gui.views.diagrams.elements.EdgeProperty;
 import org.tzi.use.gui.views.diagrams.elements.Multiplicity;
+import org.tzi.use.gui.views.diagrams.elements.MultiplicityRolenameWrapper;
 import org.tzi.use.gui.views.diagrams.elements.PlaceableNode;
 import org.tzi.use.gui.views.diagrams.elements.Rolename;
 import org.tzi.use.gui.views.diagrams.waypoints.WayPoint;
@@ -54,6 +55,11 @@ import com.google.common.collect.Multimap;
 public class AssociationOrLinkPartEdge extends EdgeBase implements AssociationEdge, LinkEdge {
 	protected final static int DIRECTED_EDGE = 100;
 	
+	/**
+	 * Target wrapper to keep multiplicity and role name close.
+	 */
+	MultiplicityRolenameWrapper fTargetMRWrapper;
+	
     /**
      * Role name which is on the target side of this edge.
      */
@@ -62,7 +68,8 @@ public class AssociationOrLinkPartEdge extends EdgeBase implements AssociationEd
     /**
      * Multiplicity which is on the target side of this edge.
      */
-    EdgeProperty fTargetMultiplicity;
+    //EdgeProperty fTargetMultiplicity;
+    Multiplicity fTargetMultiplicity;
     
     /**
      * Association this edge belongs to.
@@ -120,6 +127,8 @@ public class AssociationOrLinkPartEdge extends EdgeBase implements AssociationEd
         
         fTargetMultiplicity = new Multiplicity( getId() + "::target::multiplicity", fTargetEnd, fTargetWayPoint, fOpt);
         properties.put(PropertyOwner.TARGET, fTargetMultiplicity);
+        
+        fTargetMRWrapper = new MultiplicityRolenameWrapper(fTargetMultiplicity, fTargetRolename, PropertyOwner.TARGET, fOpt);
 	}
 
 	/**

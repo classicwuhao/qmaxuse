@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ModelBrowser.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ModelBrowser.java 5977 2016-06-02 16:46:18Z fhilken $
 
 package org.tzi.use.gui.main;
 
@@ -71,6 +71,7 @@ import org.tzi.use.uml.mm.MClass;
 import org.tzi.use.uml.mm.MClassInvariant;
 import org.tzi.use.uml.mm.MModel;
 import org.tzi.use.uml.mm.MModelElement;
+import org.tzi.use.uml.mm.MOperation;
 import org.tzi.use.uml.mm.MPrePostCondition;
 
 /** 
@@ -367,17 +368,27 @@ public class ModelBrowser extends JPanel
         final Collection<MPrePostCondition> sortedConditions = 
             fMbs.sortPrePostConditions(fModel.prePostConditions());
         addChildNodes( top, "Pre-/Postconditions", sortedConditions );
-		
+        
 		Set<Map.Entry<String, Collection<?>>> modelCollectionEntrySet = this.modelCollections.entrySet();
 				
 		for (Map.Entry<String, Collection<?>> modelCollectionMapEntry : modelCollectionEntrySet) {
 		    String modelCollectionName = modelCollectionMapEntry.getKey()
 			    .toString();
 		    Collection<?> modelCollection = fMbs
-			    .sortPluginCollection((Collection<?>) modelCollectionMapEntry
-				    .getValue());
+			    .sortPluginCollection(modelCollectionMapEntry.getValue());
 		    addChildNodes(top, modelCollectionName, modelCollection);
 		}
+		
+		final Collection<MOperation> queryOperations = new ArrayList<MOperation>();
+		for (MClass mClass : fModel.classes()) {
+			for (MOperation mOperation : mClass.operations()) {
+				if(mOperation.hasExpression()){
+					queryOperations.add(mOperation);
+				}
+			}
+		}
+		
+		addChildNodes(top, "Query Operations", queryOperations);
     }
 
     /**

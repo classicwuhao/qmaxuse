@@ -446,7 +446,7 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 
 		popupMenu.insert(showSomeMessagesItem, pos++);
 
-		final JCheckBoxMenuItem resetEnumItem = new JCheckBoxMenuItem("Relativ numbering");
+		final JCheckBoxMenuItem resetEnumItem = new JCheckBoxMenuItem("Relative numbering");
 		resetEnumItem.setState(resetEnum);
 		resetEnumItem.addItemListener(new ItemListener() {
 			@Override
@@ -1043,8 +1043,10 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 					}
 					
 					msg.setResetedSequenceNumber(buildNewSequenceNumber(counters, msgDepth));
-				}else {
-					counters.set(msgDepth-1, counters.get(msgDepth-1)+1);
+				} else {
+					if(msg.getDirection() != MMessage.RETURN){
+						counters.set(msgDepth-1, counters.get(msgDepth-1)+1);
+					}
 					
 					for (int i = msgDepth; i < counters.size(); i++) {
 						counters.set(i, 0);
@@ -1286,14 +1288,11 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 		raiseSequenceNumber();
 
 		CommunicationDiagramEdge edge = getSingleEdge(objectNodeToDestroy, callOpNode);
-
 		if (edge == null) {
 			edge = new CommunicationDiagramEdge(callOpNode, objectNodeToDestroy, this, false);
-			edge.addNewMessage(mess);
 			fGraph.invalidateEdge(edge);
-		} else {
-			edge.addNewMessage(mess);
 		}
+		edge.addNewMessage(mess);
 
 		fLayouter = null;
 	}
@@ -1482,12 +1481,11 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 		MOperationCall operationCall = event.getOperationCall();
 		MObject obj = operationCall.getSelf();
 		BaseNode obn = getNodeForObject(obj);
-
-		CommunicationDiagramEdge edge = null;
-
+		
 		if (!operationsCaller.isEmpty()) {
 			operationsCaller.remove(operationsCaller.size() - 1);
 		}
+		sequenceNumbers.remove(sequenceNumbers.size() - 1);
 
 		if (operationCall.getResultValue() != null) {
 			MMessage mess = new MMessage(event, getSequenceNumber(), operationCall.getResultValue().toString());
@@ -1497,24 +1495,22 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 			}
 			messageRecorder.addMessage(mess);
 
+			PlaceableNode sourceNode;
 			if (!operationsCaller.isEmpty()) {
-
 				MObject sourceObject = operationsCaller.get(operationsCaller.size() - 1);
-				BaseNode sourceNode;
-
 				sourceNode = getNodeForObject(sourceObject);
-
-				CommunicationDiagramEdge edgeBetweenSourceTarget = getSingleEdge(sourceNode, obn);
-
-				if (edgeBetweenSourceTarget == null) {
-					edge = new CommunicationDiagramEdge(sourceNode, obn, this, false);
-					fGraph.addEdge(edge);
-				} else {
-					edge = edgeBetweenSourceTarget;
-				}
+			} else {
+				sourceNode = actorSymbolNode;
+			}
+				
+			CommunicationDiagramEdge edge = getSingleEdge(sourceNode, obn);
+			if (edge == null) {
+				edge = new CommunicationDiagramEdge(sourceNode, obn, this, false);
+				fGraph.addEdge(edge);
 			}
 
 			edge.addNewMessage(mess);
+			
 			fLayouter = null;
 		}
 
@@ -1522,7 +1518,6 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 			operationsStack.pop();
 		}
 
-		sequenceNumbers.remove(sequenceNumbers.size() - 1);
 		raiseSequenceNumber();
 	}
 
@@ -1547,5 +1542,13 @@ public class CommunicationDiagram extends DiagramViewWithObjectNode {
 	@Override
 	public Set<? extends PlaceableNode> getHiddenNodes() {
 		return Sets.newHashSet(fGraph.getHiddenNodesIterator());
+	}
+	
+	@Override
+	public void moveObjectNode( MObject obj, int x, int y ) {
+		PlaceableNode node = getNodeForObject(obj);
+		if(node != null){
+			node.moveToPosition(x, y);
+		}
 	}
 }

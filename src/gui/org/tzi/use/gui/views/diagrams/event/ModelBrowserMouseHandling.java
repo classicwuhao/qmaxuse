@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ModelBrowserMouseHandling.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ModelBrowserMouseHandling.java 6289 2017-11-27 09:17:09Z andreask $
 
 package org.tzi.use.gui.views.diagrams.event;
 
@@ -357,12 +357,12 @@ public class ModelBrowserMouseHandling implements MouseListener {
     }
     
     private void tryToFireStateChangeEvent( MouseEvent e ) {
-        if ( e.getModifiers() == InputEvent.BUTTON2_MASK ) {
+        if ( e.getModifiersEx() == InputEvent.BUTTON2_DOWN_MASK ) {
             if ( fRectangle != null && fRectangle.contains( e.getPoint() ) ) {
                 boolean highlight = false;
                 if ( fHighlightElements.containsKey( fElem ) ) {
                     highlight = 
-                        ((Boolean) fHighlightElements.get( fElem )).booleanValue();
+                        fHighlightElements.get( fElem ).booleanValue();
                     if ( highlight ) {
                         highlight = false;
                     } else {

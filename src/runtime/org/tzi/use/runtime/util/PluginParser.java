@@ -1,8 +1,10 @@
 package org.tzi.use.runtime.util;
 
+import java.io.IOException;
 import java.util.Stack;
 import java.util.Vector;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -103,15 +105,12 @@ public class PluginParser extends DefaultHandler implements
 				+ " with Attribute " + attribute);
 	}
 
-	synchronized public PluginModel parsePlugin(InputSource inputSource)
-			throws Exception {
+	public synchronized PluginModel parsePlugin(InputSource inputSource)
+			throws SAXException, IOException, ParserConfigurationException {
 
-		try {
-			SAXParser saxParser = factory.newSAXParser();
-			saxParser.parse(inputSource, this);
-			return (PluginModel) pluginDesciptors.pop();
-		} finally {
-		}
+		SAXParser saxParser = factory.newSAXParser();
+		saxParser.parse(inputSource, this);
+		return pluginDesciptors.pop();
 	}
 
 	public void parsePluginActionAttributes(Attributes attributes) {
@@ -226,6 +225,9 @@ public class PluginParser extends DefaultHandler implements
 			} else if (attrName.equals(PLUGIN_COMMAND_SHELLCMD)) {
 				command.setShellCmd(attrValue);
 				Log.debug("Setting " + attrName);
+			} else if (attrName.equals(PLUGIN_COMMAND_ALIAS)) {
+				command.setAlias(attrValue);
+				Log.debug("Setting " + attrName);
 			} else if (attrName.equals(PLUGIN_COMMAND_HELP)) {
 				command.setCmdHelp(attrValue);
 				Log.debug("Setting " + attrName);
@@ -241,7 +243,7 @@ public class PluginParser extends DefaultHandler implements
 
 		PluginServiceModel service = new PluginServiceModel();
 
-		PluginModel current = (PluginModel) this.pluginDesciptors.pop();
+		PluginModel current = this.pluginDesciptors.pop();
 		Vector<PluginServiceModel> services = current.getServices();
 
 		Log.debug("PluginParser: Entering parsePluginService.");

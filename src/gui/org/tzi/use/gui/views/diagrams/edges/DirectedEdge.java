@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: DirectedEdge.java 2283 2011-06-06 12:11:05Z lhamann $
+// $Id: DirectedEdge.java 6289 2017-11-27 09:17:09Z andreask $
 
 
 package org.tzi.use.gui.views.diagrams.edges;
@@ -244,10 +244,10 @@ public class DirectedEdge implements I_DirectedEdge {
                                          double.class, double.class };
         final int tailWidth = calculateTailWidth( sourceX, sourceY, targetX,
                                                   targetY, headWidth );
-        final Object[] parameters = { new Double( sourceX ),
-                                      new Double( sourceY ),
-                                      new Double( sourceX + tailWidth ),
-                                      new Double( sourceY ) };
+        final Object[] parameters = { Double.valueOf( sourceX ),
+                                      Double.valueOf( sourceY ),
+                                      Double.valueOf( sourceX + tailWidth ),
+                                      Double.valueOf( sourceY ) };
         createTailLineAuxiliary( tailType, parameterTypes, parameters,
                                  gradientAngle );
     }

@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ActionLoadLayout.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ActionLoadLayout.java 5536 2015-02-23 11:31:24Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.event;
 
@@ -29,6 +29,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 
 import org.tzi.use.config.Options;
+import org.tzi.use.gui.main.MainWindow;
 import org.tzi.use.gui.util.ExtFileFilter;
 import org.tzi.use.gui.views.diagrams.DiagramView;
 
@@ -70,7 +71,7 @@ public class ActionLoadLayout extends AbstractAction {
 			fileChooser.setSelectedFile(lastFile.toFile());
 		}
         
-        int returnVal = fileChooser.showOpenDialog( fDiagram );
+        int returnVal = fileChooser.showOpenDialog( MainWindow.instance() );
         if (returnVal != JFileChooser.APPROVE_OPTION)
             return;
 

@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: DirectedGraphic.java 2258 2011-05-13 09:30:08Z lhamann $
+// $Id: DirectedGraphic.java 5574 2015-03-09 15:07:18Z fhilken $
 
 
 package org.tzi.use.gui.views.diagrams.util;
@@ -47,7 +47,7 @@ public abstract class DirectedGraphic implements I_DirectedGraphic {
      * @return x coordinate of the peak point
      */
     public int getPeakPointX() {
-        final I_DirectedLine firstLine = (I_DirectedLine) containedLines.get(0);
+        final I_DirectedLine firstLine = containedLines.get(0);
         return firstLine.getRoundedSourceX();
     }
 
@@ -57,7 +57,7 @@ public abstract class DirectedGraphic implements I_DirectedGraphic {
      * @return y coordinate of the peak point
      */
     public int getPeakPointY() {
-        final I_DirectedLine firstLine = (I_DirectedLine) containedLines.get(0);
+        final I_DirectedLine firstLine = containedLines.get(0);
         return firstLine.getRoundedSourceY();
     }
 
@@ -190,8 +190,8 @@ public abstract class DirectedGraphic implements I_DirectedGraphic {
     private static boolean isChain(final ArrayList<I_DirectedLine> lines) {
         lines.add(lines.get(0));
         for (int index = 0; index < lines.size() - 1; index++) {
-            final I_DirectedLine line = (I_DirectedLine) lines.get(index);
-            final I_DirectedLine nextLine = (I_DirectedLine) lines.get(index + 1);
+            final I_DirectedLine line = lines.get(index);
+            final I_DirectedLine nextLine = lines.get(index + 1);
             if (!areSuccessionalLines(line, nextLine)) {
                 return false;
             }

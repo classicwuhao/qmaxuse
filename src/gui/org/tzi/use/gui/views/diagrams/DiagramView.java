@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: DiagramView.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: DiagramView.java 6288 2017-11-23 11:09:05Z andreask $
 
 package org.tzi.use.gui.views.diagrams;
 
@@ -28,6 +28,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Stroke;
 import java.awt.Toolkit;
@@ -40,14 +41,15 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -85,15 +87,17 @@ import org.tzi.use.gui.views.diagrams.waypoints.WayPoint;
 import org.tzi.use.util.Log;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-
-import com.sun.org.apache.xml.internal.serialize.OutputFormat;
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import org.w3c.dom.bootstrap.DOMImplementationRegistry;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSOutput;
+import org.w3c.dom.ls.LSSerializer;
 
 /**
  * Combines everything that the class and object diagram have in common.
  * 
  * @author Fabian Gutsche
  * @author Lars Hamann
+ * @author (Modified for Java 9 by Andreas Kaestner)
  */
 @SuppressWarnings("serial")
 public abstract class DiagramView extends JPanel 
@@ -358,6 +362,15 @@ public abstract class DiagramView extends JPanel
 	        	PlaceableNode southNode = e.getWayPointMostTo(Direction.SOUTH);
 	        	maxY = Math.max(maxY, southNode.getY() + southNode.getHeight());
 	        	e.drawProperties(g2d);
+	        	
+	        	for (EdgeProperty ep : e.getProperties()) {
+	        		//TODO refactor hidden/visible management on PlaceableNode (EdgeProperty)
+	        		if(!ep.isVisible()){
+	        			continue;
+	        		}
+					maxX = Math.max(maxX, ep.getX() + ep.getWidth());
+					maxY = Math.max(maxY, ep.getY() + ep.getHeight());
+				}
 	        }
 	        
 	        Dimension newDimension = new Dimension( (int)maxX + 5, (int)maxY + 5);
@@ -559,6 +572,28 @@ public abstract class DiagramView extends JPanel
         return res;
     }
     
+    public Set<PlaceableNode> findNodesInArea(Rectangle r){
+    	Set<PlaceableNode> res = new HashSet<PlaceableNode>();
+    	
+    	synchronized (fGraph) {
+    		Iterator<PlaceableNode> nIter = fGraph.getVisibleNodesIterator();
+    		while (nIter.hasNext()) {
+	            PlaceableNode n = nIter.next();
+	            if (!n.isInitialized()) continue;
+	            
+	            if(r.contains(n.getBounds())){
+	            	res.add(n);
+	            }
+    		}
+		}
+    	
+    	return res;
+    }
+    
+	public SelectionBox createSelectionBox(Point p) {
+		return new SelectionBox(p);
+	}
+    
     protected class PopupMenuInfo {
     	
     	public JPopupMenu popupMenu = null;
@@ -583,44 +618,6 @@ public abstract class DiagramView extends JPanel
 
         final JMenuItem cbCommentNode = getMenuItemCommentNode(info);
         popupMenu.add(cbCommentNode);
-        popupMenu.add(new JSeparator());
-        
-        final JCheckBoxMenuItem cbAssocNames = new JCheckBoxMenuItem(
-        "Show association names");
-        cbAssocNames.setState( fOpt.isShowAssocNames() );
-        cbAssocNames.addItemListener(new ItemListener() {
-            @Override
-			public void itemStateChanged(ItemEvent ev) {
-                fOpt.setShowAssocNames( ev.getStateChange() == ItemEvent.SELECTED );
-                invalidateContent(true);
-            }
-        });
-        
-        final JCheckBoxMenuItem cbRolenames = new JCheckBoxMenuItem(
-        "Show role names");
-        cbRolenames.setState( fOpt.isShowRolenames() );
-        cbRolenames.addItemListener(new ItemListener() {
-            @Override
-			public void itemStateChanged(ItemEvent ev) {
-                fOpt.setShowRolenames( ev.getStateChange() == ItemEvent.SELECTED );
-                invalidateContent(true);
-            }
-        });
-        
-        final JCheckBoxMenuItem cbAttrValues = new JCheckBoxMenuItem(
-        "Show attributes"); // values");
-        cbAttrValues.setState( fOpt.isShowAttributes() );
-        cbAttrValues.addItemListener(new ItemListener() {
-            @Override
-			public void itemStateChanged(ItemEvent ev) {
-                fOpt.setShowAttributes( ev.getStateChange() == ItemEvent.SELECTED );
-                invalidateContent(true);
-            }
-        });
-        
-        if (!this.fEdgeSelection.isEmpty()) {
-        	popupMenu.add(getMenuItemEdgePropertiesVivibility());
-        }
         
         boolean selectionCanBeHidden = !fNodeSelection.isEmpty();
         for (PlaceableNode node : fNodeSelection) {
@@ -641,18 +638,56 @@ public abstract class DiagramView extends JPanel
 					}
 				}
 			});
-        	popupMenu.addSeparator();
         }
         
+        if (!this.fEdgeSelection.isEmpty()) {
+        	popupMenu.add(getMenuItemEdgePropertiesVivibility());
+        }
+        
+        popupMenu.add(new JSeparator());
+        
+
+		final JCheckBoxMenuItem cbAttrValues = new JCheckBoxMenuItem("Show attributes"); // values");
+        cbAttrValues.setState( fOpt.isShowAttributes() );
+        cbAttrValues.addItemListener(new ItemListener() {
+            @Override
+			public void itemStateChanged(ItemEvent ev) {
+                fOpt.setShowAttributes( ev.getStateChange() == ItemEvent.SELECTED );
+                invalidateContent(true);
+            }
+        });
+        
+        final JCheckBoxMenuItem cbAssocNames = new JCheckBoxMenuItem("Show association names");
+        cbAssocNames.setState( fOpt.isShowAssocNames() );
+        cbAssocNames.addItemListener(new ItemListener() {
+            @Override
+			public void itemStateChanged(ItemEvent ev) {
+                fOpt.setShowAssocNames( ev.getStateChange() == ItemEvent.SELECTED );
+                invalidateContent(true);
+            }
+        });
+        
+        final JCheckBoxMenuItem cbRolenames = new JCheckBoxMenuItem("Show role names");
+        cbRolenames.setState( fOpt.isShowRolenames() );
+        cbRolenames.addItemListener(new ItemListener() {
+            @Override
+			public void itemStateChanged(ItemEvent ev) {
+                fOpt.setShowRolenames( ev.getStateChange() == ItemEvent.SELECTED );
+                invalidateContent(true);
+            }
+        });
+       
         final JCheckBoxMenuItem cbAntiAliasing = getMenuItemAntiAliasing();
         final JCheckBoxMenuItem cbShowGrid = getMenuItemShowGrid();
         final JCheckBoxMenuItem cbGrayscale = getMenuItemGrayscale();
         
         // This is the start of the general section to show or hide elements
         info.generalShowHideStart = popupMenu.getComponentCount();
+        popupMenu.add(cbAttrValues);
+
         popupMenu.add(cbAssocNames);
         popupMenu.add(cbRolenames);
-        popupMenu.add(cbAttrValues);
+        
         info.generalShowHideLength = popupMenu.getComponentCount() - info.generalShowHideStart;
         
         popupMenu.addSeparator();
@@ -850,18 +885,22 @@ public abstract class DiagramView extends JPanel
 		this.getOptions().saveOptions(helper, optionsElement);
 		this.storePlacementInfos( helper, rootElement );
 
-        // use specific Xerces class to write DOM-data to a file:
-        OutputFormat format = new OutputFormat(doc);
-        format.setLineWidth(65);
-        format.setIndenting(true);
-        format.setIndent(2);
-        
-        XMLSerializer serializer = new XMLSerializer(format);
-        
-        try (Writer w = Files.newBufferedWriter(layoutFile, Charset.defaultCharset())) {
-			serializer.setOutputCharStream(w);
-			serializer.serialize(doc);
-		} catch (IOException e1) {
+		DOMImplementationLS impl;
+		try {
+			DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
+			impl = (DOMImplementationLS)registry.getDOMImplementation("LS");
+		} catch(ClassNotFoundException|IllegalAccessException|InstantiationException e1){
+			JOptionPane.showMessageDialog(this, e1.getMessage());
+			return;
+		}
+		try (FileOutputStream outStream = new FileOutputStream(layoutFile.toFile())) {
+			LSSerializer serializer = impl.createLSSerializer();
+			serializer.getDomConfig().setParameter("format-pretty-print", true);
+			LSOutput output = impl.createLSOutput();
+			output.setEncoding(Charset.defaultCharset().name());
+			output.setByteStream(outStream);
+			serializer.write(doc, output);
+		} catch(IOException e1){
 			JOptionPane.showMessageDialog(this, e1.getMessage());
 		}
         

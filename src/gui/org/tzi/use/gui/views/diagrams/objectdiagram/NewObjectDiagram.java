@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: NewObjectDiagram.java 5504 2015-02-06 10:26:14Z lhamann $
+// $Id: NewObjectDiagram.java 6192 2017-03-23 17:18:42Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.objectdiagram;
 
@@ -50,6 +50,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.WeakHashMap;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -83,6 +84,8 @@ import org.tzi.use.gui.views.diagrams.elements.edges.BinaryAssociationOrLinkEdge
 import org.tzi.use.gui.views.diagrams.elements.edges.EdgeBase;
 import org.tzi.use.gui.views.diagrams.elements.edges.LinkEdge;
 import org.tzi.use.gui.views.diagrams.elements.edges.NAryAssociationClassOrObjectEdge;
+import org.tzi.use.gui.views.diagrams.elements.positioning.PositionStrategy;
+import org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed;
 import org.tzi.use.gui.views.diagrams.event.ActionLoadLayout;
 import org.tzi.use.gui.views.diagrams.event.ActionSaveLayout;
 import org.tzi.use.gui.views.diagrams.event.DiagramInputHandling;
@@ -239,7 +242,15 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
 	 * is created by drag & drop.
 	 */
 	private Point2D.Double nextNodePosition = new Point2D.Double();
-        
+    
+	/**
+	 * Last position of deleted nodes and links. In case of restoration, the
+	 * nodes (object nodes, linkobject nodes) are positioned as they were
+	 * before. Objects use {@link StrategyFixed}, so we just save the position.
+	 */
+	private Map<MObject, Point2D> lastKnownNodePositions = new WeakHashMap<>();
+	private Map<MLink, PositionStrategy> lastKnownLinkPositions = new WeakHashMap<>();
+	
     private ShowObjectPropertiesViewMouseListener 
         showObjectPropertiesViewMouseListener 
             = new ShowObjectPropertiesViewMouseListener();
@@ -324,7 +335,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
                 for (MLink link : links) {
                     eb = visibleData.fBinaryLinkToEdgeMap.get( link );
                     if ( elem instanceof MAssociationClass ) {
-                        eb = visibleData.fLinkObjectToNodeEdge.get( (MLinkObject) link );
+                        eb = visibleData.fLinkObjectToNodeEdge.get( link );
                     }
                     edges.add( eb );
                 }
@@ -403,11 +414,16 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
      */
     public void addObject(MObject obj) {
     	ObjectNode n = new ObjectNode( obj, fParent, getOptions());
-		n.setPosition( nextNodePosition );
-        n.setMinWidth(minClassNodeWidth);
-        n.setMinHeight(minClassNodeHeight);
-        
-        getRandomNextPosition();
+    	n.setMinWidth(minClassNodeWidth);
+    	n.setMinHeight(minClassNodeHeight);
+    	
+    	if(lastKnownNodePositions.containsKey(obj)){
+    		n.moveToPosition(lastKnownNodePositions.get(obj));
+    		lastKnownNodePositions.remove(obj);
+    	} else {
+    		n.setPosition( nextNodePosition );
+    		getRandomNextPosition();
+    	}
 
         fGraph.add(n);
         visibleData.fObjectToNodeMap.put(obj, n);
@@ -453,6 +469,19 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
     	}
     }
     
+    @Override
+    public void moveObjectNode( MObject obj, int x, int y ) {
+    	PlaceableNode node = null; 
+    	if(visibleData.fObjectToNodeMap.containsKey(obj)){
+    		node = visibleData.fObjectToNodeMap.get(obj);
+    	}
+    	else if(hiddenData.fObjectToNodeMap.containsKey(obj)){
+    		node = hiddenData.fObjectToNodeMap.get(obj);
+    	}
+    	if(node != null){
+    		node.moveToPosition(x, y);
+    	}
+    }
 	
     /**
      * Hides an object in the diagram
@@ -519,6 +548,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
     	}
     	
         if (n != null) {
+        	lastKnownNodePositions.put(obj, n.getPosition());
         	if (isVisible) {
                 fGraph.remove(n);
                 visibleData.fObjectToNodeMap.remove(obj);
@@ -562,8 +592,14 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
                              visibleData.fObjectToNodeMap.get(link),
                              this, link );
             
-        
-            fGraph.addEdge(e);
+            if(lastKnownLinkPositions.containsKey(link)){
+            	e.initialize();
+            	visibleData.fObjectToNodeMap.get(link).setStrategy(lastKnownLinkPositions.get(link));
+            	lastKnownLinkPositions.remove(link);
+            	fGraph.addInitializedEdge(e);
+            } else {
+            	fGraph.addEdge(e);
+            }
             visibleData.fLinkObjectToNodeEdge.put((MLinkObject)link, e);
             fLayouter = null;
         } else {
@@ -712,7 +748,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
             else
             	fGraph.removeEdge(e);
             
-            source.fLinkObjectToNodeEdge.remove((MLinkObject)link);
+            source.fLinkObjectToNodeEdge.remove(link);
             target.fLinkObjectToNodeEdge.put((MLinkObject)link, e);
             fLayouter = null;
         } else {
@@ -799,6 +835,12 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
             }
             
             if ( isLinkObject ) {
+            	BinaryAssociationClassOrObject edge = (BinaryAssociationClassOrObject) data.fLinkObjectToNodeEdge.get(link);
+            	if(edge != null){
+            		PlaceableNode objectNode = edge.getClassOrObjectNode();
+            		lastKnownLinkPositions.put(link, objectNode.getStrategy());
+            	}
+            	
             	data.fBinaryLinkToEdgeMap.remove(link);
             	data.fLinkObjectToNodeEdge.remove(link);
             } else {
@@ -836,6 +878,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
             if (link instanceof MLinkObject) {
                 EdgeBase edge = data.fLinkObjectToNodeEdge.get( link );
                 if (edge != null) {
+                	lastKnownLinkPositions.put(link, ((NAryAssociationClassOrObjectEdge) edge).getClassOrLinkObjectNode().getStrategy());
                 	fGraph.removeEdge( edge );
                     data.fLinkObjectToNodeEdge.remove( link );
                     edge.dispose();
@@ -986,7 +1029,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
 		for (PlaceableNode node : fNodeSelection) {
             if (node instanceof ObjectNode ) {
                 selectedObjects.add(((ObjectNode) node).object());
-            } else if (node instanceof AssociationName) { 
+			} else if (node instanceof AssociationName) { 
 				MLink link = ((AssociationName)node).getLink();
 				selectedObjectsOfAssociation.addAll(link.linkedObjects());
 				selectedLinks.add(link);
@@ -1310,7 +1353,7 @@ public class NewObjectDiagram extends DiagramViewWithObjectNode
      */
     public void mayBeShowObjectInfo( MouseEvent e ) {
         if (fNodeSelection.size() == 1) {
-            PlaceableNode node = (PlaceableNode) fNodeSelection.iterator().next();
+            PlaceableNode node = fNodeSelection.iterator().next();
             if (node instanceof ObjectNode) {
                 displayObjectInfo(((ObjectNode) node).object(), e);
             }

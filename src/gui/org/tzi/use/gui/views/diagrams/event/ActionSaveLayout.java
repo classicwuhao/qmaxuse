@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ActionSaveLayout.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ActionSaveLayout.java 6173 2017-02-09 11:22:10Z fhilken $
 
 package org.tzi.use.gui.views.diagrams.event;
 
@@ -28,16 +28,15 @@ import java.nio.file.Path;
 import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 import org.tzi.use.config.Options;
+import org.tzi.use.gui.main.MainWindow;
 import org.tzi.use.gui.util.ExtFileFilter;
 import org.tzi.use.gui.views.diagrams.DiagramView;
 
 /**
  * Saves the current layout to a file.
  * 
- * @version $ProjectVersion: 0.393 $
  * @author Fabian Gutsche
  */
 @SuppressWarnings("serial")
@@ -56,7 +55,6 @@ public class ActionSaveLayout extends AbstractAction {
         fDiagram = diagram;
     }
     
-    
     public void actionPerformed(ActionEvent e) {        
         int option = JOptionPane.YES_OPTION;
 
@@ -73,7 +71,7 @@ public class ActionSaveLayout extends AbstractAction {
 		}
         
         do {
-            int returnVal = fChooser.showSaveDialog( new JPanel() );
+            int returnVal = fChooser.showSaveDialog( MainWindow.instance() );
             if (returnVal != JFileChooser.APPROVE_OPTION)
                 return;
 
@@ -88,7 +86,7 @@ public class ActionSaveLayout extends AbstractAction {
             lastFile = Options.getLastDirectory().resolve(filename);
             
             if (Files.exists(lastFile)) {
-                option = JOptionPane.showConfirmDialog(new JPanel(),
+                option = JOptionPane.showConfirmDialog(MainWindow.instance(),
                         "Overwrite existing file " + lastFile + "?",
                         "Please confirm", JOptionPane.YES_NO_CANCEL_OPTION);
                 if (option == JOptionPane.CANCEL_OPTION) {

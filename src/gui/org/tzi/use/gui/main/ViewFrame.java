@@ -17,7 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-// $Id: ViewFrame.java 5494 2015-02-05 12:59:25Z lhamann $
+// $Id: ViewFrame.java 5870 2016-03-16 13:56:27Z fhilken $
 
 package org.tzi.use.gui.main;
 
@@ -69,10 +69,11 @@ public class ViewFrame extends JInternalFrame {
     	
     	if (!exportThis) {
     		component = (JComponent)fView;
+    		
     		// Dirty hack to remove the exported frame of a scroll bar
     		if (component.getComponent(0) instanceof JScrollPane) {
-    			component = (JComponent)component.getComponent(0);
-    			component = (JComponent)component.getComponent(0);
+    			JScrollPane scrollPane = (JScrollPane) component.getComponent(0);
+    			component = (JComponent) scrollPane.getViewport().getView();
     		}
     	} else {
     		component = this;

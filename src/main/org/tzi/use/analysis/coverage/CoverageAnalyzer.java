@@ -24,50 +24,180 @@ package org.tzi.use.analysis.coverage;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.tzi.use.uml.mm.MClass;
 import org.tzi.use.uml.mm.MClassInvariant;
 import org.tzi.use.uml.mm.MModel;
 import org.tzi.use.uml.mm.MModelElement;
+import org.tzi.use.uml.mm.MOperation;
 import org.tzi.use.uml.mm.MPrePostCondition;
 
 /**
- * This class provides operations to analyze 
- * the model coverage of OCl expressions.
+ * This class provides operations to analyze the model coverage of OCl
+ * expressions.
+ * 
  * @author Lars Hamann
  *
  */
 public class CoverageAnalyzer {
-	
-	/**
-	 * Calculates the model coverage for the complete model and for each invariant. 
-	 * @param model The {@link MModel} to calculate the coverage
-	 * @param expandOprations If <code>true</code>, operation expressions will also be considered. Otherwise, only the operation itself is marked as covered.  
-	 * @return A {@link Map} which contains the data for each {@link MClassInvariant} and {@link MPrePostCondition} and for the complete {@link MModel}.
-	 */
-	public static Map<MModelElement, CoverageData> calculateModelCoverage(MModel model, boolean expandOprations) {
-		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>(
-				model.classInvariants().size() + 1);
-		
-		CoverageCalculationVisitor visitorOverall = new CoverageCalculationVisitor(expandOprations);
-		CoverageCalculationVisitor visitorSingleElement;
-		
-		for (MClassInvariant inv : model.classInvariants()) {
-			visitorSingleElement = new CoverageCalculationVisitor(expandOprations);
-			inv.expandedExpression().processWithVisitor(visitorOverall);
-			inv.expandedExpression().processWithVisitor(visitorSingleElement);
-						
-			result.put(inv, visitorSingleElement.getCoverageData());
+
+	public static Map<MModelElement, CoverageData> calculateInvariantCoverage(
+			MModel model, boolean expandOperations) {
+
+		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>();
+
+		CoverageCalculationVisitor globalVisitor = new CoverageCalculationVisitor(
+				expandOperations);
+		CoverageCalculationVisitor localVisitor;
+
+		for (MClassInvariant invariant : model.classInvariants()) {
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			invariant.expandedExpression().processWithVisitor(localVisitor);
+
+			invariant.expandedExpression().processWithVisitor(globalVisitor);
+
+			result.put(invariant, localVisitor.getCoverageData());
 		}
-		
+
+		globalVisitor.getCoverageData().addUncoveredClasses(model);
+		result.put(model, globalVisitor.getCoverageData());
+
+		return result;
+	}
+
+	public static Map<MModelElement, CoverageData> calculatePreConditionCoverage(
+			MModel model, boolean expandOperations) {
+
+		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>();
+
+		CoverageCalculationVisitor globalVisitor = new CoverageCalculationVisitor(
+				expandOperations);
+		CoverageCalculationVisitor localVisitor;
+
+		for (MPrePostCondition preCondition : model.preConditions()) {
+
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			preCondition.expression().processWithVisitor(localVisitor);
+
+			preCondition.expression().processWithVisitor(globalVisitor);
+
+			result.put(preCondition, localVisitor.getCoverageData());
+		}
+
+		globalVisitor.getCoverageData().addUncoveredClasses(model);
+		result.put(model, globalVisitor.getCoverageData());
+
+		return result;
+	}
+
+	public static Map<MModelElement, CoverageData> calculatePostConditionCoverage(
+			MModel model, boolean expandOperations) {
+
+		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>();
+
+		CoverageCalculationVisitor globalVisitor = new CoverageCalculationVisitor(
+				expandOperations);
+		CoverageCalculationVisitor localVisitor;
+
+		for (MPrePostCondition postCondition : model.postConditions()) {
+
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			postCondition.expression().processWithVisitor(localVisitor);
+
+			postCondition.expression().processWithVisitor(globalVisitor);
+
+			result.put(postCondition, localVisitor.getCoverageData());
+		}
+
+		globalVisitor.getCoverageData().addUncoveredClasses(model);
+		result.put(model, globalVisitor.getCoverageData());
+
+		return result;
+	}
+
+	public static Map<MModelElement, CoverageData> calculateContractCoverage(
+			MModel model, boolean expandOperations) {
+
+		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>();
+
+		CoverageCalculationVisitor globalVisitor = new CoverageCalculationVisitor(
+				expandOperations);
+		CoverageCalculationVisitor localVisitor;
+
 		for (MPrePostCondition ppc : model.prePostConditions()) {
-			visitorSingleElement = new CoverageCalculationVisitor(expandOprations);
-			ppc.expression().processWithVisitor(visitorOverall);
-			ppc.expression().processWithVisitor(visitorSingleElement);
-						
-			result.put(ppc, visitorSingleElement.getCoverageData());
+
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			ppc.expression().processWithVisitor(localVisitor);
+
+			ppc.expression().processWithVisitor(globalVisitor);
+
+			result.put(ppc, localVisitor.getCoverageData());
+		}
+
+		globalVisitor.getCoverageData().addUncoveredClasses(model);
+		result.put(model, globalVisitor.getCoverageData());
+
+		return result;
+	}
+
+	/**
+	 * Calculates the model coverage for the complete model and for each
+	 * invariant.
+	 * 
+	 * @param model
+	 *            The {@link MModel} to calculate the coverage
+	 * @param expandOperations
+	 *            If <code>true</code>, operation expressions will also be
+	 *            considered. Otherwise, only the operation itself is marked as
+	 *            covered.
+	 * @return A {@link Map} which contains the data for each
+	 *         {@link MClassInvariant} and {@link MPrePostCondition} and for the
+	 *         complete {@link MModel}.
+	 */
+	public static Map<MModelElement, CoverageData> calculateTotalCoverage(
+			MModel model, boolean expandOperations) {
+		
+		Map<MModelElement, CoverageData> result = new HashMap<MModelElement, CoverageData>();
+
+		CoverageCalculationVisitor globalVisitor = new CoverageCalculationVisitor(
+				expandOperations);
+		CoverageCalculationVisitor localVisitor;
+
+		for (MClassInvariant invariant : model.classInvariants()) {
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			invariant.expandedExpression().processWithVisitor(localVisitor);
+
+			invariant.expandedExpression().processWithVisitor(globalVisitor);
+
+			result.put(invariant, localVisitor.getCoverageData());
+		}
+
+		for (MPrePostCondition ppc : model.prePostConditions()) {
+
+			localVisitor = new CoverageCalculationVisitor(expandOperations);
+			ppc.expression().processWithVisitor(localVisitor);
+
+			ppc.expression().processWithVisitor(globalVisitor);
+
+			result.put(ppc, localVisitor.getCoverageData());
 		}
 		
-		visitorOverall.getCoverageData().addUncoveredClasses(model);
-		result.put(model, visitorOverall.getCoverageData());
+		for (MClass mClass : model.classes()) {
+			for (MOperation mOperation : mClass.operations()) {
+				if(!mOperation.hasExpression()){
+					continue;
+				}
+				
+				localVisitor = new CoverageCalculationVisitor(expandOperations);
+				
+				mOperation.expression().processWithVisitor(localVisitor);
+				
+				result.put(mOperation, localVisitor.getCoverageData());
+			}
+		}
+
+		globalVisitor.getCoverageData().addUncoveredClasses(model);
+		result.put(model, globalVisitor.getCoverageData());
+
 		return result;
 	}
 }
