@@ -63,8 +63,9 @@ public final class Z3SMT2Solver{
 				updateFuns(solver.getModel());
 				return Result.SAT;
 			}
-			else if (result == Status.UNSATISFIABLE)
+			else if (result == Status.UNSATISFIABLE){
 				return Result.UNSAT;
+			}
 			else
 				return Result.UNKNOWN;
 		}

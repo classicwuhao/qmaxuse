@@ -1,5 +1,11 @@
 model UNIVERSITY
 
+class University
+end
+
+class Department
+end
+
 class Module
 attributes
 	code:			Integer
@@ -25,6 +31,16 @@ end
 association study between
 	Student [1..1] role student
 	Module [0..*] role modules
+end
+
+association teach between
+	Department [1..1] role department
+	Student [1..*] role student
+end
+
+association manage between
+	University [1..1] role department
+	Department [1..*] role student
 end
 
 constraints

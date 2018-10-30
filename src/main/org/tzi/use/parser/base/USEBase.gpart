@@ -284,7 +284,7 @@ multiplicitySpec returns [int m]
 :
       i=INT { $m = Integer.parseInt($i.text); }
     | STAR  { $m = -1; }
-    ;
+    ; 
 
 annotationSpec returns [AnnotationTag tag]
 @init{$tag= new AnnotationTag();}

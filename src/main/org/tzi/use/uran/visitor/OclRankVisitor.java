@@ -13,14 +13,18 @@ import java.util.*;
 
 public final class OclRankVisitor implements AbstractRankVisitor{
 	public OclRankVisitor(){}
-	
+	public int QuantCounter = 0;
+	public int OpCounter = 0;
+		
 	@Override
 	public int visitForAll (ExpForAll expr){	
+		QuantCounter++;
 		return visitQuery(expr);
 	}
 
 	@Override
 	public int visitExists (ExpExists expr){
+		QuantCounter++;
 		return visitQuery(expr);
 	}
 	
@@ -74,6 +78,7 @@ public final class OclRankVisitor implements AbstractRankVisitor{
 	public int visitStdOp(ExpStdOp expr){
 		Expression[] args = expr.args();
 		int size=1;
+		OpCounter++;
 		if(expr.getOperation().isInfixOrPrefix()){
 			if (args.length==1){
 				size+=args[0].accept(this);

@@ -47,6 +47,9 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private int auxCounter=0;
 	private int weightCounter=0;
 	private int totalWeight = 0;
+	private int totalASTSize=0;
+	private int totalQuantifiers=0;
+	private int totalOperators=0;
 	private String model_name="";
 	private final String OBJ="obj_";
 	private final String TYPE="type_";
@@ -473,11 +476,18 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			if (weight!=null){
 				IntWeight iweight = (IntWeight) e.getAnnotationTag().getWeight();
 				if (iweight.getWeight()==IntWeight.DEFAULT) {
-					AbstractRankVisitor rvisitor = new OclRankVisitor();
+					OclRankVisitor rvisitor = new OclRankVisitor();
 					iweight.setWeight(e.bodyExpression().accept(rvisitor));
 				}
 			}
 		}
+		
+		
+		OclRankVisitor cvisitor = new OclRankVisitor();
+		totalASTSize += e.bodyExpression().accept(cvisitor);
+		totalQuantifiers += cvisitor.QuantCounter;
+		totalOperators += cvisitor.OpCounter;
+				
 		ColorPrint.println(formula.toSMT2(),Color.RED);
 		//ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
 		ColorPrint.println("==================END====================",Color.GREEN);
@@ -556,13 +566,14 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		}
 		
 		//System.out.println(factory);
-
+		int inv_counter=0;		
 		for (MClassInvariant inv : classInvariants){
 			//ColorPrint.println("visitng invariant "+ ++i,Color.BLUE);
 			inv.processWithVisitor(this);
 			ColorPrint.println("Annotation Tag:"+inv.getAnnotationTag(),Color.YELLOW);
 			ColorPrint.println("leaving invariant "+ i++,Color.BLUE);
 			System.out.println();
+			inv_counter++;
 		}
 
 		for (i=0;i<pairs.size();i++){
@@ -664,6 +675,10 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		this.model_name = e.name();
 		ColorPrint.println("Formula Generations Time Spent:"+(System.currentTimeMillis()-time_count)+" ms",Color.BLUE);
+		ColorPrint.println("Total AST Size for "+inv_counter+ "invariants:"+totalASTSize,Color.BLUE);
+		ColorPrint.println("Total Quantifiers:"+totalQuantifiers,Color.BLUE);
+		ColorPrint.println("Total Operators:"+totalOperators,Color.BLUE);
+		
 		toSMT2File(e.name(),formulas, factory, totalWeight);
 		
 	}
