@@ -150,6 +150,7 @@ public final class MscSolver{
 			writer.overwrite(newformulas,j+1);
 			newformulas.clear();
 		}
+
 	}
 
 	private AbstractFormula blockFormula(){
@@ -179,6 +180,8 @@ public final class MscSolver{
 			}
 			System.out.println();
 		}
+		
+		ColorPrint.println("Total Subsets: "+solutions.size(),Color.BLUE);
 		return solutions;
 	}
 
