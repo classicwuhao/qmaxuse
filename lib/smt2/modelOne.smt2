@@ -263,3 +263,4 @@
 (assert (= (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ (+ aux0 aux1) aux2) aux3) aux4) aux5) aux6) aux7) aux8) aux9) aux10) aux11) aux12) aux13) aux14) aux15) aux16) aux17) aux18) aux19) aux20) aux21) aux22) aux23) aux24) aux25) aux26) aux27) aux28) aux29) aux30) aux31) aux32) aux33) aux34) aux35) aux36) aux37) aux38) aux39) 0))
 
  ;end of formula 
+ (check-sat)

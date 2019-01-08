@@ -32,10 +32,8 @@ end
 constraints
 
 context Person
-	@Rank=4
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
-	
-@StudentRank{Rank=automatic}
+
 context Student
 	inv: self.age > 18
 	inv: self.year>=1 and self.year<=6
