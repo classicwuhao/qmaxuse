@@ -391,6 +391,7 @@ procedureCallOnly returns [ASTGProcedureCall call]
       | "constraints" { invariant | prePost }
       | signalDefinition
       | enumTypeDefinition
+      | query
     } 
 */
 model returns [ASTModel n]
@@ -405,6 +406,7 @@ model returns [ASTModel n]
           )*  
         )
       | e=enumTypeDefinition { $n.addEnumTypeDef($e.n); }
+      | query
     )*
     EOF
     ;
@@ -722,6 +724,20 @@ annotation_def:
 annotation_enum_type:
 	'Soft'
 	| 'Hard'
+;
+
+query: 
+  'query' queryExpr (queryCOND expression)*
+;
+
+queryExpr:
+  (queryVariable) (COMMA queryVariable)*
+;
+
+queryVariable: IDENT;
+
+queryCOND:
+  'With' | 'Without'
 ;
 
 /* ------------------------------------
