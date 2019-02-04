@@ -1,4 +1,4 @@
-// $ANTLR 3.4 ShellCommand.g 2019-02-01 14:46:10
+// $ANTLR 3.4 ShellCommand.g 2019-02-04 18:28:56
 
 /*
  * USE - UML based specification environment
@@ -1901,7 +1901,8 @@ public class ShellCommandParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            if ( state.backtracking==0 ) { if ( nCndImplies != null ) {
+            if ( state.backtracking==0 ) { 
+                    if ( nCndImplies != null ) {
                 	 retval.n = nCndImplies;
                      retval.n.setStartToken(tok);
                   }
@@ -1934,7 +1935,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "paramList"
-    // ShellCommand.g:455:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
+    // ShellCommand.g:456:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
     public final List<ASTVariableDeclaration> paramList() throws RecognitionException {
         List<ASTVariableDeclaration> paramList = null;
 
@@ -1944,12 +1945,12 @@ public class ShellCommandParser extends BaseParser {
 
          paramList = new ArrayList<ASTVariableDeclaration>(); 
         try {
-            // ShellCommand.g:457:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
-            // ShellCommand.g:458:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
+            // ShellCommand.g:458:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
+            // ShellCommand.g:459:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
             {
             match(input,LPAREN,FOLLOW_LPAREN_in_paramList1132); if (state.failed) return paramList;
 
-            // ShellCommand.g:459:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
+            // ShellCommand.g:460:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1958,7 +1959,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ShellCommand.g:460:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
+                    // ShellCommand.g:461:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
                     {
                     pushFollow(FOLLOW_variableDeclaration_in_paramList1149);
                     v=variableDeclaration();
@@ -1968,7 +1969,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { paramList.add(v); }
 
-                    // ShellCommand.g:461:7: ( COMMA v= variableDeclaration )*
+                    // ShellCommand.g:462:7: ( COMMA v= variableDeclaration )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1981,7 +1982,7 @@ public class ShellCommandParser extends BaseParser {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ShellCommand.g:461:9: COMMA v= variableDeclaration
+                    	    // ShellCommand.g:462:9: COMMA v= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_paramList1161); if (state.failed) return paramList;
 
@@ -2028,7 +2029,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "idList"
-    // ShellCommand.g:469:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
+    // ShellCommand.g:470:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
     public final List idList() throws RecognitionException {
         List idList = null;
 
@@ -2038,14 +2039,14 @@ public class ShellCommandParser extends BaseParser {
 
          idList = new ArrayList(); 
         try {
-            // ShellCommand.g:471:5: (id0= IDENT ( COMMA idn= IDENT )* )
-            // ShellCommand.g:472:5: id0= IDENT ( COMMA idn= IDENT )*
+            // ShellCommand.g:472:5: (id0= IDENT ( COMMA idn= IDENT )* )
+            // ShellCommand.g:473:5: id0= IDENT ( COMMA idn= IDENT )*
             {
             id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList1214); if (state.failed) return idList;
 
             if ( state.backtracking==0 ) { idList.add(id0); }
 
-            // ShellCommand.g:473:5: ( COMMA idn= IDENT )*
+            // ShellCommand.g:474:5: ( COMMA idn= IDENT )*
             loop15:
             do {
                 int alt15=2;
@@ -2058,7 +2059,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // ShellCommand.g:473:7: COMMA idn= IDENT
+            	    // ShellCommand.g:474:7: COMMA idn= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_idList1224); if (state.failed) return idList;
 
@@ -2093,7 +2094,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "variableDeclaration"
-    // ShellCommand.g:481:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
+    // ShellCommand.g:482:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
     public final ASTVariableDeclaration variableDeclaration() throws RecognitionException {
         ASTVariableDeclaration n = null;
 
@@ -2103,8 +2104,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:482:5: (name= IDENT COLON t= type )
-            // ShellCommand.g:483:5: name= IDENT COLON t= type
+            // ShellCommand.g:483:5: (name= IDENT COLON t= type )
+            // ShellCommand.g:484:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration1259); if (state.failed) return n;
 
@@ -2136,7 +2137,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "conditionalImpliesExpression"
-    // ShellCommand.g:491:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
+    // ShellCommand.g:492:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
     public final ASTExpression conditionalImpliesExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2148,8 +2149,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:492:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
-            // ShellCommand.g:493:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
+            // ShellCommand.g:493:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
+            // ShellCommand.g:494:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
             {
             pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1301);
             nCndOrExp=conditionalOrExpression();
@@ -2159,7 +2160,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndOrExp;}
 
-            // ShellCommand.g:494:5: (op= 'implies' n1= conditionalOrExpression )*
+            // ShellCommand.g:495:5: (op= 'implies' n1= conditionalOrExpression )*
             loop16:
             do {
                 int alt16=2;
@@ -2172,7 +2173,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ShellCommand.g:494:7: op= 'implies' n1= conditionalOrExpression
+            	    // ShellCommand.g:495:7: op= 'implies' n1= conditionalOrExpression
             	    {
             	    op=(Token)match(input,71,FOLLOW_71_in_conditionalImpliesExpression1314); if (state.failed) return n;
 
@@ -2211,7 +2212,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "conditionalOrExpression"
-    // ShellCommand.g:503:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
+    // ShellCommand.g:504:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
     public final ASTExpression conditionalOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2223,8 +2224,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:504:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
-            // ShellCommand.g:505:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
+            // ShellCommand.g:505:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
+            // ShellCommand.g:506:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
             {
             pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1363);
             nCndXorExp=conditionalXOrExpression();
@@ -2234,7 +2235,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndXorExp;}
 
-            // ShellCommand.g:506:5: (op= 'or' n1= conditionalXOrExpression )*
+            // ShellCommand.g:507:5: (op= 'or' n1= conditionalXOrExpression )*
             loop17:
             do {
                 int alt17=2;
@@ -2247,7 +2248,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt17) {
             	case 1 :
-            	    // ShellCommand.g:506:7: op= 'or' n1= conditionalXOrExpression
+            	    // ShellCommand.g:507:7: op= 'or' n1= conditionalXOrExpression
             	    {
             	    op=(Token)match(input,88,FOLLOW_88_in_conditionalOrExpression1376); if (state.failed) return n;
 
@@ -2286,7 +2287,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "conditionalXOrExpression"
-    // ShellCommand.g:515:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
+    // ShellCommand.g:516:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
     public final ASTExpression conditionalXOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2298,8 +2299,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:516:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
-            // ShellCommand.g:517:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
+            // ShellCommand.g:517:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
+            // ShellCommand.g:518:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
             {
             pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1424);
             nCndAndExp=conditionalAndExpression();
@@ -2309,7 +2310,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndAndExp;}
 
-            // ShellCommand.g:518:5: (op= 'xor' n1= conditionalAndExpression )*
+            // ShellCommand.g:519:5: (op= 'xor' n1= conditionalAndExpression )*
             loop18:
             do {
                 int alt18=2;
@@ -2322,7 +2323,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // ShellCommand.g:518:7: op= 'xor' n1= conditionalAndExpression
+            	    // ShellCommand.g:519:7: op= 'xor' n1= conditionalAndExpression
             	    {
             	    op=(Token)match(input,96,FOLLOW_96_in_conditionalXOrExpression1437); if (state.failed) return n;
 
@@ -2361,7 +2362,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "conditionalAndExpression"
-    // ShellCommand.g:527:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
+    // ShellCommand.g:528:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
     public final ASTExpression conditionalAndExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2373,8 +2374,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:528:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
-            // ShellCommand.g:529:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
+            // ShellCommand.g:529:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
+            // ShellCommand.g:530:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
             {
             pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1485);
             nEqExp=equalityExpression();
@@ -2384,7 +2385,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nEqExp;}
 
-            // ShellCommand.g:530:5: (op= 'and' n1= equalityExpression )*
+            // ShellCommand.g:531:5: (op= 'and' n1= equalityExpression )*
             loop19:
             do {
                 int alt19=2;
@@ -2397,7 +2398,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // ShellCommand.g:530:7: op= 'and' n1= equalityExpression
+            	    // ShellCommand.g:531:7: op= 'and' n1= equalityExpression
             	    {
             	    op=(Token)match(input,52,FOLLOW_52_in_conditionalAndExpression1498); if (state.failed) return n;
 
@@ -2436,7 +2437,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "equalityExpression"
-    // ShellCommand.g:539:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
+    // ShellCommand.g:540:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
     public final ASTExpression equalityExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2448,8 +2449,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:541:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
-            // ShellCommand.g:542:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // ShellCommand.g:542:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
+            // ShellCommand.g:543:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             {
             pushFollow(FOLLOW_relationalExpression_in_equalityExpression1550);
             nRelExp=relationalExpression();
@@ -2459,7 +2460,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nRelExp;}
 
-            // ShellCommand.g:543:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // ShellCommand.g:544:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             loop20:
             do {
                 int alt20=2;
@@ -2472,7 +2473,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // ShellCommand.g:543:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
+            	    // ShellCommand.g:544:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2523,7 +2524,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "relationalExpression"
-    // ShellCommand.g:553:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
+    // ShellCommand.g:554:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
     public final ASTExpression relationalExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2535,8 +2536,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:555:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
-            // ShellCommand.g:556:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // ShellCommand.g:556:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
+            // ShellCommand.g:557:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             {
             pushFollow(FOLLOW_additiveExpression_in_relationalExpression1628);
             nAddiExp=additiveExpression();
@@ -2546,7 +2547,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nAddiExp;}
 
-            // ShellCommand.g:557:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // ShellCommand.g:558:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             loop21:
             do {
                 int alt21=2;
@@ -2559,7 +2560,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ShellCommand.g:557:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
+            	    // ShellCommand.g:558:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2610,7 +2611,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "additiveExpression"
-    // ShellCommand.g:567:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
+    // ShellCommand.g:568:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
     public final ASTExpression additiveExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2622,8 +2623,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:569:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
-            // ShellCommand.g:570:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // ShellCommand.g:570:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
+            // ShellCommand.g:571:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             {
             pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1714);
             nMulExp=multiplicativeExpression();
@@ -2633,7 +2634,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nMulExp;}
 
-            // ShellCommand.g:571:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // ShellCommand.g:572:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             loop22:
             do {
                 int alt22=2;
@@ -2646,7 +2647,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // ShellCommand.g:571:7: ( PLUS | MINUS ) n1= multiplicativeExpression
+            	    // ShellCommand.g:572:7: ( PLUS | MINUS ) n1= multiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2697,7 +2698,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // ShellCommand.g:582:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
+    // ShellCommand.g:583:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
     public final ASTExpression multiplicativeExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2709,8 +2710,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:584:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
-            // ShellCommand.g:585:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // ShellCommand.g:585:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
+            // ShellCommand.g:586:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             {
             pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1792);
             nUnExp=unaryExpression();
@@ -2720,7 +2721,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nUnExp;}
 
-            // ShellCommand.g:586:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // ShellCommand.g:587:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             loop23:
             do {
                 int alt23=2;
@@ -2733,7 +2734,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ShellCommand.g:586:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
+            	    // ShellCommand.g:587:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2784,7 +2785,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "unaryExpression"
-    // ShellCommand.g:598:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
+    // ShellCommand.g:599:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
     public final ASTExpression unaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2796,7 +2797,7 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:600:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
+            // ShellCommand.g:601:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -2816,10 +2817,10 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt24) {
                 case 1 :
-                    // ShellCommand.g:601:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // ShellCommand.g:602:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
                     {
-                    // ShellCommand.g:601:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
-                    // ShellCommand.g:601:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
+                    // ShellCommand.g:602:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // ShellCommand.g:602:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
                     {
                     if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2849,7 +2850,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:605:7: nPosExp= postfixExpression
+                    // ShellCommand.g:606:7: nPosExp= postfixExpression
                     {
                     pushFollow(FOLLOW_postfixExpression_in_unaryExpression1930);
                     nPosExp=postfixExpression();
@@ -2879,7 +2880,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "postfixExpression"
-    // ShellCommand.g:613:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
+    // ShellCommand.g:614:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
     public final ASTExpression postfixExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2891,8 +2892,8 @@ public class ShellCommandParser extends BaseParser {
 
          boolean arrow = false; 
         try {
-            // ShellCommand.g:615:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
-            // ShellCommand.g:616:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // ShellCommand.g:616:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
+            // ShellCommand.g:617:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             {
             pushFollow(FOLLOW_primaryExpression_in_postfixExpression1963);
             nPrimExp=primaryExpression();
@@ -2902,7 +2903,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nPrimExp; }
 
-            // ShellCommand.g:617:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // ShellCommand.g:618:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             loop26:
             do {
                 int alt26=2;
@@ -2933,9 +2934,9 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // ShellCommand.g:618:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
+            	    // ShellCommand.g:619:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
             	    {
-            	    // ShellCommand.g:618:6: ( ARROW | DOT )
+            	    // ShellCommand.g:619:6: ( ARROW | DOT )
             	    int alt25=2;
             	    int LA25_0 = input.LA(1);
 
@@ -2955,7 +2956,7 @@ public class ShellCommandParser extends BaseParser {
             	    }
             	    switch (alt25) {
             	        case 1 :
-            	            // ShellCommand.g:618:8: ARROW
+            	            // ShellCommand.g:619:8: ARROW
             	            {
             	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression1981); if (state.failed) return n;
 
@@ -2964,7 +2965,7 @@ public class ShellCommandParser extends BaseParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ShellCommand.g:618:34: DOT
+            	            // ShellCommand.g:619:34: DOT
             	            {
             	            match(input,DOT,FOLLOW_DOT_in_postfixExpression1987); if (state.failed) return n;
 
@@ -3011,7 +3012,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "primaryExpression"
-    // ShellCommand.g:634:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
+    // ShellCommand.g:635:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
     public final ASTExpression primaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3032,7 +3033,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:635:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
+            // ShellCommand.g:636:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
             int alt30=7;
             switch ( input.LA(1) ) {
             case HASH:
@@ -3195,7 +3196,7 @@ public class ShellCommandParser extends BaseParser {
 
             switch (alt30) {
                 case 1 :
-                    // ShellCommand.g:636:7: nLit= literal
+                    // ShellCommand.g:637:7: nLit= literal
                     {
                     pushFollow(FOLLOW_literal_in_primaryExpression2038);
                     nLit=literal();
@@ -3208,7 +3209,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:637:7: nOr= objectReference
+                    // ShellCommand.g:638:7: nOr= objectReference
                     {
                     pushFollow(FOLLOW_objectReference_in_primaryExpression2052);
                     nOr=objectReference();
@@ -3221,7 +3222,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:638:7: nPc= propertyCall[null, false]
+                    // ShellCommand.g:639:7: nPc= propertyCall[null, false]
                     {
                     pushFollow(FOLLOW_propertyCall_in_primaryExpression2064);
                     nPc=propertyCall(null, false);
@@ -3234,7 +3235,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // ShellCommand.g:639:7: LPAREN nExp= expression RPAREN
+                    // ShellCommand.g:640:7: LPAREN nExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2075); if (state.failed) return n;
 
@@ -3251,7 +3252,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // ShellCommand.g:640:7: nIfExp= ifExpression
+                    // ShellCommand.g:641:7: nIfExp= ifExpression
                     {
                     pushFollow(FOLLOW_ifExpression_in_primaryExpression2093);
                     nIfExp=ifExpression();
@@ -3264,7 +3265,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // ShellCommand.g:641:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
+                    // ShellCommand.g:642:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
                     {
                     id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2105); if (state.failed) return n;
 
@@ -3274,7 +3275,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTAllInstancesExpression(id1); }
 
-                    // ShellCommand.g:643:9: ( AT 'pre' )?
+                    // ShellCommand.g:644:9: ( AT 'pre' )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -3283,7 +3284,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt27) {
                         case 1 :
-                            // ShellCommand.g:643:11: AT 'pre'
+                            // ShellCommand.g:644:11: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression2132); if (state.failed) return n;
 
@@ -3297,7 +3298,7 @@ public class ShellCommandParser extends BaseParser {
                     }
 
 
-                    // ShellCommand.g:644:9: ( LPAREN RPAREN )?
+                    // ShellCommand.g:645:9: ( LPAREN RPAREN )?
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
@@ -3306,7 +3307,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt28) {
                         case 1 :
-                            // ShellCommand.g:644:11: LPAREN RPAREN
+                            // ShellCommand.g:645:11: LPAREN RPAREN
                             {
                             match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2152); if (state.failed) return n;
 
@@ -3321,7 +3322,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // ShellCommand.g:645:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
+                    // ShellCommand.g:646:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
                     {
                     id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2167); if (state.failed) return n;
 
@@ -3329,8 +3330,8 @@ public class ShellCommandParser extends BaseParser {
 
                     match(input,56,FOLLOW_56_in_primaryExpression2171); if (state.failed) return n;
 
-                    // ShellCommand.g:645:31: ( LPAREN idExp= expression RPAREN )
-                    // ShellCommand.g:645:33: LPAREN idExp= expression RPAREN
+                    // ShellCommand.g:646:31: ( LPAREN idExp= expression RPAREN )
+                    // ShellCommand.g:646:33: LPAREN idExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2175); if (state.failed) return n;
 
@@ -3347,7 +3348,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTObjectByUseIdExpression(id2, (idExp!=null?idExp.n:null)); }
 
-                    // ShellCommand.g:647:7: ( AT 'pre' )?
+                    // ShellCommand.g:648:7: ( AT 'pre' )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -3356,7 +3357,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt29) {
                         case 1 :
-                            // ShellCommand.g:647:9: AT 'pre'
+                            // ShellCommand.g:648:9: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression2201); if (state.failed) return n;
 
@@ -3390,7 +3391,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "objectReference"
-    // ShellCommand.g:651:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
+    // ShellCommand.g:652:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
     public final ASTExpression objectReference() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3398,8 +3399,8 @@ public class ShellCommandParser extends BaseParser {
         Token objectName=null;
 
         try {
-            // ShellCommand.g:652:3: ( AT objectName= IDENT )
-            // ShellCommand.g:653:3: AT objectName= IDENT
+            // ShellCommand.g:653:3: ( AT objectName= IDENT )
+            // ShellCommand.g:654:3: AT objectName= IDENT
             {
             match(input,AT,FOLLOW_AT_in_objectReference2229); if (state.failed) return n;
 
@@ -3425,7 +3426,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "propertyCall"
-    // ShellCommand.g:667:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
+    // ShellCommand.g:668:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
     public final ASTExpression propertyCall(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3442,7 +3443,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:668:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
+            // ShellCommand.g:669:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
             int alt31=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -3495,7 +3496,7 @@ public class ShellCommandParser extends BaseParser {
 
             switch (alt31) {
                 case 1 :
-                    // ShellCommand.g:672:7: {...}?{...}?nExpQuery= queryExpression[source]
+                    // ShellCommand.g:673:7: {...}?{...}?nExpQuery= queryExpression[source]
                     {
                     if ( !(( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )) ) {
                         if (state.backtracking>0) {state.failed=true; return n;}
@@ -3518,7 +3519,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:675:7: nExpIterate= iterateExpression[source]
+                    // ShellCommand.g:676:7: nExpIterate= iterateExpression[source]
                     {
                     pushFollow(FOLLOW_iterateExpression_in_propertyCall2315);
                     nExpIterate=iterateExpression(source);
@@ -3531,7 +3532,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:676:7: nExpOperation= operationExpression[source, followsArrow]
+                    // ShellCommand.g:677:7: nExpOperation= operationExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_operationExpression_in_propertyCall2328);
                     nExpOperation=operationExpression(source, followsArrow);
@@ -3544,7 +3545,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // ShellCommand.g:677:7: nExpType= typeExpression[source, followsArrow]
+                    // ShellCommand.g:678:7: nExpType= typeExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_typeExpression_in_propertyCall2341);
                     nExpType=typeExpression(source, followsArrow);
@@ -3557,7 +3558,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // ShellCommand.g:678:7: nExpInState= inStateExpression[source, followsArrow]
+                    // ShellCommand.g:679:7: nExpInState= inStateExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_inStateExpression_in_propertyCall2354);
                     nExpInState=inStateExpression(source, followsArrow);
@@ -3587,7 +3588,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "queryExpression"
-    // ShellCommand.g:687:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
+    // ShellCommand.g:688:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
     public final ASTExpression queryExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3600,14 +3601,14 @@ public class ShellCommandParser extends BaseParser {
 
         ASTElemVarsDeclaration decl = new ASTElemVarsDeclaration(); 
         try {
-            // ShellCommand.g:688:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
-            // ShellCommand.g:689:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
+            // ShellCommand.g:689:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
+            // ShellCommand.g:690:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
             {
             op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression2389); if (state.failed) return n;
 
             match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression2396); if (state.failed) return n;
 
-            // ShellCommand.g:691:5: (decls= elemVarsDeclaration BAR )?
+            // ShellCommand.g:692:5: (decls= elemVarsDeclaration BAR )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -3620,7 +3621,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt32) {
                 case 1 :
-                    // ShellCommand.g:691:7: decls= elemVarsDeclaration BAR
+                    // ShellCommand.g:692:7: decls= elemVarsDeclaration BAR
                     {
                     pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression2407);
                     decls=elemVarsDeclaration();
@@ -3666,7 +3667,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "iterateExpression"
-    // ShellCommand.g:705:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
+    // ShellCommand.g:706:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
     public final ASTExpression iterateExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3680,8 +3681,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:705:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
-            // ShellCommand.g:706:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
+            // ShellCommand.g:706:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
+            // ShellCommand.g:707:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
             {
             i=(Token)match(input,75,FOLLOW_75_in_iterateExpression2460); if (state.failed) return n;
 
@@ -3735,7 +3736,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "operationExpression"
-    // ShellCommand.g:727:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
+    // ShellCommand.g:728:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
     public final ShellCommandParser.operationExpression_return operationExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ShellCommandParser.operationExpression_return retval = new ShellCommandParser.operationExpression_return();
         retval.start = input.LT(1);
@@ -3748,14 +3749,14 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:729:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
-            // ShellCommand.g:730:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // ShellCommand.g:730:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
+            // ShellCommand.g:731:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression2544); if (state.failed) return retval;
 
             if ( state.backtracking==0 ) { retval.n = new ASTOperationExpression(name, source, followsArrow); }
 
-            // ShellCommand.g:736:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
+            // ShellCommand.g:737:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -3764,7 +3765,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt36) {
                 case 1 :
-                    // ShellCommand.g:736:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // ShellCommand.g:737:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     {
                     match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2566); if (state.failed) return retval;
 
@@ -3776,7 +3777,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addExplicitRolenameOrQualifier((rolename!=null?rolename.n:null)); }
 
-                    // ShellCommand.g:738:9: ( COMMA rolename= expression )*
+                    // ShellCommand.g:739:9: ( COMMA rolename= expression )*
                     loop33:
                     do {
                         int alt33=2;
@@ -3789,7 +3790,7 @@ public class ShellCommandParser extends BaseParser {
 
                         switch (alt33) {
                     	case 1 :
-                    	    // ShellCommand.g:738:10: COMMA rolename= expression
+                    	    // ShellCommand.g:739:10: COMMA rolename= expression
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2592); if (state.failed) return retval;
 
@@ -3812,7 +3813,7 @@ public class ShellCommandParser extends BaseParser {
 
                     match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2608); if (state.failed) return retval;
 
-                    // ShellCommand.g:741:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // ShellCommand.g:742:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -3821,7 +3822,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // ShellCommand.g:741:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
+                            // ShellCommand.g:742:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2625); if (state.failed) return retval;
 
@@ -3833,7 +3834,7 @@ public class ShellCommandParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addQualifier((rolename!=null?rolename.n:null)); }
 
-                            // ShellCommand.g:743:11: ( COMMA rolename= expression )*
+                            // ShellCommand.g:744:11: ( COMMA rolename= expression )*
                             loop34:
                             do {
                                 int alt34=2;
@@ -3846,7 +3847,7 @@ public class ShellCommandParser extends BaseParser {
 
                                 switch (alt34) {
                             	case 1 :
-                            	    // ShellCommand.g:743:12: COMMA rolename= expression
+                            	    // ShellCommand.g:744:12: COMMA rolename= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2655); if (state.failed) return retval;
 
@@ -3881,7 +3882,7 @@ public class ShellCommandParser extends BaseParser {
             }
 
 
-            // ShellCommand.g:748:5: ( AT 'pre' )?
+            // ShellCommand.g:749:5: ( AT 'pre' )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -3890,7 +3891,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt37) {
                 case 1 :
-                    // ShellCommand.g:748:7: AT 'pre'
+                    // ShellCommand.g:749:7: AT 'pre'
                     {
                     match(input,AT,FOLLOW_AT_in_operationExpression2698); if (state.failed) return retval;
 
@@ -3904,7 +3905,7 @@ public class ShellCommandParser extends BaseParser {
             }
 
 
-            // ShellCommand.g:750:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // ShellCommand.g:751:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -3913,13 +3914,13 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt40) {
                 case 1 :
-                    // ShellCommand.g:751:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
+                    // ShellCommand.g:752:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression2725); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.hasParentheses(); }
 
-                    // ShellCommand.g:752:7: (e= expression ( COMMA e= expression )* )?
+                    // ShellCommand.g:753:7: (e= expression ( COMMA e= expression )* )?
                     int alt39=2;
                     int LA39_0 = input.LA(1);
 
@@ -3928,7 +3929,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt39) {
                         case 1 :
-                            // ShellCommand.g:753:7: e= expression ( COMMA e= expression )*
+                            // ShellCommand.g:754:7: e= expression ( COMMA e= expression )*
                             {
                             pushFollow(FOLLOW_expression_in_operationExpression2746);
                             e=expression();
@@ -3938,7 +3939,7 @@ public class ShellCommandParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addArg((e!=null?e.n:null)); }
 
-                            // ShellCommand.g:754:7: ( COMMA e= expression )*
+                            // ShellCommand.g:755:7: ( COMMA e= expression )*
                             loop38:
                             do {
                                 int alt38=2;
@@ -3951,7 +3952,7 @@ public class ShellCommandParser extends BaseParser {
 
                                 switch (alt38) {
                             	case 1 :
-                            	    // ShellCommand.g:754:9: COMMA e= expression
+                            	    // ShellCommand.g:755:9: COMMA e= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2758); if (state.failed) return retval;
 
@@ -4009,7 +4010,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "inStateExpression"
-    // ShellCommand.g:761:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
+    // ShellCommand.g:762:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
     public final ASTInStateExpression inStateExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTInStateExpression n = null;
 
@@ -4018,8 +4019,8 @@ public class ShellCommandParser extends BaseParser {
         Token s=null;
 
         try {
-            // ShellCommand.g:762:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
-            // ShellCommand.g:763:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
+            // ShellCommand.g:763:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
+            // ShellCommand.g:764:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
             {
             opToken=(Token)match(input,82,FOLLOW_82_in_inStateExpression2819); if (state.failed) return n;
 
@@ -4049,7 +4050,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "typeExpression"
-    // ShellCommand.g:775:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
+    // ShellCommand.g:776:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
     public final ASTTypeArgExpression typeExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTTypeArgExpression n = null;
 
@@ -4059,8 +4060,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token opToken = null; 
         try {
-            // ShellCommand.g:778:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
-            // ShellCommand.g:779:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
+            // ShellCommand.g:779:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
+            // ShellCommand.g:780:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
             {
             if ( state.backtracking==0 ) { opToken = input.LT(1); }
 
@@ -4106,7 +4107,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "elemVarsDeclaration"
-    // ShellCommand.g:790:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
+    // ShellCommand.g:791:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
     public final ASTElemVarsDeclaration elemVarsDeclaration() throws RecognitionException {
         ASTElemVarsDeclaration n = null;
 
@@ -4119,14 +4120,14 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:791:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
-            // ShellCommand.g:792:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // ShellCommand.g:792:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
+            // ShellCommand.g:793:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
             {
             if ( state.backtracking==0 ) { n = new ASTElemVarsDeclaration(); }
 
             var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2942); if (state.failed) return n;
 
-            // ShellCommand.g:793:17: ( COLON t= type )?
+            // ShellCommand.g:794:17: ( COLON t= type )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -4135,7 +4136,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt41) {
                 case 1 :
-                    // ShellCommand.g:793:18: COLON t= type
+                    // ShellCommand.g:794:18: COLON t= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2945); if (state.failed) return n;
 
@@ -4153,7 +4154,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n.addDeclaration(var1, t);}
 
-            // ShellCommand.g:794:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // ShellCommand.g:795:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
             loop43:
             do {
                 int alt43=2;
@@ -4166,13 +4167,13 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt43) {
             	case 1 :
-            	    // ShellCommand.g:794:5: COMMA varN= IDENT ( COLON tN= type )?
+            	    // ShellCommand.g:795:5: COMMA varN= IDENT ( COLON tN= type )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration2959); if (state.failed) return n;
 
             	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2965); if (state.failed) return n;
 
-            	    // ShellCommand.g:794:24: ( COLON tN= type )?
+            	    // ShellCommand.g:795:24: ( COLON tN= type )?
             	    int alt42=2;
             	    int LA42_0 = input.LA(1);
 
@@ -4181,7 +4182,7 @@ public class ShellCommandParser extends BaseParser {
             	    }
             	    switch (alt42) {
             	        case 1 :
-            	            // ShellCommand.g:794:25: COLON tN= type
+            	            // ShellCommand.g:795:25: COLON tN= type
             	            {
             	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2968); if (state.failed) return n;
 
@@ -4226,7 +4227,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "variableInitialization"
-    // ShellCommand.g:802:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
+    // ShellCommand.g:803:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
     public final ASTVariableInitialization variableInitialization() throws RecognitionException {
         ASTVariableInitialization n = null;
 
@@ -4238,8 +4239,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:803:5: (name= IDENT COLON t= type EQUAL e= expression )
-            // ShellCommand.g:804:5: name= IDENT COLON t= type EQUAL e= expression
+            // ShellCommand.g:804:5: (name= IDENT COLON t= type EQUAL e= expression )
+            // ShellCommand.g:805:5: name= IDENT COLON t= type EQUAL e= expression
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization3002); if (state.failed) return n;
 
@@ -4279,7 +4280,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "ifExpression"
-    // ShellCommand.g:813:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
+    // ShellCommand.g:814:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
     public final ASTExpression ifExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4293,8 +4294,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:814:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
-            // ShellCommand.g:815:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
+            // ShellCommand.g:815:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
+            // ShellCommand.g:816:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
             {
             i=(Token)match(input,70,FOLLOW_70_in_ifExpression3046); if (state.failed) return n;
 
@@ -4342,7 +4343,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "literal"
-    // ShellCommand.g:834:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
+    // ShellCommand.g:835:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
     public final ASTExpression literal() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4365,7 +4366,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:835:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
+            // ShellCommand.g:836:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
             int alt44=12;
             switch ( input.LA(1) ) {
             case 94:
@@ -4460,7 +4461,7 @@ public class ShellCommandParser extends BaseParser {
 
             switch (alt44) {
                 case 1 :
-                    // ShellCommand.g:836:7: t= 'true'
+                    // ShellCommand.g:837:7: t= 'true'
                     {
                     t=(Token)match(input,94,FOLLOW_94_in_literal3103); if (state.failed) return n;
 
@@ -4469,7 +4470,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:837:7: f= 'false'
+                    // ShellCommand.g:838:7: f= 'false'
                     {
                     f=(Token)match(input,67,FOLLOW_67_in_literal3117); if (state.failed) return n;
 
@@ -4478,7 +4479,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:838:7: i= INT
+                    // ShellCommand.g:839:7: i= INT
                     {
                     i=(Token)match(input,INT,FOLLOW_INT_in_literal3130); if (state.failed) return n;
 
@@ -4487,7 +4488,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // ShellCommand.g:839:7: r= REAL
+                    // ShellCommand.g:840:7: r= REAL
                     {
                     r=(Token)match(input,REAL,FOLLOW_REAL_in_literal3145); if (state.failed) return n;
 
@@ -4496,7 +4497,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // ShellCommand.g:840:7: s= STRING
+                    // ShellCommand.g:841:7: s= STRING
                     {
                     s=(Token)match(input,STRING,FOLLOW_STRING_in_literal3159); if (state.failed) return n;
 
@@ -4505,7 +4506,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // ShellCommand.g:841:7: HASH enumLit= IDENT
+                    // ShellCommand.g:842:7: HASH enumLit= IDENT
                     {
                     match(input,HASH,FOLLOW_HASH_in_literal3169); if (state.failed) return n;
 
@@ -4516,7 +4517,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // ShellCommand.g:842:7: enumName= IDENT '::' enumLit= IDENT
+                    // ShellCommand.g:843:7: enumName= IDENT '::' enumLit= IDENT
                     {
                     enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3185); if (state.failed) return n;
 
@@ -4529,7 +4530,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // ShellCommand.g:843:7: nColIt= collectionLiteral
+                    // ShellCommand.g:844:7: nColIt= collectionLiteral
                     {
                     pushFollow(FOLLOW_collectionLiteral_in_literal3203);
                     nColIt=collectionLiteral();
@@ -4542,7 +4543,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // ShellCommand.g:844:7: nEColIt= emptyCollectionLiteral
+                    // ShellCommand.g:845:7: nEColIt= emptyCollectionLiteral
                     {
                     pushFollow(FOLLOW_emptyCollectionLiteral_in_literal3215);
                     nEColIt=emptyCollectionLiteral();
@@ -4555,7 +4556,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // ShellCommand.g:845:7: nUndLit= undefinedLiteral
+                    // ShellCommand.g:846:7: nUndLit= undefinedLiteral
                     {
                     pushFollow(FOLLOW_undefinedLiteral_in_literal3227);
                     nUndLit=undefinedLiteral();
@@ -4568,7 +4569,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // ShellCommand.g:846:7: nTupleLit= tupleLiteral
+                    // ShellCommand.g:847:7: nTupleLit= tupleLiteral
                     {
                     pushFollow(FOLLOW_tupleLiteral_in_literal3239);
                     nTupleLit=tupleLiteral();
@@ -4581,7 +4582,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 12 :
-                    // ShellCommand.g:847:7: un= STAR
+                    // ShellCommand.g:848:7: un= STAR
                     {
                     un=(Token)match(input,STAR,FOLLOW_STAR_in_literal3251); if (state.failed) return n;
 
@@ -4607,7 +4608,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "collectionLiteral"
-    // ShellCommand.g:855:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
+    // ShellCommand.g:856:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
     public final ASTCollectionLiteral collectionLiteral() throws RecognitionException {
         ASTCollectionLiteral n = null;
 
@@ -4617,8 +4618,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:857:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
-            // ShellCommand.g:858:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
+            // ShellCommand.g:858:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
+            // ShellCommand.g:859:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -4638,7 +4639,7 @@ public class ShellCommandParser extends BaseParser {
 
             match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral3318); if (state.failed) return n;
 
-            // ShellCommand.g:862:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
+            // ShellCommand.g:863:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -4647,7 +4648,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt46) {
                 case 1 :
-                    // ShellCommand.g:863:7: ci= collectionItem ( COMMA ci= collectionItem )*
+                    // ShellCommand.g:864:7: ci= collectionItem ( COMMA ci= collectionItem )*
                     {
                     pushFollow(FOLLOW_collectionItem_in_collectionLiteral3335);
                     ci=collectionItem();
@@ -4657,7 +4658,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addItem(ci); }
 
-                    // ShellCommand.g:864:7: ( COMMA ci= collectionItem )*
+                    // ShellCommand.g:865:7: ( COMMA ci= collectionItem )*
                     loop45:
                     do {
                         int alt45=2;
@@ -4670,7 +4671,7 @@ public class ShellCommandParser extends BaseParser {
 
                         switch (alt45) {
                     	case 1 :
-                    	    // ShellCommand.g:864:9: COMMA ci= collectionItem
+                    	    // ShellCommand.g:865:9: COMMA ci= collectionItem
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral3348); if (state.failed) return n;
 
@@ -4717,7 +4718,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "collectionItem"
-    // ShellCommand.g:873:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
+    // ShellCommand.g:874:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
     public final ASTCollectionItem collectionItem() throws RecognitionException {
         ASTCollectionItem n = null;
 
@@ -4727,8 +4728,8 @@ public class ShellCommandParser extends BaseParser {
 
          n = new ASTCollectionItem(); 
         try {
-            // ShellCommand.g:875:5: (e= expression ( DOTDOT e= expression )? )
-            // ShellCommand.g:876:5: e= expression ( DOTDOT e= expression )?
+            // ShellCommand.g:876:5: (e= expression ( DOTDOT e= expression )? )
+            // ShellCommand.g:877:5: e= expression ( DOTDOT e= expression )?
             {
             pushFollow(FOLLOW_expression_in_collectionItem3400);
             e=expression();
@@ -4738,7 +4739,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setFirst((e!=null?e.n:null)); }
 
-            // ShellCommand.g:877:5: ( DOTDOT e= expression )?
+            // ShellCommand.g:878:5: ( DOTDOT e= expression )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -4747,7 +4748,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt47) {
                 case 1 :
-                    // ShellCommand.g:877:7: DOTDOT e= expression
+                    // ShellCommand.g:878:7: DOTDOT e= expression
                     {
                     match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem3411); if (state.failed) return n;
 
@@ -4783,7 +4784,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "emptyCollectionLiteral"
-    // ShellCommand.g:887:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
+    // ShellCommand.g:888:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
     public final ASTEmptyCollectionLiteral emptyCollectionLiteral() throws RecognitionException {
         ASTEmptyCollectionLiteral n = null;
 
@@ -4792,7 +4793,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:888:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
+            // ShellCommand.g:889:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -4812,7 +4813,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt48) {
                 case 1 :
-                    // ShellCommand.g:889:5: 'oclEmpty' LPAREN t= collectionType RPAREN
+                    // ShellCommand.g:890:5: 'oclEmpty' LPAREN t= collectionType RPAREN
                     {
                     match(input,81,FOLLOW_81_in_emptyCollectionLiteral3444); if (state.failed) return n;
 
@@ -4831,7 +4832,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:892:5: t= collectionType LBRACE RBRACE
+                    // ShellCommand.g:893:5: t= collectionType LBRACE RBRACE
                     {
                     pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3468);
                     t=collectionType();
@@ -4865,7 +4866,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "undefinedLiteral"
-    // ShellCommand.g:903:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
+    // ShellCommand.g:904:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
     public final ASTUndefinedLiteral undefinedLiteral() throws RecognitionException {
         ASTUndefinedLiteral n = null;
 
@@ -4874,7 +4875,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:904:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
+            // ShellCommand.g:905:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
             int alt49=4;
             switch ( input.LA(1) ) {
             case 85:
@@ -4918,7 +4919,7 @@ public class ShellCommandParser extends BaseParser {
 
             switch (alt49) {
                 case 1 :
-                    // ShellCommand.g:905:5: 'oclUndefined' LPAREN t= type RPAREN
+                    // ShellCommand.g:906:5: 'oclUndefined' LPAREN t= type RPAREN
                     {
                     match(input,85,FOLLOW_85_in_undefinedLiteral3502); if (state.failed) return n;
 
@@ -4937,7 +4938,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:908:5: 'Undefined'
+                    // ShellCommand.g:909:5: 'Undefined'
                     {
                     match(input,50,FOLLOW_50_in_undefinedLiteral3524); if (state.failed) return n;
 
@@ -4946,7 +4947,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:911:5: 'null' LPAREN t= type RPAREN
+                    // ShellCommand.g:912:5: 'null' LPAREN t= type RPAREN
                     {
                     match(input,79,FOLLOW_79_in_undefinedLiteral3538); if (state.failed) return n;
 
@@ -4965,7 +4966,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // ShellCommand.g:914:5: 'null'
+                    // ShellCommand.g:915:5: 'null'
                     {
                     match(input,79,FOLLOW_79_in_undefinedLiteral3560); if (state.failed) return n;
 
@@ -4991,7 +4992,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "tupleLiteral"
-    // ShellCommand.g:924:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
+    // ShellCommand.g:925:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
     public final ASTTupleLiteral tupleLiteral() throws RecognitionException {
         ASTTupleLiteral n = null;
 
@@ -5001,8 +5002,8 @@ public class ShellCommandParser extends BaseParser {
 
          List tiList = new ArrayList(); 
         try {
-            // ShellCommand.g:926:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
-            // ShellCommand.g:927:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
+            // ShellCommand.g:927:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
+            // ShellCommand.g:928:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
             {
             match(input,49,FOLLOW_49_in_tupleLiteral3599); if (state.failed) return n;
 
@@ -5016,7 +5017,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tiList.add(ti); }
 
-            // ShellCommand.g:930:5: ( COMMA ti= tupleItem )*
+            // ShellCommand.g:931:5: ( COMMA ti= tupleItem )*
             loop50:
             do {
                 int alt50=2;
@@ -5029,7 +5030,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt50) {
             	case 1 :
-            	    // ShellCommand.g:930:7: COMMA ti= tupleItem
+            	    // ShellCommand.g:931:7: COMMA ti= tupleItem
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral3624); if (state.failed) return n;
 
@@ -5072,7 +5073,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "tupleItem"
-    // ShellCommand.g:938:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
+    // ShellCommand.g:939:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
     public final ASTTupleItem tupleItem() throws RecognitionException {
         ASTTupleItem n = null;
 
@@ -5084,12 +5085,12 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:939:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
-            // ShellCommand.g:940:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // ShellCommand.g:940:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
+            // ShellCommand.g:941:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem3670); if (state.failed) return n;
 
-            // ShellCommand.g:941:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // ShellCommand.g:942:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -5124,7 +5125,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt51) {
                 case 1 :
-                    // ShellCommand.g:944:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
+                    // ShellCommand.g:945:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
                     {
                     match(input,COLON,FOLLOW_COLON_in_tupleItem3709); if (state.failed) return n;
 
@@ -5147,7 +5148,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:947:7: ( COLON | EQUAL ) e= expression
+                    // ShellCommand.g:948:7: ( COLON | EQUAL ) e= expression
                     {
                     if ( input.LA(1)==COLON||input.LA(1)==EQUAL ) {
                         input.consume();
@@ -5193,7 +5194,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "type"
-    // ShellCommand.g:958:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
+    // ShellCommand.g:959:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
     public final ASTType type() throws RecognitionException {
         ASTType n = null;
 
@@ -5207,12 +5208,12 @@ public class ShellCommandParser extends BaseParser {
 
          Token tok = null; 
         try {
-            // ShellCommand.g:960:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
-            // ShellCommand.g:961:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // ShellCommand.g:961:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
+            // ShellCommand.g:962:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of type */ }
 
-            // ShellCommand.g:962:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // ShellCommand.g:963:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             int alt52=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -5245,7 +5246,7 @@ public class ShellCommandParser extends BaseParser {
 
             switch (alt52) {
                 case 1 :
-                    // ShellCommand.g:963:7: nTSimple= simpleType
+                    // ShellCommand.g:964:7: nTSimple= simpleType
                     {
                     pushFollow(FOLLOW_simpleType_in_type3817);
                     nTSimple=simpleType();
@@ -5258,7 +5259,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:964:7: nTCollection= collectionType
+                    // ShellCommand.g:965:7: nTCollection= collectionType
                     {
                     pushFollow(FOLLOW_collectionType_in_type3829);
                     nTCollection=collectionType();
@@ -5271,7 +5272,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:965:7: nTTuple= tupleType
+                    // ShellCommand.g:966:7: nTTuple= tupleType
                     {
                     pushFollow(FOLLOW_tupleType_in_type3841);
                     nTTuple=tupleType();
@@ -5305,7 +5306,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "typeOnly"
-    // ShellCommand.g:970:1: typeOnly returns [ASTType n] : nT= type EOF ;
+    // ShellCommand.g:971:1: typeOnly returns [ASTType n] : nT= type EOF ;
     public final ASTType typeOnly() throws RecognitionException {
         ASTType n = null;
 
@@ -5314,8 +5315,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:971:5: (nT= type EOF )
-            // ShellCommand.g:972:5: nT= type EOF
+            // ShellCommand.g:972:5: (nT= type EOF )
+            // ShellCommand.g:973:5: nT= type EOF
             {
             pushFollow(FOLLOW_type_in_typeOnly3873);
             nT=type();
@@ -5345,7 +5346,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "simpleType"
-    // ShellCommand.g:982:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
+    // ShellCommand.g:983:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
     public final ASTSimpleType simpleType() throws RecognitionException {
         ASTSimpleType n = null;
 
@@ -5353,8 +5354,8 @@ public class ShellCommandParser extends BaseParser {
         Token name=null;
 
         try {
-            // ShellCommand.g:983:5: (name= IDENT )
-            // ShellCommand.g:984:5: name= IDENT
+            // ShellCommand.g:984:5: (name= IDENT )
+            // ShellCommand.g:985:5: name= IDENT
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType3903); if (state.failed) return n;
 
@@ -5378,7 +5379,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "collectionType"
-    // ShellCommand.g:992:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
+    // ShellCommand.g:993:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
     public final ASTCollectionType collectionType() throws RecognitionException {
         ASTCollectionType n = null;
 
@@ -5388,8 +5389,8 @@ public class ShellCommandParser extends BaseParser {
 
          Token op = null; 
         try {
-            // ShellCommand.g:994:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
-            // ShellCommand.g:995:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
+            // ShellCommand.g:995:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
+            // ShellCommand.g:996:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5435,7 +5436,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "tupleType"
-    // ShellCommand.g:1005:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
+    // ShellCommand.g:1006:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
     public final ASTTupleType tupleType() throws RecognitionException {
         ASTTupleType n = null;
 
@@ -5445,8 +5446,8 @@ public class ShellCommandParser extends BaseParser {
 
          List tpList = new ArrayList(); 
         try {
-            // ShellCommand.g:1007:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
-            // ShellCommand.g:1008:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
+            // ShellCommand.g:1008:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
+            // ShellCommand.g:1009:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
             {
             match(input,49,FOLLOW_49_in_tupleType4008); if (state.failed) return n;
 
@@ -5460,7 +5461,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tpList.add(tp); }
 
-            // ShellCommand.g:1010:5: ( COMMA tp= tuplePart )*
+            // ShellCommand.g:1011:5: ( COMMA tp= tuplePart )*
             loop53:
             do {
                 int alt53=2;
@@ -5473,7 +5474,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt53) {
             	case 1 :
-            	    // ShellCommand.g:1010:7: COMMA tp= tuplePart
+            	    // ShellCommand.g:1011:7: COMMA tp= tuplePart
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleType4030); if (state.failed) return n;
 
@@ -5516,7 +5517,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "tuplePart"
-    // ShellCommand.g:1019:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
+    // ShellCommand.g:1020:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
     public final ASTTuplePart tuplePart() throws RecognitionException {
         ASTTuplePart n = null;
 
@@ -5526,8 +5527,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1020:5: (name= IDENT COLON t= type )
-            // ShellCommand.g:1021:5: name= IDENT COLON t= type
+            // ShellCommand.g:1021:5: (name= IDENT COLON t= type )
+            // ShellCommand.g:1022:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart4078); if (state.failed) return n;
 
@@ -5559,7 +5560,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "statOnly"
-    // ShellCommand.g:1060:1: statOnly returns [ASTStatement n] : s= stat EOF ;
+    // ShellCommand.g:1061:1: statOnly returns [ASTStatement n] : s= stat EOF ;
     public final ASTStatement statOnly() throws RecognitionException {
         ASTStatement n = null;
 
@@ -5568,8 +5569,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1061:3: (s= stat EOF )
-            // ShellCommand.g:1062:3: s= stat EOF
+            // ShellCommand.g:1062:3: (s= stat EOF )
+            // ShellCommand.g:1063:3: s= stat EOF
             {
             pushFollow(FOLLOW_stat_in_statOnly4133);
             s=stat();
@@ -5603,7 +5604,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "stat"
-    // ShellCommand.g:1072:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
+    // ShellCommand.g:1073:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
     public final ShellCommandParser.stat_return stat() throws RecognitionException {
         ShellCommandParser.stat_return retval = new ShellCommandParser.stat_return();
         retval.start = input.LT(1);
@@ -5618,8 +5619,8 @@ public class ShellCommandParser extends BaseParser {
           ASTSequenceStatement seq = new ASTSequenceStatement(((Token)retval.start));
 
         try {
-            // ShellCommand.g:1076:3: (s= singleStat ( SEMI s2= singleStat )* )
-            // ShellCommand.g:1077:3: s= singleStat ( SEMI s2= singleStat )*
+            // ShellCommand.g:1077:3: (s= singleStat ( SEMI s2= singleStat )* )
+            // ShellCommand.g:1078:3: s= singleStat ( SEMI s2= singleStat )*
             {
             pushFollow(FOLLOW_singleStat_in_stat4172);
             s=singleStat();
@@ -5629,7 +5630,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) {seq.addStatement(s);}
 
-            // ShellCommand.g:1078:3: ( SEMI s2= singleStat )*
+            // ShellCommand.g:1079:3: ( SEMI s2= singleStat )*
             loop54:
             do {
                 int alt54=2;
@@ -5642,7 +5643,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt54) {
             	case 1 :
-            	    // ShellCommand.g:1079:5: SEMI s2= singleStat
+            	    // ShellCommand.g:1080:5: SEMI s2= singleStat
             	    {
             	    match(input,SEMI,FOLLOW_SEMI_in_stat4184); if (state.failed) return retval;
 
@@ -5688,7 +5689,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "singleStat"
-    // ShellCommand.g:1091:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
+    // ShellCommand.g:1092:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
     public final ASTStatement singleStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -5717,7 +5718,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1092:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
+            // ShellCommand.g:1093:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
             int alt55=11;
             int LA55_0 = input.LA(1);
 
@@ -5854,7 +5855,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt55) {
                 case 1 :
-                    // ShellCommand.g:1093:5: emp= emptyStat
+                    // ShellCommand.g:1094:5: emp= emptyStat
                     {
                     pushFollow(FOLLOW_emptyStat_in_singleStat4234);
                     emp=emptyStat();
@@ -5867,7 +5868,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1095:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
+                    // ShellCommand.g:1096:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
                     {
                     pushFollow(FOLLOW_statStartingWithExpr_in_singleStat4260);
                     sse=statStartingWithExpr();
@@ -5880,7 +5881,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // ShellCommand.g:1096:5: vas= varAssignStat
+                    // ShellCommand.g:1097:5: vas= varAssignStat
                     {
                     pushFollow(FOLLOW_varAssignStat_in_singleStat4272);
                     vas=varAssignStat();
@@ -5893,7 +5894,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // ShellCommand.g:1097:5: ocs= objCreateStat
+                    // ShellCommand.g:1098:5: ocs= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_singleStat4286);
                     ocs=objCreateStat();
@@ -5906,7 +5907,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // ShellCommand.g:1098:5: ods= objDestroyStat
+                    // ShellCommand.g:1099:5: ods= objDestroyStat
                     {
                     pushFollow(FOLLOW_objDestroyStat_in_singleStat4300);
                     ods=objDestroyStat();
@@ -5919,7 +5920,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // ShellCommand.g:1099:5: lis= lnkInsStat
+                    // ShellCommand.g:1100:5: lis= lnkInsStat
                     {
                     pushFollow(FOLLOW_lnkInsStat_in_singleStat4313);
                     lis=lnkInsStat();
@@ -5932,7 +5933,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // ShellCommand.g:1100:5: lds= lnkDelStat
+                    // ShellCommand.g:1101:5: lds= lnkDelStat
                     {
                     pushFollow(FOLLOW_lnkDelStat_in_singleStat4330);
                     lds=lnkDelStat();
@@ -5945,7 +5946,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // ShellCommand.g:1101:5: ces= condExStat
+                    // ShellCommand.g:1102:5: ces= condExStat
                     {
                     pushFollow(FOLLOW_condExStat_in_singleStat4347);
                     ces=condExStat();
@@ -5958,7 +5959,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // ShellCommand.g:1102:5: its= iterStat
+                    // ShellCommand.g:1103:5: its= iterStat
                     {
                     pushFollow(FOLLOW_iterStat_in_singleStat4364);
                     its=iterStat();
@@ -5971,7 +5972,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // ShellCommand.g:1104:5: whs= whileStat
+                    // ShellCommand.g:1105:5: whs= whileStat
                     {
                     pushFollow(FOLLOW_whileStat_in_singleStat4386);
                     whs=whileStat();
@@ -5984,7 +5985,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // ShellCommand.g:1105:5: blk= blockStat
+                    // ShellCommand.g:1106:5: blk= blockStat
                     {
                     pushFollow(FOLLOW_blockStat_in_singleStat4404);
                     blk=blockStat();
@@ -6014,14 +6015,14 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "emptyStat"
-    // ShellCommand.g:1112:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
+    // ShellCommand.g:1113:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
     public final ASTEmptyStatement emptyStat() throws RecognitionException {
         ASTEmptyStatement n = null;
 
 
         try {
-            // ShellCommand.g:1113:3: ( nothing )
-            // ShellCommand.g:1114:3: nothing
+            // ShellCommand.g:1114:3: ( nothing )
+            // ShellCommand.g:1115:3: nothing
             {
             pushFollow(FOLLOW_nothing_in_emptyStat4431);
             nothing();
@@ -6053,7 +6054,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "statStartingWithExpr"
-    // ShellCommand.g:1119:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
+    // ShellCommand.g:1120:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
     public final ShellCommandParser.statStartingWithExpr_return statStartingWithExpr() throws RecognitionException {
         ShellCommandParser.statStartingWithExpr_return retval = new ShellCommandParser.statStartingWithExpr_return();
         retval.start = input.LT(1);
@@ -6065,8 +6066,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1120:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
-            // ShellCommand.g:1121:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
+            // ShellCommand.g:1121:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
+            // ShellCommand.g:1122:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
             {
             pushFollow(FOLLOW_inSoilExpression_in_statStartingWithExpr4457);
             expr=inSoilExpression();
@@ -6074,7 +6075,7 @@ public class ShellCommandParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // ShellCommand.g:1122:3: (aas= attAssignStat[$expr.n] )?
+            // ShellCommand.g:1123:3: (aas= attAssignStat[$expr.n] )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -6083,7 +6084,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt56) {
                 case 1 :
-                    // ShellCommand.g:1123:5: aas= attAssignStat[$expr.n]
+                    // ShellCommand.g:1124:5: aas= attAssignStat[$expr.n]
                     {
                     pushFollow(FOLLOW_attAssignStat_in_statStartingWithExpr4471);
                     aas=attAssignStat(expr);
@@ -6126,7 +6127,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "varAssignStat"
-    // ShellCommand.g:1135:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
+    // ShellCommand.g:1136:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
     public final ASTStatement varAssignStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -6136,8 +6137,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1136:3: (varName= IDENT COLON_EQUAL rVal= rValue )
-            // ShellCommand.g:1137:3: varName= IDENT COLON_EQUAL rVal= rValue
+            // ShellCommand.g:1137:3: (varName= IDENT COLON_EQUAL rVal= rValue )
+            // ShellCommand.g:1138:3: varName= IDENT COLON_EQUAL rVal= rValue
             {
             varName=(Token)match(input,IDENT,FOLLOW_IDENT_in_varAssignStat4509); if (state.failed) return n;
 
@@ -6171,7 +6172,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "attAssignStat"
-    // ShellCommand.g:1149:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
+    // ShellCommand.g:1150:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
     public final ASTAttributeAssignmentStatement attAssignStat(ASTExpression exp) throws RecognitionException {
         ASTAttributeAssignmentStatement n = null;
 
@@ -6181,8 +6182,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1150:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
-            // ShellCommand.g:1151:3: DOT attName= IDENT COLON_EQUAL r= rValue
+            // ShellCommand.g:1151:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
+            // ShellCommand.g:1152:3: DOT attName= IDENT COLON_EQUAL r= rValue
             {
             match(input,DOT,FOLLOW_DOT_in_attAssignStat4545); if (state.failed) return n;
 
@@ -6220,7 +6221,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "objCreateStat"
-    // ShellCommand.g:1163:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
+    // ShellCommand.g:1164:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
     public final ShellCommandParser.objCreateStat_return objCreateStat() throws RecognitionException {
         ShellCommandParser.objCreateStat_return retval = new ShellCommandParser.objCreateStat_return();
         retval.start = input.LT(1);
@@ -6234,8 +6235,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1164:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
-            // ShellCommand.g:1165:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // ShellCommand.g:1165:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
+            // ShellCommand.g:1166:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             {
             match(input,77,FOLLOW_77_in_objCreateStat4592); if (state.failed) return retval;
 
@@ -6245,7 +6246,7 @@ public class ShellCommandParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // ShellCommand.g:1167:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
+            // ShellCommand.g:1168:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -6254,11 +6255,11 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt58) {
                 case 1 :
-                    // ShellCommand.g:1168:5: LPAREN (objName= inSoilExpression )? RPAREN
+                    // ShellCommand.g:1169:5: LPAREN (objName= inSoilExpression )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_objCreateStat4610); if (state.failed) return retval;
 
-                    // ShellCommand.g:1169:7: (objName= inSoilExpression )?
+                    // ShellCommand.g:1170:7: (objName= inSoilExpression )?
                     int alt57=2;
                     int LA57_0 = input.LA(1);
 
@@ -6267,7 +6268,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     switch (alt57) {
                         case 1 :
-                            // ShellCommand.g:1169:8: objName= inSoilExpression
+                            // ShellCommand.g:1170:8: objName= inSoilExpression
                             {
                             pushFollow(FOLLOW_inSoilExpression_in_objCreateStat4623);
                             objName=inSoilExpression();
@@ -6289,7 +6290,7 @@ public class ShellCommandParser extends BaseParser {
             }
 
 
-            // ShellCommand.g:1173:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // ShellCommand.g:1174:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -6298,7 +6299,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt59) {
                 case 1 :
-                    // ShellCommand.g:1174:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
+                    // ShellCommand.g:1175:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
                     {
                     match(input,55,FOLLOW_55_in_objCreateStat4649); if (state.failed) return retval;
 
@@ -6353,7 +6354,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "objDestroyStat"
-    // ShellCommand.g:1193:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
+    // ShellCommand.g:1194:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
     public final ShellCommandParser.objDestroyStat_return objDestroyStat() throws RecognitionException {
         ShellCommandParser.objDestroyStat_return retval = new ShellCommandParser.objDestroyStat_return();
         retval.start = input.LT(1);
@@ -6363,8 +6364,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1194:3: ( 'destroy' el= exprListMin1 )
-            // ShellCommand.g:1195:3: 'destroy' el= exprListMin1
+            // ShellCommand.g:1195:3: ( 'destroy' el= exprListMin1 )
+            // ShellCommand.g:1196:3: 'destroy' el= exprListMin1
             {
             match(input,60,FOLLOW_60_in_objDestroyStat4715); if (state.failed) return retval;
 
@@ -6410,7 +6411,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "lnkInsStat"
-    // ShellCommand.g:1214:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
+    // ShellCommand.g:1215:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
     public final ShellCommandParser.lnkInsStat_return lnkInsStat() throws RecognitionException {
         ShellCommandParser.lnkInsStat_return retval = new ShellCommandParser.lnkInsStat_return();
         retval.start = input.LT(1);
@@ -6421,8 +6422,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1215:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
-            // ShellCommand.g:1216:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
+            // ShellCommand.g:1216:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
+            // ShellCommand.g:1217:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
             {
             match(input,73,FOLLOW_73_in_lnkInsStat4749); if (state.failed) return retval;
 
@@ -6468,7 +6469,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2WithOptionalQualifiers"
-    // ShellCommand.g:1226:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
+    // ShellCommand.g:1227:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
     public final ShellCommandParser.rValListMin2WithOptionalQualifiers_return rValListMin2WithOptionalQualifiers() throws RecognitionException {
         ShellCommandParser.rValListMin2WithOptionalQualifiers_return retval = new ShellCommandParser.rValListMin2WithOptionalQualifiers_return();
         retval.start = input.LT(1);
@@ -6485,8 +6486,8 @@ public class ShellCommandParser extends BaseParser {
           List<ASTRValue> currentQualifiers = Collections.emptyList();
 
         try {
-            // ShellCommand.g:1232:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
-            // ShellCommand.g:1233:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // ShellCommand.g:1233:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
+            // ShellCommand.g:1234:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin2WithOptionalQualifiers4808);
             r=rValue();
@@ -6496,7 +6497,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // ShellCommand.g:1234:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // ShellCommand.g:1235:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -6505,7 +6506,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt60) {
                 case 1 :
-                    // ShellCommand.g:1235:4: LBRACE qualifierValues= rValList RBRACE
+                    // ShellCommand.g:1236:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers4819); if (state.failed) return retval;
 
@@ -6540,7 +6541,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // ShellCommand.g:1247:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // ShellCommand.g:1248:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -6549,7 +6550,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt61) {
                 case 1 :
-                    // ShellCommand.g:1248:4: LBRACE qualifierValues= rValList RBRACE
+                    // ShellCommand.g:1249:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers4873); if (state.failed) return retval;
 
@@ -6574,7 +6575,7 @@ public class ShellCommandParser extends BaseParser {
                 currentQualifiers = Collections.emptyList();
               }
 
-            // ShellCommand.g:1257:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // ShellCommand.g:1258:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             loop63:
             do {
                 int alt63=2;
@@ -6587,7 +6588,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt63) {
             	case 1 :
-            	    // ShellCommand.g:1258:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // ShellCommand.g:1259:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin2WithOptionalQualifiers4911); if (state.failed) return retval;
 
@@ -6599,7 +6600,7 @@ public class ShellCommandParser extends BaseParser {
 
             	    if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            	    // ShellCommand.g:1262:5: ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // ShellCommand.g:1263:5: ( LBRACE qualifierValues= rValList RBRACE )?
             	    int alt62=2;
             	    int LA62_0 = input.LA(1);
 
@@ -6608,7 +6609,7 @@ public class ShellCommandParser extends BaseParser {
             	    }
             	    switch (alt62) {
             	        case 1 :
-            	            // ShellCommand.g:1263:6: LBRACE qualifierValues= rValList RBRACE
+            	            // ShellCommand.g:1264:6: LBRACE qualifierValues= rValList RBRACE
             	            {
             	            match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers4946); if (state.failed) return retval;
 
@@ -6667,7 +6668,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "lnkDelStat"
-    // ShellCommand.g:1278:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
+    // ShellCommand.g:1279:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
     public final ShellCommandParser.lnkDelStat_return lnkDelStat() throws RecognitionException {
         ShellCommandParser.lnkDelStat_return retval = new ShellCommandParser.lnkDelStat_return();
         retval.start = input.LT(1);
@@ -6678,8 +6679,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1279:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
-            // ShellCommand.g:1280:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
+            // ShellCommand.g:1280:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
+            // ShellCommand.g:1281:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
             {
             match(input,59,FOLLOW_59_in_lnkDelStat5007); if (state.failed) return retval;
 
@@ -6724,7 +6725,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "condExStat"
-    // ShellCommand.g:1294:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
+    // ShellCommand.g:1295:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
     public final ShellCommandParser.condExStat_return condExStat() throws RecognitionException {
         ShellCommandParser.condExStat_return retval = new ShellCommandParser.condExStat_return();
         retval.start = input.LT(1);
@@ -6741,8 +6742,8 @@ public class ShellCommandParser extends BaseParser {
           ASTStatement elseStat = new ASTEmptyStatement();
 
         try {
-            // ShellCommand.g:1298:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
-            // ShellCommand.g:1299:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
+            // ShellCommand.g:1299:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
+            // ShellCommand.g:1300:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
             {
             match(input,70,FOLLOW_70_in_condExStat5069); if (state.failed) return retval;
 
@@ -6760,7 +6761,7 @@ public class ShellCommandParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // ShellCommand.g:1303:3: ( 'else' es= statOrImplicitBlock )?
+            // ShellCommand.g:1304:3: ( 'else' es= statOrImplicitBlock )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -6769,7 +6770,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt64) {
                 case 1 :
-                    // ShellCommand.g:1304:5: 'else' es= statOrImplicitBlock
+                    // ShellCommand.g:1305:5: 'else' es= statOrImplicitBlock
                     {
                     match(input,63,FOLLOW_63_in_condExStat5102); if (state.failed) return retval;
 
@@ -6816,7 +6817,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "iterStat"
-    // ShellCommand.g:1315:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // ShellCommand.g:1316:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final ShellCommandParser.iterStat_return iterStat() throws RecognitionException {
         ShellCommandParser.iterStat_return retval = new ShellCommandParser.iterStat_return();
         retval.start = input.LT(1);
@@ -6829,8 +6830,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1316:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // ShellCommand.g:1317:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // ShellCommand.g:1317:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // ShellCommand.g:1318:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,68,FOLLOW_68_in_iterStat5151); if (state.failed) return retval;
 
@@ -6881,7 +6882,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "whileStat"
-    // ShellCommand.g:1332:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // ShellCommand.g:1333:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final ShellCommandParser.whileStat_return whileStat() throws RecognitionException {
         ShellCommandParser.whileStat_return retval = new ShellCommandParser.whileStat_return();
         retval.start = input.LT(1);
@@ -6893,8 +6894,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1333:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // ShellCommand.g:1334:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // ShellCommand.g:1334:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // ShellCommand.g:1335:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,95,FOLLOW_95_in_whileStat5214); if (state.failed) return retval;
 
@@ -6941,7 +6942,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "blockStat"
-    // ShellCommand.g:1346:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
+    // ShellCommand.g:1347:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
     public final ShellCommandParser.blockStat_return blockStat() throws RecognitionException {
         ShellCommandParser.blockStat_return retval = new ShellCommandParser.blockStat_return();
         retval.start = input.LT(1);
@@ -6958,12 +6959,12 @@ public class ShellCommandParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), org.tzi.use.config.Options.explicitVariableDeclarations);
 
         try {
-            // ShellCommand.g:1350:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
-            // ShellCommand.g:1351:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
+            // ShellCommand.g:1351:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
+            // ShellCommand.g:1352:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
             {
             match(input,54,FOLLOW_54_in_blockStat5269); if (state.failed) return retval;
 
-            // ShellCommand.g:1352:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
+            // ShellCommand.g:1353:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -6972,7 +6973,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt66) {
                 case 1 :
-                    // ShellCommand.g:1352:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
+                    // ShellCommand.g:1353:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
                     {
                     match(input,58,FOLLOW_58_in_blockStat5274); if (state.failed) return retval;
 
@@ -6984,7 +6985,7 @@ public class ShellCommandParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-                    // ShellCommand.g:1352:73: ( COMMA vd1= variableDeclaration )*
+                    // ShellCommand.g:1353:73: ( COMMA vd1= variableDeclaration )*
                     loop65:
                     do {
                         int alt65=2;
@@ -6997,7 +6998,7 @@ public class ShellCommandParser extends BaseParser {
 
                         switch (alt65) {
                     	case 1 :
-                    	    // ShellCommand.g:1352:75: COMMA vd1= variableDeclaration
+                    	    // ShellCommand.g:1353:75: COMMA vd1= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_blockStat5286); if (state.failed) return retval;
 
@@ -7061,7 +7062,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "implicitBlockStat"
-    // ShellCommand.g:1361:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
+    // ShellCommand.g:1362:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
     public final ShellCommandParser.implicitBlockStat_return implicitBlockStat() throws RecognitionException {
         ShellCommandParser.implicitBlockStat_return retval = new ShellCommandParser.implicitBlockStat_return();
         retval.start = input.LT(1);
@@ -7078,8 +7079,8 @@ public class ShellCommandParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), false);
 
         try {
-            // ShellCommand.g:1365:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
-            // ShellCommand.g:1366:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
+            // ShellCommand.g:1366:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
+            // ShellCommand.g:1367:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
             {
             match(input,58,FOLLOW_58_in_implicitBlockStat5340); if (state.failed) return retval;
 
@@ -7091,7 +7092,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-            // ShellCommand.g:1366:72: ( COMMA vd1= variableDeclaration )*
+            // ShellCommand.g:1367:72: ( COMMA vd1= variableDeclaration )*
             loop67:
             do {
                 int alt67=2;
@@ -7104,7 +7105,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt67) {
             	case 1 :
-            	    // ShellCommand.g:1366:74: COMMA vd1= variableDeclaration
+            	    // ShellCommand.g:1367:74: COMMA vd1= variableDeclaration
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_implicitBlockStat5352); if (state.failed) return retval;
 
@@ -7156,7 +7157,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "statOrImplicitBlock"
-    // ShellCommand.g:1370:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
+    // ShellCommand.g:1371:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
     public final ASTStatement statOrImplicitBlock() throws RecognitionException {
         ASTStatement n = null;
 
@@ -7167,10 +7168,10 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1371:3: ( (s1= stat |s2= implicitBlockStat ) )
-            // ShellCommand.g:1372:3: (s1= stat |s2= implicitBlockStat )
+            // ShellCommand.g:1372:3: ( (s1= stat |s2= implicitBlockStat ) )
+            // ShellCommand.g:1373:3: (s1= stat |s2= implicitBlockStat )
             {
-            // ShellCommand.g:1372:3: (s1= stat |s2= implicitBlockStat )
+            // ShellCommand.g:1373:3: (s1= stat |s2= implicitBlockStat )
             int alt68=2;
             int LA68_0 = input.LA(1);
 
@@ -7190,7 +7191,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt68) {
                 case 1 :
-                    // ShellCommand.g:1372:4: s1= stat
+                    // ShellCommand.g:1373:4: s1= stat
                     {
                     pushFollow(FOLLOW_stat_in_statOrImplicitBlock5396);
                     s1=stat();
@@ -7203,7 +7204,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1372:31: s2= implicitBlockStat
+                    // ShellCommand.g:1373:31: s2= implicitBlockStat
                     {
                     pushFollow(FOLLOW_implicitBlockStat_in_statOrImplicitBlock5406);
                     s2=implicitBlockStat();
@@ -7237,11 +7238,11 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "nothing"
-    // ShellCommand.g:1386:1: nothing :;
+    // ShellCommand.g:1387:1: nothing :;
     public final void nothing() throws RecognitionException {
         try {
-            // ShellCommand.g:1387:1: ()
-            // ShellCommand.g:1388:1: 
+            // ShellCommand.g:1388:1: ()
+            // ShellCommand.g:1389:1: 
             {
             }
 
@@ -7256,7 +7257,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "rValue"
-    // ShellCommand.g:1394:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
+    // ShellCommand.g:1395:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
     public final ASTRValue rValue() throws RecognitionException {
         ASTRValue n = null;
 
@@ -7267,7 +7268,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1395:5: (e= inSoilExpression |oc= objCreateStat )
+            // ShellCommand.g:1396:5: (e= inSoilExpression |oc= objCreateStat )
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -7287,7 +7288,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt69) {
                 case 1 :
-                    // ShellCommand.g:1396:5: e= inSoilExpression
+                    // ShellCommand.g:1397:5: e= inSoilExpression
                     {
                     pushFollow(FOLLOW_inSoilExpression_in_rValue5452);
                     e=inSoilExpression();
@@ -7300,7 +7301,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1397:5: oc= objCreateStat
+                    // ShellCommand.g:1398:5: oc= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_rValue5464);
                     oc=objCreateStat();
@@ -7335,7 +7336,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "rValList"
-    // ShellCommand.g:1410:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
+    // ShellCommand.g:1411:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
     public final List<ASTRValue> rValList() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -7344,7 +7345,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1411:3: ( nothing |rl= rValListMin1 )
+            // ShellCommand.g:1412:3: ( nothing |rl= rValListMin1 )
             int alt70=2;
             int LA70_0 = input.LA(1);
 
@@ -7364,7 +7365,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt70) {
                 case 1 :
-                    // ShellCommand.g:1412:3: nothing
+                    // ShellCommand.g:1413:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_rValList5487);
                     nothing();
@@ -7377,7 +7378,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1415:3: rl= rValListMin1
+                    // ShellCommand.g:1416:3: rl= rValListMin1
                     {
                     pushFollow(FOLLOW_rValListMin1_in_rValList5514);
                     rl=rValListMin1();
@@ -7407,7 +7408,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin1"
-    // ShellCommand.g:1423:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
+    // ShellCommand.g:1424:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin1() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -7419,8 +7420,8 @@ public class ShellCommandParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // ShellCommand.g:1427:3: (r= rValue ( COMMA r= rValue )* )
-            // ShellCommand.g:1428:3: r= rValue ( COMMA r= rValue )*
+            // ShellCommand.g:1428:3: (r= rValue ( COMMA r= rValue )* )
+            // ShellCommand.g:1429:3: r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin15547);
             r=rValue();
@@ -7430,7 +7431,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // ShellCommand.g:1430:3: ( COMMA r= rValue )*
+            // ShellCommand.g:1431:3: ( COMMA r= rValue )*
             loop71:
             do {
                 int alt71=2;
@@ -7443,7 +7444,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt71) {
             	case 1 :
-            	    // ShellCommand.g:1431:5: COMMA r= rValue
+            	    // ShellCommand.g:1432:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin15561); if (state.failed) return n;
 
@@ -7482,7 +7483,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2"
-    // ShellCommand.g:1441:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
+    // ShellCommand.g:1442:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin2() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -7494,8 +7495,8 @@ public class ShellCommandParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // ShellCommand.g:1445:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
-            // ShellCommand.g:1446:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
+            // ShellCommand.g:1446:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
+            // ShellCommand.g:1447:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin25610);
             r=rValue();
@@ -7515,7 +7516,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // ShellCommand.g:1451:3: ( COMMA r= rValue )*
+            // ShellCommand.g:1452:3: ( COMMA r= rValue )*
             loop72:
             do {
                 int alt72=2;
@@ -7528,7 +7529,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt72) {
             	case 1 :
-            	    // ShellCommand.g:1452:5: COMMA r= rValue
+            	    // ShellCommand.g:1453:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin25640); if (state.failed) return n;
 
@@ -7567,7 +7568,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "inSoilExpression"
-    // ShellCommand.g:1462:1: inSoilExpression returns [ASTExpression n] : e= expression ;
+    // ShellCommand.g:1463:1: inSoilExpression returns [ASTExpression n] : e= expression ;
     public final ASTExpression inSoilExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -7576,8 +7577,8 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1463:3: (e= expression )
-            // ShellCommand.g:1464:3: e= expression
+            // ShellCommand.g:1464:3: (e= expression )
+            // ShellCommand.g:1465:3: e= expression
             {
             pushFollow(FOLLOW_expression_in_inSoilExpression5684);
             e=expression();
@@ -7607,7 +7608,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "exprList"
-    // ShellCommand.g:1473:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
+    // ShellCommand.g:1474:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
     public final List<ASTExpression> exprList() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -7616,7 +7617,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1474:3: ( nothing |el= exprListMin1 )
+            // ShellCommand.g:1475:3: ( nothing |el= exprListMin1 )
             int alt73=2;
             int LA73_0 = input.LA(1);
 
@@ -7636,7 +7637,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt73) {
                 case 1 :
-                    // ShellCommand.g:1475:3: nothing
+                    // ShellCommand.g:1476:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_exprList5713);
                     nothing();
@@ -7649,7 +7650,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1478:3: el= exprListMin1
+                    // ShellCommand.g:1479:3: el= exprListMin1
                     {
                     pushFollow(FOLLOW_exprListMin1_in_exprList5731);
                     el=exprListMin1();
@@ -7679,7 +7680,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin1"
-    // ShellCommand.g:1486:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // ShellCommand.g:1487:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin1() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -7691,8 +7692,8 @@ public class ShellCommandParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // ShellCommand.g:1490:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // ShellCommand.g:1491:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // ShellCommand.g:1491:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // ShellCommand.g:1492:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin15764);
             e=inSoilExpression();
@@ -7702,7 +7703,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // ShellCommand.g:1493:3: ( COMMA e= inSoilExpression )*
+            // ShellCommand.g:1494:3: ( COMMA e= inSoilExpression )*
             loop74:
             do {
                 int alt74=2;
@@ -7715,7 +7716,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt74) {
             	case 1 :
-            	    // ShellCommand.g:1494:5: COMMA e= inSoilExpression
+            	    // ShellCommand.g:1495:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin15779); if (state.failed) return n;
 
@@ -7754,7 +7755,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin2"
-    // ShellCommand.g:1504:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // ShellCommand.g:1505:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin2() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -7766,8 +7767,8 @@ public class ShellCommandParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // ShellCommand.g:1508:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // ShellCommand.g:1509:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // ShellCommand.g:1509:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // ShellCommand.g:1510:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin25829);
             e=inSoilExpression();
@@ -7787,7 +7788,7 @@ public class ShellCommandParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // ShellCommand.g:1514:3: ( COMMA e= inSoilExpression )*
+            // ShellCommand.g:1515:3: ( COMMA e= inSoilExpression )*
             loop75:
             do {
                 int alt75=2;
@@ -7800,7 +7801,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt75) {
             	case 1 :
-            	    // ShellCommand.g:1515:5: COMMA e= inSoilExpression
+            	    // ShellCommand.g:1516:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin25859); if (state.failed) return n;
 
@@ -7839,7 +7840,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "identList"
-    // ShellCommand.g:1525:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
+    // ShellCommand.g:1526:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
     public final List<String> identList() throws RecognitionException {
         List<String> n = null;
 
@@ -7848,7 +7849,7 @@ public class ShellCommandParser extends BaseParser {
 
 
         try {
-            // ShellCommand.g:1526:3: ( nothing |il= identListMin1 )
+            // ShellCommand.g:1527:3: ( nothing |il= identListMin1 )
             int alt76=2;
             int LA76_0 = input.LA(1);
 
@@ -7868,7 +7869,7 @@ public class ShellCommandParser extends BaseParser {
             }
             switch (alt76) {
                 case 1 :
-                    // ShellCommand.g:1527:3: nothing
+                    // ShellCommand.g:1528:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_identList5899);
                     nothing();
@@ -7881,7 +7882,7 @@ public class ShellCommandParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // ShellCommand.g:1530:3: il= identListMin1
+                    // ShellCommand.g:1531:3: il= identListMin1
                     {
                     pushFollow(FOLLOW_identListMin1_in_identList5916);
                     il=identListMin1();
@@ -7911,7 +7912,7 @@ public class ShellCommandParser extends BaseParser {
 
 
     // $ANTLR start "identListMin1"
-    // ShellCommand.g:1538:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
+    // ShellCommand.g:1539:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
     public final List<String> identListMin1() throws RecognitionException {
         List<String> n = null;
 
@@ -7922,14 +7923,14 @@ public class ShellCommandParser extends BaseParser {
           n = new ArrayList<String>();
 
         try {
-            // ShellCommand.g:1542:3: (id= IDENT ( COMMA id= IDENT )* )
-            // ShellCommand.g:1543:3: id= IDENT ( COMMA id= IDENT )*
+            // ShellCommand.g:1543:3: (id= IDENT ( COMMA id= IDENT )* )
+            // ShellCommand.g:1544:3: id= IDENT ( COMMA id= IDENT )*
             {
             id=(Token)match(input,IDENT,FOLLOW_IDENT_in_identListMin15950); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n.add((id!=null?id.getText():null)); }
 
-            // ShellCommand.g:1545:3: ( COMMA id= IDENT )*
+            // ShellCommand.g:1546:3: ( COMMA id= IDENT )*
             loop77:
             do {
                 int alt77=2;
@@ -7942,7 +7943,7 @@ public class ShellCommandParser extends BaseParser {
 
                 switch (alt77) {
             	case 1 :
-            	    // ShellCommand.g:1546:5: COMMA id= IDENT
+            	    // ShellCommand.g:1547:5: COMMA id= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_identListMin15964); if (state.failed) return n;
 
@@ -8057,8 +8058,8 @@ public class ShellCommandParser extends BaseParser {
 
     // $ANTLR start synpred6_ShellCommand
     public final void synpred6_ShellCommand_fragment() throws RecognitionException {
-        // ShellCommand.g:944:7: ( COLON type EQUAL )
-        // ShellCommand.g:944:8: COLON type EQUAL
+        // ShellCommand.g:945:7: ( COLON type EQUAL )
+        // ShellCommand.g:945:8: COLON type EQUAL
         {
         match(input,COLON,FOLLOW_COLON_in_synpred6_ShellCommand3700); if (state.failed) return ;
 
@@ -8077,8 +8078,8 @@ public class ShellCommandParser extends BaseParser {
 
     // $ANTLR start synpred7_ShellCommand
     public final void synpred7_ShellCommand_fragment() throws RecognitionException {
-        // ShellCommand.g:1095:5: ( statStartingWithExpr )
-        // ShellCommand.g:1095:6: statStartingWithExpr
+        // ShellCommand.g:1096:5: ( statStartingWithExpr )
+        // ShellCommand.g:1096:6: statStartingWithExpr
         {
         pushFollow(FOLLOW_statStartingWithExpr_in_synpred7_ShellCommand4252);
         statStartingWithExpr();

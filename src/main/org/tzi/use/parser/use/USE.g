@@ -125,7 +125,6 @@ import org.tzi.use.parser.ParseErrorHandler;
       | "constraints" { invariant | prePost }
       | signalDefinition
       | enumTypeDefinition
-      | query
     } 
 */
 model returns [ASTModel n]
@@ -140,7 +139,6 @@ model returns [ASTModel n]
           )*  
         )
       | e=enumTypeDefinition { $n.addEnumTypeDef($e.n); }
-      | query
     )*
     EOF
     ;
@@ -460,20 +458,6 @@ annotation_enum_type:
 	| 'Hard'
 ;
 
-query: 
-  'query' queryExpr (queryCOND expression)*
-;
-
-queryExpr:
-  (queryVariable) (COMMA queryVariable)*
-;
-
-queryVariable: IDENT;
-
-queryCOND:
-  'With' | 'Without'
-;
-
 /* ------------------------------------
   constraintDefinition ::= 
     invariant | prePost
@@ -729,7 +713,8 @@ expression returns [ASTExpression n]
     )*
 
     nCndImplies=conditionalImpliesExpression
-    { if ( $nCndImplies.n != null ) {
+    { 
+        if ( $nCndImplies.n != null ) {
     	 $n = $nCndImplies.n;
          $n.setStartToken(tok);
       }
@@ -900,7 +885,7 @@ unaryExpression returns [ASTExpression n]
     ;
 
 
-/* ------------------------------------
+/* ------------------------------------<fileset file="${parser.dir}/ocl/OCL.gpart" />
   postfixExpression ::= 
       primaryExpression { ( "." | "->" ) propertyCall }
 */

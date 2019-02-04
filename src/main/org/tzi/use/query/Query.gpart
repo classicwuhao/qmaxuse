@@ -1,0 +1,65 @@
+grammar Query;
+
+@header{
+package org.tzi.use.query;
+import org.tzi.use.parser.base.*;
+import org.tzi.use.parser.base.BaseParser;
+import org.tzi.use.parser.ocl.*;
+import org.tzi.use.parser.soil.ast.*;
+import java.util.Collections;
+import java.util.Arrays;
+}
+
+@lexer::header {
+package org.tzi.use.query;
+import org.tzi.use.parser.ParseErrorHandler;
+}
+@lexer::members {
+    private ParseErrorHandler fParseErrorHandler;
+
+    public String getFilename() {
+        return fParseErrorHandler.getFileName();
+    }
+    
+    @Override
+    public String getErrorHeader(RecognitionException e) {
+    	return "line " + e.line + ":" + e.charPositionInLine;
+    }
+    	
+    public void emitErrorMessage(String msg) {
+        fParseErrorHandler.reportError(msg);
+    }
+ 
+    public void init(ParseErrorHandler handler) {
+        fParseErrorHandler = handler;
+    }
+}
+
+checkExpr: 'check'
+   (modifiers)? queryExpr
+;
+
+queryExpr: 
+   'select' featureExpr (COMMA featureExpr)* (condExpr)*
+   {System.out.println("this is a query.");}
+;
+
+modifiers:
+    'pure'
+    |
+    'full'
+;
+
+ featureExpr: IDENT
+  | AttrExpr
+  | AssocExpr
+  | InvExpr
+;
+
+AttrExpr: DOT IDENT;
+
+AssocExpr: COLON IDENT;
+
+InvExpr: COLON_COLON IDENT;
+
+condExpr: 'with' expression;

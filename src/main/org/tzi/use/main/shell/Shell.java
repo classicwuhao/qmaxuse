@@ -104,6 +104,7 @@ import org.tzi.use.util.input.ReadlineTestReadlineDecorator;
 import org.tzi.use.util.input.SocketReadline;
 import org.tzi.use.util.soil.exceptions.EvaluationFailedException;
 import org.tzi.use.uran.visitor.*;
+import org.tzi.use.query.*;
 
 class NoSystemException extends Exception {
 	/**
@@ -382,6 +383,8 @@ public final class Shell implements Runnable, PPCHandler {
 			cmdMaxuse();
         else if (line.equals("q") || line.equals("quit") || line.equals("exit"))
             cmdExit();
+        else if (line.startsWith("$"))
+            query(line.substring(1).trim());
         else if (line.startsWith("??"))
             cmdQuery(line.substring(2).trim(), true);
         else if (line.startsWith("?"))
@@ -750,7 +753,6 @@ public final class Shell implements Runnable, PPCHandler {
         }
     }
 
-
 	private void cmdMaxuse() throws NoSystemException{
 		//System.out.println("Maxuse starts...");
         MSystem system = system();
@@ -760,6 +762,21 @@ public final class Shell implements Runnable, PPCHandler {
         //v.start();
         //threadCounter.start();
 	}
+
+    private void query(String line) throws NoSystemException{
+        // compile query
+        MSystem system;
+        try {
+             system = system();
+        }
+        catch (NoSystemException e) {
+            MModel model = new ModelFactory().createModel("empty model");
+            system = new MSystem(model);
+        }
+        InputStream stream = new ByteArrayInputStream(line.getBytes());
+        QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
+
+    }
 
     /**
      * Prints information about a class.

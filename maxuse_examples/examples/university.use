@@ -44,5 +44,3 @@ context Student
 
 context Module
 	inv: self.year>=1 and self.year<=5
-
-

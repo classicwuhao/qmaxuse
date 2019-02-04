@@ -57,6 +57,7 @@
 	<property name="annotation.jar"       location="${build.libbuild.dir}/org.eclipse.jdt.annotation_1.1.0.v20140129-1625.jar"/> 
 	<property name="readline.src.dir"     location="${src.main.dir}/org/tzi/use/util/input"/>
 	<property name="parser.dir"           location="${src.main.dir}/org/tzi/use/parser"/>
+	<property name="query.dir"           location="${src.main.dir}/org/tzi/use/query"/>
 
 	<path id="use.classpath.absolute">
 		<fileset dir="${lib.dir}" includes="*.jar" excludes="use*"/>
@@ -135,6 +136,13 @@
 
 				<uptodate srcfile="${parser.dir}/base/USEBase.gpart" 
                   targetfile="${parser.dir}/use/USEParser.java"/>
+
+				<!-- query grammar exists -->
+				<available file="${query.dir}/query/Query.g" />
+
+				<!-- query parser to required grammars -->
+				<uptodate srcfile="${query.dir}/Query.gpart" 
+                  targetfile="${query.dir}/QueryParser.java"/>
 
 				<!-- <uptodate srcfile="${parser.dir}/use/USELexerRules.gpart" 
 				  targetfile="${parser.dir}/use/USEParser.java"/> -->
@@ -222,6 +230,19 @@
 			<arg line="USE.g"/>
 		</java>
 
+		<!-- query parser -->
+		<echo>Generating query parser</echo>
+		<concat destfile="${query.dir}/Query.g">
+			<fileset file="${query.dir}/Query.gpart" />
+			<fileset file="${parser.dir}/base/OCLBase.gpart" />
+			<fileset file="${parser.dir}/base/OCLLexerRules.gpart" />
+		</concat>
+
+		<java classname="org.antlr.Tool" dir="${query.dir}" fork="yes">
+			<classpath path="${antlr.jar}"/>
+			<arg line="Query.g"/>
+		</java>
+
 		<!-- shell command parser -->
 		<echo>Generating shell command parser</echo>
 		<concat destfile="${parser.dir}/shell/ShellCommand.g">
@@ -236,7 +257,6 @@
 			<classpath path="${antlr.jar}"/>
 			<arg line="-lib ../base ShellCommand.g"/>
 		</java>
-
 		<!-- generator parser -->
 		<echo>Generating generator parser</echo>
 		<concat destfile="${parser.dir}/generator/Generator.g">

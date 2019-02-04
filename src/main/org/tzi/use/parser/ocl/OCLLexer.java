@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2019-02-01 14:46:07
+// $ANTLR 3.4 OCL.g 2019-02-04 18:28:52
 
 package org.tzi.use.parser.ocl; 
 
@@ -917,10 +917,10 @@ public class OCLLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:734:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
-            // OCL.g:735:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // OCL.g:735:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
+            // OCL.g:736:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             {
-            // OCL.g:735:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // OCL.g:736:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             int alt1=4;
             switch ( input.LA(1) ) {
             case ' ':
@@ -955,28 +955,28 @@ public class OCLLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // OCL.g:735:7: ' '
+                    // OCL.g:736:7: ' '
                     {
                     match(' '); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // OCL.g:736:7: '\\t'
+                    // OCL.g:737:7: '\\t'
                     {
                     match('\t'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // OCL.g:737:7: '\\f'
+                    // OCL.g:738:7: '\\f'
                     {
                     match('\f'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // OCL.g:738:7: NEWLINE
+                    // OCL.g:739:7: NEWLINE
                     {
                     mNEWLINE(); if (state.failed) return ;
 
@@ -1005,10 +1005,10 @@ public class OCLLexer extends Lexer {
         try {
             int _type = SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:744:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
-            // OCL.g:745:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
+            // OCL.g:745:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
+            // OCL.g:746:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
             {
-            // OCL.g:745:5: ( '//' | '--' )
+            // OCL.g:746:5: ( '//' | '--' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1028,7 +1028,7 @@ public class OCLLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // OCL.g:745:6: '//'
+                    // OCL.g:746:6: '//'
                     {
                     match("//"); if (state.failed) return ;
 
@@ -1037,7 +1037,7 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // OCL.g:745:13: '--'
+                    // OCL.g:746:13: '--'
                     {
                     match("--"); if (state.failed) return ;
 
@@ -1049,7 +1049,7 @@ public class OCLLexer extends Lexer {
             }
 
 
-            // OCL.g:746:5: (~ ( NEWLINE ) )*
+            // OCL.g:747:5: (~ ( NEWLINE ) )*
             loop3:
             do {
                 int alt3=2;
@@ -1062,7 +1062,7 @@ public class OCLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // OCL.g:746:6: ~ ( NEWLINE )
+            	    // OCL.g:747:6: ~ ( NEWLINE )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -1103,14 +1103,14 @@ public class OCLLexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:751:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // OCL.g:752:5: '/*' ( options {greedy=false; } : . )* '*/'
+            // OCL.g:752:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // OCL.g:753:5: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); if (state.failed) return ;
 
 
 
-            // OCL.g:752:10: ( options {greedy=false; } : . )*
+            // OCL.g:753:10: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -1135,7 +1135,7 @@ public class OCLLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // OCL.g:752:38: .
+            	    // OCL.g:753:38: .
             	    {
             	    matchAny(); if (state.failed) return ;
 
@@ -1168,7 +1168,7 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "NEWLINE"
     public final void mNEWLINE() throws RecognitionException {
         try {
-            // OCL.g:756:9: ( '\\r\\n' | '\\r' | '\\n' )
+            // OCL.g:757:9: ( '\\r\\n' | '\\r' | '\\n' )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -1195,7 +1195,7 @@ public class OCLLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // OCL.g:757:5: '\\r\\n'
+                    // OCL.g:758:5: '\\r\\n'
                     {
                     match("\r\n"); if (state.failed) return ;
 
@@ -1204,14 +1204,14 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // OCL.g:757:14: '\\r'
+                    // OCL.g:758:14: '\\r'
                     {
                     match('\r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // OCL.g:757:21: '\\n'
+                    // OCL.g:758:21: '\\n'
                     {
                     match('\n'); if (state.failed) return ;
 
@@ -1232,8 +1232,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:759:10: ( '->' )
-            // OCL.g:759:12: '->'
+            // OCL.g:760:10: ( '->' )
+            // OCL.g:760:12: '->'
             {
             match("->"); if (state.failed) return ;
 
@@ -1255,8 +1255,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:760:11: ( '@' )
-            // OCL.g:760:13: '@'
+            // OCL.g:761:11: ( '@' )
+            // OCL.g:761:13: '@'
             {
             match('@'); if (state.failed) return ;
 
@@ -1276,8 +1276,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:761:8: ( '|' )
-            // OCL.g:761:10: '|'
+            // OCL.g:762:8: ( '|' )
+            // OCL.g:762:10: '|'
             {
             match('|'); if (state.failed) return ;
 
@@ -1297,8 +1297,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:762:10: ( ':' )
-            // OCL.g:762:12: ':'
+            // OCL.g:763:10: ( ':' )
+            // OCL.g:763:12: ':'
             {
             match(':'); if (state.failed) return ;
 
@@ -1318,8 +1318,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = COLON_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:763:14: ( '::' )
-            // OCL.g:763:16: '::'
+            // OCL.g:764:14: ( '::' )
+            // OCL.g:764:16: '::'
             {
             match("::"); if (state.failed) return ;
 
@@ -1341,8 +1341,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = COLON_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:764:14: ( ':=' )
-            // OCL.g:764:16: ':='
+            // OCL.g:765:14: ( ':=' )
+            // OCL.g:765:16: ':='
             {
             match(":="); if (state.failed) return ;
 
@@ -1364,8 +1364,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:765:10: ( ',' )
-            // OCL.g:765:12: ','
+            // OCL.g:766:10: ( ',' )
+            // OCL.g:766:12: ','
             {
             match(','); if (state.failed) return ;
 
@@ -1385,8 +1385,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:766:8: ( '.' )
-            // OCL.g:766:10: '.'
+            // OCL.g:767:8: ( '.' )
+            // OCL.g:767:10: '.'
             {
             match('.'); if (state.failed) return ;
 
@@ -1406,8 +1406,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = DOTDOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:767:11: ( '..' )
-            // OCL.g:767:13: '..'
+            // OCL.g:768:11: ( '..' )
+            // OCL.g:768:13: '..'
             {
             match(".."); if (state.failed) return ;
 
@@ -1429,8 +1429,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:768:10: ( '=' )
-            // OCL.g:768:12: '='
+            // OCL.g:769:10: ( '=' )
+            // OCL.g:769:12: '='
             {
             match('='); if (state.failed) return ;
 
@@ -1450,8 +1450,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:769:11: ( '>' )
-            // OCL.g:769:13: '>'
+            // OCL.g:770:11: ( '>' )
+            // OCL.g:770:13: '>'
             {
             match('>'); if (state.failed) return ;
 
@@ -1471,8 +1471,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = GREATER_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:770:15: ( '>=' )
-            // OCL.g:770:17: '>='
+            // OCL.g:771:15: ( '>=' )
+            // OCL.g:771:17: '>='
             {
             match(">="); if (state.failed) return ;
 
@@ -1494,8 +1494,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:771:9: ( '#' )
-            // OCL.g:771:11: '#'
+            // OCL.g:772:9: ( '#' )
+            // OCL.g:772:11: '#'
             {
             match('#'); if (state.failed) return ;
 
@@ -1515,8 +1515,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:772:11: ( '{' )
-            // OCL.g:772:13: '{'
+            // OCL.g:773:11: ( '{' )
+            // OCL.g:773:13: '{'
             {
             match('{'); if (state.failed) return ;
 
@@ -1536,8 +1536,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:773:11: ( '[' )
-            // OCL.g:773:13: '['
+            // OCL.g:774:11: ( '[' )
+            // OCL.g:774:13: '['
             {
             match('['); if (state.failed) return ;
 
@@ -1557,8 +1557,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:774:9: ( '<' )
-            // OCL.g:774:11: '<'
+            // OCL.g:775:9: ( '<' )
+            // OCL.g:775:11: '<'
             {
             match('<'); if (state.failed) return ;
 
@@ -1578,8 +1578,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = LESS_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:775:14: ( '<=' )
-            // OCL.g:775:16: '<='
+            // OCL.g:776:14: ( '<=' )
+            // OCL.g:776:16: '<='
             {
             match("<="); if (state.failed) return ;
 
@@ -1601,8 +1601,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:776:11: ( '(' )
-            // OCL.g:776:13: '('
+            // OCL.g:777:11: ( '(' )
+            // OCL.g:777:13: '('
             {
             match('('); if (state.failed) return ;
 
@@ -1622,8 +1622,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:777:10: ( '-' )
-            // OCL.g:777:12: '-'
+            // OCL.g:778:10: ( '-' )
+            // OCL.g:778:12: '-'
             {
             match('-'); if (state.failed) return ;
 
@@ -1643,8 +1643,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:778:13: ( '<>' )
-            // OCL.g:778:15: '<>'
+            // OCL.g:779:13: ( '<>' )
+            // OCL.g:779:15: '<>'
             {
             match("<>"); if (state.failed) return ;
 
@@ -1666,8 +1666,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:779:9: ( '+' )
-            // OCL.g:779:11: '+'
+            // OCL.g:780:9: ( '+' )
+            // OCL.g:780:11: '+'
             {
             match('+'); if (state.failed) return ;
 
@@ -1687,8 +1687,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:780:11: ( '}' )
-            // OCL.g:780:13: '}'
+            // OCL.g:781:11: ( '}' )
+            // OCL.g:781:13: '}'
             {
             match('}'); if (state.failed) return ;
 
@@ -1708,8 +1708,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:781:11: ( ']' )
-            // OCL.g:781:13: ']'
+            // OCL.g:782:11: ( ']' )
+            // OCL.g:782:13: ']'
             {
             match(']'); if (state.failed) return ;
 
@@ -1729,8 +1729,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:782:10: ( ')' )
-            // OCL.g:782:12: ')'
+            // OCL.g:783:10: ( ')' )
+            // OCL.g:783:12: ')'
             {
             match(')'); if (state.failed) return ;
 
@@ -1750,8 +1750,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:783:8: ( ';' )
-            // OCL.g:783:10: ';'
+            // OCL.g:784:8: ( ';' )
+            // OCL.g:784:10: ';'
             {
             match(';'); if (state.failed) return ;
 
@@ -1771,8 +1771,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:784:10: ( '/' )
-            // OCL.g:784:12: '/'
+            // OCL.g:785:10: ( '/' )
+            // OCL.g:785:12: '/'
             {
             match('/'); if (state.failed) return ;
 
@@ -1792,8 +1792,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:785:9: ( '*' )
-            // OCL.g:785:11: '*'
+            // OCL.g:786:9: ( '*' )
+            // OCL.g:786:11: '*'
             {
             match('*'); if (state.failed) return ;
 
@@ -1811,10 +1811,10 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // OCL.g:789:4: ( ( '0' .. '9' )+ )
-            // OCL.g:790:5: ( '0' .. '9' )+
+            // OCL.g:790:4: ( ( '0' .. '9' )+ )
+            // OCL.g:791:5: ( '0' .. '9' )+
             {
-            // OCL.g:790:5: ( '0' .. '9' )+
+            // OCL.g:791:5: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -1869,13 +1869,13 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "REAL"
     public final void mREAL() throws RecognitionException {
         try {
-            // OCL.g:794:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
-            // OCL.g:795:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // OCL.g:795:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
+            // OCL.g:796:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             {
             mINT(); if (state.failed) return ;
 
 
-            // OCL.g:795:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // OCL.g:796:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1895,14 +1895,14 @@ public class OCLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // OCL.g:795:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // OCL.g:796:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     {
                     match('.'); if (state.failed) return ;
 
                     mINT(); if (state.failed) return ;
 
 
-                    // OCL.g:795:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // OCL.g:796:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -1911,7 +1911,7 @@ public class OCLLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // OCL.g:795:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                            // OCL.g:796:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -1925,7 +1925,7 @@ public class OCLLexer extends Lexer {
                             }
 
 
-                            // OCL.g:795:31: ( '+' | '-' )?
+                            // OCL.g:796:31: ( '+' | '-' )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -1966,7 +1966,7 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // OCL.g:795:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                    // OCL.g:796:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1980,7 +1980,7 @@ public class OCLLexer extends Lexer {
                     }
 
 
-                    // OCL.g:795:64: ( '+' | '-' )?
+                    // OCL.g:796:64: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2033,7 +2033,7 @@ public class OCLLexer extends Lexer {
         try {
             int _type = RANGE_OR_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:797:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
+            // OCL.g:798:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -2074,7 +2074,7 @@ public class OCLLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // OCL.g:798:7: ( INT '..' )=> INT
+                    // OCL.g:799:7: ( INT '..' )=> INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2084,7 +2084,7 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // OCL.g:799:7: ( REAL )=> REAL
+                    // OCL.g:800:7: ( REAL )=> REAL
                     {
                     mREAL(); if (state.failed) return ;
 
@@ -2094,7 +2094,7 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // OCL.g:800:9: INT
+                    // OCL.g:801:9: INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2119,12 +2119,12 @@ public class OCLLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:804:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
-            // OCL.g:805:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
+            // OCL.g:805:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
+            // OCL.g:806:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
             {
             match('\''); if (state.failed) return ;
 
-            // OCL.g:805:10: (~ ( '\\'' | '\\\\' ) | ESC )*
+            // OCL.g:806:10: (~ ( '\\'' | '\\\\' ) | ESC )*
             loop12:
             do {
                 int alt12=3;
@@ -2140,7 +2140,7 @@ public class OCLLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // OCL.g:805:12: ~ ( '\\'' | '\\\\' )
+            	    // OCL.g:806:12: ~ ( '\\'' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2157,7 +2157,7 @@ public class OCLLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // OCL.g:805:27: ESC
+            	    // OCL.g:806:27: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -2189,12 +2189,12 @@ public class OCLLexer extends Lexer {
         try {
             int _type = NON_OCL_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:807:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
-            // OCL.g:808:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
+            // OCL.g:808:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
+            // OCL.g:809:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
             {
             match('\"'); if (state.failed) return ;
 
-            // OCL.g:808:9: (~ ( '\"' | '\\\\' ) | ESC )*
+            // OCL.g:809:9: (~ ( '\"' | '\\\\' ) | ESC )*
             loop13:
             do {
                 int alt13=3;
@@ -2210,7 +2210,7 @@ public class OCLLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // OCL.g:808:11: ~ ( '\"' | '\\\\' )
+            	    // OCL.g:809:11: ~ ( '\"' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2227,7 +2227,7 @@ public class OCLLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // OCL.g:808:25: ESC
+            	    // OCL.g:809:25: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -2257,12 +2257,12 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "ESC"
     public final void mESC() throws RecognitionException {
         try {
-            // OCL.g:821:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
-            // OCL.g:822:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // OCL.g:822:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+            // OCL.g:823:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             {
             match('\\'); if (state.failed) return ;
 
-            // OCL.g:823:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // OCL.g:824:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             int alt17=11;
             switch ( input.LA(1) ) {
             case 'n':
@@ -2337,63 +2337,63 @@ public class OCLLexer extends Lexer {
 
             switch (alt17) {
                 case 1 :
-                    // OCL.g:823:8: 'n'
+                    // OCL.g:824:8: 'n'
                     {
                     match('n'); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // OCL.g:824:8: 'r'
+                    // OCL.g:825:8: 'r'
                     {
                     match('r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // OCL.g:825:8: 't'
+                    // OCL.g:826:8: 't'
                     {
                     match('t'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // OCL.g:826:8: 'b'
+                    // OCL.g:827:8: 'b'
                     {
                     match('b'); if (state.failed) return ;
 
                     }
                     break;
                 case 5 :
-                    // OCL.g:827:8: 'f'
+                    // OCL.g:828:8: 'f'
                     {
                     match('f'); if (state.failed) return ;
 
                     }
                     break;
                 case 6 :
-                    // OCL.g:828:8: '\"'
+                    // OCL.g:829:8: '\"'
                     {
                     match('\"'); if (state.failed) return ;
 
                     }
                     break;
                 case 7 :
-                    // OCL.g:829:8: '\\''
+                    // OCL.g:830:8: '\\''
                     {
                     match('\''); if (state.failed) return ;
 
                     }
                     break;
                 case 8 :
-                    // OCL.g:830:8: '\\\\'
+                    // OCL.g:831:8: '\\\\'
                     {
                     match('\\'); if (state.failed) return ;
 
                     }
                     break;
                 case 9 :
-                    // OCL.g:831:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+                    // OCL.g:832:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
                     {
                     match('u'); if (state.failed) return ;
 
@@ -2412,11 +2412,11 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // OCL.g:832:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+                    // OCL.g:833:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
                     {
                     matchRange('0','3'); if (state.failed) return ;
 
-                    // OCL.g:832:17: ( '0' .. '7' ( '0' .. '7' )? )?
+                    // OCL.g:833:17: ( '0' .. '7' ( '0' .. '7' )? )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -2425,11 +2425,11 @@ public class OCLLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // OCL.g:832:18: '0' .. '7' ( '0' .. '7' )?
+                            // OCL.g:833:18: '0' .. '7' ( '0' .. '7' )?
                             {
                             matchRange('0','7'); if (state.failed) return ;
 
-                            // OCL.g:832:27: ( '0' .. '7' )?
+                            // OCL.g:833:27: ( '0' .. '7' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -2467,11 +2467,11 @@ public class OCLLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // OCL.g:832:45: '4' .. '7' ( '0' .. '7' )?
+                    // OCL.g:833:45: '4' .. '7' ( '0' .. '7' )?
                     {
                     matchRange('4','7'); if (state.failed) return ;
 
-                    // OCL.g:832:54: ( '0' .. '7' )?
+                    // OCL.g:833:54: ( '0' .. '7' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2519,7 +2519,7 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // OCL.g:838:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // OCL.g:839:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
             // OCL.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -2549,8 +2549,8 @@ public class OCLLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // OCL.g:845:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // OCL.g:846:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // OCL.g:846:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // OCL.g:847:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -2564,7 +2564,7 @@ public class OCLLexer extends Lexer {
             }
 
 
-            // OCL.g:846:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // OCL.g:847:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
@@ -2614,7 +2614,7 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // OCL.g:854:6: ( '\\U0003' .. '\\U0377' )
+            // OCL.g:855:6: ( '\\U0003' .. '\\U0377' )
             // OCL.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {
@@ -3195,8 +3195,8 @@ public class OCLLexer extends Lexer {
 
     // $ANTLR start synpred1_OCL
     public final void synpred1_OCL_fragment() throws RecognitionException {
-        // OCL.g:798:7: ( INT '..' )
-        // OCL.g:798:9: INT '..'
+        // OCL.g:799:7: ( INT '..' )
+        // OCL.g:799:9: INT '..'
         {
         mINT(); if (state.failed) return ;
 
@@ -3212,8 +3212,8 @@ public class OCLLexer extends Lexer {
 
     // $ANTLR start synpred2_OCL
     public final void synpred2_OCL_fragment() throws RecognitionException {
-        // OCL.g:799:7: ( REAL )
-        // OCL.g:799:9: REAL
+        // OCL.g:800:7: ( REAL )
+        // OCL.g:800:9: REAL
         {
         mREAL(); if (state.failed) return ;
 

@@ -244,7 +244,8 @@ expression returns [ASTExpression n]
     )*
 
     nCndImplies=conditionalImpliesExpression
-    { if ( $nCndImplies.n != null ) {
+    { 
+        if ( $nCndImplies.n != null ) {
     	 $n = $nCndImplies.n;
          $n.setStartToken(tok);
       }
@@ -415,7 +416,7 @@ unaryExpression returns [ASTExpression n]
     ;
 
 
-/* ------------------------------------
+/* ------------------------------------<fileset file="${parser.dir}/ocl/OCL.gpart" />
   postfixExpression ::= 
       primaryExpression { ( "." | "->" ) propertyCall }
 */

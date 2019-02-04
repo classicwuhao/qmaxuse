@@ -1,4 +1,4 @@
-// $ANTLR 3.4 TestSuite.g 2019-02-01 14:46:12
+// $ANTLR 3.4 TestSuite.g 2019-02-04 18:28:59
  
 /*
  * USE - UML based specification environment
@@ -1198,7 +1198,8 @@ public class TestSuiteParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            if ( state.backtracking==0 ) { if ( nCndImplies != null ) {
+            if ( state.backtracking==0 ) { 
+                    if ( nCndImplies != null ) {
                 	 retval.n = nCndImplies;
                      retval.n.setStartToken(tok);
                   }
@@ -1231,7 +1232,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "paramList"
-    // TestSuite.g:264:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
+    // TestSuite.g:265:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
     public final List<ASTVariableDeclaration> paramList() throws RecognitionException {
         List<ASTVariableDeclaration> paramList = null;
 
@@ -1241,12 +1242,12 @@ public class TestSuiteParser extends BaseParser {
 
          paramList = new ArrayList<ASTVariableDeclaration>(); 
         try {
-            // TestSuite.g:266:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
-            // TestSuite.g:267:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
+            // TestSuite.g:267:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
+            // TestSuite.g:268:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
             {
             match(input,LPAREN,FOLLOW_LPAREN_in_paramList873); if (state.failed) return paramList;
 
-            // TestSuite.g:268:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
+            // TestSuite.g:269:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -1255,7 +1256,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt17) {
                 case 1 :
-                    // TestSuite.g:269:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
+                    // TestSuite.g:270:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
                     {
                     pushFollow(FOLLOW_variableDeclaration_in_paramList890);
                     v=variableDeclaration();
@@ -1265,7 +1266,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { paramList.add(v); }
 
-                    // TestSuite.g:270:7: ( COMMA v= variableDeclaration )*
+                    // TestSuite.g:271:7: ( COMMA v= variableDeclaration )*
                     loop16:
                     do {
                         int alt16=2;
@@ -1278,7 +1279,7 @@ public class TestSuiteParser extends BaseParser {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // TestSuite.g:270:9: COMMA v= variableDeclaration
+                    	    // TestSuite.g:271:9: COMMA v= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_paramList902); if (state.failed) return paramList;
 
@@ -1325,7 +1326,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "idList"
-    // TestSuite.g:278:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
+    // TestSuite.g:279:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
     public final List idList() throws RecognitionException {
         List idList = null;
 
@@ -1335,14 +1336,14 @@ public class TestSuiteParser extends BaseParser {
 
          idList = new ArrayList(); 
         try {
-            // TestSuite.g:280:5: (id0= IDENT ( COMMA idn= IDENT )* )
-            // TestSuite.g:281:5: id0= IDENT ( COMMA idn= IDENT )*
+            // TestSuite.g:281:5: (id0= IDENT ( COMMA idn= IDENT )* )
+            // TestSuite.g:282:5: id0= IDENT ( COMMA idn= IDENT )*
             {
             id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList955); if (state.failed) return idList;
 
             if ( state.backtracking==0 ) { idList.add(id0); }
 
-            // TestSuite.g:282:5: ( COMMA idn= IDENT )*
+            // TestSuite.g:283:5: ( COMMA idn= IDENT )*
             loop18:
             do {
                 int alt18=2;
@@ -1355,7 +1356,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // TestSuite.g:282:7: COMMA idn= IDENT
+            	    // TestSuite.g:283:7: COMMA idn= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_idList965); if (state.failed) return idList;
 
@@ -1390,7 +1391,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "variableDeclaration"
-    // TestSuite.g:290:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
+    // TestSuite.g:291:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
     public final ASTVariableDeclaration variableDeclaration() throws RecognitionException {
         ASTVariableDeclaration n = null;
 
@@ -1400,8 +1401,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:291:5: (name= IDENT COLON t= type )
-            // TestSuite.g:292:5: name= IDENT COLON t= type
+            // TestSuite.g:292:5: (name= IDENT COLON t= type )
+            // TestSuite.g:293:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration1000); if (state.failed) return n;
 
@@ -1433,7 +1434,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "conditionalImpliesExpression"
-    // TestSuite.g:300:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
+    // TestSuite.g:301:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
     public final ASTExpression conditionalImpliesExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1445,8 +1446,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:301:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
-            // TestSuite.g:302:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
+            // TestSuite.g:302:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
+            // TestSuite.g:303:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
             {
             pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1042);
             nCndOrExp=conditionalOrExpression();
@@ -1456,7 +1457,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndOrExp;}
 
-            // TestSuite.g:303:5: (op= 'implies' n1= conditionalOrExpression )*
+            // TestSuite.g:304:5: (op= 'implies' n1= conditionalOrExpression )*
             loop19:
             do {
                 int alt19=2;
@@ -1469,7 +1470,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // TestSuite.g:303:7: op= 'implies' n1= conditionalOrExpression
+            	    // TestSuite.g:304:7: op= 'implies' n1= conditionalOrExpression
             	    {
             	    op=(Token)match(input,75,FOLLOW_75_in_conditionalImpliesExpression1055); if (state.failed) return n;
 
@@ -1508,7 +1509,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "conditionalOrExpression"
-    // TestSuite.g:312:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
+    // TestSuite.g:313:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
     public final ASTExpression conditionalOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1520,8 +1521,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:313:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
-            // TestSuite.g:314:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
+            // TestSuite.g:314:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
+            // TestSuite.g:315:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
             {
             pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1104);
             nCndXorExp=conditionalXOrExpression();
@@ -1531,7 +1532,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndXorExp;}
 
-            // TestSuite.g:315:5: (op= 'or' n1= conditionalXOrExpression )*
+            // TestSuite.g:316:5: (op= 'or' n1= conditionalXOrExpression )*
             loop20:
             do {
                 int alt20=2;
@@ -1544,7 +1545,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // TestSuite.g:315:7: op= 'or' n1= conditionalXOrExpression
+            	    // TestSuite.g:316:7: op= 'or' n1= conditionalXOrExpression
             	    {
             	    op=(Token)match(input,96,FOLLOW_96_in_conditionalOrExpression1117); if (state.failed) return n;
 
@@ -1583,7 +1584,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "conditionalXOrExpression"
-    // TestSuite.g:324:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
+    // TestSuite.g:325:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
     public final ASTExpression conditionalXOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1595,8 +1596,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:325:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
-            // TestSuite.g:326:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
+            // TestSuite.g:326:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
+            // TestSuite.g:327:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
             {
             pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1165);
             nCndAndExp=conditionalAndExpression();
@@ -1606,7 +1607,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndAndExp;}
 
-            // TestSuite.g:327:5: (op= 'xor' n1= conditionalAndExpression )*
+            // TestSuite.g:328:5: (op= 'xor' n1= conditionalAndExpression )*
             loop21:
             do {
                 int alt21=2;
@@ -1619,7 +1620,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // TestSuite.g:327:7: op= 'xor' n1= conditionalAndExpression
+            	    // TestSuite.g:328:7: op= 'xor' n1= conditionalAndExpression
             	    {
             	    op=(Token)match(input,109,FOLLOW_109_in_conditionalXOrExpression1178); if (state.failed) return n;
 
@@ -1658,7 +1659,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "conditionalAndExpression"
-    // TestSuite.g:336:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
+    // TestSuite.g:337:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
     public final ASTExpression conditionalAndExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1670,8 +1671,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:337:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
-            // TestSuite.g:338:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
+            // TestSuite.g:338:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
+            // TestSuite.g:339:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
             {
             pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1226);
             nEqExp=equalityExpression();
@@ -1681,7 +1682,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nEqExp;}
 
-            // TestSuite.g:339:5: (op= 'and' n1= equalityExpression )*
+            // TestSuite.g:340:5: (op= 'and' n1= equalityExpression )*
             loop22:
             do {
                 int alt22=2;
@@ -1694,7 +1695,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // TestSuite.g:339:7: op= 'and' n1= equalityExpression
+            	    // TestSuite.g:340:7: op= 'and' n1= equalityExpression
             	    {
             	    op=(Token)match(input,53,FOLLOW_53_in_conditionalAndExpression1239); if (state.failed) return n;
 
@@ -1733,7 +1734,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "equalityExpression"
-    // TestSuite.g:348:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
+    // TestSuite.g:349:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
     public final ASTExpression equalityExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1745,8 +1746,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:350:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
-            // TestSuite.g:351:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // TestSuite.g:351:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
+            // TestSuite.g:352:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             {
             pushFollow(FOLLOW_relationalExpression_in_equalityExpression1291);
             nRelExp=relationalExpression();
@@ -1756,7 +1757,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nRelExp;}
 
-            // TestSuite.g:352:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // TestSuite.g:353:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             loop23:
             do {
                 int alt23=2;
@@ -1769,7 +1770,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // TestSuite.g:352:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
+            	    // TestSuite.g:353:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -1820,7 +1821,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "relationalExpression"
-    // TestSuite.g:362:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
+    // TestSuite.g:363:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
     public final ASTExpression relationalExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1832,8 +1833,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:364:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
-            // TestSuite.g:365:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // TestSuite.g:365:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
+            // TestSuite.g:366:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             {
             pushFollow(FOLLOW_additiveExpression_in_relationalExpression1369);
             nAddiExp=additiveExpression();
@@ -1843,7 +1844,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nAddiExp;}
 
-            // TestSuite.g:366:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // TestSuite.g:367:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             loop24:
             do {
                 int alt24=2;
@@ -1856,7 +1857,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt24) {
             	case 1 :
-            	    // TestSuite.g:366:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
+            	    // TestSuite.g:367:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -1907,7 +1908,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "additiveExpression"
-    // TestSuite.g:376:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
+    // TestSuite.g:377:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
     public final ASTExpression additiveExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1919,8 +1920,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:378:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
-            // TestSuite.g:379:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // TestSuite.g:379:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
+            // TestSuite.g:380:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             {
             pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1455);
             nMulExp=multiplicativeExpression();
@@ -1930,7 +1931,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nMulExp;}
 
-            // TestSuite.g:380:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // TestSuite.g:381:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             loop25:
             do {
                 int alt25=2;
@@ -1943,7 +1944,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt25) {
             	case 1 :
-            	    // TestSuite.g:380:7: ( PLUS | MINUS ) n1= multiplicativeExpression
+            	    // TestSuite.g:381:7: ( PLUS | MINUS ) n1= multiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -1994,7 +1995,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // TestSuite.g:391:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
+    // TestSuite.g:392:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
     public final ASTExpression multiplicativeExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2006,8 +2007,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:393:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
-            // TestSuite.g:394:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // TestSuite.g:394:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
+            // TestSuite.g:395:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             {
             pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1533);
             nUnExp=unaryExpression();
@@ -2017,7 +2018,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nUnExp;}
 
-            // TestSuite.g:395:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // TestSuite.g:396:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             loop26:
             do {
                 int alt26=2;
@@ -2030,7 +2031,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // TestSuite.g:395:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
+            	    // TestSuite.g:396:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2081,7 +2082,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "unaryExpression"
-    // TestSuite.g:407:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
+    // TestSuite.g:408:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
     public final ASTExpression unaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2093,7 +2094,7 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:409:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
+            // TestSuite.g:410:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -2113,10 +2114,10 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt27) {
                 case 1 :
-                    // TestSuite.g:410:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // TestSuite.g:411:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
                     {
-                    // TestSuite.g:410:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
-                    // TestSuite.g:410:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
+                    // TestSuite.g:411:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // TestSuite.g:411:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
                     {
                     if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2146,7 +2147,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:414:7: nPosExp= postfixExpression
+                    // TestSuite.g:415:7: nPosExp= postfixExpression
                     {
                     pushFollow(FOLLOW_postfixExpression_in_unaryExpression1671);
                     nPosExp=postfixExpression();
@@ -2176,7 +2177,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "postfixExpression"
-    // TestSuite.g:422:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
+    // TestSuite.g:423:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
     public final ASTExpression postfixExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2188,8 +2189,8 @@ public class TestSuiteParser extends BaseParser {
 
          boolean arrow = false; 
         try {
-            // TestSuite.g:424:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
-            // TestSuite.g:425:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // TestSuite.g:425:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
+            // TestSuite.g:426:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             {
             pushFollow(FOLLOW_primaryExpression_in_postfixExpression1704);
             nPrimExp=primaryExpression();
@@ -2199,7 +2200,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nPrimExp; }
 
-            // TestSuite.g:426:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // TestSuite.g:427:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             loop29:
             do {
                 int alt29=2;
@@ -2230,9 +2231,9 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt29) {
             	case 1 :
-            	    // TestSuite.g:427:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
+            	    // TestSuite.g:428:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
             	    {
-            	    // TestSuite.g:427:6: ( ARROW | DOT )
+            	    // TestSuite.g:428:6: ( ARROW | DOT )
             	    int alt28=2;
             	    int LA28_0 = input.LA(1);
 
@@ -2252,7 +2253,7 @@ public class TestSuiteParser extends BaseParser {
             	    }
             	    switch (alt28) {
             	        case 1 :
-            	            // TestSuite.g:427:8: ARROW
+            	            // TestSuite.g:428:8: ARROW
             	            {
             	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression1722); if (state.failed) return n;
 
@@ -2261,7 +2262,7 @@ public class TestSuiteParser extends BaseParser {
             	            }
             	            break;
             	        case 2 :
-            	            // TestSuite.g:427:34: DOT
+            	            // TestSuite.g:428:34: DOT
             	            {
             	            match(input,DOT,FOLLOW_DOT_in_postfixExpression1728); if (state.failed) return n;
 
@@ -2308,7 +2309,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "primaryExpression"
-    // TestSuite.g:443:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
+    // TestSuite.g:444:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
     public final ASTExpression primaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2329,7 +2330,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:444:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
+            // TestSuite.g:445:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
             int alt33=7;
             switch ( input.LA(1) ) {
             case HASH:
@@ -2496,7 +2497,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt33) {
                 case 1 :
-                    // TestSuite.g:445:7: nLit= literal
+                    // TestSuite.g:446:7: nLit= literal
                     {
                     pushFollow(FOLLOW_literal_in_primaryExpression1779);
                     nLit=literal();
@@ -2509,7 +2510,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:446:7: nOr= objectReference
+                    // TestSuite.g:447:7: nOr= objectReference
                     {
                     pushFollow(FOLLOW_objectReference_in_primaryExpression1793);
                     nOr=objectReference();
@@ -2522,7 +2523,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:447:7: nPc= propertyCall[null, false]
+                    // TestSuite.g:448:7: nPc= propertyCall[null, false]
                     {
                     pushFollow(FOLLOW_propertyCall_in_primaryExpression1805);
                     nPc=propertyCall(null, false);
@@ -2535,7 +2536,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:448:7: LPAREN nExp= expression RPAREN
+                    // TestSuite.g:449:7: LPAREN nExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression1816); if (state.failed) return n;
 
@@ -2552,7 +2553,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:449:7: nIfExp= ifExpression
+                    // TestSuite.g:450:7: nIfExp= ifExpression
                     {
                     pushFollow(FOLLOW_ifExpression_in_primaryExpression1834);
                     nIfExp=ifExpression();
@@ -2565,7 +2566,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // TestSuite.g:450:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
+                    // TestSuite.g:451:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
                     {
                     id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression1846); if (state.failed) return n;
 
@@ -2575,7 +2576,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTAllInstancesExpression(id1); }
 
-                    // TestSuite.g:452:9: ( AT 'pre' )?
+                    // TestSuite.g:453:9: ( AT 'pre' )?
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
@@ -2584,7 +2585,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt30) {
                         case 1 :
-                            // TestSuite.g:452:11: AT 'pre'
+                            // TestSuite.g:453:11: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression1873); if (state.failed) return n;
 
@@ -2598,7 +2599,7 @@ public class TestSuiteParser extends BaseParser {
                     }
 
 
-                    // TestSuite.g:453:9: ( LPAREN RPAREN )?
+                    // TestSuite.g:454:9: ( LPAREN RPAREN )?
                     int alt31=2;
                     int LA31_0 = input.LA(1);
 
@@ -2607,7 +2608,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt31) {
                         case 1 :
-                            // TestSuite.g:453:11: LPAREN RPAREN
+                            // TestSuite.g:454:11: LPAREN RPAREN
                             {
                             match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression1893); if (state.failed) return n;
 
@@ -2622,7 +2623,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // TestSuite.g:454:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
+                    // TestSuite.g:455:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
                     {
                     id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression1908); if (state.failed) return n;
 
@@ -2630,8 +2631,8 @@ public class TestSuiteParser extends BaseParser {
 
                     match(input,59,FOLLOW_59_in_primaryExpression1912); if (state.failed) return n;
 
-                    // TestSuite.g:454:31: ( LPAREN idExp= expression RPAREN )
-                    // TestSuite.g:454:33: LPAREN idExp= expression RPAREN
+                    // TestSuite.g:455:31: ( LPAREN idExp= expression RPAREN )
+                    // TestSuite.g:455:33: LPAREN idExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression1916); if (state.failed) return n;
 
@@ -2648,7 +2649,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTObjectByUseIdExpression(id2, (idExp!=null?idExp.n:null)); }
 
-                    // TestSuite.g:456:7: ( AT 'pre' )?
+                    // TestSuite.g:457:7: ( AT 'pre' )?
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
@@ -2657,7 +2658,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt32) {
                         case 1 :
-                            // TestSuite.g:456:9: AT 'pre'
+                            // TestSuite.g:457:9: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression1942); if (state.failed) return n;
 
@@ -2691,7 +2692,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "objectReference"
-    // TestSuite.g:460:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
+    // TestSuite.g:461:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
     public final ASTExpression objectReference() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2699,8 +2700,8 @@ public class TestSuiteParser extends BaseParser {
         Token objectName=null;
 
         try {
-            // TestSuite.g:461:3: ( AT objectName= IDENT )
-            // TestSuite.g:462:3: AT objectName= IDENT
+            // TestSuite.g:462:3: ( AT objectName= IDENT )
+            // TestSuite.g:463:3: AT objectName= IDENT
             {
             match(input,AT,FOLLOW_AT_in_objectReference1970); if (state.failed) return n;
 
@@ -2726,7 +2727,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "propertyCall"
-    // TestSuite.g:476:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
+    // TestSuite.g:477:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
     public final ASTExpression propertyCall(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTExpression n = null;
 
@@ -2743,7 +2744,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:477:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
+            // TestSuite.g:478:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
             int alt34=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -2796,7 +2797,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt34) {
                 case 1 :
-                    // TestSuite.g:481:7: {...}?{...}?nExpQuery= queryExpression[source]
+                    // TestSuite.g:482:7: {...}?{...}?nExpQuery= queryExpression[source]
                     {
                     if ( !(( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )) ) {
                         if (state.backtracking>0) {state.failed=true; return n;}
@@ -2819,7 +2820,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:484:7: nExpIterate= iterateExpression[source]
+                    // TestSuite.g:485:7: nExpIterate= iterateExpression[source]
                     {
                     pushFollow(FOLLOW_iterateExpression_in_propertyCall2056);
                     nExpIterate=iterateExpression(source);
@@ -2832,7 +2833,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:485:7: nExpOperation= operationExpression[source, followsArrow]
+                    // TestSuite.g:486:7: nExpOperation= operationExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_operationExpression_in_propertyCall2069);
                     nExpOperation=operationExpression(source, followsArrow);
@@ -2845,7 +2846,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:486:7: nExpType= typeExpression[source, followsArrow]
+                    // TestSuite.g:487:7: nExpType= typeExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_typeExpression_in_propertyCall2082);
                     nExpType=typeExpression(source, followsArrow);
@@ -2858,7 +2859,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:487:7: nExpInState= inStateExpression[source, followsArrow]
+                    // TestSuite.g:488:7: nExpInState= inStateExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_inStateExpression_in_propertyCall2095);
                     nExpInState=inStateExpression(source, followsArrow);
@@ -2888,7 +2889,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "queryExpression"
-    // TestSuite.g:496:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
+    // TestSuite.g:497:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
     public final ASTExpression queryExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -2901,14 +2902,14 @@ public class TestSuiteParser extends BaseParser {
 
         ASTElemVarsDeclaration decl = new ASTElemVarsDeclaration(); 
         try {
-            // TestSuite.g:497:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
-            // TestSuite.g:498:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
+            // TestSuite.g:498:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
+            // TestSuite.g:499:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
             {
             op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression2130); if (state.failed) return n;
 
             match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression2137); if (state.failed) return n;
 
-            // TestSuite.g:500:5: (decls= elemVarsDeclaration BAR )?
+            // TestSuite.g:501:5: (decls= elemVarsDeclaration BAR )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -2921,7 +2922,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt35) {
                 case 1 :
-                    // TestSuite.g:500:7: decls= elemVarsDeclaration BAR
+                    // TestSuite.g:501:7: decls= elemVarsDeclaration BAR
                     {
                     pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression2148);
                     decls=elemVarsDeclaration();
@@ -2967,7 +2968,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "iterateExpression"
-    // TestSuite.g:514:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
+    // TestSuite.g:515:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
     public final ASTExpression iterateExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -2981,8 +2982,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:514:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
-            // TestSuite.g:515:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
+            // TestSuite.g:515:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
+            // TestSuite.g:516:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
             {
             i=(Token)match(input,82,FOLLOW_82_in_iterateExpression2201); if (state.failed) return n;
 
@@ -3036,7 +3037,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "operationExpression"
-    // TestSuite.g:536:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
+    // TestSuite.g:537:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
     public final TestSuiteParser.operationExpression_return operationExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         TestSuiteParser.operationExpression_return retval = new TestSuiteParser.operationExpression_return();
         retval.start = input.LT(1);
@@ -3049,14 +3050,14 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:538:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
-            // TestSuite.g:539:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // TestSuite.g:539:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
+            // TestSuite.g:540:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression2285); if (state.failed) return retval;
 
             if ( state.backtracking==0 ) { retval.n = new ASTOperationExpression(name, source, followsArrow); }
 
-            // TestSuite.g:545:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
+            // TestSuite.g:546:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -3065,7 +3066,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt39) {
                 case 1 :
-                    // TestSuite.g:545:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // TestSuite.g:546:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     {
                     match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2307); if (state.failed) return retval;
 
@@ -3077,7 +3078,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addExplicitRolenameOrQualifier((rolename!=null?rolename.n:null)); }
 
-                    // TestSuite.g:547:9: ( COMMA rolename= expression )*
+                    // TestSuite.g:548:9: ( COMMA rolename= expression )*
                     loop36:
                     do {
                         int alt36=2;
@@ -3090,7 +3091,7 @@ public class TestSuiteParser extends BaseParser {
 
                         switch (alt36) {
                     	case 1 :
-                    	    // TestSuite.g:547:10: COMMA rolename= expression
+                    	    // TestSuite.g:548:10: COMMA rolename= expression
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2333); if (state.failed) return retval;
 
@@ -3113,7 +3114,7 @@ public class TestSuiteParser extends BaseParser {
 
                     match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2349); if (state.failed) return retval;
 
-                    // TestSuite.g:550:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // TestSuite.g:551:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     int alt38=2;
                     int LA38_0 = input.LA(1);
 
@@ -3122,7 +3123,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt38) {
                         case 1 :
-                            // TestSuite.g:550:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
+                            // TestSuite.g:551:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2366); if (state.failed) return retval;
 
@@ -3134,7 +3135,7 @@ public class TestSuiteParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addQualifier((rolename!=null?rolename.n:null)); }
 
-                            // TestSuite.g:552:11: ( COMMA rolename= expression )*
+                            // TestSuite.g:553:11: ( COMMA rolename= expression )*
                             loop37:
                             do {
                                 int alt37=2;
@@ -3147,7 +3148,7 @@ public class TestSuiteParser extends BaseParser {
 
                                 switch (alt37) {
                             	case 1 :
-                            	    // TestSuite.g:552:12: COMMA rolename= expression
+                            	    // TestSuite.g:553:12: COMMA rolename= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2396); if (state.failed) return retval;
 
@@ -3182,7 +3183,7 @@ public class TestSuiteParser extends BaseParser {
             }
 
 
-            // TestSuite.g:557:5: ( AT 'pre' )?
+            // TestSuite.g:558:5: ( AT 'pre' )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -3191,7 +3192,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt40) {
                 case 1 :
-                    // TestSuite.g:557:7: AT 'pre'
+                    // TestSuite.g:558:7: AT 'pre'
                     {
                     match(input,AT,FOLLOW_AT_in_operationExpression2439); if (state.failed) return retval;
 
@@ -3205,7 +3206,7 @@ public class TestSuiteParser extends BaseParser {
             }
 
 
-            // TestSuite.g:559:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // TestSuite.g:560:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -3214,13 +3215,13 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt43) {
                 case 1 :
-                    // TestSuite.g:560:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
+                    // TestSuite.g:561:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression2466); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.hasParentheses(); }
 
-                    // TestSuite.g:561:7: (e= expression ( COMMA e= expression )* )?
+                    // TestSuite.g:562:7: (e= expression ( COMMA e= expression )* )?
                     int alt42=2;
                     int LA42_0 = input.LA(1);
 
@@ -3229,7 +3230,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt42) {
                         case 1 :
-                            // TestSuite.g:562:7: e= expression ( COMMA e= expression )*
+                            // TestSuite.g:563:7: e= expression ( COMMA e= expression )*
                             {
                             pushFollow(FOLLOW_expression_in_operationExpression2487);
                             e=expression();
@@ -3239,7 +3240,7 @@ public class TestSuiteParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addArg((e!=null?e.n:null)); }
 
-                            // TestSuite.g:563:7: ( COMMA e= expression )*
+                            // TestSuite.g:564:7: ( COMMA e= expression )*
                             loop41:
                             do {
                                 int alt41=2;
@@ -3252,7 +3253,7 @@ public class TestSuiteParser extends BaseParser {
 
                                 switch (alt41) {
                             	case 1 :
-                            	    // TestSuite.g:563:9: COMMA e= expression
+                            	    // TestSuite.g:564:9: COMMA e= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2499); if (state.failed) return retval;
 
@@ -3310,7 +3311,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "inStateExpression"
-    // TestSuite.g:570:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
+    // TestSuite.g:571:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
     public final ASTInStateExpression inStateExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTInStateExpression n = null;
 
@@ -3319,8 +3320,8 @@ public class TestSuiteParser extends BaseParser {
         Token s=null;
 
         try {
-            // TestSuite.g:571:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
-            // TestSuite.g:572:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
+            // TestSuite.g:572:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
+            // TestSuite.g:573:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
             {
             opToken=(Token)match(input,90,FOLLOW_90_in_inStateExpression2560); if (state.failed) return n;
 
@@ -3350,7 +3351,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "typeExpression"
-    // TestSuite.g:584:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
+    // TestSuite.g:585:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
     public final ASTTypeArgExpression typeExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTTypeArgExpression n = null;
 
@@ -3360,8 +3361,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token opToken = null; 
         try {
-            // TestSuite.g:587:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
-            // TestSuite.g:588:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
+            // TestSuite.g:588:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
+            // TestSuite.g:589:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
             {
             if ( state.backtracking==0 ) { opToken = input.LT(1); }
 
@@ -3407,7 +3408,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "elemVarsDeclaration"
-    // TestSuite.g:599:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
+    // TestSuite.g:600:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
     public final ASTElemVarsDeclaration elemVarsDeclaration() throws RecognitionException {
         ASTElemVarsDeclaration n = null;
 
@@ -3420,14 +3421,14 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:600:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
-            // TestSuite.g:601:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // TestSuite.g:601:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
+            // TestSuite.g:602:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
             {
             if ( state.backtracking==0 ) { n = new ASTElemVarsDeclaration(); }
 
             var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2683); if (state.failed) return n;
 
-            // TestSuite.g:602:17: ( COLON t= type )?
+            // TestSuite.g:603:17: ( COLON t= type )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -3436,7 +3437,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt44) {
                 case 1 :
-                    // TestSuite.g:602:18: COLON t= type
+                    // TestSuite.g:603:18: COLON t= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2686); if (state.failed) return n;
 
@@ -3454,7 +3455,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n.addDeclaration(var1, t);}
 
-            // TestSuite.g:603:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // TestSuite.g:604:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
             loop46:
             do {
                 int alt46=2;
@@ -3467,13 +3468,13 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt46) {
             	case 1 :
-            	    // TestSuite.g:603:5: COMMA varN= IDENT ( COLON tN= type )?
+            	    // TestSuite.g:604:5: COMMA varN= IDENT ( COLON tN= type )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration2700); if (state.failed) return n;
 
             	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2706); if (state.failed) return n;
 
-            	    // TestSuite.g:603:24: ( COLON tN= type )?
+            	    // TestSuite.g:604:24: ( COLON tN= type )?
             	    int alt45=2;
             	    int LA45_0 = input.LA(1);
 
@@ -3482,7 +3483,7 @@ public class TestSuiteParser extends BaseParser {
             	    }
             	    switch (alt45) {
             	        case 1 :
-            	            // TestSuite.g:603:25: COLON tN= type
+            	            // TestSuite.g:604:25: COLON tN= type
             	            {
             	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2709); if (state.failed) return n;
 
@@ -3527,7 +3528,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "variableInitialization"
-    // TestSuite.g:611:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
+    // TestSuite.g:612:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
     public final ASTVariableInitialization variableInitialization() throws RecognitionException {
         ASTVariableInitialization n = null;
 
@@ -3539,8 +3540,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:612:5: (name= IDENT COLON t= type EQUAL e= expression )
-            // TestSuite.g:613:5: name= IDENT COLON t= type EQUAL e= expression
+            // TestSuite.g:613:5: (name= IDENT COLON t= type EQUAL e= expression )
+            // TestSuite.g:614:5: name= IDENT COLON t= type EQUAL e= expression
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization2743); if (state.failed) return n;
 
@@ -3580,7 +3581,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "ifExpression"
-    // TestSuite.g:622:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
+    // TestSuite.g:623:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
     public final ASTExpression ifExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3594,8 +3595,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:623:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
-            // TestSuite.g:624:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
+            // TestSuite.g:624:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
+            // TestSuite.g:625:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
             {
             i=(Token)match(input,74,FOLLOW_74_in_ifExpression2787); if (state.failed) return n;
 
@@ -3643,7 +3644,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "literal"
-    // TestSuite.g:643:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
+    // TestSuite.g:644:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
     public final ASTExpression literal() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3666,7 +3667,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:644:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
+            // TestSuite.g:645:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
             int alt47=12;
             switch ( input.LA(1) ) {
             case 106:
@@ -3761,7 +3762,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt47) {
                 case 1 :
-                    // TestSuite.g:645:7: t= 'true'
+                    // TestSuite.g:646:7: t= 'true'
                     {
                     t=(Token)match(input,106,FOLLOW_106_in_literal2844); if (state.failed) return n;
 
@@ -3770,7 +3771,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:646:7: f= 'false'
+                    // TestSuite.g:647:7: f= 'false'
                     {
                     f=(Token)match(input,71,FOLLOW_71_in_literal2858); if (state.failed) return n;
 
@@ -3779,7 +3780,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:647:7: i= INT
+                    // TestSuite.g:648:7: i= INT
                     {
                     i=(Token)match(input,INT,FOLLOW_INT_in_literal2871); if (state.failed) return n;
 
@@ -3788,7 +3789,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:648:7: r= REAL
+                    // TestSuite.g:649:7: r= REAL
                     {
                     r=(Token)match(input,REAL,FOLLOW_REAL_in_literal2886); if (state.failed) return n;
 
@@ -3797,7 +3798,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:649:7: s= STRING
+                    // TestSuite.g:650:7: s= STRING
                     {
                     s=(Token)match(input,STRING,FOLLOW_STRING_in_literal2900); if (state.failed) return n;
 
@@ -3806,7 +3807,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // TestSuite.g:650:7: HASH enumLit= IDENT
+                    // TestSuite.g:651:7: HASH enumLit= IDENT
                     {
                     match(input,HASH,FOLLOW_HASH_in_literal2910); if (state.failed) return n;
 
@@ -3817,7 +3818,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // TestSuite.g:651:7: enumName= IDENT '::' enumLit= IDENT
+                    // TestSuite.g:652:7: enumName= IDENT '::' enumLit= IDENT
                     {
                     enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal2926); if (state.failed) return n;
 
@@ -3830,7 +3831,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // TestSuite.g:652:7: nColIt= collectionLiteral
+                    // TestSuite.g:653:7: nColIt= collectionLiteral
                     {
                     pushFollow(FOLLOW_collectionLiteral_in_literal2944);
                     nColIt=collectionLiteral();
@@ -3843,7 +3844,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // TestSuite.g:653:7: nEColIt= emptyCollectionLiteral
+                    // TestSuite.g:654:7: nEColIt= emptyCollectionLiteral
                     {
                     pushFollow(FOLLOW_emptyCollectionLiteral_in_literal2956);
                     nEColIt=emptyCollectionLiteral();
@@ -3856,7 +3857,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // TestSuite.g:654:7: nUndLit= undefinedLiteral
+                    // TestSuite.g:655:7: nUndLit= undefinedLiteral
                     {
                     pushFollow(FOLLOW_undefinedLiteral_in_literal2968);
                     nUndLit=undefinedLiteral();
@@ -3869,7 +3870,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // TestSuite.g:655:7: nTupleLit= tupleLiteral
+                    // TestSuite.g:656:7: nTupleLit= tupleLiteral
                     {
                     pushFollow(FOLLOW_tupleLiteral_in_literal2980);
                     nTupleLit=tupleLiteral();
@@ -3882,7 +3883,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 12 :
-                    // TestSuite.g:656:7: un= STAR
+                    // TestSuite.g:657:7: un= STAR
                     {
                     un=(Token)match(input,STAR,FOLLOW_STAR_in_literal2992); if (state.failed) return n;
 
@@ -3908,7 +3909,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "collectionLiteral"
-    // TestSuite.g:664:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
+    // TestSuite.g:665:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
     public final ASTCollectionLiteral collectionLiteral() throws RecognitionException {
         ASTCollectionLiteral n = null;
 
@@ -3918,8 +3919,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:666:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
-            // TestSuite.g:667:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
+            // TestSuite.g:667:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
+            // TestSuite.g:668:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3939,7 +3940,7 @@ public class TestSuiteParser extends BaseParser {
 
             match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral3059); if (state.failed) return n;
 
-            // TestSuite.g:671:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
+            // TestSuite.g:672:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -3948,7 +3949,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt49) {
                 case 1 :
-                    // TestSuite.g:672:7: ci= collectionItem ( COMMA ci= collectionItem )*
+                    // TestSuite.g:673:7: ci= collectionItem ( COMMA ci= collectionItem )*
                     {
                     pushFollow(FOLLOW_collectionItem_in_collectionLiteral3076);
                     ci=collectionItem();
@@ -3958,7 +3959,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addItem(ci); }
 
-                    // TestSuite.g:673:7: ( COMMA ci= collectionItem )*
+                    // TestSuite.g:674:7: ( COMMA ci= collectionItem )*
                     loop48:
                     do {
                         int alt48=2;
@@ -3971,7 +3972,7 @@ public class TestSuiteParser extends BaseParser {
 
                         switch (alt48) {
                     	case 1 :
-                    	    // TestSuite.g:673:9: COMMA ci= collectionItem
+                    	    // TestSuite.g:674:9: COMMA ci= collectionItem
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral3089); if (state.failed) return n;
 
@@ -4018,7 +4019,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "collectionItem"
-    // TestSuite.g:682:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
+    // TestSuite.g:683:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
     public final ASTCollectionItem collectionItem() throws RecognitionException {
         ASTCollectionItem n = null;
 
@@ -4028,8 +4029,8 @@ public class TestSuiteParser extends BaseParser {
 
          n = new ASTCollectionItem(); 
         try {
-            // TestSuite.g:684:5: (e= expression ( DOTDOT e= expression )? )
-            // TestSuite.g:685:5: e= expression ( DOTDOT e= expression )?
+            // TestSuite.g:685:5: (e= expression ( DOTDOT e= expression )? )
+            // TestSuite.g:686:5: e= expression ( DOTDOT e= expression )?
             {
             pushFollow(FOLLOW_expression_in_collectionItem3141);
             e=expression();
@@ -4039,7 +4040,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setFirst((e!=null?e.n:null)); }
 
-            // TestSuite.g:686:5: ( DOTDOT e= expression )?
+            // TestSuite.g:687:5: ( DOTDOT e= expression )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -4048,7 +4049,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt50) {
                 case 1 :
-                    // TestSuite.g:686:7: DOTDOT e= expression
+                    // TestSuite.g:687:7: DOTDOT e= expression
                     {
                     match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem3152); if (state.failed) return n;
 
@@ -4084,7 +4085,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "emptyCollectionLiteral"
-    // TestSuite.g:696:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
+    // TestSuite.g:697:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
     public final ASTEmptyCollectionLiteral emptyCollectionLiteral() throws RecognitionException {
         ASTEmptyCollectionLiteral n = null;
 
@@ -4093,7 +4094,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:697:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
+            // TestSuite.g:698:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -4113,7 +4114,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt51) {
                 case 1 :
-                    // TestSuite.g:698:5: 'oclEmpty' LPAREN t= collectionType RPAREN
+                    // TestSuite.g:699:5: 'oclEmpty' LPAREN t= collectionType RPAREN
                     {
                     match(input,89,FOLLOW_89_in_emptyCollectionLiteral3185); if (state.failed) return n;
 
@@ -4132,7 +4133,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:701:5: t= collectionType LBRACE RBRACE
+                    // TestSuite.g:702:5: t= collectionType LBRACE RBRACE
                     {
                     pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3209);
                     t=collectionType();
@@ -4166,7 +4167,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "undefinedLiteral"
-    // TestSuite.g:712:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
+    // TestSuite.g:713:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
     public final ASTUndefinedLiteral undefinedLiteral() throws RecognitionException {
         ASTUndefinedLiteral n = null;
 
@@ -4175,7 +4176,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:713:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
+            // TestSuite.g:714:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
             int alt52=4;
             switch ( input.LA(1) ) {
             case 93:
@@ -4219,7 +4220,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt52) {
                 case 1 :
-                    // TestSuite.g:714:5: 'oclUndefined' LPAREN t= type RPAREN
+                    // TestSuite.g:715:5: 'oclUndefined' LPAREN t= type RPAREN
                     {
                     match(input,93,FOLLOW_93_in_undefinedLiteral3243); if (state.failed) return n;
 
@@ -4238,7 +4239,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:717:5: 'Undefined'
+                    // TestSuite.g:718:5: 'Undefined'
                     {
                     match(input,51,FOLLOW_51_in_undefinedLiteral3265); if (state.failed) return n;
 
@@ -4247,7 +4248,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:720:5: 'null' LPAREN t= type RPAREN
+                    // TestSuite.g:721:5: 'null' LPAREN t= type RPAREN
                     {
                     match(input,87,FOLLOW_87_in_undefinedLiteral3279); if (state.failed) return n;
 
@@ -4266,7 +4267,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:723:5: 'null'
+                    // TestSuite.g:724:5: 'null'
                     {
                     match(input,87,FOLLOW_87_in_undefinedLiteral3301); if (state.failed) return n;
 
@@ -4292,7 +4293,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "tupleLiteral"
-    // TestSuite.g:733:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
+    // TestSuite.g:734:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
     public final ASTTupleLiteral tupleLiteral() throws RecognitionException {
         ASTTupleLiteral n = null;
 
@@ -4302,8 +4303,8 @@ public class TestSuiteParser extends BaseParser {
 
          List tiList = new ArrayList(); 
         try {
-            // TestSuite.g:735:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
-            // TestSuite.g:736:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
+            // TestSuite.g:736:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
+            // TestSuite.g:737:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
             {
             match(input,50,FOLLOW_50_in_tupleLiteral3340); if (state.failed) return n;
 
@@ -4317,7 +4318,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tiList.add(ti); }
 
-            // TestSuite.g:739:5: ( COMMA ti= tupleItem )*
+            // TestSuite.g:740:5: ( COMMA ti= tupleItem )*
             loop53:
             do {
                 int alt53=2;
@@ -4330,7 +4331,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt53) {
             	case 1 :
-            	    // TestSuite.g:739:7: COMMA ti= tupleItem
+            	    // TestSuite.g:740:7: COMMA ti= tupleItem
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral3365); if (state.failed) return n;
 
@@ -4373,7 +4374,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "tupleItem"
-    // TestSuite.g:747:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
+    // TestSuite.g:748:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
     public final ASTTupleItem tupleItem() throws RecognitionException {
         ASTTupleItem n = null;
 
@@ -4385,12 +4386,12 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:748:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
-            // TestSuite.g:749:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // TestSuite.g:749:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
+            // TestSuite.g:750:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem3411); if (state.failed) return n;
 
-            // TestSuite.g:750:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // TestSuite.g:751:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -4425,7 +4426,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt54) {
                 case 1 :
-                    // TestSuite.g:753:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
+                    // TestSuite.g:754:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
                     {
                     match(input,COLON,FOLLOW_COLON_in_tupleItem3450); if (state.failed) return n;
 
@@ -4448,7 +4449,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:756:7: ( COLON | EQUAL ) e= expression
+                    // TestSuite.g:757:7: ( COLON | EQUAL ) e= expression
                     {
                     if ( input.LA(1)==COLON||input.LA(1)==EQUAL ) {
                         input.consume();
@@ -4494,7 +4495,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "type"
-    // TestSuite.g:767:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
+    // TestSuite.g:768:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
     public final ASTType type() throws RecognitionException {
         ASTType n = null;
 
@@ -4508,12 +4509,12 @@ public class TestSuiteParser extends BaseParser {
 
          Token tok = null; 
         try {
-            // TestSuite.g:769:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
-            // TestSuite.g:770:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // TestSuite.g:770:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
+            // TestSuite.g:771:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of type */ }
 
-            // TestSuite.g:771:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // TestSuite.g:772:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             int alt55=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -4546,7 +4547,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt55) {
                 case 1 :
-                    // TestSuite.g:772:7: nTSimple= simpleType
+                    // TestSuite.g:773:7: nTSimple= simpleType
                     {
                     pushFollow(FOLLOW_simpleType_in_type3558);
                     nTSimple=simpleType();
@@ -4559,7 +4560,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:773:7: nTCollection= collectionType
+                    // TestSuite.g:774:7: nTCollection= collectionType
                     {
                     pushFollow(FOLLOW_collectionType_in_type3570);
                     nTCollection=collectionType();
@@ -4572,7 +4573,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:774:7: nTTuple= tupleType
+                    // TestSuite.g:775:7: nTTuple= tupleType
                     {
                     pushFollow(FOLLOW_tupleType_in_type3582);
                     nTTuple=tupleType();
@@ -4606,7 +4607,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "typeOnly"
-    // TestSuite.g:779:1: typeOnly returns [ASTType n] : nT= type EOF ;
+    // TestSuite.g:780:1: typeOnly returns [ASTType n] : nT= type EOF ;
     public final ASTType typeOnly() throws RecognitionException {
         ASTType n = null;
 
@@ -4615,8 +4616,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:780:5: (nT= type EOF )
-            // TestSuite.g:781:5: nT= type EOF
+            // TestSuite.g:781:5: (nT= type EOF )
+            // TestSuite.g:782:5: nT= type EOF
             {
             pushFollow(FOLLOW_type_in_typeOnly3614);
             nT=type();
@@ -4646,7 +4647,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "simpleType"
-    // TestSuite.g:791:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
+    // TestSuite.g:792:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
     public final ASTSimpleType simpleType() throws RecognitionException {
         ASTSimpleType n = null;
 
@@ -4654,8 +4655,8 @@ public class TestSuiteParser extends BaseParser {
         Token name=null;
 
         try {
-            // TestSuite.g:792:5: (name= IDENT )
-            // TestSuite.g:793:5: name= IDENT
+            // TestSuite.g:793:5: (name= IDENT )
+            // TestSuite.g:794:5: name= IDENT
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType3644); if (state.failed) return n;
 
@@ -4679,7 +4680,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "collectionType"
-    // TestSuite.g:801:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
+    // TestSuite.g:802:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
     public final ASTCollectionType collectionType() throws RecognitionException {
         ASTCollectionType n = null;
 
@@ -4689,8 +4690,8 @@ public class TestSuiteParser extends BaseParser {
 
          Token op = null; 
         try {
-            // TestSuite.g:803:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
-            // TestSuite.g:804:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
+            // TestSuite.g:804:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
+            // TestSuite.g:805:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -4736,7 +4737,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "tupleType"
-    // TestSuite.g:814:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
+    // TestSuite.g:815:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
     public final ASTTupleType tupleType() throws RecognitionException {
         ASTTupleType n = null;
 
@@ -4746,8 +4747,8 @@ public class TestSuiteParser extends BaseParser {
 
          List tpList = new ArrayList(); 
         try {
-            // TestSuite.g:816:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
-            // TestSuite.g:817:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
+            // TestSuite.g:817:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
+            // TestSuite.g:818:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
             {
             match(input,50,FOLLOW_50_in_tupleType3749); if (state.failed) return n;
 
@@ -4761,7 +4762,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tpList.add(tp); }
 
-            // TestSuite.g:819:5: ( COMMA tp= tuplePart )*
+            // TestSuite.g:820:5: ( COMMA tp= tuplePart )*
             loop56:
             do {
                 int alt56=2;
@@ -4774,7 +4775,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt56) {
             	case 1 :
-            	    // TestSuite.g:819:7: COMMA tp= tuplePart
+            	    // TestSuite.g:820:7: COMMA tp= tuplePart
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleType3771); if (state.failed) return n;
 
@@ -4817,7 +4818,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "tuplePart"
-    // TestSuite.g:828:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
+    // TestSuite.g:829:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
     public final ASTTuplePart tuplePart() throws RecognitionException {
         ASTTuplePart n = null;
 
@@ -4827,8 +4828,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:829:5: (name= IDENT COLON t= type )
-            // TestSuite.g:830:5: name= IDENT COLON t= type
+            // TestSuite.g:830:5: (name= IDENT COLON t= type )
+            // TestSuite.g:831:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart3819); if (state.failed) return n;
 
@@ -4860,7 +4861,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "shellCommandOnly"
-    // TestSuite.g:837:1: shellCommandOnly returns [ASTStatement n] : ( ( stat )=>s= stat | ( legacyStat )=>l= legacyStat );
+    // TestSuite.g:838:1: shellCommandOnly returns [ASTStatement n] : ( ( stat )=>s= stat | ( legacyStat )=>l= legacyStat );
     public final ASTStatement shellCommandOnly() throws RecognitionException {
         ASTStatement n = null;
 
@@ -4871,7 +4872,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:838:3: ( ( stat )=>s= stat | ( legacyStat )=>l= legacyStat )
+            // TestSuite.g:839:3: ( ( stat )=>s= stat | ( legacyStat )=>l= legacyStat )
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -5071,7 +5072,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt57) {
                 case 1 :
-                    // TestSuite.g:839:3: ( stat )=>s= stat
+                    // TestSuite.g:840:3: ( stat )=>s= stat
                     {
                     pushFollow(FOLLOW_stat_in_shellCommandOnly3862);
                     s=stat();
@@ -5084,7 +5085,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:842:3: ( legacyStat )=>l= legacyStat
+                    // TestSuite.g:843:3: ( legacyStat )=>l= legacyStat
                     {
                     pushFollow(FOLLOW_legacyStat_in_shellCommandOnly3883);
                     l=legacyStat();
@@ -5114,7 +5115,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "shellCommand"
-    // TestSuite.g:850:1: shellCommand returns [ASTStatement n] : ( ( legacyStat )=>l= legacyStat EOF | ( stat )=>s= stat EOF );
+    // TestSuite.g:851:1: shellCommand returns [ASTStatement n] : ( ( legacyStat )=>l= legacyStat EOF | ( stat )=>s= stat EOF );
     public final ASTStatement shellCommand() throws RecognitionException {
         ASTStatement n = null;
 
@@ -5125,7 +5126,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:851:3: ( ( legacyStat )=>l= legacyStat EOF | ( stat )=>s= stat EOF )
+            // TestSuite.g:852:3: ( ( legacyStat )=>l= legacyStat EOF | ( stat )=>s= stat EOF )
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -5313,7 +5314,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt58) {
                 case 1 :
-                    // TestSuite.g:852:3: ( legacyStat )=>l= legacyStat EOF
+                    // TestSuite.g:853:3: ( legacyStat )=>l= legacyStat EOF
                     {
                     pushFollow(FOLLOW_legacyStat_in_shellCommand3915);
                     l=legacyStat();
@@ -5328,7 +5329,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:855:3: ( stat )=>s= stat EOF
+                    // TestSuite.g:856:3: ( stat )=>s= stat EOF
                     {
                     pushFollow(FOLLOW_stat_in_shellCommand3938);
                     s=stat();
@@ -5364,7 +5365,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyStat"
-    // TestSuite.g:865:1: legacyStat returns [ASTStatement n] : (loe= legacyOpEnter |lox= legacyOpExit | nextLegacyStat[seq] ( nextLegacyStat[seq] )* );
+    // TestSuite.g:866:1: legacyStat returns [ASTStatement n] : (loe= legacyOpEnter |lox= legacyOpExit | nextLegacyStat[seq] ( nextLegacyStat[seq] )* );
     public final TestSuiteParser.legacyStat_return legacyStat() throws RecognitionException {
         TestSuiteParser.legacyStat_return retval = new TestSuiteParser.legacyStat_return();
         retval.start = input.LT(1);
@@ -5379,7 +5380,7 @@ public class TestSuiteParser extends BaseParser {
           ASTSequenceStatement seq = new ASTSequenceStatement(((Token)retval.start));
 
         try {
-            // TestSuite.g:869:3: (loe= legacyOpEnter |lox= legacyOpExit | nextLegacyStat[seq] ( nextLegacyStat[seq] )* )
+            // TestSuite.g:870:3: (loe= legacyOpEnter |lox= legacyOpExit | nextLegacyStat[seq] ( nextLegacyStat[seq] )* )
             int alt60=3;
             switch ( input.LA(1) ) {
             case 94:
@@ -5415,7 +5416,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt60) {
                 case 1 :
-                    // TestSuite.g:870:3: loe= legacyOpEnter
+                    // TestSuite.g:871:3: loe= legacyOpEnter
                     {
                     pushFollow(FOLLOW_legacyOpEnter_in_legacyStat3974);
                     loe=legacyOpEnter();
@@ -5430,7 +5431,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:875:3: lox= legacyOpExit
+                    // TestSuite.g:876:3: lox= legacyOpExit
                     {
                     pushFollow(FOLLOW_legacyOpExit_in_legacyStat3990);
                     lox=legacyOpExit();
@@ -5445,7 +5446,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:880:3: nextLegacyStat[seq] ( nextLegacyStat[seq] )*
+                    // TestSuite.g:881:3: nextLegacyStat[seq] ( nextLegacyStat[seq] )*
                     {
                     pushFollow(FOLLOW_nextLegacyStat_in_legacyStat4003);
                     nextLegacyStat(seq);
@@ -5453,7 +5454,7 @@ public class TestSuiteParser extends BaseParser {
                     state._fsp--;
                     if (state.failed) return retval;
 
-                    // TestSuite.g:881:3: ( nextLegacyStat[seq] )*
+                    // TestSuite.g:882:3: ( nextLegacyStat[seq] )*
                     loop59:
                     do {
                         int alt59=2;
@@ -5466,7 +5467,7 @@ public class TestSuiteParser extends BaseParser {
 
                         switch (alt59) {
                     	case 1 :
-                    	    // TestSuite.g:882:5: nextLegacyStat[seq]
+                    	    // TestSuite.g:883:5: nextLegacyStat[seq]
                     	    {
                     	    pushFollow(FOLLOW_nextLegacyStat_in_legacyStat4014);
                     	    nextLegacyStat(seq);
@@ -5510,14 +5511,14 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "nextLegacyStat"
-    // TestSuite.g:894:1: nextLegacyStat[ASTSequenceStatement seq] : s= singleLegacyStat ( SEMI )? ;
+    // TestSuite.g:895:1: nextLegacyStat[ASTSequenceStatement seq] : s= singleLegacyStat ( SEMI )? ;
     public final void nextLegacyStat(ASTSequenceStatement seq) throws RecognitionException {
         ASTStatement s =null;
 
 
         try {
-            // TestSuite.g:895:3: (s= singleLegacyStat ( SEMI )? )
-            // TestSuite.g:896:3: s= singleLegacyStat ( SEMI )?
+            // TestSuite.g:896:3: (s= singleLegacyStat ( SEMI )? )
+            // TestSuite.g:897:3: s= singleLegacyStat ( SEMI )?
             {
             pushFollow(FOLLOW_singleLegacyStat_in_nextLegacyStat4048);
             s=singleLegacyStat();
@@ -5525,7 +5526,7 @@ public class TestSuiteParser extends BaseParser {
             state._fsp--;
             if (state.failed) return ;
 
-            // TestSuite.g:897:3: ( SEMI )?
+            // TestSuite.g:898:3: ( SEMI )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -5534,7 +5535,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt61) {
                 case 1 :
-                    // TestSuite.g:897:3: SEMI
+                    // TestSuite.g:898:3: SEMI
                     {
                     match(input,SEMI,FOLLOW_SEMI_in_nextLegacyStat4052); if (state.failed) return ;
 
@@ -5566,7 +5567,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "singleLegacyStat"
-    // TestSuite.g:908:1: singleLegacyStat returns [ASTStatement n] : (lcr= legacyCreate |lca= legacyCreateAssign |lci= legacyCreateInsert |llt= legacyLet |lex= legacyExecute |ods= objDestroyStat | 'set' e= expression aas= attAssignStat[$e.n] |lis= lnkInsStat |lds= lnkDelStat );
+    // TestSuite.g:909:1: singleLegacyStat returns [ASTStatement n] : (lcr= legacyCreate |lca= legacyCreateAssign |lci= legacyCreateInsert |llt= legacyLet |lex= legacyExecute |ods= objDestroyStat | 'set' e= expression aas= attAssignStat[$e.n] |lis= lnkInsStat |lds= lnkDelStat );
     public final ASTStatement singleLegacyStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -5593,7 +5594,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:909:5: (lcr= legacyCreate |lca= legacyCreateAssign |lci= legacyCreateInsert |llt= legacyLet |lex= legacyExecute |ods= objDestroyStat | 'set' e= expression aas= attAssignStat[$e.n] |lis= lnkInsStat |lds= lnkDelStat )
+            // TestSuite.g:910:5: (lcr= legacyCreate |lca= legacyCreateAssign |lci= legacyCreateInsert |llt= legacyLet |lex= legacyExecute |ods= objDestroyStat | 'set' e= expression aas= attAssignStat[$e.n] |lis= lnkInsStat |lds= lnkDelStat )
             int alt62=9;
             switch ( input.LA(1) ) {
             case 60:
@@ -5701,7 +5702,7 @@ public class TestSuiteParser extends BaseParser {
 
             switch (alt62) {
                 case 1 :
-                    // TestSuite.g:910:5: lcr= legacyCreate
+                    // TestSuite.g:911:5: lcr= legacyCreate
                     {
                     pushFollow(FOLLOW_legacyCreate_in_singleLegacyStat4085);
                     lcr=legacyCreate();
@@ -5714,7 +5715,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:911:5: lca= legacyCreateAssign
+                    // TestSuite.g:912:5: lca= legacyCreateAssign
                     {
                     pushFollow(FOLLOW_legacyCreateAssign_in_singleLegacyStat4104);
                     lca=legacyCreateAssign();
@@ -5727,7 +5728,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:912:5: lci= legacyCreateInsert
+                    // TestSuite.g:913:5: lci= legacyCreateInsert
                     {
                     pushFollow(FOLLOW_legacyCreateInsert_in_singleLegacyStat4117);
                     lci=legacyCreateInsert();
@@ -5740,7 +5741,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:913:5: llt= legacyLet
+                    // TestSuite.g:914:5: llt= legacyLet
                     {
                     pushFollow(FOLLOW_legacyLet_in_singleLegacyStat4130);
                     llt=legacyLet();
@@ -5753,7 +5754,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:916:5: lex= legacyExecute
+                    // TestSuite.g:917:5: lex= legacyExecute
                     {
                     pushFollow(FOLLOW_legacyExecute_in_singleLegacyStat4158);
                     lex=legacyExecute();
@@ -5766,7 +5767,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // TestSuite.g:917:5: ods= objDestroyStat
+                    // TestSuite.g:918:5: ods= objDestroyStat
                     {
                     pushFollow(FOLLOW_objDestroyStat_in_singleLegacyStat4176);
                     ods=objDestroyStat();
@@ -5779,7 +5780,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // TestSuite.g:918:5: 'set' e= expression aas= attAssignStat[$e.n]
+                    // TestSuite.g:919:5: 'set' e= expression aas= attAssignStat[$e.n]
                     {
                     match(input,101,FOLLOW_101_in_singleLegacyStat4189); if (state.failed) return n;
 
@@ -5800,7 +5801,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // TestSuite.g:919:5: lis= lnkInsStat
+                    // TestSuite.g:920:5: lis= lnkInsStat
                     {
                     pushFollow(FOLLOW_lnkInsStat_in_singleLegacyStat4212);
                     lis=lnkInsStat();
@@ -5813,7 +5814,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // TestSuite.g:920:5: lds= lnkDelStat
+                    // TestSuite.g:921:5: lds= lnkDelStat
                     {
                     pushFollow(FOLLOW_lnkDelStat_in_singleLegacyStat4233);
                     lds=lnkDelStat();
@@ -5847,7 +5848,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyCreate"
-    // TestSuite.g:933:1: legacyCreate returns [ASTStatement n] : 'create' objNames= identListMin1 COLON objType= simpleType ;
+    // TestSuite.g:934:1: legacyCreate returns [ASTStatement n] : 'create' objNames= identListMin1 COLON objType= simpleType ;
     public final TestSuiteParser.legacyCreate_return legacyCreate() throws RecognitionException {
         TestSuiteParser.legacyCreate_return retval = new TestSuiteParser.legacyCreate_return();
         retval.start = input.LT(1);
@@ -5859,8 +5860,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:934:3: ( 'create' objNames= identListMin1 COLON objType= simpleType )
-            // TestSuite.g:935:3: 'create' objNames= identListMin1 COLON objType= simpleType
+            // TestSuite.g:935:3: ( 'create' objNames= identListMin1 COLON objType= simpleType )
+            // TestSuite.g:936:3: 'create' objNames= identListMin1 COLON objType= simpleType
             {
             match(input,60,FOLLOW_60_in_legacyCreate4269); if (state.failed) return retval;
 
@@ -5917,7 +5918,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyCreateAssign"
-    // TestSuite.g:966:1: legacyCreateAssign returns [ASTStatement n] : 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType ;
+    // TestSuite.g:967:1: legacyCreateAssign returns [ASTStatement n] : 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType ;
     public final TestSuiteParser.legacyCreateAssign_return legacyCreateAssign() throws RecognitionException {
         TestSuiteParser.legacyCreateAssign_return retval = new TestSuiteParser.legacyCreateAssign_return();
         retval.start = input.LT(1);
@@ -5929,8 +5930,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:967:3: ( 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType )
-            // TestSuite.g:968:3: 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType
+            // TestSuite.g:968:3: ( 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType )
+            // TestSuite.g:969:3: 'assign' varNames= identListMin1 COLON_EQUAL 'create' objType= simpleType
             {
             match(input,55,FOLLOW_55_in_legacyCreateAssign4326); if (state.failed) return retval;
 
@@ -5989,7 +5990,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyCreateInsert"
-    // TestSuite.g:1001:1: legacyCreateInsert returns [ASTVariableAssignmentStatement n] : 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN ;
+    // TestSuite.g:1002:1: legacyCreateInsert returns [ASTVariableAssignmentStatement n] : 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN ;
     public final TestSuiteParser.legacyCreateInsert_return legacyCreateInsert() throws RecognitionException {
         TestSuiteParser.legacyCreateInsert_return retval = new TestSuiteParser.legacyCreateInsert_return();
         retval.start = input.LT(1);
@@ -6002,8 +6003,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1002:3: ( 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN )
-            // TestSuite.g:1003:3: 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN
+            // TestSuite.g:1003:3: ( 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN )
+            // TestSuite.g:1004:3: 'create' name= IDENT COLON asClassName= simpleType 'between' LPAREN participants= rValListMin2WithOptionalQualifiers RPAREN
             {
             match(input,60,FOLLOW_60_in_legacyCreateInsert4384); if (state.failed) return retval;
 
@@ -6068,7 +6069,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyLet"
-    // TestSuite.g:1038:1: legacyLet returns [ASTVariableAssignmentStatement n] : 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression ;
+    // TestSuite.g:1039:1: legacyLet returns [ASTVariableAssignmentStatement n] : 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression ;
     public final TestSuiteParser.legacyLet_return legacyLet() throws RecognitionException {
         TestSuiteParser.legacyLet_return retval = new TestSuiteParser.legacyLet_return();
         retval.start = input.LT(1);
@@ -6081,14 +6082,14 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1039:3: ( 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression )
-            // TestSuite.g:1040:3: 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression
+            // TestSuite.g:1040:3: ( 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression )
+            // TestSuite.g:1041:3: 'let' varName= IDENT ( COLON varType= type )? EQUAL e= inSoilExpression
             {
             match(input,83,FOLLOW_83_in_legacyLet4459); if (state.failed) return retval;
 
             varName=(Token)match(input,IDENT,FOLLOW_IDENT_in_legacyLet4467); if (state.failed) return retval;
 
-            // TestSuite.g:1042:3: ( COLON varType= type )?
+            // TestSuite.g:1043:3: ( COLON varType= type )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -6097,7 +6098,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt63) {
                 case 1 :
-                    // TestSuite.g:1043:5: COLON varType= type
+                    // TestSuite.g:1044:5: COLON varType= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_legacyLet4477); if (state.failed) return retval;
 
@@ -6148,7 +6149,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyOpEnter"
-    // TestSuite.g:1064:1: legacyOpEnter returns [ASTEnterOperationStatement n] : 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN ;
+    // TestSuite.g:1065:1: legacyOpEnter returns [ASTEnterOperationStatement n] : 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN ;
     public final TestSuiteParser.legacyOpEnter_return legacyOpEnter() throws RecognitionException {
         TestSuiteParser.legacyOpEnter_return retval = new TestSuiteParser.legacyOpEnter_return();
         retval.start = input.LT(1);
@@ -6161,8 +6162,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1065:3: ( 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN )
-            // TestSuite.g:1066:3: 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN
+            // TestSuite.g:1066:3: ( 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN )
+            // TestSuite.g:1067:3: 'openter' obj= inSoilExpression op= IDENT LPAREN args= exprList RPAREN
             {
             match(input,94,FOLLOW_94_in_legacyOpEnter4537); if (state.failed) return retval;
 
@@ -6211,7 +6212,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyOpExit"
-    // TestSuite.g:1089:1: legacyOpExit returns [ASTStatement n] : 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing ) ;
+    // TestSuite.g:1090:1: legacyOpExit returns [ASTStatement n] : 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing ) ;
     public final TestSuiteParser.legacyOpExit_return legacyOpExit() throws RecognitionException {
         TestSuiteParser.legacyOpExit_return retval = new TestSuiteParser.legacyOpExit_return();
         retval.start = input.LT(1);
@@ -6221,12 +6222,12 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1090:3: ( 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing ) )
-            // TestSuite.g:1091:3: 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing )
+            // TestSuite.g:1091:3: ( 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing ) )
+            // TestSuite.g:1092:3: 'opexit' ( ( inSoilExpression )=>retVal= inSoilExpression | nothing )
             {
             match(input,95,FOLLOW_95_in_legacyOpExit4606); if (state.failed) return retval;
 
-            // TestSuite.g:1091:12: ( ( inSoilExpression )=>retVal= inSoilExpression | nothing )
+            // TestSuite.g:1092:12: ( ( inSoilExpression )=>retVal= inSoilExpression | nothing )
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -6312,7 +6313,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt64) {
                 case 1 :
-                    // TestSuite.g:1091:13: ( inSoilExpression )=>retVal= inSoilExpression
+                    // TestSuite.g:1092:13: ( inSoilExpression )=>retVal= inSoilExpression
                     {
                     pushFollow(FOLLOW_inSoilExpression_in_legacyOpExit4618);
                     retVal=inSoilExpression();
@@ -6323,7 +6324,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1091:62: nothing
+                    // TestSuite.g:1092:62: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_legacyOpExit4622);
                     nothing();
@@ -6360,14 +6361,14 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "legacyExecute"
-    // TestSuite.g:1106:1: legacyExecute returns [ASTStatement n] : 'execute' expression ;
+    // TestSuite.g:1107:1: legacyExecute returns [ASTStatement n] : 'execute' expression ;
     public final ASTStatement legacyExecute() throws RecognitionException {
         ASTStatement n = null;
 
 
         try {
-            // TestSuite.g:1107:3: ( 'execute' expression )
-            // TestSuite.g:1108:3: 'execute' expression
+            // TestSuite.g:1108:3: ( 'execute' expression )
+            // TestSuite.g:1109:3: 'execute' expression
             {
             match(input,70,FOLLOW_70_in_legacyExecute4655); if (state.failed) return n;
 
@@ -6400,7 +6401,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "statOnly"
-    // TestSuite.g:1152:1: statOnly returns [ASTStatement n] : s= stat EOF ;
+    // TestSuite.g:1153:1: statOnly returns [ASTStatement n] : s= stat EOF ;
     public final ASTStatement statOnly() throws RecognitionException {
         ASTStatement n = null;
 
@@ -6409,8 +6410,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1153:3: (s= stat EOF )
-            // TestSuite.g:1154:3: s= stat EOF
+            // TestSuite.g:1154:3: (s= stat EOF )
+            // TestSuite.g:1155:3: s= stat EOF
             {
             pushFollow(FOLLOW_stat_in_statOnly4705);
             s=stat();
@@ -6444,7 +6445,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "stat"
-    // TestSuite.g:1164:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
+    // TestSuite.g:1165:1: stat returns [ASTStatement n] : s= singleStat ( SEMI s2= singleStat )* ;
     public final TestSuiteParser.stat_return stat() throws RecognitionException {
         TestSuiteParser.stat_return retval = new TestSuiteParser.stat_return();
         retval.start = input.LT(1);
@@ -6459,8 +6460,8 @@ public class TestSuiteParser extends BaseParser {
           ASTSequenceStatement seq = new ASTSequenceStatement(((Token)retval.start));
 
         try {
-            // TestSuite.g:1168:3: (s= singleStat ( SEMI s2= singleStat )* )
-            // TestSuite.g:1169:3: s= singleStat ( SEMI s2= singleStat )*
+            // TestSuite.g:1169:3: (s= singleStat ( SEMI s2= singleStat )* )
+            // TestSuite.g:1170:3: s= singleStat ( SEMI s2= singleStat )*
             {
             pushFollow(FOLLOW_singleStat_in_stat4744);
             s=singleStat();
@@ -6470,7 +6471,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) {seq.addStatement(s);}
 
-            // TestSuite.g:1170:3: ( SEMI s2= singleStat )*
+            // TestSuite.g:1171:3: ( SEMI s2= singleStat )*
             loop65:
             do {
                 int alt65=2;
@@ -6483,7 +6484,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt65) {
             	case 1 :
-            	    // TestSuite.g:1171:5: SEMI s2= singleStat
+            	    // TestSuite.g:1172:5: SEMI s2= singleStat
             	    {
             	    match(input,SEMI,FOLLOW_SEMI_in_stat4756); if (state.failed) return retval;
 
@@ -6529,7 +6530,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "singleStat"
-    // TestSuite.g:1183:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
+    // TestSuite.g:1184:1: singleStat returns [ASTStatement n] : (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat );
     public final ASTStatement singleStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -6558,7 +6559,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1184:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
+            // TestSuite.g:1185:5: (emp= emptyStat | ( statStartingWithExpr )=>sse= statStartingWithExpr |vas= varAssignStat |ocs= objCreateStat |ods= objDestroyStat |lis= lnkInsStat |lds= lnkDelStat |ces= condExStat |its= iterStat |whs= whileStat |blk= blockStat )
             int alt66=11;
             int LA66_0 = input.LA(1);
 
@@ -6695,7 +6696,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt66) {
                 case 1 :
-                    // TestSuite.g:1185:5: emp= emptyStat
+                    // TestSuite.g:1186:5: emp= emptyStat
                     {
                     pushFollow(FOLLOW_emptyStat_in_singleStat4806);
                     emp=emptyStat();
@@ -6708,7 +6709,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1187:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
+                    // TestSuite.g:1188:5: ( statStartingWithExpr )=>sse= statStartingWithExpr
                     {
                     pushFollow(FOLLOW_statStartingWithExpr_in_singleStat4832);
                     sse=statStartingWithExpr();
@@ -6721,7 +6722,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:1188:5: vas= varAssignStat
+                    // TestSuite.g:1189:5: vas= varAssignStat
                     {
                     pushFollow(FOLLOW_varAssignStat_in_singleStat4844);
                     vas=varAssignStat();
@@ -6734,7 +6735,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:1189:5: ocs= objCreateStat
+                    // TestSuite.g:1190:5: ocs= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_singleStat4858);
                     ocs=objCreateStat();
@@ -6747,7 +6748,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:1190:5: ods= objDestroyStat
+                    // TestSuite.g:1191:5: ods= objDestroyStat
                     {
                     pushFollow(FOLLOW_objDestroyStat_in_singleStat4872);
                     ods=objDestroyStat();
@@ -6760,7 +6761,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // TestSuite.g:1191:5: lis= lnkInsStat
+                    // TestSuite.g:1192:5: lis= lnkInsStat
                     {
                     pushFollow(FOLLOW_lnkInsStat_in_singleStat4885);
                     lis=lnkInsStat();
@@ -6773,7 +6774,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // TestSuite.g:1192:5: lds= lnkDelStat
+                    // TestSuite.g:1193:5: lds= lnkDelStat
                     {
                     pushFollow(FOLLOW_lnkDelStat_in_singleStat4902);
                     lds=lnkDelStat();
@@ -6786,7 +6787,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // TestSuite.g:1193:5: ces= condExStat
+                    // TestSuite.g:1194:5: ces= condExStat
                     {
                     pushFollow(FOLLOW_condExStat_in_singleStat4919);
                     ces=condExStat();
@@ -6799,7 +6800,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // TestSuite.g:1194:5: its= iterStat
+                    // TestSuite.g:1195:5: its= iterStat
                     {
                     pushFollow(FOLLOW_iterStat_in_singleStat4936);
                     its=iterStat();
@@ -6812,7 +6813,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // TestSuite.g:1196:5: whs= whileStat
+                    // TestSuite.g:1197:5: whs= whileStat
                     {
                     pushFollow(FOLLOW_whileStat_in_singleStat4958);
                     whs=whileStat();
@@ -6825,7 +6826,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // TestSuite.g:1197:5: blk= blockStat
+                    // TestSuite.g:1198:5: blk= blockStat
                     {
                     pushFollow(FOLLOW_blockStat_in_singleStat4976);
                     blk=blockStat();
@@ -6855,14 +6856,14 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "emptyStat"
-    // TestSuite.g:1204:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
+    // TestSuite.g:1205:1: emptyStat returns [ASTEmptyStatement n] : nothing ;
     public final ASTEmptyStatement emptyStat() throws RecognitionException {
         ASTEmptyStatement n = null;
 
 
         try {
-            // TestSuite.g:1205:3: ( nothing )
-            // TestSuite.g:1206:3: nothing
+            // TestSuite.g:1206:3: ( nothing )
+            // TestSuite.g:1207:3: nothing
             {
             pushFollow(FOLLOW_nothing_in_emptyStat5003);
             nothing();
@@ -6894,7 +6895,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "statStartingWithExpr"
-    // TestSuite.g:1211:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
+    // TestSuite.g:1212:1: statStartingWithExpr returns [ASTStatement n] : expr= inSoilExpression (aas= attAssignStat[$expr.n] )? ;
     public final TestSuiteParser.statStartingWithExpr_return statStartingWithExpr() throws RecognitionException {
         TestSuiteParser.statStartingWithExpr_return retval = new TestSuiteParser.statStartingWithExpr_return();
         retval.start = input.LT(1);
@@ -6906,8 +6907,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1212:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
-            // TestSuite.g:1213:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
+            // TestSuite.g:1213:3: (expr= inSoilExpression (aas= attAssignStat[$expr.n] )? )
+            // TestSuite.g:1214:3: expr= inSoilExpression (aas= attAssignStat[$expr.n] )?
             {
             pushFollow(FOLLOW_inSoilExpression_in_statStartingWithExpr5029);
             expr=inSoilExpression();
@@ -6915,7 +6916,7 @@ public class TestSuiteParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // TestSuite.g:1214:3: (aas= attAssignStat[$expr.n] )?
+            // TestSuite.g:1215:3: (aas= attAssignStat[$expr.n] )?
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -6924,7 +6925,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt67) {
                 case 1 :
-                    // TestSuite.g:1215:5: aas= attAssignStat[$expr.n]
+                    // TestSuite.g:1216:5: aas= attAssignStat[$expr.n]
                     {
                     pushFollow(FOLLOW_attAssignStat_in_statStartingWithExpr5043);
                     aas=attAssignStat(expr);
@@ -6967,7 +6968,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "varAssignStat"
-    // TestSuite.g:1227:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
+    // TestSuite.g:1228:1: varAssignStat returns [ASTStatement n] : varName= IDENT COLON_EQUAL rVal= rValue ;
     public final ASTStatement varAssignStat() throws RecognitionException {
         ASTStatement n = null;
 
@@ -6977,8 +6978,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1228:3: (varName= IDENT COLON_EQUAL rVal= rValue )
-            // TestSuite.g:1229:3: varName= IDENT COLON_EQUAL rVal= rValue
+            // TestSuite.g:1229:3: (varName= IDENT COLON_EQUAL rVal= rValue )
+            // TestSuite.g:1230:3: varName= IDENT COLON_EQUAL rVal= rValue
             {
             varName=(Token)match(input,IDENT,FOLLOW_IDENT_in_varAssignStat5081); if (state.failed) return n;
 
@@ -7012,7 +7013,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "attAssignStat"
-    // TestSuite.g:1241:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
+    // TestSuite.g:1242:1: attAssignStat[ASTExpression exp] returns [ASTAttributeAssignmentStatement n] : DOT attName= IDENT COLON_EQUAL r= rValue ;
     public final ASTAttributeAssignmentStatement attAssignStat(ASTExpression exp) throws RecognitionException {
         ASTAttributeAssignmentStatement n = null;
 
@@ -7022,8 +7023,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1242:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
-            // TestSuite.g:1243:3: DOT attName= IDENT COLON_EQUAL r= rValue
+            // TestSuite.g:1243:3: ( DOT attName= IDENT COLON_EQUAL r= rValue )
+            // TestSuite.g:1244:3: DOT attName= IDENT COLON_EQUAL r= rValue
             {
             match(input,DOT,FOLLOW_DOT_in_attAssignStat5117); if (state.failed) return n;
 
@@ -7061,7 +7062,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "objCreateStat"
-    // TestSuite.g:1255:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
+    // TestSuite.g:1256:1: objCreateStat returns [ASTStatement n] : 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? ;
     public final TestSuiteParser.objCreateStat_return objCreateStat() throws RecognitionException {
         TestSuiteParser.objCreateStat_return retval = new TestSuiteParser.objCreateStat_return();
         retval.start = input.LT(1);
@@ -7075,8 +7076,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1256:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
-            // TestSuite.g:1257:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // TestSuite.g:1257:3: ( 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )? )
+            // TestSuite.g:1258:3: 'new' ident= simpleType ( LPAREN (objName= inSoilExpression )? RPAREN )? ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             {
             match(input,85,FOLLOW_85_in_objCreateStat5164); if (state.failed) return retval;
 
@@ -7086,7 +7087,7 @@ public class TestSuiteParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // TestSuite.g:1259:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
+            // TestSuite.g:1260:3: ( LPAREN (objName= inSoilExpression )? RPAREN )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -7095,11 +7096,11 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt69) {
                 case 1 :
-                    // TestSuite.g:1260:5: LPAREN (objName= inSoilExpression )? RPAREN
+                    // TestSuite.g:1261:5: LPAREN (objName= inSoilExpression )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_objCreateStat5182); if (state.failed) return retval;
 
-                    // TestSuite.g:1261:7: (objName= inSoilExpression )?
+                    // TestSuite.g:1262:7: (objName= inSoilExpression )?
                     int alt68=2;
                     int LA68_0 = input.LA(1);
 
@@ -7108,7 +7109,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     switch (alt68) {
                         case 1 :
-                            // TestSuite.g:1261:8: objName= inSoilExpression
+                            // TestSuite.g:1262:8: objName= inSoilExpression
                             {
                             pushFollow(FOLLOW_inSoilExpression_in_objCreateStat5195);
                             objName=inSoilExpression();
@@ -7130,7 +7131,7 @@ public class TestSuiteParser extends BaseParser {
             }
 
 
-            // TestSuite.g:1265:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
+            // TestSuite.g:1266:3: ( 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN )?
             int alt70=2;
             int LA70_0 = input.LA(1);
 
@@ -7139,7 +7140,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt70) {
                 case 1 :
-                    // TestSuite.g:1266:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
+                    // TestSuite.g:1267:5: 'between' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN
                     {
                     match(input,58,FOLLOW_58_in_objCreateStat5221); if (state.failed) return retval;
 
@@ -7194,7 +7195,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "objDestroyStat"
-    // TestSuite.g:1285:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
+    // TestSuite.g:1286:1: objDestroyStat returns [ASTStatement n] : 'destroy' el= exprListMin1 ;
     public final TestSuiteParser.objDestroyStat_return objDestroyStat() throws RecognitionException {
         TestSuiteParser.objDestroyStat_return retval = new TestSuiteParser.objDestroyStat_return();
         retval.start = input.LT(1);
@@ -7204,8 +7205,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1286:3: ( 'destroy' el= exprListMin1 )
-            // TestSuite.g:1287:3: 'destroy' el= exprListMin1
+            // TestSuite.g:1287:3: ( 'destroy' el= exprListMin1 )
+            // TestSuite.g:1288:3: 'destroy' el= exprListMin1
             {
             match(input,63,FOLLOW_63_in_objDestroyStat5287); if (state.failed) return retval;
 
@@ -7251,7 +7252,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "lnkInsStat"
-    // TestSuite.g:1306:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
+    // TestSuite.g:1307:1: lnkInsStat returns [ASTLinkInsertionStatement n] : 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT ;
     public final TestSuiteParser.lnkInsStat_return lnkInsStat() throws RecognitionException {
         TestSuiteParser.lnkInsStat_return retval = new TestSuiteParser.lnkInsStat_return();
         retval.start = input.LT(1);
@@ -7262,8 +7263,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1307:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
-            // TestSuite.g:1308:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
+            // TestSuite.g:1308:3: ( 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT )
+            // TestSuite.g:1309:3: 'insert' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'into' ass= IDENT
             {
             match(input,77,FOLLOW_77_in_lnkInsStat5321); if (state.failed) return retval;
 
@@ -7309,7 +7310,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2WithOptionalQualifiers"
-    // TestSuite.g:1318:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
+    // TestSuite.g:1319:1: rValListMin2WithOptionalQualifiers returns [List<ASTRValue> participans, List<List<ASTRValue>> qualifiers] : r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* ;
     public final TestSuiteParser.rValListMin2WithOptionalQualifiers_return rValListMin2WithOptionalQualifiers() throws RecognitionException {
         TestSuiteParser.rValListMin2WithOptionalQualifiers_return retval = new TestSuiteParser.rValListMin2WithOptionalQualifiers_return();
         retval.start = input.LT(1);
@@ -7326,8 +7327,8 @@ public class TestSuiteParser extends BaseParser {
           List<ASTRValue> currentQualifiers = Collections.emptyList();
 
         try {
-            // TestSuite.g:1324:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
-            // TestSuite.g:1325:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // TestSuite.g:1325:3: (r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )* )
+            // TestSuite.g:1326:3: r= rValue ( LBRACE qualifierValues= rValList RBRACE )? COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin2WithOptionalQualifiers5380);
             r=rValue();
@@ -7337,7 +7338,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // TestSuite.g:1326:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // TestSuite.g:1327:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt71=2;
             int LA71_0 = input.LA(1);
 
@@ -7346,7 +7347,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt71) {
                 case 1 :
-                    // TestSuite.g:1327:4: LBRACE qualifierValues= rValList RBRACE
+                    // TestSuite.g:1328:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers5391); if (state.failed) return retval;
 
@@ -7381,7 +7382,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            // TestSuite.g:1339:3: ( LBRACE qualifierValues= rValList RBRACE )?
+            // TestSuite.g:1340:3: ( LBRACE qualifierValues= rValList RBRACE )?
             int alt72=2;
             int LA72_0 = input.LA(1);
 
@@ -7390,7 +7391,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt72) {
                 case 1 :
-                    // TestSuite.g:1340:4: LBRACE qualifierValues= rValList RBRACE
+                    // TestSuite.g:1341:4: LBRACE qualifierValues= rValList RBRACE
                     {
                     match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers5445); if (state.failed) return retval;
 
@@ -7415,7 +7416,7 @@ public class TestSuiteParser extends BaseParser {
                 currentQualifiers = Collections.emptyList();
               }
 
-            // TestSuite.g:1349:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
+            // TestSuite.g:1350:3: ( COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )? )*
             loop74:
             do {
                 int alt74=2;
@@ -7428,7 +7429,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt74) {
             	case 1 :
-            	    // TestSuite.g:1350:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // TestSuite.g:1351:5: COMMA r= rValue ( LBRACE qualifierValues= rValList RBRACE )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin2WithOptionalQualifiers5483); if (state.failed) return retval;
 
@@ -7440,7 +7441,7 @@ public class TestSuiteParser extends BaseParser {
 
             	    if ( state.backtracking==0 ) { retval.participans.add(r); }
 
-            	    // TestSuite.g:1354:5: ( LBRACE qualifierValues= rValList RBRACE )?
+            	    // TestSuite.g:1355:5: ( LBRACE qualifierValues= rValList RBRACE )?
             	    int alt73=2;
             	    int LA73_0 = input.LA(1);
 
@@ -7449,7 +7450,7 @@ public class TestSuiteParser extends BaseParser {
             	    }
             	    switch (alt73) {
             	        case 1 :
-            	            // TestSuite.g:1355:6: LBRACE qualifierValues= rValList RBRACE
+            	            // TestSuite.g:1356:6: LBRACE qualifierValues= rValList RBRACE
             	            {
             	            match(input,LBRACE,FOLLOW_LBRACE_in_rValListMin2WithOptionalQualifiers5518); if (state.failed) return retval;
 
@@ -7508,7 +7509,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "lnkDelStat"
-    // TestSuite.g:1370:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
+    // TestSuite.g:1371:1: lnkDelStat returns [ASTLinkDeletionStatement n] : 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT ;
     public final TestSuiteParser.lnkDelStat_return lnkDelStat() throws RecognitionException {
         TestSuiteParser.lnkDelStat_return retval = new TestSuiteParser.lnkDelStat_return();
         retval.start = input.LT(1);
@@ -7519,8 +7520,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1371:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
-            // TestSuite.g:1372:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
+            // TestSuite.g:1372:3: ( 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT )
+            // TestSuite.g:1373:3: 'delete' LPAREN p= rValListMin2WithOptionalQualifiers RPAREN 'from' ass= IDENT
             {
             match(input,62,FOLLOW_62_in_lnkDelStat5579); if (state.failed) return retval;
 
@@ -7565,7 +7566,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "condExStat"
-    // TestSuite.g:1386:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
+    // TestSuite.g:1387:1: condExStat returns [ASTConditionalExecutionStatement n] : 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' ;
     public final TestSuiteParser.condExStat_return condExStat() throws RecognitionException {
         TestSuiteParser.condExStat_return retval = new TestSuiteParser.condExStat_return();
         retval.start = input.LT(1);
@@ -7582,8 +7583,8 @@ public class TestSuiteParser extends BaseParser {
           ASTStatement elseStat = new ASTEmptyStatement();
 
         try {
-            // TestSuite.g:1390:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
-            // TestSuite.g:1391:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
+            // TestSuite.g:1391:3: ( 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end' )
+            // TestSuite.g:1392:3: 'if' con= inSoilExpression 'then' ts= statOrImplicitBlock ( 'else' es= statOrImplicitBlock )? 'end'
             {
             match(input,74,FOLLOW_74_in_condExStat5641); if (state.failed) return retval;
 
@@ -7601,7 +7602,7 @@ public class TestSuiteParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            // TestSuite.g:1395:3: ( 'else' es= statOrImplicitBlock )?
+            // TestSuite.g:1396:3: ( 'else' es= statOrImplicitBlock )?
             int alt75=2;
             int LA75_0 = input.LA(1);
 
@@ -7610,7 +7611,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt75) {
                 case 1 :
-                    // TestSuite.g:1396:5: 'else' es= statOrImplicitBlock
+                    // TestSuite.g:1397:5: 'else' es= statOrImplicitBlock
                     {
                     match(input,66,FOLLOW_66_in_condExStat5674); if (state.failed) return retval;
 
@@ -7657,7 +7658,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "iterStat"
-    // TestSuite.g:1407:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // TestSuite.g:1408:1: iterStat returns [ASTIterationStatement n] : 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final TestSuiteParser.iterStat_return iterStat() throws RecognitionException {
         TestSuiteParser.iterStat_return retval = new TestSuiteParser.iterStat_return();
         retval.start = input.LT(1);
@@ -7670,8 +7671,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1408:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // TestSuite.g:1409:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // TestSuite.g:1409:3: ( 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // TestSuite.g:1410:3: 'for' var= IDENT 'in' set= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,72,FOLLOW_72_in_iterStat5723); if (state.failed) return retval;
 
@@ -7722,7 +7723,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "whileStat"
-    // TestSuite.g:1424:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
+    // TestSuite.g:1425:1: whileStat returns [ASTWhileStatement n] : 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' ;
     public final TestSuiteParser.whileStat_return whileStat() throws RecognitionException {
         TestSuiteParser.whileStat_return retval = new TestSuiteParser.whileStat_return();
         retval.start = input.LT(1);
@@ -7734,8 +7735,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1425:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
-            // TestSuite.g:1426:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
+            // TestSuite.g:1426:3: ( 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end' )
+            // TestSuite.g:1427:3: 'while' cond= inSoilExpression 'do' s= statOrImplicitBlock 'end'
             {
             match(input,108,FOLLOW_108_in_whileStat5786); if (state.failed) return retval;
 
@@ -7782,7 +7783,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "blockStat"
-    // TestSuite.g:1438:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
+    // TestSuite.g:1439:1: blockStat returns [ASTBlockStatement n] : 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' ;
     public final TestSuiteParser.blockStat_return blockStat() throws RecognitionException {
         TestSuiteParser.blockStat_return retval = new TestSuiteParser.blockStat_return();
         retval.start = input.LT(1);
@@ -7799,12 +7800,12 @@ public class TestSuiteParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), org.tzi.use.config.Options.explicitVariableDeclarations);
 
         try {
-            // TestSuite.g:1442:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
-            // TestSuite.g:1443:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
+            // TestSuite.g:1443:2: ( 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end' )
+            // TestSuite.g:1444:2: 'begin' ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )? s= stat 'end'
             {
             match(input,56,FOLLOW_56_in_blockStat5841); if (state.failed) return retval;
 
-            // TestSuite.g:1444:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
+            // TestSuite.g:1445:2: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI )?
             int alt77=2;
             int LA77_0 = input.LA(1);
 
@@ -7813,7 +7814,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt77) {
                 case 1 :
-                    // TestSuite.g:1444:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
+                    // TestSuite.g:1445:4: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI
                     {
                     match(input,61,FOLLOW_61_in_blockStat5846); if (state.failed) return retval;
 
@@ -7825,7 +7826,7 @@ public class TestSuiteParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-                    // TestSuite.g:1444:73: ( COMMA vd1= variableDeclaration )*
+                    // TestSuite.g:1445:73: ( COMMA vd1= variableDeclaration )*
                     loop76:
                     do {
                         int alt76=2;
@@ -7838,7 +7839,7 @@ public class TestSuiteParser extends BaseParser {
 
                         switch (alt76) {
                     	case 1 :
-                    	    // TestSuite.g:1444:75: COMMA vd1= variableDeclaration
+                    	    // TestSuite.g:1445:75: COMMA vd1= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_blockStat5858); if (state.failed) return retval;
 
@@ -7902,7 +7903,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "implicitBlockStat"
-    // TestSuite.g:1453:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
+    // TestSuite.g:1454:1: implicitBlockStat returns [ASTBlockStatement n] : 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat ;
     public final TestSuiteParser.implicitBlockStat_return implicitBlockStat() throws RecognitionException {
         TestSuiteParser.implicitBlockStat_return retval = new TestSuiteParser.implicitBlockStat_return();
         retval.start = input.LT(1);
@@ -7919,8 +7920,8 @@ public class TestSuiteParser extends BaseParser {
           retval.n = new ASTBlockStatement(((Token)retval.start), false);
 
         try {
-            // TestSuite.g:1457:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
-            // TestSuite.g:1458:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
+            // TestSuite.g:1458:3: ( 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat )
+            // TestSuite.g:1459:3: 'declare' vd= variableDeclaration ( COMMA vd1= variableDeclaration )* SEMI s= stat
             {
             match(input,61,FOLLOW_61_in_implicitBlockStat5912); if (state.failed) return retval;
 
@@ -7932,7 +7933,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { retval.n.addVariableDeclaration(vd);}
 
-            // TestSuite.g:1458:72: ( COMMA vd1= variableDeclaration )*
+            // TestSuite.g:1459:72: ( COMMA vd1= variableDeclaration )*
             loop78:
             do {
                 int alt78=2;
@@ -7945,7 +7946,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt78) {
             	case 1 :
-            	    // TestSuite.g:1458:74: COMMA vd1= variableDeclaration
+            	    // TestSuite.g:1459:74: COMMA vd1= variableDeclaration
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_implicitBlockStat5924); if (state.failed) return retval;
 
@@ -7997,7 +7998,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "statOrImplicitBlock"
-    // TestSuite.g:1462:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
+    // TestSuite.g:1463:1: statOrImplicitBlock returns [ASTStatement n] : (s1= stat |s2= implicitBlockStat ) ;
     public final ASTStatement statOrImplicitBlock() throws RecognitionException {
         ASTStatement n = null;
 
@@ -8008,10 +8009,10 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1463:3: ( (s1= stat |s2= implicitBlockStat ) )
-            // TestSuite.g:1464:3: (s1= stat |s2= implicitBlockStat )
+            // TestSuite.g:1464:3: ( (s1= stat |s2= implicitBlockStat ) )
+            // TestSuite.g:1465:3: (s1= stat |s2= implicitBlockStat )
             {
-            // TestSuite.g:1464:3: (s1= stat |s2= implicitBlockStat )
+            // TestSuite.g:1465:3: (s1= stat |s2= implicitBlockStat )
             int alt79=2;
             int LA79_0 = input.LA(1);
 
@@ -8031,7 +8032,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt79) {
                 case 1 :
-                    // TestSuite.g:1464:4: s1= stat
+                    // TestSuite.g:1465:4: s1= stat
                     {
                     pushFollow(FOLLOW_stat_in_statOrImplicitBlock5968);
                     s1=stat();
@@ -8044,7 +8045,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1464:31: s2= implicitBlockStat
+                    // TestSuite.g:1465:31: s2= implicitBlockStat
                     {
                     pushFollow(FOLLOW_implicitBlockStat_in_statOrImplicitBlock5978);
                     s2=implicitBlockStat();
@@ -8078,11 +8079,11 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "nothing"
-    // TestSuite.g:1478:1: nothing :;
+    // TestSuite.g:1479:1: nothing :;
     public final void nothing() throws RecognitionException {
         try {
-            // TestSuite.g:1479:1: ()
-            // TestSuite.g:1480:1: 
+            // TestSuite.g:1480:1: ()
+            // TestSuite.g:1481:1: 
             {
             }
 
@@ -8097,7 +8098,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "rValue"
-    // TestSuite.g:1486:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
+    // TestSuite.g:1487:1: rValue returns [ASTRValue n] : (e= inSoilExpression |oc= objCreateStat );
     public final ASTRValue rValue() throws RecognitionException {
         ASTRValue n = null;
 
@@ -8108,7 +8109,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1487:5: (e= inSoilExpression |oc= objCreateStat )
+            // TestSuite.g:1488:5: (e= inSoilExpression |oc= objCreateStat )
             int alt80=2;
             int LA80_0 = input.LA(1);
 
@@ -8128,7 +8129,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt80) {
                 case 1 :
-                    // TestSuite.g:1488:5: e= inSoilExpression
+                    // TestSuite.g:1489:5: e= inSoilExpression
                     {
                     pushFollow(FOLLOW_inSoilExpression_in_rValue6024);
                     e=inSoilExpression();
@@ -8141,7 +8142,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1489:5: oc= objCreateStat
+                    // TestSuite.g:1490:5: oc= objCreateStat
                     {
                     pushFollow(FOLLOW_objCreateStat_in_rValue6036);
                     oc=objCreateStat();
@@ -8176,7 +8177,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "rValList"
-    // TestSuite.g:1502:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
+    // TestSuite.g:1503:1: rValList returns [List<ASTRValue> n] : ( nothing |rl= rValListMin1 );
     public final List<ASTRValue> rValList() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -8185,7 +8186,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1503:3: ( nothing |rl= rValListMin1 )
+            // TestSuite.g:1504:3: ( nothing |rl= rValListMin1 )
             int alt81=2;
             int LA81_0 = input.LA(1);
 
@@ -8205,7 +8206,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt81) {
                 case 1 :
-                    // TestSuite.g:1504:3: nothing
+                    // TestSuite.g:1505:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_rValList6059);
                     nothing();
@@ -8218,7 +8219,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1507:3: rl= rValListMin1
+                    // TestSuite.g:1508:3: rl= rValListMin1
                     {
                     pushFollow(FOLLOW_rValListMin1_in_rValList6086);
                     rl=rValListMin1();
@@ -8248,7 +8249,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin1"
-    // TestSuite.g:1515:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
+    // TestSuite.g:1516:1: rValListMin1 returns [List<ASTRValue> n] : r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin1() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -8260,8 +8261,8 @@ public class TestSuiteParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // TestSuite.g:1519:3: (r= rValue ( COMMA r= rValue )* )
-            // TestSuite.g:1520:3: r= rValue ( COMMA r= rValue )*
+            // TestSuite.g:1520:3: (r= rValue ( COMMA r= rValue )* )
+            // TestSuite.g:1521:3: r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin16119);
             r=rValue();
@@ -8271,7 +8272,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // TestSuite.g:1522:3: ( COMMA r= rValue )*
+            // TestSuite.g:1523:3: ( COMMA r= rValue )*
             loop82:
             do {
                 int alt82=2;
@@ -8284,7 +8285,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt82) {
             	case 1 :
-            	    // TestSuite.g:1523:5: COMMA r= rValue
+            	    // TestSuite.g:1524:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin16133); if (state.failed) return n;
 
@@ -8323,7 +8324,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "rValListMin2"
-    // TestSuite.g:1533:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
+    // TestSuite.g:1534:1: rValListMin2 returns [List<ASTRValue> n] : r= rValue COMMA r= rValue ( COMMA r= rValue )* ;
     public final List<ASTRValue> rValListMin2() throws RecognitionException {
         List<ASTRValue> n = null;
 
@@ -8335,8 +8336,8 @@ public class TestSuiteParser extends BaseParser {
           n = new ArrayList<ASTRValue>();
 
         try {
-            // TestSuite.g:1537:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
-            // TestSuite.g:1538:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
+            // TestSuite.g:1538:3: (r= rValue COMMA r= rValue ( COMMA r= rValue )* )
+            // TestSuite.g:1539:3: r= rValue COMMA r= rValue ( COMMA r= rValue )*
             {
             pushFollow(FOLLOW_rValue_in_rValListMin26182);
             r=rValue();
@@ -8356,7 +8357,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.add(r); }
 
-            // TestSuite.g:1543:3: ( COMMA r= rValue )*
+            // TestSuite.g:1544:3: ( COMMA r= rValue )*
             loop83:
             do {
                 int alt83=2;
@@ -8369,7 +8370,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt83) {
             	case 1 :
-            	    // TestSuite.g:1544:5: COMMA r= rValue
+            	    // TestSuite.g:1545:5: COMMA r= rValue
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_rValListMin26212); if (state.failed) return n;
 
@@ -8408,7 +8409,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "inSoilExpression"
-    // TestSuite.g:1554:1: inSoilExpression returns [ASTExpression n] : e= expression ;
+    // TestSuite.g:1555:1: inSoilExpression returns [ASTExpression n] : e= expression ;
     public final ASTExpression inSoilExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -8417,8 +8418,8 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1555:3: (e= expression )
-            // TestSuite.g:1556:3: e= expression
+            // TestSuite.g:1556:3: (e= expression )
+            // TestSuite.g:1557:3: e= expression
             {
             pushFollow(FOLLOW_expression_in_inSoilExpression6256);
             e=expression();
@@ -8448,7 +8449,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "exprList"
-    // TestSuite.g:1565:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
+    // TestSuite.g:1566:1: exprList returns [List<ASTExpression> n] : ( nothing |el= exprListMin1 );
     public final List<ASTExpression> exprList() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -8457,7 +8458,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1566:3: ( nothing |el= exprListMin1 )
+            // TestSuite.g:1567:3: ( nothing |el= exprListMin1 )
             int alt84=2;
             int LA84_0 = input.LA(1);
 
@@ -8477,7 +8478,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt84) {
                 case 1 :
-                    // TestSuite.g:1567:3: nothing
+                    // TestSuite.g:1568:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_exprList6285);
                     nothing();
@@ -8490,7 +8491,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1570:3: el= exprListMin1
+                    // TestSuite.g:1571:3: el= exprListMin1
                     {
                     pushFollow(FOLLOW_exprListMin1_in_exprList6303);
                     el=exprListMin1();
@@ -8520,7 +8521,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin1"
-    // TestSuite.g:1578:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // TestSuite.g:1579:1: exprListMin1 returns [List<ASTExpression> n] : e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin1() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -8532,8 +8533,8 @@ public class TestSuiteParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // TestSuite.g:1582:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // TestSuite.g:1583:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // TestSuite.g:1583:3: (e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // TestSuite.g:1584:3: e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin16336);
             e=inSoilExpression();
@@ -8543,7 +8544,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // TestSuite.g:1585:3: ( COMMA e= inSoilExpression )*
+            // TestSuite.g:1586:3: ( COMMA e= inSoilExpression )*
             loop85:
             do {
                 int alt85=2;
@@ -8556,7 +8557,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt85) {
             	case 1 :
-            	    // TestSuite.g:1586:5: COMMA e= inSoilExpression
+            	    // TestSuite.g:1587:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin16351); if (state.failed) return n;
 
@@ -8595,7 +8596,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "exprListMin2"
-    // TestSuite.g:1596:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
+    // TestSuite.g:1597:1: exprListMin2 returns [List<ASTExpression> n] : e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* ;
     public final List<ASTExpression> exprListMin2() throws RecognitionException {
         List<ASTExpression> n = null;
 
@@ -8607,8 +8608,8 @@ public class TestSuiteParser extends BaseParser {
           n = new ArrayList<ASTExpression>();
 
         try {
-            // TestSuite.g:1600:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
-            // TestSuite.g:1601:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
+            // TestSuite.g:1601:3: (e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )* )
+            // TestSuite.g:1602:3: e= inSoilExpression COMMA e= inSoilExpression ( COMMA e= inSoilExpression )*
             {
             pushFollow(FOLLOW_inSoilExpression_in_exprListMin26401);
             e=inSoilExpression();
@@ -8628,7 +8629,7 @@ public class TestSuiteParser extends BaseParser {
 
             if ( state.backtracking==0 ) { if (e != null) n.add(e); }
 
-            // TestSuite.g:1606:3: ( COMMA e= inSoilExpression )*
+            // TestSuite.g:1607:3: ( COMMA e= inSoilExpression )*
             loop86:
             do {
                 int alt86=2;
@@ -8641,7 +8642,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt86) {
             	case 1 :
-            	    // TestSuite.g:1607:5: COMMA e= inSoilExpression
+            	    // TestSuite.g:1608:5: COMMA e= inSoilExpression
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_exprListMin26431); if (state.failed) return n;
 
@@ -8680,7 +8681,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "identList"
-    // TestSuite.g:1617:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
+    // TestSuite.g:1618:1: identList returns [List<String> n] : ( nothing |il= identListMin1 );
     public final List<String> identList() throws RecognitionException {
         List<String> n = null;
 
@@ -8689,7 +8690,7 @@ public class TestSuiteParser extends BaseParser {
 
 
         try {
-            // TestSuite.g:1618:3: ( nothing |il= identListMin1 )
+            // TestSuite.g:1619:3: ( nothing |il= identListMin1 )
             int alt87=2;
             int LA87_0 = input.LA(1);
 
@@ -8709,7 +8710,7 @@ public class TestSuiteParser extends BaseParser {
             }
             switch (alt87) {
                 case 1 :
-                    // TestSuite.g:1619:3: nothing
+                    // TestSuite.g:1620:3: nothing
                     {
                     pushFollow(FOLLOW_nothing_in_identList6471);
                     nothing();
@@ -8722,7 +8723,7 @@ public class TestSuiteParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1622:3: il= identListMin1
+                    // TestSuite.g:1623:3: il= identListMin1
                     {
                     pushFollow(FOLLOW_identListMin1_in_identList6488);
                     il=identListMin1();
@@ -8752,7 +8753,7 @@ public class TestSuiteParser extends BaseParser {
 
 
     // $ANTLR start "identListMin1"
-    // TestSuite.g:1630:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
+    // TestSuite.g:1631:1: identListMin1 returns [List<String> n] : id= IDENT ( COMMA id= IDENT )* ;
     public final List<String> identListMin1() throws RecognitionException {
         List<String> n = null;
 
@@ -8763,14 +8764,14 @@ public class TestSuiteParser extends BaseParser {
           n = new ArrayList<String>();
 
         try {
-            // TestSuite.g:1634:3: (id= IDENT ( COMMA id= IDENT )* )
-            // TestSuite.g:1635:3: id= IDENT ( COMMA id= IDENT )*
+            // TestSuite.g:1635:3: (id= IDENT ( COMMA id= IDENT )* )
+            // TestSuite.g:1636:3: id= IDENT ( COMMA id= IDENT )*
             {
             id=(Token)match(input,IDENT,FOLLOW_IDENT_in_identListMin16522); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n.add((id!=null?id.getText():null)); }
 
-            // TestSuite.g:1637:3: ( COMMA id= IDENT )*
+            // TestSuite.g:1638:3: ( COMMA id= IDENT )*
             loop88:
             do {
                 int alt88=2;
@@ -8783,7 +8784,7 @@ public class TestSuiteParser extends BaseParser {
 
                 switch (alt88) {
             	case 1 :
-            	    // TestSuite.g:1638:5: COMMA id= IDENT
+            	    // TestSuite.g:1639:5: COMMA id= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_identListMin16536); if (state.failed) return n;
 
@@ -8818,8 +8819,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred1_TestSuite
     public final void synpred1_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:753:7: ( COLON type EQUAL )
-        // TestSuite.g:753:8: COLON type EQUAL
+        // TestSuite.g:754:7: ( COLON type EQUAL )
+        // TestSuite.g:754:8: COLON type EQUAL
         {
         match(input,COLON,FOLLOW_COLON_in_synpred1_TestSuite3441); if (state.failed) return ;
 
@@ -8838,8 +8839,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred2_TestSuite
     public final void synpred2_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:839:3: ( stat )
-        // TestSuite.g:839:4: stat
+        // TestSuite.g:840:3: ( stat )
+        // TestSuite.g:840:4: stat
         {
         pushFollow(FOLLOW_stat_in_synpred2_TestSuite3854);
         stat();
@@ -8854,8 +8855,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred3_TestSuite
     public final void synpred3_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:842:3: ( legacyStat )
-        // TestSuite.g:842:4: legacyStat
+        // TestSuite.g:843:3: ( legacyStat )
+        // TestSuite.g:843:4: legacyStat
         {
         pushFollow(FOLLOW_legacyStat_in_synpred3_TestSuite3875);
         legacyStat();
@@ -8870,8 +8871,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred4_TestSuite
     public final void synpred4_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:852:3: ( legacyStat )
-        // TestSuite.g:852:4: legacyStat
+        // TestSuite.g:853:3: ( legacyStat )
+        // TestSuite.g:853:4: legacyStat
         {
         pushFollow(FOLLOW_legacyStat_in_synpred4_TestSuite3907);
         legacyStat();
@@ -8886,8 +8887,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred5_TestSuite
     public final void synpred5_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:855:3: ( stat )
-        // TestSuite.g:855:4: stat
+        // TestSuite.g:856:3: ( stat )
+        // TestSuite.g:856:4: stat
         {
         pushFollow(FOLLOW_stat_in_synpred5_TestSuite3930);
         stat();
@@ -8902,8 +8903,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred6_TestSuite
     public final void synpred6_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:1091:13: ( inSoilExpression )
-        // TestSuite.g:1091:14: inSoilExpression
+        // TestSuite.g:1092:13: ( inSoilExpression )
+        // TestSuite.g:1092:14: inSoilExpression
         {
         pushFollow(FOLLOW_inSoilExpression_in_synpred6_TestSuite4610);
         inSoilExpression();
@@ -8918,8 +8919,8 @@ public class TestSuiteParser extends BaseParser {
 
     // $ANTLR start synpred7_TestSuite
     public final void synpred7_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:1187:5: ( statStartingWithExpr )
-        // TestSuite.g:1187:6: statStartingWithExpr
+        // TestSuite.g:1188:5: ( statStartingWithExpr )
+        // TestSuite.g:1188:6: statStartingWithExpr
         {
         pushFollow(FOLLOW_statStartingWithExpr_in_synpred7_TestSuite4824);
         statStartingWithExpr();

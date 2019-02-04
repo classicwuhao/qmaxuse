@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Soil.g 2019-02-01 14:46:07
+// $ANTLR 3.4 Soil.g 2019-02-04 18:28:53
 
 /*
  * USE - UML based specification environment
@@ -2786,7 +2786,8 @@ public class SoilParser extends BaseParser {
             state._fsp--;
             if (state.failed) return retval;
 
-            if ( state.backtracking==0 ) { if ( nCndImplies != null ) {
+            if ( state.backtracking==0 ) { 
+                    if ( nCndImplies != null ) {
                 	 retval.n = nCndImplies;
                      retval.n.setStartToken(tok);
                   }
@@ -2819,7 +2820,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "paramList"
-    // Soil.g:702:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
+    // Soil.g:703:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
     public final List<ASTVariableDeclaration> paramList() throws RecognitionException {
         List<ASTVariableDeclaration> paramList = null;
 
@@ -2829,12 +2830,12 @@ public class SoilParser extends BaseParser {
 
          paramList = new ArrayList<ASTVariableDeclaration>(); 
         try {
-            // Soil.g:704:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
-            // Soil.g:705:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
+            // Soil.g:705:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
+            // Soil.g:706:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
             {
             match(input,LPAREN,FOLLOW_LPAREN_in_paramList2192); if (state.failed) return paramList;
 
-            // Soil.g:706:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
+            // Soil.g:707:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2843,7 +2844,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt30) {
                 case 1 :
-                    // Soil.g:707:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
+                    // Soil.g:708:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
                     {
                     pushFollow(FOLLOW_variableDeclaration_in_paramList2209);
                     v=variableDeclaration();
@@ -2853,7 +2854,7 @@ public class SoilParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { paramList.add(v); }
 
-                    // Soil.g:708:7: ( COMMA v= variableDeclaration )*
+                    // Soil.g:709:7: ( COMMA v= variableDeclaration )*
                     loop29:
                     do {
                         int alt29=2;
@@ -2866,7 +2867,7 @@ public class SoilParser extends BaseParser {
 
                         switch (alt29) {
                     	case 1 :
-                    	    // Soil.g:708:9: COMMA v= variableDeclaration
+                    	    // Soil.g:709:9: COMMA v= variableDeclaration
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_paramList2221); if (state.failed) return paramList;
 
@@ -2913,7 +2914,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "idList"
-    // Soil.g:716:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
+    // Soil.g:717:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
     public final List idList() throws RecognitionException {
         List idList = null;
 
@@ -2923,14 +2924,14 @@ public class SoilParser extends BaseParser {
 
          idList = new ArrayList(); 
         try {
-            // Soil.g:718:5: (id0= IDENT ( COMMA idn= IDENT )* )
-            // Soil.g:719:5: id0= IDENT ( COMMA idn= IDENT )*
+            // Soil.g:719:5: (id0= IDENT ( COMMA idn= IDENT )* )
+            // Soil.g:720:5: id0= IDENT ( COMMA idn= IDENT )*
             {
             id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList2274); if (state.failed) return idList;
 
             if ( state.backtracking==0 ) { idList.add(id0); }
 
-            // Soil.g:720:5: ( COMMA idn= IDENT )*
+            // Soil.g:721:5: ( COMMA idn= IDENT )*
             loop31:
             do {
                 int alt31=2;
@@ -2943,7 +2944,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // Soil.g:720:7: COMMA idn= IDENT
+            	    // Soil.g:721:7: COMMA idn= IDENT
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_idList2284); if (state.failed) return idList;
 
@@ -2978,7 +2979,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "variableDeclaration"
-    // Soil.g:728:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
+    // Soil.g:729:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
     public final ASTVariableDeclaration variableDeclaration() throws RecognitionException {
         ASTVariableDeclaration n = null;
 
@@ -2988,8 +2989,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:729:5: (name= IDENT COLON t= type )
-            // Soil.g:730:5: name= IDENT COLON t= type
+            // Soil.g:730:5: (name= IDENT COLON t= type )
+            // Soil.g:731:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration2319); if (state.failed) return n;
 
@@ -3021,7 +3022,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "conditionalImpliesExpression"
-    // Soil.g:738:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
+    // Soil.g:739:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
     public final ASTExpression conditionalImpliesExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3033,8 +3034,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:739:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
-            // Soil.g:740:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
+            // Soil.g:740:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
+            // Soil.g:741:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
             {
             pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression2361);
             nCndOrExp=conditionalOrExpression();
@@ -3044,7 +3045,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndOrExp;}
 
-            // Soil.g:741:5: (op= 'implies' n1= conditionalOrExpression )*
+            // Soil.g:742:5: (op= 'implies' n1= conditionalOrExpression )*
             loop32:
             do {
                 int alt32=2;
@@ -3057,7 +3058,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt32) {
             	case 1 :
-            	    // Soil.g:741:7: op= 'implies' n1= conditionalOrExpression
+            	    // Soil.g:742:7: op= 'implies' n1= conditionalOrExpression
             	    {
             	    op=(Token)match(input,68,FOLLOW_68_in_conditionalImpliesExpression2374); if (state.failed) return n;
 
@@ -3096,7 +3097,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "conditionalOrExpression"
-    // Soil.g:750:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
+    // Soil.g:751:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
     public final ASTExpression conditionalOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3108,8 +3109,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:751:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
-            // Soil.g:752:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
+            // Soil.g:752:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
+            // Soil.g:753:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
             {
             pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression2423);
             nCndXorExp=conditionalXOrExpression();
@@ -3119,7 +3120,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndXorExp;}
 
-            // Soil.g:753:5: (op= 'or' n1= conditionalXOrExpression )*
+            // Soil.g:754:5: (op= 'or' n1= conditionalXOrExpression )*
             loop33:
             do {
                 int alt33=2;
@@ -3132,7 +3133,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // Soil.g:753:7: op= 'or' n1= conditionalXOrExpression
+            	    // Soil.g:754:7: op= 'or' n1= conditionalXOrExpression
             	    {
             	    op=(Token)match(input,83,FOLLOW_83_in_conditionalOrExpression2436); if (state.failed) return n;
 
@@ -3171,7 +3172,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "conditionalXOrExpression"
-    // Soil.g:762:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
+    // Soil.g:763:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
     public final ASTExpression conditionalXOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3183,8 +3184,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:763:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
-            // Soil.g:764:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
+            // Soil.g:764:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
+            // Soil.g:765:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
             {
             pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression2484);
             nCndAndExp=conditionalAndExpression();
@@ -3194,7 +3195,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndAndExp;}
 
-            // Soil.g:765:5: (op= 'xor' n1= conditionalAndExpression )*
+            // Soil.g:766:5: (op= 'xor' n1= conditionalAndExpression )*
             loop34:
             do {
                 int alt34=2;
@@ -3207,7 +3208,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt34) {
             	case 1 :
-            	    // Soil.g:765:7: op= 'xor' n1= conditionalAndExpression
+            	    // Soil.g:766:7: op= 'xor' n1= conditionalAndExpression
             	    {
             	    op=(Token)match(input,90,FOLLOW_90_in_conditionalXOrExpression2497); if (state.failed) return n;
 
@@ -3246,7 +3247,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "conditionalAndExpression"
-    // Soil.g:774:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
+    // Soil.g:775:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
     public final ASTExpression conditionalAndExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3258,8 +3259,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:775:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
-            // Soil.g:776:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
+            // Soil.g:776:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
+            // Soil.g:777:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
             {
             pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression2545);
             nEqExp=equalityExpression();
@@ -3269,7 +3270,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nEqExp;}
 
-            // Soil.g:777:5: (op= 'and' n1= equalityExpression )*
+            // Soil.g:778:5: (op= 'and' n1= equalityExpression )*
             loop35:
             do {
                 int alt35=2;
@@ -3282,7 +3283,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // Soil.g:777:7: op= 'and' n1= equalityExpression
+            	    // Soil.g:778:7: op= 'and' n1= equalityExpression
             	    {
             	    op=(Token)match(input,52,FOLLOW_52_in_conditionalAndExpression2558); if (state.failed) return n;
 
@@ -3321,7 +3322,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "equalityExpression"
-    // Soil.g:786:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
+    // Soil.g:787:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
     public final ASTExpression equalityExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3333,8 +3334,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:788:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
-            // Soil.g:789:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // Soil.g:789:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
+            // Soil.g:790:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             {
             pushFollow(FOLLOW_relationalExpression_in_equalityExpression2610);
             nRelExp=relationalExpression();
@@ -3344,7 +3345,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nRelExp;}
 
-            // Soil.g:790:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // Soil.g:791:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             loop36:
             do {
                 int alt36=2;
@@ -3357,7 +3358,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt36) {
             	case 1 :
-            	    // Soil.g:790:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
+            	    // Soil.g:791:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3408,7 +3409,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "relationalExpression"
-    // Soil.g:800:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
+    // Soil.g:801:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
     public final ASTExpression relationalExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3420,8 +3421,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:802:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
-            // Soil.g:803:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // Soil.g:803:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
+            // Soil.g:804:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             {
             pushFollow(FOLLOW_additiveExpression_in_relationalExpression2688);
             nAddiExp=additiveExpression();
@@ -3431,7 +3432,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nAddiExp;}
 
-            // Soil.g:804:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // Soil.g:805:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             loop37:
             do {
                 int alt37=2;
@@ -3444,7 +3445,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // Soil.g:804:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
+            	    // Soil.g:805:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3495,7 +3496,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "additiveExpression"
-    // Soil.g:814:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
+    // Soil.g:815:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
     public final ASTExpression additiveExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3507,8 +3508,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:816:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
-            // Soil.g:817:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // Soil.g:817:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
+            // Soil.g:818:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             {
             pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression2774);
             nMulExp=multiplicativeExpression();
@@ -3518,7 +3519,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nMulExp;}
 
-            // Soil.g:818:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // Soil.g:819:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             loop38:
             do {
                 int alt38=2;
@@ -3531,7 +3532,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt38) {
             	case 1 :
-            	    // Soil.g:818:7: ( PLUS | MINUS ) n1= multiplicativeExpression
+            	    // Soil.g:819:7: ( PLUS | MINUS ) n1= multiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3582,7 +3583,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // Soil.g:829:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
+    // Soil.g:830:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
     public final ASTExpression multiplicativeExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3594,8 +3595,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:831:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
-            // Soil.g:832:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // Soil.g:832:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
+            // Soil.g:833:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             {
             pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression2852);
             nUnExp=unaryExpression();
@@ -3605,7 +3606,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nUnExp;}
 
-            // Soil.g:833:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // Soil.g:834:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             loop39:
             do {
                 int alt39=2;
@@ -3618,7 +3619,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt39) {
             	case 1 :
-            	    // Soil.g:833:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
+            	    // Soil.g:834:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3669,7 +3670,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "unaryExpression"
-    // Soil.g:845:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
+    // Soil.g:846:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
     public final ASTExpression unaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3681,7 +3682,7 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:847:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
+            // Soil.g:848:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -3701,10 +3702,10 @@ public class SoilParser extends BaseParser {
             }
             switch (alt40) {
                 case 1 :
-                    // Soil.g:848:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // Soil.g:849:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
                     {
-                    // Soil.g:848:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
-                    // Soil.g:848:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
+                    // Soil.g:849:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // Soil.g:849:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
                     {
                     if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -3734,7 +3735,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:852:7: nPosExp= postfixExpression
+                    // Soil.g:853:7: nPosExp= postfixExpression
                     {
                     pushFollow(FOLLOW_postfixExpression_in_unaryExpression2990);
                     nPosExp=postfixExpression();
@@ -3764,7 +3765,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "postfixExpression"
-    // Soil.g:860:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
+    // Soil.g:861:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
     public final ASTExpression postfixExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3776,8 +3777,8 @@ public class SoilParser extends BaseParser {
 
          boolean arrow = false; 
         try {
-            // Soil.g:862:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
-            // Soil.g:863:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // Soil.g:863:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
+            // Soil.g:864:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             {
             pushFollow(FOLLOW_primaryExpression_in_postfixExpression3023);
             nPrimExp=primaryExpression();
@@ -3787,7 +3788,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nPrimExp; }
 
-            // Soil.g:864:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // Soil.g:865:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             loop42:
             do {
                 int alt42=2;
@@ -3818,9 +3819,9 @@ public class SoilParser extends BaseParser {
 
                 switch (alt42) {
             	case 1 :
-            	    // Soil.g:865:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
+            	    // Soil.g:866:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
             	    {
-            	    // Soil.g:865:6: ( ARROW | DOT )
+            	    // Soil.g:866:6: ( ARROW | DOT )
             	    int alt41=2;
             	    int LA41_0 = input.LA(1);
 
@@ -3840,7 +3841,7 @@ public class SoilParser extends BaseParser {
             	    }
             	    switch (alt41) {
             	        case 1 :
-            	            // Soil.g:865:8: ARROW
+            	            // Soil.g:866:8: ARROW
             	            {
             	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression3041); if (state.failed) return n;
 
@@ -3849,7 +3850,7 @@ public class SoilParser extends BaseParser {
             	            }
             	            break;
             	        case 2 :
-            	            // Soil.g:865:34: DOT
+            	            // Soil.g:866:34: DOT
             	            {
             	            match(input,DOT,FOLLOW_DOT_in_postfixExpression3047); if (state.failed) return n;
 
@@ -3896,7 +3897,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "primaryExpression"
-    // Soil.g:881:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
+    // Soil.g:882:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
     public final ASTExpression primaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3917,7 +3918,7 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:882:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
+            // Soil.g:883:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
             int alt46=7;
             switch ( input.LA(1) ) {
             case HASH:
@@ -4071,7 +4072,7 @@ public class SoilParser extends BaseParser {
 
             switch (alt46) {
                 case 1 :
-                    // Soil.g:883:7: nLit= literal
+                    // Soil.g:884:7: nLit= literal
                     {
                     pushFollow(FOLLOW_literal_in_primaryExpression3098);
                     nLit=literal();
@@ -4084,7 +4085,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:884:7: nOr= objectReference
+                    // Soil.g:885:7: nOr= objectReference
                     {
                     pushFollow(FOLLOW_objectReference_in_primaryExpression3112);
                     nOr=objectReference();
@@ -4097,7 +4098,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Soil.g:885:7: nPc= propertyCall[null, false]
+                    // Soil.g:886:7: nPc= propertyCall[null, false]
                     {
                     pushFollow(FOLLOW_propertyCall_in_primaryExpression3124);
                     nPc=propertyCall(null, false);
@@ -4110,7 +4111,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Soil.g:886:7: LPAREN nExp= expression RPAREN
+                    // Soil.g:887:7: LPAREN nExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression3135); if (state.failed) return n;
 
@@ -4127,7 +4128,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // Soil.g:887:7: nIfExp= ifExpression
+                    // Soil.g:888:7: nIfExp= ifExpression
                     {
                     pushFollow(FOLLOW_ifExpression_in_primaryExpression3153);
                     nIfExp=ifExpression();
@@ -4140,7 +4141,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // Soil.g:888:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
+                    // Soil.g:889:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
                     {
                     id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression3165); if (state.failed) return n;
 
@@ -4150,7 +4151,7 @@ public class SoilParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTAllInstancesExpression(id1); }
 
-                    // Soil.g:890:9: ( AT 'pre' )?
+                    // Soil.g:891:9: ( AT 'pre' )?
                     int alt43=2;
                     int LA43_0 = input.LA(1);
 
@@ -4159,7 +4160,7 @@ public class SoilParser extends BaseParser {
                     }
                     switch (alt43) {
                         case 1 :
-                            // Soil.g:890:11: AT 'pre'
+                            // Soil.g:891:11: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression3192); if (state.failed) return n;
 
@@ -4173,7 +4174,7 @@ public class SoilParser extends BaseParser {
                     }
 
 
-                    // Soil.g:891:9: ( LPAREN RPAREN )?
+                    // Soil.g:892:9: ( LPAREN RPAREN )?
                     int alt44=2;
                     int LA44_0 = input.LA(1);
 
@@ -4182,7 +4183,7 @@ public class SoilParser extends BaseParser {
                     }
                     switch (alt44) {
                         case 1 :
-                            // Soil.g:891:11: LPAREN RPAREN
+                            // Soil.g:892:11: LPAREN RPAREN
                             {
                             match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression3212); if (state.failed) return n;
 
@@ -4197,7 +4198,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // Soil.g:892:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
+                    // Soil.g:893:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
                     {
                     id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression3227); if (state.failed) return n;
 
@@ -4205,8 +4206,8 @@ public class SoilParser extends BaseParser {
 
                     match(input,55,FOLLOW_55_in_primaryExpression3231); if (state.failed) return n;
 
-                    // Soil.g:892:31: ( LPAREN idExp= expression RPAREN )
-                    // Soil.g:892:33: LPAREN idExp= expression RPAREN
+                    // Soil.g:893:31: ( LPAREN idExp= expression RPAREN )
+                    // Soil.g:893:33: LPAREN idExp= expression RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression3235); if (state.failed) return n;
 
@@ -4223,7 +4224,7 @@ public class SoilParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n = new ASTObjectByUseIdExpression(id2, (idExp!=null?idExp.n:null)); }
 
-                    // Soil.g:894:7: ( AT 'pre' )?
+                    // Soil.g:895:7: ( AT 'pre' )?
                     int alt45=2;
                     int LA45_0 = input.LA(1);
 
@@ -4232,7 +4233,7 @@ public class SoilParser extends BaseParser {
                     }
                     switch (alt45) {
                         case 1 :
-                            // Soil.g:894:9: AT 'pre'
+                            // Soil.g:895:9: AT 'pre'
                             {
                             match(input,AT,FOLLOW_AT_in_primaryExpression3261); if (state.failed) return n;
 
@@ -4266,7 +4267,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "objectReference"
-    // Soil.g:898:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
+    // Soil.g:899:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
     public final ASTExpression objectReference() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4274,8 +4275,8 @@ public class SoilParser extends BaseParser {
         Token objectName=null;
 
         try {
-            // Soil.g:899:3: ( AT objectName= IDENT )
-            // Soil.g:900:3: AT objectName= IDENT
+            // Soil.g:900:3: ( AT objectName= IDENT )
+            // Soil.g:901:3: AT objectName= IDENT
             {
             match(input,AT,FOLLOW_AT_in_objectReference3289); if (state.failed) return n;
 
@@ -4301,7 +4302,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "propertyCall"
-    // Soil.g:914:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
+    // Soil.g:915:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
     public final ASTExpression propertyCall(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTExpression n = null;
 
@@ -4318,7 +4319,7 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:915:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
+            // Soil.g:916:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
             int alt47=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -4371,7 +4372,7 @@ public class SoilParser extends BaseParser {
 
             switch (alt47) {
                 case 1 :
-                    // Soil.g:919:7: {...}?{...}?nExpQuery= queryExpression[source]
+                    // Soil.g:920:7: {...}?{...}?nExpQuery= queryExpression[source]
                     {
                     if ( !(( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )) ) {
                         if (state.backtracking>0) {state.failed=true; return n;}
@@ -4394,7 +4395,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:922:7: nExpIterate= iterateExpression[source]
+                    // Soil.g:923:7: nExpIterate= iterateExpression[source]
                     {
                     pushFollow(FOLLOW_iterateExpression_in_propertyCall3375);
                     nExpIterate=iterateExpression(source);
@@ -4407,7 +4408,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Soil.g:923:7: nExpOperation= operationExpression[source, followsArrow]
+                    // Soil.g:924:7: nExpOperation= operationExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_operationExpression_in_propertyCall3388);
                     nExpOperation=operationExpression(source, followsArrow);
@@ -4420,7 +4421,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Soil.g:924:7: nExpType= typeExpression[source, followsArrow]
+                    // Soil.g:925:7: nExpType= typeExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_typeExpression_in_propertyCall3401);
                     nExpType=typeExpression(source, followsArrow);
@@ -4433,7 +4434,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // Soil.g:925:7: nExpInState= inStateExpression[source, followsArrow]
+                    // Soil.g:926:7: nExpInState= inStateExpression[source, followsArrow]
                     {
                     pushFollow(FOLLOW_inStateExpression_in_propertyCall3414);
                     nExpInState=inStateExpression(source, followsArrow);
@@ -4463,7 +4464,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "queryExpression"
-    // Soil.g:934:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
+    // Soil.g:935:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
     public final ASTExpression queryExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -4476,14 +4477,14 @@ public class SoilParser extends BaseParser {
 
         ASTElemVarsDeclaration decl = new ASTElemVarsDeclaration(); 
         try {
-            // Soil.g:935:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
-            // Soil.g:936:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
+            // Soil.g:936:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
+            // Soil.g:937:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
             {
             op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression3449); if (state.failed) return n;
 
             match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression3456); if (state.failed) return n;
 
-            // Soil.g:938:5: (decls= elemVarsDeclaration BAR )?
+            // Soil.g:939:5: (decls= elemVarsDeclaration BAR )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -4496,7 +4497,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt48) {
                 case 1 :
-                    // Soil.g:938:7: decls= elemVarsDeclaration BAR
+                    // Soil.g:939:7: decls= elemVarsDeclaration BAR
                     {
                     pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression3467);
                     decls=elemVarsDeclaration();
@@ -4542,7 +4543,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "iterateExpression"
-    // Soil.g:952:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
+    // Soil.g:953:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
     public final ASTExpression iterateExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -4556,8 +4557,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:952:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
-            // Soil.g:953:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
+            // Soil.g:953:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
+            // Soil.g:954:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
             {
             i=(Token)match(input,72,FOLLOW_72_in_iterateExpression3520); if (state.failed) return n;
 
@@ -4611,7 +4612,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "operationExpression"
-    // Soil.g:974:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
+    // Soil.g:975:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
     public final SoilParser.operationExpression_return operationExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         SoilParser.operationExpression_return retval = new SoilParser.operationExpression_return();
         retval.start = input.LT(1);
@@ -4624,14 +4625,14 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:976:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
-            // Soil.g:977:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // Soil.g:977:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
+            // Soil.g:978:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression3604); if (state.failed) return retval;
 
             if ( state.backtracking==0 ) { retval.n = new ASTOperationExpression(name, source, followsArrow); }
 
-            // Soil.g:983:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
+            // Soil.g:984:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -4640,7 +4641,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt52) {
                 case 1 :
-                    // Soil.g:983:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // Soil.g:984:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     {
                     match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression3626); if (state.failed) return retval;
 
@@ -4652,7 +4653,7 @@ public class SoilParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addExplicitRolenameOrQualifier((rolename!=null?rolename.n:null)); }
 
-                    // Soil.g:985:9: ( COMMA rolename= expression )*
+                    // Soil.g:986:9: ( COMMA rolename= expression )*
                     loop49:
                     do {
                         int alt49=2;
@@ -4665,7 +4666,7 @@ public class SoilParser extends BaseParser {
 
                         switch (alt49) {
                     	case 1 :
-                    	    // Soil.g:985:10: COMMA rolename= expression
+                    	    // Soil.g:986:10: COMMA rolename= expression
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression3652); if (state.failed) return retval;
 
@@ -4688,7 +4689,7 @@ public class SoilParser extends BaseParser {
 
                     match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression3668); if (state.failed) return retval;
 
-                    // Soil.g:988:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // Soil.g:989:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     int alt51=2;
                     int LA51_0 = input.LA(1);
 
@@ -4697,7 +4698,7 @@ public class SoilParser extends BaseParser {
                     }
                     switch (alt51) {
                         case 1 :
-                            // Soil.g:988:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
+                            // Soil.g:989:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
                             {
                             match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression3685); if (state.failed) return retval;
 
@@ -4709,7 +4710,7 @@ public class SoilParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addQualifier((rolename!=null?rolename.n:null)); }
 
-                            // Soil.g:990:11: ( COMMA rolename= expression )*
+                            // Soil.g:991:11: ( COMMA rolename= expression )*
                             loop50:
                             do {
                                 int alt50=2;
@@ -4722,7 +4723,7 @@ public class SoilParser extends BaseParser {
 
                                 switch (alt50) {
                             	case 1 :
-                            	    // Soil.g:990:12: COMMA rolename= expression
+                            	    // Soil.g:991:12: COMMA rolename= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression3715); if (state.failed) return retval;
 
@@ -4757,7 +4758,7 @@ public class SoilParser extends BaseParser {
             }
 
 
-            // Soil.g:995:5: ( AT 'pre' )?
+            // Soil.g:996:5: ( AT 'pre' )?
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -4766,7 +4767,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt53) {
                 case 1 :
-                    // Soil.g:995:7: AT 'pre'
+                    // Soil.g:996:7: AT 'pre'
                     {
                     match(input,AT,FOLLOW_AT_in_operationExpression3758); if (state.failed) return retval;
 
@@ -4780,7 +4781,7 @@ public class SoilParser extends BaseParser {
             }
 
 
-            // Soil.g:997:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // Soil.g:998:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -4789,13 +4790,13 @@ public class SoilParser extends BaseParser {
             }
             switch (alt56) {
                 case 1 :
-                    // Soil.g:998:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
+                    // Soil.g:999:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
                     {
                     match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression3785); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.hasParentheses(); }
 
-                    // Soil.g:999:7: (e= expression ( COMMA e= expression )* )?
+                    // Soil.g:1000:7: (e= expression ( COMMA e= expression )* )?
                     int alt55=2;
                     int LA55_0 = input.LA(1);
 
@@ -4804,7 +4805,7 @@ public class SoilParser extends BaseParser {
                     }
                     switch (alt55) {
                         case 1 :
-                            // Soil.g:1000:7: e= expression ( COMMA e= expression )*
+                            // Soil.g:1001:7: e= expression ( COMMA e= expression )*
                             {
                             pushFollow(FOLLOW_expression_in_operationExpression3806);
                             e=expression();
@@ -4814,7 +4815,7 @@ public class SoilParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addArg((e!=null?e.n:null)); }
 
-                            // Soil.g:1001:7: ( COMMA e= expression )*
+                            // Soil.g:1002:7: ( COMMA e= expression )*
                             loop54:
                             do {
                                 int alt54=2;
@@ -4827,7 +4828,7 @@ public class SoilParser extends BaseParser {
 
                                 switch (alt54) {
                             	case 1 :
-                            	    // Soil.g:1001:9: COMMA e= expression
+                            	    // Soil.g:1002:9: COMMA e= expression
                             	    {
                             	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression3818); if (state.failed) return retval;
 
@@ -4885,7 +4886,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "inStateExpression"
-    // Soil.g:1008:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
+    // Soil.g:1009:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
     public final ASTInStateExpression inStateExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTInStateExpression n = null;
 
@@ -4894,8 +4895,8 @@ public class SoilParser extends BaseParser {
         Token s=null;
 
         try {
-            // Soil.g:1009:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
-            // Soil.g:1010:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
+            // Soil.g:1010:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
+            // Soil.g:1011:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
             {
             opToken=(Token)match(input,79,FOLLOW_79_in_inStateExpression3879); if (state.failed) return n;
 
@@ -4925,7 +4926,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "typeExpression"
-    // Soil.g:1022:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
+    // Soil.g:1023:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
     public final ASTTypeArgExpression typeExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTTypeArgExpression n = null;
 
@@ -4935,8 +4936,8 @@ public class SoilParser extends BaseParser {
 
          Token opToken = null; 
         try {
-            // Soil.g:1025:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
-            // Soil.g:1026:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
+            // Soil.g:1026:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
+            // Soil.g:1027:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
             {
             if ( state.backtracking==0 ) { opToken = input.LT(1); }
 
@@ -4982,7 +4983,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "elemVarsDeclaration"
-    // Soil.g:1037:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
+    // Soil.g:1038:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
     public final ASTElemVarsDeclaration elemVarsDeclaration() throws RecognitionException {
         ASTElemVarsDeclaration n = null;
 
@@ -4995,14 +4996,14 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1038:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
-            // Soil.g:1039:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // Soil.g:1039:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
+            // Soil.g:1040:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
             {
             if ( state.backtracking==0 ) { n = new ASTElemVarsDeclaration(); }
 
             var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration4002); if (state.failed) return n;
 
-            // Soil.g:1040:17: ( COLON t= type )?
+            // Soil.g:1041:17: ( COLON t= type )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -5011,7 +5012,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt57) {
                 case 1 :
-                    // Soil.g:1040:18: COLON t= type
+                    // Soil.g:1041:18: COLON t= type
                     {
                     match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration4005); if (state.failed) return n;
 
@@ -5029,7 +5030,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n.addDeclaration(var1, t);}
 
-            // Soil.g:1041:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // Soil.g:1042:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
             loop59:
             do {
                 int alt59=2;
@@ -5042,13 +5043,13 @@ public class SoilParser extends BaseParser {
 
                 switch (alt59) {
             	case 1 :
-            	    // Soil.g:1041:5: COMMA varN= IDENT ( COLON tN= type )?
+            	    // Soil.g:1042:5: COMMA varN= IDENT ( COLON tN= type )?
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration4019); if (state.failed) return n;
 
             	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration4025); if (state.failed) return n;
 
-            	    // Soil.g:1041:24: ( COLON tN= type )?
+            	    // Soil.g:1042:24: ( COLON tN= type )?
             	    int alt58=2;
             	    int LA58_0 = input.LA(1);
 
@@ -5057,7 +5058,7 @@ public class SoilParser extends BaseParser {
             	    }
             	    switch (alt58) {
             	        case 1 :
-            	            // Soil.g:1041:25: COLON tN= type
+            	            // Soil.g:1042:25: COLON tN= type
             	            {
             	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration4028); if (state.failed) return n;
 
@@ -5102,7 +5103,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "variableInitialization"
-    // Soil.g:1049:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
+    // Soil.g:1050:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
     public final ASTVariableInitialization variableInitialization() throws RecognitionException {
         ASTVariableInitialization n = null;
 
@@ -5114,8 +5115,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1050:5: (name= IDENT COLON t= type EQUAL e= expression )
-            // Soil.g:1051:5: name= IDENT COLON t= type EQUAL e= expression
+            // Soil.g:1051:5: (name= IDENT COLON t= type EQUAL e= expression )
+            // Soil.g:1052:5: name= IDENT COLON t= type EQUAL e= expression
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization4062); if (state.failed) return n;
 
@@ -5155,7 +5156,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "ifExpression"
-    // Soil.g:1060:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
+    // Soil.g:1061:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
     public final ASTExpression ifExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5169,8 +5170,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1061:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
-            // Soil.g:1062:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
+            // Soil.g:1062:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
+            // Soil.g:1063:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
             {
             i=(Token)match(input,67,FOLLOW_67_in_ifExpression4106); if (state.failed) return n;
 
@@ -5218,7 +5219,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "literal"
-    // Soil.g:1081:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
+    // Soil.g:1082:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
     public final ASTExpression literal() throws RecognitionException {
         ASTExpression n = null;
 
@@ -5241,7 +5242,7 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1082:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
+            // Soil.g:1083:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
             int alt60=12;
             switch ( input.LA(1) ) {
             case 88:
@@ -5336,7 +5337,7 @@ public class SoilParser extends BaseParser {
 
             switch (alt60) {
                 case 1 :
-                    // Soil.g:1083:7: t= 'true'
+                    // Soil.g:1084:7: t= 'true'
                     {
                     t=(Token)match(input,88,FOLLOW_88_in_literal4163); if (state.failed) return n;
 
@@ -5345,7 +5346,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:1084:7: f= 'false'
+                    // Soil.g:1085:7: f= 'false'
                     {
                     f=(Token)match(input,64,FOLLOW_64_in_literal4177); if (state.failed) return n;
 
@@ -5354,7 +5355,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Soil.g:1085:7: i= INT
+                    // Soil.g:1086:7: i= INT
                     {
                     i=(Token)match(input,INT,FOLLOW_INT_in_literal4190); if (state.failed) return n;
 
@@ -5363,7 +5364,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Soil.g:1086:7: r= REAL
+                    // Soil.g:1087:7: r= REAL
                     {
                     r=(Token)match(input,REAL,FOLLOW_REAL_in_literal4205); if (state.failed) return n;
 
@@ -5372,7 +5373,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // Soil.g:1087:7: s= STRING
+                    // Soil.g:1088:7: s= STRING
                     {
                     s=(Token)match(input,STRING,FOLLOW_STRING_in_literal4219); if (state.failed) return n;
 
@@ -5381,7 +5382,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // Soil.g:1088:7: HASH enumLit= IDENT
+                    // Soil.g:1089:7: HASH enumLit= IDENT
                     {
                     match(input,HASH,FOLLOW_HASH_in_literal4229); if (state.failed) return n;
 
@@ -5392,7 +5393,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // Soil.g:1089:7: enumName= IDENT '::' enumLit= IDENT
+                    // Soil.g:1090:7: enumName= IDENT '::' enumLit= IDENT
                     {
                     enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal4245); if (state.failed) return n;
 
@@ -5405,7 +5406,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // Soil.g:1090:7: nColIt= collectionLiteral
+                    // Soil.g:1091:7: nColIt= collectionLiteral
                     {
                     pushFollow(FOLLOW_collectionLiteral_in_literal4263);
                     nColIt=collectionLiteral();
@@ -5418,7 +5419,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // Soil.g:1091:7: nEColIt= emptyCollectionLiteral
+                    // Soil.g:1092:7: nEColIt= emptyCollectionLiteral
                     {
                     pushFollow(FOLLOW_emptyCollectionLiteral_in_literal4275);
                     nEColIt=emptyCollectionLiteral();
@@ -5431,7 +5432,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // Soil.g:1092:7: nUndLit= undefinedLiteral
+                    // Soil.g:1093:7: nUndLit= undefinedLiteral
                     {
                     pushFollow(FOLLOW_undefinedLiteral_in_literal4287);
                     nUndLit=undefinedLiteral();
@@ -5444,7 +5445,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // Soil.g:1093:7: nTupleLit= tupleLiteral
+                    // Soil.g:1094:7: nTupleLit= tupleLiteral
                     {
                     pushFollow(FOLLOW_tupleLiteral_in_literal4299);
                     nTupleLit=tupleLiteral();
@@ -5457,7 +5458,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 12 :
-                    // Soil.g:1094:7: un= STAR
+                    // Soil.g:1095:7: un= STAR
                     {
                     un=(Token)match(input,STAR,FOLLOW_STAR_in_literal4311); if (state.failed) return n;
 
@@ -5483,7 +5484,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "collectionLiteral"
-    // Soil.g:1102:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
+    // Soil.g:1103:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
     public final ASTCollectionLiteral collectionLiteral() throws RecognitionException {
         ASTCollectionLiteral n = null;
 
@@ -5493,8 +5494,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:1104:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
-            // Soil.g:1105:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
+            // Soil.g:1105:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
+            // Soil.g:1106:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5514,7 +5515,7 @@ public class SoilParser extends BaseParser {
 
             match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral4378); if (state.failed) return n;
 
-            // Soil.g:1109:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
+            // Soil.g:1110:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -5523,7 +5524,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt62) {
                 case 1 :
-                    // Soil.g:1110:7: ci= collectionItem ( COMMA ci= collectionItem )*
+                    // Soil.g:1111:7: ci= collectionItem ( COMMA ci= collectionItem )*
                     {
                     pushFollow(FOLLOW_collectionItem_in_collectionLiteral4395);
                     ci=collectionItem();
@@ -5533,7 +5534,7 @@ public class SoilParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addItem(ci); }
 
-                    // Soil.g:1111:7: ( COMMA ci= collectionItem )*
+                    // Soil.g:1112:7: ( COMMA ci= collectionItem )*
                     loop61:
                     do {
                         int alt61=2;
@@ -5546,7 +5547,7 @@ public class SoilParser extends BaseParser {
 
                         switch (alt61) {
                     	case 1 :
-                    	    // Soil.g:1111:9: COMMA ci= collectionItem
+                    	    // Soil.g:1112:9: COMMA ci= collectionItem
                     	    {
                     	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral4408); if (state.failed) return n;
 
@@ -5593,7 +5594,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "collectionItem"
-    // Soil.g:1120:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
+    // Soil.g:1121:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
     public final ASTCollectionItem collectionItem() throws RecognitionException {
         ASTCollectionItem n = null;
 
@@ -5603,8 +5604,8 @@ public class SoilParser extends BaseParser {
 
          n = new ASTCollectionItem(); 
         try {
-            // Soil.g:1122:5: (e= expression ( DOTDOT e= expression )? )
-            // Soil.g:1123:5: e= expression ( DOTDOT e= expression )?
+            // Soil.g:1123:5: (e= expression ( DOTDOT e= expression )? )
+            // Soil.g:1124:5: e= expression ( DOTDOT e= expression )?
             {
             pushFollow(FOLLOW_expression_in_collectionItem4460);
             e=expression();
@@ -5614,7 +5615,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setFirst((e!=null?e.n:null)); }
 
-            // Soil.g:1124:5: ( DOTDOT e= expression )?
+            // Soil.g:1125:5: ( DOTDOT e= expression )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -5623,7 +5624,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt63) {
                 case 1 :
-                    // Soil.g:1124:7: DOTDOT e= expression
+                    // Soil.g:1125:7: DOTDOT e= expression
                     {
                     match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem4471); if (state.failed) return n;
 
@@ -5659,7 +5660,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "emptyCollectionLiteral"
-    // Soil.g:1134:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
+    // Soil.g:1135:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
     public final ASTEmptyCollectionLiteral emptyCollectionLiteral() throws RecognitionException {
         ASTEmptyCollectionLiteral n = null;
 
@@ -5668,7 +5669,7 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1135:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
+            // Soil.g:1136:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -5688,7 +5689,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt64) {
                 case 1 :
-                    // Soil.g:1136:5: 'oclEmpty' LPAREN t= collectionType RPAREN
+                    // Soil.g:1137:5: 'oclEmpty' LPAREN t= collectionType RPAREN
                     {
                     match(input,78,FOLLOW_78_in_emptyCollectionLiteral4504); if (state.failed) return n;
 
@@ -5707,7 +5708,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:1139:5: t= collectionType LBRACE RBRACE
+                    // Soil.g:1140:5: t= collectionType LBRACE RBRACE
                     {
                     pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral4528);
                     t=collectionType();
@@ -5741,7 +5742,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "undefinedLiteral"
-    // Soil.g:1150:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
+    // Soil.g:1151:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
     public final ASTUndefinedLiteral undefinedLiteral() throws RecognitionException {
         ASTUndefinedLiteral n = null;
 
@@ -5750,7 +5751,7 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1151:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
+            // Soil.g:1152:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
             int alt65=4;
             switch ( input.LA(1) ) {
             case 82:
@@ -5794,7 +5795,7 @@ public class SoilParser extends BaseParser {
 
             switch (alt65) {
                 case 1 :
-                    // Soil.g:1152:5: 'oclUndefined' LPAREN t= type RPAREN
+                    // Soil.g:1153:5: 'oclUndefined' LPAREN t= type RPAREN
                     {
                     match(input,82,FOLLOW_82_in_undefinedLiteral4562); if (state.failed) return n;
 
@@ -5813,7 +5814,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:1155:5: 'Undefined'
+                    // Soil.g:1156:5: 'Undefined'
                     {
                     match(input,50,FOLLOW_50_in_undefinedLiteral4584); if (state.failed) return n;
 
@@ -5822,7 +5823,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Soil.g:1158:5: 'null' LPAREN t= type RPAREN
+                    // Soil.g:1159:5: 'null' LPAREN t= type RPAREN
                     {
                     match(input,76,FOLLOW_76_in_undefinedLiteral4598); if (state.failed) return n;
 
@@ -5841,7 +5842,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Soil.g:1161:5: 'null'
+                    // Soil.g:1162:5: 'null'
                     {
                     match(input,76,FOLLOW_76_in_undefinedLiteral4620); if (state.failed) return n;
 
@@ -5867,7 +5868,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "tupleLiteral"
-    // Soil.g:1171:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
+    // Soil.g:1172:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
     public final ASTTupleLiteral tupleLiteral() throws RecognitionException {
         ASTTupleLiteral n = null;
 
@@ -5877,8 +5878,8 @@ public class SoilParser extends BaseParser {
 
          List tiList = new ArrayList(); 
         try {
-            // Soil.g:1173:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
-            // Soil.g:1174:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
+            // Soil.g:1174:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
+            // Soil.g:1175:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
             {
             match(input,49,FOLLOW_49_in_tupleLiteral4659); if (state.failed) return n;
 
@@ -5892,7 +5893,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tiList.add(ti); }
 
-            // Soil.g:1177:5: ( COMMA ti= tupleItem )*
+            // Soil.g:1178:5: ( COMMA ti= tupleItem )*
             loop66:
             do {
                 int alt66=2;
@@ -5905,7 +5906,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt66) {
             	case 1 :
-            	    // Soil.g:1177:7: COMMA ti= tupleItem
+            	    // Soil.g:1178:7: COMMA ti= tupleItem
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral4684); if (state.failed) return n;
 
@@ -5948,7 +5949,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "tupleItem"
-    // Soil.g:1185:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
+    // Soil.g:1186:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
     public final ASTTupleItem tupleItem() throws RecognitionException {
         ASTTupleItem n = null;
 
@@ -5960,12 +5961,12 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1186:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
-            // Soil.g:1187:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // Soil.g:1187:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
+            // Soil.g:1188:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem4730); if (state.failed) return n;
 
-            // Soil.g:1188:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // Soil.g:1189:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -6000,7 +6001,7 @@ public class SoilParser extends BaseParser {
             }
             switch (alt67) {
                 case 1 :
-                    // Soil.g:1191:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
+                    // Soil.g:1192:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
                     {
                     match(input,COLON,FOLLOW_COLON_in_tupleItem4769); if (state.failed) return n;
 
@@ -6023,7 +6024,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:1194:7: ( COLON | EQUAL ) e= expression
+                    // Soil.g:1195:7: ( COLON | EQUAL ) e= expression
                     {
                     if ( input.LA(1)==COLON||input.LA(1)==EQUAL ) {
                         input.consume();
@@ -6069,7 +6070,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "type"
-    // Soil.g:1205:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
+    // Soil.g:1206:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
     public final ASTType type() throws RecognitionException {
         ASTType n = null;
 
@@ -6083,12 +6084,12 @@ public class SoilParser extends BaseParser {
 
          Token tok = null; 
         try {
-            // Soil.g:1207:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
-            // Soil.g:1208:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // Soil.g:1208:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
+            // Soil.g:1209:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of type */ }
 
-            // Soil.g:1209:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // Soil.g:1210:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             int alt68=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -6121,7 +6122,7 @@ public class SoilParser extends BaseParser {
 
             switch (alt68) {
                 case 1 :
-                    // Soil.g:1210:7: nTSimple= simpleType
+                    // Soil.g:1211:7: nTSimple= simpleType
                     {
                     pushFollow(FOLLOW_simpleType_in_type4877);
                     nTSimple=simpleType();
@@ -6134,7 +6135,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Soil.g:1211:7: nTCollection= collectionType
+                    // Soil.g:1212:7: nTCollection= collectionType
                     {
                     pushFollow(FOLLOW_collectionType_in_type4889);
                     nTCollection=collectionType();
@@ -6147,7 +6148,7 @@ public class SoilParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Soil.g:1212:7: nTTuple= tupleType
+                    // Soil.g:1213:7: nTTuple= tupleType
                     {
                     pushFollow(FOLLOW_tupleType_in_type4901);
                     nTTuple=tupleType();
@@ -6181,7 +6182,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "typeOnly"
-    // Soil.g:1217:1: typeOnly returns [ASTType n] : nT= type EOF ;
+    // Soil.g:1218:1: typeOnly returns [ASTType n] : nT= type EOF ;
     public final ASTType typeOnly() throws RecognitionException {
         ASTType n = null;
 
@@ -6190,8 +6191,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1218:5: (nT= type EOF )
-            // Soil.g:1219:5: nT= type EOF
+            // Soil.g:1219:5: (nT= type EOF )
+            // Soil.g:1220:5: nT= type EOF
             {
             pushFollow(FOLLOW_type_in_typeOnly4933);
             nT=type();
@@ -6221,7 +6222,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "simpleType"
-    // Soil.g:1229:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
+    // Soil.g:1230:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
     public final ASTSimpleType simpleType() throws RecognitionException {
         ASTSimpleType n = null;
 
@@ -6229,8 +6230,8 @@ public class SoilParser extends BaseParser {
         Token name=null;
 
         try {
-            // Soil.g:1230:5: (name= IDENT )
-            // Soil.g:1231:5: name= IDENT
+            // Soil.g:1231:5: (name= IDENT )
+            // Soil.g:1232:5: name= IDENT
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType4963); if (state.failed) return n;
 
@@ -6254,7 +6255,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "collectionType"
-    // Soil.g:1239:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
+    // Soil.g:1240:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
     public final ASTCollectionType collectionType() throws RecognitionException {
         ASTCollectionType n = null;
 
@@ -6264,8 +6265,8 @@ public class SoilParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Soil.g:1241:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
-            // Soil.g:1242:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
+            // Soil.g:1242:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
+            // Soil.g:1243:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -6311,7 +6312,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "tupleType"
-    // Soil.g:1252:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
+    // Soil.g:1253:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
     public final ASTTupleType tupleType() throws RecognitionException {
         ASTTupleType n = null;
 
@@ -6321,8 +6322,8 @@ public class SoilParser extends BaseParser {
 
          List tpList = new ArrayList(); 
         try {
-            // Soil.g:1254:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
-            // Soil.g:1255:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
+            // Soil.g:1255:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
+            // Soil.g:1256:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
             {
             match(input,49,FOLLOW_49_in_tupleType5068); if (state.failed) return n;
 
@@ -6336,7 +6337,7 @@ public class SoilParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tpList.add(tp); }
 
-            // Soil.g:1257:5: ( COMMA tp= tuplePart )*
+            // Soil.g:1258:5: ( COMMA tp= tuplePart )*
             loop69:
             do {
                 int alt69=2;
@@ -6349,7 +6350,7 @@ public class SoilParser extends BaseParser {
 
                 switch (alt69) {
             	case 1 :
-            	    // Soil.g:1257:7: COMMA tp= tuplePart
+            	    // Soil.g:1258:7: COMMA tp= tuplePart
             	    {
             	    match(input,COMMA,FOLLOW_COMMA_in_tupleType5090); if (state.failed) return n;
 
@@ -6392,7 +6393,7 @@ public class SoilParser extends BaseParser {
 
 
     // $ANTLR start "tuplePart"
-    // Soil.g:1266:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
+    // Soil.g:1267:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
     public final ASTTuplePart tuplePart() throws RecognitionException {
         ASTTuplePart n = null;
 
@@ -6402,8 +6403,8 @@ public class SoilParser extends BaseParser {
 
 
         try {
-            // Soil.g:1267:5: (name= IDENT COLON t= type )
-            // Soil.g:1268:5: name= IDENT COLON t= type
+            // Soil.g:1268:5: (name= IDENT COLON t= type )
+            // Soil.g:1269:5: name= IDENT COLON t= type
             {
             name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart5138); if (state.failed) return n;
 
@@ -6450,8 +6451,8 @@ public class SoilParser extends BaseParser {
 
     // $ANTLR start synpred2_Soil
     public final void synpred2_Soil_fragment() throws RecognitionException {
-        // Soil.g:1191:7: ( COLON type EQUAL )
-        // Soil.g:1191:8: COLON type EQUAL
+        // Soil.g:1192:7: ( COLON type EQUAL )
+        // Soil.g:1192:8: COLON type EQUAL
         {
         match(input,COLON,FOLLOW_COLON_in_synpred2_Soil4760); if (state.failed) return ;
 

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 TestSuite.g 2019-02-01 14:46:12
+// $ANTLR 3.4 TestSuite.g 2019-02-04 18:28:59
 
 /*
  * USE - UML based specification environment
@@ -1697,10 +1697,10 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1653:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
-            // TestSuite.g:1654:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // TestSuite.g:1654:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
+            // TestSuite.g:1655:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             {
-            // TestSuite.g:1654:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // TestSuite.g:1655:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             int alt1=4;
             switch ( input.LA(1) ) {
             case ' ':
@@ -1735,28 +1735,28 @@ public class TestSuiteLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // TestSuite.g:1654:7: ' '
+                    // TestSuite.g:1655:7: ' '
                     {
                     match(' '); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1655:7: '\\t'
+                    // TestSuite.g:1656:7: '\\t'
                     {
                     match('\t'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:1656:7: '\\f'
+                    // TestSuite.g:1657:7: '\\f'
                     {
                     match('\f'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:1657:7: NEWLINE
+                    // TestSuite.g:1658:7: NEWLINE
                     {
                     mNEWLINE(); if (state.failed) return ;
 
@@ -1785,10 +1785,10 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1663:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
-            // TestSuite.g:1664:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
+            // TestSuite.g:1664:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
+            // TestSuite.g:1665:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
             {
-            // TestSuite.g:1664:5: ( '//' | '--' )
+            // TestSuite.g:1665:5: ( '//' | '--' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1808,7 +1808,7 @@ public class TestSuiteLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // TestSuite.g:1664:6: '//'
+                    // TestSuite.g:1665:6: '//'
                     {
                     match("//"); if (state.failed) return ;
 
@@ -1817,7 +1817,7 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1664:13: '--'
+                    // TestSuite.g:1665:13: '--'
                     {
                     match("--"); if (state.failed) return ;
 
@@ -1829,7 +1829,7 @@ public class TestSuiteLexer extends Lexer {
             }
 
 
-            // TestSuite.g:1665:5: (~ ( NEWLINE ) )*
+            // TestSuite.g:1666:5: (~ ( NEWLINE ) )*
             loop3:
             do {
                 int alt3=2;
@@ -1842,7 +1842,7 @@ public class TestSuiteLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // TestSuite.g:1665:6: ~ ( NEWLINE )
+            	    // TestSuite.g:1666:6: ~ ( NEWLINE )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -1883,14 +1883,14 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1670:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // TestSuite.g:1671:5: '/*' ( options {greedy=false; } : . )* '*/'
+            // TestSuite.g:1671:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // TestSuite.g:1672:5: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); if (state.failed) return ;
 
 
 
-            // TestSuite.g:1671:10: ( options {greedy=false; } : . )*
+            // TestSuite.g:1672:10: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -1915,7 +1915,7 @@ public class TestSuiteLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // TestSuite.g:1671:38: .
+            	    // TestSuite.g:1672:38: .
             	    {
             	    matchAny(); if (state.failed) return ;
 
@@ -1948,7 +1948,7 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "NEWLINE"
     public final void mNEWLINE() throws RecognitionException {
         try {
-            // TestSuite.g:1675:9: ( '\\r\\n' | '\\r' | '\\n' )
+            // TestSuite.g:1676:9: ( '\\r\\n' | '\\r' | '\\n' )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -1975,7 +1975,7 @@ public class TestSuiteLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // TestSuite.g:1676:5: '\\r\\n'
+                    // TestSuite.g:1677:5: '\\r\\n'
                     {
                     match("\r\n"); if (state.failed) return ;
 
@@ -1984,14 +1984,14 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1676:14: '\\r'
+                    // TestSuite.g:1677:14: '\\r'
                     {
                     match('\r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:1676:21: '\\n'
+                    // TestSuite.g:1677:21: '\\n'
                     {
                     match('\n'); if (state.failed) return ;
 
@@ -2012,8 +2012,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1678:10: ( '->' )
-            // TestSuite.g:1678:12: '->'
+            // TestSuite.g:1679:10: ( '->' )
+            // TestSuite.g:1679:12: '->'
             {
             match("->"); if (state.failed) return ;
 
@@ -2035,8 +2035,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1679:11: ( '@' )
-            // TestSuite.g:1679:13: '@'
+            // TestSuite.g:1680:11: ( '@' )
+            // TestSuite.g:1680:13: '@'
             {
             match('@'); if (state.failed) return ;
 
@@ -2056,8 +2056,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1680:8: ( '|' )
-            // TestSuite.g:1680:10: '|'
+            // TestSuite.g:1681:8: ( '|' )
+            // TestSuite.g:1681:10: '|'
             {
             match('|'); if (state.failed) return ;
 
@@ -2077,8 +2077,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1681:10: ( ':' )
-            // TestSuite.g:1681:12: ':'
+            // TestSuite.g:1682:10: ( ':' )
+            // TestSuite.g:1682:12: ':'
             {
             match(':'); if (state.failed) return ;
 
@@ -2098,8 +2098,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = COLON_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1682:14: ( '::' )
-            // TestSuite.g:1682:16: '::'
+            // TestSuite.g:1683:14: ( '::' )
+            // TestSuite.g:1683:16: '::'
             {
             match("::"); if (state.failed) return ;
 
@@ -2121,8 +2121,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = COLON_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1683:14: ( ':=' )
-            // TestSuite.g:1683:16: ':='
+            // TestSuite.g:1684:14: ( ':=' )
+            // TestSuite.g:1684:16: ':='
             {
             match(":="); if (state.failed) return ;
 
@@ -2144,8 +2144,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1684:10: ( ',' )
-            // TestSuite.g:1684:12: ','
+            // TestSuite.g:1685:10: ( ',' )
+            // TestSuite.g:1685:12: ','
             {
             match(','); if (state.failed) return ;
 
@@ -2165,8 +2165,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1685:8: ( '.' )
-            // TestSuite.g:1685:10: '.'
+            // TestSuite.g:1686:8: ( '.' )
+            // TestSuite.g:1686:10: '.'
             {
             match('.'); if (state.failed) return ;
 
@@ -2186,8 +2186,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = DOTDOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1686:11: ( '..' )
-            // TestSuite.g:1686:13: '..'
+            // TestSuite.g:1687:11: ( '..' )
+            // TestSuite.g:1687:13: '..'
             {
             match(".."); if (state.failed) return ;
 
@@ -2209,8 +2209,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1687:10: ( '=' )
-            // TestSuite.g:1687:12: '='
+            // TestSuite.g:1688:10: ( '=' )
+            // TestSuite.g:1688:12: '='
             {
             match('='); if (state.failed) return ;
 
@@ -2230,8 +2230,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1688:11: ( '>' )
-            // TestSuite.g:1688:13: '>'
+            // TestSuite.g:1689:11: ( '>' )
+            // TestSuite.g:1689:13: '>'
             {
             match('>'); if (state.failed) return ;
 
@@ -2251,8 +2251,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = GREATER_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1689:15: ( '>=' )
-            // TestSuite.g:1689:17: '>='
+            // TestSuite.g:1690:15: ( '>=' )
+            // TestSuite.g:1690:17: '>='
             {
             match(">="); if (state.failed) return ;
 
@@ -2274,8 +2274,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1690:9: ( '#' )
-            // TestSuite.g:1690:11: '#'
+            // TestSuite.g:1691:9: ( '#' )
+            // TestSuite.g:1691:11: '#'
             {
             match('#'); if (state.failed) return ;
 
@@ -2295,8 +2295,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1691:11: ( '{' )
-            // TestSuite.g:1691:13: '{'
+            // TestSuite.g:1692:11: ( '{' )
+            // TestSuite.g:1692:13: '{'
             {
             match('{'); if (state.failed) return ;
 
@@ -2316,8 +2316,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1692:11: ( '[' )
-            // TestSuite.g:1692:13: '['
+            // TestSuite.g:1693:11: ( '[' )
+            // TestSuite.g:1693:13: '['
             {
             match('['); if (state.failed) return ;
 
@@ -2337,8 +2337,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1693:9: ( '<' )
-            // TestSuite.g:1693:11: '<'
+            // TestSuite.g:1694:9: ( '<' )
+            // TestSuite.g:1694:11: '<'
             {
             match('<'); if (state.failed) return ;
 
@@ -2358,8 +2358,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = LESS_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1694:14: ( '<=' )
-            // TestSuite.g:1694:16: '<='
+            // TestSuite.g:1695:14: ( '<=' )
+            // TestSuite.g:1695:16: '<='
             {
             match("<="); if (state.failed) return ;
 
@@ -2381,8 +2381,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1695:11: ( '(' )
-            // TestSuite.g:1695:13: '('
+            // TestSuite.g:1696:11: ( '(' )
+            // TestSuite.g:1696:13: '('
             {
             match('('); if (state.failed) return ;
 
@@ -2402,8 +2402,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1696:10: ( '-' )
-            // TestSuite.g:1696:12: '-'
+            // TestSuite.g:1697:10: ( '-' )
+            // TestSuite.g:1697:12: '-'
             {
             match('-'); if (state.failed) return ;
 
@@ -2423,8 +2423,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1697:13: ( '<>' )
-            // TestSuite.g:1697:15: '<>'
+            // TestSuite.g:1698:13: ( '<>' )
+            // TestSuite.g:1698:15: '<>'
             {
             match("<>"); if (state.failed) return ;
 
@@ -2446,8 +2446,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1698:9: ( '+' )
-            // TestSuite.g:1698:11: '+'
+            // TestSuite.g:1699:9: ( '+' )
+            // TestSuite.g:1699:11: '+'
             {
             match('+'); if (state.failed) return ;
 
@@ -2467,8 +2467,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1699:11: ( '}' )
-            // TestSuite.g:1699:13: '}'
+            // TestSuite.g:1700:11: ( '}' )
+            // TestSuite.g:1700:13: '}'
             {
             match('}'); if (state.failed) return ;
 
@@ -2488,8 +2488,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1700:11: ( ']' )
-            // TestSuite.g:1700:13: ']'
+            // TestSuite.g:1701:11: ( ']' )
+            // TestSuite.g:1701:13: ']'
             {
             match(']'); if (state.failed) return ;
 
@@ -2509,8 +2509,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1701:10: ( ')' )
-            // TestSuite.g:1701:12: ')'
+            // TestSuite.g:1702:10: ( ')' )
+            // TestSuite.g:1702:12: ')'
             {
             match(')'); if (state.failed) return ;
 
@@ -2530,8 +2530,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1702:8: ( ';' )
-            // TestSuite.g:1702:10: ';'
+            // TestSuite.g:1703:8: ( ';' )
+            // TestSuite.g:1703:10: ';'
             {
             match(';'); if (state.failed) return ;
 
@@ -2551,8 +2551,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1703:10: ( '/' )
-            // TestSuite.g:1703:12: '/'
+            // TestSuite.g:1704:10: ( '/' )
+            // TestSuite.g:1704:12: '/'
             {
             match('/'); if (state.failed) return ;
 
@@ -2572,8 +2572,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1704:9: ( '*' )
-            // TestSuite.g:1704:11: '*'
+            // TestSuite.g:1705:9: ( '*' )
+            // TestSuite.g:1705:11: '*'
             {
             match('*'); if (state.failed) return ;
 
@@ -2591,10 +2591,10 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // TestSuite.g:1708:4: ( ( '0' .. '9' )+ )
-            // TestSuite.g:1709:5: ( '0' .. '9' )+
+            // TestSuite.g:1709:4: ( ( '0' .. '9' )+ )
+            // TestSuite.g:1710:5: ( '0' .. '9' )+
             {
-            // TestSuite.g:1709:5: ( '0' .. '9' )+
+            // TestSuite.g:1710:5: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -2649,13 +2649,13 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "REAL"
     public final void mREAL() throws RecognitionException {
         try {
-            // TestSuite.g:1713:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
-            // TestSuite.g:1714:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // TestSuite.g:1714:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
+            // TestSuite.g:1715:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             {
             mINT(); if (state.failed) return ;
 
 
-            // TestSuite.g:1714:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // TestSuite.g:1715:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2675,14 +2675,14 @@ public class TestSuiteLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // TestSuite.g:1714:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // TestSuite.g:1715:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     {
                     match('.'); if (state.failed) return ;
 
                     mINT(); if (state.failed) return ;
 
 
-                    // TestSuite.g:1714:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // TestSuite.g:1715:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2691,7 +2691,7 @@ public class TestSuiteLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // TestSuite.g:1714:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                            // TestSuite.g:1715:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -2705,7 +2705,7 @@ public class TestSuiteLexer extends Lexer {
                             }
 
 
-                            // TestSuite.g:1714:31: ( '+' | '-' )?
+                            // TestSuite.g:1715:31: ( '+' | '-' )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -2746,7 +2746,7 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1714:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                    // TestSuite.g:1715:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2760,7 +2760,7 @@ public class TestSuiteLexer extends Lexer {
                     }
 
 
-                    // TestSuite.g:1714:64: ( '+' | '-' )?
+                    // TestSuite.g:1715:64: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2813,7 +2813,7 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = RANGE_OR_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1716:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
+            // TestSuite.g:1717:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -2854,7 +2854,7 @@ public class TestSuiteLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // TestSuite.g:1717:7: ( INT '..' )=> INT
+                    // TestSuite.g:1718:7: ( INT '..' )=> INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2864,7 +2864,7 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1718:7: ( REAL )=> REAL
+                    // TestSuite.g:1719:7: ( REAL )=> REAL
                     {
                     mREAL(); if (state.failed) return ;
 
@@ -2874,7 +2874,7 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:1719:9: INT
+                    // TestSuite.g:1720:9: INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2899,12 +2899,12 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1723:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
-            // TestSuite.g:1724:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
+            // TestSuite.g:1724:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
+            // TestSuite.g:1725:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
             {
             match('\''); if (state.failed) return ;
 
-            // TestSuite.g:1724:10: (~ ( '\\'' | '\\\\' ) | ESC )*
+            // TestSuite.g:1725:10: (~ ( '\\'' | '\\\\' ) | ESC )*
             loop12:
             do {
                 int alt12=3;
@@ -2920,7 +2920,7 @@ public class TestSuiteLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // TestSuite.g:1724:12: ~ ( '\\'' | '\\\\' )
+            	    // TestSuite.g:1725:12: ~ ( '\\'' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2937,7 +2937,7 @@ public class TestSuiteLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // TestSuite.g:1724:27: ESC
+            	    // TestSuite.g:1725:27: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -2969,12 +2969,12 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = NON_OCL_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1726:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
-            // TestSuite.g:1727:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
+            // TestSuite.g:1727:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
+            // TestSuite.g:1728:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
             {
             match('\"'); if (state.failed) return ;
 
-            // TestSuite.g:1727:9: (~ ( '\"' | '\\\\' ) | ESC )*
+            // TestSuite.g:1728:9: (~ ( '\"' | '\\\\' ) | ESC )*
             loop13:
             do {
                 int alt13=3;
@@ -2990,7 +2990,7 @@ public class TestSuiteLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // TestSuite.g:1727:11: ~ ( '\"' | '\\\\' )
+            	    // TestSuite.g:1728:11: ~ ( '\"' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3007,7 +3007,7 @@ public class TestSuiteLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // TestSuite.g:1727:25: ESC
+            	    // TestSuite.g:1728:25: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -3037,12 +3037,12 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "ESC"
     public final void mESC() throws RecognitionException {
         try {
-            // TestSuite.g:1740:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
-            // TestSuite.g:1741:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // TestSuite.g:1741:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+            // TestSuite.g:1742:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             {
             match('\\'); if (state.failed) return ;
 
-            // TestSuite.g:1742:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // TestSuite.g:1743:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             int alt17=11;
             switch ( input.LA(1) ) {
             case 'n':
@@ -3117,63 +3117,63 @@ public class TestSuiteLexer extends Lexer {
 
             switch (alt17) {
                 case 1 :
-                    // TestSuite.g:1742:8: 'n'
+                    // TestSuite.g:1743:8: 'n'
                     {
                     match('n'); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // TestSuite.g:1743:8: 'r'
+                    // TestSuite.g:1744:8: 'r'
                     {
                     match('r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // TestSuite.g:1744:8: 't'
+                    // TestSuite.g:1745:8: 't'
                     {
                     match('t'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // TestSuite.g:1745:8: 'b'
+                    // TestSuite.g:1746:8: 'b'
                     {
                     match('b'); if (state.failed) return ;
 
                     }
                     break;
                 case 5 :
-                    // TestSuite.g:1746:8: 'f'
+                    // TestSuite.g:1747:8: 'f'
                     {
                     match('f'); if (state.failed) return ;
 
                     }
                     break;
                 case 6 :
-                    // TestSuite.g:1747:8: '\"'
+                    // TestSuite.g:1748:8: '\"'
                     {
                     match('\"'); if (state.failed) return ;
 
                     }
                     break;
                 case 7 :
-                    // TestSuite.g:1748:8: '\\''
+                    // TestSuite.g:1749:8: '\\''
                     {
                     match('\''); if (state.failed) return ;
 
                     }
                     break;
                 case 8 :
-                    // TestSuite.g:1749:8: '\\\\'
+                    // TestSuite.g:1750:8: '\\\\'
                     {
                     match('\\'); if (state.failed) return ;
 
                     }
                     break;
                 case 9 :
-                    // TestSuite.g:1750:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+                    // TestSuite.g:1751:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
                     {
                     match('u'); if (state.failed) return ;
 
@@ -3192,11 +3192,11 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // TestSuite.g:1751:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+                    // TestSuite.g:1752:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
                     {
                     matchRange('0','3'); if (state.failed) return ;
 
-                    // TestSuite.g:1751:17: ( '0' .. '7' ( '0' .. '7' )? )?
+                    // TestSuite.g:1752:17: ( '0' .. '7' ( '0' .. '7' )? )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -3205,11 +3205,11 @@ public class TestSuiteLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // TestSuite.g:1751:18: '0' .. '7' ( '0' .. '7' )?
+                            // TestSuite.g:1752:18: '0' .. '7' ( '0' .. '7' )?
                             {
                             matchRange('0','7'); if (state.failed) return ;
 
-                            // TestSuite.g:1751:27: ( '0' .. '7' )?
+                            // TestSuite.g:1752:27: ( '0' .. '7' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -3247,11 +3247,11 @@ public class TestSuiteLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // TestSuite.g:1751:45: '4' .. '7' ( '0' .. '7' )?
+                    // TestSuite.g:1752:45: '4' .. '7' ( '0' .. '7' )?
                     {
                     matchRange('4','7'); if (state.failed) return ;
 
-                    // TestSuite.g:1751:54: ( '0' .. '7' )?
+                    // TestSuite.g:1752:54: ( '0' .. '7' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3299,7 +3299,7 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // TestSuite.g:1757:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // TestSuite.g:1758:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
             // TestSuite.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -3329,8 +3329,8 @@ public class TestSuiteLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // TestSuite.g:1764:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // TestSuite.g:1765:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // TestSuite.g:1765:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // TestSuite.g:1766:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -3344,7 +3344,7 @@ public class TestSuiteLexer extends Lexer {
             }
 
 
-            // TestSuite.g:1765:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // TestSuite.g:1766:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
@@ -3394,7 +3394,7 @@ public class TestSuiteLexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // TestSuite.g:1773:6: ( '\\U0003' .. '\\U0377' )
+            // TestSuite.g:1774:6: ( '\\U0003' .. '\\U0377' )
             // TestSuite.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {
@@ -4231,8 +4231,8 @@ public class TestSuiteLexer extends Lexer {
 
     // $ANTLR start synpred1_TestSuite
     public final void synpred1_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:1717:7: ( INT '..' )
-        // TestSuite.g:1717:9: INT '..'
+        // TestSuite.g:1718:7: ( INT '..' )
+        // TestSuite.g:1718:9: INT '..'
         {
         mINT(); if (state.failed) return ;
 
@@ -4248,8 +4248,8 @@ public class TestSuiteLexer extends Lexer {
 
     // $ANTLR start synpred2_TestSuite
     public final void synpred2_TestSuite_fragment() throws RecognitionException {
-        // TestSuite.g:1718:7: ( REAL )
-        // TestSuite.g:1718:9: REAL
+        // TestSuite.g:1719:7: ( REAL )
+        // TestSuite.g:1719:9: REAL
         {
         mREAL(); if (state.failed) return ;
 
