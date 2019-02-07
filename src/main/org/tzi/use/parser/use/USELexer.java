@@ -1,4 +1,4 @@
-// $ANTLR 3.4 USE.g 2019-02-04 18:28:55
+// $ANTLR 3.4 USE.g 2019-02-07 15:33:36
 
 /*
  * USE - UML based specification environment
@@ -3591,7 +3591,7 @@ public class USELexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // USE.g:1960:6: ( '\\U0003' .. '\\U0377' )
+            // USE.g:1959:6: ( '\\U0003' .. '\\U0377' )
             // USE.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {

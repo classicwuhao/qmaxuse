@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2019-02-04 18:28:52
+// $ANTLR 3.4 OCL.g 2019-02-07 15:33:34
 
 package org.tzi.use.parser.ocl; 
 
@@ -2614,7 +2614,7 @@ public class OCLLexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // OCL.g:855:6: ( '\\U0003' .. '\\U0377' )
+            // OCL.g:854:6: ( '\\U0003' .. '\\U0377' )
             // OCL.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {

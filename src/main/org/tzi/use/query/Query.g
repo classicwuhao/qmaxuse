@@ -35,13 +35,20 @@ import org.tzi.use.parser.ParseErrorHandler;
     }
 }
 
-checkExpr: 'check'
-   (modifiers)? queryExpr
+checkExpr: 'verify' queryExpr
 ;
 
 queryExpr: 
-   'select' featureExpr (COMMA featureExpr)* (condExpr)*
+    'select' featureExpr (COMMA featureExpr)* (condExpr)? ('as' IDENT)? queryExpr_nl
    {System.out.println("this is a query.");}
+   | alias = IDENT queryExpr_nl
+   {System.out.println("This is an query alias:"+$alias.getText());}
+;
+
+queryExpr_nl:
+    '&&' queryExpr
+    | '||' queryExpr
+    |
 ;
 
 modifiers:
@@ -50,20 +57,45 @@ modifiers:
     'full'
 ;
 
- featureExpr: IDENT
+ featureExpr @init
+    {
+        boolean isPure=false;
+    } :
+    ('pure' {isPure=true;}) ? dest=(IDENT | STAR)
+
   | AttrExpr
   | AssocExpr
-  | InvExpr
+
 ;
 
-AttrExpr: DOT IDENT;
+AttrExpr: src=(IDENT | STAR) DOT dest=(IDENT | STAR);
 
-AssocExpr: COLON IDENT;
+AssocExpr: src=(IDENT | STAR) COLON dest=(IDENT | STAR);
 
-InvExpr: COLON_COLON IDENT;
+InvExpr: 
+    src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR)
+;
 
-condExpr: 'with' expression;
+/* NameScope: 
+    IDENT
+    | STAR
+;*/
 
+condExpr: 
+    withExpr
+    | withoutExpr
+    | oclExpr
+;
+
+oclExpr: 'withocl' expression
+;
+
+withExpr: 
+    'with' InvExpr (COMMA InvExpr)*
+;
+withoutExpr:
+    'without' InvExpr (COMMA InvExpr)*
+;
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */
@@ -782,7 +814,7 @@ RPAREN		 : ')';
 SEMI		 : ';';
 SLASH 		 : '/';
 STAR 		 : '*';
-  
+
 fragment
 INT:
     ('0'..'9')+
@@ -844,7 +876,6 @@ HEX_DIGIT:
 IDENT:
     ('$' | 'a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
     ;
-    
 // A dummy rule to force vocabulary to be all characters (except
 // special ones that ANTLR uses internally (0 to 2)
 

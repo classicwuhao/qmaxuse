@@ -2155,7 +2155,7 @@ RPAREN		 : ')';
 SEMI		 : ';';
 SLASH 		 : '/';
 STAR 		 : '*';
-  
+
 fragment
 INT:
     ('0'..'9')+
@@ -2217,7 +2217,6 @@ HEX_DIGIT:
 IDENT:
     ('$' | 'a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
     ;
-    
 // A dummy rule to force vocabulary to be all characters (except
 // special ones that ANTLR uses internally (0 to 2)
 
