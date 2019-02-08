@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QueryTest",
+            "request": "launch",
+            "mainClass": "query.QueryTest",
+            "projectName": "use_psm"
+        }
+    ]
+}

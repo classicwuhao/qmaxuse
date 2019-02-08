@@ -1,5 +1,7 @@
 grammar Query;
-
+options {
+  superClass = BaseParser;
+}
 @header{
 package org.tzi.use.query;
 import org.tzi.use.parser.base.*;
@@ -39,7 +41,7 @@ checkExpr: 'verify' queryExpr
 ;
 
 queryExpr: 
-    'select' featureExpr (COMMA featureExpr)* (condExpr)? ('as' IDENT)? queryExpr_nl
+    'select' featureExpr (COMMA featureExpr)* (withExpr)? (withoutExpr)? (oclExpr)? ('as' IDENT)? queryExpr_nl
    {System.out.println("this is a query.");}
    | alias = IDENT queryExpr_nl
    {System.out.println("This is an query alias:"+$alias.getText());}
@@ -74,17 +76,6 @@ AssocExpr: src=(IDENT | STAR) COLON dest=(IDENT | STAR);
 
 InvExpr: 
     src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR)
-;
-
-/* NameScope: 
-    IDENT
-    | STAR
-;*/
-
-condExpr: 
-    withExpr
-    | withoutExpr
-    | oclExpr
 ;
 
 oclExpr: 'withocl' expression

@@ -43,6 +43,7 @@
 	<property name="use-gui.jar"         location="${build.lib.dir}/use-gui.jar"/>
 	<property name="use-runtime.jar"     location="${build.lib.dir}/use-runtime.jar" />
 	<property name="build.libbuild.dir"  location="${basedir}/lib_build"/>
+	<property name="test.build.query.dir"    location="${build.classes.dir}"/>
 
 	<!-- add Z3 jar files -->
 	<property name="com.microsoft.z3.jar"	location="${lib.dir}/com.microsoft.z3.jar"	/>
@@ -58,12 +59,18 @@
 	<property name="readline.src.dir"     location="${src.main.dir}/org/tzi/use/util/input"/>
 	<property name="parser.dir"           location="${src.main.dir}/org/tzi/use/parser"/>
 	<property name="query.dir"           location="${src.main.dir}/org/tzi/use/query"/>
+	
 
 	<path id="use.classpath.absolute">
 		<fileset dir="${lib.dir}" includes="*.jar" excludes="use*"/>
 		<pathelement path="${use-gui.jar}"/>
 		<pathelement path="${use-runtime.jar}"/>
 	</path>
+
+	<path id="classpath.test">
+		<pathelement location="${junit.jar}" />
+	</path>
+
 	<manifestclasspath property="use.classpath" jarfile="${maxuse.jar}">
 		<classpath refid="use.classpath.absolute"/>
 	</manifestclasspath>
@@ -426,7 +433,7 @@
 	</target>
 
 	<!-- create all jars -->
-	<target name="build" depends="jar-use" description="build everything "/>
+	<target name="build" depends="jar-use, run-query-test" description="build everything "/>
 
 	<!-- delete the build tree -->
 	<target name="clean" description="clean build directory" >
@@ -508,7 +515,6 @@
 	
 	<!-- run all tests -->
 	<target name="test" description="run all tests" depends="test-classcycles, test-junit" /> <!-- test-other -->
-	
 	<!-- run unit tests -->
 	<target name="test-junit" description="run unit tests" depends="build">
 		<junit haltonfailure="yes">
@@ -683,5 +689,18 @@
 		<!-- cleanup -->
 		<delete file="${release.tar}"/>
 		<delete dir="${build.release.dir}"/>
+	</target>
+
+	<target name="run-query-test">
+		<echo>"Running query test cases..." </echo>
+		<junit haltonfailure="yes" printsummary="on" fork="true">
+		<formatter type="brief" usefile="no"/>
+		<classpath>
+				<path refid="classpath.test" />
+				<pathelement location="${test.build.query.dir}"/>
+		</classpath>
+		<test name="query.QueryTest" />
+		</junit>
+		<echo>"Leaving query test." </echo>
 	</target>
 </project>
