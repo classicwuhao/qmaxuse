@@ -72,6 +72,18 @@ public final class QueryTest{
         assertEquals(0,qt.Case8());
     }
 
+    @Test
+    public void test8(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case9());
+    }
+
+    @Test
+    public void test9(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case10());
+    }
+
     public int Case1(){
         String query0="verify select * with *::*";
         PrintWriter err = new PrintWriter(System.err);
@@ -109,7 +121,6 @@ public final class QueryTest{
 
         return query0_rc;
     }
-
 
     public int Case4(){
         String query0="verify select Person.*,Student.*,Department.* without Student::*, Person::*";
