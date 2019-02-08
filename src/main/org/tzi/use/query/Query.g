@@ -78,7 +78,6 @@ InvExpr:
     src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR)
 ;
 
-
 oclExpr: 'withocl' expression
 ;
 
