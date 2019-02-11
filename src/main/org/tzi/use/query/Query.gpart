@@ -4,6 +4,7 @@ options {
 }
 @header{
 package org.tzi.use.query;
+import org.tzi.use.query.ast.*;
 import org.tzi.use.parser.base.*;
 import org.tzi.use.parser.base.BaseParser;
 import org.tzi.use.parser.ocl.*;
@@ -63,7 +64,7 @@ modifiers:
     {
         boolean isPure=false;
     } :
-    ('pure' {isPure=true;}) ? dest=(IDENT | STAR)
+    ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {QClassExpr cls = new QClassExpr($dest.getText(),isPure);}
 
   | AttrExpr
   | AssocExpr
