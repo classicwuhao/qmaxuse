@@ -15,6 +15,7 @@ import java.util.Arrays;
 
 @lexer::header {
 package org.tzi.use.query;
+import org.tzi.use.query.ast.*;
 import org.tzi.use.parser.ParseErrorHandler;
 }
 @lexer::members {
@@ -41,6 +42,8 @@ import org.tzi.use.parser.ParseErrorHandler;
 checkExpr: 'verify' queryExpr
 ;
 
+//queryAndExpr: query ('&&' query)*;
+
 queryExpr: 
     'select' featureExpr (COMMA featureExpr)* (withExpr)? (withoutExpr)? (oclExpr)? ('as' IDENT)? queryExpr_nl
    {System.out.println("this is a query.");}
@@ -60,31 +63,34 @@ modifiers:
     'full'
 ;
 
- featureExpr @init
-    {
-        boolean isPure=false;
-    } :
-    ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {QClassExpr cls = new QClassExpr($dest.getText(),isPure);}
-
-  | AttrExpr
-  | AssocExpr
-
+featureExpr @init
+{
+    boolean isPure=false;
+}:
+  ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {QClassExpr cls = new QClassExpr($dest.getText(),isPure);}
+  | attrExpr
+  | assocExpr
 ;
 
-AttrExpr: src=(IDENT | STAR) DOT dest=(IDENT | STAR);
+attrExpr:
+    src=(IDENT|STAR) DOT dest=(IDENT|STAR) {QAttrExpr attr = new QAttrExpr($src.getText(),$dest.getText());}
+;
 
-AssocExpr: src=(IDENT | STAR) COLON dest=(IDENT | STAR);
+assocExpr
+: src=(IDENT | STAR) COLON dest=(IDENT | STAR){QAssocExpr assoc = new QAssocExpr($src.getText(),$dest.getText());}
+;
 
-InvExpr: 
+withExpr: 
+    'with' invExpr (COMMA invExpr)*
+;
+withoutExpr:
+    'without' invExpr (COMMA invExpr)*
+;
+
+invExpr: 
     src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR)
 ;
 
 oclExpr: 'withocl' expression
 ;
 
-withExpr: 
-    'with' InvExpr (COMMA InvExpr)*
-;
-withoutExpr:
-    'without' InvExpr (COMMA InvExpr)*
-;
