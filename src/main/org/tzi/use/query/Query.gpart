@@ -44,8 +44,11 @@ checkExpr: 'verify' queryExpr
 
 //queryAndExpr: query ('&&' query)*;
 
-queryExpr: 
-    'select' featureExpr (COMMA featureExpr)* (withExpr)? (withoutExpr)? (oclExpr)? ('as' IDENT)? queryExpr_nl
+queryExpr @ init{
+    List<QFeatureExpr> features = new ArrayList<QFeatureExpr>();
+
+}: 
+    'select' f=featureExpr {features.add(f);} (COMMA f=featureExpr {features.add(f);})* (withExpr)? (withoutExpr)? (oclExpr)? ('as' IDENT)? queryExpr_nl
    {System.out.println("this is a query.");}
    | alias = IDENT queryExpr_nl
    {System.out.println("This is an query alias:"+$alias.getText());}
@@ -63,32 +66,37 @@ modifiers:
     'full'
 ;
 
-featureExpr @init
+featureExpr returns [QFeatureExpr feature] @init
 {
     boolean isPure=false;
-}:
-  ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {QClassExpr cls = new QClassExpr($dest.getText(),isPure);}
-  | attrExpr
-  | assocExpr
+}: 
+  ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {$feature= new QClassExpr($dest.getText(),isPure);}
+  |  f1 = attrExpr {$feature=f1;}
+  |  f2 = assocExpr {$feature=f2;}
 ;
 
-attrExpr:
-    src=(IDENT|STAR) DOT dest=(IDENT|STAR) {QAttrExpr attr = new QAttrExpr($src.getText(),$dest.getText());}
+attrExpr returns [QAttrExpr attr]:
+    src=(IDENT|STAR) DOT dest=(IDENT|STAR) {attr = new QAttrExpr($src.getText(),$dest.getText());}
 ;
 
-assocExpr
-: src=(IDENT | STAR) COLON dest=(IDENT | STAR){QAssocExpr assoc = new QAssocExpr($src.getText(),$dest.getText());}
+assocExpr returns [QAssocExpr assoc]
+: src=(IDENT | STAR) COLON dest=(IDENT | STAR){assoc = new QAssocExpr($src.getText(),$dest.getText());}
 ;
 
-withExpr: 
-    'with' invExpr (COMMA invExpr)*
+withExpr returns [QWithExpr with] @init{
+    $with = new QWithExpr();
+}: 
+    'with' w=invExpr{$with.addInvExpr(w);} (COMMA w=invExpr{$with.addInvExpr(w);})*
 ;
-withoutExpr:
-    'without' invExpr (COMMA invExpr)*
+withoutExpr returns [QWithoutExpr without] @init{
+    $without = new QWithoutExpr();
+}
+:
+    'without' w=invExpr{$without.addInvExpr(w);} (COMMA w=invExpr{$without.addInvExpr(w);})*
 ;
 
-invExpr: 
-    src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR)
+invExpr returns [QInvExpr inv]: 
+    src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR) {inv = new QInvExpr($src.getText(),$dest.getText());}
 ;
 
 oclExpr: 'withocl' expression
