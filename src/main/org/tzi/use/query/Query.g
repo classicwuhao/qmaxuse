@@ -44,12 +44,14 @@ checkExpr: 'verify' queryExpr
 
 //queryAndExpr: query ('&&' query)*;
 
-queryExpr @ init{
-    List<QFeatureExpr> features = new ArrayList<QFeatureExpr>();
-
+queryExpr returns [QueryExpr qexpr] @init{
+    qexpr = new QueryExpr();
 }: 
-    'select' f=featureExpr {features.add(f);} (COMMA f=featureExpr {features.add(f);})* (withExpr)? (withoutExpr)? (oclExpr)? ('as' IDENT)? queryExpr_nl
-   {System.out.println("this is a query.");}
+    'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
+        (with=withExpr {$qexpr.addWithExpr(with);})? 
+        (without=withoutExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
+        ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ? queryExpr_nl
+   {System.out.println($qexpr.toString());}
    | alias = IDENT queryExpr_nl
    {System.out.println("This is an query alias:"+$alias.getText());}
 ;

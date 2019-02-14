@@ -5,15 +5,59 @@ import java.util.ArrayList;
 
 public class QueryExpr extends QAst{
     private List<QFeatureExpr> features;
-    private List<QInvExpr> withInvExprs;
-    private List<QInvExpr> withoutInvExprs;
-
+    private QWithExpr withExpr;
+    private QWithoutExpr withoutExpr;
     private String alias ="";
 
-
-    public String toString(){
-        return this.alias;
+    public QueryExpr(){
+        features = new ArrayList<QFeatureExpr>();
     }
 
+    public void addFeature(QFeatureExpr expr){
+        features.add (expr);
+    }
 
+    public void addWithExpr(QWithExpr expr){
+        this.withExpr = expr;
+    }
+
+    public void addWithoutExpr(QWithoutExpr expr){
+        this.withoutExpr = expr;
+    }
+
+    public void setAlias(String alias){
+        this.alias = alias;
+    }
+
+    public String toString(){
+        StringBuffer sb = new StringBuffer();
+
+        for (int i=0;i<features.size()-1;i++ )
+            sb.append(features.get(i).toString()+", ");
+
+        sb.append(features.get(features.size()-1));
+        
+        if (withExpr!=null){
+           if (withExpr.expressions().size()!=0){
+                List<QInvExpr> withInvExprs = withExpr.expressions();
+                sb.append(" with ");
+                for (int i=0;i<withInvExprs.size()-1;i++ )
+                sb.append(withInvExprs.get(i).toString()+", ");
+
+                sb.append(withInvExprs.get(withInvExprs.size()-1));
+            }
+        }
+
+        if (withoutExpr!=null){
+            if (withoutExpr.expressions().size()!=0){
+                List<QInvExpr> withoutInvExprs = withoutExpr.expressions();
+                sb.append(" without ");
+                for (int i=0;i<withoutInvExprs.size()-1;i++ )
+                sb.append(withoutInvExprs.get(i).toString()+", ");
+
+                sb.append(withoutInvExprs.get(withoutInvExprs.size()-1));
+            }
+        }
+        return (this.alias.length()!=0) ? sb.toString()+ " As " +this.alias : sb.toString();
+    }
 }
