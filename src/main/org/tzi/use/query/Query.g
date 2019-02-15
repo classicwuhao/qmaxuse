@@ -39,10 +39,9 @@ import org.tzi.use.parser.ParseErrorHandler;
     }
 }
 
-checkExpr: 'verify' queryExpr
+checkExpr:
+    'verify' qexpr=queryExpr  ('&&' queryExpr)* | ('||' queryExpr)*
 ;
-
-//queryAndExpr: query ('&&' query)*;
 
 queryExpr returns [QueryExpr qexpr] @init{
     qexpr = new QueryExpr();
@@ -50,17 +49,16 @@ queryExpr returns [QueryExpr qexpr] @init{
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
         (without=withoutExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
-        ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ? queryExpr_nl
+        ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    {System.out.println($qexpr.toString());}
-   | alias = IDENT queryExpr_nl
+   | alias = IDENT
    {System.out.println("This is an query alias:"+$alias.getText());}
 ;
 
-queryExpr_nl:
-    '&&' queryExpr
-    | '||' queryExpr
-    |
-;
+//queryExpr_nl:
+ //   queryExpr '&&' queryExpr
+  //  | queryExpr '||' queryExpr
+//;
 
 modifiers:
     'pure'
