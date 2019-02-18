@@ -92,7 +92,7 @@ public final class QueryTest{
     }
 
     public int Case1(){
-        String query0="verify select * with *::*";
+        String query0="verify select * but *::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -136,7 +136,7 @@ public final class QueryTest{
     }
 
     public int Case4(){
-        String query0="verify select Person.*,Student.*,Department.* without Student::*, Person::*";
+        String query0="verify select Person.*,Student.*,Department.* but Student::*, Person::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -151,7 +151,7 @@ public final class QueryTest{
     }
 
     public int Case5(){
-        String query0="verify select Module.*, Student.* without Person::*";
+        String query0="verify select Module.*, Student.* but Person::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -166,7 +166,7 @@ public final class QueryTest{
     }
 
     public int Case6(){
-        String query0="verify select pure A, pure B, C with B::*, C::inv without A::*";
+        String query0="verify select pure A, pure B, C with B::*, C::inv but A::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -181,7 +181,7 @@ public final class QueryTest{
     }
 
     public int Case7(){
-        String query0="verify select pure A, pure B, pure C without C::* as QueryA";
+        String query0="verify select pure A, pure B, pure C but C::* as QueryA";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -196,7 +196,7 @@ public final class QueryTest{
     }
 
     public int Case8(){
-        String query0="verify select pure A, pure B, pure C without C::* && select C.*, D.* with C::*, D::*";
+        String query0="verify select pure A, pure B, pure C but C::* && select C.*, D.* with C::*, D::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -211,7 +211,7 @@ public final class QueryTest{
     }
 
     public int Case9(){
-        String query0="verify select pure A, pure B, pure C without C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
+        String query0="verify select pure A, pure B, pure C but C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -227,7 +227,7 @@ public final class QueryTest{
     }
 
     public int Case10(){
-        String query0="verify queryA && queryB && select A.*, pure B, C.* without C::*";
+        String query0="verify queryA && queryB && select A.*, pure B, C.* but C::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -242,7 +242,7 @@ public final class QueryTest{
     }
 
     public int Case11(){
-        String query0="verify queryA && queryB || select A.*, pure B, C.* without C::* && select C.*, pure D with C::*, D::* without B::*";
+        String query0="verify queryA && queryB || select A.*, pure B, C.* but C::* && select C.*, pure D with C::*, D::* but B::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -255,5 +255,21 @@ public final class QueryTest{
 
         return errors;
     }
+
+    public int Case12(){
+        String query0="only select Person.*, Student.*, Student:Module with Student::*, Person::* ";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+
+        if (errors==0)
+            ColorPrint.println("query11 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query11 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
+
 
 }

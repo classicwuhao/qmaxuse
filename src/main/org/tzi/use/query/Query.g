@@ -54,7 +54,7 @@ checkExpr returns [QAst expr]:
                 }
             )
 
-        )*
+        )* EOF
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -62,7 +62,7 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=withoutExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
+        (without=butExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
@@ -100,11 +100,11 @@ withExpr returns [QWithExpr with] @init{
 }: 
     'with' w=invExpr{$with.addInvExpr(w);} (COMMA w=invExpr{$with.addInvExpr(w);})*
 ;
-withoutExpr returns [QWithoutExpr without] @init{
-    $without = new QWithoutExpr();
+butExpr returns [QButExpr without] @init{
+    $without = new QButExpr();
 }
 :
-    'without' w=invExpr{$without.addInvExpr(w);} (COMMA w=invExpr{$without.addInvExpr(w);})*
+    'but' w=invExpr{$without.addInvExpr(w);} (COMMA w=invExpr{$without.addInvExpr(w);})*
 ;
 
 invExpr returns [QInvExpr inv]: 

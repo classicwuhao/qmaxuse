@@ -3,12 +3,12 @@ package org.tzi.use.query.ast;
 import java.util.List;
 import java.util.ArrayList;
 
-public class QWithoutExpr extends QAst{
+public class QButExpr extends QAst{
     private List<QInvExpr> invs = new ArrayList<QInvExpr>();
     
-    public QWithoutExpr(){}
+    public QButExpr(){}
 
-    public QWithoutExpr (QInvExpr inv){
+    public QButExpr (QInvExpr inv){
         invs.add (inv);
     }
 

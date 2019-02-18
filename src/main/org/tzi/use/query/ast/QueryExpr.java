@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class QueryExpr extends QAst{
     private List<QFeatureExpr> features;
     private QWithExpr withExpr;
-    private QWithoutExpr withoutExpr;
+    private QButExpr withoutExpr;
     private String alias ="";
 
     public QueryExpr(){
@@ -21,7 +21,7 @@ public class QueryExpr extends QAst{
         this.withExpr = expr;
     }
 
-    public void addWithoutExpr(QWithoutExpr expr){
+    public void addWithoutExpr(QButExpr expr){
         this.withoutExpr = expr;
     }
 
@@ -56,7 +56,7 @@ public class QueryExpr extends QAst{
         if (withoutExpr!=null){
             if (withoutExpr.expressions().size()!=0){
                 List<QInvExpr> withoutInvExprs = withoutExpr.expressions();
-                sb.append(" without ");
+                sb.append(" but ");
                 for (int i=0;i<withoutInvExprs.size()-1;i++ )
                 sb.append(withoutInvExprs.get(i).toString()+", ");
 
