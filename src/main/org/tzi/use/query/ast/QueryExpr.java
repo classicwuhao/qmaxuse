@@ -29,13 +29,18 @@ public class QueryExpr extends QAst{
         this.alias = alias;
     }
 
+    @Override
+    public boolean isQuery(){return true;}
+
+    @Override
     public String toString(){
         StringBuffer sb = new StringBuffer();
+        if (features.size()>0){
+            for (int i=0;i<features.size()-1;i++ )
+                sb.append(features.get(i).toString()+", ");
 
-        for (int i=0;i<features.size()-1;i++ )
-            sb.append(features.get(i).toString()+", ");
-
-        sb.append(features.get(features.size()-1));
+            sb.append(features.get(features.size()-1));
+        }
         
         if (withExpr!=null){
            if (withExpr.expressions().size()!=0){
@@ -58,6 +63,6 @@ public class QueryExpr extends QAst{
                 sb.append(withoutInvExprs.get(withoutInvExprs.size()-1));
             }
         }
-        return (this.alias.length()!=0) ? sb.toString()+ " As " +this.alias : sb.toString();
+        return (this.alias.length()!=0) ? sb.toString()+ " As " + this.alias : sb.toString();
     }
 }

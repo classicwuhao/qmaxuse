@@ -10,18 +10,20 @@ import org.antlr.runtime.RecognitionException;
 import org.tzi.use.parser.ParseErrorHandler;
 import org.tzi.use.uml.mm.MModel;
 import org.tzi.use.uml.sys.MSystemState;
+import org.tzi.use.query.ast.QAst;
 
 public class QueryCompiler{
+    private int errors=0;
+    private QAst expressions=null;
 
     public QueryCompiler(){}
-    public static void f(){
-        System.out.println("f");
-    }
+
     public static int compileExpression (MModel model, MSystemState state, InputStream in, String inName,PrintWriter err)
     {
         ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
-
         ANTLRInputStream aInput;
+        QAst expr =null;
+
 		try {
 			aInput = new ANTLRInputStream(in);
 			aInput.name = inName;
@@ -37,7 +39,7 @@ public class QueryCompiler{
         parser.init(errHandler);
         
         try{
-            parser.checkExpr();
+             expr = parser.checkExpr();
            if (errHandler.errorCount() == 0 ) {
                 //System.out.println("no error");
                 return 1;
@@ -56,15 +58,17 @@ public class QueryCompiler{
         return 1;
     }
 
-    public static int compileExpression (InputStream in, String inName,PrintWriter err){
+    public int errors() {return this.errors;}
+    public QAst expressions() {return this.expressions;}
+
+    public QAst compileExpression (InputStream in, String inName,PrintWriter err){
         ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
-        ANTLRInputStream aInput;
+        ANTLRInputStream aInput=null;
 		try {
 			aInput = new ANTLRInputStream(in);
 			aInput.name = inName;
 		} catch (IOException e1) {
             err.println(e1.getMessage());
-            return -1;
         }
 
         QueryLexer lexer = new QueryLexer(aInput);
@@ -72,8 +76,10 @@ public class QueryCompiler{
         QueryParser parser = new QueryParser(tokenStream);
         lexer.init(errHandler);
         parser.init(errHandler);
+
         try{
-            parser.checkExpr();
+            this.expressions = parser.checkExpr();
+            this.errors = errHandler.errorCount();
         }
         catch(RecognitionException e){
             err.println(parser.getSourceName() +":" + 
@@ -81,7 +87,7 @@ public class QueryCompiler{
             e.charPositionInLine + ": " + 
             e.getMessage());
         }
-        return errHandler.errorCount();
+        return this.expressions;
     }
 
 }

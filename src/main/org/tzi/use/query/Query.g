@@ -39,8 +39,22 @@ import org.tzi.use.parser.ParseErrorHandler;
     }
 }
 
-checkExpr:
-    'verify' qexpr=queryExpr  ('&&' queryExpr)* | ('||' queryExpr)*
+checkExpr returns [QAst expr]:
+    'verify' qexpr=queryExpr {$expr=qexpr;}
+        (
+            ('&&' right_expr=queryExpr 
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.AND);
+                }
+            )
+        |
+            ('||' right_expr=queryExpr 
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.OR);
+                }
+            )
+
+        )*
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -50,9 +64,7 @@ queryExpr returns [QueryExpr qexpr] @init{
         (with=withExpr {$qexpr.addWithExpr(with);})? 
         (without=withoutExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
-   {System.out.println($qexpr.toString());}
-   | alias = IDENT
-   {System.out.println("This is an query alias:"+$alias.getText());}
+   | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
 
 //queryExpr_nl:
@@ -101,8 +113,6 @@ invExpr returns [QInvExpr inv]:
 
 oclExpr: 'withocl' expression
 ;
-
-
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */

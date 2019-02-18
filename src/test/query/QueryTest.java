@@ -1,6 +1,7 @@
 package query;
 import org.tzi.use.query.QueryCompiler;
 import org.tzi.use.query.*;
+import org.tzi.use.query.ast.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,135 +85,175 @@ public final class QueryTest{
         assertEquals(0,qt.Case10());
     }
 
+    @Test
+    public void test10(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case11());
+    }
+
     public int Case1(){
         String query0="verify select * with *::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+    
+        if (errors==0)
+            ColorPrint.println("query0 accepted: "+expr,Color.BLUE);
+        else
+            ColorPrint.println("query0 failed: "+ errors+" syntax issue(s)",Color.RED);
 
-        if (query0_rc==0)
-            ColorPrint.println("query0 accepted.",Color.BLUE);
-        else    
-            ColorPrint.println("query0 failed: "+ query0_rc+" syntax issue(s)",Color.RED);
-        return query0_rc;
+        return errors;
     }
 
     public int Case2(){
         String query0="verify select *.age with Student::*, Person::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
-
-        if (query0_rc==0)
-            ColorPrint.println("query1 accepted.",Color.BLUE);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+        if (errors==0)
+            ColorPrint.println("query1 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query1 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query1 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case3(){
         String query0="verify select Student, Person with Student::inv1";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query2 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query2 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query2 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query2 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case4(){
         String query0="verify select Person.*,Student.*,Department.* without Student::*, Person::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query3 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query3 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query3 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query3 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case5(){
         String query0="verify select Module.*, Student.* without Person::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query4 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query4 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query4 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query4 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case6(){
         String query0="verify select pure A, pure B, C with B::*, C::inv without A::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query5 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query5 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query5 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query5 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case7(){
         String query0="verify select pure A, pure B, pure C without C::* as QueryA";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query6 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query6 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query6 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query6 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case8(){
         String query0="verify select pure A, pure B, pure C without C::* && select C.*, D.* with C::*, D::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query7 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query7 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query7 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query7 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     }
 
     public int Case9(){
         String query0="verify select pure A, pure B, pure C without C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query8 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query8 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query8 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query8 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
+        return errors;
     
     }
 
     public int Case10(){
         String query0="verify queryA && queryB && select A.*, pure B, C.* without C::*";
         PrintWriter err = new PrintWriter(System.err);
-        int query0_rc = QueryCompiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
-        if (query0_rc==0)
-            ColorPrint.println("query9 accepted.",Color.BLUE);
+        if (errors==0)
+            ColorPrint.println("query9 accepted: "+expr,Color.BLUE);
         else    
-            ColorPrint.println("query9 failed: "+query0_rc+" syntax issue(s)",Color.RED);
+            ColorPrint.println("query9 failed: "+errors+" syntax issue(s)",Color.RED);
 
-        return query0_rc;
-    
+        return errors; 
+    }
+
+    public int Case11(){
+        String query0="verify queryA && queryB || select A.*, pure B, C.* without C::* && select C.*, pure D with C::*, D::* without B::*";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+
+        if (errors==0)
+            ColorPrint.println("query10 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query10 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
     }
 
 }
