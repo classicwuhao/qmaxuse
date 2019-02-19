@@ -71,22 +71,20 @@ queryExpr returns [QueryExpr qexpr] @init{
  //   queryExpr '&&' queryExpr
   //  | queryExpr '||' queryExpr
 //;
-
-modifiers:
-    'pure'
-    |
-    'full'
-;
-
-featureExpr returns [QFeatureExpr feature] @init
-{
-    boolean isPure=false;
-}: 
-  ('pure' {isPure=true;}) ? dest=(IDENT | STAR) {$feature= new QClassExpr($dest.getText(),isPure);}
+featureExpr returns [QFeatureExpr feature]: 
+    (modifier=modifiers) ? dest=(IDENT | STAR)
+    {
+        $feature= new QClassExpr($dest.getText(),modifier);
+    }
   |  f1 = attrExpr {$feature=f1;}
   |  f2 = assocExpr {$feature=f2;}
 ;
 
+modifiers returns [Modifier m]:
+    'only' {$m=Modifier.ONLY;}
+    |
+    'no' {$m=Modifier.NO;}
+;
 attrExpr returns [QAttrExpr attr]:
     src=(IDENT|STAR) DOT dest=(IDENT|STAR) {attr = new QAttrExpr($src.getText(),$dest.getText());}
 ;

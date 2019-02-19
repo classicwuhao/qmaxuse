@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-02-18 16:07:28
+// $ANTLR 3.4 Query.g 2019-02-19 11:13:52
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -531,10 +531,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:45:7: ( 'full' )
-            // Query.g:45:9: 'full'
+            // Query.g:45:7: ( 'if' )
+            // Query.g:45:9: 'if'
             {
-            match("full"); if (state.failed) return ;
+            match("if"); if (state.failed) return ;
 
 
 
@@ -554,10 +554,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:46:7: ( 'if' )
-            // Query.g:46:9: 'if'
+            // Query.g:46:7: ( 'implies' )
+            // Query.g:46:9: 'implies'
             {
-            match("if"); if (state.failed) return ;
+            match("implies"); if (state.failed) return ;
 
 
 
@@ -577,10 +577,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:47:7: ( 'implies' )
-            // Query.g:47:9: 'implies'
+            // Query.g:47:7: ( 'in' )
+            // Query.g:47:9: 'in'
             {
-            match("implies"); if (state.failed) return ;
+            match("in"); if (state.failed) return ;
 
 
 
@@ -600,10 +600,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:48:7: ( 'in' )
-            // Query.g:48:9: 'in'
+            // Query.g:48:7: ( 'iterate' )
+            // Query.g:48:9: 'iterate'
             {
-            match("in"); if (state.failed) return ;
+            match("iterate"); if (state.failed) return ;
 
 
 
@@ -623,10 +623,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:49:7: ( 'iterate' )
-            // Query.g:49:9: 'iterate'
+            // Query.g:49:7: ( 'let' )
+            // Query.g:49:9: 'let'
             {
-            match("iterate"); if (state.failed) return ;
+            match("let"); if (state.failed) return ;
 
 
 
@@ -646,10 +646,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:50:7: ( 'let' )
-            // Query.g:50:9: 'let'
+            // Query.g:50:7: ( 'no' )
+            // Query.g:50:9: 'no'
             {
-            match("let"); if (state.failed) return ;
+            match("no"); if (state.failed) return ;
 
 
 
@@ -853,10 +853,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:59:7: ( 'or' )
-            // Query.g:59:9: 'or'
+            // Query.g:59:7: ( 'only' )
+            // Query.g:59:9: 'only'
             {
-            match("or"); if (state.failed) return ;
+            match("only"); if (state.failed) return ;
 
 
 
@@ -876,10 +876,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:60:7: ( 'pre' )
-            // Query.g:60:9: 'pre'
+            // Query.g:60:7: ( 'or' )
+            // Query.g:60:9: 'or'
             {
-            match("pre"); if (state.failed) return ;
+            match("or"); if (state.failed) return ;
 
 
 
@@ -899,10 +899,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:61:7: ( 'pure' )
-            // Query.g:61:9: 'pure'
+            // Query.g:61:7: ( 'pre' )
+            // Query.g:61:9: 'pre'
             {
-            match("pure"); if (state.failed) return ;
+            match("pre"); if (state.failed) return ;
 
 
 
@@ -1152,10 +1152,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:782:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
-            // Query.g:783:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // Query.g:780:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
+            // Query.g:781:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             {
-            // Query.g:783:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // Query.g:781:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             int alt1=4;
             switch ( input.LA(1) ) {
             case ' ':
@@ -1190,28 +1190,28 @@ public class QueryLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // Query.g:783:7: ' '
+                    // Query.g:781:7: ' '
                     {
                     match(' '); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // Query.g:784:7: '\\t'
+                    // Query.g:782:7: '\\t'
                     {
                     match('\t'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Query.g:785:7: '\\f'
+                    // Query.g:783:7: '\\f'
                     {
                     match('\f'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // Query.g:786:7: NEWLINE
+                    // Query.g:784:7: NEWLINE
                     {
                     mNEWLINE(); if (state.failed) return ;
 
@@ -1240,10 +1240,10 @@ public class QueryLexer extends Lexer {
         try {
             int _type = SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:792:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
-            // Query.g:793:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
+            // Query.g:790:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
+            // Query.g:791:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
             {
-            // Query.g:793:5: ( '//' | '--' )
+            // Query.g:791:5: ( '//' | '--' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1263,7 +1263,7 @@ public class QueryLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // Query.g:793:6: '//'
+                    // Query.g:791:6: '//'
                     {
                     match("//"); if (state.failed) return ;
 
@@ -1272,7 +1272,7 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Query.g:793:13: '--'
+                    // Query.g:791:13: '--'
                     {
                     match("--"); if (state.failed) return ;
 
@@ -1284,7 +1284,7 @@ public class QueryLexer extends Lexer {
             }
 
 
-            // Query.g:794:5: (~ ( NEWLINE ) )*
+            // Query.g:792:5: (~ ( NEWLINE ) )*
             loop3:
             do {
                 int alt3=2;
@@ -1297,7 +1297,7 @@ public class QueryLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // Query.g:794:6: ~ ( NEWLINE )
+            	    // Query.g:792:6: ~ ( NEWLINE )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -1338,14 +1338,14 @@ public class QueryLexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:799:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // Query.g:800:5: '/*' ( options {greedy=false; } : . )* '*/'
+            // Query.g:797:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // Query.g:798:5: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); if (state.failed) return ;
 
 
 
-            // Query.g:800:10: ( options {greedy=false; } : . )*
+            // Query.g:798:10: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -1370,7 +1370,7 @@ public class QueryLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // Query.g:800:38: .
+            	    // Query.g:798:38: .
             	    {
             	    matchAny(); if (state.failed) return ;
 
@@ -1403,7 +1403,7 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "NEWLINE"
     public final void mNEWLINE() throws RecognitionException {
         try {
-            // Query.g:804:9: ( '\\r\\n' | '\\r' | '\\n' )
+            // Query.g:802:9: ( '\\r\\n' | '\\r' | '\\n' )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -1430,7 +1430,7 @@ public class QueryLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // Query.g:805:5: '\\r\\n'
+                    // Query.g:803:5: '\\r\\n'
                     {
                     match("\r\n"); if (state.failed) return ;
 
@@ -1439,14 +1439,14 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Query.g:805:14: '\\r'
+                    // Query.g:803:14: '\\r'
                     {
                     match('\r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Query.g:805:21: '\\n'
+                    // Query.g:803:21: '\\n'
                     {
                     match('\n'); if (state.failed) return ;
 
@@ -1467,8 +1467,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:807:10: ( '->' )
-            // Query.g:807:12: '->'
+            // Query.g:805:10: ( '->' )
+            // Query.g:805:12: '->'
             {
             match("->"); if (state.failed) return ;
 
@@ -1490,8 +1490,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:808:11: ( '@' )
-            // Query.g:808:13: '@'
+            // Query.g:806:11: ( '@' )
+            // Query.g:806:13: '@'
             {
             match('@'); if (state.failed) return ;
 
@@ -1511,8 +1511,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:809:8: ( '|' )
-            // Query.g:809:10: '|'
+            // Query.g:807:8: ( '|' )
+            // Query.g:807:10: '|'
             {
             match('|'); if (state.failed) return ;
 
@@ -1532,8 +1532,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:810:10: ( ':' )
-            // Query.g:810:12: ':'
+            // Query.g:808:10: ( ':' )
+            // Query.g:808:12: ':'
             {
             match(':'); if (state.failed) return ;
 
@@ -1553,8 +1553,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = COLON_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:811:14: ( '::' )
-            // Query.g:811:16: '::'
+            // Query.g:809:14: ( '::' )
+            // Query.g:809:16: '::'
             {
             match("::"); if (state.failed) return ;
 
@@ -1576,8 +1576,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = COLON_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:812:14: ( ':=' )
-            // Query.g:812:16: ':='
+            // Query.g:810:14: ( ':=' )
+            // Query.g:810:16: ':='
             {
             match(":="); if (state.failed) return ;
 
@@ -1599,8 +1599,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:813:10: ( ',' )
-            // Query.g:813:12: ','
+            // Query.g:811:10: ( ',' )
+            // Query.g:811:12: ','
             {
             match(','); if (state.failed) return ;
 
@@ -1620,8 +1620,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:814:8: ( '.' )
-            // Query.g:814:10: '.'
+            // Query.g:812:8: ( '.' )
+            // Query.g:812:10: '.'
             {
             match('.'); if (state.failed) return ;
 
@@ -1641,8 +1641,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = DOTDOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:815:11: ( '..' )
-            // Query.g:815:13: '..'
+            // Query.g:813:11: ( '..' )
+            // Query.g:813:13: '..'
             {
             match(".."); if (state.failed) return ;
 
@@ -1664,8 +1664,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:816:10: ( '=' )
-            // Query.g:816:12: '='
+            // Query.g:814:10: ( '=' )
+            // Query.g:814:12: '='
             {
             match('='); if (state.failed) return ;
 
@@ -1685,8 +1685,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:817:11: ( '>' )
-            // Query.g:817:13: '>'
+            // Query.g:815:11: ( '>' )
+            // Query.g:815:13: '>'
             {
             match('>'); if (state.failed) return ;
 
@@ -1706,8 +1706,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = GREATER_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:818:15: ( '>=' )
-            // Query.g:818:17: '>='
+            // Query.g:816:15: ( '>=' )
+            // Query.g:816:17: '>='
             {
             match(">="); if (state.failed) return ;
 
@@ -1729,8 +1729,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:819:9: ( '#' )
-            // Query.g:819:11: '#'
+            // Query.g:817:9: ( '#' )
+            // Query.g:817:11: '#'
             {
             match('#'); if (state.failed) return ;
 
@@ -1750,8 +1750,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:820:11: ( '{' )
-            // Query.g:820:13: '{'
+            // Query.g:818:11: ( '{' )
+            // Query.g:818:13: '{'
             {
             match('{'); if (state.failed) return ;
 
@@ -1771,8 +1771,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:821:11: ( '[' )
-            // Query.g:821:13: '['
+            // Query.g:819:11: ( '[' )
+            // Query.g:819:13: '['
             {
             match('['); if (state.failed) return ;
 
@@ -1792,8 +1792,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:822:9: ( '<' )
-            // Query.g:822:11: '<'
+            // Query.g:820:9: ( '<' )
+            // Query.g:820:11: '<'
             {
             match('<'); if (state.failed) return ;
 
@@ -1813,8 +1813,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = LESS_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:823:14: ( '<=' )
-            // Query.g:823:16: '<='
+            // Query.g:821:14: ( '<=' )
+            // Query.g:821:16: '<='
             {
             match("<="); if (state.failed) return ;
 
@@ -1836,8 +1836,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:824:11: ( '(' )
-            // Query.g:824:13: '('
+            // Query.g:822:11: ( '(' )
+            // Query.g:822:13: '('
             {
             match('('); if (state.failed) return ;
 
@@ -1857,8 +1857,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:825:10: ( '-' )
-            // Query.g:825:12: '-'
+            // Query.g:823:10: ( '-' )
+            // Query.g:823:12: '-'
             {
             match('-'); if (state.failed) return ;
 
@@ -1878,8 +1878,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:826:13: ( '<>' )
-            // Query.g:826:15: '<>'
+            // Query.g:824:13: ( '<>' )
+            // Query.g:824:15: '<>'
             {
             match("<>"); if (state.failed) return ;
 
@@ -1901,8 +1901,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:827:9: ( '+' )
-            // Query.g:827:11: '+'
+            // Query.g:825:9: ( '+' )
+            // Query.g:825:11: '+'
             {
             match('+'); if (state.failed) return ;
 
@@ -1922,8 +1922,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:828:11: ( '}' )
-            // Query.g:828:13: '}'
+            // Query.g:826:11: ( '}' )
+            // Query.g:826:13: '}'
             {
             match('}'); if (state.failed) return ;
 
@@ -1943,8 +1943,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:829:11: ( ']' )
-            // Query.g:829:13: ']'
+            // Query.g:827:11: ( ']' )
+            // Query.g:827:13: ']'
             {
             match(']'); if (state.failed) return ;
 
@@ -1964,8 +1964,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:830:10: ( ')' )
-            // Query.g:830:12: ')'
+            // Query.g:828:10: ( ')' )
+            // Query.g:828:12: ')'
             {
             match(')'); if (state.failed) return ;
 
@@ -1985,8 +1985,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:831:8: ( ';' )
-            // Query.g:831:10: ';'
+            // Query.g:829:8: ( ';' )
+            // Query.g:829:10: ';'
             {
             match(';'); if (state.failed) return ;
 
@@ -2006,8 +2006,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:832:10: ( '/' )
-            // Query.g:832:12: '/'
+            // Query.g:830:10: ( '/' )
+            // Query.g:830:12: '/'
             {
             match('/'); if (state.failed) return ;
 
@@ -2027,8 +2027,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:833:9: ( '*' )
-            // Query.g:833:11: '*'
+            // Query.g:831:9: ( '*' )
+            // Query.g:831:11: '*'
             {
             match('*'); if (state.failed) return ;
 
@@ -2046,10 +2046,10 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // Query.g:837:4: ( ( '0' .. '9' )+ )
-            // Query.g:838:5: ( '0' .. '9' )+
+            // Query.g:835:4: ( ( '0' .. '9' )+ )
+            // Query.g:836:5: ( '0' .. '9' )+
             {
-            // Query.g:838:5: ( '0' .. '9' )+
+            // Query.g:836:5: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -2104,13 +2104,13 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "REAL"
     public final void mREAL() throws RecognitionException {
         try {
-            // Query.g:842:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
-            // Query.g:843:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // Query.g:840:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
+            // Query.g:841:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             {
             mINT(); if (state.failed) return ;
 
 
-            // Query.g:843:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // Query.g:841:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2130,14 +2130,14 @@ public class QueryLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // Query.g:843:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // Query.g:841:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     {
                     match('.'); if (state.failed) return ;
 
                     mINT(); if (state.failed) return ;
 
 
-                    // Query.g:843:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // Query.g:841:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2146,7 +2146,7 @@ public class QueryLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // Query.g:843:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                            // Query.g:841:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -2160,7 +2160,7 @@ public class QueryLexer extends Lexer {
                             }
 
 
-                            // Query.g:843:31: ( '+' | '-' )?
+                            // Query.g:841:31: ( '+' | '-' )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -2201,7 +2201,7 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Query.g:843:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                    // Query.g:841:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2215,7 +2215,7 @@ public class QueryLexer extends Lexer {
                     }
 
 
-                    // Query.g:843:64: ( '+' | '-' )?
+                    // Query.g:841:64: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2268,7 +2268,7 @@ public class QueryLexer extends Lexer {
         try {
             int _type = RANGE_OR_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:845:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
+            // Query.g:843:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -2309,7 +2309,7 @@ public class QueryLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // Query.g:846:7: ( INT '..' )=> INT
+                    // Query.g:844:7: ( INT '..' )=> INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2319,7 +2319,7 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Query.g:847:7: ( REAL )=> REAL
+                    // Query.g:845:7: ( REAL )=> REAL
                     {
                     mREAL(); if (state.failed) return ;
 
@@ -2329,7 +2329,7 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // Query.g:848:9: INT
+                    // Query.g:846:9: INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -2354,12 +2354,12 @@ public class QueryLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:852:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
-            // Query.g:853:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
+            // Query.g:850:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
+            // Query.g:851:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
             {
             match('\''); if (state.failed) return ;
 
-            // Query.g:853:10: (~ ( '\\'' | '\\\\' ) | ESC )*
+            // Query.g:851:10: (~ ( '\\'' | '\\\\' ) | ESC )*
             loop12:
             do {
                 int alt12=3;
@@ -2375,7 +2375,7 @@ public class QueryLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // Query.g:853:12: ~ ( '\\'' | '\\\\' )
+            	    // Query.g:851:12: ~ ( '\\'' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2392,7 +2392,7 @@ public class QueryLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // Query.g:853:27: ESC
+            	    // Query.g:851:27: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -2424,12 +2424,12 @@ public class QueryLexer extends Lexer {
         try {
             int _type = NON_OCL_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:855:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
-            // Query.g:856:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
+            // Query.g:853:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
+            // Query.g:854:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
             {
             match('\"'); if (state.failed) return ;
 
-            // Query.g:856:9: (~ ( '\"' | '\\\\' ) | ESC )*
+            // Query.g:854:9: (~ ( '\"' | '\\\\' ) | ESC )*
             loop13:
             do {
                 int alt13=3;
@@ -2445,7 +2445,7 @@ public class QueryLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // Query.g:856:11: ~ ( '\"' | '\\\\' )
+            	    // Query.g:854:11: ~ ( '\"' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2462,7 +2462,7 @@ public class QueryLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // Query.g:856:25: ESC
+            	    // Query.g:854:25: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -2492,12 +2492,12 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "ESC"
     public final void mESC() throws RecognitionException {
         try {
-            // Query.g:869:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
-            // Query.g:870:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // Query.g:867:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+            // Query.g:868:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             {
             match('\\'); if (state.failed) return ;
 
-            // Query.g:871:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // Query.g:869:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             int alt17=11;
             switch ( input.LA(1) ) {
             case 'n':
@@ -2572,63 +2572,63 @@ public class QueryLexer extends Lexer {
 
             switch (alt17) {
                 case 1 :
-                    // Query.g:871:8: 'n'
+                    // Query.g:869:8: 'n'
                     {
                     match('n'); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // Query.g:872:8: 'r'
+                    // Query.g:870:8: 'r'
                     {
                     match('r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Query.g:873:8: 't'
+                    // Query.g:871:8: 't'
                     {
                     match('t'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // Query.g:874:8: 'b'
+                    // Query.g:872:8: 'b'
                     {
                     match('b'); if (state.failed) return ;
 
                     }
                     break;
                 case 5 :
-                    // Query.g:875:8: 'f'
+                    // Query.g:873:8: 'f'
                     {
                     match('f'); if (state.failed) return ;
 
                     }
                     break;
                 case 6 :
-                    // Query.g:876:8: '\"'
+                    // Query.g:874:8: '\"'
                     {
                     match('\"'); if (state.failed) return ;
 
                     }
                     break;
                 case 7 :
-                    // Query.g:877:8: '\\''
+                    // Query.g:875:8: '\\''
                     {
                     match('\''); if (state.failed) return ;
 
                     }
                     break;
                 case 8 :
-                    // Query.g:878:8: '\\\\'
+                    // Query.g:876:8: '\\\\'
                     {
                     match('\\'); if (state.failed) return ;
 
                     }
                     break;
                 case 9 :
-                    // Query.g:879:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+                    // Query.g:877:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
                     {
                     match('u'); if (state.failed) return ;
 
@@ -2647,11 +2647,11 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // Query.g:880:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+                    // Query.g:878:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
                     {
                     matchRange('0','3'); if (state.failed) return ;
 
-                    // Query.g:880:17: ( '0' .. '7' ( '0' .. '7' )? )?
+                    // Query.g:878:17: ( '0' .. '7' ( '0' .. '7' )? )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -2660,11 +2660,11 @@ public class QueryLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // Query.g:880:18: '0' .. '7' ( '0' .. '7' )?
+                            // Query.g:878:18: '0' .. '7' ( '0' .. '7' )?
                             {
                             matchRange('0','7'); if (state.failed) return ;
 
-                            // Query.g:880:27: ( '0' .. '7' )?
+                            // Query.g:878:27: ( '0' .. '7' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -2702,11 +2702,11 @@ public class QueryLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // Query.g:880:45: '4' .. '7' ( '0' .. '7' )?
+                    // Query.g:878:45: '4' .. '7' ( '0' .. '7' )?
                     {
                     matchRange('4','7'); if (state.failed) return ;
 
-                    // Query.g:880:54: ( '0' .. '7' )?
+                    // Query.g:878:54: ( '0' .. '7' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2754,7 +2754,7 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // Query.g:886:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // Query.g:884:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
             // Query.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -2784,8 +2784,8 @@ public class QueryLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Query.g:893:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // Query.g:894:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // Query.g:891:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // Query.g:892:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -2799,7 +2799,7 @@ public class QueryLexer extends Lexer {
             }
 
 
-            // Query.g:894:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // Query.g:892:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
@@ -2849,7 +2849,7 @@ public class QueryLexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // Query.g:901:6: ( '\\U0003' .. '\\U0377' )
+            // Query.g:899:6: ( '\\U0003' .. '\\U0377' )
             // Query.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {
@@ -3510,8 +3510,8 @@ public class QueryLexer extends Lexer {
 
     // $ANTLR start synpred1_Query
     public final void synpred1_Query_fragment() throws RecognitionException {
-        // Query.g:846:7: ( INT '..' )
-        // Query.g:846:9: INT '..'
+        // Query.g:844:7: ( INT '..' )
+        // Query.g:844:9: INT '..'
         {
         mINT(); if (state.failed) return ;
 
@@ -3527,8 +3527,8 @@ public class QueryLexer extends Lexer {
 
     // $ANTLR start synpred2_Query
     public final void synpred2_Query_fragment() throws RecognitionException {
-        // Query.g:847:7: ( REAL )
-        // Query.g:847:9: REAL
+        // Query.g:845:7: ( REAL )
+        // Query.g:845:9: REAL
         {
         mREAL(); if (state.failed) return ;
 
@@ -3570,38 +3570,37 @@ public class QueryLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\2\uffff\25\57\1\122\1\uffff\1\125\1\127\1\uffff\1\132\1\uffff\1"+
-        "\134\1\uffff\1\136\3\uffff\1\141\13\uffff\10\57\1\153\7\57\1\163"+
-        "\1\57\1\165\5\57\1\173\10\57\21\uffff\1\u0084\3\57\1\u0088\3\57"+
-        "\1\u008c\1\uffff\1\u008d\1\57\1\u008f\4\57\1\uffff\1\57\1\uffff"+
-        "\1\57\1\u0096\1\u0097\2\57\1\uffff\1\u009d\6\57\1\u00a4\1\uffff"+
-        "\3\57\1\uffff\3\57\2\uffff\1\57\1\uffff\1\u00ac\2\57\1\u00af\2\57"+
-        "\2\uffff\1\u00b2\4\57\1\uffff\1\u00b8\1\57\1\u00ba\1\u00bb\1\57"+
-        "\1\u00be\1\uffff\3\57\1\u00c2\3\57\1\uffff\1\u00c6\1\u00c7\1\uffff"+
-        "\2\57\1\uffff\5\57\1\uffff\1\57\2\uffff\2\57\1\uffff\3\57\1\uffff"+
-        "\3\57\2\uffff\10\57\1\u00e2\1\u00e3\6\57\1\u00ea\1\u00eb\1\u00ec"+
-        "\7\57\2\uffff\1\u00f4\2\57\1\u00f7\2\57\3\uffff\1\57\1\u00fb\5\57"+
-        "\1\uffff\2\57\1\uffff\1\u0104\1\57\1\u0106\1\uffff\6\57\1\u010d"+
-        "\1\u010e\1\uffff\1\57\1\uffff\1\u0110\5\57\2\uffff\1\57\1\uffff"+
-        "\1\u0117\1\u0118\3\57\1\u011c\2\uffff\1\u011d\1\u011e\1\u011f\4"+
-        "\uffff";
+        "\2\uffff\25\57\1\121\1\uffff\1\124\1\126\1\uffff\1\131\1\uffff\1"+
+        "\133\1\uffff\1\135\3\uffff\1\140\13\uffff\10\57\1\152\6\57\1\161"+
+        "\1\57\1\163\2\57\1\167\3\57\1\173\7\57\21\uffff\1\u0083\3\57\1\u0087"+
+        "\3\57\1\u008b\1\uffff\1\u008c\1\57\1\u008e\3\57\1\uffff\1\57\1\uffff"+
+        "\1\57\1\u0094\1\u0095\1\uffff\3\57\1\uffff\1\u009c\5\57\1\u00a2"+
+        "\1\uffff\3\57\1\uffff\3\57\2\uffff\1\57\1\uffff\1\u00aa\4\57\2\uffff"+
+        "\1\u00af\4\57\1\u00b5\1\uffff\1\57\1\u00b7\1\u00b8\1\57\1\u00bb"+
+        "\1\uffff\3\57\1\u00bf\3\57\1\uffff\1\u00c3\1\u00c4\2\57\1\uffff"+
+        "\5\57\1\uffff\1\57\2\uffff\2\57\1\uffff\3\57\1\uffff\3\57\2\uffff"+
+        "\10\57\1\u00df\1\u00e0\6\57\1\u00e7\1\u00e8\1\u00e9\7\57\2\uffff"+
+        "\1\u00f1\2\57\1\u00f4\2\57\3\uffff\1\57\1\u00f8\5\57\1\uffff\2\57"+
+        "\1\uffff\1\u0101\1\57\1\u0103\1\uffff\6\57\1\u010a\1\u010b\1\uffff"+
+        "\1\57\1\uffff\1\u010d\5\57\2\uffff\1\57\1\uffff\1\u0114\1\u0115"+
+        "\3\57\1\u0119\2\uffff\1\u011a\1\u011b\1\u011c\4\uffff";
     static final String DFA19_eofS =
-        "\u0120\uffff";
+        "\u011d\uffff";
     static final String DFA19_minS =
         "\1\11\1\uffff\1\141\1\157\1\162\1\145\1\165\1\156\1\154\1\165\1"+
         "\151\1\154\1\141\1\146\1\145\1\157\1\143\1\162\1\145\1\150\1\145"+
         "\1\151\1\157\1\174\1\uffff\1\52\1\55\1\uffff\1\72\1\uffff\1\56\1"+
         "\uffff\1\75\3\uffff\1\75\13\uffff\1\147\1\154\1\144\1\161\1\160"+
-        "\1\144\1\154\1\144\1\60\1\164\1\125\1\166\1\163\1\144\2\154\1\60"+
-        "\1\160\1\60\1\145\2\164\2\154\1\60\1\145\1\162\1\154\1\145\1\165"+
+        "\1\144\1\154\1\144\1\60\1\164\1\125\1\166\1\163\1\144\1\154\1\60"+
+        "\1\160\1\60\1\145\1\164\1\60\3\154\1\60\1\145\1\154\1\145\1\165"+
         "\1\162\1\164\1\162\21\uffff\1\60\1\154\1\145\1\165\1\60\1\154\1"+
-        "\145\1\111\1\60\1\uffff\1\60\1\163\1\60\1\145\1\151\1\163\1\154"+
-        "\1\uffff\1\154\1\uffff\1\162\2\60\1\154\1\101\1\uffff\1\60\2\145"+
-        "\1\156\1\145\1\151\1\150\1\60\1\uffff\1\145\1\162\1\145\1\uffff"+
-        "\1\145\1\146\1\156\2\uffff\1\145\1\uffff\1\60\1\146\1\145\1\60\1"+
-        "\151\1\141\2\uffff\1\60\1\163\1\155\2\156\1\uffff\1\60\1\143\2\60"+
-        "\1\146\1\60\1\uffff\1\143\1\145\1\156\1\60\1\151\1\163\1\111\1\uffff"+
-        "\2\60\1\uffff\1\145\1\164\1\uffff\1\124\1\160\1\123\1\113\1\144"+
+        "\145\1\111\1\60\1\uffff\1\60\1\163\1\60\1\145\1\151\1\163\1\uffff"+
+        "\1\154\1\uffff\1\162\2\60\1\uffff\1\154\1\101\1\171\1\uffff\1\60"+
+        "\1\145\1\156\1\145\1\151\1\150\1\60\1\uffff\1\145\1\162\1\145\1"+
+        "\uffff\1\145\1\146\1\156\2\uffff\1\145\1\uffff\1\60\1\146\1\145"+
+        "\1\151\1\141\2\uffff\1\60\1\163\1\155\2\156\1\60\1\uffff\1\143\2"+
+        "\60\1\146\1\60\1\uffff\1\143\1\145\1\156\1\60\1\151\1\163\1\111"+
+        "\1\uffff\2\60\1\145\1\164\1\uffff\1\124\1\160\1\123\1\113\1\144"+
         "\1\uffff\1\164\2\uffff\1\171\1\143\1\uffff\1\164\1\144\1\143\1\uffff"+
         "\1\156\1\164\1\144\2\uffff\1\163\1\145\1\171\2\164\1\151\1\171\1"+
         "\145\2\60\1\154\1\151\1\123\2\145\1\141\3\60\1\160\1\171\1\141\1"+
@@ -3612,42 +3611,42 @@ public class QueryLexer extends Lexer {
         "\1\163\1\uffff\2\60\2\144\1\145\1\60\2\uffff\3\60\4\uffff";
     static final String DFA19_maxS =
         "\1\175\1\uffff\1\141\1\157\1\162\1\145\1\165\1\156\1\163\1\171\1"+
-        "\151\1\156\1\165\1\164\1\145\1\165\1\162\1\165\1\145\1\162\1\145"+
-        "\1\151\1\157\1\174\1\uffff\1\57\1\76\1\uffff\1\75\1\uffff\1\56\1"+
-        "\uffff\1\75\3\uffff\1\76\13\uffff\1\147\1\154\1\144\1\164\1\160"+
-        "\1\144\1\154\1\144\1\172\1\164\1\125\1\166\1\163\1\144\2\154\1\172"+
-        "\1\160\1\172\1\145\2\164\2\154\1\172\1\145\1\162\1\154\1\145\1\165"+
-        "\1\162\1\164\1\162\21\uffff\1\172\1\154\1\145\1\165\1\172\1\154"+
-        "\1\145\1\111\1\172\1\uffff\1\172\1\163\1\172\1\145\1\151\1\163\1"+
-        "\154\1\uffff\1\154\1\uffff\1\162\2\172\1\154\1\125\1\uffff\1\172"+
-        "\2\145\1\156\1\145\1\151\1\150\1\172\1\uffff\1\145\1\162\1\145\1"+
+        "\151\1\156\1\141\1\164\1\145\1\165\2\162\1\145\1\162\1\145\1\151"+
+        "\1\157\1\174\1\uffff\1\57\1\76\1\uffff\1\75\1\uffff\1\56\1\uffff"+
+        "\1\75\3\uffff\1\76\13\uffff\1\147\1\154\1\144\1\164\1\160\1\144"+
+        "\1\154\1\144\1\172\1\164\1\125\1\166\1\163\1\144\1\154\1\172\1\160"+
+        "\1\172\1\145\1\164\1\172\3\154\1\172\1\145\1\154\1\145\1\165\1\162"+
+        "\1\164\1\162\21\uffff\1\172\1\154\1\145\1\165\1\172\1\154\1\145"+
+        "\1\111\1\172\1\uffff\1\172\1\163\1\172\1\145\1\151\1\163\1\uffff"+
+        "\1\154\1\uffff\1\162\2\172\1\uffff\1\154\1\125\1\171\1\uffff\1\172"+
+        "\1\145\1\156\1\145\1\151\1\150\1\172\1\uffff\1\145\1\162\1\145\1"+
         "\uffff\1\145\1\146\1\156\2\uffff\1\145\1\uffff\1\172\1\146\1\145"+
-        "\1\172\1\151\1\141\2\uffff\1\172\1\163\1\155\1\163\1\156\1\uffff"+
-        "\1\172\1\143\2\172\1\146\1\172\1\uffff\1\143\1\145\1\156\1\172\1"+
-        "\151\1\163\1\111\1\uffff\2\172\1\uffff\1\145\1\164\1\uffff\1\124"+
-        "\1\160\1\123\1\124\1\144\1\uffff\1\164\2\uffff\1\171\1\143\1\uffff"+
-        "\1\164\1\144\1\143\1\uffff\1\156\1\164\1\144\2\uffff\1\163\1\145"+
-        "\1\171\2\164\1\151\1\171\1\145\2\172\1\154\1\151\1\123\2\145\1\141"+
-        "\3\172\1\160\1\171\1\141\1\156\1\160\1\146\1\171\2\uffff\1\172\1"+
-        "\157\1\145\1\172\1\144\1\156\3\uffff\1\145\1\172\1\164\1\144\1\145"+
-        "\1\151\1\124\1\uffff\1\156\1\164\1\uffff\1\172\1\143\1\172\1\uffff"+
-        "\1\145\2\117\1\156\1\151\1\171\2\172\1\uffff\1\145\1\uffff\1\172"+
-        "\2\146\1\145\1\156\1\160\2\uffff\1\163\1\uffff\2\172\2\144\1\145"+
-        "\1\172\2\uffff\3\172\4\uffff";
+        "\1\151\1\141\2\uffff\1\172\1\163\1\155\1\163\1\156\1\172\1\uffff"+
+        "\1\143\2\172\1\146\1\172\1\uffff\1\143\1\145\1\156\1\172\1\151\1"+
+        "\163\1\111\1\uffff\2\172\1\145\1\164\1\uffff\1\124\1\160\1\123\1"+
+        "\124\1\144\1\uffff\1\164\2\uffff\1\171\1\143\1\uffff\1\164\1\144"+
+        "\1\143\1\uffff\1\156\1\164\1\144\2\uffff\1\163\1\145\1\171\2\164"+
+        "\1\151\1\171\1\145\2\172\1\154\1\151\1\123\2\145\1\141\3\172\1\160"+
+        "\1\171\1\141\1\156\1\160\1\146\1\171\2\uffff\1\172\1\157\1\145\1"+
+        "\172\1\144\1\156\3\uffff\1\145\1\172\1\164\1\144\1\145\1\151\1\124"+
+        "\1\uffff\1\156\1\164\1\uffff\1\172\1\143\1\172\1\uffff\1\145\2\117"+
+        "\1\156\1\151\1\171\2\172\1\uffff\1\145\1\uffff\1\172\2\146\1\145"+
+        "\1\156\1\160\2\uffff\1\163\1\uffff\2\172\2\144\1\145\1\172\2\uffff"+
+        "\3\172\4\uffff";
     static final String DFA19_acceptS =
         "\1\uffff\1\1\26\uffff\1\55\2\uffff\1\61\1\uffff\1\66\1\uffff\1\71"+
         "\1\uffff\1\74\1\75\1\76\1\uffff\1\101\1\104\1\105\1\106\1\107\1"+
-        "\110\1\112\1\113\1\114\1\115\1\116\41\uffff\1\54\1\62\1\56\1\57"+
+        "\110\1\112\1\113\1\114\1\115\1\116\40\uffff\1\54\1\62\1\56\1\57"+
         "\1\111\1\60\1\102\1\64\1\65\1\63\1\70\1\67\1\73\1\72\1\100\1\103"+
-        "\1\77\11\uffff\1\13\7\uffff\1\23\1\uffff\1\25\5\uffff\1\40\10\uffff"+
-        "\1\2\3\uffff\1\6\3\uffff\1\12\1\14\1\uffff\1\16\6\uffff\1\27\1\30"+
-        "\5\uffff\1\41\6\uffff\1\53\7\uffff\1\17\2\uffff\1\22\2\uffff\1\31"+
-        "\5\uffff\1\42\1\uffff\1\46\1\47\2\uffff\1\51\3\uffff\1\7\3\uffff"+
-        "\1\20\1\21\32\uffff\1\43\1\50\6\uffff\1\15\1\24\1\26\7\uffff\1\52"+
+        "\1\77\11\uffff\1\13\6\uffff\1\22\1\uffff\1\24\3\uffff\1\27\3\uffff"+
+        "\1\41\7\uffff\1\2\3\uffff\1\6\3\uffff\1\12\1\14\1\uffff\1\16\5\uffff"+
+        "\1\26\1\30\6\uffff\1\42\5\uffff\1\53\7\uffff\1\17\4\uffff\1\31\5"+
+        "\uffff\1\40\1\uffff\1\46\1\47\2\uffff\1\51\3\uffff\1\7\3\uffff\1"+
+        "\20\1\21\32\uffff\1\43\1\50\6\uffff\1\15\1\23\1\25\7\uffff\1\52"+
         "\2\uffff\1\5\3\uffff\1\33\10\uffff\1\10\1\uffff\1\32\6\uffff\1\3"+
         "\1\4\1\uffff\1\34\6\uffff\1\35\1\36\3\uffff\1\11\1\37\1\44\1\45";
     static final String DFA19_specialS =
-        "\u0120\uffff}>";
+        "\u011d\uffff}>";
     static final String[] DFA19_transitionS = {
             "\2\30\1\uffff\2\30\22\uffff\1\30\1\uffff\1\56\1\41\1\57\1\uffff"+
             "\1\1\1\55\1\45\1\51\1\53\1\46\1\35\1\32\1\36\1\31\12\54\1\34"+
@@ -3666,32 +3665,31 @@ public class QueryLexer extends Lexer {
             "\1\71\3\uffff\1\72",
             "\1\73",
             "\1\74\1\uffff\1\75",
-            "\1\76\23\uffff\1\77",
-            "\1\100\6\uffff\1\101\1\102\5\uffff\1\103",
-            "\1\104",
-            "\1\105\5\uffff\1\106",
-            "\1\107\16\uffff\1\110",
-            "\1\111\2\uffff\1\112",
-            "\1\113",
-            "\1\114\11\uffff\1\115",
+            "\1\76",
+            "\1\77\6\uffff\1\100\1\101\5\uffff\1\102",
+            "\1\103",
+            "\1\104\5\uffff\1\105",
+            "\1\106\12\uffff\1\107\3\uffff\1\110",
+            "\1\111",
+            "\1\112",
+            "\1\113\11\uffff\1\114",
+            "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
-            "\1\121",
             "",
-            "\1\124\4\uffff\1\123",
-            "\1\123\20\uffff\1\126",
+            "\1\123\4\uffff\1\122",
+            "\1\122\20\uffff\1\125",
             "",
-            "\1\130\2\uffff\1\131",
+            "\1\127\2\uffff\1\130",
             "",
-            "\1\133",
+            "\1\132",
             "",
-            "\1\135",
-            "",
+            "\1\134",
             "",
             "",
-            "\1\137\1\140",
             "",
+            "\1\136\1\137",
             "",
             "",
             "",
@@ -3702,27 +3700,28 @@ public class QueryLexer extends Lexer {
             "",
             "",
             "",
+            "",
+            "\1\141",
             "\1\142",
             "\1\143",
-            "\1\144",
-            "\1\145\2\uffff\1\146",
+            "\1\144\2\uffff\1\145",
+            "\1\146",
             "\1\147",
             "\1\150",
             "\1\151",
-            "\1\152",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\153",
             "\1\154",
             "\1\155",
             "\1\156",
             "\1\157",
             "\1\160",
-            "\1\161",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\162",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\164",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\166",
-            "\1\167",
+            "\1\165",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\166\6\57",
             "\1\170",
             "\1\171",
             "\1\172",
@@ -3734,7 +3733,6 @@ public class QueryLexer extends Lexer {
             "\1\u0080",
             "\1\u0081",
             "\1\u0082",
-            "\1\u0083",
             "",
             "",
             "",
@@ -3753,96 +3751,98 @@ public class QueryLexer extends Lexer {
             "",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0084",
             "\1\u0085",
             "\1\u0086",
-            "\1\u0087",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0088",
             "\1\u0089",
             "\1\u008a",
-            "\1\u008b",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u008e",
+            "\1\u008d",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u008f",
             "\1\u0090",
             "\1\u0091",
+            "",
             "\1\u0092",
+            "",
             "\1\u0093",
-            "",
-            "\1\u0094",
-            "",
-            "\1\u0095",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0098",
-            "\1\u0099\3\uffff\1\u009a\3\uffff\1\u009b\13\uffff\1\u009c",
+            "",
+            "\1\u0096",
+            "\1\u0097\3\uffff\1\u0098\3\uffff\1\u0099\13\uffff\1\u009a",
+            "\1\u009b",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u009d",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
             "\1\u00a1",
-            "\1\u00a2",
-            "\1\u00a3",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
+            "\1\u00a3",
+            "\1\u00a4",
             "\1\u00a5",
+            "",
             "\1\u00a6",
             "\1\u00a7",
-            "",
             "\1\u00a8",
+            "",
+            "",
             "\1\u00a9",
-            "\1\u00aa",
-            "",
-            "",
-            "\1\u00ab",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00ab",
+            "\1\u00ac",
             "\1\u00ad",
             "\1\u00ae",
+            "",
+            "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00b0",
             "\1\u00b1",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00b3",
+            "\1\u00b2\4\uffff\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5\4\uffff\1\u00b6",
-            "\1\u00b7",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
+            "\1\u00b6",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00b9",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00bc",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\16\57\1\u00bd\13"+
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\16\57\1\u00ba\13"+
             "\57",
             "",
-            "\1\u00bf",
+            "\1\u00bc",
+            "\1\u00bd",
+            "\1\u00be",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00c0",
             "\1\u00c1",
+            "\1\u00c2",
+            "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00c3",
-            "\1\u00c4",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00c5",
+            "\1\u00c6",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u00c7",
             "\1\u00c8",
             "\1\u00c9",
-            "",
-            "\1\u00ca",
-            "\1\u00cb",
+            "\1\u00ca\10\uffff\1\u00cb",
             "\1\u00cc",
-            "\1\u00cd\10\uffff\1\u00ce",
+            "",
+            "\1\u00cd",
+            "",
+            "",
+            "\1\u00ce",
             "\1\u00cf",
             "",
             "\1\u00d0",
-            "",
-            "",
             "\1\u00d1",
             "\1\u00d2",
             "",
@@ -3850,89 +3850,85 @@ public class QueryLexer extends Lexer {
             "\1\u00d4",
             "\1\u00d5",
             "",
+            "",
             "\1\u00d6",
             "\1\u00d7",
             "\1\u00d8",
-            "",
-            "",
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
             "\1\u00dc",
             "\1\u00dd",
-            "\1\u00de",
-            "\1\u00df",
-            "\1\u00e0",
-            "\12\57\7\uffff\1\57\1\u00e1\30\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\57\7\uffff\1\57\1\u00de\30\57\4\uffff\1\57\1\uffff\32\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00e1",
+            "\1\u00e2",
+            "\1\u00e3",
             "\1\u00e4",
             "\1\u00e5",
             "\1\u00e6",
-            "\1\u00e7",
-            "\1\u00e8",
-            "\1\u00e9",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00ea",
+            "\1\u00eb",
+            "\1\u00ec",
             "\1\u00ed",
             "\1\u00ee",
             "\1\u00ef",
             "\1\u00f0",
-            "\1\u00f1",
+            "",
+            "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00f2",
             "\1\u00f3",
-            "",
-            "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u00f5",
             "\1\u00f6",
+            "",
+            "",
+            "",
+            "\1\u00f7",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00f8",
             "\1\u00f9",
-            "",
-            "",
-            "",
             "\1\u00fa",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00fb",
             "\1\u00fc",
-            "\1\u00fd",
-            "\1\u00fe",
+            "\1\u00fd\10\uffff\1\u00fe",
+            "",
             "\1\u00ff",
-            "\1\u0100\10\uffff\1\u0101",
+            "\1\u0100",
             "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u0102",
-            "\1\u0103",
-            "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\1\u0104",
             "\1\u0105",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u0106",
             "\1\u0107",
             "\1\u0108",
             "\1\u0109",
-            "\1\u010a",
-            "\1\u010b",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
             "\1\u010c",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u010e",
             "\1\u010f",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0110",
             "\1\u0111",
             "\1\u0112",
+            "",
+            "",
             "\1\u0113",
-            "\1\u0114",
-            "\1\u0115",
             "",
-            "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u0116",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0119",
-            "\1\u011a",
-            "\1\u011b",
+            "\1\u0117",
+            "\1\u0118",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
             "",

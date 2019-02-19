@@ -2,20 +2,20 @@ package org.tzi.use.query.ast;
 
 public class QClassExpr extends QFeatureExpr{
     private String name;
-    private boolean pure;
-
-    public QClassExpr (String name, boolean pure){
+    private Modifier modifier;
+    
+    public QClassExpr (String name, Modifier modifier){
         this.name = name;
-        this.pure = pure;
+        this.modifier = modifier;
     }
     public String name(){return this.name;}
-    public boolean pure(){return this.pure;}
+    public Modifier modifier(){return this.modifier;}
 
     @Override
     public boolean isClassExpr(){return true;}
 
     @Override
     public String toString(){
-        return "<"+this.name+","+pure+">";
+        return " "+this.modifier+" "+this.name+" ";
     }
 }
