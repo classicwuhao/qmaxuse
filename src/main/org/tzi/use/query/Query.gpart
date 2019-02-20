@@ -96,11 +96,11 @@ modifiers returns [Modifier m]:
     |'all' {$m=Modifier.NO;}
 ;
 attrExpr returns [QAttrExpr attr]:
-    src=(IDENT|STAR) DOT dest=(IDENT|STAR) {attr = new QAttrExpr($src.getText(),$dest.getText());}
+    src=(IDENT|STAR) DOT dest=(IDENT|STAR) (rankExpr)? {attr = new QAttrExpr($src.getText(),$dest.getText());}
 ;
 
 assocExpr returns [QAssocExpr assoc]
-: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR)
+: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR) (rankExpr)?
     {assoc = new QAssocExpr($src.getText(),$name.getText(),$dest.getText());}
 ;
 
@@ -117,7 +117,11 @@ butExpr returns [QButExpr without] @init{
 ;
 
 invExpr returns [QInvExpr inv]: 
-    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) {inv = new QInvExpr($src.getText(),$dest.getText());}
+    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) (rankExpr)? {inv = new QInvExpr($src.getText(),$dest.getText());}
+;
+
+rankExpr returns [int rank]:
+    AT k=INT {$rank=Integer.parseInt($k.text);}
 ;
 
 moduleExpr:
