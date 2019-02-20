@@ -297,5 +297,5 @@ public final class QueryTest{
 
         return errors;
     }
-    
+
 }

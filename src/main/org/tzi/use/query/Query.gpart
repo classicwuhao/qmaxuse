@@ -120,6 +120,12 @@ invExpr returns [QInvExpr inv]:
     src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) {inv = new QInvExpr($src.getText(),$dest.getText());}
 ;
 
+moduleExpr:
+    'module'
+        queryExpr (queryExpr)*
+    'end'
+;
+
 oclExpr: 'withocl' 
     expression
 ;
