@@ -1,22 +1,25 @@
 package org.tzi.use.query.ast;
 
 public class QAssocExpr extends QFeatureExpr{
-    private String container;
     private String name;
+    private String endA;
+    private String endB;
 
-    public QAssocExpr(String container, String name){
-        this.container = container;
+    public QAssocExpr(String endA, String name, String endB){
+        this.endA = endA;
+        this.endB = endB;
         this.name = name;
     }
 
     public String name(){return this.name;}
-    public String container(){return this.container;}
+    public String endA(){return this.endA;}
+    public String endB(){return this.endB;}
 
     @Override
     public boolean isAttrExpr(){return true;}
 
     @Override
     public String toString(){
-        return container+"::"+name;
+        return this.endA+":"+this.name+":"+this.endB;
     }
 }

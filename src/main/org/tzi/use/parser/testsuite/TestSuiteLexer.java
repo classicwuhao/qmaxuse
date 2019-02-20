@@ -1,4 +1,4 @@
-// $ANTLR 3.4 TestSuite.g 2019-02-19 11:13:55
+// $ANTLR 3.4 TestSuite.g 2019-02-20 15:22:36
 
 /*
  * USE - UML based specification environment
@@ -3344,7 +3344,7 @@ public class TestSuiteLexer extends Lexer {
             }
 
 
-            // TestSuite.g:1766:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // TestSuite.g:1766:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;

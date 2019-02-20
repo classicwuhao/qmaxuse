@@ -12,7 +12,7 @@ import org.tzi.use.parser.soil.ast.*;
 import java.util.Collections;
 import java.util.Arrays;
 }
-
+ 
 @lexer::header {
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -41,7 +41,7 @@ import org.tzi.use.parser.ParseErrorHandler;
 
 checkExpr returns [QAst expr]:
     'verify' qexpr=queryExpr {$expr=qexpr;}
-        (
+         (
             ('&&' right_expr=queryExpr 
                 {
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.AND);
@@ -53,8 +53,16 @@ checkExpr returns [QAst expr]:
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.OR);
                 }
             )
+        |
+            ( '=>' right_expr = queryExpr
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.IMPLIES);
+                }
+            )
 
-        )* EOF
+        )* 
+        
+        EOF
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -72,25 +80,28 @@ queryExpr returns [QueryExpr qexpr] @init{
   //  | queryExpr '||' queryExpr
 //;
 featureExpr returns [QFeatureExpr feature]: 
-    (modifier=modifiers) ? dest=(IDENT | STAR)
+    (modifier=modifiers) ? dest=(IDENT|STAR)
     {
         $feature= new QClassExpr($dest.getText(),modifier);
     }
-  |  f1 = attrExpr {$feature=f1;}
-  |  f2 = assocExpr {$feature=f2;}
+    | f1 = attrExpr {$feature=f1;}
+    | f2 = assocExpr {$feature=f2;}
 ;
 
 modifiers returns [Modifier m]:
     'only' {$m=Modifier.ONLY;}
     |
     'no' {$m=Modifier.NO;}
+
+    |'all' {$m=Modifier.NO;}
 ;
 attrExpr returns [QAttrExpr attr]:
     src=(IDENT|STAR) DOT dest=(IDENT|STAR) {attr = new QAttrExpr($src.getText(),$dest.getText());}
 ;
 
 assocExpr returns [QAssocExpr assoc]
-: src=(IDENT | STAR) COLON dest=(IDENT | STAR){assoc = new QAssocExpr($src.getText(),$dest.getText());}
+: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR)
+    {assoc = new QAssocExpr($src.getText(),$name.getText(),$dest.getText());}
 ;
 
 withExpr returns [QWithExpr with] @init{
@@ -106,10 +117,11 @@ butExpr returns [QButExpr without] @init{
 ;
 
 invExpr returns [QInvExpr inv]: 
-    src=(IDENT | STAR) COLON_COLON dest=(IDENT | STAR) {inv = new QInvExpr($src.getText(),$dest.getText());}
+    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) {inv = new QInvExpr($src.getText(),$dest.getText());}
 ;
 
-oclExpr: 'withocl' expression
+oclExpr: 'withocl' 
+    expression
 ;
 /*
 --------- Start of file OCLBase.gpart -------------------- 
@@ -889,8 +901,12 @@ HEX_DIGIT:
 // if it's a literal or really an identifier.
 
 IDENT:
-    ('$' | 'a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
+    ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
     ;
+
+//REG:
+//    ('a'..'z' | 'A'..'Z' | '_' | '*') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9' | '*')*
+//;
 // A dummy rule to force vocabulary to be all characters (except
 // special ones that ANTLR uses internally (0 to 2)
 

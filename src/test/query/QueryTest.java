@@ -31,7 +31,7 @@ public final class QueryTest{
         assertEquals(0,qt.Case1());
     }
     
-    @Test
+   @Test
     public void test1(){
         QueryTest qt = new QueryTest();
         assertEquals(0,qt.Case2());
@@ -91,14 +91,20 @@ public final class QueryTest{
         assertEquals(0,qt.Case11());
     }
 
+    //@Test
+    //public void test12(){
+    //   QueryTest qt = new QueryTest();
+    //   assertEquals(0,qt.Case12());
+    //}
+
     @Test
-    public void test12(){
+    public void test13(){
         QueryTest qt = new QueryTest();
-        assertEquals(0,qt.Case12());
+        assertEquals(0,qt.Case13());
     }
 
     public int Case1(){
-        String query0="verify select * but *::*";
+        String query0="verify select Person.*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -134,8 +140,8 @@ public final class QueryTest{
         int errors = compiler.errors();
 
         if (errors==0)
-            ColorPrint.println("query2 accepted: "+expr,Color.BLUE);
-        else    
+            ColorPrint.println("query2:"+expr,Color.BLUE);
+        else 
             ColorPrint.println("query2 failed: "+errors+" syntax issue(s)",Color.RED);
 
         return errors;
@@ -277,5 +283,19 @@ public final class QueryTest{
         return errors;
     }
 
+    public int Case13(){
+        String query0="verify select Student.*, Student:choose:Module with Student::*, Module::*";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
+        if (errors==0)
+            ColorPrint.println("query12 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query12 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
+    
 }

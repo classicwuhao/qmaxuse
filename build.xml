@@ -241,8 +241,8 @@
 		<echo>Generating query parser</echo>
 		<concat destfile="${query.dir}/Query.g">
 			<fileset file="${query.dir}/Query.gpart" />
-			<fileset file="${parser.dir}/base/OCLBase.gpart" />
-			<fileset file="${parser.dir}/base/OCLLexerRules.gpart" />
+			<fileset file="${parser.dir}/base/OCLBase.gpart"/>
+			<fileset file="${query.dir}/QueryLexerRules.gpart" />
 		</concat>
 
 		<java classname="org.antlr.Tool" dir="${query.dir}" fork="yes">

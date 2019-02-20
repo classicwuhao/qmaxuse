@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2019-02-19 11:13:49
+// $ANTLR 3.4 OCL.g 2019-02-20 15:22:30
 
 package org.tzi.use.parser.ocl; 
 
@@ -2564,7 +2564,7 @@ public class OCLLexer extends Lexer {
             }
 
 
-            // OCL.g:847:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // OCL.g:847:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;

@@ -2215,7 +2215,7 @@ HEX_DIGIT:
 // if it's a literal or really an identifier.
 
 IDENT:
-    ('$' | 'a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
+    ('$' | 'a'..'z' | 'A'..'Z' | '_' ) ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
     ;
 // A dummy rule to force vocabulary to be all characters (except
 // special ones that ANTLR uses internally (0 to 2)

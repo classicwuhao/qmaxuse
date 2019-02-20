@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Generator.g 2019-02-19 11:13:54
+// $ANTLR 3.4 Generator.g 2019-02-20 15:22:35
 
 package org.tzi.use.parser.generator;
 
@@ -3663,7 +3663,7 @@ public class GeneratorLexer extends Lexer {
             }
 
 
-            // Generator.g:2218:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // Generator.g:2218:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
