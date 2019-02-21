@@ -60,9 +60,11 @@ checkExpr returns [QAst expr]:
                 }
             )
 
-        )* 
+        )* EOF
         
-        EOF
+    |
+        mexpr=moduleExpr {$expr = new ModuleListExpr(); ((ModuleListExpr)$expr).addModule(mexpr);} 
+        (mlist=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -70,11 +72,11 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=butExpr {$qexpr.addWithoutExpr(without);})? (oclExpr)? 
+        (without=butExpr {$qexpr.addWithoutExpr(without);})?  
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
-
+ 
 //queryExpr_nl:
  //   queryExpr '&&' queryExpr
   //  | queryExpr '||' queryExpr
@@ -124,9 +126,10 @@ rankExpr returns [int rank]:
     AT k=INT {$rank=Integer.parseInt($k.text);}
 ;
 
-moduleExpr:
-    'module'
-        queryExpr (queryExpr)*
+moduleExpr returns [ModuleExpr mexpr]:
+    'module' name=IDENT {$mexpr = new ModuleExpr($name.getText());}
+        query=queryExpr {$mexpr.addQuery(query);} 
+        (query=queryExpr {$mexpr.addQuery(query);})*
     'end'
 ;
 

@@ -103,6 +103,12 @@ public final class QueryTest{
         assertEquals(0,qt.Case13());
     }
 
+    @Test
+    public void test14(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case14());
+    }
+
     public int Case1(){
         String query0="verify select Person.*";
         PrintWriter err = new PrintWriter(System.err);
@@ -294,6 +300,24 @@ public final class QueryTest{
             ColorPrint.println("query12 accepted: "+expr,Color.BLUE);
         else    
             ColorPrint.println("query12 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
+
+    public int Case14(){
+        String query0="module StudentDeptQueries \n" 
+                + "select Student.*@10, Student:choose:Module@5 with Student::*,Module::*@4\n"
+                + "select Department.code, Module.* with Department::*, Module::* \n"
+                +" end \n";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+
+        if (errors==0)
+            ColorPrint.println("query13 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query13 failed: "+errors+" syntax issue(s)",Color.RED);
 
         return errors;
     }
