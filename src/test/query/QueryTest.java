@@ -284,7 +284,7 @@ public final class QueryTest{
     }
 
     public int Case13(){
-        String query0="verify select Student.*, Student:choose:Module with Student::*, Module::*";
+        String query0="verify select Student.*@10, Student:choose:Module@5 with Student::*, Module::*@4";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
