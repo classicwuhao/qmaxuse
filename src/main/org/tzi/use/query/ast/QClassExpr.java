@@ -16,6 +16,10 @@ public class QClassExpr extends QFeatureExpr{
 
     @Override
     public String toString(){
-        return " "+this.modifier+" "+this.name+" ";
+        return 
+                (this.modifier==null) 
+                ? 
+                this.name+" " 
+                : " "+this.modifier+" "+this.name+" ";
     }
 }

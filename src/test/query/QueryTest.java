@@ -108,6 +108,11 @@ public final class QueryTest{
         QueryTest qt = new QueryTest();
         assertEquals(0,qt.Case14());
     }
+    @Test
+    public void test15(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case15());
+    }
 
     public int Case1(){
         String query0="verify select Person.*";
@@ -318,6 +323,32 @@ public final class QueryTest{
             ColorPrint.println("query13 accepted: "+expr,Color.BLUE);
         else    
             ColorPrint.println("query13 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
+
+    public int Case15(){
+        String module0="module QuerySet0\n" 
+                + "select A.*@10, A:choose:B@5 with A::*, B::*@4\n"
+                + "select C.code, D.* with C::*, D::* \n"
+                +" end \n";
+
+        String module1="module QuerySet1 \n"
+                + "select A.year@10, B.k@3, C.*@2 with A::*, B::*, C::* \n"
+                + "select A@10, B.k@2, C.* \n"
+                + "select only D@4, C with D::* but C::* \n"
+                + "end \n";
+
+        String query0 = module0+" "+module1;
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+
+        if (errors==0)
+            ColorPrint.println("query14 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query14 failed: "+errors+" syntax issue(s)",Color.RED);
 
         return errors;
     }

@@ -59,12 +59,10 @@ checkExpr returns [QAst expr]:
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.IMPLIES);
                 }
             )
-
-        )* EOF
-        
+         )* EOF
     |
         mexpr=moduleExpr {$expr = new ModuleListExpr(); ((ModuleListExpr)$expr).addModule(mexpr);} 
-        (mlist=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
+        (mexpr=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -82,7 +80,7 @@ queryExpr returns [QueryExpr qexpr] @init{
   //  | queryExpr '||' queryExpr
 //;
 featureExpr returns [QFeatureExpr feature]: 
-    (modifier=modifiers) ? dest=(IDENT|STAR)
+    (modifier=modifiers) ? dest=(IDENT|STAR) (rankExpr)?
     {
         $feature= new QClassExpr($dest.getText(),modifier);
     }
