@@ -29,9 +29,8 @@ model returns [ASTModel n]
         )
       | e=enumTypeDefinition { $n.addEnumTypeDef($e.n); }
     )*
-    EOF
+    (m=moduleExpr {$n.addModule(m);})* EOF
     ;
-    
 /* ------------------------------------
   enumTypeDefinition ::= 
     "enum" id "{" idList "}" [ ";" ]

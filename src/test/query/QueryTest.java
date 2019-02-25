@@ -338,7 +338,6 @@ public final class QueryTest{
                 + "select A@10, B.k@2, C.* \n"
                 + "select only D@4, C with D::* but C::* \n"
                 + "end \n";
-
         String query0 = module0+" "+module1;
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
@@ -352,5 +351,7 @@ public final class QueryTest{
 
         return errors;
     }
+
+    
 
 }

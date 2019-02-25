@@ -56,6 +56,8 @@ import org.tzi.use.parser.use.statemachines.*;
 import org.tzi.use.parser.ocl.*;
 import org.tzi.use.parser.soil.ast.*;
 import org.tzi.use.uran.weight.*;
+import org.tzi.use.query.ast.*;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
@@ -140,9 +142,8 @@ model returns [ASTModel n]
         )
       | e=enumTypeDefinition { $n.addEnumTypeDef($e.n); }
     )*
-    EOF
+    (m=moduleExpr {$n.addModule(m);})* EOF
     ;
-    
 /* ------------------------------------
   enumTypeDefinition ::= 
     "enum" id "{" idList "}" [ ";" ]
@@ -639,7 +640,97 @@ keyInit:
     
 keyQualifier:
   {input.LT(1).getText().equals("qualifier")}? IDENT ;
+checkExpr returns [QAst expr]:
+    'verify' qexpr=queryExpr {$expr=qexpr;}
+         (
+            ('&&' right_expr=queryExpr 
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.AND);
+                }
+            )
+        |
+            ('||' right_expr=queryExpr 
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.OR);
+                }
+            )
+        |
+            ( '=>' right_expr = queryExpr
+                {
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.IMPLIES);
+                }
+            )
+         )* EOF
+    |
+        mexpr=moduleExpr {$expr = new ModuleListExpr(); ((ModuleListExpr)$expr).addModule(mexpr);} 
+        (mexpr=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
+;
 
+queryExpr returns [QueryExpr qexpr] @init{
+    qexpr = new QueryExpr();
+}: 
+    'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
+        (with=withExpr {$qexpr.addWithExpr(with);})? 
+        (without=butExpr {$qexpr.addWithoutExpr(without);})?  
+        ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
+   | alias = IDENT {$qexpr.setAlias($alias.getText());}
+;
+ 
+//queryExpr_nl:
+ //   queryExpr '&&' queryExpr
+  //  | queryExpr '||' queryExpr
+//;
+featureExpr returns [QFeatureExpr feature]: 
+    (modifier=modifiers) ? dest=(IDENT|STAR) (rankExpr)?
+    {
+        $feature= new QClassExpr($dest.getText(),modifier);
+    }
+    | f1 = attrExpr {$feature=f1;}
+    | f2 = assocExpr {$feature=f2;}
+;
+
+modifiers returns [Modifier m]:
+    'only' {$m=Modifier.ONLY;}
+    |
+    'no' {$m=Modifier.NO;}
+
+    |'all' {$m=Modifier.NO;}
+;
+attrExpr returns [QAttrExpr attr]:
+    src=(IDENT|STAR) DOT dest=(IDENT|STAR) (rankExpr)? {attr = new QAttrExpr($src.getText(),$dest.getText());}
+;
+
+assocExpr returns [QAssocExpr assoc]
+: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR) (rankExpr)?
+    {assoc = new QAssocExpr($src.getText(),$name.getText(),$dest.getText());}
+;
+
+withExpr returns [QWithExpr with] @init{
+    $with = new QWithExpr();
+}: 
+    'with' w=invExpr{$with.addInvExpr(w);} (COMMA w=invExpr{$with.addInvExpr(w);})*
+;
+butExpr returns [QButExpr without] @init{
+    $without = new QButExpr();
+}
+:
+    'but' w=invExpr{$without.addInvExpr(w);} (COMMA w=invExpr{$without.addInvExpr(w);})*
+;
+
+invExpr returns [QInvExpr inv]: 
+    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) (rankExpr)? {inv = new QInvExpr($src.getText(),$dest.getText());}
+;
+
+rankExpr returns [int rank]:
+    AT k=INT {$rank=Integer.parseInt($k.text);}
+;
+
+moduleExpr returns [ModuleExpr mexpr]:
+    'module' name=IDENT {$mexpr = new ModuleExpr($name.getText());}
+        query=queryExpr {$mexpr.addQuery(query);} 
+        (query=queryExpr {$mexpr.addQuery(query);})*
+    'end'
+;
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */

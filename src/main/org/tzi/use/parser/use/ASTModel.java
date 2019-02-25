@@ -38,6 +38,8 @@ import org.tzi.use.uml.mm.commonbehavior.communications.MSignal;
 import org.tzi.use.uml.ocl.type.EnumType;
 import org.tzi.use.uran.weight.*;
 import org.tzi.use.uml.mm.MClassImpl;
+import org.tzi.use.query.ast.ModuleExpr;
+import org.tzi.use.query.ast.ModuleListExpr;
 
 /**
  * Node of the abstract syntax tree constructed by the parser.
@@ -54,6 +56,7 @@ public class ASTModel extends ASTAnnotatable {
     private final List<ASTSignal> signals;
     private final List<ASTConstraintDefinition> fConstraints;
     private final List<ASTPrePost> fPrePosts;
+    private ModuleListExpr list;
 
     public ASTModel(Token name) {
         fName = name;
@@ -93,7 +96,11 @@ public class ASTModel extends ASTAnnotatable {
 	public void addSignal(ASTSignal s) {
 		this.signals.add(s);		
 	}
-	
+    
+    public void addModule(ModuleExpr m){
+        this.list.addModule(m);
+    }
+
     public MModel gen(Context ctx) {
         MModel model = ctx.modelFactory().createModel(fName.getText());
         model.setFilename(ctx.filename());

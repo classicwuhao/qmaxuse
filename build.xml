@@ -226,6 +226,7 @@
 		<concat destfile="${parser.dir}/use/USE.g">
 			<fileset file="${parser.dir}/use/USE.gpart" />
 			<fileset file="${parser.dir}/base/USEBase.gpart" />
+			<fileset file="${query.dir}/QueryUSE.gpart" />
 			<fileset file="${parser.dir}/base/OCLBase.gpart" />
 			<fileset file="${parser.dir}/base/SoilBase.gpart" />
 			<!-- <fileset file="${parser.dir}/use/USELexerRules.gpart" /> -->
@@ -269,6 +270,7 @@
 		<concat destfile="${parser.dir}/generator/Generator.g">
 			<fileset file="${parser.dir}/generator/Generator.gpart" />
 			<fileset file="${parser.dir}/base/USEBase.gpart" />
+			<fileset file="${query.dir}/QueryUSE.gpart" />
 			<fileset file="${parser.dir}/base/OCLBase.gpart" />
 			<fileset file="${parser.dir}/base/SoilBase.gpart" />
 			<fileset file="${parser.dir}/base/OCLLexerRules.gpart" />

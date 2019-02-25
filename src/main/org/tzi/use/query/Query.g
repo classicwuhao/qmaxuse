@@ -12,7 +12,7 @@ import org.tzi.use.parser.soil.ast.*;
 import java.util.Collections;
 import java.util.Arrays;
 }
- 
+
 @lexer::header {
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -131,9 +131,9 @@ moduleExpr returns [ModuleExpr mexpr]:
     'end'
 ;
 
-oclExpr: 'withocl' 
+/*/oclExpr: 'withocl' 
     expression
-;
+;*/
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */
