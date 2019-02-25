@@ -67,6 +67,7 @@ public class ASTModel extends ASTAnnotatable {
         fConstraints = new ArrayList<>();
         fPrePosts = new ArrayList<>();
         signals = new ArrayList<>();
+        list = new ModuleListExpr();
     }
 
     public void addEnumTypeDef(ASTEnumTypeDefinition etd) {
@@ -105,9 +106,9 @@ public class ASTModel extends ASTAnnotatable {
         MModel model = ctx.modelFactory().createModel(fName.getText());
         model.setFilename(ctx.filename());
         ctx.setModel(model);
-
         this.genAnnotations(model);
         
+
         // (1a) add user-defined types to model
         for (ASTEnumTypeDefinition e : fEnumTypeDefs) {
             EnumType enm;
@@ -312,7 +313,10 @@ public class ASTModel extends ASTAnnotatable {
 
 		for (MClass cls : model.classes())
 			UpdateWeightsThroughInheritanceTree(cls);
-		
+        
+            
+        model.setModules(this.list);
+
         return model;
     }
 

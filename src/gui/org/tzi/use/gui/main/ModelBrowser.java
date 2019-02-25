@@ -73,6 +73,7 @@ import org.tzi.use.uml.mm.MModel;
 import org.tzi.use.uml.mm.MModelElement;
 import org.tzi.use.uml.mm.MOperation;
 import org.tzi.use.uml.mm.MPrePostCondition;
+import org.tzi.use.query.ast.*;
 
 /** 
  * A ModelBrowser provides a tree view of classes, associations, and constraints
@@ -215,7 +216,11 @@ public class ModelBrowser extends JPanel
 					fMouseHandler.setSelectedModelElement(me);
 					
 					fireSelectionChanged(me);
-				} else {
+                } 
+                else if (node.isLeaf() && (nodeInfo instanceof ModuleListExpr)){
+                    System.out.println("ModuleListExpr");
+                }
+                else {
 					fireSelectionChanged(null);
 				}
 			}
@@ -388,7 +393,10 @@ public class ModelBrowser extends JPanel
 			}
 		}
 		
-		addChildNodes(top, "Query Operations", queryOperations);
+        addChildNodes(top, "Query Operations", queryOperations);
+        
+        ModuleListExpr queries = fModel.modules();
+        addChildNodes(top,"Query Modules",queries.modules());
     }
 
     /**

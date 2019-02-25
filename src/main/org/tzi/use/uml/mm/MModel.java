@@ -39,6 +39,7 @@ import org.tzi.use.uml.mm.commonbehavior.communications.MSignal;
 import org.tzi.use.uml.ocl.type.EnumType;
 import org.tzi.use.util.StringUtil;
 import org.tzi.use.util.collections.CollectionUtil;
+import org.tzi.use.query.ast.ModuleListExpr;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
@@ -82,6 +83,8 @@ public class MModel extends MModelElementImpl {
 
 	private Map<String, MSignal> signals;
 
+	private ModuleListExpr modules;
+
 	protected MModel(String name) {
 		super(name);
 		fEnumTypes = new TreeMap<String, EnumType>();
@@ -93,6 +96,14 @@ public class MModel extends MModelElementImpl {
 		signals = new TreeMap<>();
 
 		fFilename = "";
+	}
+
+	public ModuleListExpr modules(){
+		return this.modules;
+	}
+
+	public void setModules (ModuleListExpr modules){
+		this.modules = modules;
 	}
 
 	public void setFilename(String filename) {

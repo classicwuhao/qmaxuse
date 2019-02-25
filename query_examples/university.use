@@ -45,4 +45,7 @@ context Student
 context Module
 	inv: self.year>=1 and self.year<=5
 	
---query Person, Student With self.year >= 18
+module queryset
+	select Person.*, Student.* with Student::*
+	select Student.year, Module.year with Student::*, Module::* but Student::inv6
+end

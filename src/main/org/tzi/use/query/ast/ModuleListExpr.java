@@ -13,13 +13,24 @@ public class ModuleListExpr extends QAst{
         this.modules.add(expr);
     }
 
+    public List<ModuleExpr> modules(){return this.modules;}
+
     public boolean isModuleList(){return true;}
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
 
         for (ModuleExpr m: modules)
-            sb.append("\n " + m.toString()+"\n");
+            sb.append("\n " + m.name() +"\n");
+        
+        return sb.toString();
+    }
+
+    public String details(){
+        StringBuilder sb = new StringBuilder();
+
+        for (ModuleExpr m: modules)
+            sb.append("\n " + m.toString() +"\n");
         
         return sb.toString();
     }

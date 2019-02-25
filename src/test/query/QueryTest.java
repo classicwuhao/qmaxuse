@@ -342,16 +342,17 @@ public final class QueryTest{
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+    
         int errors = compiler.errors();
 
         if (errors==0)
-            ColorPrint.println("query14 accepted: "+expr,Color.BLUE);
+            ColorPrint.println("query14 accepted: "+((ModuleListExpr) expr).details(),Color.BLUE);
         else    
             ColorPrint.println("query14 failed: "+errors+" syntax issue(s)",Color.RED);
 
         return errors;
     }
 
-    
+
 
 }
