@@ -468,16 +468,10 @@
 
 	<!-- delete files in the source tree that can be regenerated -->
 	<target name="maintainer-clean" depends="clean">
-		<exec executable="make" dir="${test.dir}" failonerror="true">module queryset
-	select Person.*, Student.* with Student::*
-	select Student.year, Module.year with Student::*, Module::* but Student::inv6
-end
+		<exec executable="make" dir="${test.dir}" failonerror="true">
 			<arg value="maintainer-clean"/>
 		</exec>
-		<exec executable="make" dir="${test.dir}/state" failonerror="module queryset
-	select Person.*, Student.* with Student::*
-	select Student.year, Module.year with Student::*, Module::* but Student::inv6
-end
+		<exec executable="make" dir="${test.dir}/state" failonerror="true">
 			<arg value="maintainer-clean"/>
 		</exec>
 		<exec executable="make" dir="${examples.dir}" failonerror="true">
@@ -712,7 +706,3 @@ end
 		<echo>"Leaving query test." </echo>
 	</target>
 </project>
-module queryset
-	select Person.*, Student.* with Student::*
-	select Student.year, Module.year with Student::*, Module::* but Student::inv6
-end

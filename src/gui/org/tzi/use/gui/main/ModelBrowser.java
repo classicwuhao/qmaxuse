@@ -217,8 +217,21 @@ public class ModelBrowser extends JPanel
 					
 					fireSelectionChanged(me);
                 } 
-                else if (node.isLeaf() && (nodeInfo instanceof ModuleListExpr)){
-                    System.out.println("ModuleListExpr");
+                else if (node.isLeaf() && (nodeInfo instanceof ModuleExpr)){
+                    ModuleExpr module = (ModuleExpr) nodeInfo;
+                    displayInfo(module);
+
+                    int selectedRow = -1;
+                    for (int i = 0; i < fTree.getRowCount(); i++) {
+						if (fTree.isRowSelected(i)) {
+							selectedRow = i;
+						}
+					}
+					fMouseHandler.setSelectedNodeRectangle(fTree
+							.getRowBounds(selectedRow));
+					//fMouseHandler.setSelectedModelElement(module);
+                    //fireSelectionChanged(module);
+                    
                 }
                 else {
 					fireSelectionChanged(null);
@@ -355,6 +368,22 @@ public class ModelBrowser extends JPanel
         fHtmlPane.setText(spec);
     }
 
+    private void displayInfo(ModuleExpr element) {
+		//IPluginMModelExtensionPoint modelExtensionPoint = (IPluginMModelExtensionPoint) fPluginRuntime
+		//	.getExtensionPoint("model");
+	        StringWriter sw = new StringWriter();
+	        sw.write("<html><head>");
+	        sw.write("<style> <!-- body { font-family: sansserif; } --> </style>");
+	        sw.write("</head><body><font size=\"-1\">");
+            sw.write("<b> module </b>" + element.name());
+            for (QueryExpr e : element.queries())
+                sw.write ("<p style=\"text-indent: 10px\">"+e.toString()+"</p>");
+            sw.write("<b>end</b>");
+        sw.write("</font></body></html>");
+        String spec = sw.toString();
+        fHtmlPane.setText(spec);
+    }
+
     public void createNodes( final DefaultMutableTreeNode top ) {
         final Collection<MClass> sortedClasses = 
             fMbs.sortClasses( new ArrayList<MClass>(fModel.classes()) );
@@ -397,6 +426,7 @@ public class ModelBrowser extends JPanel
         
         ModuleListExpr queries = fModel.modules();
         addChildNodes(top,"Query Modules",queries.modules());
+
     }
 
     /**

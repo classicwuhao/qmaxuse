@@ -35,6 +35,7 @@ public class QueryExpr extends QAst{
     @Override
     public String toString(){
         StringBuffer sb = new StringBuffer();
+        sb.append("select ");
         if (features.size()>0){
             for (int i=0;i<features.size()-1;i++ )
                 sb.append(features.get(i).toString()+", ");

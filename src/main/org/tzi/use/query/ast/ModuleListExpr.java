@@ -30,7 +30,7 @@ public class ModuleListExpr extends QAst{
         StringBuilder sb = new StringBuilder();
 
         for (ModuleExpr m: modules)
-            sb.append("\n " + m.toString() +"\n");
+            sb.append("\n " + m.details() +"\n");
         
         return sb.toString();
     }

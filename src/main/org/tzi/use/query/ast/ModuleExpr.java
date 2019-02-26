@@ -28,9 +28,13 @@ public class ModuleExpr extends QAst{
     }
 
     public String toString(){
+        return this.name;
+    }
+
+    public String details(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("begin "+this.name+" \n");
+        sb.append("module "+this.name+" \n");
 
         for (QueryExpr q : queries){
             sb.append("\t"+q.toString()+"\n");
