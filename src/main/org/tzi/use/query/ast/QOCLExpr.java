@@ -1,24 +1,33 @@
 package org.tzi.use.query.ast;
 
 import org.tzi.use.parser.ocl.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /*A Wrapper class for holding simple OCL expressions. */ 
 public class QOCLExpr extends QAst{
-    private ASTExpression expr;
+    private List<ASTExpression> expressions;
 
-    public QOCLExpr(){}
+    public QOCLExpr(){
+        expressions = new ArrayList<ASTExpression>();
+    }
     public QOCLExpr (ASTExpression expr){
-        this.expr = expr;
+        this();
+        this.expressions.add(expr);
     }
 
-    public ASTExpression expression(){return this.expr;}
-    public void setExpression(ASTExpression expr){
-        this.expr = expr;
+    public List<ASTExpression> expression(){return this.expressions;}
+    public void addOCLExpression(ASTExpression expr){
+        this.expressions.add(expr);
     }
 
     public String toString(){
-
-        return this.expr.toString();
+        StringBuffer sb = new StringBuffer();
+        for (int i=0;i<expressions.size()-1;i++)
+            sb.append(expressions.get(i).toString()+ " , ");
+        
+        sb.append(expressions.get(expressions.size()-1).toString());
+        return sb.toString();
     }
 
 }
