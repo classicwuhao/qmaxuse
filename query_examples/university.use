@@ -53,3 +53,10 @@ end
 module queryset1
 	select Student.*, Module.* with Student::*, Module::*
 end 
+
+module queryset2
+	select Student.*, Module.* with Student::*, {
+			Student.allInstances()->forAll(s|s.modules->notEmpty())
+		},[(forall (Int X) (Int Y) )]
+	
+end

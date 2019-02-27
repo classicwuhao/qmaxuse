@@ -114,6 +114,12 @@ public final class QueryTest{
         assertEquals(0,qt.Case15());
     }
 
+    @Test
+    public void test16(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case16());
+    }
+
     public int Case1(){
         String query0="verify select Person.*";
         PrintWriter err = new PrintWriter(System.err);
@@ -353,6 +359,19 @@ public final class QueryTest{
         return errors;
     }
 
+    public int Case16(){
+        String query0="verify select Student.* with Student::* {Student.modules()->notEmpty()}";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
 
+        if (errors==0)
+            ColorPrint.println("query15 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query15 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
 
 }

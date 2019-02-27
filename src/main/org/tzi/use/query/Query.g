@@ -70,7 +70,7 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=butExpr {$qexpr.addWithoutExpr(without);})?  
+        (without=butExpr {$qexpr.addWithoutExpr(without);})?  (oclExpr)?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
@@ -131,9 +131,8 @@ moduleExpr returns [ModuleExpr mexpr]:
     'end'
 ;
 
-/*/oclExpr: 'withocl' 
-    expression
-;*/
+oclExpr: LBRACE expression RBRACE
+;
 /*
 --------- Start of file OCLBase.gpart -------------------- 
 */
