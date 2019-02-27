@@ -7,6 +7,8 @@ public class QueryExpr extends QAst{
     private List<QFeatureExpr> features;
     private QWithExpr withExpr;
     private QButExpr withoutExpr;
+    private QOCLExpr oclExpr;
+
     private String alias ="";
 
     public QueryExpr(){
@@ -25,9 +27,19 @@ public class QueryExpr extends QAst{
         this.withoutExpr = expr;
     }
 
+    public void setOCLExpression(QOCLExpr expr){
+        this.oclExpr = expr;
+    }
+
     public void setAlias(String alias){
         this.alias = alias;
     }
+
+    public List<QFeatureExpr> features(){return this.features;}
+    public QWithExpr withExpr(){return this.withExpr;}
+    public QButExpr butExpr(){return this.withoutExpr;}
+    public QOCLExpr oclExpr(){return this.oclExpr;}
+    public String alias(){return this.alias;}
 
     @Override
     public boolean isQuery(){return true;}
@@ -64,6 +76,13 @@ public class QueryExpr extends QAst{
                 sb.append(withoutInvExprs.get(withoutInvExprs.size()-1));
             }
         }
+
+        if (oclExpr!=null){
+            sb.append("{");
+            sb.append(oclExpr.toString());
+            sb.append("}");
+        }
+
         return (this.alias.length()!=0) ? sb.toString()+ " As " + this.alias : sb.toString();
     }
 }

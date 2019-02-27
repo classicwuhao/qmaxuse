@@ -70,7 +70,7 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=butExpr {$qexpr.addWithoutExpr(without);})?  (oclExpr)?
+        (without=butExpr {$qexpr.addWithoutExpr(without);})? ('' o=oclExpr {$qexpr.setOCLExpression(o);})?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
@@ -131,5 +131,8 @@ moduleExpr returns [ModuleExpr mexpr]:
     'end'
 ;
 
-oclExpr: LBRACE expression RBRACE
+oclExpr returns [QOCLExpr ocl_expr] @init{
+    $ocl_expr = new QOCLExpr();
+}: 
+    LBRACE expr=expression {$ocl_expr.setExpression(expr);} RBRACE
 ;
