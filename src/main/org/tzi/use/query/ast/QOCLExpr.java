@@ -27,7 +27,7 @@ public class QOCLExpr extends QAst{
     public void addOCLExpression(ASTExpression expr, int k){
         if (!rankMap.containsKey(expr)) {
             this.expressions.add(expr);
-            rankMap.put(expr,new Integer(k));
+            rankMap.put(expr,k);
         }
     }
 

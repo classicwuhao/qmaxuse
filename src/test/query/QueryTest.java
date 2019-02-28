@@ -90,7 +90,7 @@ public final class QueryTest{
         QueryTest qt = new QueryTest();
         assertEquals(0,qt.Case11());
     }
-
+    
     //@Test
     //public void test12(){
     //   QueryTest qt = new QueryTest();
@@ -118,6 +118,12 @@ public final class QueryTest{
     public void test16(){
         QueryTest qt = new QueryTest();
         assertEquals(0,qt.Case16());
+    }
+
+    @Test
+    public void test17(){
+        QueryTest qt = new QueryTest();
+        assertEquals(0,qt.Case17());
     }
 
     public int Case1(){
@@ -370,6 +376,21 @@ public final class QueryTest{
             ColorPrint.println("query15 accepted: "+expr,Color.BLUE);
         else    
             ColorPrint.println("query15 failed: "+errors+" syntax issue(s)",Color.RED);
+
+        return errors;
+    }
+
+    public int Case17(){
+        String query0="verify select A.*@4, B@5 with C::*@10 inject {A.b()->Empty()@10, A.allInstances()->forAll(a|a.b()->forAll(b|a.x<>b.x))@8}";
+        PrintWriter err = new PrintWriter(System.err);
+        QueryCompiler compiler = new QueryCompiler();
+        QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
+        int errors = compiler.errors();
+
+        if (errors==0)
+            ColorPrint.println("query16 accepted: "+expr,Color.BLUE);
+        else    
+            ColorPrint.println("query16 failed: "+errors+" syntax issue(s)",Color.RED);
 
         return errors;
     }

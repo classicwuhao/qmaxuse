@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-02-28 16:38:05
+// $ANTLR 3.4 Query.g 2019-02-28 16:55:15
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -134,7 +134,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "checkExpr"
-    // Query.g:42:1: checkExpr returns [QAst expr] : ( 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF |mexpr= moduleExpr (mexpr= moduleExpr )* EOF );
+    // Query.g:46:1: checkExpr returns [QAst expr] : ( 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF |mexpr= moduleExpr (mexpr= moduleExpr )* EOF );
     public final QAst checkExpr() throws RecognitionException {
         QAst expr = null;
 
@@ -147,7 +147,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:42:30: ( 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF |mexpr= moduleExpr (mexpr= moduleExpr )* EOF )
+            // Query.g:46:30: ( 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF |mexpr= moduleExpr (mexpr= moduleExpr )* EOF )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -167,11 +167,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt3) {
                 case 1 :
-                    // Query.g:43:5: 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF
+                    // Query.g:47:5: 'verify' qexpr= queryExpr ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )* EOF
                     {
-                    match(input,88,FOLLOW_88_in_checkExpr51); if (state.failed) return expr;
+                    match(input,88,FOLLOW_88_in_checkExpr53); if (state.failed) return expr;
 
-                    pushFollow(FOLLOW_queryExpr_in_checkExpr55);
+                    pushFollow(FOLLOW_queryExpr_in_checkExpr57);
                     qexpr=queryExpr();
 
                     state._fsp--;
@@ -179,7 +179,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) {expr =qexpr;}
 
-                    // Query.g:44:10: ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )*
+                    // Query.g:48:10: ( ( '&&' right_expr= queryExpr ) | ( '||' right_expr= queryExpr ) | ( '=>' right_expr= queryExpr ) )*
                     loop1:
                     do {
                         int alt1=4;
@@ -204,14 +204,14 @@ public class QueryParser extends BaseParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // Query.g:45:13: ( '&&' right_expr= queryExpr )
+                    	    // Query.g:49:13: ( '&&' right_expr= queryExpr )
                     	    {
-                    	    // Query.g:45:13: ( '&&' right_expr= queryExpr )
-                    	    // Query.g:45:14: '&&' right_expr= queryExpr
+                    	    // Query.g:49:13: ( '&&' right_expr= queryExpr )
+                    	    // Query.g:49:14: '&&' right_expr= queryExpr
                     	    {
-                    	    match(input,44,FOLLOW_44_in_checkExpr83); if (state.failed) return expr;
+                    	    match(input,44,FOLLOW_44_in_checkExpr85); if (state.failed) return expr;
 
-                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr87);
+                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr89);
                     	    right_expr=queryExpr();
 
                     	    state._fsp--;
@@ -227,14 +227,14 @@ public class QueryParser extends BaseParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // Query.g:51:13: ( '||' right_expr= queryExpr )
+                    	    // Query.g:55:13: ( '||' right_expr= queryExpr )
                     	    {
-                    	    // Query.g:51:13: ( '||' right_expr= queryExpr )
-                    	    // Query.g:51:14: '||' right_expr= queryExpr
+                    	    // Query.g:55:13: ( '||' right_expr= queryExpr )
+                    	    // Query.g:55:14: '||' right_expr= queryExpr
                     	    {
-                    	    match(input,91,FOLLOW_91_in_checkExpr145); if (state.failed) return expr;
+                    	    match(input,91,FOLLOW_91_in_checkExpr147); if (state.failed) return expr;
 
-                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr149);
+                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr151);
                     	    right_expr=queryExpr();
 
                     	    state._fsp--;
@@ -250,14 +250,14 @@ public class QueryParser extends BaseParser {
                     	    }
                     	    break;
                     	case 3 :
-                    	    // Query.g:57:13: ( '=>' right_expr= queryExpr )
+                    	    // Query.g:61:13: ( '=>' right_expr= queryExpr )
                     	    {
-                    	    // Query.g:57:13: ( '=>' right_expr= queryExpr )
-                    	    // Query.g:57:15: '=>' right_expr= queryExpr
+                    	    // Query.g:61:13: ( '=>' right_expr= queryExpr )
+                    	    // Query.g:61:15: '=>' right_expr= queryExpr
                     	    {
-                    	    match(input,45,FOLLOW_45_in_checkExpr208); if (state.failed) return expr;
+                    	    match(input,45,FOLLOW_45_in_checkExpr210); if (state.failed) return expr;
 
-                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr214);
+                    	    pushFollow(FOLLOW_queryExpr_in_checkExpr216);
                     	    right_expr=queryExpr();
 
                     	    state._fsp--;
@@ -279,14 +279,14 @@ public class QueryParser extends BaseParser {
                     } while (true);
 
 
-                    match(input,EOF,FOLLOW_EOF_in_checkExpr260); if (state.failed) return expr;
+                    match(input,EOF,FOLLOW_EOF_in_checkExpr262); if (state.failed) return expr;
 
                     }
                     break;
                 case 2 :
-                    // Query.g:64:9: mexpr= moduleExpr (mexpr= moduleExpr )* EOF
+                    // Query.g:68:9: mexpr= moduleExpr (mexpr= moduleExpr )* EOF
                     {
-                    pushFollow(FOLLOW_moduleExpr_in_checkExpr278);
+                    pushFollow(FOLLOW_moduleExpr_in_checkExpr280);
                     mexpr=moduleExpr();
 
                     state._fsp--;
@@ -294,7 +294,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) {expr = new ModuleListExpr(); ((ModuleListExpr)expr).addModule(mexpr);}
 
-                    // Query.g:65:9: (mexpr= moduleExpr )*
+                    // Query.g:69:9: (mexpr= moduleExpr )*
                     loop2:
                     do {
                         int alt2=2;
@@ -307,9 +307,9 @@ public class QueryParser extends BaseParser {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // Query.g:65:10: mexpr= moduleExpr
+                    	    // Query.g:69:10: mexpr= moduleExpr
                     	    {
-                    	    pushFollow(FOLLOW_moduleExpr_in_checkExpr294);
+                    	    pushFollow(FOLLOW_moduleExpr_in_checkExpr296);
                     	    mexpr=moduleExpr();
 
                     	    state._fsp--;
@@ -326,7 +326,7 @@ public class QueryParser extends BaseParser {
                     } while (true);
 
 
-                    match(input,EOF,FOLLOW_EOF_in_checkExpr300); if (state.failed) return expr;
+                    match(input,EOF,FOLLOW_EOF_in_checkExpr302); if (state.failed) return expr;
 
                     }
                     break;
@@ -348,7 +348,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "queryExpr"
-    // Query.g:68:1: queryExpr returns [QueryExpr qexpr] : ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT );
+    // Query.g:72:1: queryExpr returns [QueryExpr qexpr] : ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT );
     public final QueryExpr queryExpr() throws RecognitionException {
         QueryExpr qexpr = null;
 
@@ -368,7 +368,7 @@ public class QueryParser extends BaseParser {
             qexpr = new QueryExpr();
 
         try {
-            // Query.g:70:2: ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT )
+            // Query.g:74:2: ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -388,11 +388,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt9) {
                 case 1 :
-                    // Query.g:71:5: 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )?
+                    // Query.g:75:5: 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )?
                     {
-                    match(input,83,FOLLOW_83_in_queryExpr321); if (state.failed) return qexpr;
+                    match(input,83,FOLLOW_83_in_queryExpr323); if (state.failed) return qexpr;
 
-                    pushFollow(FOLLOW_featureExpr_in_queryExpr325);
+                    pushFollow(FOLLOW_featureExpr_in_queryExpr327);
                     f=featureExpr();
 
                     state._fsp--;
@@ -400,7 +400,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) {qexpr.addFeature(f);}
 
-                    // Query.g:71:52: ( COMMA f= featureExpr )*
+                    // Query.g:75:52: ( COMMA f= featureExpr )*
                     loop4:
                     do {
                         int alt4=2;
@@ -413,11 +413,11 @@ public class QueryParser extends BaseParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // Query.g:71:53: COMMA f= featureExpr
+                    	    // Query.g:75:53: COMMA f= featureExpr
                     	    {
-                    	    match(input,COMMA,FOLLOW_COMMA_in_queryExpr330); if (state.failed) return qexpr;
+                    	    match(input,COMMA,FOLLOW_COMMA_in_queryExpr332); if (state.failed) return qexpr;
 
-                    	    pushFollow(FOLLOW_featureExpr_in_queryExpr334);
+                    	    pushFollow(FOLLOW_featureExpr_in_queryExpr336);
                     	    f=featureExpr();
 
                     	    state._fsp--;
@@ -434,7 +434,7 @@ public class QueryParser extends BaseParser {
                     } while (true);
 
 
-                    // Query.g:72:9: (with= withExpr )?
+                    // Query.g:76:9: (with= withExpr )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -443,9 +443,9 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt5) {
                         case 1 :
-                            // Query.g:72:10: with= withExpr
+                            // Query.g:76:10: with= withExpr
                             {
-                            pushFollow(FOLLOW_withExpr_in_queryExpr352);
+                            pushFollow(FOLLOW_withExpr_in_queryExpr354);
                             with=withExpr();
 
                             state._fsp--;
@@ -459,7 +459,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:73:9: (without= butExpr )?
+                    // Query.g:77:9: (without= butExpr )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -468,9 +468,9 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt6) {
                         case 1 :
-                            // Query.g:73:10: without= butExpr
+                            // Query.g:77:10: without= butExpr
                             {
-                            pushFollow(FOLLOW_butExpr_in_queryExpr370);
+                            pushFollow(FOLLOW_butExpr_in_queryExpr372);
                             without=butExpr();
 
                             state._fsp--;
@@ -484,7 +484,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:73:62: ( 'inject' o= oclExpr )?
+                    // Query.g:77:62: ( 'inject' o= oclExpr )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -493,11 +493,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt7) {
                         case 1 :
-                            // Query.g:73:63: 'inject' o= oclExpr
+                            // Query.g:77:63: 'inject' o= oclExpr
                             {
-                            match(input,67,FOLLOW_67_in_queryExpr377); if (state.failed) return qexpr;
+                            match(input,67,FOLLOW_67_in_queryExpr379); if (state.failed) return qexpr;
 
-                            pushFollow(FOLLOW_oclExpr_in_queryExpr381);
+                            pushFollow(FOLLOW_oclExpr_in_queryExpr383);
                             o=oclExpr();
 
                             state._fsp--;
@@ -511,7 +511,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:74:9: ( 'as' name= IDENT )?
+                    // Query.g:78:9: ( 'as' name= IDENT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -520,11 +520,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt8) {
                         case 1 :
-                            // Query.g:74:10: 'as' name= IDENT
+                            // Query.g:78:10: 'as' name= IDENT
                             {
-                            match(input,56,FOLLOW_56_in_queryExpr396); if (state.failed) return qexpr;
+                            match(input,56,FOLLOW_56_in_queryExpr398); if (state.failed) return qexpr;
 
-                            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpr400); if (state.failed) return qexpr;
+                            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpr402); if (state.failed) return qexpr;
 
                             if ( state.backtracking==0 ) {qexpr.setAlias(name.getText());}
 
@@ -537,9 +537,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:75:6: alias= IDENT
+                    // Query.g:79:6: alias= IDENT
                     {
-                    alias=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpr416); if (state.failed) return qexpr;
+                    alias=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpr418); if (state.failed) return qexpr;
 
                     if ( state.backtracking==0 ) {qexpr.setAlias(alias.getText());}
 
@@ -563,7 +563,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "featureExpr"
-    // Query.g:82:1: featureExpr returns [QFeatureExpr feature] : ( (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )? |f1= attrExpr |f2= assocExpr );
+    // Query.g:86:1: featureExpr returns [QFeatureExpr feature] : ( (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )? |f1= attrExpr |f2= assocExpr );
     public final QFeatureExpr featureExpr() throws RecognitionException {
         QFeatureExpr feature = null;
 
@@ -579,7 +579,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:82:43: ( (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )? |f1= attrExpr |f2= assocExpr )
+            // Query.g:86:43: ( (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )? |f1= attrExpr |f2= assocExpr )
             int alt12=3;
             int LA12_0 = input.LA(1);
 
@@ -635,9 +635,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt12) {
                 case 1 :
-                    // Query.g:83:5: (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )?
+                    // Query.g:87:5: (modifier= modifiers )? dest= ( IDENT | STAR ) (k= rankExpr )?
                     {
-                    // Query.g:83:5: (modifier= modifiers )?
+                    // Query.g:87:5: (modifier= modifiers )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -646,9 +646,9 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt10) {
                         case 1 :
-                            // Query.g:83:6: modifier= modifiers
+                            // Query.g:87:6: modifier= modifiers
                             {
-                            pushFollow(FOLLOW_modifiers_in_featureExpr446);
+                            pushFollow(FOLLOW_modifiers_in_featureExpr448);
                             modifier=modifiers();
 
                             state._fsp--;
@@ -674,7 +674,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:83:46: (k= rankExpr )?
+                    // Query.g:87:46: (k= rankExpr )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -683,9 +683,9 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt11) {
                         case 1 :
-                            // Query.g:83:47: k= rankExpr
+                            // Query.g:87:47: k= rankExpr
                             {
-                            pushFollow(FOLLOW_rankExpr_in_featureExpr462);
+                            pushFollow(FOLLOW_rankExpr_in_featureExpr464);
                             k=rankExpr();
 
                             state._fsp--;
@@ -708,9 +708,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:91:7: f1= attrExpr
+                    // Query.g:95:7: f1= attrExpr
                     {
-                    pushFollow(FOLLOW_attrExpr_in_featureExpr482);
+                    pushFollow(FOLLOW_attrExpr_in_featureExpr484);
                     f1=attrExpr();
 
                     state._fsp--;
@@ -721,9 +721,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Query.g:92:7: f2= assocExpr
+                    // Query.g:96:7: f2= assocExpr
                     {
-                    pushFollow(FOLLOW_assocExpr_in_featureExpr496);
+                    pushFollow(FOLLOW_assocExpr_in_featureExpr498);
                     f2=assocExpr();
 
                     state._fsp--;
@@ -751,13 +751,13 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "modifiers"
-    // Query.g:95:1: modifiers returns [Modifier m] : ( 'only' | 'no' | 'all' );
+    // Query.g:99:1: modifiers returns [Modifier m] : ( 'only' | 'no' | 'all' );
     public final Modifier modifiers() throws RecognitionException {
         Modifier m = null;
 
 
         try {
-            // Query.g:95:31: ( 'only' | 'no' | 'all' )
+            // Query.g:99:31: ( 'only' | 'no' | 'all' )
             int alt13=3;
             switch ( input.LA(1) ) {
             case 80:
@@ -786,27 +786,27 @@ public class QueryParser extends BaseParser {
 
             switch (alt13) {
                 case 1 :
-                    // Query.g:96:5: 'only'
+                    // Query.g:100:5: 'only'
                     {
-                    match(input,80,FOLLOW_80_in_modifiers514); if (state.failed) return m;
+                    match(input,80,FOLLOW_80_in_modifiers516); if (state.failed) return m;
 
                     if ( state.backtracking==0 ) {m =Modifier.ONLY;}
 
                     }
                     break;
                 case 2 :
-                    // Query.g:98:5: 'no'
+                    // Query.g:102:5: 'no'
                     {
-                    match(input,71,FOLLOW_71_in_modifiers528); if (state.failed) return m;
+                    match(input,71,FOLLOW_71_in_modifiers530); if (state.failed) return m;
 
                     if ( state.backtracking==0 ) {m =Modifier.NO;}
 
                     }
                     break;
                 case 3 :
-                    // Query.g:100:6: 'all'
+                    // Query.g:104:6: 'all'
                     {
-                    match(input,53,FOLLOW_53_in_modifiers538); if (state.failed) return m;
+                    match(input,53,FOLLOW_53_in_modifiers540); if (state.failed) return m;
 
                     if ( state.backtracking==0 ) {m =Modifier.NO;}
 
@@ -830,7 +830,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "attrExpr"
-    // Query.g:102:1: attrExpr returns [QAttrExpr attr] : src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )? ;
+    // Query.g:106:1: attrExpr returns [QAttrExpr attr] : src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )? ;
     public final QAttrExpr attrExpr() throws RecognitionException {
         QAttrExpr attr = null;
 
@@ -841,8 +841,8 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:102:34: (src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )? )
-            // Query.g:103:5: src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )?
+            // Query.g:106:34: (src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )? )
+            // Query.g:107:5: src= ( IDENT | STAR ) DOT dest= ( IDENT | STAR ) (k= rankExpr )?
             {
             src=(Token)input.LT(1);
 
@@ -858,7 +858,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,DOT,FOLLOW_DOT_in_attrExpr563); if (state.failed) return attr;
+            match(input,DOT,FOLLOW_DOT_in_attrExpr565); if (state.failed) return attr;
 
             dest=(Token)input.LT(1);
 
@@ -874,7 +874,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            // Query.g:103:44: (k= rankExpr )?
+            // Query.g:107:44: (k= rankExpr )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -883,9 +883,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt14) {
                 case 1 :
-                    // Query.g:103:45: k= rankExpr
+                    // Query.g:107:45: k= rankExpr
                     {
-                    pushFollow(FOLLOW_rankExpr_in_attrExpr576);
+                    pushFollow(FOLLOW_rankExpr_in_attrExpr578);
                     k=rankExpr();
 
                     state._fsp--;
@@ -923,7 +923,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "assocExpr"
-    // Query.g:113:1: assocExpr returns [QAssocExpr assoc] : src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )? ;
+    // Query.g:117:1: assocExpr returns [QAssocExpr assoc] : src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )? ;
     public final QAssocExpr assocExpr() throws RecognitionException {
         QAssocExpr assoc = null;
 
@@ -935,8 +935,8 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:114:3: (src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )? )
-            // Query.g:114:3: src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )?
+            // Query.g:118:3: (src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )? )
+            // Query.g:118:3: src= ( IDENT | STAR ) COLON name= ( IDENT | STAR ) COLON dest= ( IDENT | STAR ) (k= rankExpr )?
             {
             src=(Token)input.LT(1);
 
@@ -952,7 +952,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,COLON,FOLLOW_COLON_in_assocExpr606); if (state.failed) return assoc;
+            match(input,COLON,FOLLOW_COLON_in_assocExpr608); if (state.failed) return assoc;
 
             name=(Token)input.LT(1);
 
@@ -968,7 +968,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,COLON,FOLLOW_COLON_in_assocExpr616); if (state.failed) return assoc;
+            match(input,COLON,FOLLOW_COLON_in_assocExpr618); if (state.failed) return assoc;
 
             dest=(Token)input.LT(1);
 
@@ -984,7 +984,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            // Query.g:114:68: (k= rankExpr )?
+            // Query.g:118:68: (k= rankExpr )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -993,9 +993,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt15) {
                 case 1 :
-                    // Query.g:114:69: k= rankExpr
+                    // Query.g:118:69: k= rankExpr
                     {
-                    pushFollow(FOLLOW_rankExpr_in_assocExpr629);
+                    pushFollow(FOLLOW_rankExpr_in_assocExpr631);
                     k=rankExpr();
 
                     state._fsp--;
@@ -1033,7 +1033,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "withExpr"
-    // Query.g:124:1: withExpr returns [QWithExpr with] : 'with' w= invExpr ( COMMA w= invExpr )* ;
+    // Query.g:128:1: withExpr returns [QWithExpr with] : 'with' w= invExpr ( COMMA w= invExpr )* ;
     public final QWithExpr withExpr() throws RecognitionException {
         QWithExpr with = null;
 
@@ -1045,12 +1045,12 @@ public class QueryParser extends BaseParser {
             with = new QWithExpr();
 
         try {
-            // Query.g:126:2: ( 'with' w= invExpr ( COMMA w= invExpr )* )
-            // Query.g:127:5: 'with' w= invExpr ( COMMA w= invExpr )*
+            // Query.g:130:2: ( 'with' w= invExpr ( COMMA w= invExpr )* )
+            // Query.g:131:5: 'with' w= invExpr ( COMMA w= invExpr )*
             {
-            match(input,89,FOLLOW_89_in_withExpr658); if (state.failed) return with;
+            match(input,89,FOLLOW_89_in_withExpr660); if (state.failed) return with;
 
-            pushFollow(FOLLOW_invExpr_in_withExpr662);
+            pushFollow(FOLLOW_invExpr_in_withExpr664);
             w=invExpr();
 
             state._fsp--;
@@ -1058,7 +1058,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {with.addInvExpr(w);}
 
-            // Query.g:127:44: ( COMMA w= invExpr )*
+            // Query.g:131:44: ( COMMA w= invExpr )*
             loop16:
             do {
                 int alt16=2;
@@ -1071,11 +1071,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // Query.g:127:45: COMMA w= invExpr
+            	    // Query.g:131:45: COMMA w= invExpr
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_withExpr666); if (state.failed) return with;
+            	    match(input,COMMA,FOLLOW_COMMA_in_withExpr668); if (state.failed) return with;
 
-            	    pushFollow(FOLLOW_invExpr_in_withExpr670);
+            	    pushFollow(FOLLOW_invExpr_in_withExpr672);
             	    w=invExpr();
 
             	    state._fsp--;
@@ -1110,7 +1110,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "butExpr"
-    // Query.g:129:1: butExpr returns [QButExpr without] : 'but' w= invExpr ( COMMA w= invExpr )* ;
+    // Query.g:133:1: butExpr returns [QButExpr without] : 'but' w= invExpr ( COMMA w= invExpr )* ;
     public final QButExpr butExpr() throws RecognitionException {
         QButExpr without = null;
 
@@ -1122,12 +1122,12 @@ public class QueryParser extends BaseParser {
             without = new QButExpr();
 
         try {
-            // Query.g:132:5: ( 'but' w= invExpr ( COMMA w= invExpr )* )
-            // Query.g:133:5: 'but' w= invExpr ( COMMA w= invExpr )*
+            // Query.g:136:5: ( 'but' w= invExpr ( COMMA w= invExpr )* )
+            // Query.g:137:5: 'but' w= invExpr ( COMMA w= invExpr )*
             {
-            match(input,57,FOLLOW_57_in_butExpr693); if (state.failed) return without;
+            match(input,57,FOLLOW_57_in_butExpr695); if (state.failed) return without;
 
-            pushFollow(FOLLOW_invExpr_in_butExpr697);
+            pushFollow(FOLLOW_invExpr_in_butExpr699);
             w=invExpr();
 
             state._fsp--;
@@ -1135,7 +1135,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {without.addInvExpr(w);}
 
-            // Query.g:133:46: ( COMMA w= invExpr )*
+            // Query.g:137:46: ( COMMA w= invExpr )*
             loop17:
             do {
                 int alt17=2;
@@ -1148,11 +1148,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt17) {
             	case 1 :
-            	    // Query.g:133:47: COMMA w= invExpr
+            	    // Query.g:137:47: COMMA w= invExpr
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_butExpr701); if (state.failed) return without;
+            	    match(input,COMMA,FOLLOW_COMMA_in_butExpr703); if (state.failed) return without;
 
-            	    pushFollow(FOLLOW_invExpr_in_butExpr705);
+            	    pushFollow(FOLLOW_invExpr_in_butExpr707);
             	    w=invExpr();
 
             	    state._fsp--;
@@ -1187,7 +1187,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "invExpr"
-    // Query.g:136:1: invExpr returns [QInvExpr inv] : src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )? ;
+    // Query.g:140:1: invExpr returns [QInvExpr inv] : src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )? ;
     public final QInvExpr invExpr() throws RecognitionException {
         QInvExpr inv = null;
 
@@ -1198,8 +1198,8 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:136:31: (src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )? )
-            // Query.g:137:5: src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )?
+            // Query.g:140:31: (src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )? )
+            // Query.g:141:5: src= ( IDENT | STAR ) COLON_COLON dest= ( IDENT | STAR ) (k= rankExpr )?
             {
             src=(Token)input.LT(1);
 
@@ -1215,7 +1215,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,COLON_COLON,FOLLOW_COLON_COLON_in_invExpr733); if (state.failed) return inv;
+            match(input,COLON_COLON,FOLLOW_COLON_COLON_in_invExpr735); if (state.failed) return inv;
 
             dest=(Token)input.LT(1);
 
@@ -1231,7 +1231,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            // Query.g:137:52: (k= rankExpr )?
+            // Query.g:141:52: (k= rankExpr )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1240,9 +1240,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt18) {
                 case 1 :
-                    // Query.g:137:53: k= rankExpr
+                    // Query.g:141:53: k= rankExpr
                     {
-                    pushFollow(FOLLOW_rankExpr_in_invExpr746);
+                    pushFollow(FOLLOW_rankExpr_in_invExpr748);
                     k=rankExpr();
 
                     state._fsp--;
@@ -1281,7 +1281,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "rankExpr"
-    // Query.g:148:1: rankExpr returns [int rank] : AT k= INT ;
+    // Query.g:152:1: rankExpr returns [int rank] : AT k= INT ;
     public final int rankExpr() throws RecognitionException {
         int rank = 0;
 
@@ -1292,12 +1292,12 @@ public class QueryParser extends BaseParser {
             rank =0;
          
         try {
-            // Query.g:150:3: ( AT k= INT )
-            // Query.g:151:5: AT k= INT
+            // Query.g:154:3: ( AT k= INT )
+            // Query.g:155:5: AT k= INT
             {
-            match(input,AT,FOLLOW_AT_in_rankExpr775); if (state.failed) return rank;
+            match(input,AT,FOLLOW_AT_in_rankExpr777); if (state.failed) return rank;
 
-            k=(Token)match(input,INT,FOLLOW_INT_in_rankExpr779); if (state.failed) return rank;
+            k=(Token)match(input,INT,FOLLOW_INT_in_rankExpr781); if (state.failed) return rank;
 
             if ( state.backtracking==0 ) {rank =Integer.parseInt((k!=null?k.getText():null));}
 
@@ -1319,7 +1319,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "moduleExpr"
-    // Query.g:154:1: moduleExpr returns [ModuleExpr mexpr] : 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end' ;
+    // Query.g:158:1: moduleExpr returns [ModuleExpr mexpr] : 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end' ;
     public final ModuleExpr moduleExpr() throws RecognitionException {
         ModuleExpr mexpr = null;
 
@@ -1329,16 +1329,16 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:154:38: ( 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end' )
-            // Query.g:155:5: 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end'
+            // Query.g:158:38: ( 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end' )
+            // Query.g:159:5: 'module' name= IDENT query= queryExpr (query= queryExpr )* 'end'
             {
-            match(input,70,FOLLOW_70_in_moduleExpr797); if (state.failed) return mexpr;
+            match(input,70,FOLLOW_70_in_moduleExpr799); if (state.failed) return mexpr;
 
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_moduleExpr801); if (state.failed) return mexpr;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_moduleExpr803); if (state.failed) return mexpr;
 
             if ( state.backtracking==0 ) {mexpr = new ModuleExpr(name.getText());}
 
-            pushFollow(FOLLOW_queryExpr_in_moduleExpr815);
+            pushFollow(FOLLOW_queryExpr_in_moduleExpr817);
             query=queryExpr();
 
             state._fsp--;
@@ -1346,7 +1346,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {mexpr.addQuery(query);}
 
-            // Query.g:157:9: (query= queryExpr )*
+            // Query.g:161:9: (query= queryExpr )*
             loop19:
             do {
                 int alt19=2;
@@ -1359,9 +1359,9 @@ public class QueryParser extends BaseParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // Query.g:157:10: query= queryExpr
+            	    // Query.g:161:10: query= queryExpr
             	    {
-            	    pushFollow(FOLLOW_queryExpr_in_moduleExpr831);
+            	    pushFollow(FOLLOW_queryExpr_in_moduleExpr833);
             	    query=queryExpr();
 
             	    state._fsp--;
@@ -1378,7 +1378,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            match(input,61,FOLLOW_61_in_moduleExpr841); if (state.failed) return mexpr;
+            match(input,61,FOLLOW_61_in_moduleExpr843); if (state.failed) return mexpr;
 
             }
 
@@ -1398,7 +1398,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "oclExpr"
-    // Query.g:161:1: oclExpr returns [QOCLExpr ocl_expr] : LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE ;
+    // Query.g:165:1: oclExpr returns [QOCLExpr ocl_expr] : LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE ;
     public final QOCLExpr oclExpr() throws RecognitionException {
         QOCLExpr ocl_expr = null;
 
@@ -1412,18 +1412,18 @@ public class QueryParser extends BaseParser {
             ocl_expr = new QOCLExpr();
 
         try {
-            // Query.g:163:2: ( LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE )
-            // Query.g:164:5: LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE
+            // Query.g:167:2: ( LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE )
+            // Query.g:168:5: LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE
             {
-            match(input,LBRACE,FOLLOW_LBRACE_in_oclExpr862); if (state.failed) return ocl_expr;
+            match(input,LBRACE,FOLLOW_LBRACE_in_oclExpr864); if (state.failed) return ocl_expr;
 
-            pushFollow(FOLLOW_expression_in_oclExpr866);
+            pushFollow(FOLLOW_expression_in_oclExpr868);
             expr=expression();
 
             state._fsp--;
             if (state.failed) return ocl_expr;
 
-            // Query.g:164:28: (k= rankExpr )?
+            // Query.g:168:28: (k= rankExpr )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1432,9 +1432,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt20) {
                 case 1 :
-                    // Query.g:164:29: k= rankExpr
+                    // Query.g:168:29: k= rankExpr
                     {
-                    pushFollow(FOLLOW_rankExpr_in_oclExpr871);
+                    pushFollow(FOLLOW_rankExpr_in_oclExpr873);
                     k=rankExpr();
 
                     state._fsp--;
@@ -1453,7 +1453,7 @@ public class QueryParser extends BaseParser {
                         ocl_expr.addOCLExpression(expr);
                 }
 
-            // Query.g:171:5: ( COMMA expr= expression (k= rankExpr )? )*
+            // Query.g:175:5: ( COMMA expr= expression (k= rankExpr )? )*
             loop22:
             do {
                 int alt22=2;
@@ -1466,17 +1466,17 @@ public class QueryParser extends BaseParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // Query.g:171:6: COMMA expr= expression (k= rankExpr )?
+            	    // Query.g:175:6: COMMA expr= expression (k= rankExpr )?
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_oclExpr888); if (state.failed) return ocl_expr;
+            	    match(input,COMMA,FOLLOW_COMMA_in_oclExpr890); if (state.failed) return ocl_expr;
 
-            	    pushFollow(FOLLOW_expression_in_oclExpr892);
+            	    pushFollow(FOLLOW_expression_in_oclExpr894);
             	    expr=expression();
 
             	    state._fsp--;
             	    if (state.failed) return ocl_expr;
 
-            	    // Query.g:171:28: (k= rankExpr )?
+            	    // Query.g:175:28: (k= rankExpr )?
             	    int alt21=2;
             	    int LA21_0 = input.LA(1);
 
@@ -1485,9 +1485,9 @@ public class QueryParser extends BaseParser {
             	    }
             	    switch (alt21) {
             	        case 1 :
-            	            // Query.g:171:29: k= rankExpr
+            	            // Query.g:175:29: k= rankExpr
             	            {
-            	            pushFollow(FOLLOW_rankExpr_in_oclExpr897);
+            	            pushFollow(FOLLOW_rankExpr_in_oclExpr899);
             	            k=rankExpr();
 
             	            state._fsp--;
@@ -1515,7 +1515,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            match(input,RBRACE,FOLLOW_RBRACE_in_oclExpr919); if (state.failed) return ocl_expr;
+            match(input,RBRACE,FOLLOW_RBRACE_in_oclExpr921); if (state.failed) return ocl_expr;
 
             }
 
@@ -1535,7 +1535,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "expressionOnly"
-    // Query.g:207:1: expressionOnly returns [ASTExpression n] : nExp= expression EOF ;
+    // Query.g:211:1: expressionOnly returns [ASTExpression n] : nExp= expression EOF ;
     public final ASTExpression expressionOnly() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1544,16 +1544,16 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:208:5: (nExp= expression EOF )
-            // Query.g:209:5: nExp= expression EOF
+            // Query.g:212:5: (nExp= expression EOF )
+            // Query.g:213:5: nExp= expression EOF
             {
-            pushFollow(FOLLOW_expression_in_expressionOnly946);
+            pushFollow(FOLLOW_expression_in_expressionOnly948);
             nExp=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,EOF,FOLLOW_EOF_in_expressionOnly948); if (state.failed) return n;
+            match(input,EOF,FOLLOW_EOF_in_expressionOnly950); if (state.failed) return n;
 
             if ( state.backtracking==0 ) {n = nExp;}
 
@@ -1575,7 +1575,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "expression"
-    // Query.g:216:1: expression returns [ASTExpression n] : ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression ;
+    // Query.g:220:1: expression returns [ASTExpression n] : ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression ;
     public final ASTExpression expression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1594,12 +1594,12 @@ public class QueryParser extends BaseParser {
           Token tok = null;
 
         try {
-            // Query.g:222:5: ( ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression )
-            // Query.g:223:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression
+            // Query.g:226:5: ( ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression )
+            // Query.g:227:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )* nCndImplies= conditionalImpliesExpression
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of expression */ }
 
-            // Query.g:224:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )*
+            // Query.g:228:5: ( 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in' )*
             loop26:
             do {
                 int alt26=2;
@@ -1612,13 +1612,13 @@ public class QueryParser extends BaseParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // Query.g:225:7: 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in'
+            	    // Query.g:229:7: 'let' name= IDENT ( COLON t= type )? EQUAL e1= expression ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )* 'in'
             	    {
-            	    match(input,69,FOLLOW_69_in_expression996); if (state.failed) return n;
+            	    match(input,69,FOLLOW_69_in_expression998); if (state.failed) return n;
 
-            	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression1007); if (state.failed) return n;
+            	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression1009); if (state.failed) return n;
 
-            	    // Query.g:226:18: ( COLON t= type )?
+            	    // Query.g:230:18: ( COLON t= type )?
             	    int alt23=2;
             	    int LA23_0 = input.LA(1);
 
@@ -1627,11 +1627,11 @@ public class QueryParser extends BaseParser {
             	    }
             	    switch (alt23) {
             	        case 1 :
-            	            // Query.g:226:20: COLON t= type
+            	            // Query.g:230:20: COLON t= type
             	            {
-            	            match(input,COLON,FOLLOW_COLON_in_expression1011); if (state.failed) return n;
+            	            match(input,COLON,FOLLOW_COLON_in_expression1013); if (state.failed) return n;
 
-            	            pushFollow(FOLLOW_type_in_expression1015);
+            	            pushFollow(FOLLOW_type_in_expression1017);
             	            t=type();
 
             	            state._fsp--;
@@ -1643,9 +1643,9 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    match(input,EQUAL,FOLLOW_EQUAL_in_expression1020); if (state.failed) return n;
+            	    match(input,EQUAL,FOLLOW_EQUAL_in_expression1022); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_expression_in_expression1024);
+            	    pushFollow(FOLLOW_expression_in_expression1026);
             	    e1=expression();
 
             	    state._fsp--;
@@ -1659,7 +1659,7 @@ public class QueryParser extends BaseParser {
             	             prevLet = nextLet;
             	          }
 
-            	    // Query.g:236:7: ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )*
+            	    // Query.g:240:7: ( COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression )*
             	    loop25:
             	    do {
             	        int alt25=2;
@@ -1672,13 +1672,13 @@ public class QueryParser extends BaseParser {
 
             	        switch (alt25) {
             	    	case 1 :
-            	    	    // Query.g:237:7: COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression
+            	    	    // Query.g:241:7: COMMA name= IDENT ( COLON t= type )? EQUAL e1= expression
             	    	    {
-            	    	    match(input,COMMA,FOLLOW_COMMA_in_expression1062); if (state.failed) return n;
+            	    	    match(input,COMMA,FOLLOW_COMMA_in_expression1064); if (state.failed) return n;
 
-            	    	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression1074); if (state.failed) return n;
+            	    	    name=(Token)match(input,IDENT,FOLLOW_IDENT_in_expression1076); if (state.failed) return n;
 
-            	    	    // Query.g:238:20: ( COLON t= type )?
+            	    	    // Query.g:242:20: ( COLON t= type )?
             	    	    int alt24=2;
             	    	    int LA24_0 = input.LA(1);
 
@@ -1687,11 +1687,11 @@ public class QueryParser extends BaseParser {
             	    	    }
             	    	    switch (alt24) {
             	    	        case 1 :
-            	    	            // Query.g:238:22: COLON t= type
+            	    	            // Query.g:242:22: COLON t= type
             	    	            {
-            	    	            match(input,COLON,FOLLOW_COLON_in_expression1078); if (state.failed) return n;
+            	    	            match(input,COLON,FOLLOW_COLON_in_expression1080); if (state.failed) return n;
 
-            	    	            pushFollow(FOLLOW_type_in_expression1082);
+            	    	            pushFollow(FOLLOW_type_in_expression1084);
             	    	            t=type();
 
             	    	            state._fsp--;
@@ -1703,9 +1703,9 @@ public class QueryParser extends BaseParser {
             	    	    }
 
 
-            	    	    match(input,EQUAL,FOLLOW_EQUAL_in_expression1087); if (state.failed) return n;
+            	    	    match(input,EQUAL,FOLLOW_EQUAL_in_expression1089); if (state.failed) return n;
 
-            	    	    pushFollow(FOLLOW_expression_in_expression1091);
+            	    	    pushFollow(FOLLOW_expression_in_expression1093);
             	    	    e1=expression();
 
             	    	    state._fsp--;
@@ -1728,7 +1728,7 @@ public class QueryParser extends BaseParser {
             	    } while (true);
 
 
-            	    match(input,66,FOLLOW_66_in_expression1132); if (state.failed) return n;
+            	    match(input,66,FOLLOW_66_in_expression1134); if (state.failed) return n;
 
             	    }
             	    break;
@@ -1739,7 +1739,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            pushFollow(FOLLOW_conditionalImpliesExpression_in_expression1148);
+            pushFollow(FOLLOW_conditionalImpliesExpression_in_expression1150);
             nCndImplies=conditionalImpliesExpression();
 
             state._fsp--;
@@ -1776,7 +1776,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "paramList"
-    // Query.g:271:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
+    // Query.g:275:1: paramList returns [List<ASTVariableDeclaration> paramList] : LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN ;
     public final List<ASTVariableDeclaration> paramList() throws RecognitionException {
         List<ASTVariableDeclaration> paramList = null;
 
@@ -1786,12 +1786,12 @@ public class QueryParser extends BaseParser {
 
          paramList = new ArrayList<ASTVariableDeclaration>(); 
         try {
-            // Query.g:273:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
-            // Query.g:274:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
+            // Query.g:277:5: ( LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN )
+            // Query.g:278:5: LPAREN (v= variableDeclaration ( COMMA v= variableDeclaration )* )? RPAREN
             {
-            match(input,LPAREN,FOLLOW_LPAREN_in_paramList1181); if (state.failed) return paramList;
+            match(input,LPAREN,FOLLOW_LPAREN_in_paramList1183); if (state.failed) return paramList;
 
-            // Query.g:275:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
+            // Query.g:279:5: (v= variableDeclaration ( COMMA v= variableDeclaration )* )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -1800,9 +1800,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt28) {
                 case 1 :
-                    // Query.g:276:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
+                    // Query.g:280:7: v= variableDeclaration ( COMMA v= variableDeclaration )*
                     {
-                    pushFollow(FOLLOW_variableDeclaration_in_paramList1198);
+                    pushFollow(FOLLOW_variableDeclaration_in_paramList1200);
                     v=variableDeclaration();
 
                     state._fsp--;
@@ -1810,7 +1810,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { paramList.add(v); }
 
-                    // Query.g:277:7: ( COMMA v= variableDeclaration )*
+                    // Query.g:281:7: ( COMMA v= variableDeclaration )*
                     loop27:
                     do {
                         int alt27=2;
@@ -1823,11 +1823,11 @@ public class QueryParser extends BaseParser {
 
                         switch (alt27) {
                     	case 1 :
-                    	    // Query.g:277:9: COMMA v= variableDeclaration
+                    	    // Query.g:281:9: COMMA v= variableDeclaration
                     	    {
-                    	    match(input,COMMA,FOLLOW_COMMA_in_paramList1210); if (state.failed) return paramList;
+                    	    match(input,COMMA,FOLLOW_COMMA_in_paramList1212); if (state.failed) return paramList;
 
-                    	    pushFollow(FOLLOW_variableDeclaration_in_paramList1214);
+                    	    pushFollow(FOLLOW_variableDeclaration_in_paramList1216);
                     	    v=variableDeclaration();
 
                     	    state._fsp--;
@@ -1850,7 +1850,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_paramList1234); if (state.failed) return paramList;
+            match(input,RPAREN,FOLLOW_RPAREN_in_paramList1236); if (state.failed) return paramList;
 
             }
 
@@ -1870,7 +1870,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "idList"
-    // Query.g:285:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
+    // Query.g:289:1: idList returns [List idList] : id0= IDENT ( COMMA idn= IDENT )* ;
     public final List idList() throws RecognitionException {
         List idList = null;
 
@@ -1880,14 +1880,14 @@ public class QueryParser extends BaseParser {
 
          idList = new ArrayList(); 
         try {
-            // Query.g:287:5: (id0= IDENT ( COMMA idn= IDENT )* )
-            // Query.g:288:5: id0= IDENT ( COMMA idn= IDENT )*
+            // Query.g:291:5: (id0= IDENT ( COMMA idn= IDENT )* )
+            // Query.g:292:5: id0= IDENT ( COMMA idn= IDENT )*
             {
-            id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList1263); if (state.failed) return idList;
+            id0=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList1265); if (state.failed) return idList;
 
             if ( state.backtracking==0 ) { idList.add(id0); }
 
-            // Query.g:289:5: ( COMMA idn= IDENT )*
+            // Query.g:293:5: ( COMMA idn= IDENT )*
             loop29:
             do {
                 int alt29=2;
@@ -1900,11 +1900,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt29) {
             	case 1 :
-            	    // Query.g:289:7: COMMA idn= IDENT
+            	    // Query.g:293:7: COMMA idn= IDENT
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_idList1273); if (state.failed) return idList;
+            	    match(input,COMMA,FOLLOW_COMMA_in_idList1275); if (state.failed) return idList;
 
-            	    idn=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList1277); if (state.failed) return idList;
+            	    idn=(Token)match(input,IDENT,FOLLOW_IDENT_in_idList1279); if (state.failed) return idList;
 
             	    if ( state.backtracking==0 ) { idList.add(idn); }
 
@@ -1935,7 +1935,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "variableDeclaration"
-    // Query.g:297:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
+    // Query.g:301:1: variableDeclaration returns [ASTVariableDeclaration n] : name= IDENT COLON t= type ;
     public final ASTVariableDeclaration variableDeclaration() throws RecognitionException {
         ASTVariableDeclaration n = null;
 
@@ -1945,14 +1945,14 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:298:5: (name= IDENT COLON t= type )
-            // Query.g:299:5: name= IDENT COLON t= type
+            // Query.g:302:5: (name= IDENT COLON t= type )
+            // Query.g:303:5: name= IDENT COLON t= type
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration1308); if (state.failed) return n;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableDeclaration1310); if (state.failed) return n;
 
-            match(input,COLON,FOLLOW_COLON_in_variableDeclaration1310); if (state.failed) return n;
+            match(input,COLON,FOLLOW_COLON_in_variableDeclaration1312); if (state.failed) return n;
 
-            pushFollow(FOLLOW_type_in_variableDeclaration1314);
+            pushFollow(FOLLOW_type_in_variableDeclaration1316);
             t=type();
 
             state._fsp--;
@@ -1978,7 +1978,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "conditionalImpliesExpression"
-    // Query.g:307:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
+    // Query.g:311:1: conditionalImpliesExpression returns [ASTExpression n] : nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* ;
     public final ASTExpression conditionalImpliesExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -1990,10 +1990,10 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:308:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
-            // Query.g:309:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
+            // Query.g:312:5: (nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )* )
+            // Query.g:313:5: nCndOrExp= conditionalOrExpression (op= 'implies' n1= conditionalOrExpression )*
             {
-            pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1350);
+            pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1352);
             nCndOrExp=conditionalOrExpression();
 
             state._fsp--;
@@ -2001,7 +2001,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndOrExp;}
 
-            // Query.g:310:5: (op= 'implies' n1= conditionalOrExpression )*
+            // Query.g:314:5: (op= 'implies' n1= conditionalOrExpression )*
             loop30:
             do {
                 int alt30=2;
@@ -2014,11 +2014,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt30) {
             	case 1 :
-            	    // Query.g:310:7: op= 'implies' n1= conditionalOrExpression
+            	    // Query.g:314:7: op= 'implies' n1= conditionalOrExpression
             	    {
-            	    op=(Token)match(input,65,FOLLOW_65_in_conditionalImpliesExpression1363); if (state.failed) return n;
+            	    op=(Token)match(input,65,FOLLOW_65_in_conditionalImpliesExpression1365); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1367);
+            	    pushFollow(FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1369);
             	    n1=conditionalOrExpression();
 
             	    state._fsp--;
@@ -2053,7 +2053,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "conditionalOrExpression"
-    // Query.g:319:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
+    // Query.g:323:1: conditionalOrExpression returns [ASTExpression n] : nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* ;
     public final ASTExpression conditionalOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2065,10 +2065,10 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:320:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
-            // Query.g:321:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
+            // Query.g:324:5: (nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )* )
+            // Query.g:325:5: nCndXorExp= conditionalXOrExpression (op= 'or' n1= conditionalXOrExpression )*
             {
-            pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1412);
+            pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1414);
             nCndXorExp=conditionalXOrExpression();
 
             state._fsp--;
@@ -2076,7 +2076,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndXorExp;}
 
-            // Query.g:322:5: (op= 'or' n1= conditionalXOrExpression )*
+            // Query.g:326:5: (op= 'or' n1= conditionalXOrExpression )*
             loop31:
             do {
                 int alt31=2;
@@ -2089,11 +2089,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // Query.g:322:7: op= 'or' n1= conditionalXOrExpression
+            	    // Query.g:326:7: op= 'or' n1= conditionalXOrExpression
             	    {
-            	    op=(Token)match(input,81,FOLLOW_81_in_conditionalOrExpression1425); if (state.failed) return n;
+            	    op=(Token)match(input,81,FOLLOW_81_in_conditionalOrExpression1427); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1429);
+            	    pushFollow(FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1431);
             	    n1=conditionalXOrExpression();
 
             	    state._fsp--;
@@ -2128,7 +2128,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "conditionalXOrExpression"
-    // Query.g:331:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
+    // Query.g:335:1: conditionalXOrExpression returns [ASTExpression n] : nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* ;
     public final ASTExpression conditionalXOrExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2140,10 +2140,10 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:332:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
-            // Query.g:333:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
+            // Query.g:336:5: (nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )* )
+            // Query.g:337:5: nCndAndExp= conditionalAndExpression (op= 'xor' n1= conditionalAndExpression )*
             {
-            pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1473);
+            pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1475);
             nCndAndExp=conditionalAndExpression();
 
             state._fsp--;
@@ -2151,7 +2151,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nCndAndExp;}
 
-            // Query.g:334:5: (op= 'xor' n1= conditionalAndExpression )*
+            // Query.g:338:5: (op= 'xor' n1= conditionalAndExpression )*
             loop32:
             do {
                 int alt32=2;
@@ -2164,11 +2164,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt32) {
             	case 1 :
-            	    // Query.g:334:7: op= 'xor' n1= conditionalAndExpression
+            	    // Query.g:338:7: op= 'xor' n1= conditionalAndExpression
             	    {
-            	    op=(Token)match(input,90,FOLLOW_90_in_conditionalXOrExpression1486); if (state.failed) return n;
+            	    op=(Token)match(input,90,FOLLOW_90_in_conditionalXOrExpression1488); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1490);
+            	    pushFollow(FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1492);
             	    n1=conditionalAndExpression();
 
             	    state._fsp--;
@@ -2203,7 +2203,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "conditionalAndExpression"
-    // Query.g:343:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
+    // Query.g:347:1: conditionalAndExpression returns [ASTExpression n] : nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* ;
     public final ASTExpression conditionalAndExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2215,10 +2215,10 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:344:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
-            // Query.g:345:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
+            // Query.g:348:5: (nEqExp= equalityExpression (op= 'and' n1= equalityExpression )* )
+            // Query.g:349:5: nEqExp= equalityExpression (op= 'and' n1= equalityExpression )*
             {
-            pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1534);
+            pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1536);
             nEqExp=equalityExpression();
 
             state._fsp--;
@@ -2226,7 +2226,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nEqExp;}
 
-            // Query.g:346:5: (op= 'and' n1= equalityExpression )*
+            // Query.g:350:5: (op= 'and' n1= equalityExpression )*
             loop33:
             do {
                 int alt33=2;
@@ -2239,11 +2239,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // Query.g:346:7: op= 'and' n1= equalityExpression
+            	    // Query.g:350:7: op= 'and' n1= equalityExpression
             	    {
-            	    op=(Token)match(input,55,FOLLOW_55_in_conditionalAndExpression1547); if (state.failed) return n;
+            	    op=(Token)match(input,55,FOLLOW_55_in_conditionalAndExpression1549); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1551);
+            	    pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression1553);
             	    n1=equalityExpression();
 
             	    state._fsp--;
@@ -2278,7 +2278,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "equalityExpression"
-    // Query.g:355:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
+    // Query.g:359:1: equalityExpression returns [ASTExpression n] : nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* ;
     public final ASTExpression equalityExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2290,10 +2290,10 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:357:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
-            // Query.g:358:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // Query.g:361:5: (nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )* )
+            // Query.g:362:5: nRelExp= relationalExpression ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             {
-            pushFollow(FOLLOW_relationalExpression_in_equalityExpression1599);
+            pushFollow(FOLLOW_relationalExpression_in_equalityExpression1601);
             nRelExp=relationalExpression();
 
             state._fsp--;
@@ -2301,7 +2301,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nRelExp;}
 
-            // Query.g:359:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
+            // Query.g:363:5: ( ( EQUAL | NOT_EQUAL ) n1= relationalExpression )*
             loop34:
             do {
                 int alt34=2;
@@ -2314,7 +2314,7 @@ public class QueryParser extends BaseParser {
 
                 switch (alt34) {
             	case 1 :
-            	    // Query.g:359:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
+            	    // Query.g:363:7: ( EQUAL | NOT_EQUAL ) n1= relationalExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2330,7 +2330,7 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    pushFollow(FOLLOW_relationalExpression_in_equalityExpression1628);
+            	    pushFollow(FOLLOW_relationalExpression_in_equalityExpression1630);
             	    n1=relationalExpression();
 
             	    state._fsp--;
@@ -2365,7 +2365,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "relationalExpression"
-    // Query.g:369:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
+    // Query.g:373:1: relationalExpression returns [ASTExpression n] : nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* ;
     public final ASTExpression relationalExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2377,10 +2377,10 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:371:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
-            // Query.g:372:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // Query.g:375:5: (nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )* )
+            // Query.g:376:5: nAddiExp= additiveExpression ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             {
-            pushFollow(FOLLOW_additiveExpression_in_relationalExpression1677);
+            pushFollow(FOLLOW_additiveExpression_in_relationalExpression1679);
             nAddiExp=additiveExpression();
 
             state._fsp--;
@@ -2388,7 +2388,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nAddiExp;}
 
-            // Query.g:373:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
+            // Query.g:377:5: ( ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression )*
             loop35:
             do {
                 int alt35=2;
@@ -2401,7 +2401,7 @@ public class QueryParser extends BaseParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // Query.g:373:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
+            	    // Query.g:377:7: ( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) n1= additiveExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2417,7 +2417,7 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    pushFollow(FOLLOW_additiveExpression_in_relationalExpression1713);
+            	    pushFollow(FOLLOW_additiveExpression_in_relationalExpression1715);
             	    n1=additiveExpression();
 
             	    state._fsp--;
@@ -2452,7 +2452,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "additiveExpression"
-    // Query.g:383:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
+    // Query.g:387:1: additiveExpression returns [ASTExpression n] : nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* ;
     public final ASTExpression additiveExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2464,10 +2464,10 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:385:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
-            // Query.g:386:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // Query.g:389:5: (nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )* )
+            // Query.g:390:5: nMulExp= multiplicativeExpression ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             {
-            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1763);
+            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1765);
             nMulExp=multiplicativeExpression();
 
             state._fsp--;
@@ -2475,7 +2475,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n = nMulExp;}
 
-            // Query.g:387:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
+            // Query.g:391:5: ( ( PLUS | MINUS ) n1= multiplicativeExpression )*
             loop36:
             do {
                 int alt36=2;
@@ -2488,7 +2488,7 @@ public class QueryParser extends BaseParser {
 
                 switch (alt36) {
             	case 1 :
-            	    // Query.g:387:7: ( PLUS | MINUS ) n1= multiplicativeExpression
+            	    // Query.g:391:7: ( PLUS | MINUS ) n1= multiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2504,7 +2504,7 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1791);
+            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1793);
             	    n1=multiplicativeExpression();
 
             	    state._fsp--;
@@ -2539,7 +2539,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // Query.g:398:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
+    // Query.g:402:1: multiplicativeExpression returns [ASTExpression n] : nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* ;
     public final ASTExpression multiplicativeExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2551,10 +2551,10 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:400:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
-            // Query.g:401:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // Query.g:404:5: (nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )* )
+            // Query.g:405:5: nUnExp= unaryExpression ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             {
-            pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1841);
+            pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1843);
             nUnExp=unaryExpression();
 
             state._fsp--;
@@ -2562,7 +2562,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nUnExp;}
 
-            // Query.g:402:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
+            // Query.g:406:5: ( ( STAR | SLASH | 'div' ) n1= unaryExpression )*
             loop37:
             do {
                 int alt37=2;
@@ -2575,7 +2575,7 @@ public class QueryParser extends BaseParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // Query.g:402:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
+            	    // Query.g:406:7: ( STAR | SLASH | 'div' ) n1= unaryExpression
             	    {
             	    if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2591,7 +2591,7 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1873);
+            	    pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression1875);
             	    n1=unaryExpression();
 
             	    state._fsp--;
@@ -2626,7 +2626,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "unaryExpression"
-    // Query.g:414:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
+    // Query.g:418:1: unaryExpression returns [ASTExpression n] : ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression );
     public final ASTExpression unaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2638,7 +2638,7 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:416:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
+            // Query.g:420:7: ( ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression ) |nPosExp= postfixExpression )
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -2658,10 +2658,10 @@ public class QueryParser extends BaseParser {
             }
             switch (alt38) {
                 case 1 :
-                    // Query.g:417:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // Query.g:421:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
                     {
-                    // Query.g:417:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
-                    // Query.g:417:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
+                    // Query.g:421:7: ( ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression )
+                    // Query.g:421:9: ( 'not' | MINUS | PLUS ) nUnExp= unaryExpression
                     {
                     if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -2677,7 +2677,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression1959);
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression1961);
                     nUnExp=unaryExpression();
 
                     state._fsp--;
@@ -2691,9 +2691,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:421:7: nPosExp= postfixExpression
+                    // Query.g:425:7: nPosExp= postfixExpression
                     {
-                    pushFollow(FOLLOW_postfixExpression_in_unaryExpression1979);
+                    pushFollow(FOLLOW_postfixExpression_in_unaryExpression1981);
                     nPosExp=postfixExpression();
 
                     state._fsp--;
@@ -2721,7 +2721,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "postfixExpression"
-    // Query.g:429:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
+    // Query.g:433:1: postfixExpression returns [ASTExpression n] : nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* ;
     public final ASTExpression postfixExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2733,10 +2733,10 @@ public class QueryParser extends BaseParser {
 
          boolean arrow = false; 
         try {
-            // Query.g:431:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
-            // Query.g:432:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // Query.g:435:5: (nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )* )
+            // Query.g:436:5: nPrimExp= primaryExpression ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             {
-            pushFollow(FOLLOW_primaryExpression_in_postfixExpression2012);
+            pushFollow(FOLLOW_primaryExpression_in_postfixExpression2014);
             nPrimExp=primaryExpression();
 
             state._fsp--;
@@ -2744,7 +2744,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = nPrimExp; }
 
-            // Query.g:433:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
+            // Query.g:437:5: ( ( ARROW | DOT ) nPc= propertyCall[$n, arrow] )*
             loop40:
             do {
                 int alt40=2;
@@ -2757,9 +2757,9 @@ public class QueryParser extends BaseParser {
 
                 switch (alt40) {
             	case 1 :
-            	    // Query.g:434:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
+            	    // Query.g:438:6: ( ARROW | DOT ) nPc= propertyCall[$n, arrow]
             	    {
-            	    // Query.g:434:6: ( ARROW | DOT )
+            	    // Query.g:438:6: ( ARROW | DOT )
             	    int alt39=2;
             	    int LA39_0 = input.LA(1);
 
@@ -2779,18 +2779,18 @@ public class QueryParser extends BaseParser {
             	    }
             	    switch (alt39) {
             	        case 1 :
-            	            // Query.g:434:8: ARROW
+            	            // Query.g:438:8: ARROW
             	            {
-            	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression2030); if (state.failed) return n;
+            	            match(input,ARROW,FOLLOW_ARROW_in_postfixExpression2032); if (state.failed) return n;
 
             	            if ( state.backtracking==0 ) { arrow = true; }
 
             	            }
             	            break;
             	        case 2 :
-            	            // Query.g:434:34: DOT
+            	            // Query.g:438:34: DOT
             	            {
-            	            match(input,DOT,FOLLOW_DOT_in_postfixExpression2036); if (state.failed) return n;
+            	            match(input,DOT,FOLLOW_DOT_in_postfixExpression2038); if (state.failed) return n;
 
             	            if ( state.backtracking==0 ) { arrow = false; }
 
@@ -2800,7 +2800,7 @@ public class QueryParser extends BaseParser {
             	    }
 
 
-            	    pushFollow(FOLLOW_propertyCall_in_postfixExpression2047);
+            	    pushFollow(FOLLOW_propertyCall_in_postfixExpression2049);
             	    nPc=propertyCall(n, arrow);
 
             	    state._fsp--;
@@ -2835,7 +2835,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "primaryExpression"
-    // Query.g:450:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
+    // Query.g:454:1: primaryExpression returns [ASTExpression n] : (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? );
     public final ASTExpression primaryExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -2856,7 +2856,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:451:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
+            // Query.g:455:7: (nLit= literal |nOr= objectReference |nPc= propertyCall[null, false] | LPAREN nExp= expression RPAREN |nIfExp= ifExpression |id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )? |id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )? )
             int alt44=7;
             switch ( input.LA(1) ) {
             case HASH:
@@ -3006,9 +3006,9 @@ public class QueryParser extends BaseParser {
 
             switch (alt44) {
                 case 1 :
-                    // Query.g:452:7: nLit= literal
+                    // Query.g:456:7: nLit= literal
                     {
-                    pushFollow(FOLLOW_literal_in_primaryExpression2087);
+                    pushFollow(FOLLOW_literal_in_primaryExpression2089);
                     nLit=literal();
 
                     state._fsp--;
@@ -3019,9 +3019,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:453:7: nOr= objectReference
+                    // Query.g:457:7: nOr= objectReference
                     {
-                    pushFollow(FOLLOW_objectReference_in_primaryExpression2101);
+                    pushFollow(FOLLOW_objectReference_in_primaryExpression2103);
                     nOr=objectReference();
 
                     state._fsp--;
@@ -3032,9 +3032,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Query.g:454:7: nPc= propertyCall[null, false]
+                    // Query.g:458:7: nPc= propertyCall[null, false]
                     {
-                    pushFollow(FOLLOW_propertyCall_in_primaryExpression2113);
+                    pushFollow(FOLLOW_propertyCall_in_primaryExpression2115);
                     nPc=propertyCall(null, false);
 
                     state._fsp--;
@@ -3045,26 +3045,26 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Query.g:455:7: LPAREN nExp= expression RPAREN
+                    // Query.g:459:7: LPAREN nExp= expression RPAREN
                     {
-                    match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2124); if (state.failed) return n;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2126); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_expression_in_primaryExpression2128);
+                    pushFollow(FOLLOW_expression_in_primaryExpression2130);
                     nExp=expression();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2130); if (state.failed) return n;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2132); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = nExp; }
 
                     }
                     break;
                 case 5 :
-                    // Query.g:456:7: nIfExp= ifExpression
+                    // Query.g:460:7: nIfExp= ifExpression
                     {
-                    pushFollow(FOLLOW_ifExpression_in_primaryExpression2142);
+                    pushFollow(FOLLOW_ifExpression_in_primaryExpression2144);
                     nIfExp=ifExpression();
 
                     state._fsp--;
@@ -3075,17 +3075,17 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // Query.g:457:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
+                    // Query.g:461:7: id1= IDENT DOT 'allInstances' ( AT 'pre' )? ( LPAREN RPAREN )?
                     {
-                    id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2154); if (state.failed) return n;
+                    id1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2156); if (state.failed) return n;
 
-                    match(input,DOT,FOLLOW_DOT_in_primaryExpression2156); if (state.failed) return n;
+                    match(input,DOT,FOLLOW_DOT_in_primaryExpression2158); if (state.failed) return n;
 
-                    match(input,54,FOLLOW_54_in_primaryExpression2158); if (state.failed) return n;
+                    match(input,54,FOLLOW_54_in_primaryExpression2160); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTAllInstancesExpression(id1); }
 
-                    // Query.g:459:9: ( AT 'pre' )?
+                    // Query.g:463:9: ( AT 'pre' )?
                     int alt41=2;
                     int LA41_0 = input.LA(1);
 
@@ -3098,11 +3098,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt41) {
                         case 1 :
-                            // Query.g:459:11: AT 'pre'
+                            // Query.g:463:11: AT 'pre'
                             {
-                            match(input,AT,FOLLOW_AT_in_primaryExpression2181); if (state.failed) return n;
+                            match(input,AT,FOLLOW_AT_in_primaryExpression2183); if (state.failed) return n;
 
-                            match(input,82,FOLLOW_82_in_primaryExpression2183); if (state.failed) return n;
+                            match(input,82,FOLLOW_82_in_primaryExpression2185); if (state.failed) return n;
 
                             if ( state.backtracking==0 ) { n.setIsPre(); }
 
@@ -3112,7 +3112,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:460:9: ( LPAREN RPAREN )?
+                    // Query.g:464:9: ( LPAREN RPAREN )?
                     int alt42=2;
                     int LA42_0 = input.LA(1);
 
@@ -3121,11 +3121,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt42) {
                         case 1 :
-                            // Query.g:460:11: LPAREN RPAREN
+                            // Query.g:464:11: LPAREN RPAREN
                             {
-                            match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2201); if (state.failed) return n;
+                            match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2203); if (state.failed) return n;
 
-                            match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2203); if (state.failed) return n;
+                            match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2205); if (state.failed) return n;
 
                             }
                             break;
@@ -3136,33 +3136,33 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // Query.g:461:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
+                    // Query.g:465:7: id2= IDENT DOT 'byUseId' ( LPAREN idExp= expression RPAREN ) ( AT 'pre' )?
                     {
-                    id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2216); if (state.failed) return n;
+                    id2=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression2218); if (state.failed) return n;
 
-                    match(input,DOT,FOLLOW_DOT_in_primaryExpression2218); if (state.failed) return n;
+                    match(input,DOT,FOLLOW_DOT_in_primaryExpression2220); if (state.failed) return n;
 
-                    match(input,58,FOLLOW_58_in_primaryExpression2220); if (state.failed) return n;
+                    match(input,58,FOLLOW_58_in_primaryExpression2222); if (state.failed) return n;
 
-                    // Query.g:461:31: ( LPAREN idExp= expression RPAREN )
-                    // Query.g:461:33: LPAREN idExp= expression RPAREN
+                    // Query.g:465:31: ( LPAREN idExp= expression RPAREN )
+                    // Query.g:465:33: LPAREN idExp= expression RPAREN
                     {
-                    match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2224); if (state.failed) return n;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_primaryExpression2226); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_expression_in_primaryExpression2228);
+                    pushFollow(FOLLOW_expression_in_primaryExpression2230);
                     idExp=expression();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2230); if (state.failed) return n;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_primaryExpression2232); if (state.failed) return n;
 
                     }
 
 
                     if ( state.backtracking==0 ) { n = new ASTObjectByUseIdExpression(id2, idExp); }
 
-                    // Query.g:463:7: ( AT 'pre' )?
+                    // Query.g:467:7: ( AT 'pre' )?
                     int alt43=2;
                     int LA43_0 = input.LA(1);
 
@@ -3175,11 +3175,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt43) {
                         case 1 :
-                            // Query.g:463:9: AT 'pre'
+                            // Query.g:467:9: AT 'pre'
                             {
-                            match(input,AT,FOLLOW_AT_in_primaryExpression2250); if (state.failed) return n;
+                            match(input,AT,FOLLOW_AT_in_primaryExpression2252); if (state.failed) return n;
 
-                            match(input,82,FOLLOW_82_in_primaryExpression2252); if (state.failed) return n;
+                            match(input,82,FOLLOW_82_in_primaryExpression2254); if (state.failed) return n;
 
                             if ( state.backtracking==0 ) { n.setIsPre(); }
 
@@ -3209,7 +3209,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "objectReference"
-    // Query.g:467:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
+    // Query.g:471:1: objectReference returns [ASTExpression n] : AT objectName= IDENT ;
     public final ASTExpression objectReference() throws RecognitionException {
         ASTExpression n = null;
 
@@ -3217,12 +3217,12 @@ public class QueryParser extends BaseParser {
         Token objectName=null;
 
         try {
-            // Query.g:468:3: ( AT objectName= IDENT )
-            // Query.g:469:3: AT objectName= IDENT
+            // Query.g:472:3: ( AT objectName= IDENT )
+            // Query.g:473:3: AT objectName= IDENT
             {
-            match(input,AT,FOLLOW_AT_in_objectReference2278); if (state.failed) return n;
+            match(input,AT,FOLLOW_AT_in_objectReference2280); if (state.failed) return n;
 
-            objectName=(Token)match(input,IDENT,FOLLOW_IDENT_in_objectReference2286); if (state.failed) return n;
+            objectName=(Token)match(input,IDENT,FOLLOW_IDENT_in_objectReference2288); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTObjectReferenceExpression(objectName); }
 
@@ -3244,7 +3244,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "propertyCall"
-    // Query.g:483:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
+    // Query.g:487:1: propertyCall[ASTExpression source, boolean followsArrow] returns [ASTExpression n] : ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] );
     public final ASTExpression propertyCall(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3261,7 +3261,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:484:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
+            // Query.g:488:7: ({...}?{...}?nExpQuery= queryExpression[source] |nExpIterate= iterateExpression[source] |nExpOperation= operationExpression[source, followsArrow] |nExpType= typeExpression[source, followsArrow] |nExpInState= inStateExpression[source, followsArrow] )
             int alt45=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -3314,7 +3314,7 @@ public class QueryParser extends BaseParser {
 
             switch (alt45) {
                 case 1 :
-                    // Query.g:488:7: {...}?{...}?nExpQuery= queryExpression[source]
+                    // Query.g:492:7: {...}?{...}?nExpQuery= queryExpression[source]
                     {
                     if ( !(( org.tzi.use.parser.base.ParserHelper.isQueryIdent(input.LT(1)) )) ) {
                         if (state.backtracking>0) {state.failed=true; return n;}
@@ -3326,7 +3326,7 @@ public class QueryParser extends BaseParser {
                         throw new FailedPredicateException(input, "propertyCall", " input.LA(2) == LPAREN ");
                     }
 
-                    pushFollow(FOLLOW_queryExpression_in_propertyCall2351);
+                    pushFollow(FOLLOW_queryExpression_in_propertyCall2353);
                     nExpQuery=queryExpression(source);
 
                     state._fsp--;
@@ -3337,9 +3337,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:491:7: nExpIterate= iterateExpression[source]
+                    // Query.g:495:7: nExpIterate= iterateExpression[source]
                     {
-                    pushFollow(FOLLOW_iterateExpression_in_propertyCall2364);
+                    pushFollow(FOLLOW_iterateExpression_in_propertyCall2366);
                     nExpIterate=iterateExpression(source);
 
                     state._fsp--;
@@ -3350,9 +3350,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Query.g:492:7: nExpOperation= operationExpression[source, followsArrow]
+                    // Query.g:496:7: nExpOperation= operationExpression[source, followsArrow]
                     {
-                    pushFollow(FOLLOW_operationExpression_in_propertyCall2377);
+                    pushFollow(FOLLOW_operationExpression_in_propertyCall2379);
                     nExpOperation=operationExpression(source, followsArrow);
 
                     state._fsp--;
@@ -3363,9 +3363,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // Query.g:493:7: nExpType= typeExpression[source, followsArrow]
+                    // Query.g:497:7: nExpType= typeExpression[source, followsArrow]
                     {
-                    pushFollow(FOLLOW_typeExpression_in_propertyCall2390);
+                    pushFollow(FOLLOW_typeExpression_in_propertyCall2392);
                     nExpType=typeExpression(source, followsArrow);
 
                     state._fsp--;
@@ -3376,9 +3376,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // Query.g:494:7: nExpInState= inStateExpression[source, followsArrow]
+                    // Query.g:498:7: nExpInState= inStateExpression[source, followsArrow]
                     {
-                    pushFollow(FOLLOW_inStateExpression_in_propertyCall2403);
+                    pushFollow(FOLLOW_inStateExpression_in_propertyCall2405);
                     nExpInState=inStateExpression(source, followsArrow);
 
                     state._fsp--;
@@ -3406,7 +3406,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "queryExpression"
-    // Query.g:503:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
+    // Query.g:507:1: queryExpression[ASTExpression range] returns [ASTExpression n] : op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN ;
     public final ASTExpression queryExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3419,14 +3419,14 @@ public class QueryParser extends BaseParser {
 
         ASTElemVarsDeclaration decl = new ASTElemVarsDeclaration(); 
         try {
-            // Query.g:504:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
-            // Query.g:505:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
+            // Query.g:508:69: (op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN )
+            // Query.g:509:5: op= IDENT LPAREN (decls= elemVarsDeclaration BAR )? nExp= expression RPAREN
             {
-            op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression2438); if (state.failed) return n;
+            op=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpression2440); if (state.failed) return n;
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression2445); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_queryExpression2447); if (state.failed) return n;
 
-            // Query.g:507:5: (decls= elemVarsDeclaration BAR )?
+            // Query.g:511:5: (decls= elemVarsDeclaration BAR )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -3439,9 +3439,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt46) {
                 case 1 :
-                    // Query.g:507:7: decls= elemVarsDeclaration BAR
+                    // Query.g:511:7: decls= elemVarsDeclaration BAR
                     {
-                    pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression2456);
+                    pushFollow(FOLLOW_elemVarsDeclaration_in_queryExpression2458);
                     decls=elemVarsDeclaration();
 
                     state._fsp--;
@@ -3449,7 +3449,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) {decl = decls;}
 
-                    match(input,BAR,FOLLOW_BAR_in_queryExpression2460); if (state.failed) return n;
+                    match(input,BAR,FOLLOW_BAR_in_queryExpression2462); if (state.failed) return n;
 
                     }
                     break;
@@ -3457,13 +3457,13 @@ public class QueryParser extends BaseParser {
             }
 
 
-            pushFollow(FOLLOW_expression_in_queryExpression2471);
+            pushFollow(FOLLOW_expression_in_queryExpression2473);
             nExp=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_queryExpression2477); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_queryExpression2479); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTQueryExpression(op, range, decl, nExp); }
 
@@ -3485,7 +3485,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "iterateExpression"
-    // Query.g:521:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
+    // Query.g:525:1: iterateExpression[ASTExpression range] returns [ASTExpression n] : i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN ;
     public final ASTExpression iterateExpression(ASTExpression range) throws RecognitionException {
         ASTExpression n = null;
 
@@ -3499,36 +3499,36 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:521:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
-            // Query.g:522:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
+            // Query.g:525:65: (i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN )
+            // Query.g:526:5: i= 'iterate' LPAREN decls= elemVarsDeclaration SEMI init= variableInitialization BAR nExp= expression RPAREN
             {
-            i=(Token)match(input,68,FOLLOW_68_in_iterateExpression2509); if (state.failed) return n;
+            i=(Token)match(input,68,FOLLOW_68_in_iterateExpression2511); if (state.failed) return n;
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_iterateExpression2515); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_iterateExpression2517); if (state.failed) return n;
 
-            pushFollow(FOLLOW_elemVarsDeclaration_in_iterateExpression2523);
+            pushFollow(FOLLOW_elemVarsDeclaration_in_iterateExpression2525);
             decls=elemVarsDeclaration();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,SEMI,FOLLOW_SEMI_in_iterateExpression2525); if (state.failed) return n;
+            match(input,SEMI,FOLLOW_SEMI_in_iterateExpression2527); if (state.failed) return n;
 
-            pushFollow(FOLLOW_variableInitialization_in_iterateExpression2533);
+            pushFollow(FOLLOW_variableInitialization_in_iterateExpression2535);
             init=variableInitialization();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,BAR,FOLLOW_BAR_in_iterateExpression2535); if (state.failed) return n;
+            match(input,BAR,FOLLOW_BAR_in_iterateExpression2537); if (state.failed) return n;
 
-            pushFollow(FOLLOW_expression_in_iterateExpression2543);
+            pushFollow(FOLLOW_expression_in_iterateExpression2545);
             nExp=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_iterateExpression2549); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_iterateExpression2551); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTIterateExpression(i, range, decls, init, nExp); }
 
@@ -3554,7 +3554,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "operationExpression"
-    // Query.g:543:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
+    // Query.g:547:1: operationExpression[ASTExpression source, boolean followsArrow] returns [ASTOperationExpression n] : name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? ;
     public final QueryParser.operationExpression_return operationExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         QueryParser.operationExpression_return retval = new QueryParser.operationExpression_return();
         retval.start = input.LT(1);
@@ -3567,14 +3567,14 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:545:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
-            // Query.g:546:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // Query.g:549:5: (name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )? )
+            // Query.g:550:5: name= IDENT ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )? ( AT 'pre' )? ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression2593); if (state.failed) return retval;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_operationExpression2595); if (state.failed) return retval;
 
             if ( state.backtracking==0 ) { retval.n = new ASTOperationExpression(name, source, followsArrow); }
 
-            // Query.g:552:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
+            // Query.g:556:5: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )? )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -3583,11 +3583,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt50) {
                 case 1 :
-                    // Query.g:552:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // Query.g:556:7: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     {
-                    match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2615); if (state.failed) return retval;
+                    match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2617); if (state.failed) return retval;
 
-                    pushFollow(FOLLOW_expression_in_operationExpression2628);
+                    pushFollow(FOLLOW_expression_in_operationExpression2630);
                     rolename=expression();
 
                     state._fsp--;
@@ -3595,7 +3595,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { retval.n.addExplicitRolenameOrQualifier(rolename); }
 
-                    // Query.g:554:9: ( COMMA rolename= expression )*
+                    // Query.g:558:9: ( COMMA rolename= expression )*
                     loop47:
                     do {
                         int alt47=2;
@@ -3608,11 +3608,11 @@ public class QueryParser extends BaseParser {
 
                         switch (alt47) {
                     	case 1 :
-                    	    // Query.g:554:10: COMMA rolename= expression
+                    	    // Query.g:558:10: COMMA rolename= expression
                     	    {
-                    	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2641); if (state.failed) return retval;
+                    	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2643); if (state.failed) return retval;
 
-                    	    pushFollow(FOLLOW_expression_in_operationExpression2645);
+                    	    pushFollow(FOLLOW_expression_in_operationExpression2647);
                     	    rolename=expression();
 
                     	    state._fsp--;
@@ -3629,9 +3629,9 @@ public class QueryParser extends BaseParser {
                     } while (true);
 
 
-                    match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2657); if (state.failed) return retval;
+                    match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2659); if (state.failed) return retval;
 
-                    // Query.g:557:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
+                    // Query.g:561:7: ( LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK )?
                     int alt49=2;
                     int LA49_0 = input.LA(1);
 
@@ -3640,11 +3640,11 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt49) {
                         case 1 :
-                            // Query.g:557:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
+                            // Query.g:561:9: LBRACK rolename= expression ( COMMA rolename= expression )* RBRACK
                             {
-                            match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2674); if (state.failed) return retval;
+                            match(input,LBRACK,FOLLOW_LBRACK_in_operationExpression2676); if (state.failed) return retval;
 
-                            pushFollow(FOLLOW_expression_in_operationExpression2689);
+                            pushFollow(FOLLOW_expression_in_operationExpression2691);
                             rolename=expression();
 
                             state._fsp--;
@@ -3652,7 +3652,7 @@ public class QueryParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addQualifier(rolename); }
 
-                            // Query.g:559:11: ( COMMA rolename= expression )*
+                            // Query.g:563:11: ( COMMA rolename= expression )*
                             loop48:
                             do {
                                 int alt48=2;
@@ -3665,11 +3665,11 @@ public class QueryParser extends BaseParser {
 
                                 switch (alt48) {
                             	case 1 :
-                            	    // Query.g:559:12: COMMA rolename= expression
+                            	    // Query.g:563:12: COMMA rolename= expression
                             	    {
-                            	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2704); if (state.failed) return retval;
+                            	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2706); if (state.failed) return retval;
 
-                            	    pushFollow(FOLLOW_expression_in_operationExpression2708);
+                            	    pushFollow(FOLLOW_expression_in_operationExpression2710);
                             	    rolename=expression();
 
                             	    state._fsp--;
@@ -3686,7 +3686,7 @@ public class QueryParser extends BaseParser {
                             } while (true);
 
 
-                            match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2722); if (state.failed) return retval;
+                            match(input,RBRACK,FOLLOW_RBRACK_in_operationExpression2724); if (state.failed) return retval;
 
                             }
                             break;
@@ -3700,7 +3700,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            // Query.g:564:5: ( AT 'pre' )?
+            // Query.g:568:5: ( AT 'pre' )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -3713,11 +3713,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt51) {
                 case 1 :
-                    // Query.g:564:7: AT 'pre'
+                    // Query.g:568:7: AT 'pre'
                     {
-                    match(input,AT,FOLLOW_AT_in_operationExpression2747); if (state.failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_operationExpression2749); if (state.failed) return retval;
 
-                    match(input,82,FOLLOW_82_in_operationExpression2749); if (state.failed) return retval;
+                    match(input,82,FOLLOW_82_in_operationExpression2751); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.setIsPre(); }
 
@@ -3727,7 +3727,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            // Query.g:566:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
+            // Query.g:570:5: ( LPAREN (e= expression ( COMMA e= expression )* )? RPAREN )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -3736,13 +3736,13 @@ public class QueryParser extends BaseParser {
             }
             switch (alt54) {
                 case 1 :
-                    // Query.g:567:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
+                    // Query.g:571:7: LPAREN (e= expression ( COMMA e= expression )* )? RPAREN
                     {
-                    match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression2774); if (state.failed) return retval;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_operationExpression2776); if (state.failed) return retval;
 
                     if ( state.backtracking==0 ) { retval.n.hasParentheses(); }
 
-                    // Query.g:568:7: (e= expression ( COMMA e= expression )* )?
+                    // Query.g:572:7: (e= expression ( COMMA e= expression )* )?
                     int alt53=2;
                     int LA53_0 = input.LA(1);
 
@@ -3751,9 +3751,9 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt53) {
                         case 1 :
-                            // Query.g:569:7: e= expression ( COMMA e= expression )*
+                            // Query.g:573:7: e= expression ( COMMA e= expression )*
                             {
-                            pushFollow(FOLLOW_expression_in_operationExpression2795);
+                            pushFollow(FOLLOW_expression_in_operationExpression2797);
                             e=expression();
 
                             state._fsp--;
@@ -3761,7 +3761,7 @@ public class QueryParser extends BaseParser {
 
                             if ( state.backtracking==0 ) { retval.n.addArg(e); }
 
-                            // Query.g:570:7: ( COMMA e= expression )*
+                            // Query.g:574:7: ( COMMA e= expression )*
                             loop52:
                             do {
                                 int alt52=2;
@@ -3774,11 +3774,11 @@ public class QueryParser extends BaseParser {
 
                                 switch (alt52) {
                             	case 1 :
-                            	    // Query.g:570:9: COMMA e= expression
+                            	    // Query.g:574:9: COMMA e= expression
                             	    {
-                            	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2807); if (state.failed) return retval;
+                            	    match(input,COMMA,FOLLOW_COMMA_in_operationExpression2809); if (state.failed) return retval;
 
-                            	    pushFollow(FOLLOW_expression_in_operationExpression2811);
+                            	    pushFollow(FOLLOW_expression_in_operationExpression2813);
                             	    e=expression();
 
                             	    state._fsp--;
@@ -3801,7 +3801,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_operationExpression2831); if (state.failed) return retval;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_operationExpression2833); if (state.failed) return retval;
 
                     }
                     break;
@@ -3832,7 +3832,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "inStateExpression"
-    // Query.g:577:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
+    // Query.g:581:1: inStateExpression[ASTExpression source, boolean followsArrow] returns [ASTInStateExpression n] : opToken= 'oclInState' LPAREN s= IDENT RPAREN ;
     public final ASTInStateExpression inStateExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTInStateExpression n = null;
 
@@ -3841,16 +3841,16 @@ public class QueryParser extends BaseParser {
         Token s=null;
 
         try {
-            // Query.g:578:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
-            // Query.g:579:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
+            // Query.g:582:35: (opToken= 'oclInState' LPAREN s= IDENT RPAREN )
+            // Query.g:583:4: opToken= 'oclInState' LPAREN s= IDENT RPAREN
             {
-            opToken=(Token)match(input,76,FOLLOW_76_in_inStateExpression2868); if (state.failed) return n;
+            opToken=(Token)match(input,76,FOLLOW_76_in_inStateExpression2870); if (state.failed) return n;
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_inStateExpression2873); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_inStateExpression2875); if (state.failed) return n;
 
-            s=(Token)match(input,IDENT,FOLLOW_IDENT_in_inStateExpression2882); if (state.failed) return n;
+            s=(Token)match(input,IDENT,FOLLOW_IDENT_in_inStateExpression2884); if (state.failed) return n;
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_inStateExpression2887); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_inStateExpression2889); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTInStateExpression(opToken, source, s, followsArrow); }
 
@@ -3872,7 +3872,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "typeExpression"
-    // Query.g:591:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
+    // Query.g:595:1: typeExpression[ASTExpression source, boolean followsArrow] returns [ASTTypeArgExpression n] : ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN ;
     public final ASTTypeArgExpression typeExpression(ASTExpression source, boolean followsArrow) throws RecognitionException {
         ASTTypeArgExpression n = null;
 
@@ -3882,8 +3882,8 @@ public class QueryParser extends BaseParser {
 
          Token opToken = null; 
         try {
-            // Query.g:594:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
-            // Query.g:595:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
+            // Query.g:598:2: ( ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN )
+            // Query.g:599:2: ( 'oclAsType' | 'oclIsKindOf' | 'oclIsTypeOf' | 'selectByType' | 'selectByKind' ) LPAREN t= type RPAREN
             {
             if ( state.backtracking==0 ) { opToken = input.LT(1); }
 
@@ -3899,15 +3899,15 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_typeExpression2947); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_typeExpression2949); if (state.failed) return n;
 
-            pushFollow(FOLLOW_type_in_typeExpression2951);
+            pushFollow(FOLLOW_type_in_typeExpression2953);
             t=type();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_typeExpression2953); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_typeExpression2955); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTTypeArgExpression(opToken, source, t, followsArrow); }
 
@@ -3929,7 +3929,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "elemVarsDeclaration"
-    // Query.g:606:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
+    // Query.g:610:1: elemVarsDeclaration returns [ASTElemVarsDeclaration n] :var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* ;
     public final ASTElemVarsDeclaration elemVarsDeclaration() throws RecognitionException {
         ASTElemVarsDeclaration n = null;
 
@@ -3942,14 +3942,14 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:607:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
-            // Query.g:608:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // Query.g:611:1: (var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )* )
+            // Query.g:612:1: var1= IDENT ( COLON t= type )? ( COMMA varN= IDENT ( COLON tN= type )? )*
             {
             if ( state.backtracking==0 ) { n = new ASTElemVarsDeclaration(); }
 
-            var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2991); if (state.failed) return n;
+            var1=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration2993); if (state.failed) return n;
 
-            // Query.g:609:17: ( COLON t= type )?
+            // Query.g:613:17: ( COLON t= type )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -3958,11 +3958,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt55) {
                 case 1 :
-                    // Query.g:609:18: COLON t= type
+                    // Query.g:613:18: COLON t= type
                     {
-                    match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2994); if (state.failed) return n;
+                    match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration2996); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_type_in_elemVarsDeclaration2998);
+                    pushFollow(FOLLOW_type_in_elemVarsDeclaration3000);
                     t=type();
 
                     state._fsp--;
@@ -3976,7 +3976,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) {n.addDeclaration(var1, t);}
 
-            // Query.g:610:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
+            // Query.g:614:4: ( COMMA varN= IDENT ( COLON tN= type )? )*
             loop57:
             do {
                 int alt57=2;
@@ -3989,13 +3989,13 @@ public class QueryParser extends BaseParser {
 
                 switch (alt57) {
             	case 1 :
-            	    // Query.g:610:5: COMMA varN= IDENT ( COLON tN= type )?
+            	    // Query.g:614:5: COMMA varN= IDENT ( COLON tN= type )?
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration3008); if (state.failed) return n;
+            	    match(input,COMMA,FOLLOW_COMMA_in_elemVarsDeclaration3010); if (state.failed) return n;
 
-            	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration3014); if (state.failed) return n;
+            	    varN=(Token)match(input,IDENT,FOLLOW_IDENT_in_elemVarsDeclaration3016); if (state.failed) return n;
 
-            	    // Query.g:610:24: ( COLON tN= type )?
+            	    // Query.g:614:24: ( COLON tN= type )?
             	    int alt56=2;
             	    int LA56_0 = input.LA(1);
 
@@ -4004,11 +4004,11 @@ public class QueryParser extends BaseParser {
             	    }
             	    switch (alt56) {
             	        case 1 :
-            	            // Query.g:610:25: COLON tN= type
+            	            // Query.g:614:25: COLON tN= type
             	            {
-            	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration3017); if (state.failed) return n;
+            	            match(input,COLON,FOLLOW_COLON_in_elemVarsDeclaration3019); if (state.failed) return n;
 
-            	            pushFollow(FOLLOW_type_in_elemVarsDeclaration3023);
+            	            pushFollow(FOLLOW_type_in_elemVarsDeclaration3025);
             	            tN=type();
 
             	            state._fsp--;
@@ -4049,7 +4049,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "variableInitialization"
-    // Query.g:618:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
+    // Query.g:622:1: variableInitialization returns [ASTVariableInitialization n] : name= IDENT COLON t= type EQUAL e= expression ;
     public final ASTVariableInitialization variableInitialization() throws RecognitionException {
         ASTVariableInitialization n = null;
 
@@ -4061,22 +4061,22 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:619:5: (name= IDENT COLON t= type EQUAL e= expression )
-            // Query.g:620:5: name= IDENT COLON t= type EQUAL e= expression
+            // Query.g:623:5: (name= IDENT COLON t= type EQUAL e= expression )
+            // Query.g:624:5: name= IDENT COLON t= type EQUAL e= expression
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization3051); if (state.failed) return n;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_variableInitialization3053); if (state.failed) return n;
 
-            match(input,COLON,FOLLOW_COLON_in_variableInitialization3053); if (state.failed) return n;
+            match(input,COLON,FOLLOW_COLON_in_variableInitialization3055); if (state.failed) return n;
 
-            pushFollow(FOLLOW_type_in_variableInitialization3057);
+            pushFollow(FOLLOW_type_in_variableInitialization3059);
             t=type();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,EQUAL,FOLLOW_EQUAL_in_variableInitialization3059); if (state.failed) return n;
+            match(input,EQUAL,FOLLOW_EQUAL_in_variableInitialization3061); if (state.failed) return n;
 
-            pushFollow(FOLLOW_expression_in_variableInitialization3063);
+            pushFollow(FOLLOW_expression_in_variableInitialization3065);
             e=expression();
 
             state._fsp--;
@@ -4102,7 +4102,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "ifExpression"
-    // Query.g:629:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
+    // Query.g:633:1: ifExpression returns [ASTExpression n] : i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' ;
     public final ASTExpression ifExpression() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4116,34 +4116,34 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:630:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
-            // Query.g:631:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
+            // Query.g:634:5: (i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif' )
+            // Query.g:635:5: i= 'if' cond= expression 'then' t= expression 'else' e= expression 'endif'
             {
-            i=(Token)match(input,64,FOLLOW_64_in_ifExpression3095); if (state.failed) return n;
+            i=(Token)match(input,64,FOLLOW_64_in_ifExpression3097); if (state.failed) return n;
 
-            pushFollow(FOLLOW_expression_in_ifExpression3099);
+            pushFollow(FOLLOW_expression_in_ifExpression3101);
             cond=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,86,FOLLOW_86_in_ifExpression3101); if (state.failed) return n;
+            match(input,86,FOLLOW_86_in_ifExpression3103); if (state.failed) return n;
 
-            pushFollow(FOLLOW_expression_in_ifExpression3105);
+            pushFollow(FOLLOW_expression_in_ifExpression3107);
             t=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,60,FOLLOW_60_in_ifExpression3107); if (state.failed) return n;
+            match(input,60,FOLLOW_60_in_ifExpression3109); if (state.failed) return n;
 
-            pushFollow(FOLLOW_expression_in_ifExpression3111);
+            pushFollow(FOLLOW_expression_in_ifExpression3113);
             e=expression();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,62,FOLLOW_62_in_ifExpression3113); if (state.failed) return n;
+            match(input,62,FOLLOW_62_in_ifExpression3115); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTIfExpression(i, cond, t, e); }
 
@@ -4165,7 +4165,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "literal"
-    // Query.g:650:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
+    // Query.g:654:1: literal returns [ASTExpression n] : (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR );
     public final ASTExpression literal() throws RecognitionException {
         ASTExpression n = null;
 
@@ -4188,7 +4188,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:651:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
+            // Query.g:655:7: (t= 'true' |f= 'false' |i= INT |r= REAL |s= STRING | HASH enumLit= IDENT |enumName= IDENT '::' enumLit= IDENT |nColIt= collectionLiteral |nEColIt= emptyCollectionLiteral |nUndLit= undefinedLiteral |nTupleLit= tupleLiteral |un= STAR )
             int alt58=12;
             switch ( input.LA(1) ) {
             case 87:
@@ -4283,78 +4283,78 @@ public class QueryParser extends BaseParser {
 
             switch (alt58) {
                 case 1 :
-                    // Query.g:652:7: t= 'true'
+                    // Query.g:656:7: t= 'true'
                     {
-                    t=(Token)match(input,87,FOLLOW_87_in_literal3152); if (state.failed) return n;
+                    t=(Token)match(input,87,FOLLOW_87_in_literal3154); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTBooleanLiteral(true); }
 
                     }
                     break;
                 case 2 :
-                    // Query.g:653:7: f= 'false'
+                    // Query.g:657:7: f= 'false'
                     {
-                    f=(Token)match(input,63,FOLLOW_63_in_literal3166); if (state.failed) return n;
+                    f=(Token)match(input,63,FOLLOW_63_in_literal3168); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTBooleanLiteral(false); }
 
                     }
                     break;
                 case 3 :
-                    // Query.g:654:7: i= INT
+                    // Query.g:658:7: i= INT
                     {
-                    i=(Token)match(input,INT,FOLLOW_INT_in_literal3179); if (state.failed) return n;
+                    i=(Token)match(input,INT,FOLLOW_INT_in_literal3181); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTIntegerLiteral(i); }
 
                     }
                     break;
                 case 4 :
-                    // Query.g:655:7: r= REAL
+                    // Query.g:659:7: r= REAL
                     {
-                    r=(Token)match(input,REAL,FOLLOW_REAL_in_literal3194); if (state.failed) return n;
+                    r=(Token)match(input,REAL,FOLLOW_REAL_in_literal3196); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTRealLiteral(r); }
 
                     }
                     break;
                 case 5 :
-                    // Query.g:656:7: s= STRING
+                    // Query.g:660:7: s= STRING
                     {
-                    s=(Token)match(input,STRING,FOLLOW_STRING_in_literal3208); if (state.failed) return n;
+                    s=(Token)match(input,STRING,FOLLOW_STRING_in_literal3210); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTStringLiteral(s); }
 
                     }
                     break;
                 case 6 :
-                    // Query.g:657:7: HASH enumLit= IDENT
+                    // Query.g:661:7: HASH enumLit= IDENT
                     {
-                    match(input,HASH,FOLLOW_HASH_in_literal3218); if (state.failed) return n;
+                    match(input,HASH,FOLLOW_HASH_in_literal3220); if (state.failed) return n;
 
-                    enumLit=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3222); if (state.failed) return n;
+                    enumLit=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3224); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTEnumLiteral(enumLit);}
 
                     }
                     break;
                 case 7 :
-                    // Query.g:658:7: enumName= IDENT '::' enumLit= IDENT
+                    // Query.g:662:7: enumName= IDENT '::' enumLit= IDENT
                     {
-                    enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3234); if (state.failed) return n;
+                    enumName=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3236); if (state.failed) return n;
 
-                    match(input,COLON_COLON,FOLLOW_COLON_COLON_in_literal3236); if (state.failed) return n;
+                    match(input,COLON_COLON,FOLLOW_COLON_COLON_in_literal3238); if (state.failed) return n;
 
-                    enumLit=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3240); if (state.failed) return n;
+                    enumLit=(Token)match(input,IDENT,FOLLOW_IDENT_in_literal3242); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTEnumLiteral(enumName, enumLit); }
 
                     }
                     break;
                 case 8 :
-                    // Query.g:659:7: nColIt= collectionLiteral
+                    // Query.g:663:7: nColIt= collectionLiteral
                     {
-                    pushFollow(FOLLOW_collectionLiteral_in_literal3252);
+                    pushFollow(FOLLOW_collectionLiteral_in_literal3254);
                     nColIt=collectionLiteral();
 
                     state._fsp--;
@@ -4365,9 +4365,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // Query.g:660:7: nEColIt= emptyCollectionLiteral
+                    // Query.g:664:7: nEColIt= emptyCollectionLiteral
                     {
-                    pushFollow(FOLLOW_emptyCollectionLiteral_in_literal3264);
+                    pushFollow(FOLLOW_emptyCollectionLiteral_in_literal3266);
                     nEColIt=emptyCollectionLiteral();
 
                     state._fsp--;
@@ -4378,9 +4378,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // Query.g:661:7: nUndLit= undefinedLiteral
+                    // Query.g:665:7: nUndLit= undefinedLiteral
                     {
-                    pushFollow(FOLLOW_undefinedLiteral_in_literal3276);
+                    pushFollow(FOLLOW_undefinedLiteral_in_literal3278);
                     nUndLit=undefinedLiteral();
 
                     state._fsp--;
@@ -4391,9 +4391,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 11 :
-                    // Query.g:662:7: nTupleLit= tupleLiteral
+                    // Query.g:666:7: nTupleLit= tupleLiteral
                     {
-                    pushFollow(FOLLOW_tupleLiteral_in_literal3288);
+                    pushFollow(FOLLOW_tupleLiteral_in_literal3290);
                     nTupleLit=tupleLiteral();
 
                     state._fsp--;
@@ -4404,9 +4404,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 12 :
-                    // Query.g:663:7: un= STAR
+                    // Query.g:667:7: un= STAR
                     {
-                    un=(Token)match(input,STAR,FOLLOW_STAR_in_literal3300); if (state.failed) return n;
+                    un=(Token)match(input,STAR,FOLLOW_STAR_in_literal3302); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTUnlimitedNaturalLiteral(un); }
 
@@ -4430,7 +4430,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "collectionLiteral"
-    // Query.g:671:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
+    // Query.g:675:1: collectionLiteral returns [ASTCollectionLiteral n] : ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE ;
     public final ASTCollectionLiteral collectionLiteral() throws RecognitionException {
         ASTCollectionLiteral n = null;
 
@@ -4440,8 +4440,8 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:673:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
-            // Query.g:674:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
+            // Query.g:677:5: ( ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE )
+            // Query.g:678:5: ( 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LBRACE (ci= collectionItem ( COMMA ci= collectionItem )* )? RBRACE
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -4459,9 +4459,9 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n = new ASTCollectionLiteral(op); }
 
-            match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral3367); if (state.failed) return n;
+            match(input,LBRACE,FOLLOW_LBRACE_in_collectionLiteral3369); if (state.failed) return n;
 
-            // Query.g:678:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
+            // Query.g:682:5: (ci= collectionItem ( COMMA ci= collectionItem )* )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -4470,9 +4470,9 @@ public class QueryParser extends BaseParser {
             }
             switch (alt60) {
                 case 1 :
-                    // Query.g:679:7: ci= collectionItem ( COMMA ci= collectionItem )*
+                    // Query.g:683:7: ci= collectionItem ( COMMA ci= collectionItem )*
                     {
-                    pushFollow(FOLLOW_collectionItem_in_collectionLiteral3384);
+                    pushFollow(FOLLOW_collectionItem_in_collectionLiteral3386);
                     ci=collectionItem();
 
                     state._fsp--;
@@ -4480,7 +4480,7 @@ public class QueryParser extends BaseParser {
 
                     if ( state.backtracking==0 ) { n.addItem(ci); }
 
-                    // Query.g:680:7: ( COMMA ci= collectionItem )*
+                    // Query.g:684:7: ( COMMA ci= collectionItem )*
                     loop59:
                     do {
                         int alt59=2;
@@ -4493,11 +4493,11 @@ public class QueryParser extends BaseParser {
 
                         switch (alt59) {
                     	case 1 :
-                    	    // Query.g:680:9: COMMA ci= collectionItem
+                    	    // Query.g:684:9: COMMA ci= collectionItem
                     	    {
-                    	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral3397); if (state.failed) return n;
+                    	    match(input,COMMA,FOLLOW_COMMA_in_collectionLiteral3399); if (state.failed) return n;
 
-                    	    pushFollow(FOLLOW_collectionItem_in_collectionLiteral3401);
+                    	    pushFollow(FOLLOW_collectionItem_in_collectionLiteral3403);
                     	    ci=collectionItem();
 
                     	    state._fsp--;
@@ -4520,7 +4520,7 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,RBRACE,FOLLOW_RBRACE_in_collectionLiteral3420); if (state.failed) return n;
+            match(input,RBRACE,FOLLOW_RBRACE_in_collectionLiteral3422); if (state.failed) return n;
 
             }
 
@@ -4540,7 +4540,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "collectionItem"
-    // Query.g:689:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
+    // Query.g:693:1: collectionItem returns [ASTCollectionItem n] : e= expression ( DOTDOT e= expression )? ;
     public final ASTCollectionItem collectionItem() throws RecognitionException {
         ASTCollectionItem n = null;
 
@@ -4550,10 +4550,10 @@ public class QueryParser extends BaseParser {
 
          n = new ASTCollectionItem(); 
         try {
-            // Query.g:691:5: (e= expression ( DOTDOT e= expression )? )
-            // Query.g:692:5: e= expression ( DOTDOT e= expression )?
+            // Query.g:695:5: (e= expression ( DOTDOT e= expression )? )
+            // Query.g:696:5: e= expression ( DOTDOT e= expression )?
             {
-            pushFollow(FOLLOW_expression_in_collectionItem3449);
+            pushFollow(FOLLOW_expression_in_collectionItem3451);
             e=expression();
 
             state._fsp--;
@@ -4561,7 +4561,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { n.setFirst(e); }
 
-            // Query.g:693:5: ( DOTDOT e= expression )?
+            // Query.g:697:5: ( DOTDOT e= expression )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -4570,11 +4570,11 @@ public class QueryParser extends BaseParser {
             }
             switch (alt61) {
                 case 1 :
-                    // Query.g:693:7: DOTDOT e= expression
+                    // Query.g:697:7: DOTDOT e= expression
                     {
-                    match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem3460); if (state.failed) return n;
+                    match(input,DOTDOT,FOLLOW_DOTDOT_in_collectionItem3462); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_expression_in_collectionItem3464);
+                    pushFollow(FOLLOW_expression_in_collectionItem3466);
                     e=expression();
 
                     state._fsp--;
@@ -4606,7 +4606,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "emptyCollectionLiteral"
-    // Query.g:703:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
+    // Query.g:707:1: emptyCollectionLiteral returns [ASTEmptyCollectionLiteral n] : ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE );
     public final ASTEmptyCollectionLiteral emptyCollectionLiteral() throws RecognitionException {
         ASTEmptyCollectionLiteral n = null;
 
@@ -4615,7 +4615,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:704:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
+            // Query.g:708:5: ( 'oclEmpty' LPAREN t= collectionType RPAREN |t= collectionType LBRACE RBRACE )
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -4635,36 +4635,36 @@ public class QueryParser extends BaseParser {
             }
             switch (alt62) {
                 case 1 :
-                    // Query.g:705:5: 'oclEmpty' LPAREN t= collectionType RPAREN
+                    // Query.g:709:5: 'oclEmpty' LPAREN t= collectionType RPAREN
                     {
-                    match(input,75,FOLLOW_75_in_emptyCollectionLiteral3493); if (state.failed) return n;
+                    match(input,75,FOLLOW_75_in_emptyCollectionLiteral3495); if (state.failed) return n;
 
-                    match(input,LPAREN,FOLLOW_LPAREN_in_emptyCollectionLiteral3495); if (state.failed) return n;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_emptyCollectionLiteral3497); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3499);
+                    pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3501);
                     t=collectionType();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_emptyCollectionLiteral3501); if (state.failed) return n;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_emptyCollectionLiteral3503); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTEmptyCollectionLiteral(t); }
 
                     }
                     break;
                 case 2 :
-                    // Query.g:708:5: t= collectionType LBRACE RBRACE
+                    // Query.g:712:5: t= collectionType LBRACE RBRACE
                     {
-                    pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3517);
+                    pushFollow(FOLLOW_collectionType_in_emptyCollectionLiteral3519);
                     t=collectionType();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,LBRACE,FOLLOW_LBRACE_in_emptyCollectionLiteral3519); if (state.failed) return n;
+                    match(input,LBRACE,FOLLOW_LBRACE_in_emptyCollectionLiteral3521); if (state.failed) return n;
 
-                    match(input,RBRACE,FOLLOW_RBRACE_in_emptyCollectionLiteral3521); if (state.failed) return n;
+                    match(input,RBRACE,FOLLOW_RBRACE_in_emptyCollectionLiteral3523); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTEmptyCollectionLiteral(t); }
 
@@ -4688,7 +4688,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "undefinedLiteral"
-    // Query.g:719:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
+    // Query.g:723:1: undefinedLiteral returns [ASTUndefinedLiteral n] : ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' );
     public final ASTUndefinedLiteral undefinedLiteral() throws RecognitionException {
         ASTUndefinedLiteral n = null;
 
@@ -4697,7 +4697,7 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:720:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
+            // Query.g:724:5: ( 'oclUndefined' LPAREN t= type RPAREN | 'Undefined' | 'null' LPAREN t= type RPAREN | 'null' )
             int alt63=4;
             switch ( input.LA(1) ) {
             case 79:
@@ -4741,56 +4741,56 @@ public class QueryParser extends BaseParser {
 
             switch (alt63) {
                 case 1 :
-                    // Query.g:721:5: 'oclUndefined' LPAREN t= type RPAREN
+                    // Query.g:725:5: 'oclUndefined' LPAREN t= type RPAREN
                     {
-                    match(input,79,FOLLOW_79_in_undefinedLiteral3551); if (state.failed) return n;
+                    match(input,79,FOLLOW_79_in_undefinedLiteral3553); if (state.failed) return n;
 
-                    match(input,LPAREN,FOLLOW_LPAREN_in_undefinedLiteral3553); if (state.failed) return n;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_undefinedLiteral3555); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_type_in_undefinedLiteral3557);
+                    pushFollow(FOLLOW_type_in_undefinedLiteral3559);
                     t=type();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_undefinedLiteral3559); if (state.failed) return n;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_undefinedLiteral3561); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTUndefinedLiteral(t); }
 
                     }
                     break;
                 case 2 :
-                    // Query.g:724:5: 'Undefined'
+                    // Query.g:728:5: 'Undefined'
                     {
-                    match(input,52,FOLLOW_52_in_undefinedLiteral3573); if (state.failed) return n;
+                    match(input,52,FOLLOW_52_in_undefinedLiteral3575); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTUndefinedLiteral(); }
 
                     }
                     break;
                 case 3 :
-                    // Query.g:727:5: 'null' LPAREN t= type RPAREN
+                    // Query.g:731:5: 'null' LPAREN t= type RPAREN
                     {
-                    match(input,73,FOLLOW_73_in_undefinedLiteral3587); if (state.failed) return n;
+                    match(input,73,FOLLOW_73_in_undefinedLiteral3589); if (state.failed) return n;
 
-                    match(input,LPAREN,FOLLOW_LPAREN_in_undefinedLiteral3589); if (state.failed) return n;
+                    match(input,LPAREN,FOLLOW_LPAREN_in_undefinedLiteral3591); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_type_in_undefinedLiteral3593);
+                    pushFollow(FOLLOW_type_in_undefinedLiteral3595);
                     t=type();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,RPAREN,FOLLOW_RPAREN_in_undefinedLiteral3595); if (state.failed) return n;
+                    match(input,RPAREN,FOLLOW_RPAREN_in_undefinedLiteral3597); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTUndefinedLiteral(t); }
 
                     }
                     break;
                 case 4 :
-                    // Query.g:730:5: 'null'
+                    // Query.g:734:5: 'null'
                     {
-                    match(input,73,FOLLOW_73_in_undefinedLiteral3609); if (state.failed) return n;
+                    match(input,73,FOLLOW_73_in_undefinedLiteral3611); if (state.failed) return n;
 
                     if ( state.backtracking==0 ) { n = new ASTUndefinedLiteral(); }
 
@@ -4814,7 +4814,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "tupleLiteral"
-    // Query.g:740:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
+    // Query.g:744:1: tupleLiteral returns [ASTTupleLiteral n] : 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE ;
     public final ASTTupleLiteral tupleLiteral() throws RecognitionException {
         ASTTupleLiteral n = null;
 
@@ -4824,14 +4824,14 @@ public class QueryParser extends BaseParser {
 
          List tiList = new ArrayList(); 
         try {
-            // Query.g:742:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
-            // Query.g:743:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
+            // Query.g:746:5: ( 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE )
+            // Query.g:747:5: 'Tuple' LBRACE ti= tupleItem ( COMMA ti= tupleItem )* RBRACE
             {
-            match(input,51,FOLLOW_51_in_tupleLiteral3648); if (state.failed) return n;
+            match(input,51,FOLLOW_51_in_tupleLiteral3650); if (state.failed) return n;
 
-            match(input,LBRACE,FOLLOW_LBRACE_in_tupleLiteral3654); if (state.failed) return n;
+            match(input,LBRACE,FOLLOW_LBRACE_in_tupleLiteral3656); if (state.failed) return n;
 
-            pushFollow(FOLLOW_tupleItem_in_tupleLiteral3662);
+            pushFollow(FOLLOW_tupleItem_in_tupleLiteral3664);
             ti=tupleItem();
 
             state._fsp--;
@@ -4839,7 +4839,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tiList.add(ti); }
 
-            // Query.g:746:5: ( COMMA ti= tupleItem )*
+            // Query.g:750:5: ( COMMA ti= tupleItem )*
             loop64:
             do {
                 int alt64=2;
@@ -4852,11 +4852,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt64) {
             	case 1 :
-            	    // Query.g:746:7: COMMA ti= tupleItem
+            	    // Query.g:750:7: COMMA ti= tupleItem
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral3673); if (state.failed) return n;
+            	    match(input,COMMA,FOLLOW_COMMA_in_tupleLiteral3675); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_tupleItem_in_tupleLiteral3677);
+            	    pushFollow(FOLLOW_tupleItem_in_tupleLiteral3679);
             	    ti=tupleItem();
 
             	    state._fsp--;
@@ -4873,7 +4873,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            match(input,RBRACE,FOLLOW_RBRACE_in_tupleLiteral3688); if (state.failed) return n;
+            match(input,RBRACE,FOLLOW_RBRACE_in_tupleLiteral3690); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTTupleLiteral(tiList); }
 
@@ -4895,7 +4895,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "tupleItem"
-    // Query.g:754:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
+    // Query.g:758:1: tupleItem returns [ASTTupleItem n] : name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) ;
     public final ASTTupleItem tupleItem() throws RecognitionException {
         ASTTupleItem n = null;
 
@@ -4907,12 +4907,12 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:755:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
-            // Query.g:756:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // Query.g:759:5: (name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression ) )
+            // Query.g:760:5: name= IDENT ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem3719); if (state.failed) return n;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tupleItem3721); if (state.failed) return n;
 
-            // Query.g:757:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
+            // Query.g:761:5: ( ( COLON type EQUAL )=> COLON t= type EQUAL e= expression | ( COLON | EQUAL ) e= expression )
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -4947,19 +4947,19 @@ public class QueryParser extends BaseParser {
             }
             switch (alt65) {
                 case 1 :
-                    // Query.g:760:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
+                    // Query.g:764:7: ( COLON type EQUAL )=> COLON t= type EQUAL e= expression
                     {
-                    match(input,COLON,FOLLOW_COLON_in_tupleItem3758); if (state.failed) return n;
+                    match(input,COLON,FOLLOW_COLON_in_tupleItem3760); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_type_in_tupleItem3762);
+                    pushFollow(FOLLOW_type_in_tupleItem3764);
                     t=type();
 
                     state._fsp--;
                     if (state.failed) return n;
 
-                    match(input,EQUAL,FOLLOW_EQUAL_in_tupleItem3764); if (state.failed) return n;
+                    match(input,EQUAL,FOLLOW_EQUAL_in_tupleItem3766); if (state.failed) return n;
 
-                    pushFollow(FOLLOW_expression_in_tupleItem3768);
+                    pushFollow(FOLLOW_expression_in_tupleItem3770);
                     e=expression();
 
                     state._fsp--;
@@ -4970,7 +4970,7 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:763:7: ( COLON | EQUAL ) e= expression
+                    // Query.g:767:7: ( COLON | EQUAL ) e= expression
                     {
                     if ( input.LA(1)==COLON||input.LA(1)==EQUAL ) {
                         input.consume();
@@ -4984,7 +4984,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    pushFollow(FOLLOW_expression_in_tupleItem3800);
+                    pushFollow(FOLLOW_expression_in_tupleItem3802);
                     e=expression();
 
                     state._fsp--;
@@ -5016,7 +5016,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "type"
-    // Query.g:774:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
+    // Query.g:778:1: type returns [ASTType n] : (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) ;
     public final ASTType type() throws RecognitionException {
         ASTType n = null;
 
@@ -5030,12 +5030,12 @@ public class QueryParser extends BaseParser {
 
          Token tok = null; 
         try {
-            // Query.g:776:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
-            // Query.g:777:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // Query.g:780:5: ( (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType ) )
+            // Query.g:781:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             {
             if ( state.backtracking==0 ) { tok = input.LT(1); /* remember start of type */ }
 
-            // Query.g:778:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
+            // Query.g:782:5: (nTSimple= simpleType |nTCollection= collectionType |nTTuple= tupleType )
             int alt66=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -5068,9 +5068,9 @@ public class QueryParser extends BaseParser {
 
             switch (alt66) {
                 case 1 :
-                    // Query.g:779:7: nTSimple= simpleType
+                    // Query.g:783:7: nTSimple= simpleType
                     {
-                    pushFollow(FOLLOW_simpleType_in_type3866);
+                    pushFollow(FOLLOW_simpleType_in_type3868);
                     nTSimple=simpleType();
 
                     state._fsp--;
@@ -5081,9 +5081,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // Query.g:780:7: nTCollection= collectionType
+                    // Query.g:784:7: nTCollection= collectionType
                     {
-                    pushFollow(FOLLOW_collectionType_in_type3878);
+                    pushFollow(FOLLOW_collectionType_in_type3880);
                     nTCollection=collectionType();
 
                     state._fsp--;
@@ -5094,9 +5094,9 @@ public class QueryParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // Query.g:781:7: nTTuple= tupleType
+                    // Query.g:785:7: nTTuple= tupleType
                     {
-                    pushFollow(FOLLOW_tupleType_in_type3890);
+                    pushFollow(FOLLOW_tupleType_in_type3892);
                     nTTuple=tupleType();
 
                     state._fsp--;
@@ -5128,7 +5128,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "typeOnly"
-    // Query.g:786:1: typeOnly returns [ASTType n] : nT= type EOF ;
+    // Query.g:790:1: typeOnly returns [ASTType n] : nT= type EOF ;
     public final ASTType typeOnly() throws RecognitionException {
         ASTType n = null;
 
@@ -5137,16 +5137,16 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:787:5: (nT= type EOF )
-            // Query.g:788:5: nT= type EOF
+            // Query.g:791:5: (nT= type EOF )
+            // Query.g:792:5: nT= type EOF
             {
-            pushFollow(FOLLOW_type_in_typeOnly3922);
+            pushFollow(FOLLOW_type_in_typeOnly3924);
             nT=type();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,EOF,FOLLOW_EOF_in_typeOnly3924); if (state.failed) return n;
+            match(input,EOF,FOLLOW_EOF_in_typeOnly3926); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = nT; }
 
@@ -5168,7 +5168,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "simpleType"
-    // Query.g:798:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
+    // Query.g:802:1: simpleType returns [ASTSimpleType n] : name= IDENT ;
     public final ASTSimpleType simpleType() throws RecognitionException {
         ASTSimpleType n = null;
 
@@ -5176,10 +5176,10 @@ public class QueryParser extends BaseParser {
         Token name=null;
 
         try {
-            // Query.g:799:5: (name= IDENT )
-            // Query.g:800:5: name= IDENT
+            // Query.g:803:5: (name= IDENT )
+            // Query.g:804:5: name= IDENT
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType3952); if (state.failed) return n;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_simpleType3954); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTSimpleType(name); }
 
@@ -5201,7 +5201,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "collectionType"
-    // Query.g:808:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
+    // Query.g:812:1: collectionType returns [ASTCollectionType n] : ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN ;
     public final ASTCollectionType collectionType() throws RecognitionException {
         ASTCollectionType n = null;
 
@@ -5211,8 +5211,8 @@ public class QueryParser extends BaseParser {
 
          Token op = null; 
         try {
-            // Query.g:810:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
-            // Query.g:811:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
+            // Query.g:814:5: ( ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN )
+            // Query.g:815:5: ( 'Collection' | 'Set' | 'Sequence' | 'Bag' | 'OrderedSet' ) LPAREN elemType= type RPAREN
             {
             if ( state.backtracking==0 ) { op = input.LT(1); }
 
@@ -5228,15 +5228,15 @@ public class QueryParser extends BaseParser {
             }
 
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_collectionType4017); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_collectionType4019); if (state.failed) return n;
 
-            pushFollow(FOLLOW_type_in_collectionType4021);
+            pushFollow(FOLLOW_type_in_collectionType4023);
             elemType=type();
 
             state._fsp--;
             if (state.failed) return n;
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_collectionType4023); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_collectionType4025); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTCollectionType(op, elemType); if (n != null) n.setStartToken(op);}
 
@@ -5258,7 +5258,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "tupleType"
-    // Query.g:821:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
+    // Query.g:825:1: tupleType returns [ASTTupleType n] : 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN ;
     public final ASTTupleType tupleType() throws RecognitionException {
         ASTTupleType n = null;
 
@@ -5268,14 +5268,14 @@ public class QueryParser extends BaseParser {
 
          List tpList = new ArrayList(); 
         try {
-            // Query.g:823:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
-            // Query.g:824:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
+            // Query.g:827:5: ( 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN )
+            // Query.g:828:5: 'Tuple' LPAREN tp= tuplePart ( COMMA tp= tuplePart )* RPAREN
             {
-            match(input,51,FOLLOW_51_in_tupleType4057); if (state.failed) return n;
+            match(input,51,FOLLOW_51_in_tupleType4059); if (state.failed) return n;
 
-            match(input,LPAREN,FOLLOW_LPAREN_in_tupleType4059); if (state.failed) return n;
+            match(input,LPAREN,FOLLOW_LPAREN_in_tupleType4061); if (state.failed) return n;
 
-            pushFollow(FOLLOW_tuplePart_in_tupleType4068);
+            pushFollow(FOLLOW_tuplePart_in_tupleType4070);
             tp=tuplePart();
 
             state._fsp--;
@@ -5283,7 +5283,7 @@ public class QueryParser extends BaseParser {
 
             if ( state.backtracking==0 ) { tpList.add(tp); }
 
-            // Query.g:826:5: ( COMMA tp= tuplePart )*
+            // Query.g:830:5: ( COMMA tp= tuplePart )*
             loop67:
             do {
                 int alt67=2;
@@ -5296,11 +5296,11 @@ public class QueryParser extends BaseParser {
 
                 switch (alt67) {
             	case 1 :
-            	    // Query.g:826:7: COMMA tp= tuplePart
+            	    // Query.g:830:7: COMMA tp= tuplePart
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_tupleType4079); if (state.failed) return n;
+            	    match(input,COMMA,FOLLOW_COMMA_in_tupleType4081); if (state.failed) return n;
 
-            	    pushFollow(FOLLOW_tuplePart_in_tupleType4083);
+            	    pushFollow(FOLLOW_tuplePart_in_tupleType4085);
             	    tp=tuplePart();
 
             	    state._fsp--;
@@ -5317,7 +5317,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_tupleType4095); if (state.failed) return n;
+            match(input,RPAREN,FOLLOW_RPAREN_in_tupleType4097); if (state.failed) return n;
 
             if ( state.backtracking==0 ) { n = new ASTTupleType(tpList); }
 
@@ -5339,7 +5339,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "tuplePart"
-    // Query.g:835:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
+    // Query.g:839:1: tuplePart returns [ASTTuplePart n] : name= IDENT COLON t= type ;
     public final ASTTuplePart tuplePart() throws RecognitionException {
         ASTTuplePart n = null;
 
@@ -5349,14 +5349,14 @@ public class QueryParser extends BaseParser {
 
 
         try {
-            // Query.g:836:5: (name= IDENT COLON t= type )
-            // Query.g:837:5: name= IDENT COLON t= type
+            // Query.g:840:5: (name= IDENT COLON t= type )
+            // Query.g:841:5: name= IDENT COLON t= type
             {
-            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart4127); if (state.failed) return n;
+            name=(Token)match(input,IDENT,FOLLOW_IDENT_in_tuplePart4129); if (state.failed) return n;
 
-            match(input,COLON,FOLLOW_COLON_in_tuplePart4129); if (state.failed) return n;
+            match(input,COLON,FOLLOW_COLON_in_tuplePart4131); if (state.failed) return n;
 
-            pushFollow(FOLLOW_type_in_tuplePart4133);
+            pushFollow(FOLLOW_type_in_tuplePart4135);
             t=type();
 
             state._fsp--;
@@ -5381,18 +5381,18 @@ public class QueryParser extends BaseParser {
 
     // $ANTLR start synpred1_Query
     public final void synpred1_Query_fragment() throws RecognitionException {
-        // Query.g:760:7: ( COLON type EQUAL )
-        // Query.g:760:8: COLON type EQUAL
+        // Query.g:764:7: ( COLON type EQUAL )
+        // Query.g:764:8: COLON type EQUAL
         {
-        match(input,COLON,FOLLOW_COLON_in_synpred1_Query3749); if (state.failed) return ;
+        match(input,COLON,FOLLOW_COLON_in_synpred1_Query3751); if (state.failed) return ;
 
-        pushFollow(FOLLOW_type_in_synpred1_Query3751);
+        pushFollow(FOLLOW_type_in_synpred1_Query3753);
         type();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,EQUAL,FOLLOW_EQUAL_in_synpred1_Query3753); if (state.failed) return ;
+        match(input,EQUAL,FOLLOW_EQUAL_in_synpred1_Query3755); if (state.failed) return ;
 
         }
 
@@ -5419,294 +5419,294 @@ public class QueryParser extends BaseParser {
 
  
 
-    public static final BitSet FOLLOW_88_in_checkExpr51 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_checkExpr55 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_44_in_checkExpr83 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_checkExpr87 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_91_in_checkExpr145 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_checkExpr149 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_45_in_checkExpr208 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_checkExpr214 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_EOF_in_checkExpr260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_moduleExpr_in_checkExpr278 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_moduleExpr_in_checkExpr294 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_EOF_in_checkExpr300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_queryExpr321 = new BitSet(new long[]{0x0020010000080000L,0x0000000000010080L});
-    public static final BitSet FOLLOW_featureExpr_in_queryExpr325 = new BitSet(new long[]{0x0300000000000402L,0x0000000002000008L});
-    public static final BitSet FOLLOW_COMMA_in_queryExpr330 = new BitSet(new long[]{0x0020010000080000L,0x0000000000010080L});
-    public static final BitSet FOLLOW_featureExpr_in_queryExpr334 = new BitSet(new long[]{0x0300000000000402L,0x0000000002000008L});
-    public static final BitSet FOLLOW_withExpr_in_queryExpr352 = new BitSet(new long[]{0x0300000000000002L,0x0000000000000008L});
-    public static final BitSet FOLLOW_butExpr_in_queryExpr370 = new BitSet(new long[]{0x0100000000000002L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_queryExpr377 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_oclExpr_in_queryExpr381 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_56_in_queryExpr396 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_queryExpr400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_queryExpr416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_modifiers_in_featureExpr446 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_set_in_featureExpr453 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rankExpr_in_featureExpr462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attrExpr_in_featureExpr482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assocExpr_in_featureExpr496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_modifiers514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_modifiers528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_modifiers538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_attrExpr557 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_DOT_in_attrExpr563 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_set_in_attrExpr567 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rankExpr_in_attrExpr576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_assocExpr600 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_COLON_in_assocExpr606 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_set_in_assocExpr610 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_COLON_in_assocExpr616 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_set_in_assocExpr620 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rankExpr_in_assocExpr629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_withExpr658 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_invExpr_in_withExpr662 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_COMMA_in_withExpr666 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_invExpr_in_withExpr670 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_57_in_butExpr693 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_invExpr_in_butExpr697 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_COMMA_in_butExpr701 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_invExpr_in_butExpr705 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_set_in_invExpr727 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_COLON_COLON_in_invExpr733 = new BitSet(new long[]{0x0000010000080000L});
-    public static final BitSet FOLLOW_set_in_invExpr737 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rankExpr_in_invExpr746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_rankExpr775 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_INT_in_rankExpr779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_moduleExpr797 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_moduleExpr801 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_moduleExpr815 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_queryExpr_in_moduleExpr831 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_61_in_moduleExpr841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACE_in_oclExpr862 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_oclExpr866 = new BitSet(new long[]{0x0000000200000420L});
-    public static final BitSet FOLLOW_rankExpr_in_oclExpr871 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_COMMA_in_oclExpr888 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_oclExpr892 = new BitSet(new long[]{0x0000000200000420L});
-    public static final BitSet FOLLOW_rankExpr_in_oclExpr897 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_RBRACE_in_oclExpr919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_expressionOnly946 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_expressionOnly948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_expression996 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_expression1007 = new BitSet(new long[]{0x0000000000002080L});
-    public static final BitSet FOLLOW_COLON_in_expression1011 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_expression1015 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_EQUAL_in_expression1020 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_expression1024 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000004L});
-    public static final BitSet FOLLOW_COMMA_in_expression1062 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_expression1074 = new BitSet(new long[]{0x0000000000002080L});
-    public static final BitSet FOLLOW_COLON_in_expression1078 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_expression1082 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_EQUAL_in_expression1087 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_expression1091 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_expression1132 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_conditionalImpliesExpression_in_expression1148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPAREN_in_paramList1181 = new BitSet(new long[]{0x0000001000080000L});
-    public static final BitSet FOLLOW_variableDeclaration_in_paramList1198 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_COMMA_in_paramList1210 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_variableDeclaration_in_paramList1214 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_RPAREN_in_paramList1234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_idList1263 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_COMMA_in_idList1273 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_idList1277 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_IDENT_in_variableDeclaration1308 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_COLON_in_variableDeclaration1310 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_variableDeclaration1314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1350 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_conditionalImpliesExpression1363 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1367 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1412 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
-    public static final BitSet FOLLOW_81_in_conditionalOrExpression1425 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1429 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
-    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1473 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_conditionalXOrExpression1486 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1490 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
-    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression1534 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_55_in_conditionalAndExpression1547 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression1551 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression1599 = new BitSet(new long[]{0x0000000040002002L});
-    public static final BitSet FOLLOW_set_in_equalityExpression1618 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression1628 = new BitSet(new long[]{0x0000000040002002L});
-    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression1677 = new BitSet(new long[]{0x0000000001818002L});
-    public static final BitSet FOLLOW_set_in_relationalExpression1695 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression1713 = new BitSet(new long[]{0x0000000001818002L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1763 = new BitSet(new long[]{0x0000000084000002L});
-    public static final BitSet FOLLOW_set_in_additiveExpression1781 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1791 = new BitSet(new long[]{0x0000000084000002L});
-    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression1841 = new BitSet(new long[]{0x0800014000000002L});
-    public static final BitSet FOLLOW_set_in_multiplicativeExpression1859 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression1873 = new BitSet(new long[]{0x0800014000000002L});
-    public static final BitSet FOLLOW_set_in_unaryExpression1935 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression1959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_postfixExpression_in_unaryExpression1979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpression_in_postfixExpression2012 = new BitSet(new long[]{0x0000000000000812L});
-    public static final BitSet FOLLOW_ARROW_in_postfixExpression2030 = new BitSet(new long[]{0x0000000000080000L,0x0000000000307410L});
-    public static final BitSet FOLLOW_DOT_in_postfixExpression2036 = new BitSet(new long[]{0x0000000000080000L,0x0000000000307410L});
-    public static final BitSet FOLLOW_propertyCall_in_postfixExpression2047 = new BitSet(new long[]{0x0000000000000812L});
-    public static final BitSet FOLLOW_literal_in_primaryExpression2087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_objectReference_in_primaryExpression2101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_propertyCall_in_primaryExpression2113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2124 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_primaryExpression2128 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ifExpression_in_primaryExpression2142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_primaryExpression2154 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_DOT_in_primaryExpression2156 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_primaryExpression2158 = new BitSet(new long[]{0x0000000002000022L});
-    public static final BitSet FOLLOW_AT_in_primaryExpression2181 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_82_in_primaryExpression2183 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2201 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_primaryExpression2216 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_DOT_in_primaryExpression2218 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_58_in_primaryExpression2220 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2224 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_primaryExpression2228 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2230 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_AT_in_primaryExpression2250 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_82_in_primaryExpression2252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_objectReference2278 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_objectReference2286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_queryExpression_in_propertyCall2351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_iterateExpression_in_propertyCall2364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operationExpression_in_propertyCall2377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeExpression_in_propertyCall2390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_inStateExpression_in_propertyCall2403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_queryExpression2438 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_queryExpression2445 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_elemVarsDeclaration_in_queryExpression2456 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_BAR_in_queryExpression2460 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_queryExpression2471 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_queryExpression2477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_iterateExpression2509 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_iterateExpression2515 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_elemVarsDeclaration_in_iterateExpression2523 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_SEMI_in_iterateExpression2525 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_variableInitialization_in_iterateExpression2533 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_BAR_in_iterateExpression2535 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_iterateExpression2543 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_iterateExpression2549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_operationExpression2593 = new BitSet(new long[]{0x0000000002400022L});
-    public static final BitSet FOLLOW_LBRACK_in_operationExpression2615 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2628 = new BitSet(new long[]{0x0000000400000400L});
-    public static final BitSet FOLLOW_COMMA_in_operationExpression2641 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2645 = new BitSet(new long[]{0x0000000400000400L});
-    public static final BitSet FOLLOW_RBRACK_in_operationExpression2657 = new BitSet(new long[]{0x0000000002400022L});
-    public static final BitSet FOLLOW_LBRACK_in_operationExpression2674 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2689 = new BitSet(new long[]{0x0000000400000400L});
-    public static final BitSet FOLLOW_COMMA_in_operationExpression2704 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2708 = new BitSet(new long[]{0x0000000400000400L});
-    public static final BitSet FOLLOW_RBRACK_in_operationExpression2722 = new BitSet(new long[]{0x0000000002000022L});
-    public static final BitSet FOLLOW_AT_in_operationExpression2747 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_82_in_operationExpression2749 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_LPAREN_in_operationExpression2774 = new BitSet(new long[]{0x801FC318861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2795 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_COMMA_in_operationExpression2807 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_operationExpression2811 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_RPAREN_in_operationExpression2831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_inStateExpression2868 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_inStateExpression2873 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_inStateExpression2882 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_inStateExpression2887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_typeExpression2923 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_typeExpression2947 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_typeExpression2951 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_typeExpression2953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_elemVarsDeclaration2991 = new BitSet(new long[]{0x0000000000000482L});
-    public static final BitSet FOLLOW_COLON_in_elemVarsDeclaration2994 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_elemVarsDeclaration2998 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_COMMA_in_elemVarsDeclaration3008 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_elemVarsDeclaration3014 = new BitSet(new long[]{0x0000000000000482L});
-    public static final BitSet FOLLOW_COLON_in_elemVarsDeclaration3017 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_elemVarsDeclaration3023 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_IDENT_in_variableInitialization3051 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_COLON_in_variableInitialization3053 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_variableInitialization3057 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_EQUAL_in_variableInitialization3059 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_variableInitialization3063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ifExpression3095 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_ifExpression3099 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_86_in_ifExpression3101 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_ifExpression3105 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_60_in_ifExpression3107 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_ifExpression3111 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_62_in_ifExpression3113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_literal3152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_literal3166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_literal3179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_REAL_in_literal3194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_in_literal3208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_HASH_in_literal3218 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_literal3222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_literal3234 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_COLON_COLON_in_literal3236 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_IDENT_in_literal3240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_collectionLiteral_in_literal3252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_emptyCollectionLiteral_in_literal3264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_undefinedLiteral_in_literal3276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_tupleLiteral_in_literal3288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STAR_in_literal3300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_collectionLiteral3338 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_LBRACE_in_collectionLiteral3367 = new BitSet(new long[]{0x801FC30A861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_collectionItem_in_collectionLiteral3384 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_COMMA_in_collectionLiteral3397 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_collectionItem_in_collectionLiteral3401 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_RBRACE_in_collectionLiteral3420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_collectionItem3449 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_DOTDOT_in_collectionItem3460 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_collectionItem3464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_emptyCollectionLiteral3493 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_emptyCollectionLiteral3495 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_collectionType_in_emptyCollectionLiteral3499 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_emptyCollectionLiteral3501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_collectionType_in_emptyCollectionLiteral3517 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_LBRACE_in_emptyCollectionLiteral3519 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_RBRACE_in_emptyCollectionLiteral3521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_undefinedLiteral3551 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_undefinedLiteral3553 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_undefinedLiteral3557 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_undefinedLiteral3559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_undefinedLiteral3573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_undefinedLiteral3587 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_undefinedLiteral3589 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_undefinedLiteral3593 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_undefinedLiteral3595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_undefinedLiteral3609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_tupleLiteral3648 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_LBRACE_in_tupleLiteral3654 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_tupleItem_in_tupleLiteral3662 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_COMMA_in_tupleLiteral3673 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_tupleItem_in_tupleLiteral3677 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_RBRACE_in_tupleLiteral3688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_tupleItem3719 = new BitSet(new long[]{0x0000000000002080L});
-    public static final BitSet FOLLOW_COLON_in_tupleItem3758 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_tupleItem3762 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_EQUAL_in_tupleItem3764 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_tupleItem3768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_tupleItem3790 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_tupleItem3800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_simpleType_in_type3866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_collectionType_in_type3878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_tupleType_in_type3890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_type_in_typeOnly3922 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_typeOnly3924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_simpleType3952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_collectionType3990 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_collectionType4017 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_collectionType4021 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_RPAREN_in_collectionType4023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_tupleType4057 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_LPAREN_in_tupleType4059 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_tuplePart_in_tupleType4068 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_COMMA_in_tupleType4079 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_tuplePart_in_tupleType4083 = new BitSet(new long[]{0x0000001000000400L});
-    public static final BitSet FOLLOW_RPAREN_in_tupleType4095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_tuplePart4127 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_COLON_in_tuplePart4129 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_tuplePart4133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COLON_in_synpred1_Query3749 = new BitSet(new long[]{0x000FC00000080000L});
-    public static final BitSet FOLLOW_type_in_synpred1_Query3751 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_EQUAL_in_synpred1_Query3753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_checkExpr53 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_checkExpr57 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_44_in_checkExpr85 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_checkExpr89 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_91_in_checkExpr147 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_checkExpr151 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_45_in_checkExpr210 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_checkExpr216 = new BitSet(new long[]{0x0000300000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_EOF_in_checkExpr262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_moduleExpr_in_checkExpr280 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_moduleExpr_in_checkExpr296 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_EOF_in_checkExpr302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_queryExpr323 = new BitSet(new long[]{0x0020010000080000L,0x0000000000010080L});
+    public static final BitSet FOLLOW_featureExpr_in_queryExpr327 = new BitSet(new long[]{0x0300000000000402L,0x0000000002000008L});
+    public static final BitSet FOLLOW_COMMA_in_queryExpr332 = new BitSet(new long[]{0x0020010000080000L,0x0000000000010080L});
+    public static final BitSet FOLLOW_featureExpr_in_queryExpr336 = new BitSet(new long[]{0x0300000000000402L,0x0000000002000008L});
+    public static final BitSet FOLLOW_withExpr_in_queryExpr354 = new BitSet(new long[]{0x0300000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_butExpr_in_queryExpr372 = new BitSet(new long[]{0x0100000000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_queryExpr379 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_oclExpr_in_queryExpr383 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_56_in_queryExpr398 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_queryExpr402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_queryExpr418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_modifiers_in_featureExpr448 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_set_in_featureExpr455 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rankExpr_in_featureExpr464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attrExpr_in_featureExpr484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_assocExpr_in_featureExpr498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_modifiers516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_modifiers530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_modifiers540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_attrExpr559 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_DOT_in_attrExpr565 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_set_in_attrExpr569 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rankExpr_in_attrExpr578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_assocExpr602 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_COLON_in_assocExpr608 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_set_in_assocExpr612 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_COLON_in_assocExpr618 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_set_in_assocExpr622 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rankExpr_in_assocExpr631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_withExpr660 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_invExpr_in_withExpr664 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_COMMA_in_withExpr668 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_invExpr_in_withExpr672 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_57_in_butExpr695 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_invExpr_in_butExpr699 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_COMMA_in_butExpr703 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_invExpr_in_butExpr707 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_set_in_invExpr729 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_COLON_COLON_in_invExpr735 = new BitSet(new long[]{0x0000010000080000L});
+    public static final BitSet FOLLOW_set_in_invExpr739 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rankExpr_in_invExpr748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_rankExpr777 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_INT_in_rankExpr781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_moduleExpr799 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_moduleExpr803 = new BitSet(new long[]{0x0000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_moduleExpr817 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_queryExpr_in_moduleExpr833 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_61_in_moduleExpr843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACE_in_oclExpr864 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_oclExpr868 = new BitSet(new long[]{0x0000000200000420L});
+    public static final BitSet FOLLOW_rankExpr_in_oclExpr873 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_COMMA_in_oclExpr890 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_oclExpr894 = new BitSet(new long[]{0x0000000200000420L});
+    public static final BitSet FOLLOW_rankExpr_in_oclExpr899 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_RBRACE_in_oclExpr921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_expressionOnly948 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_expressionOnly950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_expression998 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_expression1009 = new BitSet(new long[]{0x0000000000002080L});
+    public static final BitSet FOLLOW_COLON_in_expression1013 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_expression1017 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_EQUAL_in_expression1022 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_expression1026 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000004L});
+    public static final BitSet FOLLOW_COMMA_in_expression1064 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_expression1076 = new BitSet(new long[]{0x0000000000002080L});
+    public static final BitSet FOLLOW_COLON_in_expression1080 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_expression1084 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_EQUAL_in_expression1089 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_expression1093 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_expression1134 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_conditionalImpliesExpression_in_expression1150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPAREN_in_paramList1183 = new BitSet(new long[]{0x0000001000080000L});
+    public static final BitSet FOLLOW_variableDeclaration_in_paramList1200 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_COMMA_in_paramList1212 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_variableDeclaration_in_paramList1216 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_RPAREN_in_paramList1236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_idList1265 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_COMMA_in_idList1275 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_idList1279 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_IDENT_in_variableDeclaration1310 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_COLON_in_variableDeclaration1312 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_variableDeclaration1316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1352 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_conditionalImpliesExpression1365 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalImpliesExpression1369 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1414 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
+    public static final BitSet FOLLOW_81_in_conditionalOrExpression1427 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_conditionalXOrExpression_in_conditionalOrExpression1431 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
+    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1475 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_conditionalXOrExpression1488 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalXOrExpression1492 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
+    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression1536 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_55_in_conditionalAndExpression1549 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression1553 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression1601 = new BitSet(new long[]{0x0000000040002002L});
+    public static final BitSet FOLLOW_set_in_equalityExpression1620 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression1630 = new BitSet(new long[]{0x0000000040002002L});
+    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression1679 = new BitSet(new long[]{0x0000000001818002L});
+    public static final BitSet FOLLOW_set_in_relationalExpression1697 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression1715 = new BitSet(new long[]{0x0000000001818002L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1765 = new BitSet(new long[]{0x0000000084000002L});
+    public static final BitSet FOLLOW_set_in_additiveExpression1783 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1793 = new BitSet(new long[]{0x0000000084000002L});
+    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression1843 = new BitSet(new long[]{0x0800014000000002L});
+    public static final BitSet FOLLOW_set_in_multiplicativeExpression1861 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression1875 = new BitSet(new long[]{0x0800014000000002L});
+    public static final BitSet FOLLOW_set_in_unaryExpression1937 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF11L});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression1961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_postfixExpression_in_unaryExpression1981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpression_in_postfixExpression2014 = new BitSet(new long[]{0x0000000000000812L});
+    public static final BitSet FOLLOW_ARROW_in_postfixExpression2032 = new BitSet(new long[]{0x0000000000080000L,0x0000000000307410L});
+    public static final BitSet FOLLOW_DOT_in_postfixExpression2038 = new BitSet(new long[]{0x0000000000080000L,0x0000000000307410L});
+    public static final BitSet FOLLOW_propertyCall_in_postfixExpression2049 = new BitSet(new long[]{0x0000000000000812L});
+    public static final BitSet FOLLOW_literal_in_primaryExpression2089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_objectReference_in_primaryExpression2103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_propertyCall_in_primaryExpression2115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2126 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_primaryExpression2130 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ifExpression_in_primaryExpression2144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_primaryExpression2156 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_DOT_in_primaryExpression2158 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54_in_primaryExpression2160 = new BitSet(new long[]{0x0000000002000022L});
+    public static final BitSet FOLLOW_AT_in_primaryExpression2183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_82_in_primaryExpression2185 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2203 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_primaryExpression2218 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_DOT_in_primaryExpression2220 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_primaryExpression2222 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_primaryExpression2226 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_primaryExpression2230 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_primaryExpression2232 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_AT_in_primaryExpression2252 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_82_in_primaryExpression2254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_objectReference2280 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_objectReference2288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_queryExpression_in_propertyCall2353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_iterateExpression_in_propertyCall2366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operationExpression_in_propertyCall2379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeExpression_in_propertyCall2392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_inStateExpression_in_propertyCall2405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_queryExpression2440 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_queryExpression2447 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_elemVarsDeclaration_in_queryExpression2458 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_BAR_in_queryExpression2462 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_queryExpression2473 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_queryExpression2479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_iterateExpression2511 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_iterateExpression2517 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_elemVarsDeclaration_in_iterateExpression2525 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_SEMI_in_iterateExpression2527 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_variableInitialization_in_iterateExpression2535 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_BAR_in_iterateExpression2537 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_iterateExpression2545 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_iterateExpression2551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_operationExpression2595 = new BitSet(new long[]{0x0000000002400022L});
+    public static final BitSet FOLLOW_LBRACK_in_operationExpression2617 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2630 = new BitSet(new long[]{0x0000000400000400L});
+    public static final BitSet FOLLOW_COMMA_in_operationExpression2643 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2647 = new BitSet(new long[]{0x0000000400000400L});
+    public static final BitSet FOLLOW_RBRACK_in_operationExpression2659 = new BitSet(new long[]{0x0000000002400022L});
+    public static final BitSet FOLLOW_LBRACK_in_operationExpression2676 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2691 = new BitSet(new long[]{0x0000000400000400L});
+    public static final BitSet FOLLOW_COMMA_in_operationExpression2706 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2710 = new BitSet(new long[]{0x0000000400000400L});
+    public static final BitSet FOLLOW_RBRACK_in_operationExpression2724 = new BitSet(new long[]{0x0000000002000022L});
+    public static final BitSet FOLLOW_AT_in_operationExpression2749 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_82_in_operationExpression2751 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_LPAREN_in_operationExpression2776 = new BitSet(new long[]{0x801FC318861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2797 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_COMMA_in_operationExpression2809 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_operationExpression2813 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_RPAREN_in_operationExpression2833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_inStateExpression2870 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_inStateExpression2875 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_inStateExpression2884 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_inStateExpression2889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_typeExpression2925 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_typeExpression2949 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_typeExpression2953 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_typeExpression2955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_elemVarsDeclaration2993 = new BitSet(new long[]{0x0000000000000482L});
+    public static final BitSet FOLLOW_COLON_in_elemVarsDeclaration2996 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_elemVarsDeclaration3000 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_COMMA_in_elemVarsDeclaration3010 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_elemVarsDeclaration3016 = new BitSet(new long[]{0x0000000000000482L});
+    public static final BitSet FOLLOW_COLON_in_elemVarsDeclaration3019 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_elemVarsDeclaration3025 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_IDENT_in_variableInitialization3053 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_COLON_in_variableInitialization3055 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_variableInitialization3059 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_EQUAL_in_variableInitialization3061 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_variableInitialization3065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ifExpression3097 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_ifExpression3101 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_86_in_ifExpression3103 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_ifExpression3107 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_60_in_ifExpression3109 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_ifExpression3113 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_62_in_ifExpression3115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_literal3154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_literal3168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_literal3181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REAL_in_literal3196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_in_literal3210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_HASH_in_literal3220 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_literal3224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_literal3236 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_COLON_COLON_in_literal3238 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_IDENT_in_literal3242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_collectionLiteral_in_literal3254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_emptyCollectionLiteral_in_literal3266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_undefinedLiteral_in_literal3278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_tupleLiteral_in_literal3290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STAR_in_literal3302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_collectionLiteral3340 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_LBRACE_in_collectionLiteral3369 = new BitSet(new long[]{0x801FC30A861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_collectionItem_in_collectionLiteral3386 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_COMMA_in_collectionLiteral3399 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_collectionItem_in_collectionLiteral3403 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_RBRACE_in_collectionLiteral3422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_collectionItem3451 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_DOTDOT_in_collectionItem3462 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_collectionItem3466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_emptyCollectionLiteral3495 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_emptyCollectionLiteral3497 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_collectionType_in_emptyCollectionLiteral3501 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_emptyCollectionLiteral3503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_collectionType_in_emptyCollectionLiteral3519 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_LBRACE_in_emptyCollectionLiteral3521 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_RBRACE_in_emptyCollectionLiteral3523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_undefinedLiteral3553 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_undefinedLiteral3555 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_undefinedLiteral3559 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_undefinedLiteral3561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_undefinedLiteral3575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_undefinedLiteral3589 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_undefinedLiteral3591 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_undefinedLiteral3595 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_undefinedLiteral3597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_undefinedLiteral3611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_tupleLiteral3650 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_LBRACE_in_tupleLiteral3656 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_tupleItem_in_tupleLiteral3664 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_COMMA_in_tupleLiteral3675 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_tupleItem_in_tupleLiteral3679 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_RBRACE_in_tupleLiteral3690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_tupleItem3721 = new BitSet(new long[]{0x0000000000002080L});
+    public static final BitSet FOLLOW_COLON_in_tupleItem3760 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_tupleItem3764 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_EQUAL_in_tupleItem3766 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_tupleItem3770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_tupleItem3792 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_tupleItem3802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_simpleType_in_type3868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_collectionType_in_type3880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_tupleType_in_type3892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_type_in_typeOnly3924 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_typeOnly3926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_simpleType3954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_collectionType3992 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_collectionType4019 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_collectionType4023 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_RPAREN_in_collectionType4025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_tupleType4059 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_LPAREN_in_tupleType4061 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_tuplePart_in_tupleType4070 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_COMMA_in_tupleType4081 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_tuplePart_in_tupleType4085 = new BitSet(new long[]{0x0000001000000400L});
+    public static final BitSet FOLLOW_RPAREN_in_tupleType4097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_tuplePart4129 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_COLON_in_tuplePart4131 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_tuplePart4135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COLON_in_synpred1_Query3751 = new BitSet(new long[]{0x000FC00000080000L});
+    public static final BitSet FOLLOW_type_in_synpred1_Query3753 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_EQUAL_in_synpred1_Query3755 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -1,3 +1,7 @@
+/* Author: Hao Wu 
+ * A simple query langauge (Q) for debugging and verifying UML models.
+ * 28th Feburary, 2019
+ */
 grammar Query;
 options {
   superClass = BaseParser;
