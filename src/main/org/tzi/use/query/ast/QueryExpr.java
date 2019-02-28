@@ -78,7 +78,7 @@ public class QueryExpr extends QAst{
         }
 
         if (oclExpr!=null){
-            sb.append("{");
+            sb.append(" inject {");
             sb.append(oclExpr.toString());
             sb.append("}");
         }

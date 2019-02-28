@@ -938,7 +938,7 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=butExpr {$qexpr.addWithoutExpr(without);})?  
+        (without=butExpr {$qexpr.addWithoutExpr(without);})? ('inject' o=injExpr {$qexpr.setOCLExpression(o);})?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
@@ -948,9 +948,13 @@ queryExpr returns [QueryExpr qexpr] @init{
   //  | queryExpr '||' queryExpr
 //;
 featureExpr returns [QFeatureExpr feature]: 
-    (modifier=modifiers) ? dest=(IDENT|STAR) (rankExpr)?
+    (modifier=modifiers) ? dest=(IDENT|STAR) (k=rankExpr)?
     {
-        $feature= new QClassExpr($dest.getText(),modifier);
+        $feature = (k>0) ?
+                    new QClassExpr($dest.getText(),modifier,k)
+                    :
+                    new QClassExpr($dest.getText(),modifier)
+                    ;
     }
     | f1 = attrExpr {$feature=f1;}
     | f2 = assocExpr {$feature=f2;}
@@ -964,12 +968,25 @@ modifiers returns [Modifier m]:
     |'all' {$m=Modifier.NO;}
 ;
 attrExpr returns [QAttrExpr attr]:
-    src=(IDENT|STAR) DOT dest=(IDENT|STAR) (rankExpr)? {attr = new QAttrExpr($src.getText(),$dest.getText());}
+    src=(IDENT|STAR) DOT dest=(IDENT|STAR) (k=rankExpr)? 
+    {
+        attr = (k>0) ? 
+               new QAttrExpr($src.getText(),$dest.getText(),k)
+               :
+               new QAttrExpr($src.getText(),$dest.getText())
+               ;
+    }
 ;
 
 assocExpr returns [QAssocExpr assoc]
-: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR) (rankExpr)?
-    {assoc = new QAssocExpr($src.getText(),$name.getText(),$dest.getText());}
+: src=(IDENT|STAR) COLON name=(IDENT|STAR) COLON dest=(IDENT|STAR) (k=rankExpr)?
+    {
+        assoc = (k>0) ? 
+                new QAssocExpr($src.getText(),$name.getText(),$dest.getText(),k) 
+                :
+                new QAssocExpr($src.getText(),$name.getText(),$dest.getText())
+                ;
+    }
 ;
 
 withExpr returns [QWithExpr with] @init{
@@ -985,10 +1002,20 @@ butExpr returns [QButExpr without] @init{
 ;
 
 invExpr returns [QInvExpr inv]: 
-    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) (rankExpr)? {inv = new QInvExpr($src.getText(),$dest.getText());}
+    src=(IDENT|STAR) COLON_COLON dest=(IDENT|STAR) (k=rankExpr)? 
+    {
+        
+        inv =   (k>0) ? 
+                new QInvExpr($src.getText(),$dest.getText(),k)
+                :
+                new QInvExpr($src.getText(),$dest.getText())
+                ;
+    }
 ;
 
-rankExpr returns [int rank]:
+rankExpr returns [int rank] @init{
+    $rank=0;
+ }:
     AT k=INT {$rank=Integer.parseInt($k.text);}
 ;
 
@@ -997,6 +1024,26 @@ moduleExpr returns [ModuleExpr mexpr]:
         query=queryExpr {$mexpr.addQuery(query);} 
         (query=queryExpr {$mexpr.addQuery(query);})*
     'end'
+;
+
+injExpr returns [QOCLExpr ocl_expr] @init{
+    $ocl_expr = new QOCLExpr();
+}: 
+    LBRACE expr=expression (k=rankExpr)? 
+    {
+        if (k>0)
+            $ocl_expr.addOCLExpression(expr.n,k);
+        else
+            $ocl_expr.addOCLExpression(expr.n);
+    } 
+    (COMMA expr=expression (k=rankExpr)? 
+        {
+            if (k>0)
+                $ocl_expr.addOCLExpression(expr.n,k);
+            else
+                $ocl_expr.addOCLExpression(expr.n);
+        }
+    )* RBRACE
 ;
 /*
 --------- Start of file OCLBase.gpart -------------------- 

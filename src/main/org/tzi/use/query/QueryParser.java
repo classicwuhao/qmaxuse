@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-02-28 16:55:15
+// $ANTLR 3.4 Query.g 2019-02-28 17:46:50
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -348,7 +348,7 @@ public class QueryParser extends BaseParser {
 
 
     // $ANTLR start "queryExpr"
-    // Query.g:72:1: queryExpr returns [QueryExpr qexpr] : ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT );
+    // Query.g:72:1: queryExpr returns [QueryExpr qexpr] : ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= injExpr )? ( 'as' name= IDENT )? |alias= IDENT );
     public final QueryExpr queryExpr() throws RecognitionException {
         QueryExpr qexpr = null;
 
@@ -368,7 +368,7 @@ public class QueryParser extends BaseParser {
             qexpr = new QueryExpr();
 
         try {
-            // Query.g:74:2: ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )? |alias= IDENT )
+            // Query.g:74:2: ( 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= injExpr )? ( 'as' name= IDENT )? |alias= IDENT )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -388,7 +388,7 @@ public class QueryParser extends BaseParser {
             }
             switch (alt9) {
                 case 1 :
-                    // Query.g:75:5: 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= oclExpr )? ( 'as' name= IDENT )?
+                    // Query.g:75:5: 'select' f= featureExpr ( COMMA f= featureExpr )* (with= withExpr )? (without= butExpr )? ( 'inject' o= injExpr )? ( 'as' name= IDENT )?
                     {
                     match(input,83,FOLLOW_83_in_queryExpr323); if (state.failed) return qexpr;
 
@@ -484,7 +484,7 @@ public class QueryParser extends BaseParser {
                     }
 
 
-                    // Query.g:77:62: ( 'inject' o= oclExpr )?
+                    // Query.g:77:62: ( 'inject' o= injExpr )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -493,12 +493,12 @@ public class QueryParser extends BaseParser {
                     }
                     switch (alt7) {
                         case 1 :
-                            // Query.g:77:63: 'inject' o= oclExpr
+                            // Query.g:77:63: 'inject' o= injExpr
                             {
                             match(input,67,FOLLOW_67_in_queryExpr379); if (state.failed) return qexpr;
 
-                            pushFollow(FOLLOW_oclExpr_in_queryExpr383);
-                            o=oclExpr();
+                            pushFollow(FOLLOW_injExpr_in_queryExpr383);
+                            o=injExpr();
 
                             state._fsp--;
                             if (state.failed) return qexpr;
@@ -1397,9 +1397,9 @@ public class QueryParser extends BaseParser {
 
 
 
-    // $ANTLR start "oclExpr"
-    // Query.g:165:1: oclExpr returns [QOCLExpr ocl_expr] : LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE ;
-    public final QOCLExpr oclExpr() throws RecognitionException {
+    // $ANTLR start "injExpr"
+    // Query.g:165:1: injExpr returns [QOCLExpr ocl_expr] : LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE ;
+    public final QOCLExpr injExpr() throws RecognitionException {
         QOCLExpr ocl_expr = null;
 
 
@@ -1415,9 +1415,9 @@ public class QueryParser extends BaseParser {
             // Query.g:167:2: ( LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE )
             // Query.g:168:5: LBRACE expr= expression (k= rankExpr )? ( COMMA expr= expression (k= rankExpr )? )* RBRACE
             {
-            match(input,LBRACE,FOLLOW_LBRACE_in_oclExpr864); if (state.failed) return ocl_expr;
+            match(input,LBRACE,FOLLOW_LBRACE_in_injExpr864); if (state.failed) return ocl_expr;
 
-            pushFollow(FOLLOW_expression_in_oclExpr868);
+            pushFollow(FOLLOW_expression_in_injExpr868);
             expr=expression();
 
             state._fsp--;
@@ -1434,7 +1434,7 @@ public class QueryParser extends BaseParser {
                 case 1 :
                     // Query.g:168:29: k= rankExpr
                     {
-                    pushFollow(FOLLOW_rankExpr_in_oclExpr873);
+                    pushFollow(FOLLOW_rankExpr_in_injExpr873);
                     k=rankExpr();
 
                     state._fsp--;
@@ -1468,9 +1468,9 @@ public class QueryParser extends BaseParser {
             	case 1 :
             	    // Query.g:175:6: COMMA expr= expression (k= rankExpr )?
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_oclExpr890); if (state.failed) return ocl_expr;
+            	    match(input,COMMA,FOLLOW_COMMA_in_injExpr890); if (state.failed) return ocl_expr;
 
-            	    pushFollow(FOLLOW_expression_in_oclExpr894);
+            	    pushFollow(FOLLOW_expression_in_injExpr894);
             	    expr=expression();
 
             	    state._fsp--;
@@ -1487,7 +1487,7 @@ public class QueryParser extends BaseParser {
             	        case 1 :
             	            // Query.g:175:29: k= rankExpr
             	            {
-            	            pushFollow(FOLLOW_rankExpr_in_oclExpr899);
+            	            pushFollow(FOLLOW_rankExpr_in_injExpr899);
             	            k=rankExpr();
 
             	            state._fsp--;
@@ -1515,7 +1515,7 @@ public class QueryParser extends BaseParser {
             } while (true);
 
 
-            match(input,RBRACE,FOLLOW_RBRACE_in_oclExpr921); if (state.failed) return ocl_expr;
+            match(input,RBRACE,FOLLOW_RBRACE_in_injExpr921); if (state.failed) return ocl_expr;
 
             }
 
@@ -1530,7 +1530,7 @@ public class QueryParser extends BaseParser {
         }
         return ocl_expr;
     }
-    // $ANTLR end "oclExpr"
+    // $ANTLR end "injExpr"
 
 
 
@@ -5438,7 +5438,7 @@ public class QueryParser extends BaseParser {
     public static final BitSet FOLLOW_withExpr_in_queryExpr354 = new BitSet(new long[]{0x0300000000000002L,0x0000000000000008L});
     public static final BitSet FOLLOW_butExpr_in_queryExpr372 = new BitSet(new long[]{0x0100000000000002L,0x0000000000000008L});
     public static final BitSet FOLLOW_67_in_queryExpr379 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_oclExpr_in_queryExpr383 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_injExpr_in_queryExpr383 = new BitSet(new long[]{0x0100000000000002L});
     public static final BitSet FOLLOW_56_in_queryExpr398 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_IDENT_in_queryExpr402 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IDENT_in_queryExpr418 = new BitSet(new long[]{0x0000000000000002L});
@@ -5479,13 +5479,13 @@ public class QueryParser extends BaseParser {
     public static final BitSet FOLLOW_queryExpr_in_moduleExpr817 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
     public static final BitSet FOLLOW_queryExpr_in_moduleExpr833 = new BitSet(new long[]{0x2000000000080000L,0x0000000000080000L});
     public static final BitSet FOLLOW_61_in_moduleExpr843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACE_in_oclExpr864 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_oclExpr868 = new BitSet(new long[]{0x0000000200000420L});
-    public static final BitSet FOLLOW_rankExpr_in_oclExpr873 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_COMMA_in_oclExpr890 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
-    public static final BitSet FOLLOW_expression_in_oclExpr894 = new BitSet(new long[]{0x0000000200000420L});
-    public static final BitSet FOLLOW_rankExpr_in_oclExpr899 = new BitSet(new long[]{0x0000000200000400L});
-    public static final BitSet FOLLOW_RBRACE_in_oclExpr921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACE_in_injExpr864 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_injExpr868 = new BitSet(new long[]{0x0000000200000420L});
+    public static final BitSet FOLLOW_rankExpr_in_injExpr873 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_COMMA_in_injExpr890 = new BitSet(new long[]{0x801FC308861A0020L,0x0000000000B0FF31L});
+    public static final BitSet FOLLOW_expression_in_injExpr894 = new BitSet(new long[]{0x0000000200000420L});
+    public static final BitSet FOLLOW_rankExpr_in_injExpr899 = new BitSet(new long[]{0x0000000200000400L});
+    public static final BitSet FOLLOW_RBRACE_in_injExpr921 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expression_in_expressionOnly948 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_expressionOnly950 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_69_in_expression998 = new BitSet(new long[]{0x0000000000080000L});

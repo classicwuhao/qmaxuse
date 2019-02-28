@@ -74,7 +74,7 @@ queryExpr returns [QueryExpr qexpr] @init{
 }: 
     'select' f=featureExpr {$qexpr.addFeature(f);} (COMMA f=featureExpr {$qexpr.addFeature(f);})* 
         (with=withExpr {$qexpr.addWithExpr(with);})? 
-        (without=butExpr {$qexpr.addWithoutExpr(without);})? ('inject' o=oclExpr {$qexpr.setOCLExpression(o);})?
+        (without=butExpr {$qexpr.addWithoutExpr(without);})? ('inject' o=injExpr {$qexpr.setOCLExpression(o);})?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());}
 ;
@@ -162,7 +162,7 @@ moduleExpr returns [ModuleExpr mexpr]:
     'end'
 ;
 
-oclExpr returns [QOCLExpr ocl_expr] @init{
+injExpr returns [QOCLExpr ocl_expr] @init{
     $ocl_expr = new QOCLExpr();
 }: 
     LBRACE expr=expression (k=rankExpr)? 

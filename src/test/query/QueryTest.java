@@ -381,7 +381,10 @@ public final class QueryTest{
     }
 
     public int Case17(){
-        String query0="verify select A.*@4, B@5 with C::*@10 inject {A.b()->Empty()@10, A.allInstances()->forAll(a|a.b()->forAll(b|a.x<>b.x))@8}";
+        //String query0="verify select A.*@4, B@5 with C::*@10 inject {A.b()->Empty()@10, A.allInstances()->forAll(a|a.b()->forAll(b|a.x<>b.x))@8}";
+        String query0="module queryset0 \n"
+                +"select Student.*@5 with Student::* inject {A.b()->notEmpty()}\n"
+                +" end\n";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);

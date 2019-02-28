@@ -41,6 +41,7 @@ public class QOCLExpr extends QAst{
     public String toString(){
         StringBuffer sb = new StringBuffer();
         ASTExpression expr =null;
+        
         for (int i=0;i<expressions.size()-1;i++){
             expr = expressions.get(i);
             if (this.rankMap.containsKey(expr))

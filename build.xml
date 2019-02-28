@@ -269,8 +269,8 @@
 		<echo>Generating generator parser</echo>
 		<concat destfile="${parser.dir}/generator/Generator.g">
 			<fileset file="${parser.dir}/generator/Generator.gpart" />
-			<fileset file="${parser.dir}/base/USEBase.gpart" />
-			<fileset file="${query.dir}/QueryUSE.gpart" />
+			<fileset file="${parser.dir}/base/USEBase.gpart"/>
+			<fileset file="${query.dir}/QueryUSE.gpart"/>
 			<fileset file="${parser.dir}/base/OCLBase.gpart" />
 			<fileset file="${parser.dir}/base/SoilBase.gpart" />
 			<fileset file="${parser.dir}/base/OCLLexerRules.gpart" />
