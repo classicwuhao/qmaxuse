@@ -55,8 +55,8 @@ module queryset1
 end 
 
 module queryset2
-	select Student.*, Module.* with Student::*, {
+	select Student.*, Module.* with Student::* inject{
 			Student.allInstances()->forAll(s|s.modules->notEmpty())
-		},[(forall (Int X) (Int Y) )]
+		}
 	
 end

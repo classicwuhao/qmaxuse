@@ -4,7 +4,7 @@ import org.tzi.use.parser.ocl.*;
 import java.util.List;
 import java.util.ArrayList;
 
-/*A Wrapper class for holding simple OCL expressions. */ 
+/* A Wrapper class for holding simple OCL expressions. */ 
 public class QOCLExpr extends QAst{
     private List<ASTExpression> expressions;
 
