@@ -9,6 +9,11 @@ public class QAttrExpr extends QFeatureExpr{
         this.name = name;
     }
 
+    public QAttrExpr(String container, String name, int k){
+        this (container, name);
+        this.setRank(k);
+    }
+
     public String name(){return this.name;}
     public String container(){return this.container;}
 
@@ -17,6 +22,9 @@ public class QAttrExpr extends QFeatureExpr{
 
     @Override
     public String toString(){
-        return container+"."+name;
+        return  (this.rank()>0) ? 
+                this.container+"."+this.name+"@"+this.rank()
+                :
+                this.container+"."+this.name;
     }
 }

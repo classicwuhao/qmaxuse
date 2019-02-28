@@ -1,7 +1,6 @@
 package org.tzi.use.query.ast;
 
 public class QInvExpr extends QFeatureExpr{
-
     private String name;
     private String context;
 
@@ -10,11 +9,20 @@ public class QInvExpr extends QFeatureExpr{
         this.name = name;
     }
 
+    public QInvExpr(String context, String name, int k){
+        this (context, name);
+        this.setRank(k);
+    }
+
     public String name(){return this.name;}
     public String context(){return this.context;}
 
     public String toString(){
-        return this.context+"::"+this.name;
+        return  (this.rank()>0) ? 
+                this.context+"::"+this.name+'@'+this.rank() 
+                : 
+                this.context+"::"+this.name
+                ;
     }
 
     public boolean isInvExpr(){return true;}

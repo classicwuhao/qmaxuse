@@ -360,7 +360,7 @@ public final class QueryTest{
     }
 
     public int Case16(){
-        String query0="verify select Student.* with Student::* inject {Student.modules()->notEmpty(), Student.allInstances()->forAll(s|s.year>5)}";
+        String query0="verify select Student.* with Student::* inject {Student.modules()->notEmpty()@12, Student.allInstances()->forAll(s|s.year>5)}";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);

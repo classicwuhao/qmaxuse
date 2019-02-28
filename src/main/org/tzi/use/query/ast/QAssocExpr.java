@@ -10,6 +10,10 @@ public class QAssocExpr extends QFeatureExpr{
         this.endB = endB;
         this.name = name;
     }
+    public QAssocExpr(String endA, String name, String endB, int k){
+        this(endA, name, endB);
+        this.setRank(k);
+    }
 
     public String name(){return this.name;}
     public String endA(){return this.endA;}
@@ -20,6 +24,10 @@ public class QAssocExpr extends QFeatureExpr{
 
     @Override
     public String toString(){
-        return this.endA+":"+this.name+":"+this.endB;
+        
+        return  (this.rank()>0) ? 
+                this.endA+":"+this.name+":"+this.endB +'@'+this.rank() 
+                :
+                this.endA+":"+this.name+":"+this.endB;
     }
 }

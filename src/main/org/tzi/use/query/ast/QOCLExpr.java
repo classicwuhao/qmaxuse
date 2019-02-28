@@ -3,13 +3,16 @@ package org.tzi.use.query.ast;
 import org.tzi.use.parser.ocl.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /* A Wrapper class for holding simple OCL expressions. */ 
 public class QOCLExpr extends QAst{
     private List<ASTExpression> expressions;
+    private HashMap<ASTExpression, Integer> rankMap;
 
     public QOCLExpr(){
         expressions = new ArrayList<ASTExpression>();
+        rankMap = new HashMap<ASTExpression, Integer>();
     }
     public QOCLExpr (ASTExpression expr){
         this();
@@ -21,12 +24,37 @@ public class QOCLExpr extends QAst{
         this.expressions.add(expr);
     }
 
+    public void addOCLExpression(ASTExpression expr, int k){
+        if (!rankMap.containsKey(expr)) {
+            this.expressions.add(expr);
+            rankMap.put(expr,new Integer(k));
+        }
+    }
+
+    public int getRank(ASTExpression expr){
+        if (rankMap.containsKey(expr))
+            return rankMap.get(expr);
+        else    
+            return 0;
+    }
+
     public String toString(){
         StringBuffer sb = new StringBuffer();
-        for (int i=0;i<expressions.size()-1;i++)
-            sb.append(expressions.get(i).toString()+ " , ");
+        ASTExpression expr =null;
+        for (int i=0;i<expressions.size()-1;i++){
+            expr = expressions.get(i);
+            if (this.rankMap.containsKey(expr))
+                sb.append(expr.toString()+"@"+this.rankMap.get(expr)+" , ");
+            else    
+                sb.append(expr.toString()+" , ");
+        }
         
-        sb.append(expressions.get(expressions.size()-1).toString());
+        expr = expressions.get(expressions.size()-1);
+        if (this.rankMap.containsKey(expr))
+            sb.append(expr.toString()+"@"+this.rankMap.get(expr)+" , ");
+        else
+            sb.append(expr.toString()+" , ");
+
         return sb.toString();
     }
 

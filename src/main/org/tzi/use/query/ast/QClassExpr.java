@@ -8,6 +8,12 @@ public class QClassExpr extends QFeatureExpr{
         this.name = name;
         this.modifier = modifier;
     }
+
+    public QClassExpr (String name, Modifier modifier, int k){
+        this(name,modifier);
+        this.setRank(k);
+    }
+
     public String name(){return this.name;}
     public Modifier modifier(){return this.modifier;}
 
@@ -16,10 +22,9 @@ public class QClassExpr extends QFeatureExpr{
 
     @Override
     public String toString(){
-        return 
-                (this.modifier==null) 
-                ? 
-                this.name+" " 
-                : " "+this.modifier+" "+this.name+" ";
+        String str = (this.modifier==null) ? this.name+" " : " "+this.modifier+" "+this.name+" ";
+        str = (this.rank()>0) ? str+'@'+this.rank() : str;
+
+        return str;
     }
 }
