@@ -35,6 +35,11 @@ public class QueryExpr extends QAst{
         this.alias = alias;
     }
 
+    public boolean containInjection(){
+        if (oclExpr!=null)
+            return oclExpr.expression().size()>0;
+        return false;
+    }
     public List<QFeatureExpr> features(){return this.features;}
     public QWithExpr withExpr(){return this.withExpr;}
     public QButExpr butExpr(){return this.withoutExpr;}
@@ -83,6 +88,6 @@ public class QueryExpr extends QAst{
             sb.append("}");
         }
 
-        return (this.alias.length()!=0) ? sb.toString()+ " As " + this.alias : sb.toString();
+        return (this.alias.length()!=0) ? sb.toString()+ " as " + this.alias : sb.toString();
     }
 }

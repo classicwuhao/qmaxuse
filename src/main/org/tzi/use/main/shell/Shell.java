@@ -774,7 +774,9 @@ public final class Shell implements Runnable, PPCHandler {
             system = new MSystem(model);
         }
         InputStream stream = new ByteArrayInputStream(line.getBytes());
-        int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
+        int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
+        //.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
+        
     }
 
     /**
