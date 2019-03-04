@@ -1,5 +1,7 @@
 package org.tzi.use.query.ast;
 
+import org.tzi.use.query.visitor.AbstractVisitor;
+
 public class QClassExpr extends QFeatureExpr{
     private String name;
     private Modifier modifier;
@@ -26,5 +28,9 @@ public class QClassExpr extends QFeatureExpr{
         str = (this.rank()>0) ? str+'@'+this.rank() : str;
 
         return str;
+    }
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitClassExpr(this);
     }
 }

@@ -1,4 +1,5 @@
 package org.tzi.use.query.ast;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QAttrExpr extends QFeatureExpr{
     private String container;
@@ -26,5 +27,9 @@ public class QAttrExpr extends QFeatureExpr{
                 this.container+"."+this.name+"@"+this.rank()
                 :
                 this.container+"."+this.name;
+    }
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitAttrExpr(this);
     }
 }

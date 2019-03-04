@@ -2,6 +2,7 @@ package org.tzi.use.query.ast;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QueryExpr extends QAst{
     private List<QFeatureExpr> features;
@@ -45,6 +46,9 @@ public class QueryExpr extends QAst{
     public QButExpr butExpr(){return this.withoutExpr;}
     public QOCLExpr oclExpr(){return this.oclExpr;}
     public String alias(){return this.alias;}
+    public void accept(AbstractVisitor visitor){
+        visitor.visitQueryExpr(this);
+    }
 
     @Override
     public boolean isQuery(){return true;}

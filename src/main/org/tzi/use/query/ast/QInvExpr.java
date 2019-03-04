@@ -1,4 +1,5 @@
 package org.tzi.use.query.ast;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QInvExpr extends QFeatureExpr{
     private String name;
@@ -27,4 +28,7 @@ public class QInvExpr extends QFeatureExpr{
 
     public boolean isInvExpr(){return true;}
 
+    public void accept(AbstractVisitor visitor){
+        visitor.visitInvExpr(this);
+    }
 }
