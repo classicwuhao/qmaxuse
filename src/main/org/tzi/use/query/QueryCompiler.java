@@ -21,6 +21,11 @@ import org.tzi.use.uml.ocl.expr.Expression;
 import org.tzi.use.uml.ocl.type.Type;
 import org.tzi.use.uml.ocl.value.VarBindings;
 import org.tzi.use.uml.sys.MSystemState;
+import org.tzi.use.query.visitor.AbstractVisitor;
+import org.tzi.use.query.visitor.QueryVisitor;
+import org.tzi.use.query.io.ColorPrint;
+import org.tzi.use.query.io.Color;
+import java.io.PrintStream;
 
 public class QueryCompiler{
     private int errors=0;
@@ -33,6 +38,7 @@ public class QueryCompiler{
         ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
         ANTLRInputStream aInput;
         QAst expr =null;
+        ColorPrint out = new ColorPrint();
 
 		try {
 			aInput = new ANTLRInputStream(in);
@@ -47,14 +53,19 @@ public class QueryCompiler{
         QueryParser parser = new QueryParser(tokenStream);
         lexer.init(errHandler);
         parser.init(errHandler);
-        
+        out.println("Launching QueryCompiler...",Color.WHITE);
+
         try{
-             expr = parser.checkExpr();
-           if (errHandler.errorCount() == 0 ) {
+            expr = parser.checkExpr();
+            if (errHandler.errorCount() == 0 ) {
+                QueryVisitor visitor = new QueryVisitor(model);
+                expr.accept(visitor);
+                out.println(visitor.state().toString(),Color.CYAN);
                 //System.out.println("no error");
                 return 1;
             }
             else{
+                out.println("Invalid query,"+ errHandler.errorCount()+" syntax error(s)",Color.RED);
                 //System.out.println("syntax error:"+errHandler.errorCount());
                 return -1;
             }
