@@ -1,5 +1,7 @@
 package org.tzi.use.query.ast;
 
+import org.tzi.use.query.visitor.AbstractVisitor;
+
 public class CheckExpr extends QAst{
     private QueryExpr expr;
     private QueryBinaryExpr bexpr;
@@ -16,6 +18,11 @@ public class CheckExpr extends QAst{
     }
 
     public String toString(){
-        return "test";
+        return "CheckExpr";
     }
+
+    public void accept (AbstractVisitor visitor){
+        visitor.visitCheckExpr(this);
+    }
+
 }

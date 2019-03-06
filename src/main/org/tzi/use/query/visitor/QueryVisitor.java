@@ -147,6 +147,14 @@ public class QueryVisitor extends AbstractVisitor {
 
     }
 
+    public void visitWithExpr (QWithExpr e){
+
+    }
+
+    public void visitCheckExpr (CheckExpr e){
+        
+    }
+
     private MClass findClass (String name){
         return model.getClass(name);
     }
