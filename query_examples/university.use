@@ -24,9 +24,40 @@ attributes
 	year:	Integer
 end
 
+class Department
+attributes
+	name: Integer
+end
+
+class Assignment
+attributes
+	code: Integer
+	due: Integer
+end
+
 association study between
 	Student [1..1] role student
 	Module [0..*] role modules
+end
+
+association contain between
+	Student [1..*] role student
+	Department [1..*] role department
+end
+
+association design between
+	Department [1..*] role department
+	Module [1..*] role modules
+end
+
+association homework between
+	Assignment [1..*] role assignment
+	Module [1..*] role modules
+end
+
+association finish between
+	Assignment [1..*] role assignment
+	Student [1..*] role student
 end
 
 constraints

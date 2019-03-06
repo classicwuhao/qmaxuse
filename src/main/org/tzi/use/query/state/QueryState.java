@@ -1,13 +1,9 @@
 package org.tzi.use.query.state;
 import org.tzi.use.query.ast.*;
 import org.tzi.use.uml.mm.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class QueryState{
-
     private Set<MClass> classes;
     private Set<MAttribute> attributes;
     private Set<MAssociation> associations;
@@ -25,17 +21,27 @@ public class QueryState{
     public Set<MAssociation> associations(){return this.associations;}
     public Set<MClassInvariant> invariants(){return this.invariants;}
 
+    public void refine(){
+        /* class */
+        for (MClass cls : classes){
+
+        }
+    }
 
     public String toString(){
         StringBuffer sb = new StringBuffer();
-        sb.append("========Seleected Classes======== \n");
+        sb.append("========Selected Classes======== \n");
         sb.append(this.classes);
         sb.append("\n");
-        sb.append("========Seleected Attributes======== \n");
+        sb.append("========Selected Attributes======== \n");
         sb.append("[");
         for (MAttribute attr : attributes) sb.append(attr.owner()+"."+attr.name()+" ");
         sb.append("]\n");
-
+        sb.append("========Selected Associations======== \n");
+        sb.append("[\n");
+        for (MAssociation assoc: associations) sb.append(assoc.name()+":"+assoc.associatedClasses()+" ");
+        sb.append("]\n");
+        
         return sb.toString();
     }
 

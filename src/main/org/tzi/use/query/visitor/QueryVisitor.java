@@ -6,13 +6,14 @@ import org.tzi.use.uml.mm.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.Iterator;
 import java.util.HashSet;
 import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
 
 public class QueryVisitor extends AbstractVisitor {
     private MModel model;
-    ColorPrint out;
+    private ColorPrint out;
     private boolean verbose;
     private QueryState state;
 
@@ -63,7 +64,7 @@ public class QueryVisitor extends AbstractVisitor {
                 list.add(cls);
                 state.classes().add(cls);
             }
-        }    
+        }
 
         for (MClass c : list){
             if (e.name().equals("*")){
@@ -104,7 +105,42 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitAssocExpr(QAssocExpr e){
-
+        List<MAssociation> list = new ArrayList<MAssociation>();
+        list.addAll(model.associations());
+        
+        if (!e.endA().equals("*")){
+            Iterator<MAssociation> it = list.iterator(); //IMPORTANT: use an iterator to remove elements in a list.
+            while (it.hasNext()){
+                MAssociation assoc = it.next();
+                if (!assoc.associationEnds().get(0).cls().name().equals(e.endA())) it.remove();
+            }
+        }
+        
+        if (!e.name().equals("*")){
+            Iterator<MAssociation> it = list.iterator(); //IMPORTANT: use an iterator to remove elements in a list.
+            while (it.hasNext()){
+                MAssociation assoc = it.next();
+                if (!assoc.name().equals(e.name())) it.remove();
+            }
+        }
+        
+        if (!e.endB().equals("*")){
+            Iterator<MAssociation> it = list.iterator(); //IMPORTANT: use an iterator to remove elements in a list.
+            while (it.hasNext()){
+                MAssociation assoc = it.next();   
+                if (!assoc.associationEnds().get(1).cls().name().equals(e.endB())) it.remove();
+            }
+        }
+        
+        for (MAssociation assoc: list) {
+            if (assoc!=null){
+                 state.associations().add(assoc);
+                 MClass clsA = assoc.associationEnds().get(0).cls();
+                 MClass clsB = assoc.associationEnds().get(1).cls();
+                 if (! state.classes().contains(clsA)) state.classes().add(clsA);
+                 if (! state.classes().contains(clsB)) state.classes().add(clsB);
+            }
+        }
     }
 
     public void visitInvExpr (QInvExpr e){
@@ -115,5 +151,9 @@ public class QueryVisitor extends AbstractVisitor {
         return model.getClass(name);
     }
     
+    private MAssociation findAssociation(String name){
+        return model.getAssociation(name);
+    }
+
     public QueryState state(){return this.state;}
 }

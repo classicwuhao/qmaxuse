@@ -4,7 +4,7 @@ import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QClassExpr extends QFeatureExpr{
     private String name;
-    private Modifier modifier;
+    private Modifier modifier=Modifier.ALL; //default modifier.
     
     public QClassExpr (String name, Modifier modifier){
         this.name = name;

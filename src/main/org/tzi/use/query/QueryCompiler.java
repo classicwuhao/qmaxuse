@@ -61,12 +61,10 @@ public class QueryCompiler{
                 QueryVisitor visitor = new QueryVisitor(model);
                 expr.accept(visitor);
                 out.println(visitor.state().toString(),Color.CYAN);
-                //System.out.println("no error");
                 return 1;
             }
             else{
                 out.println("Invalid query,"+ errHandler.errorCount()+" syntax error(s)",Color.RED);
-                //System.out.println("syntax error:"+errHandler.errorCount());
                 return -1;
             }
         }

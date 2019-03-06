@@ -1,4 +1,5 @@
 package org.tzi.use.query.ast;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QAssocExpr extends QFeatureExpr{
     private String name;
@@ -29,5 +30,9 @@ public class QAssocExpr extends QFeatureExpr{
                 this.endA+":"+this.name+":"+this.endB +'@'+this.rank() 
                 :
                 this.endA+":"+this.name+":"+this.endB;
+    }
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitAssocExpr(this);
     }
 }
