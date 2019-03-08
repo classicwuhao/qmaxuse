@@ -63,18 +63,18 @@ end
 constraints
 
 context Person
-	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
+	inv inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 
 context Student
-	inv: self.age > 18
-	inv: self.year>=1 and self.year<=6
-	inv: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
-	inv: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
-	inv: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
-	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
+	inv inv2: self.age > 18
+	inv inv3: self.year>=1 and self.year<=6
+	inv inv4: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
+	inv inv5: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
+	inv inv6: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
+	inv inv7: Student.allInstances()->forAll(s|s.modules->notEmpty())
 
 context Module
-	inv: self.year>=1 and self.year<=5
+	inv inv8: self.year>=1 and self.year<=5
 	
 module queryset0
 	select Person.*, Student.* with Student::*

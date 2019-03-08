@@ -38,10 +38,14 @@ public class QueryState{
         for (MAttribute attr : attributes) sb.append(attr.owner()+"."+attr.name()+" ");
         sb.append("]\n");
         sb.append("========Selected Associations======== \n");
-        sb.append("[\n");
+        sb.append("[");
         for (MAssociation assoc: associations) sb.append(assoc.name()+":"+assoc.associatedClasses()+" ");
         sb.append("]\n");
-        
+        sb.append("========Selected Invariants======== \n");
+        sb.append("[");
+        for (MClassInvariant inv: invariants) sb.append(inv.qualifiedName()+" ");
+        sb.append("]\n");
+
         return sb.toString();
     }
 

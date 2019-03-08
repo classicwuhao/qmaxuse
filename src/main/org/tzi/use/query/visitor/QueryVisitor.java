@@ -25,7 +25,16 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitQueryExpr(QueryExpr e) {
+        if (this.model==null) {
+            out.println("Model is empty.",Color.RED);
+            return;
+        }
+
         for (QFeatureExpr expr: e.features()) expr.accept(this);
+
+        /* visit with expr */
+        e.withExpr().accept(this);
+
     }
 
     public void visitClassExpr(QClassExpr e) {
@@ -144,11 +153,37 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitInvExpr (QInvExpr e){
+        List<MClassInvariant> list = new ArrayList<MClassInvariant>();
+        if (e.context().equals(Modifier.STAR.toString())){
+            list.addAll(model.classInvariants());
+        }
+        else{
+            MClass cls = findClass(e.context());
+            if (cls==null) {
+                out.println("Class "+e.context()+" cannot be found in the current model.",Color.RED);
+                return;
+            }
+            list.addAll(model.classInvariants(cls));
+        }
 
+        if (e.name().equals(Modifier.STAR.toString())){
+            state.invariants().addAll(list);
+        }
+        else {
+            Iterator<MClassInvariant> it = list.iterator();
+            while (it.hasNext()){
+                MClassInvariant inv = it.next();
+                //out.println(inv.name()+" "+inv.qualifiedName(),Color.BLUE);
+                if (!inv.name().equals(e.name())) it.remove();
+            }
+            state.invariants().addAll(list);
+        }
+        
+        if (list.size()==0) out.println("No such invariants <"+e.name()+"> can be found in the class(es): "+e.context()+" .", Color.RED);
     }
 
     public void visitWithExpr (QWithExpr e){
-
+        for (QInvExpr inv : e.expressions()) inv.accept(this);
     }
 
     public void visitCheckExpr (CheckExpr e){
