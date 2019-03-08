@@ -2,6 +2,7 @@ package org.tzi.use.query.ast;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QButExpr extends QAst{
     private List<QInvExpr> invs = new ArrayList<QInvExpr>();
@@ -29,4 +30,9 @@ public class QButExpr extends QAst{
     
         return sb.toString();
     }
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitButExpr(this);
+    }
+
 }

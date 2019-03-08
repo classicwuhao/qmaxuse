@@ -33,8 +33,10 @@ public class QueryVisitor extends AbstractVisitor {
         for (QFeatureExpr expr: e.features()) expr.accept(this);
 
         /* visit with expr */
-        e.withExpr().accept(this);
+        if (e.withExpr()!=null) e.withExpr().accept(this);
 
+        /* visit but expr */
+        if (e.butExpr()!=null) e.butExpr().accept(this);
     }
 
     public void visitClassExpr(QClassExpr e) {
@@ -153,8 +155,9 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitInvExpr (QInvExpr e){
+
         List<MClassInvariant> list = new ArrayList<MClassInvariant>();
-        if (e.context().equals(Modifier.STAR.toString())){
+        if (e.context().equals("*")){
             list.addAll(model.classInvariants());
         }
         else{
@@ -166,7 +169,8 @@ public class QueryVisitor extends AbstractVisitor {
             list.addAll(model.classInvariants(cls));
         }
 
-        if (e.name().equals(Modifier.STAR.toString())){
+        if (e.name().equals("*")){
+            System.err.println("name=*");
             state.invariants().addAll(list);
         }
         else {
@@ -178,12 +182,45 @@ public class QueryVisitor extends AbstractVisitor {
             }
             state.invariants().addAll(list);
         }
-        
+
         if (list.size()==0) out.println("No such invariants <"+e.name()+"> can be found in the class(es): "+e.context()+" .", Color.RED);
     }
 
     public void visitWithExpr (QWithExpr e){
         for (QInvExpr inv : e.expressions()) inv.accept(this);
+    }
+
+    public void visitButExpr (QButExpr e){
+        for (QInvExpr inv: e.expressions()) {
+            Iterator<MClassInvariant> it = state.invariants().iterator();
+            while (it.hasNext()){
+                if (!inv.context().equals("*")){
+                    if (!inv.name().equals("*"))
+                        removeInv(inv.context()+"::"+inv.name(),it,true);
+                    else
+                        removeInv(inv.context(),it,false);
+                }
+                else{
+                    MClassInvariant i = it.next();
+                    if (inv.name().equals("*")){
+                        it.remove();
+                    }
+                    else{
+                        if (i.name().equals(inv.name())) it.remove();
+                    }
+                }
+            }
+        }
+    }
+
+    private void removeInv(String fullname, Iterator<MClassInvariant> it, boolean qualifiedName){
+        MClassInvariant inv  = it.next();
+        if (qualifiedName==true){
+            if (inv.qualifiedName().equals(fullname)) it.remove();
+        }
+        else {
+            if (inv.cls().name().equals(fullname)) it.remove();
+        }
     }
 
     public void visitCheckExpr (CheckExpr e){
@@ -194,9 +231,5 @@ public class QueryVisitor extends AbstractVisitor {
         return model.getClass(name);
     }
     
-    private MAssociation findAssociation(String name){
-        return model.getAssociation(name);
-    }
-
     public QueryState state(){return this.state;}
 }
