@@ -40,7 +40,7 @@ import org.tzi.use.uml.ocl.type.EnumType;
 import org.tzi.use.util.StringUtil;
 import org.tzi.use.util.collections.CollectionUtil;
 import org.tzi.use.query.ast.ModuleListExpr;
-
+import org.tzi.use.query.state.QueryContext;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
 
@@ -85,6 +85,8 @@ public class MModel extends MModelElementImpl {
 
 	private ModuleListExpr modules;
 
+	private QueryContext query_context;
+
 	protected MModel(String name) {
 		super(name);
 		fEnumTypes = new TreeMap<String, EnumType>();
@@ -94,8 +96,8 @@ public class MModel extends MModelElementImpl {
 		fClassInvariants = new TreeMap<String, MClassInvariant>();
 		fPrePostConditions = new TreeMap<String, MPrePostCondition>();
 		signals = new TreeMap<>();
-
 		fFilename = "";
+		query_context = new QueryContext();
 	}
 
 	public ModuleListExpr modules(){
@@ -104,11 +106,14 @@ public class MModel extends MModelElementImpl {
 
 	public void setModules (ModuleListExpr modules){
 		this.modules = modules;
+		query_context.setModuleList(modules);
 	}
 
 	public void setFilename(String filename) {
 		fFilename = filename;
 	}
+
+	public QueryContext queryContext(){return this.query_context;}
 
 	/**
 	 * Returns the filename of the specification from which this model was read.

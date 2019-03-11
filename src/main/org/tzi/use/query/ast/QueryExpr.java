@@ -9,8 +9,8 @@ public class QueryExpr extends QAst{
     private QWithExpr withExpr;
     private QButExpr withoutExpr;
     private QOCLExpr oclExpr;
-
     private String alias ="";
+    private boolean pure_aliased=false;
 
     public QueryExpr(){
         features = new ArrayList<QFeatureExpr>();
@@ -36,6 +36,10 @@ public class QueryExpr extends QAst{
         this.alias = alias;
     }
 
+    public boolean isPureAliased(){return this.pure_aliased;}
+    public void setPureAliased(){this.pure_aliased=true;}
+    public boolean isAliased(){return !this.alias.equals("");}
+    
     public boolean containInjection(){
         if (oclExpr!=null)
             return oclExpr.expression().size()>0;

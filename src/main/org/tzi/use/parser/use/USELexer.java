@@ -1,4 +1,4 @@
-// $ANTLR 3.4 USE.g 2019-03-08 20:20:36
+// $ANTLR 3.4 USE.g 2019-03-11 17:47:55
 
 /*
  * USE - UML based specification environment
@@ -2206,10 +2206,10 @@ public class USELexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:1978:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
-            // USE.g:1979:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // USE.g:1979:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
+            // USE.g:1980:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             {
-            // USE.g:1979:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // USE.g:1980:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             int alt1=4;
             switch ( input.LA(1) ) {
             case ' ':
@@ -2244,28 +2244,28 @@ public class USELexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // USE.g:1979:7: ' '
+                    // USE.g:1980:7: ' '
                     {
                     match(' '); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // USE.g:1980:7: '\\t'
+                    // USE.g:1981:7: '\\t'
                     {
                     match('\t'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // USE.g:1981:7: '\\f'
+                    // USE.g:1982:7: '\\f'
                     {
                     match('\f'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // USE.g:1982:7: NEWLINE
+                    // USE.g:1983:7: NEWLINE
                     {
                     mNEWLINE(); if (state.failed) return ;
 
@@ -2294,10 +2294,10 @@ public class USELexer extends Lexer {
         try {
             int _type = SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:1988:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
-            // USE.g:1989:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
+            // USE.g:1989:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
+            // USE.g:1990:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
             {
-            // USE.g:1989:5: ( '//' | '--' )
+            // USE.g:1990:5: ( '//' | '--' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2317,7 +2317,7 @@ public class USELexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // USE.g:1989:6: '//'
+                    // USE.g:1990:6: '//'
                     {
                     match("//"); if (state.failed) return ;
 
@@ -2326,7 +2326,7 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // USE.g:1989:13: '--'
+                    // USE.g:1990:13: '--'
                     {
                     match("--"); if (state.failed) return ;
 
@@ -2338,7 +2338,7 @@ public class USELexer extends Lexer {
             }
 
 
-            // USE.g:1990:5: (~ ( NEWLINE ) )*
+            // USE.g:1991:5: (~ ( NEWLINE ) )*
             loop3:
             do {
                 int alt3=2;
@@ -2351,7 +2351,7 @@ public class USELexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // USE.g:1990:6: ~ ( NEWLINE )
+            	    // USE.g:1991:6: ~ ( NEWLINE )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2392,14 +2392,14 @@ public class USELexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:1995:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // USE.g:1996:5: '/*' ( options {greedy=false; } : . )* '*/'
+            // USE.g:1996:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // USE.g:1997:5: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); if (state.failed) return ;
 
 
 
-            // USE.g:1996:10: ( options {greedy=false; } : . )*
+            // USE.g:1997:10: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -2424,7 +2424,7 @@ public class USELexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // USE.g:1996:38: .
+            	    // USE.g:1997:38: .
             	    {
             	    matchAny(); if (state.failed) return ;
 
@@ -2457,7 +2457,7 @@ public class USELexer extends Lexer {
     // $ANTLR start "NEWLINE"
     public final void mNEWLINE() throws RecognitionException {
         try {
-            // USE.g:2000:9: ( '\\r\\n' | '\\r' | '\\n' )
+            // USE.g:2001:9: ( '\\r\\n' | '\\r' | '\\n' )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -2484,7 +2484,7 @@ public class USELexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // USE.g:2001:5: '\\r\\n'
+                    // USE.g:2002:5: '\\r\\n'
                     {
                     match("\r\n"); if (state.failed) return ;
 
@@ -2493,14 +2493,14 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // USE.g:2001:14: '\\r'
+                    // USE.g:2002:14: '\\r'
                     {
                     match('\r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // USE.g:2001:21: '\\n'
+                    // USE.g:2002:21: '\\n'
                     {
                     match('\n'); if (state.failed) return ;
 
@@ -2521,8 +2521,8 @@ public class USELexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2003:10: ( '->' )
-            // USE.g:2003:12: '->'
+            // USE.g:2004:10: ( '->' )
+            // USE.g:2004:12: '->'
             {
             match("->"); if (state.failed) return ;
 
@@ -2544,8 +2544,8 @@ public class USELexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2004:11: ( '@' )
-            // USE.g:2004:13: '@'
+            // USE.g:2005:11: ( '@' )
+            // USE.g:2005:13: '@'
             {
             match('@'); if (state.failed) return ;
 
@@ -2565,8 +2565,8 @@ public class USELexer extends Lexer {
         try {
             int _type = BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2005:8: ( '|' )
-            // USE.g:2005:10: '|'
+            // USE.g:2006:8: ( '|' )
+            // USE.g:2006:10: '|'
             {
             match('|'); if (state.failed) return ;
 
@@ -2586,8 +2586,8 @@ public class USELexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2006:10: ( ':' )
-            // USE.g:2006:12: ':'
+            // USE.g:2007:10: ( ':' )
+            // USE.g:2007:12: ':'
             {
             match(':'); if (state.failed) return ;
 
@@ -2607,8 +2607,8 @@ public class USELexer extends Lexer {
         try {
             int _type = COLON_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2007:14: ( '::' )
-            // USE.g:2007:16: '::'
+            // USE.g:2008:14: ( '::' )
+            // USE.g:2008:16: '::'
             {
             match("::"); if (state.failed) return ;
 
@@ -2630,8 +2630,8 @@ public class USELexer extends Lexer {
         try {
             int _type = COLON_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2008:14: ( ':=' )
-            // USE.g:2008:16: ':='
+            // USE.g:2009:14: ( ':=' )
+            // USE.g:2009:16: ':='
             {
             match(":="); if (state.failed) return ;
 
@@ -2653,8 +2653,8 @@ public class USELexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2009:10: ( ',' )
-            // USE.g:2009:12: ','
+            // USE.g:2010:10: ( ',' )
+            // USE.g:2010:12: ','
             {
             match(','); if (state.failed) return ;
 
@@ -2674,8 +2674,8 @@ public class USELexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2010:8: ( '.' )
-            // USE.g:2010:10: '.'
+            // USE.g:2011:8: ( '.' )
+            // USE.g:2011:10: '.'
             {
             match('.'); if (state.failed) return ;
 
@@ -2695,8 +2695,8 @@ public class USELexer extends Lexer {
         try {
             int _type = DOTDOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2011:11: ( '..' )
-            // USE.g:2011:13: '..'
+            // USE.g:2012:11: ( '..' )
+            // USE.g:2012:13: '..'
             {
             match(".."); if (state.failed) return ;
 
@@ -2718,8 +2718,8 @@ public class USELexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2012:10: ( '=' )
-            // USE.g:2012:12: '='
+            // USE.g:2013:10: ( '=' )
+            // USE.g:2013:12: '='
             {
             match('='); if (state.failed) return ;
 
@@ -2739,8 +2739,8 @@ public class USELexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2013:11: ( '>' )
-            // USE.g:2013:13: '>'
+            // USE.g:2014:11: ( '>' )
+            // USE.g:2014:13: '>'
             {
             match('>'); if (state.failed) return ;
 
@@ -2760,8 +2760,8 @@ public class USELexer extends Lexer {
         try {
             int _type = GREATER_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2014:15: ( '>=' )
-            // USE.g:2014:17: '>='
+            // USE.g:2015:15: ( '>=' )
+            // USE.g:2015:17: '>='
             {
             match(">="); if (state.failed) return ;
 
@@ -2783,8 +2783,8 @@ public class USELexer extends Lexer {
         try {
             int _type = HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2015:9: ( '#' )
-            // USE.g:2015:11: '#'
+            // USE.g:2016:9: ( '#' )
+            // USE.g:2016:11: '#'
             {
             match('#'); if (state.failed) return ;
 
@@ -2804,8 +2804,8 @@ public class USELexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2016:11: ( '{' )
-            // USE.g:2016:13: '{'
+            // USE.g:2017:11: ( '{' )
+            // USE.g:2017:13: '{'
             {
             match('{'); if (state.failed) return ;
 
@@ -2825,8 +2825,8 @@ public class USELexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2017:11: ( '[' )
-            // USE.g:2017:13: '['
+            // USE.g:2018:11: ( '[' )
+            // USE.g:2018:13: '['
             {
             match('['); if (state.failed) return ;
 
@@ -2846,8 +2846,8 @@ public class USELexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2018:9: ( '<' )
-            // USE.g:2018:11: '<'
+            // USE.g:2019:9: ( '<' )
+            // USE.g:2019:11: '<'
             {
             match('<'); if (state.failed) return ;
 
@@ -2867,8 +2867,8 @@ public class USELexer extends Lexer {
         try {
             int _type = LESS_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2019:14: ( '<=' )
-            // USE.g:2019:16: '<='
+            // USE.g:2020:14: ( '<=' )
+            // USE.g:2020:16: '<='
             {
             match("<="); if (state.failed) return ;
 
@@ -2890,8 +2890,8 @@ public class USELexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2020:11: ( '(' )
-            // USE.g:2020:13: '('
+            // USE.g:2021:11: ( '(' )
+            // USE.g:2021:13: '('
             {
             match('('); if (state.failed) return ;
 
@@ -2911,8 +2911,8 @@ public class USELexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2021:10: ( '-' )
-            // USE.g:2021:12: '-'
+            // USE.g:2022:10: ( '-' )
+            // USE.g:2022:12: '-'
             {
             match('-'); if (state.failed) return ;
 
@@ -2932,8 +2932,8 @@ public class USELexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2022:13: ( '<>' )
-            // USE.g:2022:15: '<>'
+            // USE.g:2023:13: ( '<>' )
+            // USE.g:2023:15: '<>'
             {
             match("<>"); if (state.failed) return ;
 
@@ -2955,8 +2955,8 @@ public class USELexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2023:9: ( '+' )
-            // USE.g:2023:11: '+'
+            // USE.g:2024:9: ( '+' )
+            // USE.g:2024:11: '+'
             {
             match('+'); if (state.failed) return ;
 
@@ -2976,8 +2976,8 @@ public class USELexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2024:11: ( '}' )
-            // USE.g:2024:13: '}'
+            // USE.g:2025:11: ( '}' )
+            // USE.g:2025:13: '}'
             {
             match('}'); if (state.failed) return ;
 
@@ -2997,8 +2997,8 @@ public class USELexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2025:11: ( ']' )
-            // USE.g:2025:13: ']'
+            // USE.g:2026:11: ( ']' )
+            // USE.g:2026:13: ']'
             {
             match(']'); if (state.failed) return ;
 
@@ -3018,8 +3018,8 @@ public class USELexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2026:10: ( ')' )
-            // USE.g:2026:12: ')'
+            // USE.g:2027:10: ( ')' )
+            // USE.g:2027:12: ')'
             {
             match(')'); if (state.failed) return ;
 
@@ -3039,8 +3039,8 @@ public class USELexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2027:8: ( ';' )
-            // USE.g:2027:10: ';'
+            // USE.g:2028:8: ( ';' )
+            // USE.g:2028:10: ';'
             {
             match(';'); if (state.failed) return ;
 
@@ -3060,8 +3060,8 @@ public class USELexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2028:10: ( '/' )
-            // USE.g:2028:12: '/'
+            // USE.g:2029:10: ( '/' )
+            // USE.g:2029:12: '/'
             {
             match('/'); if (state.failed) return ;
 
@@ -3081,8 +3081,8 @@ public class USELexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2029:9: ( '*' )
-            // USE.g:2029:11: '*'
+            // USE.g:2030:9: ( '*' )
+            // USE.g:2030:11: '*'
             {
             match('*'); if (state.failed) return ;
 
@@ -3100,10 +3100,10 @@ public class USELexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // USE.g:2033:4: ( ( '0' .. '9' )+ )
-            // USE.g:2034:5: ( '0' .. '9' )+
+            // USE.g:2034:4: ( ( '0' .. '9' )+ )
+            // USE.g:2035:5: ( '0' .. '9' )+
             {
-            // USE.g:2034:5: ( '0' .. '9' )+
+            // USE.g:2035:5: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -3158,13 +3158,13 @@ public class USELexer extends Lexer {
     // $ANTLR start "REAL"
     public final void mREAL() throws RecognitionException {
         try {
-            // USE.g:2038:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
-            // USE.g:2039:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // USE.g:2039:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
+            // USE.g:2040:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             {
             mINT(); if (state.failed) return ;
 
 
-            // USE.g:2039:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // USE.g:2040:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3184,14 +3184,14 @@ public class USELexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // USE.g:2039:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // USE.g:2040:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     {
                     match('.'); if (state.failed) return ;
 
                     mINT(); if (state.failed) return ;
 
 
-                    // USE.g:2039:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // USE.g:2040:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -3200,7 +3200,7 @@ public class USELexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // USE.g:2039:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                            // USE.g:2040:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -3214,7 +3214,7 @@ public class USELexer extends Lexer {
                             }
 
 
-                            // USE.g:2039:31: ( '+' | '-' )?
+                            // USE.g:2040:31: ( '+' | '-' )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -3255,7 +3255,7 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // USE.g:2039:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                    // USE.g:2040:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -3269,7 +3269,7 @@ public class USELexer extends Lexer {
                     }
 
 
-                    // USE.g:2039:64: ( '+' | '-' )?
+                    // USE.g:2040:64: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -3322,7 +3322,7 @@ public class USELexer extends Lexer {
         try {
             int _type = RANGE_OR_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2041:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
+            // USE.g:2042:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -3363,7 +3363,7 @@ public class USELexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // USE.g:2042:7: ( INT '..' )=> INT
+                    // USE.g:2043:7: ( INT '..' )=> INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -3373,7 +3373,7 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // USE.g:2043:7: ( REAL )=> REAL
+                    // USE.g:2044:7: ( REAL )=> REAL
                     {
                     mREAL(); if (state.failed) return ;
 
@@ -3383,7 +3383,7 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // USE.g:2044:9: INT
+                    // USE.g:2045:9: INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -3408,12 +3408,12 @@ public class USELexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2048:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
-            // USE.g:2049:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
+            // USE.g:2049:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
+            // USE.g:2050:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
             {
             match('\''); if (state.failed) return ;
 
-            // USE.g:2049:10: (~ ( '\\'' | '\\\\' ) | ESC )*
+            // USE.g:2050:10: (~ ( '\\'' | '\\\\' ) | ESC )*
             loop12:
             do {
                 int alt12=3;
@@ -3429,7 +3429,7 @@ public class USELexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // USE.g:2049:12: ~ ( '\\'' | '\\\\' )
+            	    // USE.g:2050:12: ~ ( '\\'' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3446,7 +3446,7 @@ public class USELexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // USE.g:2049:27: ESC
+            	    // USE.g:2050:27: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -3478,12 +3478,12 @@ public class USELexer extends Lexer {
         try {
             int _type = NON_OCL_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2051:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
-            // USE.g:2052:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
+            // USE.g:2052:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
+            // USE.g:2053:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
             {
             match('\"'); if (state.failed) return ;
 
-            // USE.g:2052:9: (~ ( '\"' | '\\\\' ) | ESC )*
+            // USE.g:2053:9: (~ ( '\"' | '\\\\' ) | ESC )*
             loop13:
             do {
                 int alt13=3;
@@ -3499,7 +3499,7 @@ public class USELexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // USE.g:2052:11: ~ ( '\"' | '\\\\' )
+            	    // USE.g:2053:11: ~ ( '\"' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3516,7 +3516,7 @@ public class USELexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // USE.g:2052:25: ESC
+            	    // USE.g:2053:25: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -3546,12 +3546,12 @@ public class USELexer extends Lexer {
     // $ANTLR start "ESC"
     public final void mESC() throws RecognitionException {
         try {
-            // USE.g:2065:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
-            // USE.g:2066:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // USE.g:2066:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+            // USE.g:2067:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             {
             match('\\'); if (state.failed) return ;
 
-            // USE.g:2067:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // USE.g:2068:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             int alt17=11;
             switch ( input.LA(1) ) {
             case 'n':
@@ -3626,63 +3626,63 @@ public class USELexer extends Lexer {
 
             switch (alt17) {
                 case 1 :
-                    // USE.g:2067:8: 'n'
+                    // USE.g:2068:8: 'n'
                     {
                     match('n'); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // USE.g:2068:8: 'r'
+                    // USE.g:2069:8: 'r'
                     {
                     match('r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // USE.g:2069:8: 't'
+                    // USE.g:2070:8: 't'
                     {
                     match('t'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // USE.g:2070:8: 'b'
+                    // USE.g:2071:8: 'b'
                     {
                     match('b'); if (state.failed) return ;
 
                     }
                     break;
                 case 5 :
-                    // USE.g:2071:8: 'f'
+                    // USE.g:2072:8: 'f'
                     {
                     match('f'); if (state.failed) return ;
 
                     }
                     break;
                 case 6 :
-                    // USE.g:2072:8: '\"'
+                    // USE.g:2073:8: '\"'
                     {
                     match('\"'); if (state.failed) return ;
 
                     }
                     break;
                 case 7 :
-                    // USE.g:2073:8: '\\''
+                    // USE.g:2074:8: '\\''
                     {
                     match('\''); if (state.failed) return ;
 
                     }
                     break;
                 case 8 :
-                    // USE.g:2074:8: '\\\\'
+                    // USE.g:2075:8: '\\\\'
                     {
                     match('\\'); if (state.failed) return ;
 
                     }
                     break;
                 case 9 :
-                    // USE.g:2075:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+                    // USE.g:2076:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
                     {
                     match('u'); if (state.failed) return ;
 
@@ -3701,11 +3701,11 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // USE.g:2076:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+                    // USE.g:2077:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
                     {
                     matchRange('0','3'); if (state.failed) return ;
 
-                    // USE.g:2076:17: ( '0' .. '7' ( '0' .. '7' )? )?
+                    // USE.g:2077:17: ( '0' .. '7' ( '0' .. '7' )? )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -3714,11 +3714,11 @@ public class USELexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // USE.g:2076:18: '0' .. '7' ( '0' .. '7' )?
+                            // USE.g:2077:18: '0' .. '7' ( '0' .. '7' )?
                             {
                             matchRange('0','7'); if (state.failed) return ;
 
-                            // USE.g:2076:27: ( '0' .. '7' )?
+                            // USE.g:2077:27: ( '0' .. '7' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -3756,11 +3756,11 @@ public class USELexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // USE.g:2076:45: '4' .. '7' ( '0' .. '7' )?
+                    // USE.g:2077:45: '4' .. '7' ( '0' .. '7' )?
                     {
                     matchRange('4','7'); if (state.failed) return ;
 
-                    // USE.g:2076:54: ( '0' .. '7' )?
+                    // USE.g:2077:54: ( '0' .. '7' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3808,7 +3808,7 @@ public class USELexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // USE.g:2082:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // USE.g:2083:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
             // USE.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -3838,8 +3838,8 @@ public class USELexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // USE.g:2089:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // USE.g:2090:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // USE.g:2090:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // USE.g:2091:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -3853,7 +3853,7 @@ public class USELexer extends Lexer {
             }
 
 
-            // USE.g:2090:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // USE.g:2091:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
@@ -3903,7 +3903,7 @@ public class USELexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // USE.g:2097:6: ( '\\U0003' .. '\\U0377' )
+            // USE.g:2098:6: ( '\\U0003' .. '\\U0377' )
             // USE.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {
@@ -4908,8 +4908,8 @@ public class USELexer extends Lexer {
 
     // $ANTLR start synpred1_USE
     public final void synpred1_USE_fragment() throws RecognitionException {
-        // USE.g:2042:7: ( INT '..' )
-        // USE.g:2042:9: INT '..'
+        // USE.g:2043:7: ( INT '..' )
+        // USE.g:2043:9: INT '..'
         {
         mINT(); if (state.failed) return ;
 
@@ -4925,8 +4925,8 @@ public class USELexer extends Lexer {
 
     // $ANTLR start synpred2_USE
     public final void synpred2_USE_fragment() throws RecognitionException {
-        // USE.g:2043:7: ( REAL )
-        // USE.g:2043:9: REAL
+        // USE.g:2044:7: ( REAL )
+        // USE.g:2044:9: REAL
         {
         mREAL(); if (state.failed) return ;
 

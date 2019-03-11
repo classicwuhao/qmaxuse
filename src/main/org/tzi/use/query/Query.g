@@ -76,7 +76,7 @@ queryExpr returns [QueryExpr qexpr] @init{
         (with=withExpr {$qexpr.addWithExpr(with);})? 
         (without=butExpr {$qexpr.addWithoutExpr(without);})? ('inject' o=injExpr {$qexpr.setOCLExpression(o);})?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
-   | alias = IDENT {$qexpr.setAlias($alias.getText());}
+   | alias = IDENT {$qexpr.setAlias($alias.getText());$qexpr.setPureAliased();}
 ;
  
 //queryExpr_nl:

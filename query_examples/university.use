@@ -85,6 +85,6 @@ module queryset1
 	select Student.*, Module.* with Student::*, Module::*
 end 
 
-module queryset2
-	select Student.*@5 with Student::* inject {A.b()->notEmpty()}
-end
+--module queryset2
+--	select Student.*@5 with Student::* inject {A.b()->notEmpty()}
+--end

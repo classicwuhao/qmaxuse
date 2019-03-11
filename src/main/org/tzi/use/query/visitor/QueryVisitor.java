@@ -30,6 +30,26 @@ public class QueryVisitor extends AbstractVisitor {
             return;
         }
 
+        if (e.isPureAliased()){
+            String name = e.alias();
+            e = model.queryContext().seek(name);
+            if (e==null) {
+                out.println("Error: no "+name+" is found in current context.",Color.RED);
+                return;
+            }
+            visitFeatures(e);
+            return;
+        }
+
+        if (e.isAliased() && !e.isPureAliased()) {
+            model.queryContext().add(e.alias(),e);
+            out.println("Alias "+e.alias()+" is saved.",Color.BLUE);
+        }
+
+        visitFeatures(e);
+    }
+
+    private void visitFeatures(QueryExpr e){
         for (QFeatureExpr expr: e.features()) expr.accept(this);
 
         /* visit with expr */
@@ -224,7 +244,19 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitCheckExpr (CheckExpr e){
-        
+        if (e.query()!=null){
+            QueryExpr expr = e.query();
+            if (expr.isPureAliased()){
+                String name=expr.alias();
+                expr = model.queryContext().seek(expr.alias());
+                if (expr==null)
+                    out.println("Error: alias name "+name+" cannotbe found.",Color.RED);
+                else
+                    expr.accept(this);
+            }
+            else
+                expr.accept(this);
+        }
     }
 
     private MClass findClass (String name){

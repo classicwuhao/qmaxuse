@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-03-08 20:20:37
+// $ANTLR 3.4 Query.g 2019-03-11 17:47:56
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -541,7 +541,7 @@ public class QueryParser extends BaseParser {
                     {
                     alias=(Token)match(input,IDENT,FOLLOW_IDENT_in_queryExpr418); if (state.failed) return qexpr;
 
-                    if ( state.backtracking==0 ) {qexpr.setAlias(alias.getText());}
+                    if ( state.backtracking==0 ) {qexpr.setAlias(alias.getText());qexpr.setPureAliased();}
 
                     }
                     break;
