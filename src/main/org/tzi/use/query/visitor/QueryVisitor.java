@@ -259,6 +259,10 @@ public class QueryVisitor extends AbstractVisitor {
         }
     }
 
+    public void visitModuleAliasExpr(ModuleAliasExpr e){
+         
+    }
+
     private MClass findClass (String name){
         return model.getClass(name);
     }

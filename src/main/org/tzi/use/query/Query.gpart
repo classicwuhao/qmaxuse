@@ -78,7 +78,10 @@ queryExpr returns [QueryExpr qexpr] @init{
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());$qexpr.setPureAliased();}
 ;
- 
+
+moduleAlias
+    IDENT DOT (IDENT|STAR)
+;
 //queryExpr_nl:
  //   queryExpr '&&' queryExpr
   //  | queryExpr '||' queryExpr

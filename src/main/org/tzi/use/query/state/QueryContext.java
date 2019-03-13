@@ -38,7 +38,7 @@ public class QueryContext{
             if (!modules.containsKey(m.name())){
                 modules.put(m.name(),m);
                 for (QueryExpr e :  m.queries())
-                    if (e.isAliased()) add (e.alias(),e);
+                    if (e.isAliased()) add (m.name()+"."+e.alias(),e);
             }
             else{
                 out.println("Warning: Module "+m.name()+" has already been defined so it is ignored, please use another name.",Color.YELLOW);
