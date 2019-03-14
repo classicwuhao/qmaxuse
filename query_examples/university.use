@@ -77,8 +77,8 @@ context Module
 	inv inv8: self.year>=1 and self.year<=5
 	
 module queryset0
-	select Person.*, Student.* with Student::*
-	select Student.year, Module.year with Student::*, Module::* but Student::inv6
+	select Person.* with Person::* as query0
+	select Module.* with Module::* as query1
 end
 
 module queryset1

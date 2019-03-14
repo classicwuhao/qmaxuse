@@ -29,6 +29,33 @@ public class QueryContext{
         return (!context.containsKey(name))? null : context.get(name);
     }
 
+    public List<QueryExpr> AllQueries(){
+        return new ArrayList<QueryExpr>(context.values());
+    }
+
+    public List<QueryExpr> AllQueries(String name){
+        List<QueryExpr> list = new ArrayList<QueryExpr>();
+        for (String key : context.keySet()){
+            if (key.contains(".")){
+                String alias = key.substring(key.indexOf(".")+1,key.length()-1);
+                if (alias.equals(name)) list.add(context.get(key));
+            }
+        }
+        return list;
+    }
+
+    public List<QueryExpr> ModuleQueries(String module){
+        List<QueryExpr> list = new ArrayList<QueryExpr>();
+        for (String key : context.keySet()){
+            if (key.contains(".")){
+                if (key.startsWith(module))
+                    list.add(context.get(key));
+            }
+        }
+        
+        return list;
+    }
+
     public ModuleExpr seekModule(String name){
         return (!modules.containsKey(name)) ? null : modules.get(name);
     }

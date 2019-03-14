@@ -54,6 +54,8 @@ public class QueryExpr extends QAst{
         visitor.visitQueryExpr(this);
     }
 
+    public boolean isModuleAlised(){return false;}
+
     @Override
     public boolean isQuery(){return true;}
 

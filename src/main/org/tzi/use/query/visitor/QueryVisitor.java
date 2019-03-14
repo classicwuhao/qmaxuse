@@ -25,11 +25,19 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitQueryExpr(QueryExpr e) {
+        state.clearAll();
         if (this.model==null) {
             out.println("Model is empty.",Color.RED);
             return;
         }
 
+        /* This is a module call */ 
+        if (e.isModuleAlised()){
+            ((ModuleAliasExpr)e).accept(this);
+            return;
+        }
+
+        /* this is an aliased query. */ 
         if (e.isPureAliased()){
             String name = e.alias();
             e = model.queryContext().seek(name);
@@ -260,7 +268,45 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitModuleAliasExpr(ModuleAliasExpr e){
-         
+        List<QueryExpr> list =new ArrayList<QueryExpr>();
+        if (!e.module().equals("*") && !e.query().equals("*")){
+            QueryExpr expr = findQuery(e.module()+"."+e.query());
+            if (expr!=null) {
+                list.add(expr);
+            }
+            else{
+                out.println("Error: no query "+e.module()+"."+e.query()+" can be found.",Color.RED);
+                return;
+            }
+        }
+
+        if (e.module().equals("*") && !e.query().equals("*")){
+            list = model.queryContext().AllQueries(e.query());
+            if (list.size()==0)
+                out.println("Error: no such queries "+e.query()+" can be found.",Color.RED);
+        }
+
+        if (e.module().equals("*") && e.query().equals("*")){
+            list = model.queryContext().AllQueries();
+            if (list.size()==0)
+                out.println("Error: no query module exists.",Color.RED);
+        }
+
+        if (!e.module().equals("*") && e.query().equals("*")){
+            list = model.queryContext().ModuleQueries(e.module());
+            if (list.size()==0) out.println("Error: no module "+ e.module() +" exists.",Color.RED);
+        }
+
+        for (QueryExpr qe : list) qe.accept(this);
+
+    }
+
+    public void visitModuleExpr(ModuleExpr e){
+
+    }
+
+    private QueryExpr findQuery(String name){
+        return model.queryContext().seek(name);
     }
 
     private MClass findClass (String name){

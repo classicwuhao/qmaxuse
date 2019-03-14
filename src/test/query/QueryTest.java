@@ -127,7 +127,7 @@ public final class QueryTest{
     }
 
     public int Case1(){
-        String query0="verify select Person.*";
+        String query0="select Person.*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -142,7 +142,7 @@ public final class QueryTest{
     }
 
     public int Case2(){
-        String query0="verify select *.age with Student::*, Person::*";
+        String query0="select *.age with Student::*, Person::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -156,7 +156,7 @@ public final class QueryTest{
     }
 
     public int Case3(){
-        String query0="verify select Student, Person with Student::inv1";
+        String query0="select Student, Person with Student::inv1";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -171,7 +171,7 @@ public final class QueryTest{
     }
 
     public int Case4(){
-        String query0="verify select Person.*,Student.*,Department.* but Student::*, Person::*";
+        String query0="select Person.*,Student.*,Department.* but Student::*, Person::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -186,7 +186,7 @@ public final class QueryTest{
     }
 
     public int Case5(){
-        String query0="verify select Module.*, Student.* but Person::*";
+        String query0="select Module.*, Student.* but Person::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -201,7 +201,7 @@ public final class QueryTest{
     }
 
     public int Case6(){
-        String query0="verify select only A, only B, C with B::*, C::inv but A::*";
+        String query0="select only A, only B, C with B::*, C::inv but A::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -216,7 +216,7 @@ public final class QueryTest{
     }
 
     public int Case7(){
-        String query0="verify select no A, only B, no C but C::* as QueryA";
+        String query0="select no A, only B, no C but C::* as QueryA";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -231,7 +231,7 @@ public final class QueryTest{
     }
 
     public int Case8(){
-        String query0="verify select only A, only B, only C but C::* && select C.*, D.* with C::*, D::*";
+        String query0="select only A, only B, only C but C::* && select C.*, D.* with C::*, D::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -246,7 +246,7 @@ public final class QueryTest{
     }
 
     public int Case9(){
-        String query0="verify select no A, no B, no C but C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
+        String query0="select no A, no B, no C but C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -262,7 +262,7 @@ public final class QueryTest{
     }
 
     public int Case10(){
-        String query0="verify queryA && queryB && select A.*, only B, C.* but C::*";
+        String query0="queryA && queryB && select A.*, only B, C.* but C::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -277,7 +277,7 @@ public final class QueryTest{
     }
 
     public int Case11(){
-        String query0="verify queryA && queryB || select A.*, only B, C.* but C::* && select C.*, no D with C::*, D::* but B::*";
+        String query0="queryA && queryB || select A.*, only B, C.* but C::* && select C.*, no D with C::*, D::* but B::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -307,7 +307,7 @@ public final class QueryTest{
     }
 
     public int Case13(){
-        String query0="verify select Student.*@10, Student:choose:Module@5 with Student::*, Module::*@4";
+        String query0="select Student.*@10, Student:choose:Module@5 with Student::*, Module::*@4";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -366,7 +366,7 @@ public final class QueryTest{
     }
 
     public int Case16(){
-        String query0="verify select Student.* with Student::* inject {Student.modules()->notEmpty()@12, Student.allInstances()->forAll(s|s.year>5)}";
+        String query0="select Student.* with Student::* inject {Student.modules()->notEmpty()@12, Student.allInstances()->forAll(s|s.year>5)}";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);

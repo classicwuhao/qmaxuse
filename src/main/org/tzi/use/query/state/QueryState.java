@@ -28,6 +28,13 @@ public class QueryState{
         }
     }
 
+    public void clearAll(){
+        this.classes.clear();
+        this.attributes.clear();
+        this.associations.clear();
+        this.invariants.clear();
+    }
+
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("========Selected Classes======== \n");

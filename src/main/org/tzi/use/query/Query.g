@@ -44,7 +44,7 @@ import org.tzi.use.parser.ParseErrorHandler;
 }
 
 checkExpr returns [QAst expr]:
-    'verify' qexpr=queryExpr {$expr=qexpr;}
+    qexpr=queryExpr {$expr=qexpr;}
          (
             ('&&' right_expr=queryExpr 
                 {
@@ -77,8 +77,16 @@ queryExpr returns [QueryExpr qexpr] @init{
         (without=butExpr {$qexpr.addWithoutExpr(without);})? ('inject' o=injExpr {$qexpr.setOCLExpression(o);})?
         ('as' name=IDENT {$qexpr.setAlias($name.getText());}) ?
    | alias = IDENT {$qexpr.setAlias($alias.getText());$qexpr.setPureAliased();}
+   | module=moduleAlias {$qexpr =module;}
 ;
- 
+
+moduleAlias returns [ModuleAliasExpr maexpr]@init{
+    maexpr = new ModuleAliasExpr(); 
+}:
+    module=IDENT{$maexpr.setModuleName($module.getText());} 
+    DOT query=(IDENT| STAR)
+    {$maexpr.setQueryName($query.getText());}
+;
 //queryExpr_nl:
  //   queryExpr '&&' queryExpr
   //  | queryExpr '||' queryExpr
