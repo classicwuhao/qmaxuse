@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-03-15 14:30:55
+// $ANTLR 3.4 Query.g 2019-03-15 17:44:37
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -1426,7 +1426,7 @@ public class QueryParser extends BaseParser {
             state._fsp--;
             if (state.failed) return mexpr;
 
-            if ( state.backtracking==0 ) {mexpr.addQuery(query);}
+            if ( state.backtracking==0 ) {mexpr.addQuery(query);query.setModule(mexpr);}
 
             // Query.g:169:9: (query= queryExpr )*
             loop19:
@@ -1449,7 +1449,7 @@ public class QueryParser extends BaseParser {
             	    state._fsp--;
             	    if (state.failed) return mexpr;
 
-            	    if ( state.backtracking==0 ) {mexpr.addQuery(query);}
+            	    if ( state.backtracking==0 ) {mexpr.addQuery(query);query.setModule(mexpr);}
 
             	    }
             	    break;

@@ -48,7 +48,7 @@ public class QueryVisitor extends AbstractVisitor {
             return;
         }
 
-        if (e.isAliased() && !e.isPureAliased()) {
+        if (e.isAliased() && !e.isPureAliased() && !e.isContained()) {
             model.queryContext().add(e.alias(),e);
             out.println("Alias "+e.alias()+" is saved.",Color.BLUE);
         }

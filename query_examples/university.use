@@ -77,14 +77,14 @@ context Module
 	inv inv8: self.year>=1 and self.year<=5
 	
 module queryset0
-	select Person.* with Person::* as query0
-	select Module.* with Module::* as query1
+	select Person.* with Person::* as q0
+	select Module.* with Module::* as q1
 end
 
 module queryset1
-	select Student.*, Module.* with Student::*, Module::*
+	select Student.*, Module.* with Student::*, Module::* as q0
 end 
 
---module queryset2
---	select Student.*@5 with Student::* inject {A.b()->notEmpty()}
---end
+module queryset2
+	select Student.*@5 with Student::* inject {A.b()->notEmpty()} as q0
+end

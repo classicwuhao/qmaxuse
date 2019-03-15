@@ -11,9 +11,11 @@ public class QueryExpr extends QAst{
     private QOCLExpr oclExpr;
     private String alias ="";
     private boolean pure_aliased=false;
+    private ModuleExpr module=null;
 
     public QueryExpr(){
         features = new ArrayList<QFeatureExpr>();
+        module=null;
     }
 
     public void addFeature(QFeatureExpr expr){
@@ -36,6 +38,18 @@ public class QueryExpr extends QAst{
         this.alias = alias;
     }
 
+    public void setModule (ModuleExpr module){
+        this.module = module;
+    }
+
+    public ModuleExpr module(){
+        return this.module;
+    }
+
+    public boolean isContained(){
+        return this.module!=null;
+    }
+    
     public boolean isPureAliased(){return this.pure_aliased;}
     public void setPureAliased(){this.pure_aliased=true;}
     public boolean isAliased(){return !this.alias.equals("");}

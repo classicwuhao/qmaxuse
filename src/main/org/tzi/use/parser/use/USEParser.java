@@ -1,4 +1,4 @@
-// $ANTLR 3.4 USE.g 2019-03-15 14:30:54
+// $ANTLR 3.4 USE.g 2019-03-15 17:44:36
  
 /*
  * USE - UML based specification environment
@@ -6172,7 +6172,7 @@ public class USEParser extends BaseParser {
             state._fsp--;
             if (state.failed) return mexpr;
 
-            if ( state.backtracking==0 ) {mexpr.addQuery(query);}
+            if ( state.backtracking==0 ) {mexpr.addQuery(query);query.setModule(mexpr);}
 
             // USE.g:759:9: (query= queryExpr )*
             loop99:
@@ -6195,7 +6195,7 @@ public class USEParser extends BaseParser {
             	    state._fsp--;
             	    if (state.failed) return mexpr;
 
-            	    if ( state.backtracking==0 ) {mexpr.addQuery(query);}
+            	    if ( state.backtracking==0 ) {mexpr.addQuery(query);query.setModule(mexpr);}
 
             	    }
             	    break;
