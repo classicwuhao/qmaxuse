@@ -25,7 +25,6 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitQueryExpr(QueryExpr e) {
-        state.clearAll();
         if (this.model==null) {
             out.println("Model is empty.",Color.RED);
             return;
@@ -55,6 +54,7 @@ public class QueryVisitor extends AbstractVisitor {
         }
 
         visitFeatures(e);
+
     }
 
     private void visitFeatures(QueryExpr e){
@@ -296,8 +296,11 @@ public class QueryVisitor extends AbstractVisitor {
             list = model.queryContext().ModuleQueries(e.module());
             if (list.size()==0) out.println("Error: no module "+ e.module() +" exists.",Color.RED);
         }
-
-        for (QueryExpr qe : list) qe.accept(this);
+        
+        for (QueryExpr qe : list){
+            this.state().clearAll(); 
+            qe.accept(this);
+        }
 
     }
 

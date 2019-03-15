@@ -32,7 +32,7 @@ public class QueryCompiler{
     private QAst expressions=null;
 
     public QueryCompiler(){}
-
+    
     public static int compileExpression (MModel model, MSystemState state, InputStream in, String inName,PrintWriter err)
     {
         ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
