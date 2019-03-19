@@ -24,6 +24,11 @@ public class QueryVisitor extends AbstractVisitor {
         this.state = new QueryState();
     }
 
+    public void visitBinaryExpr(QueryBinaryExpr e){
+        e.left().accept(this);
+        e.right().accept(this);
+    }
+
     public void visitQueryExpr(QueryExpr e) {
         if (this.model==null) {
             out.println("Model is empty.",Color.RED);

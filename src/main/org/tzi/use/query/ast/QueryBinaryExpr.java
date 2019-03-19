@@ -1,4 +1,5 @@
 package org.tzi.use.query.ast;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class QueryBinaryExpr extends QAst{
     private QAst expr1;
@@ -27,8 +28,15 @@ public class QueryBinaryExpr extends QAst{
         return this.expr1.toString() + " " + this.operator.toString() + " " + this.expr2.toString();
     }
 
+    public QAst left(){return this.expr1;}
+    public QAst right(){return this.expr2;}
+    
     @Override
     public boolean isBinaryQuery(){return true;}
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitBinaryExpr(this);
+    }
 }
 
 

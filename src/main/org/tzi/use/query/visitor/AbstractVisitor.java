@@ -12,4 +12,5 @@ public abstract class AbstractVisitor{
     public abstract void visitButExpr (QButExpr e);
     public abstract void visitModuleExpr (ModuleExpr e);
     public abstract void visitModuleAliasExpr(ModuleAliasExpr e);
+    public abstract void visitBinaryExpr(QueryBinaryExpr e);
 }
