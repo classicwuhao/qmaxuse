@@ -46,19 +46,19 @@ import org.tzi.use.parser.ParseErrorHandler;
 checkExpr returns [QAst expr]:
     qexpr=queryExpr {$expr=qexpr;}
          (
-            ('&&' right_expr=queryExpr 
+            ('+' right_expr=queryExpr 
                 {
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.AND);
                 }
             )
         |
-            ('||' right_expr=queryExpr 
+            ('-' right_expr=queryExpr 
                 {
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.OR);
                 }
             )
         |
-            ( '=>' right_expr = queryExpr
+            ( '&' right_expr = queryExpr
                 {
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.IMPLIES);
                 }

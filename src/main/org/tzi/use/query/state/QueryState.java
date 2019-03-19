@@ -21,10 +21,11 @@ public class QueryState{
     public Set<MAssociation> associations(){return this.associations;}
     public Set<MClassInvariant> invariants(){return this.invariants;}
 
+
     public void refine(){
         /* class */
         for (MClass cls : classes){
-            
+                
         }
     }
 

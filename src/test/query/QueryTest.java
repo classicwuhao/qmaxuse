@@ -231,7 +231,7 @@ public final class QueryTest{
     }
 
     public int Case8(){
-        String query0="select only A, only B, only C but C::* && select C.*, D.* with C::*, D::*";
+        String query0="select only A, only B, only C but C::* + select C.*, D.* with C::*, D::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -246,7 +246,7 @@ public final class QueryTest{
     }
 
     public int Case9(){
-        String query0="select no A, no B, no C but C::* as queryA && select C.*, D.* with C::*, D::* as queryB";
+        String query0="select no A, no B, no C but C::* as queryA + select C.*, D.* with C::*, D::* as queryB";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -262,7 +262,7 @@ public final class QueryTest{
     }
 
     public int Case10(){
-        String query0="queryA && queryB && select A.*, only B, C.* but C::*";
+        String query0="queryA + queryB - select A.*, only B, C.* but C::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
@@ -277,7 +277,7 @@ public final class QueryTest{
     }
 
     public int Case11(){
-        String query0="queryA && queryB || select A.*, only B, C.* but C::* && select C.*, no D with C::*, D::* but B::*";
+        String query0="queryA + queryB + select A.*, only B, C.* but C::* - select C.*, no D with C::*, D::* but B::*";
         PrintWriter err = new PrintWriter(System.err);
         QueryCompiler compiler = new QueryCompiler();
         QAst expr = compiler.compileExpression(new ByteArrayInputStream(query0.getBytes()),"<text>",err);
