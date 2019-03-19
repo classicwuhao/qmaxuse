@@ -24,7 +24,7 @@ public class QueryState{
     public void refine(){
         /* class */
         for (MClass cls : classes){
-
+            
         }
     }
 
