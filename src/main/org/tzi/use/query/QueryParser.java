@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2019-03-19 14:57:30
+// $ANTLR 3.4 Query.g 2019-03-20 15:54:16
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
@@ -213,7 +213,7 @@ public class QueryParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.AND);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.UNION);
                     	                    }
 
                     	    }
@@ -236,7 +236,7 @@ public class QueryParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.OR);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.DIFFER);
                     	                    }
 
                     	    }
@@ -259,7 +259,7 @@ public class QueryParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.IMPLIES);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.INTER);
                     	                    }
 
                     	    }
@@ -888,7 +888,7 @@ public class QueryParser extends BaseParser {
                     {
                     match(input,52,FOLLOW_52_in_modifiers591); if (state.failed) return m;
 
-                    if ( state.backtracking==0 ) {m =Modifier.NO;}
+                    if ( state.backtracking==0 ) {m =Modifier.ALL;}
 
                     }
                     break;

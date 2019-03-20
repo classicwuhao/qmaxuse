@@ -645,19 +645,19 @@ checkExpr returns [QAst expr]:
          (
             ('+' right_expr=queryExpr 
                 {
-                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.AND);
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.UNION);
                 }
             )
         |
             ('-' right_expr=queryExpr 
                 {
-                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.OR);
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.DIFFER);
                 }
             )
         |
             ( '&' right_expr = queryExpr
                 {
-                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.IMPLIES);
+                    $expr = new QueryBinaryExpr($expr, right_expr, Connective.INTER);
                 }
             )
          )* EOF

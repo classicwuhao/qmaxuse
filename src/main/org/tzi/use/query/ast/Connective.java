@@ -1,8 +1,8 @@
 package org.tzi.use.query.ast;
 
 public enum Connective{
-    AND {public String toString(){return "&&";}},
-    OR {public String toString(){return "||";}},
-    IMPLIES {public String toString(){return "=>";}
+    UNION {public String toString(){return "+";}},
+    DIFFER {public String toString(){return "-";}},
+    INTER {public String toString(){return "&";}
     };
 }

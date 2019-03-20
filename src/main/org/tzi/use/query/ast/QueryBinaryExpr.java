@@ -30,6 +30,7 @@ public class QueryBinaryExpr extends QAst{
 
     public QAst left(){return this.expr1;}
     public QAst right(){return this.expr2;}
+    public Connective operator(){return this.operator;}
     
     @Override
     public boolean isBinaryQuery(){return true;}

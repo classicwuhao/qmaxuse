@@ -1,0 +1,75 @@
+model TEST
+
+class A
+attributes
+	a1:	Integer
+	a2:	Integer
+	a3:	Integer
+	a4:	Integer
+end
+
+class B
+attributes
+	b1:	Integer
+	b2:	Boolean
+	b3:	Integer
+end
+
+class C < A,B
+attributes
+	c1:	Integer
+	c2:	Integer
+end
+
+class D
+attributes
+	d1: Integer
+end
+
+class E
+attributes
+	e1: Integer
+	e2: Integer
+end
+
+association AB between
+	A [1..1] role a
+	B [0..*] role b
+end
+
+association CA between
+	C [1..*] role c
+	A [1..*] role a1
+end
+
+association DB between
+	D [1..*] role d
+	B [1..*] role b
+end
+
+association CB between
+	C [1..*] role c
+	E [1..*] role e
+end
+
+association BE between
+	B [1..*] role b
+	E [1..*] role e1
+end
+
+constraints
+
+context A
+	inv inv1: self.a1 > 10
+	inv inv2: self.a3 + self.a4 = self.a1+self.a2
+
+context B
+	inv inv1: self.b2=true
+	inv inv2: self.d->forAll(d|d.b->notEmpty())	
+	
+context C
+	inv inv1: self.c1 > 0 and self.c1 < 0
+
+context D
+	inv inv1: self.b->forAll(b|b.b3>0)
+

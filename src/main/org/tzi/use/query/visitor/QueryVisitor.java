@@ -25,8 +25,37 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitBinaryExpr(QueryBinaryExpr e){
+        /* copy evrything to leftstate */
         e.left().accept(this);
+        QueryState leftState = copy(this.state);
+        this.state.clearAll();
+
+        /* copy evrything to rightstate */
         e.right().accept(this);
+        QueryState rightState = copy(this.state);
+        this.state.clearAll();
+
+        switch (e.operator()){
+            case UNION:
+                out.println("computing union of two queries.",Color.GREEN);
+                state = union(leftState, rightState);
+                break;
+
+            case DIFFER:
+                out.println("computing difference of two queries.",Color.GREEN);
+                state = difference(leftState,rightState);
+                break;
+
+            case INTER:
+                out.println("computing intersection of two queries",Color.GREEN);
+                state = intersect(leftState,rightState);
+                break;
+
+            default:
+                out.println("Error: operator cannot be recognized.",Color.RED);
+
+        }   
+        
     }
 
     public void visitQueryExpr(QueryExpr e) {
@@ -322,4 +351,63 @@ public class QueryVisitor extends AbstractVisitor {
     }
     
     public QueryState state(){return this.state;}
+
+    public QueryState copy(QueryState state){
+        QueryState newstate = new QueryState();
+        newstate.classes().addAll(state.classes());
+        newstate.attributes().addAll(state.attributes());
+        newstate.associations().addAll(state.associations());
+        newstate.invariants().addAll(state.invariants());
+        return newstate;
+    }
+
+    public QueryState union (QueryState state1, QueryState state2){
+        Set<MClass> classes = new HashSet<MClass>();
+        Set<MAttribute> attributes = new HashSet<MAttribute>();
+        Set<MAssociation> associations = new HashSet<MAssociation>();
+        Set<MClassInvariant> invariants = new HashSet<MClassInvariant>();
+
+        classes.addAll(state1.classes());
+        classes.addAll(state2.classes());
+        attributes.addAll(state1.attributes());
+        attributes.addAll(state2.attributes());
+        associations.addAll(state1.associations());
+        associations.addAll(state2.associations());
+        invariants.addAll(state1.invariants());
+        invariants.addAll(state2.invariants());
+
+        return new QueryState(classes, attributes,associations,invariants);
+    }
+
+    public QueryState difference (QueryState state1, QueryState state2){
+        Set<MClass> classes = new HashSet<MClass>();
+        Set<MAttribute> attributes = new HashSet<MAttribute>();
+        Set<MAssociation> associations = new HashSet<MAssociation>();
+        Set<MClassInvariant> invariants = new HashSet<MClassInvariant>();
+
+        classes.addAll(state1.classes());
+        classes.removeAll(state2.classes());
+        attributes.addAll(state1.attributes());
+        attributes.removeAll(state2.attributes());
+        associations.addAll(state1.associations());
+        associations.removeAll(state2.associations());
+        invariants.addAll(state1.invariants());
+        invariants.removeAll(state2.invariants());
+
+        return new QueryState(classes, attributes,associations,invariants);
+    }
+
+    public QueryState intersect (QueryState state1, QueryState state2){
+        Set<MClass> classes = new HashSet<MClass>();
+        Set<MAttribute> attributes = new HashSet<MAttribute>();
+        Set<MAssociation> associations = new HashSet<MAssociation>();
+        Set<MClassInvariant> invariants = new HashSet<MClassInvariant>();
+
+        for (MClass cls : state1.classes()) if (state2.classes().contains(cls)) classes.add(cls);
+        for (MAttribute attr: state1.attributes()) if (state2.attributes().contains(attr)) attributes.add(attr);
+        for (MAssociation assoc: state1.associations()) if (state2.associations().contains(assoc)) associations.add(assoc);
+        for (MClassInvariant inv: state1.invariants()) if (state2.invariants().contains(inv)) invariants.add(inv);
+
+        return new QueryState(classes, attributes,associations,invariants);
+    }
 }

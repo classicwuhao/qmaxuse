@@ -1,4 +1,4 @@
-// $ANTLR 3.4 USE.g 2019-03-19 14:57:29
+// $ANTLR 3.4 USE.g 2019-03-20 15:54:15
  
 /*
  * USE - UML based specification environment
@@ -5076,7 +5076,7 @@ public class USEParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.AND);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.UNION);
                     	                    }
 
                     	    }
@@ -5099,7 +5099,7 @@ public class USEParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.OR);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.DIFFER);
                     	                    }
 
                     	    }
@@ -5122,7 +5122,7 @@ public class USEParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.IMPLIES);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.INTER);
                     	                    }
 
                     	    }

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Generator.g 2019-03-19 14:57:32
+// $ANTLR 3.4 Generator.g 2019-03-20 15:54:18
  
 /*
  * USE - UML based specification environment
@@ -6683,7 +6683,7 @@ public class GeneratorParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.AND);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.UNION);
                     	                    }
 
                     	    }
@@ -6706,7 +6706,7 @@ public class GeneratorParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.OR);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.DIFFER);
                     	                    }
 
                     	    }
@@ -6729,7 +6729,7 @@ public class GeneratorParser extends BaseParser {
                     	    if (state.failed) return expr;
 
                     	    if ( state.backtracking==0 ) {
-                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.IMPLIES);
+                    	                        expr = new QueryBinaryExpr(expr, right_expr, Connective.INTER);
                     	                    }
 
                     	    }
