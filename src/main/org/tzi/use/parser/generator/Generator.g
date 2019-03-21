@@ -908,7 +908,7 @@ keyInit:
 keyQualifier:
   {input.LT(1).getText().equals("qualifier")}? IDENT ;
 checkExpr returns [QAst expr]:
-    'verify' qexpr=queryExpr {$expr=qexpr;}
+    qexpr=queryExpr {$expr=qexpr;}
          (
             ('+' right_expr=queryExpr 
                 {

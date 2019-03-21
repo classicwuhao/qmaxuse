@@ -69,7 +69,13 @@ context B
 	
 context C
 	inv inv1: self.c1 > 0 and self.c1 < 0
-
+	inv inv2: self.a4 <= 0 and self.b2=true 
+	
 context D
 	inv inv1: self.b->forAll(b|b.b3>0)
+
+module queryTest
+	select A.*, A:*:* with A::* + select B.* with B::* 
+	select *.* *:*:* with *::* - select C.*, C:*:* with C::*
+end
 

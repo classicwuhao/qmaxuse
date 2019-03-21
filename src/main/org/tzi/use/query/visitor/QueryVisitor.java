@@ -53,8 +53,7 @@ public class QueryVisitor extends AbstractVisitor {
 
             default:
                 out.println("Error: operator cannot be recognized.",Color.RED);
-
-        }   
+        }
         
     }
 
