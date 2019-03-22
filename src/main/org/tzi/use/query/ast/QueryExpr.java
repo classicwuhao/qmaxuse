@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.tzi.use.query.visitor.AbstractVisitor;
 
-public class QueryExpr extends QAst{
+public class QueryExpr extends AbstractQuery{
     private List<QFeatureExpr> features;
     private QWithExpr withExpr;
     private QButExpr withoutExpr;
@@ -38,14 +38,6 @@ public class QueryExpr extends QAst{
         this.alias = alias;
     }
 
-    public void setModule (ModuleExpr module){
-        this.module = module;
-    }
-
-    public ModuleExpr module(){
-        return this.module;
-    }
-
     public boolean isContained(){
         return this.module!=null;
     }
@@ -71,7 +63,7 @@ public class QueryExpr extends QAst{
     public boolean isModuleAlised(){return false;}
 
     @Override
-    public boolean isQuery(){return true;}
+    public boolean isQueryExpr(){return true;}
 
     @Override
     public String toString(){

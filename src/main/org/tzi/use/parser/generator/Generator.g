@@ -908,6 +908,13 @@ keyInit:
 keyQualifier:
   {input.LT(1).getText().equals("qualifier")}? IDENT ;
 checkExpr returns [QAst expr]:
+    qexpr = abstractQueryExpr EOF
+    |
+        mexpr=moduleExpr {$expr = new ModuleListExpr(); ((ModuleListExpr)$expr).addModule(mexpr);} 
+        (mexpr=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
+;
+
+abstractQueryExpr returns [AbstractQuery expr]:
     qexpr=queryExpr {$expr=qexpr;}
          (
             ('+' right_expr=queryExpr 
@@ -927,10 +934,7 @@ checkExpr returns [QAst expr]:
                     $expr = new QueryBinaryExpr($expr, right_expr, Connective.INTER);
                 }
             )
-         )* EOF
-    |
-        mexpr=moduleExpr {$expr = new ModuleListExpr(); ((ModuleListExpr)$expr).addModule(mexpr);} 
-        (mexpr=moduleExpr {((ModuleListExpr)$expr).addModule(mexpr);})* EOF
+         )*
 ;
 
 queryExpr returns [QueryExpr qexpr] @init{
@@ -1022,8 +1026,15 @@ rankExpr returns [int rank] @init{
 
 moduleExpr returns [ModuleExpr mexpr]:
     'module' name=IDENT {$mexpr = new ModuleExpr($name.getText());}
-        query=queryExpr {$mexpr.addQuery(query);query.setModule($mexpr);} 
-        (query=queryExpr {$mexpr.addQuery(query);query.setModule($mexpr);})*
+         (varname=IDENT EQUAL)? query=abstractQueryExpr {
+             if ($varname!=null) query.setVariable($varname.getText());
+             $mexpr.addQuery(query);query.setModule($mexpr);
+         }
+        ((varname=IDENT EQUAL)? query=abstractQueryExpr {
+            if ($varname!=null) query.setVariable($varname.getText());
+            $mexpr.addQuery(query);query.setModule($mexpr);
+        }
+        )*
     'end'
 ;
 

@@ -5,7 +5,7 @@ public abstract class QAst{
     private int rank;
 
     public abstract String toString();
-    public boolean isQuery(){return false;}
+    public boolean isQueryExpr(){return false;}
     public boolean isBinaryQuery(){return false;}
     public boolean isModuleList(){return false;}
     public void setRank (int k){this.rank=k;}

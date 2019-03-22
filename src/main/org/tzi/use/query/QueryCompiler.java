@@ -54,7 +54,7 @@ public class QueryCompiler{
         lexer.init(errHandler);
         parser.init(errHandler);
         out.println("Launching QueryCompiler...",Color.WHITE);
-
+        
         try{
             expr = parser.checkExpr();
             if (errHandler.errorCount() == 0 ) {
@@ -100,7 +100,7 @@ public class QueryCompiler{
 
         try{
              expr = parser.checkExpr();
-             if (expr.isQuery()){
+             if (expr.isQueryExpr()){
                 QueryExpr qexpr = (QueryExpr) expr;
                 if (qexpr.containInjection()){
                     System.err.println("injection detected.");

@@ -72,8 +72,8 @@ public class QueryVisitor extends AbstractVisitor {
         /* this is an aliased query. */ 
         if (e.isPureAliased()){
             String name = e.alias();
-            e = model.queryContext().seek(name);
-            if (e==null) {
+            AbstractQuery query = model.queryContext().seek(name);
+            if (query==null) {
                 out.println("Error: no "+name+" is found in current context.",Color.RED);
                 return;
             }
@@ -285,7 +285,7 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitCheckExpr (CheckExpr e){
-        if (e.query()!=null){
+        /*if (e.query()!=null){
             QueryExpr expr = e.query();
             if (expr.isPureAliased()){
                 String name=expr.alias();
@@ -297,13 +297,13 @@ public class QueryVisitor extends AbstractVisitor {
             }
             else
                 expr.accept(this);
-        }
+        }*/
     }
 
     public void visitModuleAliasExpr(ModuleAliasExpr e){
-        List<QueryExpr> list =new ArrayList<QueryExpr>();
+        List<AbstractQuery> list =new ArrayList<AbstractQuery>();
         if (!e.module().equals("*") && !e.query().equals("*")){
-            QueryExpr expr = findQuery(e.module()+"."+e.query());
+            AbstractQuery expr = findQuery(e.module()+"."+e.query());
             if (expr!=null) {
                 list.add(expr);
             }
@@ -327,10 +327,10 @@ public class QueryVisitor extends AbstractVisitor {
 
         if (!e.module().equals("*") && e.query().equals("*")){
             list = model.queryContext().ModuleQueries(e.module());
-            if (list.size()==0) out.println("Error: no module "+ e.module() +" exists.",Color.RED);
+            if (list.size()==0) out.println("Error: no queries exists in "+e.module()+" or please assign a query to a variable.",Color.RED);
         }
         
-        for (QueryExpr qe : list){
+        for (AbstractQuery qe : list){
             this.state().clearAll(); 
             qe.accept(this);
         }
@@ -341,7 +341,7 @@ public class QueryVisitor extends AbstractVisitor {
 
     }
 
-    private QueryExpr findQuery(String name){
+    private AbstractQuery findQuery(String name){
         return model.queryContext().seek(name);
     }
 

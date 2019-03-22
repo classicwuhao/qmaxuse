@@ -376,7 +376,7 @@ public class ModelBrowser extends JPanel
 	        sw.write("<style> <!-- body { font-family: sansserif; } --> </style>");
 	        sw.write("</head><body><font size=\"-1\">");
             sw.write("<b> module </b>" + element.name());
-            for (QueryExpr e : element.queries())
+            for (AbstractQuery e : element.queries())
                 sw.write ("<p style=\"text-indent: 10px\">"+e.toString()+"</p>");
             sw.write("<b>end</b>");
         sw.write("</font></body></html>");

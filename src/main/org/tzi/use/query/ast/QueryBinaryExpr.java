@@ -1,7 +1,7 @@
 package org.tzi.use.query.ast;
 import org.tzi.use.query.visitor.AbstractVisitor;
 
-public class QueryBinaryExpr extends QAst{
+public class QueryBinaryExpr extends AbstractQuery{
     private QAst expr1;
     private QAst expr2;
     private Connective operator;

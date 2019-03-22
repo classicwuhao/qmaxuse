@@ -76,6 +76,6 @@ context D
 
 module queryTest
 	select A.*, A:*:* with A::* + select B.* with B::* 
-	select *.* *:*:* with *::* - select C.*, C:*:* with C::*
+--	select *.* *:*:* with *::* - select C.*, C:*:* with C::*
 end
 

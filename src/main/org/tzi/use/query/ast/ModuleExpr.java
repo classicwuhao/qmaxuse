@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import org.tzi.use.query.visitor.AbstractVisitor;
 
 public class ModuleExpr extends QAst{
-    private List<QueryExpr> queries;
+    private List<AbstractQuery> queries;
     private String name;
 
     public ModuleExpr(String name){
-        this.queries = new ArrayList<QueryExpr>();
+        this.queries = new ArrayList<AbstractQuery>();
         this.name = name;
     }
 
-    public void addQuery(QueryExpr expr){
+    public void addQuery(AbstractQuery expr){
         this.queries.add(expr);
     }
 
-    public List<QueryExpr> queries(){
+    public List<AbstractQuery> queries(){
         return this.queries;
     }
 
@@ -37,7 +37,7 @@ public class ModuleExpr extends QAst{
         
         sb.append("module "+this.name+" \n");
 
-        for (QueryExpr q : queries){
+        for (AbstractQuery q : queries){
             sb.append("\t"+q.toString()+"\n");
         }
 
