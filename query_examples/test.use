@@ -74,8 +74,14 @@ context C
 context D
 	inv inv1: self.b->forAll(b|b.b3>0)
 
-module queryTest
-	select A.*, A:*:* with A::* + select B.* with B::* 
---	select *.* *:*:* with *::* - select C.*, C:*:* with C::*
+
+module queryTest0
+	q0 = select A.*, A:*:* with A::* + select B.* with B::* 
+	q1 = select *.*, *:*:* with *::* - select C.*, C:*:* with C::*
+	q2 = select A.*, B.* with A::* & select C.* with C::*
+end
+
+module queryTest1
+	q0 = select *.*, *:*:* with *::* & select A.* , A:*:*, *:*:A with A::*
 end
 
