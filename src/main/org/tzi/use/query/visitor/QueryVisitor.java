@@ -231,7 +231,6 @@ public class QueryVisitor extends AbstractVisitor {
         }
 
         if (e.name().equals("*")){
-            System.err.println("name=*");
             state.invariants().addAll(list);
         }
         else {

@@ -74,11 +74,12 @@ context C
 context D
 	inv inv1: self.b->forAll(b|b.b3>0)
 
-
 module queryTest0
 	q0 = select A.*, A:*:* with A::* + select B.* with B::* 
 	q1 = select *.*, *:*:* with *::* - select C.*, C:*:* with C::*
 	q2 = select A.*, B.* with A::* & select C.* with C::*
+	q3 = select A:*:*, B:*:*, C:*:* with A::*, B::*
+	q4 = select D.* with D::* + select C.* with C::*
 end
 
 module queryTest1
