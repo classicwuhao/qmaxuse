@@ -44,6 +44,7 @@ public class QueryExpr extends AbstractQuery{
     
     public boolean isPureAliased(){return this.pure_aliased;}
     public void setPureAliased(){this.pure_aliased=true;}
+    public void unsetPureAliased(){this.pure_aliased=false;}
     public boolean isAliased(){return !this.alias.equals("");}
     
     public boolean containInjection(){

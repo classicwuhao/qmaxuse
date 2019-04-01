@@ -2,7 +2,8 @@ package org.tzi.use.query.ast;
 public abstract class AbstractQuery extends QAst{
     private ModuleExpr module=null;
     private String variable="";
-
+    private boolean isSaved=false;
+    
     public boolean isBinaryQuery(){return false;}
     public boolean isQueryExpr(){return false;}
     
@@ -22,4 +23,9 @@ public abstract class AbstractQuery extends QAst{
     public boolean isVariableSet(){
         return !this.variable.equals("");
     }
+
+    public boolean isSaved(){return this.isSaved==true;}
+    public void save(){this.isSaved=true;}
+    public void unsave(){this.isSaved=false;}
+
 }

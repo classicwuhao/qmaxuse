@@ -77,11 +77,12 @@ public class QueryVisitor extends AbstractVisitor {
                 out.println("Error: no "+name+" is found in current context.",Color.RED);
                 return;
             }
-            visitFeatures(e);
+            query.accept(this);
             return;
         }
-
-        if (e.isAliased() && !e.isPureAliased() && !e.isContained()) {
+        
+        if (e.isAliased() && !e.isPureAliased() && !e.isContained() && !e.isSaved()) {
+            e.save();
             model.queryContext().add(e.alias(),e);
             out.println("Alias "+e.alias()+" is saved.",Color.BLUE);
         }
@@ -291,10 +292,10 @@ public class QueryVisitor extends AbstractVisitor {
                 expr = model.queryContext().seek(expr.alias());
                 if (expr==null)
                     out.println("Error: alias name "+name+" cannotbe found.",Color.RED);
-                else
-                    expr.accept(this);
+                https://github.com/classicwuhao
+                https://github.com/classicwuhao
             }
-            else
+            elsehttps://github.com/classicwuhao
                 expr.accept(this);
         }*/
     }

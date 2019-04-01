@@ -19,10 +19,12 @@ public class QueryContext{
     }
 
     public void add (String name, AbstractQuery expr){
-        if (!context.containsKey(name))
+        if (!context.containsKey(name)){
             context.put(name, expr);
-        else
+        }
+        else{
             out.println("Warning: alias " +name+" has already been used so it is ignored, please use another name.",Color.YELLOW);
+        }
     }
 
     public AbstractQuery seek(String name){
