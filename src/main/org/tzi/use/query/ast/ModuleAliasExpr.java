@@ -23,7 +23,7 @@ public class ModuleAliasExpr extends QueryExpr{
         this.query = query;
     }
 
-    public String module(){return this.module;}
+    public String name(){return this.module;}
     public String query(){return this.query;}
     
     public String toString(){

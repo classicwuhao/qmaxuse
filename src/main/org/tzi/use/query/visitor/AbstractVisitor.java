@@ -13,4 +13,7 @@ public abstract class AbstractVisitor{
     public abstract void visitModuleExpr (ModuleExpr e);
     public abstract void visitModuleAliasExpr(ModuleAliasExpr e);
     public abstract void visitBinaryExpr(QueryBinaryExpr e);
+    public abstract void visitModuleListExpr (ModuleListExpr e);
+    public abstract void visitOCLExpr(QOCLExpr e);
+    
 }

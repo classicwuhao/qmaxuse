@@ -89,8 +89,8 @@ public class QueryExpr extends AbstractQuery{
         }
 
         if (withoutExpr!=null){
-            if (withoutExpr.expressions().size()!=0){
-                List<QInvExpr> withoutInvExprs = withoutExpr.expressions();
+            if (withoutExpr.features().size()!=0){
+                List<QFeatureExpr> withoutInvExprs = withoutExpr.features();
                 sb.append(" but ");
                 for (int i=0;i<withoutInvExprs.size()-1;i++ )
                 sb.append(withoutInvExprs.get(i).toString()+", ");

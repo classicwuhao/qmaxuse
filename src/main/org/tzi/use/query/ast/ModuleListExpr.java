@@ -1,6 +1,8 @@
 package org.tzi.use.query.ast;
 import java.util.List;
 import java.util.ArrayList;
+import org.tzi.use.query.visitor.AbstractVisitor;
+
 
 public class ModuleListExpr extends QAst{
     private List<ModuleExpr> modules;
@@ -33,5 +35,9 @@ public class ModuleListExpr extends QAst{
             sb.append("\n " + m.details() +"\n");
         
         return sb.toString();
+    }
+
+    public void accept(AbstractVisitor visitor){
+        visitor.visitModuleListExpr(this);
     }
 }

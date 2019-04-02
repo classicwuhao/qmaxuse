@@ -4,6 +4,7 @@ import org.tzi.use.parser.ocl.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.tzi.use.query.visitor.AbstractVisitor;
 
 /* A Wrapper class for holding simple OCL expressions. */ 
 public class QOCLExpr extends QAst{
@@ -57,6 +58,10 @@ public class QOCLExpr extends QAst{
             sb.append(expr.toString()+" , ");
 
         return sb.toString();
+    }
+
+    public void accept (AbstractVisitor visitor){
+        visitor.visitOCLExpr(this);
     }
 
 }

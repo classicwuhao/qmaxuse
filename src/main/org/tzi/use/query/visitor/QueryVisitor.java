@@ -80,7 +80,7 @@ public class QueryVisitor extends AbstractVisitor {
             query.accept(this);
             return;
         }
-        
+
         if (e.isAliased() && !e.isPureAliased() && !e.isContained() && !e.isSaved()) {
             e.save();
             model.queryContext().add(e.alias(),e);
@@ -252,7 +252,11 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitButExpr (QButExpr e){
-        for (QInvExpr inv: e.expressions()) {
+
+    }
+
+    private void removeInvExpr(QButExpr e){
+     for (QInvExpr inv: e.invariants()) {
             Iterator<MClassInvariant> it = state.invariants().iterator();
             while (it.hasNext()){
                 if (!inv.context().equals("*")){
@@ -302,32 +306,32 @@ public class QueryVisitor extends AbstractVisitor {
 
     public void visitModuleAliasExpr(ModuleAliasExpr e){
         List<AbstractQuery> list =new ArrayList<AbstractQuery>();
-        if (!e.module().equals("*") && !e.query().equals("*")){
-            AbstractQuery expr = findQuery(e.module()+"."+e.query());
+        if (!e.name().equals("*") && !e.query().equals("*")){
+            AbstractQuery expr = findQuery(e.name()+"."+e.query());
             if (expr!=null) {
                 list.add(expr);
             }
             else{
-                out.println("Error: no query "+e.module()+"."+e.query()+" can be found.",Color.RED);
+                out.println("Error: no query "+e.name()+"."+e.query()+" can be found.",Color.RED);
                 return;
             }
         }
 
-        if (e.module().equals("*") && !e.query().equals("*")){
+        if (e.name().equals("*") && !e.query().equals("*")){
             list = model.queryContext().AllQueries(e.query());
             if (list.size()==0)
                 out.println("Error: no such queries "+e.query()+" can be found.",Color.RED);
         }
 
-        if (e.module().equals("*") && e.query().equals("*")){
+        if (e.name().equals("*") && e.query().equals("*")){
             list = model.queryContext().AllQueries();
             if (list.size()==0)
                 out.println("Error: no query module exists.",Color.RED);
         }
 
-        if (!e.module().equals("*") && e.query().equals("*")){
-            list = model.queryContext().ModuleQueries(e.module());
-            if (list.size()==0) out.println("Error: no queries exists in "+e.module()+" or please assign a query to a variable.",Color.RED);
+        if (!e.name().equals("*") && e.query().equals("*")){
+            list = model.queryContext().ModuleQueries(e.name());
+            if (list.size()==0) out.println("Error: no queries exists in "+e.name()+" or please assign a query to a variable.",Color.RED);
         }
         
         for (AbstractQuery qe : list){
@@ -338,6 +342,14 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitModuleExpr(ModuleExpr e){
+
+    }
+
+    public void visitModuleListExpr(ModuleListExpr e){
+
+    }
+
+    public void visitOCLExpr (QOCLExpr e){
 
     }
 

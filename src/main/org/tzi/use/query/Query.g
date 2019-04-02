@@ -115,6 +115,7 @@ modifiers returns [Modifier m]:
 
     |'all' {$m=Modifier.ALL;}
 ;
+
 attrExpr returns [QAttrExpr attr]:
     src=(IDENT|STAR) DOT dest=(IDENT|STAR) (k=rankExpr)? 
     {
@@ -142,11 +143,13 @@ withExpr returns [QWithExpr with] @init{
 }: 
     'with' w=invExpr{$with.addInvExpr(w);} (COMMA w=invExpr{$with.addInvExpr(w);})*
 ;
+
 butExpr returns [QButExpr without] @init{
     $without = new QButExpr();
 }
 :
-    'but' w=invExpr{$without.addInvExpr(w);} (COMMA w=invExpr{$without.addInvExpr(w);})*
+    'but' (f=featureExpr {$without.addFeatureExpr(f);}  | w=invExpr {$without.addFeatureExpr(w);}) 
+    (COMMA (f=featureExpr {$without.addFeatureExpr(f);} | w=invExpr{$without.addFeatureExpr(w);}) )*
 ;
 
 invExpr returns [QInvExpr inv]: 
