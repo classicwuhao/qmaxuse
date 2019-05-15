@@ -13,7 +13,7 @@
 
 package uran.solver;
 
-import java.util.*;
+import java.util.HashMap;
 import uran.formula.FunctionFactory;
 import uran.formula.smt2.SMT2Writer;
 import uran.formula.*;
@@ -73,7 +73,7 @@ public final class Z3SMT2Solver{
 		}
 		return Result.UNKNOWN;
 	}
-			
+		
 	private void updateFuns(Model model){
 		FuncDecl cons[] = model.getConstDecls();
 		Expr expr;

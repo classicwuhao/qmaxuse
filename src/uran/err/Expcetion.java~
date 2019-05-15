@@ -1,0 +1,9 @@
+package atongmu.err;
+import java.io.*;
+
+public class Exception{
+	public String message;
+	public int 	err_code;
+	public PrintStream err;
+	public abstract void printErrMessage();
+}

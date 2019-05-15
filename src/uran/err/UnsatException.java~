@@ -1,0 +1,28 @@
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++Written by: Hao Wu++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ *	This is a part of my PhD work.
+ *  haowu@cs.nuim.ie
+ *  APR-2012 
+ *  
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * ++++++++++++++++++++++++++++++Do or do not, there is no try.+++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+package uran.err;
+
+public final class UnsatException extends AbstractException{
+	
+	private final int code=0x19;
+
+	public UnsatException(){
+		//super ("Couldn't find any models due to the unsatisfiability of the model.",code);
+		super();
+	}
+
+	public UnsatException(String msg){
+		super(msg);
+	}
+	
+}

@@ -1,0 +1,16 @@
+package atongmu.err;
+import java.io.*;
+
+public abstract class AbstractException extends Exception{
+	public String message;
+	public int 	err_code;
+	public PrintWriter err;
+
+	public Exception(){}
+
+	public Exception(PrintWriter e){
+		err=e;		
+	}
+	
+	public abstract void printErrMessage();
+}

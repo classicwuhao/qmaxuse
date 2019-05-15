@@ -42,6 +42,7 @@ import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.RandomAccessFile;
 import java.io.IOException;
+import java.io.File;
 import java.util.List;
 import java.util.Date;
 
@@ -50,6 +51,7 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 	private PrintWriter writer;	
 	private RandomAccessFile raf;
 	private FunctionFactory factory;
+	private File trace;
 	private List<AbstractFormula> formulas;
 	private final static String ASSERT="assert";
 	
@@ -66,7 +68,8 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 		this.factory=factory;
 		this.formulas =formulas;
 		try{
-			writer = new PrintWriter (new BufferedWriter (new FileWriter(this.file)));
+			trace = new File(this.file);
+			writer = new PrintWriter (new BufferedWriter (new FileWriter(trace)));
 			generate();
 			writer.flush();
 			writer.close();
@@ -118,12 +121,16 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 	}
 	public FunctionFactory getFactory(){return this.factory;}
 	public String getFile(){return this.file;}
+	public void clean(){
+			this.trace.delete();
+	
+	}
 
 	public synchronized void append(AbstractFormula formula){
 		try{
 			raf = new RandomAccessFile(this.file,"rw");
 			raf.seek(raf.length());
-			//raf.writeBytes("\n");
+			raf.writeBytes("\n");
 			raf.writeBytes("("+ASSERT+" "+formula.toSMT2()+")\n");
 			raf.close();
 		}
@@ -178,11 +185,12 @@ public final class SMT2Writer extends AbstractVisitor implements Runnable{
 			if ((char)raf.read()=='\n') pos--;
 			for (;pos>=0; pos--){
 				raf.seek(pos);
-				if (k>=line) break;
+				if (k>line) break;
 				if ((char)raf.read()=='\n') k++;
 			}
 			raf.setLength(pos+1);
 			raf.seek(pos+1);
+			//raf.writeBytes("\n");
 			raf.close();
 		}
 		catch(IOException e){

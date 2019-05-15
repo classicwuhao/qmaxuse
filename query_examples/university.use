@@ -79,10 +79,11 @@ context Module
 module queryset0
 	select Person.* with Person::* as q0
 	select Module.* with Module::* as q1
+	select Person.*, Student.* but Person as q2
 end
 
 module queryset1
-	select Student.*, Module.* with Student::*, Module::* as q0
+	select Student.*, Module.* with Student::*, Module::* but Student as q0
 end 
 
 module queryset2

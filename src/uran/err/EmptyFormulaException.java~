@@ -1,0 +1,29 @@
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++Written by: Hao Wu++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ *	This is a part of my PhD work.
+ *  haowu@cs.nuim.ie
+ *  APR-2012 
+ *  
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * ++++++++++++++++++++++++++++++Do or do not, there is no try.+++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+package uran.err;
+import java.io.*;
+
+public final class NullableFormulaException extends AbstractException{
+	
+	public EmptyFormulaException(PrintWriter e){
+		this.err=e;
+		this.message="Formula cannot be nullable.";
+		this.err_code=0x15;
+	}
+
+	public EmptyFormulaException(PrintWriter e, int c){
+		this.err = e;
+		this.err_code=c;
+	}
+	
+}

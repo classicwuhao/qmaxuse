@@ -252,6 +252,44 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitButExpr (QButExpr e){
+        removeClass(e);
+
+    }
+
+    private void removeClass(QButExpr e){
+        Set<MClass> excluded_cls_set = new HashSet<MClass>();
+        for (QClassExpr qcls : e.classes()){
+            MClass cls = findClass(qcls.name());
+            if (cls==null){out.println("Warning: no class: "+qcls.name()+" is found.",Color.YELLOW);continue;}
+            excluded_cls_set.add(cls);
+            state.classes().remove(cls);
+        }
+
+        /* we should also remove all attributes/associations/invariants associated with this class */
+        for (MClass cls : excluded_cls_set){
+            Iterator<MAttribute> it_a = state.attributes().iterator();
+            Iterator<MAssociation> it_b = state.associations().iterator();
+            Iterator<MClassInvariant> it_c = state.invariants().iterator();
+
+            while (it_a.hasNext()){
+                MAttribute attribute = it_a.next();
+                if (attribute.owner()==cls) it_a.remove();
+            }
+
+            while (it_b.hasNext()){
+                MAssociation association = it_b.next();
+                if (association.associatedClasses().contains(cls)) it_b.remove();
+            }
+
+            while (it_c.hasNext()){
+                MClassInvariant inv = it_c.next();
+                if (inv.cls()==cls) it_c.remove();
+            }
+        }
+
+    }
+
+    private void removeAttribute(QButExpr e){
 
     }
 
@@ -361,6 +399,10 @@ public class QueryVisitor extends AbstractVisitor {
         return model.getClass(name);
     }
     
+    private MAttribute findAttribute(String owner, String name){
+        return model.getClass(name).attribute(name,true);
+    }
+
     public QueryState state(){return this.state;}
 
     public QueryState copy(QueryState state){

@@ -41,9 +41,9 @@ public final class Decls extends AbstractFormula{
 	public String toString(){
 		StringBuilder sb = new StringBuilder("(");
 		for (int i=0;i<vars.length;i++){
-				sb.append(" ");
-				sb.append(vars[i].toString());
-				sb.append(" ");
+			sb.append(" ");
+			sb.append(vars[i].toString());
+			sb.append(" ");
 		}
 		
 		return sb.append(")").toString();
@@ -51,6 +51,13 @@ public final class Decls extends AbstractFormula{
 	
 	@Override
 	public String toSMT2(){
+		/*StringBuilder sb = new StringBuilder();
+		for (int i=0;i<vars.length;i++){
+			sb.append("( ");
+			sb.append(vars[i].toString());
+			sb.append(" )");
+		}
+		return sb.toString();*/
 		return "";
 	}
 	
