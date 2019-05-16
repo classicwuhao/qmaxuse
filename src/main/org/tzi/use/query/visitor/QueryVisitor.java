@@ -252,13 +252,16 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitButExpr (QButExpr e){
-        removeClass(e);
-
+        removeClass(e.classes());
+        removeAttribute(e.attributes());
+        removeAssociation(e.associations());
+        removeInvExpr(e.invariants());
     }
 
-    private void removeClass(QButExpr e){
+    private void removeClass(List<QClassExpr> e){
         Set<MClass> excluded_cls_set = new HashSet<MClass>();
-        for (QClassExpr qcls : e.classes()){
+        for (QClassExpr qcls : e){
+            if (qcls.name().equals("*")){out.println("Warning: wild character * is not allowed.",Color.YELLOW);continue;}
             MClass cls = findClass(qcls.name());
             if (cls==null){out.println("Warning: no class: "+qcls.name()+" is found.",Color.YELLOW);continue;}
             excluded_cls_set.add(cls);
@@ -289,12 +292,50 @@ public class QueryVisitor extends AbstractVisitor {
 
     }
 
-    private void removeAttribute(QButExpr e){
+    private void removeAttribute(List<QAttrExpr> e){
+        Set<MAttribute> excluded_attr_set = new HashSet<MAttribute>();
 
+        for (QAttrExpr qattr: e){
+            if (qattr.name().equals("*") || qattr.container().equals("*"))
+                {out.println("Warning: wild character * is not allowed.",Color.YELLOW);continue;}
+            MClass cls = findClass(qattr.container());
+            MAttribute attr=null;
+            if (cls!=null){
+                attr = cls.attribute(qattr.name(),true);
+            }
+            else{
+                out.println("Warning: no attribute: "+qattr.toString()+" is found.",Color.YELLOW);continue;
+            }
+            if (attr==null) {out.println("Warning: no attribute: "+qattr.toString()+" is found.",Color.YELLOW);continue;}
+            excluded_attr_set.add(attr);
+        }
+
+        for (MAttribute attr : excluded_attr_set){
+            Iterator<MAttribute> it = state.attributes().iterator();
+            while (it.hasNext()){
+                MAttribute attribute = it.next();
+                if (attr==attribute) it.remove();
+            }
+        }
     }
 
-    private void removeInvExpr(QButExpr e){
-     for (QInvExpr inv: e.invariants()) {
+    private void removeAssociation(List<QAssocExpr> e){
+        Set<MAssociation> excluded_assoc_set = new HashSet<MAssociation>();
+        for (QAssocExpr assoc : e){
+            if (assoc.name().equals("*") || assoc.endA().equals("*") || assoc.endB().equals("*")){
+                out.println("Warning: wild character * is not allowed.",Color.YELLOW);
+                continue;
+            }
+            MAssociation association = findAssociation(assoc.name(),assoc.endA(),assoc.endB());
+            Iterator<MAssociation> it = state.associations().iterator();
+            while (it.hasNext()){
+                if (association==it.next()) it.remove();
+            }
+        }
+    }
+
+    private void removeInvExpr(List<QInvExpr> e){
+     for (QInvExpr inv: e) {
             Iterator<MClassInvariant> it = state.invariants().iterator();
             while (it.hasNext()){
                 if (!inv.context().equals("*")){
@@ -399,6 +440,19 @@ public class QueryVisitor extends AbstractVisitor {
         return model.getClass(name);
     }
     
+    private MAssociation findAssociation(String name, String endA, String endB){
+        for (MAssociation assoc : model.associations()){
+            if (assoc.name().equals(name)){
+                List<MAssociationEnd> ends = assoc.associationEnds();
+                if (ends.get(0).name().equals(endA) && ends.get(1).name().equals(endB))
+                    return assoc;
+            }
+        }
+
+        return null;
+
+    }
+
     private MAttribute findAttribute(String owner, String name){
         return model.getClass(name).attribute(name,true);
     }

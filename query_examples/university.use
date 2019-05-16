@@ -83,8 +83,8 @@ module queryset0
 end
 
 module queryset1
-	select Student.*, Module.* with Student::*, Module::* but Student as q0
-end 
+	select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Student as q0
+end
 
 module queryset2
 	select Student.*@5 with Student::* inject {Student.allInstances()->forAll(s|s.modules->size()=10)} as q0
