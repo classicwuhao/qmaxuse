@@ -83,7 +83,7 @@ module queryset0
 end
 
 module queryset1
-	select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Student as q0
+	select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Person as q0
 end
 
 module queryset2

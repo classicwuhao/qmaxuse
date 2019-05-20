@@ -265,7 +265,9 @@ public class QueryVisitor extends AbstractVisitor {
             MClass cls = findClass(qcls.name());
             if (cls==null){out.println("Warning: no class: "+qcls.name()+" is found.",Color.YELLOW);continue;}
             excluded_cls_set.add(cls);
+            excluded_cls_set.addAll(cls.allChildren());
             state.classes().remove(cls);
+            state.classes().removeAll(cls.allChildren());
         }
 
         /* we should also remove all attributes/associations/invariants associated with this class */
