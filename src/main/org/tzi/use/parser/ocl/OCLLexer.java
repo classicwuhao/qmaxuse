@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.4 OCL.g 2019-05-28 11:18:41
-=======
-// $ANTLR 3.4 OCL.g 2019-05-20 15:39:26
->>>>>>> Qmaxuse
+// $ANTLR 3.4 OCL.g 2019-05-28 12:10:10
 
 package org.tzi.use.parser.ocl; 
 
