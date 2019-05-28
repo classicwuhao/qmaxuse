@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 Soil.g 2019-05-28 11:18:43
+=======
+// $ANTLR 3.4 Soil.g 2019-05-20 15:39:27
+>>>>>>> Qmaxuse
 
 /*
  * USE - UML based specification environment

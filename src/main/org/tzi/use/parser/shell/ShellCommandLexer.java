@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 ShellCommand.g 2019-05-28 11:18:47
+=======
+// $ANTLR 3.4 ShellCommand.g 2019-05-20 15:39:29
+>>>>>>> Qmaxuse
 
 /*
  * USE - UML based specification environment

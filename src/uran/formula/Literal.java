@@ -11,7 +11,7 @@
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  */
 package uran.formula;
-import uran.formula.type.*;
+import uran.formula.AbstractFormula;
 
 public abstract class Literal extends AbstractFormula{
 	

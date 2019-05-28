@@ -21,7 +21,7 @@ public class QAssocExpr extends QFeatureExpr{
     public String endB(){return this.endB;}
 
     @Override
-    public boolean isAttrExpr(){return true;}
+    public boolean isAssocExpr(){return true;}
 
     @Override
     public String toString(){

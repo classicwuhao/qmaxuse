@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 Query.g 2019-05-28 11:18:45
+=======
+// $ANTLR 3.4 Query.g 2019-05-20 15:39:28
+>>>>>>> Qmaxuse
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;

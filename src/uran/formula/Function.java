@@ -23,7 +23,7 @@ public class Function extends AbstractFormula{
 	private String name;
 	private Type[] arguments;
 	private Type returnType;
-	private Function[] functions;	//keep track of function applications.
+	private AbstractFormula[] functions;	//keep track of function applications.
 	
 	/** Construct a function based on a list of argument type */
 	public Function (String n, Type...args){
@@ -40,7 +40,7 @@ public class Function extends AbstractFormula{
 	}
 
 	/** Construct a function application */
-	public Function (Function fun, Function...args){
+	public Function (Function fun, AbstractFormula...args){
 		this.name = fun.name();
 		this.arguments = fun.getArgs();
 		this.returnType = fun.getReturnType();
@@ -89,16 +89,22 @@ public class Function extends AbstractFormula{
 	 *	
 	 *	@param functions	list of functions to be applied on.
 	 */
-	public Function apply(Function...functions){
+	public Function apply(AbstractFormula...functions){
 		if (arguments.length-1 != functions.length) throw new ArgumentSizeException();	
-
-		Function[] f = new Function[functions.length];
-		for (int i=0;i<functions.length;i++){
-			if (!arguments[i].equalsTo(functions[i].getReturnType())) throw new TypeMissmatchException("Error: expected type is "+arguments[i]);
-			f[i]=functions[i];
-		}
 		
-		return new Function(this,f);
+		//Function[] f = new Function[functions.length];
+		//for (int i=0;i<functions.length;i++){
+			//if (functions[i].isFunction()){
+			//	if (!arguments[i].equalsTo(((Function)functions[i]).getReturnType())){
+			//		throw new TypeMissmatchException("Error: expected type is "+arguments[i]);
+			//	}
+			//	else{
+					//f[i]=functions[i];
+			//	}
+			//}
+		//}
+		
+		return new Function(this,functions);
 	}
 	
 	@Override

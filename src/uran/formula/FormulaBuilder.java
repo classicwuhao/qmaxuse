@@ -52,7 +52,7 @@ public final class FormulaBuilder{
 	}
 
 	public static AbstractFormula none(AbstractFormula...formulas){
-		return new NegFormula(new AndFormula().merge(formulas));
+		return new NegFormula(new OrFormula().merge(formulas));
 	}
 	
 	public static AbstractFormula exact (int k, AbstractFormula...formulas){

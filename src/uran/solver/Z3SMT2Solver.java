@@ -13,11 +13,12 @@
 
 package uran.solver;
 
-import java.util.*;
+import java.util.HashMap;
 import uran.formula.FunctionFactory;
 import uran.formula.smt2.SMT2Writer;
 import uran.formula.*;
 import com.microsoft.z3.*;
+import com.microsoft.z3.enumerations.*;
 import uran.formula.value.Value;
 import uran.formula.value.BoolValue;
 import uran.formula.value.IntValue;
@@ -54,16 +55,21 @@ public final class Z3SMT2Solver{
 		/* parse SMT2 file */
 		HashMap<String, String> cfg = new HashMap<String, String>();
 		cfg.put("model","true");
+		cfg.put("produce-unsat-cores","true");
 		try{
 			Context ctx = new Context();
 			Solver solver = ctx.mkSolver();
-			solver.add(ctx.parseSMTLIB2File(writer.getFile(),null, null, null, null));
+			solver.add(ctx.mkAnd(ctx.parseSMTLIB2File(writer.getFile(),null, null, null, null)));
 			Status result = solver.check();
 			if (result == Status.SATISFIABLE){
 				updateFuns(solver.getModel());
 				return Result.SAT;
 			}
 			else if (result == Status.UNSATISFIABLE){
+				//System.out.println(solver.getProof());
+				/*for (Expr c : solver.getUnsatCore()){
+					System.out.println("unsat: "+ c);
+				}*/
 				return Result.UNSAT;
 			}
 			else
@@ -74,24 +80,42 @@ public final class Z3SMT2Solver{
 		}
 		return Result.UNKNOWN;
 	}
-			
+		
 	private void updateFuns(Model model){
 		FuncDecl cons[] = model.getConstDecls();
-		Expr expr;
-		
+		Sort funs[] = model.getSorts(); 
+
+		Expr expr;		
 		/* constants */
 		for (int i=0;i<cons.length;i++){
-			expr = model.getConstInterp(cons[i]);
-			Symbol sym = cons[i].getName();
-			if (expr.isBool()){
-				factory.updateValue(cons[i].getName().toString(),new BoolValue(expr.isTrue()));
+			Z3_sort_kind sort = cons[i].getRange().getSortKind();
+			//System.out.println("Arity:"+cons[i].getArity()+cons[i].toString());
+			if (sort==Z3_sort_kind.Z3_INT_SORT || sort==Z3_sort_kind.Z3_BV_SORT || sort==Z3_sort_kind.Z3_BOOL_SORT){
+				expr = model.getConstInterp(cons[i]);
+				Symbol sym = cons[i].getName();
+				if (expr.isBool()){
+					factory.updateValue(cons[i].getName().toString(),new BoolValue(expr.isTrue()));
+				}
+				else if (expr.isInt()){
+					factory.updateValue(cons[i].getName().toString(),
+					new IntValue(Integer.parseInt(((IntExpr)expr).toString())));
+				}
+				else if (expr.isBV()){
+					factory.updateBV(cons[i].getName().toString(), new IntValue(((BitVecNum)expr).getInt()));
+				}
+				else{
+					System.out.println(expr);
+				}				
 			}
-			else if (expr.isInt()){
-				factory.updateValue(cons[i].getName().toString(),
-				new IntValue(Integer.parseInt(((IntExpr)expr).toString())));
+			else if (sort == Z3_sort_kind.Z3_ARRAY_SORT){
+				FuncInterp array_interp = model.getFuncInterp(cons[i]);
+				factory.updateArray(cons[i].getName().toString(),array_interp.toString());
+				//System.out.println("Array Interpretation:"+array_interp.toString());
+			}
+			else {
+				System.out.println("Unsupported interpretation.");
 			}
 		}
-
 		/* interpreted functions */
 		FuncDecl func[] = model.getFuncDecls();
 		FuncInterp p;

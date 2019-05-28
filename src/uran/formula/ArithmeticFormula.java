@@ -17,7 +17,7 @@ import uran.err.NullableFormulaException;
 import uran.err.MissingFormulaException;
 
 /** 
- * 	Constrcut an arithmetic formula (+,-,*,div)
+ * 	Construct an arithmetic formula (+,-,*,div)
  *	@author Hao Wu
  */
 
@@ -66,7 +66,7 @@ public final class ArithmeticFormula extends BinaryFormula{
 		if (formulas.length<=1) throw new MissingFormulaException("Build ArithmeticFormula: Formula size >=  2 is expected.");		
 		
 		if (this.isNull()){
-			if (formulas.length<2) throw new MissingFormulaException("Build And Formula: Formula size >=  2 is expected.");
+			if (formulas.length<2) throw new MissingFormulaException("Build ArithmeticFormula: Formula size >=  2 is expected.");
 			formula.setLeft(formulas[0]);
 			formula.setRight(formulas[1]);
 			pos=2;
