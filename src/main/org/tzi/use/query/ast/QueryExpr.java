@@ -11,11 +11,11 @@ public class QueryExpr extends AbstractQuery{
     private QOCLExpr oclExpr;
     private String alias ="";
     private boolean pure_aliased=false;
-    private ModuleExpr module=null;
+    //private ModuleExpr module=null;
 
     public QueryExpr(){
         features = new ArrayList<QFeatureExpr>();
-        module=null;
+        //module=null;
     }
 
     public void addFeature(QFeatureExpr expr){
@@ -39,7 +39,7 @@ public class QueryExpr extends AbstractQuery{
     }
 
     public boolean isContained(){
-        return this.module!=null;
+        return this.module()!=null;
     }
     
     public boolean isPureAliased(){return this.pure_aliased;}

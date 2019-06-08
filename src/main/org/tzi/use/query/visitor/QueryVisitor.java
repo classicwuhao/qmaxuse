@@ -62,7 +62,7 @@ public class QueryVisitor extends AbstractVisitor {
             out.println("Model is empty.",Color.RED);
             return;
         }
-
+        
         /* This is a module call */ 
         if (e.isModuleAlised()){
             ((ModuleAliasExpr)e).accept(this);
@@ -81,7 +81,8 @@ public class QueryVisitor extends AbstractVisitor {
             return;
         }
 
-        if (e.isAliased() && !e.isPureAliased() && !e.isContained() && !e.isSaved()) {
+        if (e.isAliased() && !e.isPureAliased() && !e.isContained() && !e.isSaved()){
+            System.out.println("visiting alias...");
             e.save();
             model.queryContext().add(e.alias(),e);
             out.println("Alias "+e.alias()+" is saved.",Color.BLUE);
@@ -386,6 +387,7 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitModuleAliasExpr(ModuleAliasExpr e){
+        //System.out.println("visiting module alias.");
         List<AbstractQuery> list =new ArrayList<AbstractQuery>();
         if (!e.name().equals("*") && !e.query().equals("*")){
             AbstractQuery expr = findQuery(e.name()+"."+e.query());
@@ -416,7 +418,7 @@ public class QueryVisitor extends AbstractVisitor {
         }
         
         for (AbstractQuery qe : list){
-            this.state().clearAll(); 
+            this.state().clearAll();
             qe.accept(this);
         }
 
