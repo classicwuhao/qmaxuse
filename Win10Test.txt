@@ -1,0 +1,18 @@
+MaxUSE For Windows 10 (x86)
+
+1. Download Z3 SMT solver
+2. Compile it under VS command prompt (follow the Z3 compile instructions).
+3. Set PATH to Z3 build directory
+4. Download MaxUSE
+5. In lib directory run: java -jar maxuse.jar
+6. Load university_weight_equal.use from GroupA in the benchmark.
+7. type maxuse in the command line
+8. check the output.  You should get (You may see some weird message such as [94; these are colour code and they may not be displayed correctly in VS command prompt)
+    1. Max weight found: 6 with 2 calls.
+    2. A matrix showing 2 subsets: (1,2) and (0,5,6,7).
+
+Test Environment: 
+Windows 10 Enterprise (Version: 10.0.17763) 64bit/i5-3470 with 12G memory.
+Java version: 1.8.0_211
+Z3 version: 4.8.6 32bit
+
