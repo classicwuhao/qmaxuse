@@ -1,0 +1,10 @@
+[Classes]
+A rank: <1> 
+B rank: <1> 
+C rank: <1> 
+D rank: <1> 
+
+[Associations]
+
+[Invariants]
+inv1 rank:<1> 

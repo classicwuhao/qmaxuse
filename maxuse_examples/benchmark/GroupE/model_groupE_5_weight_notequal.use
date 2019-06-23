@@ -6,7 +6,7 @@ enum Enum1 { Enum1Elem0, Enum1Elem1, Enum1Elem2, Enum1Elem3, Enum1Elem4, Enum1El
 
 enum Enum2 { Enum2Elem0, Enum2Elem1, Enum2Elem2, Enum2Elem3, Enum2Elem4, Enum2Elem5, Enum2Elem6 } 
 
-@Rank = default
+@Rank = automatic
 class Class0
 attributes 
 	Class0BoolAttr0 : Boolean 
@@ -66,7 +66,7 @@ attributes
 	Class6EnumAttr6 : Enum0 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class7
 attributes 
 	Class7BoolAttr0 : Boolean 
@@ -210,7 +210,7 @@ attributes
 	Class16EnumAttr10 : Enum2 
 end 
 
-@Rank = default
+@Rank = automatic
 class Class17
 attributes 
 	Class17BoolAttr0 : Boolean 
@@ -228,7 +228,7 @@ attributes
 	Class17EnumAttr9 : Enum1 
 end 
 
-@Rank = default
+@Rank = automatic
 association Class0_Class0 between 
 	 Class0 [0..*] role role0
 	 Class0 [1..*] role role1
@@ -240,7 +240,7 @@ association Class1_Class12 between
 	 Class12 [1..3] role role3
 end 
 
-@Rank = default
+@Rank = automatic
 association Class2_Class1 between 
 	 Class2 [1] role role4
 	 Class1 [4] role role5
@@ -474,7 +474,7 @@ context Class10
 	 inv: self.Class10IntAttr3 <= 6
 	 @Rank= 2 
 	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr4 > c0_2.Class10IntAttr3 ) 
-	 @Rank= default 
+	 @Rank= automatic 
 	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr4 > c0_2.Class10IntAttr3 ) 
 	 @Rank= 2 
 	 inv: Class10.allInstances()->forAll( c0_1,c0_2 | c0_1.Class10IntAttr3 <> c0_2.Class10IntAttr4 ) 
@@ -510,7 +510,7 @@ context Class12
 	 inv: Class12.allInstances()->forAll( c2_1,c2_2 | c2_1.Class12IntAttr3 < c2_2.Class12IntAttr4 ) 
 	 @Rank= 1 
 	 inv: self.Class12BoolAttr1 xor self.Class12BoolAttr0 or self.Class12BoolAttr2 xor self.Class12IntAttr3 <= 7
-	 @Rank= default 
+	 @Rank= automatic 
 	 inv: self.Class12EnumAttr6 <> #Enum0Elem2 or self.Class12BoolAttr1 or self.Class12BoolAttr0 or self.Class12IntAttr4 < 18
 
 @Class13{Rank = 1} 
@@ -586,7 +586,7 @@ context Class15
 	 inv: self.Class15IntAttr6 < 11 xor self.Class15IntAttr4 = 11
 	 @Rank= 1 
 	 inv: Class15.allInstances()->forAll( c5_1,c5_2 | c5_1.Class15IntAttr6 < c5_2.Class15IntAttr4 ) xor self.Class15IntAttr4 <> 2
-	 @Rank= default 
+	 @Rank= automatic 
 	 inv: Class15.allInstances()->forAll( c5_1,c5_2 | c5_1.Class15IntAttr6 < c5_2.Class15IntAttr5 ) or Class15.allInstances()->forAll( c5_1,c5_2 | c5_1.Class15IntAttr4 <> c5_2.Class15IntAttr6 ) xor self.Class15EnumAttr11 <> #Enum0Elem0
 	 @Rank= 1 
 	 inv: self.Class15BoolAttr0 or self.Class15BoolAttr2 xor self.Class15IntAttr5 = 17 xor self.Class15BoolAttr1 xor self.Class15BoolAttr2

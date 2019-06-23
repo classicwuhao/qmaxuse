@@ -1,0 +1,21 @@
+[Classes]
+Department rank: null 
+Module rank: null 
+Person rank: null 
+Student rank: null 
+University rank: null 
+
+[Associations]
+manage rank: null 
+study rank: <automatic> 
+teach rank: null 
+
+[Invariants]
+inv8 rank:<1> 
+inv1 rank:<1> 
+inv2 rank:<1> 
+inv3 rank:<1> 
+inv4 rank:<1> 
+inv5 rank:<1> 
+inv6 rank:<1> 
+inv7 rank:<1> 

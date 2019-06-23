@@ -1,0 +1,17 @@
+[Classes]
+Module rank: <4> 
+Person rank: <3> 
+Student rank: <5> 
+
+[Associations]
+study rank: <3> 
+
+[Invariants]
+inv8 rank:<9> 
+inv1 rank:<11> 
+inv2 rank:<4> 
+inv3 rank:<9> 
+inv4 rank:<12> 
+inv5 rank:<10> 
+inv6 rank:<13> 
+inv7 rank:<8> 

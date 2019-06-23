@@ -1,0 +1,10 @@
+[Classes]
+Person rank: <3> 
+
+[Associations]
+Marriage rank: <5> 
+
+[Invariants]
+inv1 rank:<12> 
+inv2 rank:<9> 
+inv3 rank:<7> 

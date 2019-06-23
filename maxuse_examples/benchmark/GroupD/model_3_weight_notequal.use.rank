@@ -1,0 +1,102 @@
+[Classes]
+Class0 rank: <2> 
+Class1 rank: <3> 
+Class10 rank: <3> 
+Class11 rank: <5> 
+Class12 rank: <34> 
+Class13 rank: <8> 
+Class14 rank: <2> 
+Class15 rank: <2> 
+Class16 rank: <8> 
+Class17 rank: <10> 
+Class18 rank: <3> 
+Class19 rank: <3> 
+Class2 rank: <11> 
+Class20 rank: <1> 
+Class21 rank: <35> 
+Class22 rank: <4> 
+Class23 rank: <7> 
+Class24 rank: <2> 
+Class25 rank: <16> 
+Class26 rank: <1> 
+Class27 rank: <2> 
+Class28 rank: <6> 
+Class29 rank: <7> 
+Class3 rank: <4> 
+Class30 rank: <3> 
+Class31 rank: <5> 
+Class32 rank: <4> 
+Class4 rank: <5> 
+Class5 rank: <6> 
+Class6 rank: <10> 
+Class7 rank: <12> 
+Class8 rank: <11> 
+Class9 rank: <1> 
+
+[Associations]
+Class18_Class10 rank: <6> 
+Class21_Class9 rank: <36> 
+Class9_Class20 rank: <2> 
+
+[Invariants]
+inv1 rank:<3> 
+inv2 rank:<3> 
+inv3 rank:<3> 
+inv33 rank:<8> 
+inv34 rank:<8> 
+inv35 rank:<8> 
+inv36 rank:<8> 
+inv37 rank:<16> 
+inv38 rank:<1> 
+inv39 rank:<1> 
+inv40 rank:<4> 
+inv41 rank:<4> 
+inv42 rank:<1> 
+inv43 rank:<15> 
+inv44 rank:<15> 
+inv45 rank:<15> 
+inv46 rank:<1> 
+inv47 rank:<1> 
+inv48 rank:<2> 
+inv4 rank:<5> 
+inv5 rank:<5> 
+inv6 rank:<5> 
+inv49 rank:<1> 
+inv50 rank:<4> 
+inv51 rank:<1> 
+inv52 rank:<6> 
+inv53 rank:<1> 
+inv54 rank:<7> 
+inv55 rank:<6> 
+inv56 rank:<3> 
+inv57 rank:<4> 
+inv58 rank:<4> 
+inv10 rank:<6> 
+inv11 rank:<6> 
+inv7 rank:<6> 
+inv8 rank:<6> 
+inv9 rank:<6> 
+inv59 rank:<4> 
+inv60 rank:<9> 
+inv61 rank:<6> 
+inv12 rank:<4> 
+inv13 rank:<2> 
+inv14 rank:<2> 
+inv15 rank:<7> 
+inv16 rank:<7> 
+inv17 rank:<7> 
+inv18 rank:<2> 
+inv19 rank:<2> 
+inv20 rank:<2> 
+inv21 rank:<1> 
+inv22 rank:<1> 
+inv23 rank:<1> 
+inv24 rank:<8> 
+inv25 rank:<8> 
+inv26 rank:<8> 
+inv27 rank:<1> 
+inv28 rank:<1> 
+inv29 rank:<1> 
+inv30 rank:<11> 
+inv31 rank:<11> 
+inv32 rank:<11> 

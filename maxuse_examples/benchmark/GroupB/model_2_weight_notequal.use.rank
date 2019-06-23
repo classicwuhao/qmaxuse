@@ -1,0 +1,83 @@
+[Classes]
+Class0 rank: <21> 
+Class1 rank: <7> 
+Class10 rank: <2> 
+Class11 rank: <6> 
+Class12 rank: <11> 
+Class13 rank: <5> 
+Class14 rank: <5> 
+Class15 rank: <4> 
+Class16 rank: <6> 
+Class17 rank: <9> 
+Class18 rank: <10> 
+Class19 rank: <12> 
+Class2 rank: <8> 
+Class20 rank: <14> 
+Class21 rank: <20> 
+Class22 rank: <1> 
+Class23 rank: <1> 
+Class3 rank: <9> 
+Class4 rank: <1> 
+Class5 rank: <3> 
+Class6 rank: <15> 
+Class7 rank: <7> 
+Class8 rank: <3> 
+Class9 rank: <5> 
+
+[Associations]
+Class10_Class23 rank: <3> 
+Class1_Class16 rank: <13> 
+Class2_Class19 rank: <1> 
+Class3_Class3 rank: <5> 
+Class4_Class20 rank: <11> 
+Class5_Class4 rank: <14> 
+Class7_Class18 rank: <12> 
+Class8_Class17 rank: <1> 
+Class9_Class5 rank: <1> 
+
+[Invariants]
+inv1 rank:<10> 
+inv2 rank:<15> 
+inv24 rank:<3> 
+inv25 rank:<5> 
+inv26 rank:<8> 
+inv27 rank:<5> 
+inv28 rank:<8> 
+inv29 rank:<2> 
+inv30 rank:<8> 
+inv31 rank:<5> 
+inv32 rank:<7> 
+inv33 rank:<1> 
+inv34 rank:<1> 
+inv35 rank:<3> 
+inv36 rank:<3> 
+inv37 rank:<15> 
+inv38 rank:<1> 
+inv39 rank:<1> 
+inv40 rank:<6> 
+inv3 rank:<4> 
+inv4 rank:<8> 
+inv41 rank:<1> 
+inv42 rank:<1> 
+inv43 rank:<9> 
+inv44 rank:<9> 
+inv45 rank:<9> 
+inv5 rank:<4> 
+inv6 rank:<8> 
+inv7 rank:<3> 
+inv8 rank:<3> 
+inv10 rank:<8> 
+inv11 rank:<12> 
+inv9 rank:<6> 
+inv12 rank:<5> 
+inv13 rank:<3> 
+inv14 rank:<19> 
+inv15 rank:<3> 
+inv16 rank:<5> 
+inv17 rank:<13> 
+inv18 rank:<16> 
+inv19 rank:<16> 
+inv20 rank:<8> 
+inv21 rank:<8> 
+inv22 rank:<11> 
+inv23 rank:<11> 

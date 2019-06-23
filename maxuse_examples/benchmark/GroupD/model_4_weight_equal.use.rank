@@ -1,0 +1,161 @@
+[Classes]
+Class0 rank: <1> 
+Class1 rank: <1> 
+Class10 rank: <1> 
+Class11 rank: <1> 
+Class12 rank: <1> 
+Class13 rank: <1> 
+Class14 rank: <1> 
+Class15 rank: <1> 
+Class16 rank: <1> 
+Class17 rank: <1> 
+Class18 rank: <1> 
+Class19 rank: <1> 
+Class2 rank: <1> 
+Class20 rank: <1> 
+Class21 rank: <1> 
+Class22 rank: <1> 
+Class23 rank: <1> 
+Class24 rank: <1> 
+Class25 rank: <1> 
+Class26 rank: <1> 
+Class27 rank: <1> 
+Class28 rank: <1> 
+Class29 rank: <1> 
+Class3 rank: <1> 
+Class30 rank: <1> 
+Class31 rank: <1> 
+Class32 rank: <1> 
+Class33 rank: <1> 
+Class34 rank: <1> 
+Class35 rank: <1> 
+Class36 rank: <1> 
+Class37 rank: <1> 
+Class38 rank: <1> 
+Class39 rank: <1> 
+Class4 rank: <1> 
+Class40 rank: <1> 
+Class41 rank: <1> 
+Class42 rank: <1> 
+Class43 rank: <1> 
+Class44 rank: <1> 
+Class45 rank: <1> 
+Class5 rank: <1> 
+Class6 rank: <1> 
+Class7 rank: <1> 
+Class8 rank: <1> 
+Class9 rank: <1> 
+
+[Associations]
+Class11_Class21 rank: <1> 
+Class14_Class3 rank: <1> 
+Class17_Class35 rank: <1> 
+Class19_Class40 rank: <1> 
+Class20_Class33 rank: <1> 
+Class22_Class6 rank: <1> 
+Class2_Class5 rank: <1> 
+Class5_Class17 rank: <1> 
+Class9_Class24 rank: <1> 
+
+[Invariants]
+inv1 rank:<1> 
+inv2 rank:<1> 
+inv21 rank:<1> 
+inv22 rank:<1> 
+inv23 rank:<1> 
+inv24 rank:<1> 
+inv25 rank:<1> 
+inv26 rank:<1> 
+inv27 rank:<1> 
+inv28 rank:<1> 
+inv29 rank:<1> 
+inv30 rank:<1> 
+inv31 rank:<1> 
+inv32 rank:<1> 
+inv33 rank:<1> 
+inv34 rank:<1> 
+inv35 rank:<1> 
+inv36 rank:<1> 
+inv37 rank:<1> 
+inv38 rank:<1> 
+inv39 rank:<1> 
+inv40 rank:<1> 
+inv3 rank:<1> 
+inv4 rank:<1> 
+inv41 rank:<1> 
+inv42 rank:<1> 
+inv43 rank:<1> 
+inv44 rank:<1> 
+inv45 rank:<1> 
+inv46 rank:<1> 
+inv47 rank:<1> 
+inv48 rank:<1> 
+inv49 rank:<1> 
+inv50 rank:<1> 
+inv51 rank:<1> 
+inv52 rank:<1> 
+inv53 rank:<1> 
+inv54 rank:<1> 
+inv55 rank:<1> 
+inv5 rank:<1> 
+inv6 rank:<1> 
+inv56 rank:<1> 
+inv57 rank:<1> 
+inv58 rank:<1> 
+inv59 rank:<1> 
+inv60 rank:<1> 
+inv61 rank:<1> 
+inv62 rank:<1> 
+inv63 rank:<1> 
+inv64 rank:<1> 
+inv65 rank:<1> 
+inv66 rank:<1> 
+inv67 rank:<1> 
+inv68 rank:<1> 
+inv69 rank:<1> 
+inv70 rank:<1> 
+inv71 rank:<1> 
+inv72 rank:<1> 
+inv73 rank:<1> 
+inv74 rank:<1> 
+inv75 rank:<1> 
+inv76 rank:<1> 
+inv77 rank:<1> 
+inv78 rank:<1> 
+inv79 rank:<1> 
+inv80 rank:<1> 
+inv81 rank:<1> 
+inv82 rank:<1> 
+inv83 rank:<1> 
+inv84 rank:<1> 
+inv85 rank:<1> 
+inv86 rank:<1> 
+inv7 rank:<1> 
+inv8 rank:<1> 
+inv87 rank:<1> 
+inv88 rank:<1> 
+inv89 rank:<1> 
+inv90 rank:<1> 
+inv91 rank:<1> 
+inv92 rank:<1> 
+inv93 rank:<1> 
+inv94 rank:<1> 
+inv95 rank:<1> 
+inv100 rank:<1> 
+inv101 rank:<1> 
+inv96 rank:<1> 
+inv97 rank:<1> 
+inv98 rank:<1> 
+inv99 rank:<1> 
+inv10 rank:<1> 
+inv9 rank:<1> 
+inv11 rank:<1> 
+inv12 rank:<1> 
+inv13 rank:<1> 
+inv14 rank:<1> 
+inv15 rank:<1> 
+inv16 rank:<1> 
+inv17 rank:<1> 
+inv18 rank:<1> 
+inv19 rank:<1> 
+inv20 rank:<1> 

@@ -1,0 +1,15 @@
+[Classes]
+Paper rank: null 
+Researcher rank: null 
+
+[Associations]
+Reviews rank: <2> 
+Writes rank: <2> 
+
+[Invariants]
+inv2 rank:<4> 
+inv3 rank:<10> 
+inv4 rank:<3> 
+inv1 rank:<6> 
+oneManuscript rank:<3> 
+oneSubmission rank:<4> 

@@ -25,7 +25,13 @@ public class AnnotationTag{
 	public void setWeight (AbstractWeight weight){this.weight=weight;}
 
 	public String toString(){
-		return "<"+this.name+" , "+this.comments+" , "+this.weight+">";
+		StringBuffer sb = new StringBuffer();
+		if (this.name!=null) sb.append(this.name+" ");
+		if (this.comments!=null) sb.append (this.comments+" ");
+		if (this.weight!=null) sb.append(this.weight);
+		if (sb.length()==0) sb.append("no rank");
+		return sb.toString();
+		//return "<"+this.name+" , "+this.comments+" , "+this.weight+">";
 	}
 
 }

@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.File;
 import org.tzi.use.uml.mm.*;
 import org.tzi.use.uml.mm.MMultiplicity.Range;
 import org.tzi.use.uml.ocl.type.*;
@@ -139,7 +142,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		Variable b = new Variable("b", new Int());
 		AbstractFormula t1 = f2.apply(getObjFunction().apply(a), getObjFunction().apply(b));
 		AbstractFormula t2 = f2.apply(getObjFunction().apply(b), getObjFunction().apply(a));
-
+	
 		List<MAssociationEnd> ends = e.associationEnds();
 		/*if (ends.size()==2){
 			MAssociationEnd enda = ends.get(0);
@@ -155,7 +158,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		}*/
 
 		System.out.println("Association Annotation Tag:"+e.getAnnotationTag());		
-
+		
 	}
 	
 	private AbstractFormula computeAEM(MAssociation e){
@@ -670,7 +673,9 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 		} // end of while
 
-		System.out.println("Ready to Solve...");
+		generateRankSummary(e);
+
+		ystem.out.println("Ready to Solve...");
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
 		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		this.model_name = e.name();
@@ -952,6 +957,43 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		}
 		solutions.add(solution);
 		//ColorPrint.println("=================END===================",Color.GREEN);
+	}
+
+	private void generateRankSummary(MModel model){
+		BufferedWriter writer = null;
+        try {
+			File logFile = new File(model.filename()+".rank");
+			writer = new BufferedWriter(new FileWriter(logFile));
+			Iterator it = model.classes().iterator();
+			writer.write("[Classes]\n");
+			while (it.hasNext()){
+				MClass cls = (MClass)it.next();
+				writer.write(cls.name()+" rank: "+cls.getAnnotationTag()+" \n");
+			}
+			writer.write("\n");
+			writer.write ("[Associations]\n");	
+			it = model.associations().iterator();
+			while (it.hasNext()){
+				MAssociation assoc = (MAssociation) it.next();
+				writer.write(assoc.name()+" rank: "+assoc.getAnnotationTag()+" \n");
+			}
+			writer.write("\n");
+			writer.write("[Invariants]\n");
+			it = model.classInvariants().iterator();
+			while (it.hasNext()){
+				MClassInvariant inv = (MClassInvariant) it.next();
+				writer.write(inv.name()+" rank:"+inv.getAnnotationTag()+" \n");
+			}
+			writer.close();
+		}
+		catch(Exception e){
+			e.printStackTrace();	
+		}finally {
+            try {
+                // Close the writer regardless of what happens...
+                writer.close();
+            } catch (Exception e) {}
+        }
 	}
 
 }

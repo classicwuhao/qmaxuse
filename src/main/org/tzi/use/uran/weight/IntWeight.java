@@ -48,6 +48,9 @@ public class IntWeight extends AbstractWeight{
 
 	@Override
 	public String toString(){
-		return "<"+this.weight+">";
+		if (this.weight==DEFAULT)
+			return "<automatic>";
+		else
+			return "<"+this.weight+">";
 	}
 }
