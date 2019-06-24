@@ -673,7 +673,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 		} // end of while
 
-		generateRankSummary(e);
+		//generateRankSummary(e);
 
 		ystem.out.println("Ready to Solve...");
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
