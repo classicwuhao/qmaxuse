@@ -21,16 +21,20 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 	```  
 	to lanuch MaxUSE. Currently, MaxUSE is command line based.
 	
-### 2.2 BUILD (WINDOWS 32-Bit)
-* Download Z3 SMT solver (latest version) and compile it under VS command prompt (follow Z3 build instructions).
+### 2.2 WINDOWS 32-Bit
+* Make sure you have JDK installed. 
+* Download Z3 SMT solver (latest version).
+* Install Visual Studio 2017/2019 (community/professional/enterprise)
+* Compile Z3 under VS command prompt (please follow Z3 build instructions).
+* If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to Z3 build directory.
-* In lib direcotry type:
+* Download MaxUSE and in lib direcotry type:
 	```
 	java -jar maxuse.jar
 	```  
 	to lanuch MaxUSE.
 
-*Note: To make sure MaxUSE run correctly, please consider using the latest version of Z3 SMT Solver*
+*Note: To make sure MaxUSE solve OCL constraints correctly, we recommend users using the latest version of Z3 SMT Solver*
 
 ## 3. USEAGE
 
