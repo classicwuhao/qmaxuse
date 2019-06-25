@@ -9,6 +9,7 @@ import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
 import uran.solver.*;
+import org.tzi.use.uran.weight.Flag;
 import java.util.*;
 
 public final class OclExprVisitor implements AbstractExprVisitor{
@@ -17,15 +18,21 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	private Variable boundedVar = new Variable ("v", new Int()); //default variable for self keyword.
 	private Scope _scope=null;
 	private String navname="";
-
+	private Flag flag;
 
 	public OclExprVisitor(InvPrintVisitor v){
 		this.factory = v.getFactory();
 		modelVisitor=v;
 	}
 	
+	public OclExprVisitor(InvPrintVisitor v, Flag flag){
+		this.factory = v.getFactory();
+		modelVisitor=v;
+		this.flag = flag;
+	}
+
 	public AbstractFormula visitForAll (ExpForAll expr){
-		System.out.println("visiting forall...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting forall...");
 		AbstractFormula formula=null;
 		Scope s;
 					
@@ -51,14 +58,16 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			s=_scope=null;
 		else
 			s.shrink();
-		
-		System.out.println("leaving forall...");
-		System.out.println("scope:"+s);
+
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("leaving forall...");
+			System.out.println("scope:"+s);
+		}
 		return new QuantifiedFormula(Quantifier.FORALL,new Decls(cons),formula);
 	}
 
 	public AbstractFormula visitExists (ExpExists expr){
-		System.out.println("visiting exists...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting exists...");
 		AbstractFormula formula=null;
 		Scope s;
 					
@@ -85,8 +94,10 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		else
 			s.shrink();
 		
-		System.out.println("leaving exists...");
-		System.out.println("scope:"+s);
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("leaving exists...");
+			System.out.println("scope:"+s);
+		}
 		
 		return formula.isImpliesFormula() ? 
 			new QuantifiedFormula(Quantifier.EXISTS, new Decls(cons), 
@@ -96,18 +107,23 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	}
 	
 	private AbstractFormula visitQuery(ExpQuery expr, Scope s){
-		System.out.println("visiting query...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting query...");
 		List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 		AbstractFormula formula_range=null;
 		AbstractFormula formula_nav=null;
 		ImpliesFormula imp_formula=null;
 		Scope ns=s;
 
-		System.out.println(" visiting range...");
-		System.out.println("range expr:"+expr.getRangeExpression());
+		if (this.flag==Flag.VERBOSE) {
+			System.out.println(" visiting range...");
+			System.out.println("range expr:"+expr.getRangeExpression());
+		}
 		formula_range = expr.getRangeExpression().accept(this);
-		System.out.println("range formula:"+formula_range);
-		System.out.println(" leaving range...");
+
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("range formula:"+formula_range);
+			System.out.println(" leaving range...");
+		}
 		
 		/* add all variables into the scope */
 		List<AbstractFormula> variables = expr.getVariableDeclarations().accept(this);
@@ -119,7 +135,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			}
 		}
 		
-		System.out.println("s(query)"+s);
+		if (this.flag==Flag.VERBOSE) System.out.println("s(query)"+s);
 		VarDeclList varlist = expr.getVariableDeclarations();
 		tmp.clear();
 		
@@ -141,7 +157,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			
 		/* in case this is a navigation */
 		if (formula_range!=null) {
-			System.out.println("formula_range:"+formula_range);
+			if (this.flag==Flag.VERBOSE) System.out.println("formula_range:"+formula_range);
 			if (formula_range.isFunction()){
 				formula_nav=makeRelations(navname,(Function)formula_range, variables.toArray(new Variable[variables.size()]));
 				imp_formula = new ImpliesFormula(new AndFormula(type_formula, formula_nav),expr_formula);
@@ -164,10 +180,11 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		}else{
 			imp_formula = new ImpliesFormula(type_formula,expr_formula);
 		}
-
-		System.out.println("nav formula:"+formula_nav);
-		System.out.println("imp_formula:"+imp_formula.toSMT2());
-		System.out.println("leaving query...");
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("nav formula:"+formula_nav);
+			System.out.println("imp_formula:"+imp_formula.toSMT2());
+			System.out.println("leaving query...");
+		}
 		return imp_formula;
 	}
 	
@@ -204,18 +221,25 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 
 	@Override
 	public AbstractFormula visitNavigation (ExpNavigation expr){
-		System.out.println("visiting navigation...");
-		System.out.println("obj expr:"+expr.getObjectExpression());
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("visiting navigation...");
+			System.out.println("obj expr:"+expr.getObjectExpression());
+		}
 		AbstractFormula formula = expr.getObjectExpression().accept(this);
 		navname=expr.getSource().association().name();
 		if (formula.isQuantifiedFormula()){
 			QuantifiedFormula f = (QuantifiedFormula)formula;
 			f.setVariables(new Decls(new Constant("p", new Int())));
-			System.out.println("Dst:"+expr.getDestination().cls());
-			System.out.println("Src:"+expr.getSource().cls());
+			if (this.flag==Flag.VERBOSE){
+				System.out.println("Dst:"+expr.getDestination().cls());
+				System.out.println("Src:"+expr.getSource().cls());
+			}
 		}
-		System.out.println("nav formula:"+formula.toSMT2());
-		System.out.println("leaving navigation...");
+
+		if (this.flag==Flag.VERBOSE){
+			System.out.println("nav formula:"+formula.toSMT2());
+			System.out.println("leaving navigation...");
+		}
 		return formula;
 	}
 
@@ -231,7 +255,8 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	
 	@Override
 	public AbstractFormula visitVarDecl(VarDecl var){
-		System.out.println("visiting varDecl...");
+
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting varDecl...");
 		if (var.type().isTypeOfInteger())
 			return new Variable (var.name(), new Int());
 		else if (var.type().isTypeOfBoolean())
@@ -239,7 +264,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		else if (var.type().isTypeOfClass())
 			return new Variable (var.name(), new Int());
 
-		System.out.println("leaving varDecl...");
+		if (this.flag==Flag.VERBOSE) System.out.println("leaving varDecl...");
 		/* default: just return an integer type */
 		return new Variable (var.name(), new Int());
 
@@ -252,19 +277,19 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 
 	@Override
 	public AbstractFormula visitConstBoolean (ExpConstBoolean expr){
-		System.out.println("visiting const boolean...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting const boolean...");
 		return new BoolLiteral(new BoolValue(expr.value()));
 	}
 
 	@Override
 	public AbstractFormula visitConstEnum (ExpConstEnum expr){
-		System.out.println("visiting const enum...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting const enum...");
 		return new NumLiteral(new IntValue(modelVisitor.getEnumValueIndex((EnumType)expr.type(),expr.value())));
 	}
 
 	@Override
 	public AbstractFormula visitAttrOp(ExpAttrOp expr){
-		System.out.println("visiting attrop...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting attrop...");
 		MAttribute attr = expr.attr();
 		Function fun;
 		if (!attr.type().isTypeOfEnum())
@@ -307,7 +332,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			return fun.apply(f);
 		}
 		
-		System.out.println("leaving attrop...");
+		if (this.flag==Flag.VERBOSE) System.out.println("leaving attrop...");
 		return formula;
 	}
 
@@ -330,7 +355,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	public AbstractFormula visitStdOp(ExpStdOp expr){
 		Expression[] args = expr.args();
 		AbstractFormula expr_formula=null;
-		System.out.println("visit StdOp...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visit StdOp...");
 		if(expr.getOperation().isInfixOrPrefix()){
 			if (args.length==1){
 				AbstractFormula formula = args[0].accept(this);
@@ -338,43 +363,45 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			}
 			else{
 				AbstractFormula formula1 = args[0].accept(this);
-				System.out.println("expr operator name:"+expr.opname());
+				if (this.flag==Flag.VERBOSE) System.out.println("expr operator name:"+expr.opname());
 				AbstractFormula formula2 = args[1].accept(this);	
 				expr_formula = AssembleFormula(formula1,formula2,expr.opname());
 			}
 		}else{
-			System.out.println("operation:"+expr.opname());
+			if (this.flag==Flag.VERBOSE) System.out.println("operation:"+expr.opname());
 			if(expr.isPre()){}
 			if(args.length == 0){
-				System.out.println("arg is one...");
+				if (this.flag==Flag.VERBOSE) System.out.println("arg is one...");
 			} else {
-				System.out.println("visiting args[0]..."+args[0].type());
 				AbstractFormula arg_formula=args[0].accept(this);
-				System.out.println("arg_formula:"+arg_formula);
-				System.out.println("args[0]:"+args[0]);
-				System.out.println("leaving args[0]...");
+				if (this.flag==Flag.VERBOSE){	
+					System.out.println("visiting args[0]..."+args[0].type());
+					System.out.println("arg_formula:"+arg_formula);
+					System.out.println("args[0]:"+args[0]);
+					System.out.println("leaving args[0]...");
+				}
 				expr_formula = TranslateOperation(arg_formula,expr.opname(),args[0]);
 				if (args.length>1){
 					for (int i=1;i<args.length;i++){ 
-						System.out.println("arg :"+args[i]);
+						if (this.flag==Flag.VERBOSE) System.out.println("arg :"+args[i]);
 						expr_formula = TranslateOperation(expr_formula,expr.opname(),args[0],args[i]);
 					}
 				}
 			}
 		}
-		System.out.println("leave StdOp...");
+		if (this.flag==Flag.VERBOSE) System.out.println("leave StdOp...");
 		return expr_formula;
 	}
 
 	@Override
 	public AbstractFormula visitObjAsSet (ExpObjAsSet exp){
-		System.out.println("visit obj as set...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visit obj as set...");
 		if (exp.getObjectExpression() instanceof ExpNavigation){
-			System.out.println("leave obj as set...");
+			if (this.flag==Flag.VERBOSE) System.out.println("leave obj as set...");
 			return visitNavigation((ExpNavigation)exp.getObjectExpression());
 		}
 		else{
-			System.out.println("leave obj as set...");
+			if (this.flag==Flag.VERBOSE) System.out.println("leave obj as set...");
 			throw new VisitorException("Error: "+exp.getObjectExpression()+" cannot be supported.");
 		}
 
@@ -382,7 +409,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 
 	@Override
 	public AbstractFormula visitSelect (ExpSelect exp){
-		System.out.println("visiting select...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting select...");
 		AbstractFormula formula=null;
 		Scope s;
 					
@@ -417,12 +444,12 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 				Function fun = (Function) impFormula.right();
 				AbstractFormula f1 = modelVisitor.getSelectFunction().apply(modelVisitor.getObjFunction().apply(cons[0]),fun);
 				impFormula.setRight(f1);
-				System.out.println("leaving select...");
+				if (this.flag==Flag.VERBOSE) System.out.println("leaving select...");
 				return new QuantifiedFormula(Quantifier.FORALL, new Decls(cons),impFormula);
 			}
 		}
 
-		System.out.println("leaving select...");
+		if (this.flag==Flag.VERBOSE) System.out.println("leaving select...");
 		return new QuantifiedFormula(Quantifier.FORALL,new Decls(cons),modelVisitor.getSelectFunction().apply(cons[0], (Function)formula));
 		
 	}
@@ -430,8 +457,10 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	private AbstractFormula TranslateOperation(AbstractFormula formula, String operation){
 
 		if (operation.equals("not")){
-			System.out.println("compute not...");
-			System.out.println("formula:"+formula);
+			if (this.flag==Flag.VERBOSE){
+				System.out.println("compute not...");
+				System.out.println("formula:"+formula);
+			}
 			if (formula.isQuantifiedFormula()){
 				/* For a quantified formula, this is absolutely nonsense !!! 
 				 * Negation has to be applied onto formula itself. Not the quantifiers.
@@ -493,7 +522,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 				}
 
 			case "size":
-				System.out.println("size operator detected...");
+				if (this.flag==Flag.VERBOSE) System.out.println("size operator detected...");
 				if (expr instanceof ExpNavigation){
 					//System.out.println("process navigation with size...");
 					ExpNavigation nav_expr = (ExpNavigation) expr;
@@ -507,7 +536,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 					}
 				}
 				else if (expr instanceof ExpAllInstances){
-					System.out.println("size operator allInstances...");
+					if (this.flag==Flag.VERBOSE) System.out.println("size operator allInstances...");
 					ExpAllInstances all_instances_expr = (ExpAllInstances) expr;
 					return CollectionOperationSize(formula, all_instances_expr);
 				}
@@ -543,7 +572,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 
 	/* works on navigation only */
 	private AbstractFormula CollectionOperationExcludesComplete(AbstractFormula formula, ExpNavigation expr1, ExpNavigation expr2){
-		System.out.println("computing excludes operation...");
+		if (this.flag==Flag.VERBOSE) System.out.println("computing excludes operation...");
 		QuantifiedFormula newFormula;
 		if (formula.isQuantifiedFormula()){
 			newFormula = (QuantifiedFormula) formula;
@@ -639,8 +668,10 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 	private AbstractFormula AssembleFormula(AbstractFormula f1, AbstractFormula f2, String operator){
 		BinaryFormula formula = DecideFormula (operator);
 		
-		System.out.println("f1:"+f1.toSMT2());
-		System.out.println("f2:"+f2.toSMT2());
+		if (this.flag==Flag.VERBOSE) {
+			System.out.println("f1:"+f1.toSMT2());
+			System.out.println("f2:"+f2.toSMT2());
+		}
 		
 		if (f1.isQuantifiedFormula() && !f2.isQuantifiedFormula()){
 			QuantifiedFormula f = makeQuantifiedFormula((QuantifiedFormula)f1,f2,formula);
@@ -661,7 +692,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 		}
 		
 		formula.setLeft(f1);formula.setRight(f2);
-		System.out.println("AssembleFormula:"+formula.toSMT2());
+		if (this.flag==Flag.VERBOSE) System.out.println("AssembleFormula:"+formula.toSMT2());
 		
 		return (operator.equals("<>")) ? new NegFormula(formula) : formula;
 		
@@ -705,13 +736,13 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			throw new VisitorException("Exception: A binary formula is expected.");
 		}
 		
-		System.out.println("quantified:"+f1.toSMT2());
+		if (this.flag==Flag.VERBOSE) System.out.println("quantified:"+f1.toSMT2());
 		return f1;
 	}
 
 	@Override
 	public AbstractFormula visitVariable(ExpVariable expr){
-		System.out.println("visiting variable...");
+		if (this.flag==Flag.VERBOSE) System.out.println("visiting variable...");
 		if (expr.getVarname().equals("self"))
 			return new QuantifiedFormula (Quantifier.FORALL,null,null);
 		
@@ -722,7 +753,7 @@ public final class OclExprVisitor implements AbstractExprVisitor{
 			return modelVisitor.getObjFunction().apply(v);
 		}
 	
-		System.out.println("leaving variable...");
+		if (this.flag==Flag.VERBOSE) System.out.println("leaving variable...");
 		return null;
 	}
 }

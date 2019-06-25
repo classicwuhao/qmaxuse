@@ -47,6 +47,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import javax.lang.model.util.ElementScanner6;
+
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
@@ -104,6 +107,7 @@ import org.tzi.use.util.input.ReadlineTestReadlineDecorator;
 import org.tzi.use.util.input.SocketReadline;
 import org.tzi.use.util.soil.exceptions.EvaluationFailedException;
 import org.tzi.use.uran.visitor.*;
+import org.tzi.use.uran.weight.Flag;
 import org.tzi.use.query.*;
 
 class NoSystemException extends Exception {
@@ -379,8 +383,8 @@ public final class Shell implements Runnable, PPCHandler {
 
         if (line.startsWith("help") || line.endsWith("--help"))
             cmdHelp(line);
-		else if (line.equals("maxuse"))
-			cmdMaxuse();
+		else if (line.startsWith("maxuse"))
+			cmdMaxuse(line);
         else if (line.equals("q") || line.equals("quit") || line.equals("exit"))
             cmdExit();
         else if (line.startsWith("$"))
@@ -753,10 +757,26 @@ public final class Shell implements Runnable, PPCHandler {
         }
     }
 
-	private void cmdMaxuse() throws NoSystemException{
+	private void cmdMaxuse(String line) throws NoSystemException{
 		//System.out.println("Maxuse starts...");
         MSystem system = system();
-		InvPrintVisitor v = new InvPrintVisitor(new PrintWriter(System.out, true));
+        InvPrintVisitor v;
+        if (line.endsWith("-q")|| line.endsWith("--quiet")){
+            v = new InvPrintVisitor(new PrintWriter(System.out, true),Flag.QUIET);
+            //System.out.println(v.flag());
+        }
+        else if (line.endsWith("-v") || line.endsWith("--versbose")){
+            v = new InvPrintVisitor(new PrintWriter(System.out, true),Flag.VERBOSE);
+            //System.out.println(v.flag());
+        }
+        else if (line.equals("maxuse")){
+            v = new InvPrintVisitor(new PrintWriter(System.out, true),Flag.QUIET);
+            //System.out.println(v.flag());
+        }
+        else{
+            System.out.println("unrecognised parameter.");
+            return;
+        } 
 		Thread threadCounter = new ThreadCounter(v,600);
         system.model().processWithVisitor(v);
         //v.start();

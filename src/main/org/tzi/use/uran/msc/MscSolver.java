@@ -7,7 +7,7 @@ import uran.formula.smt2.*;
 import uran.formula.type.*;
 import uran.solver.*;
 import java.util.*;
-
+import org.tzi.use.uran.weight.Flag;
 public final class MscSolver{
 		
 	private int sizeOfUnv;
@@ -17,11 +17,19 @@ public final class MscSolver{
 	private Constant subsets[];
 	private FunctionFactory factory = new FunctionFactory(512,0.75f);
 	private List<List<Integer>> solutions = new ArrayList<List<Integer>>();
+	private Flag flag;
 
 	public MscSolver(int m[][]){
 		sets=m;
 		this.sizeOfUnv = m.length;
 		this.sizeOfSub = m[0].length;
+	}
+
+	public MscSolver(int m[][], Flag flag){
+		sets=m;
+		this.sizeOfUnv = m.length;
+		this.sizeOfSub = m[0].length;
+		this.flag = flag;
 	}
 
 	public int getSizeOfUnv(){return this.sizeOfUnv;}
@@ -127,7 +135,7 @@ public final class MscSolver{
 	public void solve(List<AbstractFormula> formulas){
 		List<AbstractFormula> newformulas = new ArrayList<AbstractFormula>();
 		List<AbstractFormula> blockformulas = new ArrayList<AbstractFormula>();
-		ColorPrint.println("Solving SC...",Color.WHITE);
+		ColorPrint.println("Solving SC...",Color.BLUE);
 		SMT2Writer writer = new SMT2Writer("./msc.smt2",factory,formulas);
 		Z3SMT2Solver solver = new Z3SMT2Solver(writer);
 
@@ -173,14 +181,16 @@ public final class MscSolver{
 	}
 
 	public List<List<Integer>> getSubsets(){
-		for (int i=0;i<solutions.size();i++){
-			List<Integer> sol = solutions.get(i);
-			for (int j=0;j<sol.size();j++){
-				System.out.print(sol.get(j)+" ");
+		if (this.flag==Flag.VERBOSE){
+			for (int i=0;i<solutions.size();i++){
+				List<Integer> sol = solutions.get(i);
+				for (int j=0;j<sol.size();j++){
+					System.out.print(sol.get(j)+" ");
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
-		
+
 		ColorPrint.println("Total Subsets: "+solutions.size(),Color.BLUE);
 		return solutions;
 	}

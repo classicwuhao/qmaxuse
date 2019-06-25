@@ -73,12 +73,20 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private Function includesFun = factory.createFunction(includes_str, new Int(), new Int(), new Bool());
 	private Function selectFun = factory.createFunction(select_str, new Int(), new Bool(), new Int());
 	private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
-
+	private Flag flag = Flag.QUIET;
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
+		this.flag = Flag.QUIET;
 		extraFunctions();
 	}
 
+	public InvPrintVisitor (PrintWriter out, Flag flag){
+		fOut = out;
+		this.flag = flag;
+		extraFunctions();
+	}
+
+	public Flag flag(){return this.flag;}
 	private void extraFunctions(){
 		Function f1 = factory.createFunction(obj_str,new Int(), new Int());		
 		uid_table.put(obj_str,f1);
@@ -156,8 +164,8 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		{
 			formulas.add (new QuantifiedFormula(Quantifier.FORALL, new Decls(a,b), new EqFormula(t1, t2)));
 		}*/
-
-		System.out.println("Association Annotation Tag:"+e.getAnnotationTag());		
+		if (this.flag==Flag.VERBOSE)
+			System.out.println("Association Annotation Tag:"+e.getAnnotationTag());		
 		
 	}
 	
@@ -432,8 +440,8 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 			else{
 				//throw new VisitorException("Error: type "+t+" is not supported in current version.");
-				ColorPrint.println("Warnning:"+attr.name()+" is a type of "+t+
-							" that is not supported.  So this attribute is ignored.", Color.YELLOW);
+				ColorPrint.println("Warning:"+attr.name()+" is a type of "+t+
+							" that is not supported and it is ignored.", Color.YELLOW);
 			}
 		}
 
@@ -441,7 +449,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 
 	@Override
 	public void visitClassInvariant (MClassInvariant e){
-		StringBuilder line = new StringBuilder();
+		/*StringBuilder line = new StringBuilder();
         line.append("context");
 		line.append(" ");
 		if (e.hasVar()) {
@@ -464,13 +472,12 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
         line.append(e.name());
         line.append(":");
            
-        fOut.println(line.toString());
+        fOut.println(line.toString());*/
 		
         //ExpressionVisitor visitor = new ExprPrintVisitor(factory); //ExpressionPrintVisitor(fOut);
-        //e.bodyExpression().processWithVisitor(visitor);
+		//e.bodyExpression().processWithVisitor(visitor);
 		
-		ColorPrint.println("==============Final Formula==============",Color.GREEN);
-		AbstractExprVisitor visitor = new OclExprVisitor(this);
+		AbstractExprVisitor visitor = new OclExprVisitor(this,this.flag);
 		AbstractFormula formula = e.bodyExpression().accept(visitor);
 		
 		AnnotationTag tag = e.getAnnotationTag();
@@ -485,15 +492,18 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			}
 		}
 		
-		
+		//System.out.println("ocl rank visitor...");
 		OclRankVisitor cvisitor = new OclRankVisitor();
 		totalASTSize += e.bodyExpression().accept(cvisitor);
 		totalQuantifiers += cvisitor.QuantCounter;
 		totalOperators += cvisitor.OpCounter;
-				
-		ColorPrint.println(formula.toSMT2(),Color.RED);
-		//ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
-		ColorPrint.println("==================END====================",Color.GREEN);
+		
+		if (this.flag==Flag.VERBOSE){
+			ColorPrint.println("==============Final Formula==============",Color.GREEN);
+			ColorPrint.println(formula.toSMT2(),Color.RED);
+			//ColorPrint.println(e.getAnnotationTag().toString(),Color.YELLOW);
+			ColorPrint.println("==================END====================",Color.GREEN);
+		}
 		pairs.add(new Pair<AbstractFormula, MClassInvariant>(formula, e));
         fOut.flush();
 	}
@@ -513,13 +523,13 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
         	visitEnum(t);
         }
 		
-		System.out.println("visiting class...");
+		//System.out.println("visiting class...");
 		/* translate class */
 		Iterator it = e.classes().iterator();
 
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
-			ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
+			if (this.flag==Flag.VERBOSE) ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
 			cls.processWithVisitor(this);			
 		}
 
@@ -568,17 +578,19 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 
 		}
 		
-		//System.out.println(factory);
+		//System.out.println("visiting class invariant.");
 		int inv_counter=0;		
 		for (MClassInvariant inv : classInvariants){
 			//ColorPrint.println("visitng invariant "+ ++i,Color.BLUE);
 			inv.processWithVisitor(this);
-			ColorPrint.println("Annotation Tag:"+inv.getAnnotationTag(),Color.YELLOW);
-			ColorPrint.println("leaving invariant "+ i++,Color.BLUE);
-			System.out.println();
+			if (this.flag==Flag.VERBOSE){
+				ColorPrint.println("Annotation Tag:"+inv.getAnnotationTag(),Color.YELLOW);
+				ColorPrint.println("leaving invariant "+ i++,Color.BLUE);
+				System.out.println();
+			}
 			inv_counter++;
 		}
-
+		//System.out.println("building formulas...");
 		for (i=0;i<pairs.size();i++){
 			Constant aux = CreateAux();
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
@@ -675,12 +687,12 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 
 		//generateRankSummary(e);
 
-		ystem.out.println("Ready to Solve...");
+		System.out.println("Ready to Solve...");
 		for (i=0;i<exist_formulas.size();i++) formulas.add (exist_formulas.get(i));
 		if (auxs.size()>0) formulas.add (FormulaBuilder.sum(0,auxs.toArray(new Constant[auxs.size()])));
 		this.model_name = e.name();
 		ColorPrint.println("Formula Generations Time Spent:"+(System.currentTimeMillis()-time_count)+" ms",Color.BLUE);
-		ColorPrint.println("Total AST Size for "+inv_counter+ "invariants:"+totalASTSize,Color.BLUE);
+		ColorPrint.println("Total AST Size for "+inv_counter+ " invariants:"+totalASTSize,Color.BLUE);
 		ColorPrint.println("Total Quantifiers:"+totalQuantifiers,Color.BLUE);
 		ColorPrint.println("Total Operators:"+totalOperators,Color.BLUE);
 		
@@ -693,7 +705,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	
 		for (MAssociationEnd a : assoc.associationEnds()){ 
 			if (a.cls().getAnnotationTag()==null){
-				ColorPrint.println("Warning: The weight for class "+a.cls().name()+" does not exist, so it is ignored.",Color.YELLOW);
+				ColorPrint.println("Warning:The weight for class "+a.cls().name()+" does not exist, so it is ignored.",Color.YELLOW);
 				continue;
 			}
 			sum += ((IntWeight)a.cls().getAnnotationTag().getWeight()).getWeight(); // may cause an error
@@ -800,9 +812,10 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	
 			System.out.println();
 			/* compute all conflicts */
-			ColorPrint.println("Now processing matrix...",Color.WHITE);
-		
-			ColorPrint.println(bmatrix.toString(),Color.WHITE);
+			if (this.flag==Flag.VERBOSE) {
+				ColorPrint.println("Now processing matrix...",Color.WHITE);
+				ColorPrint.println(bmatrix.toString(),Color.WHITE);
+			}
 			mscsolver = new MscSolver(bmatrix.matrix());
 			current = System.currentTimeMillis();
 			mscsolver.solve(mscsolver.formalise());
@@ -881,7 +894,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 						totalSolutions++;
 						PrintReport();
 					}
-					ColorPrint.println("Total Solutions: "+totalSolutions, Color.WHITE);
+					ColorPrint.println("Total Solutions: "+totalSolutions, Color.BLUE);
 					return;
 				}
 			}

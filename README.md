@@ -86,6 +86,11 @@ We provide the following ways for ranking your model features.
    2. *all* possible ways of achieving a *maximum* number of features. 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
+### 3.3 Modes
+* MaxUSE provides two modes: quiet and verbose. 
+	1. Quiet mode only emits necessary information. In default, MaxUSE is running under quiet mode. 
+	2. Verbose mode prints all internal information including: formulas constructed step by step, an internal matrix representation, etc. These information can be useful for debugging, validating correct behaviour of MaxUSE. For those who are really interested in how MaxUSE construct SMT formulas, this mode could be very helpful. 
+
 ## 4. THEORIES & TECHNIAL DETAILS
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
 * If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool paper ([iFM 2017](http://ifm2017.di.unito.it/)): **MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.**
