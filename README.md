@@ -28,13 +28,13 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 * Compile Z3 under VS command prompt (please follow Z3 build instructions).
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to Z3 build directory.
-* Download MaxUSE and in lib direcotry type:
+* Download MaxUSE and in the lib directory type:
 	```
 	java -jar maxuse.jar
 	```  
 	to lanuch MaxUSE.
 
-*Note: To make sure MaxUSE solve OCL constraints correctly, we recommend users using the latest version of Z3 SMT Solver*
+*Known issue: If MaxUSE always returns SAT even the model contains conflicts, this is caused by internal SMT solver. Hence, please update Z3 regularly.*
 
 ## 3. USEAGE
 
@@ -78,7 +78,7 @@ We provide the following ways for ranking your model features.
 	2. If your model is *not* ranked at all, MaxUSE will verify the consistency of your model.
 * The results will be printed on screen or a report will be generated. An example can be found [here](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/UNIVERSITY.html). More examples can be found [here](lib/html/).
 
-### 3.2 Finding All Constraint Conflicts
+### 3.3 Finding All Constraint Conflicts
 * Rank *equally* for each model feature (class, association, invariant). We recommend users normalise the rankings using relativly smaller integers.
 * Run *maxuse*.
 * MaxUSE will find:
@@ -86,10 +86,10 @@ We provide the following ways for ranking your model features.
    2. *all* possible ways of achieving a *maximum* number of features. 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
-### 3.3 Modes
+### 3.4 Mode
 * MaxUSE provides two modes: quiet and verbose. 
-	1. Quiet (-q or --quiet) mode only emits necessary information. In default, MaxUSE is running under quiet mode. 
-	2. Verbose (-v or --verbose) mode prints all internal information including: formulas constructed step by step, an internal matrix representation, etc. These information can be useful for debugging, validating correct behaviour of MaxUSE. For those who are really interested in how MaxUSE construct SMT formulas, this mode could be very helpful. 
+	1. Quiet (-q or --quiet) mode only emits necessary information. By default, MaxUSE is running under quiet mode.
+	2. Verbose (-v or --verbose) mode prints all internal information including: formulas constructed step by step, an internal matrix representation, etc. These information can be useful for debugging, validating correct behaviour of MaxUSE. For those who are really interested in how MaxUSE construct SMT formulas, this mode could be very helpful.
 
 ## 4. THEORIES & TECHNIAL DETAILS
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
