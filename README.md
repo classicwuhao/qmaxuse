@@ -5,7 +5,7 @@
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver.
 
 ## 2. BUILD INSTRUCTIONS
-### 2.1 UBUNTU 15.10/16.04/16.10
+### 2.1 UBUNTU 15.10+
 * use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
 * Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
 	```
@@ -21,7 +21,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 	```  
 	to lanuch MaxUSE. Currently, MaxUSE is command line based.
 	
-### 2.2 WINDOWS 32-Bit
+### 2.2 WINDOWS 10 x86/x64
 * Make sure you have JDK installed. 
 * Download Z3 SMT solver (latest version).
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
