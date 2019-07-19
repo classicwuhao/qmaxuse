@@ -1,5 +1,6 @@
 model UNIVERSITY
 
+enum Gender{Male,Female}
 
 class Module
 attributes
@@ -15,6 +16,7 @@ attributes
 	age:	Integer
 	mature:	Boolean
 	name:	Integer
+	gender: Gender
 end
 
 

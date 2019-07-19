@@ -127,7 +127,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			it.next();
 			k++;
 		}
-
+		
 		// skip an empty enum type
 		if (k==-1) return;
 		Function f = factory.createFunction(enumType.name(), new Int(), new Int());

@@ -10,6 +10,7 @@ import org.antlr.runtime.RecognitionException;
 import org.tzi.use.query.ast.*;
 import org.tzi.use.parser.ParseErrorHandler;
 import org.tzi.use.query.ast.QAst;
+import org.tzi.use.query.state.*;
 import org.tzi.use.parser.ocl.OCLCompiler;
 import org.tzi.use.parser.Context;
 import org.tzi.use.parser.ParseErrorHandler;
@@ -26,10 +27,13 @@ import org.tzi.use.query.visitor.QueryVisitor;
 import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
 import java.io.PrintStream;
+import org.tzi.use.common.*;
+import java.util.*;
 
 public class QueryCompiler{
     private int errors=0;
     private QAst expressions=null;
+    private static List<QueryState> visitors = new ArrayList<QueryState>();
 
     public QueryCompiler(){}
     
@@ -39,6 +43,7 @@ public class QueryCompiler{
         ANTLRInputStream aInput;
         QAst expr =null;
         ColorPrint out = new ColorPrint();
+        
 
 		try {
 			aInput = new ANTLRInputStream(in);
@@ -61,6 +66,18 @@ public class QueryCompiler{
                 QueryVisitor visitor = new QueryVisitor(model);
                 expr.accept(visitor);
                 out.println(visitor.state().toString(),Color.CYAN);
+                visitors.add(visitor.state());
+                if (visitors.size()>=2){
+                    for (QueryState qstate : visitors){
+                        FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
+                        qstate.associations(),qstate.invariants()));
+                        translator.start();
+                    }
+                }
+                /*QueryState qstate = visitor.state();
+                FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
+                    qstate.associations(),qstate.invariants()));
+                translator.start();*/
                 return 1;
             }
             else{
