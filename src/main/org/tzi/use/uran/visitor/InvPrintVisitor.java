@@ -507,7 +507,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		pairs.add(new Pair<AbstractFormula, MClassInvariant>(formula, e));
         fOut.flush();
 	}
-
+	
 	@Override
 	public void visitModel (MModel e){
 		weights.clear();auxs.clear();

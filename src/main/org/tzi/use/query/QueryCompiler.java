@@ -67,17 +67,18 @@ public class QueryCompiler{
                 expr.accept(visitor);
                 out.println(visitor.state().toString(),Color.CYAN);
                 visitors.add(visitor.state());
-                if (visitors.size()>=2){
+                /*if (visitors.size()>=2){
                     for (QueryState qstate : visitors){
                         FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
                         qstate.associations(),qstate.invariants()));
                         translator.start();
                     }
-                }
-                /*QueryState qstate = visitor.state();
+                }*/
+                QueryState qstate = visitor.state();
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
-                    qstate.associations(),qstate.invariants()));
-                translator.start();*/
+                    qstate.associations(),qstate.invariants()),model);
+                
+                translator.start();
                 return 1;
             }
             else{
