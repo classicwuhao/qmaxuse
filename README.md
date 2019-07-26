@@ -38,6 +38,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 * In the USE command line, type *maxuse -q* to check the sample model.
 
 *Known issue: If MaxUSE always returns SAT even the model contains conflicts, this is caused by internal SMT solver. Hence, please update Z3 regularly.*
+*Note: All the information is displayed in different colours in the terminal. However, on Windows users may experience direct colour code displayed. In this situation, we refer users to look at the HTML report generated in the lib\textbackslash html folder.*
 
 ### 2.3 Mode
 * MaxUSE provides two modes: quiet and verbose. 
