@@ -191,7 +191,7 @@ public final class MscSolver{
 			}
 		}
 
-		ColorPrint.println("Total Subsets: "+solutions.size(),Color.BLUE);
+		ColorPrint.println("Total Subsets/Conflicts: "+solutions.size(),Color.BLUE);
 		return solutions;
 	}
 

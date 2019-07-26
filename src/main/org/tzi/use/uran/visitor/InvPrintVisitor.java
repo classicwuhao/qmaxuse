@@ -530,7 +530,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		while (it.hasNext()){
 			MClass cls = (MClass) it.next();
 			if (this.flag==Flag.VERBOSE) ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
-			cls.processWithVisitor(this);			
+			cls.processWithVisitor(this);
 		}
 
 		it = e.associations().iterator();
@@ -778,6 +778,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		ColorPrint.println("Solving Weighted MaxSMT...",Color.BLUE);
 		long current = System.currentTimeMillis();
 		if (solver.solve()==Result.UNSAT){
+			ColorPrint.println("This model is inconsistent.",Color.RED);
 			ColorPrint.println("Consistency Checking Time Spent:"+ (System.currentTimeMillis()-current)+" ms",Color.BLUE);
 			if (weights.size()>0)
 				maxsmt (solver,weight);
@@ -845,8 +846,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			conflicts.add(conflict);
 		}
 		
-		return conflicts;
-		/*for (int i=0;i<conflicts.size();i++){
+		for (int i=0;i<conflicts.size();i++){
 			List<Status> conflict = conflicts.get(i);
 			ColorPrint.print("(",Color.WHITE);
 			for (int j=0;j<conflict.size()-1;j++){
@@ -855,7 +855,9 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			ColorPrint.print(conflict.get(conflict.size()-1).name(),Color.WHITE);
 			ColorPrint.print(")",Color.WHITE);
 		}
-		System.out.println();*/
+		System.out.println();
+
+		return conflicts;
 	}
 
 	private void maxsmt (Z3SMT2Solver solver, int weight){

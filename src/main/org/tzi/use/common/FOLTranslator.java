@@ -135,6 +135,11 @@ public class FOLTranslator extends Thread implements ITranslator {
     }    
 
     public void TranslateAssociation(MAssociation assoc){
+        Function fun = factory.createFunction(rel_str, new Int(), new Int(), new Bool());
+        Variable a = new Variable("a", new Int());
+		Variable b = new Variable("b", new Int());
+		AbstractFormula t1 = fun.apply(getObjFunction().apply(a), getObjFunction().apply(b));
+        AbstractFormula t2 = fun.apply(getObjFunction().apply(b), getObjFunction().apply(a));
         
     }
 

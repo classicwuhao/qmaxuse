@@ -35,7 +35,8 @@ context Researcher
 @Paper{Rank = 1}
 context Paper
 	inv: self.wordCount < 10000
-	inv: Paper.allInstances()->forAll(p|p.studentPaper=p.author->exists(x|x.isStudent))
+	inv: self.studentPaper=self.author->exists(p|p.isStudent)
 	inv: Paper.allInstances()->forAll(p|p.referee->forAll(r|not r.isStudent))
---	inv: Paper.allInstances()->exists(p|p.studentPaper) and Paper.allInstances()->select(p|p.studentPaper)->size < 5
+	inv: Paper.allInstances()->exists(p|p.studentPaper)
+
 
