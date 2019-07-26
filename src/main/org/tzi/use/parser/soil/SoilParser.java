@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 Soil.g 2019-07-26 17:05:42
+=======
+// $ANTLR 3.4 Soil.g 2019-07-17 14:59:32
+>>>>>>> master
 
 /*
  * USE - UML based specification environment

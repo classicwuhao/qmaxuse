@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 Generator.g 2019-07-26 17:05:45
+=======
+// $ANTLR 3.4 Generator.g 2019-07-17 14:59:36
+>>>>>>> master
  
 /*
  * USE - UML based specification environment

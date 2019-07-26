@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 ShellCommand.g 2019-07-26 17:05:44
+=======
+// $ANTLR 3.4 ShellCommand.g 2019-07-17 14:59:35
+>>>>>>> master
 
 /*
  * USE - UML based specification environment

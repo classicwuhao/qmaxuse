@@ -5,7 +5,11 @@
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver.
 
 ## 2. BUILD INSTRUCTIONS
+<<<<<<< HEAD
 ### 2.1 UBUNTU 15.10+
+=======
+### 2.1 UBUNTU (15.10+)
+>>>>>>> master
 * use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
 * Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
 	```
@@ -20,21 +24,35 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 	java -jar maxuse.jar
 	```  
 	to lanuch MaxUSE. Currently, MaxUSE is command line based.
+<<<<<<< HEAD
 	
 ### 2.2 WINDOWS 10 x86/x64
+=======
+* Load a sample model.
+* In the USE command line, type *maxuse* to check the sample model.
+
+### 2.2 WINDOWS 10 (x86/x64)
+>>>>>>> master
 * Make sure you have JDK installed. 
 * Download Z3 SMT solver (latest version).
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
 * Compile Z3 under VS command prompt (please follow Z3 build instructions).
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
-* Set %PATH% to Z3 build directory.
-* Download MaxUSE and in lib direcotry type:
+* Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
+* Download MaxUSE and in the lib directory type:
 	```
 	java -jar maxuse.jar
 	```  
 	to lanuch MaxUSE.
+* Load a sample model.
+* In the USE command line, type *maxuse* to check the sample model.
 
-*Note: To make sure MaxUSE solve OCL constraints correctly, we recommend users using the latest version of Z3 SMT Solver*
+*Known issue: If MaxUSE always returns SAT even the model contains conflicts, this is caused by internal SMT solver. Hence, please update Z3 regularly.*
+
+### 2.3 Mode
+* MaxUSE provides two modes: quiet and verbose. 
+	1. Quiet (-q or --quiet) mode only emits necessary information on the screen. By default, MaxUSE is running under quiet mode.
+	2. Verbose (-v or --verbose) mode displays internal information including: formulas constructed from an AST, an internal matrix representation, etc. These information can be used for debugging, tracing,and validating the behaviours of MaxUSE. For those who are really interested in how MaxUSE works,this mode could be particlularly helpful.
 
 ## 3. USEAGE
 
@@ -78,18 +96,13 @@ We provide the following ways for ranking your model features.
 	2. If your model is *not* ranked at all, MaxUSE will verify the consistency of your model.
 * The results will be printed on screen or a report will be generated. An example can be found [here](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/UNIVERSITY.html). More examples can be found [here](lib/html/).
 
-### 3.2 Finding All Constraint Conflicts
+### 3.3 Finding All Constraint Conflicts
 * Rank *equally* for each model feature (class, association, invariant). We recommend users normalise the rankings using relativly smaller integers.
 * Run *maxuse*.
 * MaxUSE will find:
    1. *all* constraint conflicts among the features.
    2. *all* possible ways of achieving a *maximum* number of features. 
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
-
-### 3.3 Modes
-* MaxUSE provides two modes: quiet and verbose. 
-	1. Quiet (-q or --quiet) mode only emits necessary information. In default, MaxUSE is running under quiet mode. 
-	2. Verbose (-v or --verbose) mode prints all internal information including: formulas constructed step by step, an internal matrix representation, etc. These information can be useful for debugging, validating correct behaviour of MaxUSE. For those who are really interested in how MaxUSE construct SMT formulas, this mode could be very helpful. 
 
 ## 4. THEORIES & TECHNIAL DETAILS
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
