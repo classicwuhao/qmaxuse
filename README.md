@@ -7,7 +7,6 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 ## 2. BUILD INSTRUCTIONS
 
 ### 2.1 UBUNTU (15.10+)
->>>>>>> master
 * use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
 * Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
 	```
@@ -27,7 +26,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 * Make sure you have JDK installed. 
 * Download Z3 SMT solver (latest version).
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
-* Compile Z3 under VS command prompt (please follow Z3 build instructions).
+* Compile Z3 under VS command prompt (please follow Z3 build instructions.). *For x64, you need to compile Z3 with -x.* 
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
 * Download MaxUSE and in the lib directory type:
@@ -36,7 +35,7 @@ MaxUSE is a tool that finds the set of achievable features and constraint confli
 	```  
 	to lanuch MaxUSE.
 * Load a sample model.
-* In the USE command line, type *maxuse* to check the sample model.
+* In the USE command line, type *maxuse -q* to check the sample model.
 
 *Known issue: If MaxUSE always returns SAT even the model contains conflicts, this is caused by internal SMT solver. Hence, please update Z3 regularly.*
 
