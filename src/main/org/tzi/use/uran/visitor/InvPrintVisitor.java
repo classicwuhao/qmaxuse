@@ -73,6 +73,9 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private Function includesFun = factory.createFunction(includes_str, new Int(), new Int(), new Bool());
 	private Function selectFun = factory.createFunction(select_str, new Int(), new Bool(), new Int());
 	private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
+	private MModel model;
+	private int one_weight=0;
+	private int overall_counter=0;
 	private Flag flag = Flag.QUIET;
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
@@ -413,7 +416,10 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 				AbstractWeight weight = e.getAnnotationTag().getWeight();
 				if (weight.isIntWeight()) {
 					IntWeight iweight = (IntWeight) weight;
-					if (iweight.getWeight()==IntWeight.DEFAULT) iweight.setWeight(clsRank.get(e));
+					if (iweight.getWeight()==IntWeight.DEFAULT) 
+						iweight.setWeight(clsRank.get(e));
+					else
+						one_weight=iweight.getWeight();
 				}
 		}
 
@@ -510,6 +516,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	
 	@Override
 	public void visitModel (MModel e){
+		this.model=e;
 		weights.clear();auxs.clear();
 		pairs.clear();formulas.clear();exist_formulas.clear();locations.clear();
 		MClassInvariant[] classInvariants = e.classInvariants().toArray(new MClassInvariant[0]);
@@ -531,6 +538,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			MClass cls = (MClass) it.next();
 			if (this.flag==Flag.VERBOSE) ColorPrint.println("Annotation Tag:"+cls.getAnnotationTag(),Color.YELLOW);
 			cls.processWithVisitor(this);
+			this.overall_counter++;
 		}
 
 		it = e.associations().iterator();
@@ -540,6 +548,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 			AnnotationTag tag = assoc.getAnnotationTag();
 			Constant aux = CreateAux();
 			int sum=0;
+			this.overall_counter++;
 
 			AbstractFormula formula = computeAEM(assoc);
 			formulas.add (FormulaBuilder.range(0,1,aux,true));
@@ -561,6 +570,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 						}
 						else{
 							sum = iweight.getWeight();
+							one_weight=sum;
 						}
 
 						Constant cweight = CreateWeight();
@@ -589,6 +599,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 				System.out.println();
 			}
 			inv_counter++;
+			this.overall_counter++;
 		}
 		//System.out.println("building formulas...");
 		for (i=0;i<pairs.size();i++){
@@ -606,6 +617,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 					if (aw.isIntWeight()){
 						IntWeight iw = (IntWeight)aw;
 						int w = iw.getWeight();
+						one_weight = w;
 						totalWeight+=w;
 						ImpliesFormula imp_formula0 = new ImpliesFormula(new EqFormula(aux, new NumLiteral(0)), 
 															new EqFormula(weight,new NumLiteral(w)));
@@ -928,19 +940,34 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	
 	/* check weights to decide whether we should use MSC Solver to find conflicts */
 	private boolean equalWeights(){
-		/*if (locations.size()<=0) return false;
-		
-		int w = locations.get(0).getWeight();
-		System.out.println(locations.get(0).name()+" : "+locations.get(0).getWeight());
-		
-		for (int i=1;i<locations.size();i++){
-			System.out.println(locations.get(i).name()+" : "+locations.get(i).getWeight());
-			if (w - locations.get(i).getWeight()!=0) return false;
+		/*for (MClass cls : this.model.classes()){
+			if (cls.getAnnotationTag()==null) return false;
+
 		}*/
-		
-		return true;
+		//System.out.println("one weight:"+one_weight);
+		//System.out.println("total weight:"+totalWeight);
+		//System.out.println("overall counter:"+overall_counter);
+
+		if (one_weight==0) return false;
+		float w = this.totalWeight / this.overall_counter;
+		return (w==one_weight);
 	}
 	
+/*	private int FindRankedFeature(){
+		int r = 0;
+
+		for (MClass cls : this.model.classes()){
+			if (cls.getAnnotationTag()!=null){
+				AbstractWeight weight = cls.getAnnotationTag().getWeight();
+				if (weight!=null){
+
+				}
+			}
+		}
+
+		return r;
+	}*/
+
 	private void PrintReport(){
 		if (locations.size()<=0){
 			ColorPrint.println("No specified weights found.",Color.GREEN);

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.4 USE.g 2019-07-26 17:05:42
-=======
-// $ANTLR 3.4 USE.g 2019-07-17 14:59:33
->>>>>>> master
+// $ANTLR 3.4 USE.g 2019-07-26 17:59:01
  
 /*
  * USE - UML based specification environment

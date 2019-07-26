@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.4 Generator.g 2019-07-26 17:05:45
-=======
-// $ANTLR 3.4 Generator.g 2019-07-17 14:59:37
->>>>>>> master
+// $ANTLR 3.4 Generator.g 2019-07-26 17:59:04
 
 package org.tzi.use.parser.generator;
 

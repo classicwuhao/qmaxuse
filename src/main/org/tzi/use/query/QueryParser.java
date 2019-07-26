@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.4 Query.g 2019-07-26 17:05:43
-=======
-// $ANTLR 3.4 Query.g 2019-07-17 14:59:34
->>>>>>> master
+// $ANTLR 3.4 Query.g 2019-07-26 17:59:02
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;

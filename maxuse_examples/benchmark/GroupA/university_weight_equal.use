@@ -1,11 +1,14 @@
 model UNIVERSITY
 
+@Rank = 1
 class University
 end
 
+@Rank = 1
 class Department
 end
 
+@Rank = 1
 class Module
 attributes
 	code:			Integer
@@ -14,6 +17,7 @@ attributes
 	description:	Integer
 end
 
+@Rank = 1
 class Person
 attributes
 	age:	Integer
@@ -21,23 +25,26 @@ attributes
 	name:	String
 end
 
+@Rank = 1
 class Student < Person
 attributes
 	id:		Integer
 	year:	Integer
 end
 
-@Rank = automatic
+@Rank = 1
 association study between
 	Student [1..1] role student
 	Module [0..*] role modules
 end
 
+@Rank = 1
 association teach between
 	Department [1..1] role department
 	Student [1..*] role student
 end
 
+@Rank = 1
 association manage between
 	University [1..1] role department
 	Department [1..*] role student
