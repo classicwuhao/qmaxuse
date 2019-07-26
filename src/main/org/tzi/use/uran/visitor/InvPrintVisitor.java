@@ -76,6 +76,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 	private MModel model;
 	private int one_weight=0;
 	private int overall_counter=0;
+	private int inv_counter=0;
 	private Flag flag = Flag.QUIET;
 	public InvPrintVisitor (PrintWriter out){
 		fOut = out;
@@ -589,7 +590,7 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 		}
 		
 		//System.out.println("visiting class invariant.");
-		int inv_counter=0;		
+				
 		for (MClassInvariant inv : classInvariants){
 			//ColorPrint.println("visitng invariant "+ ++i,Color.BLUE);
 			inv.processWithVisitor(this);
@@ -950,7 +951,8 @@ public final class InvPrintVisitor extends Thread implements MMVisitor{
 
 		if (one_weight==0) return false;
 		float w = this.totalWeight / this.overall_counter;
-		return (w==one_weight);
+		float d = this.totalWeight / this.inv_counter;
+		return (w==one_weight || d==one_weight);
 	}
 	
 /*	private int FindRankedFeature(){
