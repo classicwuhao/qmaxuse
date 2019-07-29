@@ -17,7 +17,6 @@ attributes
 	description:	Integer
 end
 
-@Rank = 1
 class Person
 attributes
 	age:	Integer
@@ -25,7 +24,6 @@ attributes
 	name:	String
 end
 
-@Rank = 1
 class Student < Person
 attributes
 	id:		Integer
@@ -38,14 +36,16 @@ association study between
 	Module [0..*] role modules
 end
 
-@Rank = 1
-association teach between
-	Department [1..1] role department
-	Student [1..*] role student
-end
 
--- comment for Z3 to get precise information (only for Windows 10).
--- uncomment if maxuse is run under Linux.
+-- comment the following associations for Z3 to get more precise cores (only for Windows 10).
+-- uncomment if MAXUSE is running under Linux (Ubuntu).
+
+--@Rank = 1
+--association teach between
+--	Department [1..1] role department
+--	Student [1..*] role student
+--end
+
 --@Rank = 1
 --association manage between
 --	University [1..1] role department
