@@ -44,11 +44,13 @@ association teach between
 	Student [1..*] role student
 end
 
-@Rank = 1
-association manage between
-	University [1..1] role department
-	Department [1..*] role student
-end
+-- comment for Z3 to get precise information (only for Windows 10).
+-- uncomment if maxuse is run under Linux.
+--@Rank = 1
+--association manage between
+--	University [1..1] role department
+--	Department [1..*] role student
+--end
 
 constraints
 

@@ -5,7 +5,7 @@ public class ColorPrint{
 
 	public static void print(String message, String color){
 		if (System.getProperty("os.name").startsWith("Windows"))
-			System.err.println(message);
+			System.err.print(message);
 		else
 			System.err.print(prefix+color+message+" "+prefix+Color.DEFAULT);
 	}

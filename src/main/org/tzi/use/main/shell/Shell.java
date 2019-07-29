@@ -765,7 +765,7 @@ public final class Shell implements Runnable, PPCHandler {
             v = new InvPrintVisitor(new PrintWriter(System.out, true),Flag.QUIET);
             //System.out.println(v.flag());
         }
-        else if (line.endsWith("-v") || line.endsWith("--versbose")){
+        else if (line.endsWith("-v") || line.endsWith("--verbose")){
             v = new InvPrintVisitor(new PrintWriter(System.out, true),Flag.VERBOSE);
             //System.out.println(v.flag());
         }

@@ -1,14 +1,14 @@
 [Classes]
-Department rank: null 
-Module rank: null 
-Person rank: null 
-Student rank: null 
-University rank: null 
+Department rank: <1>
+Module rank: <1>
+Person rank: <1>
+Student rank: <>
+University rank: <1>
 
 [Associations]
-manage rank: null 
-study rank: <automatic> 
-teach rank: null 
+manage rank: <1>
+study rank: <1>
+teach rank: <1>
 
 [Invariants]
 inv8 rank:<1> 
