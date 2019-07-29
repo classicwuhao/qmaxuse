@@ -2,12 +2,14 @@ model WritesReviews
 --a simple demo model taken from Initiating a Benchmark for UML and OCL Analysis Tools
 --WritesReviews (WR)
 
+@Rank = 1
 class Paper
 attributes
 	wordCount:	Integer
 	studentPaper: Boolean
 end
 
+@Rank = 1
 class Researcher
 attributes
 	isStudent:	Boolean
@@ -15,7 +17,7 @@ end
 
 @Rank = 1
 association Writes between
-	Paper [0..1] role manuscript
+	Paper [1..1] role manuscript
 	Researcher [1..2] role author
 end
 
@@ -29,7 +31,7 @@ constraints
 @Researcher{Rank = 1}
 context Researcher
 	inv: Researcher.allInstances()->forAll(r|r.manuscript->size()=1)
-	inv: Researcher.allInstances()->forAll(r|r.submission->size()=1)
+	inv: Researcher.allInstances()->forAll(r|r.submission->size()>=2)
 	inv: Researcher.allInstances()->forAll(r|r.submission->excludes(r.manuscript))
 
 @Paper{Rank = 1}
