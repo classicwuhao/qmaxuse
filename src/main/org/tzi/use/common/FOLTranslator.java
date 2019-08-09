@@ -166,7 +166,6 @@ public class FOLTranslator extends Thread implements ITranslator {
 
     private void toSMT2(String filename, List<AbstractFormula> formulas, FunctionFactory factory){
         SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
-        //Z3SMT2Solver solver = new Z3SMT2Solver(writer);
         SolverLauncher z3 = new SolverLauncher(Z3+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
         
         long current = System.currentTimeMillis();

@@ -72,7 +72,7 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 		if (this.flag==Flag.VERBOSE) System.out.println("visiting exists...");
 		AbstractFormula formula=null;
 		Scope s;
-					
+		
 		if (_scope==null){
 			_scope=s=new Scope();
 		}else{

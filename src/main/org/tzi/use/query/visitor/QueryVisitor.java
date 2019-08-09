@@ -418,7 +418,7 @@ public class QueryVisitor extends AbstractVisitor {
         }
         
         for (AbstractQuery qe : list){
-            this.state().clearAll();
+            //this.state().clearAll();
             qe.accept(this);
         }
 
