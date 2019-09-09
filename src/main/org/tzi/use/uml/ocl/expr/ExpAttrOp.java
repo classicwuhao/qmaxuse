@@ -31,7 +31,7 @@ import org.tzi.use.uml.sys.MSystemState;
 
 import org.tzi.use.uran.visitor.*;
 import uran.formula.AbstractFormula;
-
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 /**
  * Attribute operation on objects.
  * 
@@ -106,6 +106,11 @@ public final class ExpAttrOp extends Expression {
 	public AbstractFormula accept (AbstractExprVisitor visitor){
 		return visitor.visitAttrOp(this);
 	}
+
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitAttrOp(this);
+    }
 
 	@Override
 	public int accept (AbstractRankVisitor visitor){

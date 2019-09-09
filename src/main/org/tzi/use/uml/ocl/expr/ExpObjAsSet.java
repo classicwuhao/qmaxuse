@@ -27,7 +27,7 @@ import org.tzi.use.uml.ocl.value.SetValue;
 import org.tzi.use.uml.ocl.value.Value;
 import uran.formula.AbstractFormula;
 import org.tzi.use.uran.visitor.*;
-
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * Internal operation mapping a single object (resulting from
@@ -96,5 +96,10 @@ public final class ExpObjAsSet extends Expression {
 	public AbstractFormula accept (AbstractExprVisitor visitor){
 		return visitor.visitObjAsSet(this);
 	}
+
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitObjAsSet(this);
+    }
 
 }

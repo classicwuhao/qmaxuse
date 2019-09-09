@@ -25,6 +25,7 @@ import org.tzi.use.uml.ocl.type.Type;
 import org.tzi.use.uml.ocl.value.Value;
 import org.tzi.use.uran.visitor.*;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * Variable expression.
@@ -84,6 +85,11 @@ public final class ExpVariable extends Expression  {
 	@Override
 	protected boolean childExpressionRequiresPreState() {
 		return false;
-	}
+    }
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitVariable(this);
+    }
+    
 }
 

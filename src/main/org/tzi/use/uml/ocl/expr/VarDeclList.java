@@ -31,6 +31,7 @@ import org.tzi.use.util.StringUtil;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
 import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /** 
  * A list of variable declarations.
@@ -193,5 +194,9 @@ public class VarDeclList implements Iterable<VarDecl> {
 		return visitor.visitVarDeclList(this);
 	}
 
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitVarDeclList(this);
+    }
+    
 }
 

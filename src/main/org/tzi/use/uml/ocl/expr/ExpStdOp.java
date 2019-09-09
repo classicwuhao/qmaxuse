@@ -42,6 +42,7 @@ import antlr.SemanticException;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * General operation expressions. Each operation is implemented by its own
@@ -342,5 +343,10 @@ public final class ExpStdOp extends Expression {
 	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitStdOp(this);
 	}
-	
+    
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitStdOp(this);
+    }
+    
 }

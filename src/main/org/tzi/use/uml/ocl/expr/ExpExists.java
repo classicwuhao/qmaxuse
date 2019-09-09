@@ -26,6 +26,7 @@ import org.tzi.use.uml.ocl.value.Value;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
 import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /** 
  * OCL exists expression.
@@ -96,5 +97,10 @@ public class ExpExists extends ExpQuery {
 		return visitor.visitExists(this);
 	}
 
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitExists(this);
+    }
+    
 }
 

@@ -26,7 +26,7 @@ import org.tzi.use.uml.ocl.value.IntegerValue;
 import org.tzi.use.uml.ocl.value.Value;
 import uran.formula.AbstractFormula;
 import org.tzi.use.uran.visitor.*;
-
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 /**
  * Constant integer expression.
  *
@@ -75,6 +75,11 @@ public final class ExpConstInteger extends Expression {
 	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitConstInteger(this);
 	}
+
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitConstInteger(this);
+    }
 
 	@Override
 	protected boolean childExpressionRequiresPreState() {

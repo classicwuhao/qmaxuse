@@ -27,6 +27,7 @@ import org.tzi.use.uml.ocl.type.Type;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
 import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /** 
  * A Variable declaration associates a variable name with a type.
@@ -118,6 +119,10 @@ public class VarDecl {
 	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitVarDecl(this);
 	}
-	
+    
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitVarDecl(this);
+    }
+
 }
 

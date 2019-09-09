@@ -28,6 +28,7 @@ import org.tzi.use.uml.ocl.value.Value;
 import org.tzi.use.util.BufferedToString;
 import uran.formula.AbstractFormula;
 import org.tzi.use.uran.visitor.*;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * Abstract base class of all expressions.
@@ -184,5 +185,6 @@ public abstract class Expression implements BufferedToString {
 		//System.out.println("this:"+this+" "+this.name()+" "+this.type());
 		return null;
 	}
-	public int accept (AbstractRankVisitor visitor){return 1;};
+    public int accept (AbstractRankVisitor visitor){return 1;};
+    public void accept (AbstractOclExprVisitor visitor){}
 }

@@ -26,6 +26,7 @@ import org.tzi.use.uml.ocl.value.BooleanValue;
 import org.tzi.use.uml.ocl.value.Value;
 import uran.formula.AbstractFormula;
 import org.tzi.use.uran.visitor.*;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * Constant boolean expression.
@@ -76,6 +77,11 @@ public final class ExpConstBoolean extends Expression {
 	@Override
 	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitConstBoolean(this);
+	}
+
+	@Override
+	public void accept (AbstractOclExprVisitor visitor){
+		visitor.visitConstBoolean(this);
 	}
 
 	/* (non-Javadoc)

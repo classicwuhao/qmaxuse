@@ -40,6 +40,7 @@ import org.tzi.use.util.StringUtil;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
 import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /**
  * Navigation expression from one class to another.
@@ -202,5 +203,10 @@ public final class ExpNavigation extends Expression {
 		return visitor.visitNavigation(this);
 	}
 
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitNavigation(this);
+    }
+    
 }
 

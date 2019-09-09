@@ -26,6 +26,7 @@ import org.tzi.use.uml.ocl.value.Value;
 import org.tzi.use.uran.visitor.AbstractExprVisitor;
 import org.tzi.use.uran.visitor.AbstractRankVisitor;
 import uran.formula.AbstractFormula;
+import org.tzi.use.query.util.AbstractOclExprVisitor;
 
 /** 
  * OCL forAll expression.
@@ -94,7 +95,12 @@ public class ExpForAll extends ExpQuery {
 	@Override
 	public int accept (AbstractRankVisitor visitor){
 		return visitor.visitForAll(this);
-	}
-
+    }
+    
+    @Override
+    public void accept (AbstractOclExprVisitor visitor){
+        visitor.visitForAll(this);
+    }
+    
 }
 
