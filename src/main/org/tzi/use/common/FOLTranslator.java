@@ -32,7 +32,7 @@ public class FOLTranslator extends Thread implements ITranslator {
     private String obj_str=(OBJ+""+UUID.randomUUID()).replace('-','_');
     private String con_str=CON;//(CON+""+UUID.randomUUID()).replace('-','_');
     private String car_str="Cardinality";//("cardinality"+UUID.randomUUID()).replace('-','_');
-    private String rel_str=(REL+""+UUID.randomUUID()).replace('-','_');
+    private String rel_str=(REL+UUID.randomUUID()).replace('-','_');
 	private Function conFun = factory.createFunction(con_str,new Int(),new Int());
 	private Function cardFun = factory.createFunction(car_str,new Int(),new Int());	
 	private Function excludesFun = factory.createFunction(excludes_str, new Int(), new Int(), new Bool()); 
@@ -135,7 +135,7 @@ public class FOLTranslator extends Thread implements ITranslator {
     }    
 
     public void TranslateAssociation(MAssociation assoc){
-        Function fun = factory.createFunction(rel_str, new Int(), new Int(), new Bool());
+        Function fun = factory.createFunction(rel_str+"_"+assoc.name(), new Int(), new Int(), new Bool());
         Variable a = new Variable("a", new Int());
 		Variable b = new Variable("b", new Int());
 		AbstractFormula t1 = fun.apply(getObjFunction().apply(a), getObjFunction().apply(b));
@@ -157,6 +157,9 @@ public class FOLTranslator extends Thread implements ITranslator {
 
         for (MAttribute attr:this.features.attributes())
             TranslateAttribute(attr);
+
+        for (MAssociation assoc:this.features.associations())
+            TranslateAssociation(assoc);
 
         for (MClassInvariant inv:this.features.invariants())
             TranslateInvariant(inv);

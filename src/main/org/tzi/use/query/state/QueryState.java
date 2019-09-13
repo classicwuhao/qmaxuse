@@ -2,13 +2,15 @@ package org.tzi.use.query.state;
 import org.tzi.use.query.ast.*;
 import org.tzi.use.uml.mm.*;
 import java.util.*;
+import org.tzi.use.query.util.*;
 
 public class QueryState{
     private Set<MClass> classes;
     private Set<MAttribute> attributes;
     private Set<MAssociation> associations;
     private Set<MClassInvariant> invariants;
-
+    private HashMap<MAttribute, List<MClassInvariant>> map = new HashMap<MAttribute, List<MClassInvariant>>();
+    
     public QueryState(){
         this.classes = new HashSet<MClass>();
         this.attributes = new HashSet<MAttribute>();
@@ -28,15 +30,28 @@ public class QueryState{
     public Set<MAssociation> associations(){return this.associations;}
     public Set<MClassInvariant> invariants(){return this.invariants;}
 
-    
-
     public void refine(){
-
         /* class */
-        for (MClass cls : classes){
+    }
 
+    public void preprocess(){
+        AttributeOclExprVisitor visitor = new AttributeOclExprVisitor();
+        for (MAttribute attr : attributes){
+            visitor.initialise(attr);
+            for (MClassInvariant inv : invariants){
+                inv.bodyExpression().accept(visitor);
+                if (visitor.isUsed()) {
+                    if (map.containsKey(attr)){
+                        map.get(attr).add(inv);
+                    }
+                    else{
+                        List<MClassInvariant> list = new ArrayList<MClassInvariant>();
+                        list.add(inv);
+                        map.put(attr, list);
+                    }
+                } 
+            }
         }
-        
     }
 
     public void clearAll(){
@@ -63,6 +78,16 @@ public class QueryState{
         sb.append("[");
         for (MClassInvariant inv: invariants) sb.append(inv.qualifiedName()+" ");
         sb.append("]\n");
+
+        sb.append("=======Used Attributes======== \n");
+        for (MAttribute attr : map.keySet()){
+            sb.append(attr.name()+"->{ ");
+            List<MClassInvariant> list = map.get(attr);
+            for (MClassInvariant inv : list){
+                sb.append (inv.qualifiedName()+" ");
+            }
+            sb.append("}\n");
+        }
 
         return sb.toString();
     }

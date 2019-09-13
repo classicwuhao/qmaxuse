@@ -197,9 +197,10 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 			throw new VisitorException("Exception: Association name is empty.");
 
 		Function[] f = new Function[vars.length];
-
-		for (int i=0;i<vars.length;i++)
+		
+		for (int i=0;i<vars.length;i++){
 			f[i]=modelVisitor.getRelFunction(name).apply(f1,f1.apply(vars[i]));
+		}
 
 		return f.length==1 ? f[0] : new AndFormula().merge(f);
 	}

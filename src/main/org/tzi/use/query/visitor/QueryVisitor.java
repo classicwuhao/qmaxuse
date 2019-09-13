@@ -25,12 +25,12 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitBinaryExpr(QueryBinaryExpr e){
-        /* copy evrything to leftstate */
+        /* copy everything to leftstate */
         e.left().accept(this);
         QueryState leftState = copy(this.state);
         this.state.clearAll();
 
-        /* copy evrything to rightstate */
+        /* copy everything to rightstate */
         e.right().accept(this);
         QueryState rightState = copy(this.state);
         this.state.clearAll();
@@ -82,7 +82,7 @@ public class QueryVisitor extends AbstractVisitor {
         }
 
         if (e.isAliased() && !e.isPureAliased() && !e.isContained() && !e.isSaved()){
-            System.out.println("visiting alias...");
+            //System.out.println("visiting alias...");
             e.save();
             model.queryContext().add(e.alias(),e);
             out.println("Alias "+e.alias()+" is saved.",Color.BLUE);
@@ -115,7 +115,13 @@ public class QueryVisitor extends AbstractVisitor {
             return;
         }
 
-        state.classes().add(cls);
+        if (e.getModifier()==Modifier.ONLY)
+            state.classes().add(cls);
+        else{
+            state.classes().add(cls);
+            state.classes().addAll(cls.parents());
+        }
+
         if (this.verbose) out.println("Classes: "+ state.classes()+" selected.",Color.BLUE);
     }
 
@@ -135,18 +141,33 @@ public class QueryVisitor extends AbstractVisitor {
                 return;
             }else{
                 if (this.verbose) out.println("Class: "+cls.name()+" is added.",Color.BLUE);
-                list.add(cls);
-                state.classes().add(cls);
+                if (e.getModifier()==Modifier.ONLY){
+                    list.add(cls);
+                    state.classes().add(cls);
+                }else
+                {
+                    list.add (cls);
+                    state.classes().add (cls);
+                    list.addAll(cls.allParents());
+                    state.classes().addAll(cls.allParents());
+                }
             }
         }
 
         for (MClass c : list){
             if (e.name().equals("*")){
                 if (this.verbose) out.println("Attributes: "+c.allAttributes()+" are selected.", Color.BLUE);
-                state.attributes().addAll(c.allAttributes());
+                if (e.getModifier()!=Modifier.ONLY)
+                    state.attributes().addAll(c.allAttributes());
+                else
+                    state.attributes().addAll(c.attributes());
             }
             else{
-                attr = c.attribute(e.name(),true);
+                if (e.getModifier()!=Modifier.ONLY)
+                    attr = c.attribute(e.name(),true);
+                else
+                    attr = c.attribute(e.name(),false);
+            
                 if (attr==null){
                     if (state.classes().contains(c)) state.classes().remove(c);
                     if (!e.container().equals("*")){
@@ -266,9 +287,11 @@ public class QueryVisitor extends AbstractVisitor {
             MClass cls = findClass(qcls.name());
             if (cls==null){out.println("Warning: no class: "+qcls.name()+" is found.",Color.YELLOW);continue;}
             excluded_cls_set.add(cls);
-            excluded_cls_set.addAll(cls.allChildren());
             state.classes().remove(cls);
-            state.classes().removeAll(cls.allChildren());
+            if (qcls.getModifier()!=Modifier.ONLY) {
+                excluded_cls_set.addAll(cls.allChildren());
+                state.classes().removeAll(cls.allChildren());
+            }
         }
 
         /* we should also remove all attributes/associations/invariants associated with this class */
@@ -292,7 +315,6 @@ public class QueryVisitor extends AbstractVisitor {
                 if (inv.cls()==cls) it_c.remove();
             }
         }
-
     }
 
     private void removeAttribute(List<QAttrExpr> e){

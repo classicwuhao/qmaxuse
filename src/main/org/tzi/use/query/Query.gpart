@@ -104,7 +104,10 @@ featureExpr returns [QFeatureExpr feature]:
                     new QClassExpr($dest.getText(),modifier)
                     ;
     }
-    | f1 = attrExpr {$feature=f1;}
+    | (modifier=modifiers) ? f1 = attrExpr {
+            if (modifier!=null) f1.setModifier(modifier);
+            $feature=f1;
+        }
     | f2 = assocExpr {$feature=f2;}
 ;
 

@@ -65,6 +65,7 @@ public class QueryCompiler{
             if (errHandler.errorCount() == 0 ) {
                 QueryVisitor visitor = new QueryVisitor(model);
                 expr.accept(visitor);
+                visitor.state().preprocess();
                 out.println(visitor.state().toString(),Color.CYAN);
                 visitors.add(visitor.state());
                 /*if (visitors.size()>=2){
