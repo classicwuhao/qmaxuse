@@ -708,6 +708,7 @@ modifiers returns [Modifier m]:
 
     |'all' {$m=Modifier.NO;}
 ;
+
 attrExpr returns [QAttrExpr attr]:
     src=(IDENT|STAR) DOT dest=(IDENT|STAR) (k=rankExpr)? 
     {

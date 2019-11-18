@@ -3,9 +3,9 @@
         <autolayout>false</autolayout>
         <antialiasing>false</antialiasing>
         <showassocnames>true</showassocnames>
-        <showattributes>false</showattributes>
+        <showattributes>true</showattributes>
         <showmultiplicities>false</showmultiplicities>
-        <showoperations>false</showoperations>
+        <showoperations>true</showoperations>
         <showrolenames>false</showrolenames>
         <showgrid>false</showgrid>
     </diagramOptions>
@@ -36,8 +36,8 @@
     <node id="D" sizeCalculated="true" type="Class">
         <name>D</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>91.0</x>
-            <y>9.0</y>
+            <x>132.0</x>
+            <y>11.0</y>
         </strategy>
         <hidden>false</hidden>
     </node>
@@ -86,11 +86,19 @@
                 <specialid>1</specialid>
                 <hidden>false</hidden>
             </edgeproperty>
-            <edgeproperty id="Generalization::D::B::WayPoint::1" sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+            <edgeproperty id="Generalization::D::B::WayPoint::1" sizeCalculated="true" type="WayPoint" userDefined="true" visible="true">
                 <name>1</name>
-                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
-                    <userOffsetX>0.0</userOffsetX>
-                    <userOffsetY>0.0</userOffsetY>
+                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToCorner">
+                    <userOffsetX>83.0</userOffsetX>
+                    <userOffsetY>50.61818181818182</userOffsetY>
+                    <basisDeltaX>ABSOLUTE</basisDeltaX>
+                    <deltaX>0.0</deltaX>
+                    <maxDeltaX>1.7976931348623157E308</maxDeltaX>
+                    <basisDeltaY>ABSOLUTE</basisDeltaY>
+                    <deltaY>0.0</deltaY>
+                    <maxDeltaY>1.7976931348623157E308</maxDeltaY>
+                    <corner>NORTH_WEST</corner>
+                    <relativeNodeId>B</relativeNodeId>
                 </strategy>
                 <id>1</id>
                 <specialid>2</specialid>

@@ -26,6 +26,7 @@ import org.tzi.use.query.visitor.AbstractVisitor;
 import org.tzi.use.query.visitor.QueryVisitor;
 import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
+import org.tzi.use.query.graph.*;
 import java.io.PrintStream;
 import org.tzi.use.common.*;
 import java.util.*;
@@ -43,7 +44,7 @@ public class QueryCompiler{
         ANTLRInputStream aInput;
         QAst expr =null;
         ColorPrint out = new ColorPrint();
-        
+        visitors.clear();
 
 		try {
 			aInput = new ANTLRInputStream(in);
@@ -67,11 +68,11 @@ public class QueryCompiler{
                 expr.accept(visitor);
                 visitor.state().preprocess();
                 out.println(visitor.state().toString(),Color.CYAN);
-                visitors.add(visitor.state());
-                /*if (visitors.size()>=2){
+                /*visitors.add(visitor.state());
+                if (visitors.size()>=2){
                     for (QueryState qstate : visitors){
                         FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
-                        qstate.associations(),qstate.invariants()));
+                            qstate.associations(),qstate.invariants()),model);
                         translator.start();
                     }
                 }*/
@@ -80,6 +81,8 @@ public class QueryCompiler{
                     qstate.associations(),qstate.invariants()),model);
                 
                 translator.start();
+                Decomposer decomposer = new Decomposer(model);
+                decomposer.decompose();
                 return 1;
             }
             else{

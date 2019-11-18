@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Generator.g 2019-09-13 16:08:11
+// $ANTLR 3.4 Generator.g 2019-11-18 12:29:43
 
 package org.tzi.use.parser.generator;
 
@@ -2254,10 +2254,10 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2262:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
-            // Generator.g:2263:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // Generator.g:2263:3: ( ( ' ' | '\\t' | '\\f' | NEWLINE ) )
+            // Generator.g:2264:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             {
-            // Generator.g:2263:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
+            // Generator.g:2264:5: ( ' ' | '\\t' | '\\f' | NEWLINE )
             int alt1=4;
             switch ( input.LA(1) ) {
             case ' ':
@@ -2292,28 +2292,28 @@ public class GeneratorLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // Generator.g:2263:7: ' '
+                    // Generator.g:2264:7: ' '
                     {
                     match(' '); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // Generator.g:2264:7: '\\t'
+                    // Generator.g:2265:7: '\\t'
                     {
                     match('\t'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Generator.g:2265:7: '\\f'
+                    // Generator.g:2266:7: '\\f'
                     {
                     match('\f'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // Generator.g:2266:7: NEWLINE
+                    // Generator.g:2267:7: NEWLINE
                     {
                     mNEWLINE(); if (state.failed) return ;
 
@@ -2342,10 +2342,10 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2272:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
-            // Generator.g:2273:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
+            // Generator.g:2273:11: ( ( '//' | '--' ) (~ ( NEWLINE ) )* )
+            // Generator.g:2274:5: ( '//' | '--' ) (~ ( NEWLINE ) )*
             {
-            // Generator.g:2273:5: ( '//' | '--' )
+            // Generator.g:2274:5: ( '//' | '--' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2365,7 +2365,7 @@ public class GeneratorLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // Generator.g:2273:6: '//'
+                    // Generator.g:2274:6: '//'
                     {
                     match("//"); if (state.failed) return ;
 
@@ -2374,7 +2374,7 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Generator.g:2273:13: '--'
+                    // Generator.g:2274:13: '--'
                     {
                     match("--"); if (state.failed) return ;
 
@@ -2386,7 +2386,7 @@ public class GeneratorLexer extends Lexer {
             }
 
 
-            // Generator.g:2274:5: (~ ( NEWLINE ) )*
+            // Generator.g:2275:5: (~ ( NEWLINE ) )*
             loop3:
             do {
                 int alt3=2;
@@ -2399,7 +2399,7 @@ public class GeneratorLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // Generator.g:2274:6: ~ ( NEWLINE )
+            	    // Generator.g:2275:6: ~ ( NEWLINE )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -2440,14 +2440,14 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2279:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // Generator.g:2280:5: '/*' ( options {greedy=false; } : . )* '*/'
+            // Generator.g:2280:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // Generator.g:2281:5: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); if (state.failed) return ;
 
 
 
-            // Generator.g:2280:10: ( options {greedy=false; } : . )*
+            // Generator.g:2281:10: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -2472,7 +2472,7 @@ public class GeneratorLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // Generator.g:2280:38: .
+            	    // Generator.g:2281:38: .
             	    {
             	    matchAny(); if (state.failed) return ;
 
@@ -2505,7 +2505,7 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "NEWLINE"
     public final void mNEWLINE() throws RecognitionException {
         try {
-            // Generator.g:2284:9: ( '\\r\\n' | '\\r' | '\\n' )
+            // Generator.g:2285:9: ( '\\r\\n' | '\\r' | '\\n' )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -2532,7 +2532,7 @@ public class GeneratorLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // Generator.g:2285:5: '\\r\\n'
+                    // Generator.g:2286:5: '\\r\\n'
                     {
                     match("\r\n"); if (state.failed) return ;
 
@@ -2541,14 +2541,14 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Generator.g:2285:14: '\\r'
+                    // Generator.g:2286:14: '\\r'
                     {
                     match('\r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Generator.g:2285:21: '\\n'
+                    // Generator.g:2286:21: '\\n'
                     {
                     match('\n'); if (state.failed) return ;
 
@@ -2569,8 +2569,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2287:10: ( '->' )
-            // Generator.g:2287:12: '->'
+            // Generator.g:2288:10: ( '->' )
+            // Generator.g:2288:12: '->'
             {
             match("->"); if (state.failed) return ;
 
@@ -2592,8 +2592,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2288:11: ( '@' )
-            // Generator.g:2288:13: '@'
+            // Generator.g:2289:11: ( '@' )
+            // Generator.g:2289:13: '@'
             {
             match('@'); if (state.failed) return ;
 
@@ -2613,8 +2613,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2289:8: ( '|' )
-            // Generator.g:2289:10: '|'
+            // Generator.g:2290:8: ( '|' )
+            // Generator.g:2290:10: '|'
             {
             match('|'); if (state.failed) return ;
 
@@ -2634,8 +2634,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2290:10: ( ':' )
-            // Generator.g:2290:12: ':'
+            // Generator.g:2291:10: ( ':' )
+            // Generator.g:2291:12: ':'
             {
             match(':'); if (state.failed) return ;
 
@@ -2655,8 +2655,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = COLON_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2291:14: ( '::' )
-            // Generator.g:2291:16: '::'
+            // Generator.g:2292:14: ( '::' )
+            // Generator.g:2292:16: '::'
             {
             match("::"); if (state.failed) return ;
 
@@ -2678,8 +2678,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = COLON_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2292:14: ( ':=' )
-            // Generator.g:2292:16: ':='
+            // Generator.g:2293:14: ( ':=' )
+            // Generator.g:2293:16: ':='
             {
             match(":="); if (state.failed) return ;
 
@@ -2701,8 +2701,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2293:10: ( ',' )
-            // Generator.g:2293:12: ','
+            // Generator.g:2294:10: ( ',' )
+            // Generator.g:2294:12: ','
             {
             match(','); if (state.failed) return ;
 
@@ -2722,8 +2722,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2294:8: ( '.' )
-            // Generator.g:2294:10: '.'
+            // Generator.g:2295:8: ( '.' )
+            // Generator.g:2295:10: '.'
             {
             match('.'); if (state.failed) return ;
 
@@ -2743,8 +2743,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = DOTDOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2295:11: ( '..' )
-            // Generator.g:2295:13: '..'
+            // Generator.g:2296:11: ( '..' )
+            // Generator.g:2296:13: '..'
             {
             match(".."); if (state.failed) return ;
 
@@ -2766,8 +2766,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2296:10: ( '=' )
-            // Generator.g:2296:12: '='
+            // Generator.g:2297:10: ( '=' )
+            // Generator.g:2297:12: '='
             {
             match('='); if (state.failed) return ;
 
@@ -2787,8 +2787,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2297:11: ( '>' )
-            // Generator.g:2297:13: '>'
+            // Generator.g:2298:11: ( '>' )
+            // Generator.g:2298:13: '>'
             {
             match('>'); if (state.failed) return ;
 
@@ -2808,8 +2808,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = GREATER_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2298:15: ( '>=' )
-            // Generator.g:2298:17: '>='
+            // Generator.g:2299:15: ( '>=' )
+            // Generator.g:2299:17: '>='
             {
             match(">="); if (state.failed) return ;
 
@@ -2831,8 +2831,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2299:9: ( '#' )
-            // Generator.g:2299:11: '#'
+            // Generator.g:2300:9: ( '#' )
+            // Generator.g:2300:11: '#'
             {
             match('#'); if (state.failed) return ;
 
@@ -2852,8 +2852,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2300:11: ( '{' )
-            // Generator.g:2300:13: '{'
+            // Generator.g:2301:11: ( '{' )
+            // Generator.g:2301:13: '{'
             {
             match('{'); if (state.failed) return ;
 
@@ -2873,8 +2873,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2301:11: ( '[' )
-            // Generator.g:2301:13: '['
+            // Generator.g:2302:11: ( '[' )
+            // Generator.g:2302:13: '['
             {
             match('['); if (state.failed) return ;
 
@@ -2894,8 +2894,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2302:9: ( '<' )
-            // Generator.g:2302:11: '<'
+            // Generator.g:2303:9: ( '<' )
+            // Generator.g:2303:11: '<'
             {
             match('<'); if (state.failed) return ;
 
@@ -2915,8 +2915,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = LESS_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2303:14: ( '<=' )
-            // Generator.g:2303:16: '<='
+            // Generator.g:2304:14: ( '<=' )
+            // Generator.g:2304:16: '<='
             {
             match("<="); if (state.failed) return ;
 
@@ -2938,8 +2938,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2304:11: ( '(' )
-            // Generator.g:2304:13: '('
+            // Generator.g:2305:11: ( '(' )
+            // Generator.g:2305:13: '('
             {
             match('('); if (state.failed) return ;
 
@@ -2959,8 +2959,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2305:10: ( '-' )
-            // Generator.g:2305:12: '-'
+            // Generator.g:2306:10: ( '-' )
+            // Generator.g:2306:12: '-'
             {
             match('-'); if (state.failed) return ;
 
@@ -2980,8 +2980,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = NOT_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2306:13: ( '<>' )
-            // Generator.g:2306:15: '<>'
+            // Generator.g:2307:13: ( '<>' )
+            // Generator.g:2307:15: '<>'
             {
             match("<>"); if (state.failed) return ;
 
@@ -3003,8 +3003,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2307:9: ( '+' )
-            // Generator.g:2307:11: '+'
+            // Generator.g:2308:9: ( '+' )
+            // Generator.g:2308:11: '+'
             {
             match('+'); if (state.failed) return ;
 
@@ -3024,8 +3024,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2308:11: ( '}' )
-            // Generator.g:2308:13: '}'
+            // Generator.g:2309:11: ( '}' )
+            // Generator.g:2309:13: '}'
             {
             match('}'); if (state.failed) return ;
 
@@ -3045,8 +3045,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2309:11: ( ']' )
-            // Generator.g:2309:13: ']'
+            // Generator.g:2310:11: ( ']' )
+            // Generator.g:2310:13: ']'
             {
             match(']'); if (state.failed) return ;
 
@@ -3066,8 +3066,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2310:10: ( ')' )
-            // Generator.g:2310:12: ')'
+            // Generator.g:2311:10: ( ')' )
+            // Generator.g:2311:12: ')'
             {
             match(')'); if (state.failed) return ;
 
@@ -3087,8 +3087,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2311:8: ( ';' )
-            // Generator.g:2311:10: ';'
+            // Generator.g:2312:8: ( ';' )
+            // Generator.g:2312:10: ';'
             {
             match(';'); if (state.failed) return ;
 
@@ -3108,8 +3108,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2312:10: ( '/' )
-            // Generator.g:2312:12: '/'
+            // Generator.g:2313:10: ( '/' )
+            // Generator.g:2313:12: '/'
             {
             match('/'); if (state.failed) return ;
 
@@ -3129,8 +3129,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2313:9: ( '*' )
-            // Generator.g:2313:11: '*'
+            // Generator.g:2314:9: ( '*' )
+            // Generator.g:2314:11: '*'
             {
             match('*'); if (state.failed) return ;
 
@@ -3148,10 +3148,10 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // Generator.g:2317:4: ( ( '0' .. '9' )+ )
-            // Generator.g:2318:5: ( '0' .. '9' )+
+            // Generator.g:2318:4: ( ( '0' .. '9' )+ )
+            // Generator.g:2319:5: ( '0' .. '9' )+
             {
-            // Generator.g:2318:5: ( '0' .. '9' )+
+            // Generator.g:2319:5: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -3206,13 +3206,13 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "REAL"
     public final void mREAL() throws RecognitionException {
         try {
-            // Generator.g:2322:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
-            // Generator.g:2323:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // Generator.g:2323:5: ( INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT ) )
+            // Generator.g:2324:5: INT ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             {
             mINT(); if (state.failed) return ;
 
 
-            // Generator.g:2323:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
+            // Generator.g:2324:9: ( '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )? | ( 'e' | 'E' ) ( '+' | '-' )? INT )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3232,14 +3232,14 @@ public class GeneratorLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // Generator.g:2323:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // Generator.g:2324:10: '.' INT ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     {
                     match('.'); if (state.failed) return ;
 
                     mINT(); if (state.failed) return ;
 
 
-                    // Generator.g:2323:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
+                    // Generator.g:2324:18: ( ( 'e' | 'E' ) ( '+' | '-' )? INT )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -3248,7 +3248,7 @@ public class GeneratorLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // Generator.g:2323:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                            // Generator.g:2324:19: ( 'e' | 'E' ) ( '+' | '-' )? INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -3262,7 +3262,7 @@ public class GeneratorLexer extends Lexer {
                             }
 
 
-                            // Generator.g:2323:31: ( '+' | '-' )?
+                            // Generator.g:2324:31: ( '+' | '-' )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -3303,7 +3303,7 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Generator.g:2323:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
+                    // Generator.g:2324:52: ( 'e' | 'E' ) ( '+' | '-' )? INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -3317,7 +3317,7 @@ public class GeneratorLexer extends Lexer {
                     }
 
 
-                    // Generator.g:2323:64: ( '+' | '-' )?
+                    // Generator.g:2324:64: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -3370,7 +3370,7 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = RANGE_OR_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2325:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
+            // Generator.g:2326:13: ( ( INT '..' )=> INT | ( REAL )=> REAL | INT )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -3411,7 +3411,7 @@ public class GeneratorLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // Generator.g:2326:7: ( INT '..' )=> INT
+                    // Generator.g:2327:7: ( INT '..' )=> INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -3421,7 +3421,7 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Generator.g:2327:7: ( REAL )=> REAL
+                    // Generator.g:2328:7: ( REAL )=> REAL
                     {
                     mREAL(); if (state.failed) return ;
 
@@ -3431,7 +3431,7 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // Generator.g:2328:9: INT
+                    // Generator.g:2329:9: INT
                     {
                     mINT(); if (state.failed) return ;
 
@@ -3456,12 +3456,12 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2332:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
-            // Generator.g:2333:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
+            // Generator.g:2333:7: ( '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\'' )
+            // Generator.g:2334:5: '\\'' (~ ( '\\'' | '\\\\' ) | ESC )* '\\''
             {
             match('\''); if (state.failed) return ;
 
-            // Generator.g:2333:10: (~ ( '\\'' | '\\\\' ) | ESC )*
+            // Generator.g:2334:10: (~ ( '\\'' | '\\\\' ) | ESC )*
             loop12:
             do {
                 int alt12=3;
@@ -3477,7 +3477,7 @@ public class GeneratorLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // Generator.g:2333:12: ~ ( '\\'' | '\\\\' )
+            	    // Generator.g:2334:12: ~ ( '\\'' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3494,7 +3494,7 @@ public class GeneratorLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // Generator.g:2333:27: ESC
+            	    // Generator.g:2334:27: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -3526,12 +3526,12 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = NON_OCL_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2335:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
-            // Generator.g:2336:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
+            // Generator.g:2336:15: ( '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"' )
+            // Generator.g:2337:5: '\"' (~ ( '\"' | '\\\\' ) | ESC )* '\"'
             {
             match('\"'); if (state.failed) return ;
 
-            // Generator.g:2336:9: (~ ( '\"' | '\\\\' ) | ESC )*
+            // Generator.g:2337:9: (~ ( '\"' | '\\\\' ) | ESC )*
             loop13:
             do {
                 int alt13=3;
@@ -3547,7 +3547,7 @@ public class GeneratorLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // Generator.g:2336:11: ~ ( '\"' | '\\\\' )
+            	    // Generator.g:2337:11: ~ ( '\"' | '\\\\' )
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3564,7 +3564,7 @@ public class GeneratorLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // Generator.g:2336:25: ESC
+            	    // Generator.g:2337:25: ESC
             	    {
             	    mESC(); if (state.failed) return ;
 
@@ -3594,12 +3594,12 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "ESC"
     public final void mESC() throws RecognitionException {
         try {
-            // Generator.g:2349:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
-            // Generator.g:2350:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // Generator.g:2350:5: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+            // Generator.g:2351:5: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             {
             match('\\'); if (state.failed) return ;
 
-            // Generator.g:2351:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+            // Generator.g:2352:6: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
             int alt17=11;
             switch ( input.LA(1) ) {
             case 'n':
@@ -3674,63 +3674,63 @@ public class GeneratorLexer extends Lexer {
 
             switch (alt17) {
                 case 1 :
-                    // Generator.g:2351:8: 'n'
+                    // Generator.g:2352:8: 'n'
                     {
                     match('n'); if (state.failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // Generator.g:2352:8: 'r'
+                    // Generator.g:2353:8: 'r'
                     {
                     match('r'); if (state.failed) return ;
 
                     }
                     break;
                 case 3 :
-                    // Generator.g:2353:8: 't'
+                    // Generator.g:2354:8: 't'
                     {
                     match('t'); if (state.failed) return ;
 
                     }
                     break;
                 case 4 :
-                    // Generator.g:2354:8: 'b'
+                    // Generator.g:2355:8: 'b'
                     {
                     match('b'); if (state.failed) return ;
 
                     }
                     break;
                 case 5 :
-                    // Generator.g:2355:8: 'f'
+                    // Generator.g:2356:8: 'f'
                     {
                     match('f'); if (state.failed) return ;
 
                     }
                     break;
                 case 6 :
-                    // Generator.g:2356:8: '\"'
+                    // Generator.g:2357:8: '\"'
                     {
                     match('\"'); if (state.failed) return ;
 
                     }
                     break;
                 case 7 :
-                    // Generator.g:2357:8: '\\''
+                    // Generator.g:2358:8: '\\''
                     {
                     match('\''); if (state.failed) return ;
 
                     }
                     break;
                 case 8 :
-                    // Generator.g:2358:8: '\\\\'
+                    // Generator.g:2359:8: '\\\\'
                     {
                     match('\\'); if (state.failed) return ;
 
                     }
                     break;
                 case 9 :
-                    // Generator.g:2359:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+                    // Generator.g:2360:8: 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
                     {
                     match('u'); if (state.failed) return ;
 
@@ -3749,11 +3749,11 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // Generator.g:2360:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+                    // Generator.g:2361:8: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
                     {
                     matchRange('0','3'); if (state.failed) return ;
 
-                    // Generator.g:2360:17: ( '0' .. '7' ( '0' .. '7' )? )?
+                    // Generator.g:2361:17: ( '0' .. '7' ( '0' .. '7' )? )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -3762,11 +3762,11 @@ public class GeneratorLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // Generator.g:2360:18: '0' .. '7' ( '0' .. '7' )?
+                            // Generator.g:2361:18: '0' .. '7' ( '0' .. '7' )?
                             {
                             matchRange('0','7'); if (state.failed) return ;
 
-                            // Generator.g:2360:27: ( '0' .. '7' )?
+                            // Generator.g:2361:27: ( '0' .. '7' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -3804,11 +3804,11 @@ public class GeneratorLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // Generator.g:2360:45: '4' .. '7' ( '0' .. '7' )?
+                    // Generator.g:2361:45: '4' .. '7' ( '0' .. '7' )?
                     {
                     matchRange('4','7'); if (state.failed) return ;
 
-                    // Generator.g:2360:54: ( '0' .. '7' )?
+                    // Generator.g:2361:54: ( '0' .. '7' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3856,7 +3856,7 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // Generator.g:2366:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // Generator.g:2367:10: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
             // Generator.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -3886,8 +3886,8 @@ public class GeneratorLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Generator.g:2373:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // Generator.g:2374:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // Generator.g:2374:6: ( ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // Generator.g:2375:5: ( '$' | 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -3901,7 +3901,7 @@ public class GeneratorLexer extends Lexer {
             }
 
 
-            // Generator.g:2374:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // Generator.g:2375:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop18:
             do {
                 int alt18=2;
@@ -3951,7 +3951,7 @@ public class GeneratorLexer extends Lexer {
     // $ANTLR start "VOCAB"
     public final void mVOCAB() throws RecognitionException {
         try {
-            // Generator.g:2381:6: ( '\\U0003' .. '\\U0377' )
+            // Generator.g:2382:6: ( '\\U0003' .. '\\U0377' )
             // Generator.g:
             {
             if ( (input.LA(1) >= '\u0003' && input.LA(1) <= '\u0377') ) {
@@ -4980,8 +4980,8 @@ public class GeneratorLexer extends Lexer {
 
     // $ANTLR start synpred1_Generator
     public final void synpred1_Generator_fragment() throws RecognitionException {
-        // Generator.g:2326:7: ( INT '..' )
-        // Generator.g:2326:9: INT '..'
+        // Generator.g:2327:7: ( INT '..' )
+        // Generator.g:2327:9: INT '..'
         {
         mINT(); if (state.failed) return ;
 
@@ -4997,8 +4997,8 @@ public class GeneratorLexer extends Lexer {
 
     // $ANTLR start synpred2_Generator
     public final void synpred2_Generator_fragment() throws RecognitionException {
-        // Generator.g:2327:7: ( REAL )
-        // Generator.g:2327:9: REAL
+        // Generator.g:2328:7: ( REAL )
+        // Generator.g:2328:9: REAL
         {
         mREAL(); if (state.failed) return ;
 

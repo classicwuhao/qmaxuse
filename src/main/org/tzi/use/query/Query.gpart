@@ -121,7 +121,7 @@ modifiers returns [Modifier m]:
 
 attrExpr returns [QAttrExpr attr]:
     src=(IDENT|STAR) DOT dest=(IDENT|STAR) (k=rankExpr)? 
-    {
+    {;
         attr = (k>0) ? 
                new QAttrExpr($src.getText(),$dest.getText(),k)
                :
