@@ -185,6 +185,7 @@ public class FOLTranslator extends Thread implements ITranslator {
         out.println(result.toString(),Color.BLUE);
         out.println("Solving Finished.",Color.BLUE);
         out.println("Time elapsed:"+timeUsed+" ms ", Color.BLUE);
+        
     }
 
     public int getEnumValueIndex(EnumType e, String str){
@@ -206,10 +207,9 @@ public class FOLTranslator extends Thread implements ITranslator {
     }
 
     public void run(){
-        Thread t = Thread.currentThread();
-        out.println(t.getName(),Color.BLUE);
+        //Thread t = Thread.currentThread();
+        //out.println(t.getName(),Color.BLUE);
         generate();
-        
     }
 
     public Function getObjFunction(){return factory.funLookup(obj_str);}

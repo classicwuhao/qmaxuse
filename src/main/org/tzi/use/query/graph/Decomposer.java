@@ -7,8 +7,12 @@ import java.util.*;
 public class Decomposer{
     private MModel model;
     private AttributeOclExprVisitor visitor = new AttributeOclExprVisitor();
+    private ClassOclExprVisitor clsVisitor = new ClassOclExprVisitor();
+
     private HashMap<MAttribute, HashSet<MClassInvariant>> map = new HashMap<MAttribute, HashSet<MClassInvariant>>();
     private List<HashSet<MClassInvariant>> sets = new ArrayList<HashSet<MClassInvariant>>();
+    private HashMap<MClass, HashSet<MClassInvariant>> nav_map= new HashMap<MClass, HashSet<MClassInvariant>>();
+
     private ColorPrint out;
 
     public Decomposer(MModel model){
@@ -16,9 +20,11 @@ public class Decomposer{
         out = new ColorPrint();
     }
 
+    public List<HashSet<MClassInvariant>> inv_sets(){return this.sets;}
+    
     public void decompose(){
         List<HashSet<MClassInvariant>> list = new ArrayList<HashSet<MClassInvariant>>();
-        /* Phase 1 */ 
+        /* Phase 1 */
         for (MClass cls : this.model.classes()){
             for (MAttribute attr:cls.attributes()){
                 for (MClassInvariant inv : this.model.classInvariants()){
@@ -64,6 +70,49 @@ public class Decomposer{
         }
 
         out.println("After Phase 2:",Color.RED);
+        for (HashSet<MClassInvariant> set : sets)
+            out.println(set.toString(),Color.BLUE);
+
+        /* Phase 3 */
+        for (MClass cls: this.model.classes()){
+            for (MClassInvariant inv: this.model.classInvariants()){
+                clsVisitor.initialise(cls);
+                inv.bodyExpression().accept(clsVisitor);
+                if (clsVisitor.isUsed()){
+                    if (nav_map.containsKey(cls)){
+                        nav_map.get(cls).add(inv);
+                    }
+                    else{
+                        HashSet<MClassInvariant> inv_set = new HashSet<MClassInvariant>();
+                        inv_set.add(inv);
+                        nav_map.put(cls, inv_set);
+                    }
+                    //out.println(inv.name()+ " -> "+cls.name(),Color.BLUE);
+                }
+            }
+        }
+
+        out.println("After Phase 3:", Color.RED);
+        for (MClass cls:nav_map.keySet()){
+            out.print(cls.name()+ "-> { ", Color.BLUE);
+            for (MClassInvariant inv : nav_map.get(cls)){
+                out.print(inv.name()+ " ",Color.BLUE);
+            }
+            out.println(" }",Color.BLUE);
+        }
+
+        for (HashSet<MClassInvariant> set : sets){
+            for (MClass cls: nav_map.keySet()){
+                for (MClassInvariant inv: nav_map.get(cls)){
+                    if (set.contains(inv)){
+                        set.addAll(nav_map.get(cls));
+                        break;
+                    }
+                }
+            }
+        }
+
+        out.println("Final Sets:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
             out.println(set.toString(),Color.BLUE);
     }

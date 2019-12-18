@@ -83,6 +83,7 @@ public class QueryCompiler{
                 translator.start();
                 Decomposer decomposer = new Decomposer(model);
                 decomposer.decompose();
+                
                 return 1;
             }
             else{
