@@ -43,6 +43,7 @@ import uran.err.VarExistsException;
 
 public class SolverLauncher extends AbstractVisitor {
 	private Process process;
+	private ProcessBuilder pb;
 	private String file;
 	private String options;
 	private SMT2Writer writer;
@@ -64,7 +65,12 @@ public class SolverLauncher extends AbstractVisitor {
 		this.options = options;
 		
 		try{
-			process = Runtime.getRuntime().exec(file);
+			//process = Runtime.getRuntime().exec(file);
+			List<String> commands = new ArrayList<String>();
+			commands.add("/home/haowu/z3/build/z3");
+			commands.add("-in");
+			pb = new ProcessBuilder(commands);
+			process = pb.start();
 			in = process.getOutputStream();
 			err = process.getErrorStream();
 			out = process.getInputStream();
@@ -158,8 +164,13 @@ public class SolverLauncher extends AbstractVisitor {
 			
 			output.close();
 			out.close();
-			
-
+			//if (process.isAlive()){
+				process.waitFor();
+				process.destroy();
+				
+				//process.destroyForcibly();
+				
+			//}
 		}
 		catch (Exception e){
 			e.printStackTrace();
@@ -190,5 +201,4 @@ public class SolverLauncher extends AbstractVisitor {
 	}
 	
 	public List<AbstractFormula> cores(){return this.cores;}
-			
 }

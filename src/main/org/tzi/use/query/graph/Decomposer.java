@@ -2,6 +2,7 @@ package org.tzi.use.query.graph;
 import org.tzi.use.uml.mm.*;
 import org.tzi.use.query.util.*;
 import org.tzi.use.query.io.*;
+import org.tzi.use.query.state.*;
 import java.util.*;
 
 public class Decomposer{
@@ -21,7 +22,12 @@ public class Decomposer{
     }
 
     public List<HashSet<MClassInvariant>> inv_sets(){return this.sets;}
-    
+    public QueryState query_state(){
+        QueryState state = new QueryState();
+        
+        return state;
+    }
+
     public void decompose(){
         List<HashSet<MClassInvariant>> list = new ArrayList<HashSet<MClassInvariant>>();
         /* Phase 1 */
