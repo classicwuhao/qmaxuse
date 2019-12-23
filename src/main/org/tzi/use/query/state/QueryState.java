@@ -30,8 +30,42 @@ public class QueryState{
     public Set<MAssociation> associations(){return this.associations;}
     public Set<MClassInvariant> invariants(){return this.invariants;}
 
+    public void addAllCls(Set<MClass> cls){
+        this.classes.addAll(cls);
+    }
+
+    public void addAllAttr(Set<MAttribute> attrs){
+        this.attributes.addAll(attrs);
+    }
+
+    public void addAllAssoc(Set<MAssociation> assoc){
+        this.associations.addAll(assoc);
+    }
+
+    public void addAllInv(Set<MClassInvariant> inv){
+        this.invariants.addAll(inv);
+    }
+
+    public void addInv(MClassInvariant inv){
+        this.invariants.add(inv);
+    }
+
     public void refine(){
         /* class */
+        for (MAttribute attr:this.attributes){
+            if (!this.classes.contains(attr.owner()))
+                this.classes.add(attr.owner());
+        }
+
+        for (MAssociation assoc:this.associations){
+            this.classes.addAll(assoc.associatedClasses());
+        }
+
+        for (MClassInvariant inv: this.invariants){
+            if (!this.classes.contains(inv.cls()))
+                this.classes.add(inv.cls());
+        }
+        
     }
 
     public void preprocess(){

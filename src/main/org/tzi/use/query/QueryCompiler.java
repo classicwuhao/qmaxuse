@@ -68,22 +68,15 @@ public class QueryCompiler{
                 expr.accept(visitor);
                 visitor.state().preprocess();
                 out.println(visitor.state().toString(),Color.CYAN);
-                /*visitors.add(visitor.state());
-                if (visitors.size()>=2){
-                    for (QueryState qstate : visitors){
-                        FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
-                            qstate.associations(),qstate.invariants()),model);
-                        translator.start();
-                    }
-                }*/
                 QueryState qstate = visitor.state();
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
                     qstate.associations(),qstate.invariants()),model);
                 
+                //我爱凌翠玉
                 translator.start();
                 Decomposer decomposer = new Decomposer(model);
                 decomposer.decompose();
-                
+                decomposer.query_states();
                 return 1;
             }
             else{

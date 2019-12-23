@@ -22,11 +22,36 @@ public class Decomposer{
     }
 
     public List<HashSet<MClassInvariant>> inv_sets(){return this.sets;}
-    public QueryState query_state(){
-        QueryState state = new QueryState();
-        
-        return state;
+    public List<QueryState> query_states(){
+        List<QueryState> states = new ArrayList<QueryState>();
+
+        for (int i=0;i<this.sets.size();i++){
+            QueryState state = new QueryState();
+            states.add(state);
+        }
+
+        for (int i=0;i<states.size();i++){
+            QueryState state = states.get(i);
+            HashSet<MClassInvariant> set = sets.get(i);
+            for (MClassInvariant inv: set){
+                InvOclExprVisitor inv_visitor = new InvOclExprVisitor();
+                inv.bodyExpression().accept(inv_visitor);
+                state.addAllAttr(inv_visitor.attributes());
+                state.addAllAssoc(inv_visitor.associations());
+                state.addInv(inv);
+            }
+            state.refine();
+        }
+        /* 凌翠玉，我的老婆:
+         * 为了你我会抵挡未来所有的诱惑,
+         * 因为你就是我一直再寻找的那个.
+         * 让我好好爱你一辈子，凌翠玉.
+         * 永远不分开！！！
+         */
+        return states;
     }
+
+    public int size(){return this.sets.size();}
 
     public void decompose(){
         List<HashSet<MClassInvariant>> list = new ArrayList<HashSet<MClassInvariant>>();
