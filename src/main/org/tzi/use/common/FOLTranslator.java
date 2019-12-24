@@ -42,13 +42,19 @@ public class FOLTranslator extends Thread implements ITranslator {
     private String Z3="/home/haowu/z3/build/z3";
     private String Z3_STD_IN=" -in ";
     private static int pid=1;
-    
+    private String file="";
+
     public FOLTranslator(FeatureSet features, MModel model){
         this.features = features;
         out = new ColorPrint();
         //Function f1 = factory.createFunction(obj_str,new Int(), new Int());
         //model.processWithVisitor(modelVisitor);
         extraFunctions();
+    }
+
+    public FOLTranslator(FeatureSet features, MModel model, String file){
+        this(features,model);
+        this.file = file;
     }
 
 	private void extraFunctions(){
@@ -92,15 +98,23 @@ public class FOLTranslator extends Thread implements ITranslator {
     public void TranslateClass(MClass cls){
         String full_type_name=type_str+"_"+cls.name();
         Function d = factory.createFunction(full_type_name, new Int(), new Bool());
+        
+    }
+
+    /* create this function on the fly */ 
+    public Function TranslateClass (String name){
+        String full_type_name=type_str+"_"+name;
+        Function d = factory.createFunction(full_type_name, new Int(), new Bool());
+        return d;
     }
 
     public void TranslateAttribute(MAttribute attr){
         org.tzi.use.uml.ocl.type.Type t = attr.type();
         AbstractFormula f=null;
         if (t.isTypeOfBoolean())
-				f = factory.createFunction(attr.owner().name().toLowerCase()+"_"+attr.name(),new Int(), new Bool());
+                f = factory.createFunction(attr.owner().name().toLowerCase()+"_"+attr.name(),new Int(), new Bool());
 			else if (attr.type().isTypeOfInteger())
-				f = factory.createFunction(attr.owner().name().toLowerCase()+"_"+attr.name(),new Int(), new Int());
+                f = factory.createFunction(attr.owner().name().toLowerCase()+"_"+attr.name(),new Int(), new Int());
 			else if (attr.type().isTypeOfEnum()){
                 Function enumFun = factory.createFunction(attr.owner().name().toLowerCase()+"_"+
                     ((EnumType)attr.type()).name(), new Int(), new Int());
@@ -116,6 +130,8 @@ public class FOLTranslator extends Thread implements ITranslator {
 								new NumLiteral(enum_size)))
 							)));
             }
+
+            
     }
 
     private Function getType(String name){
@@ -140,18 +156,18 @@ public class FOLTranslator extends Thread implements ITranslator {
 		Variable b = new Variable("b", new Int());
 		AbstractFormula t1 = fun.apply(getObjFunction().apply(a), getObjFunction().apply(b));
         AbstractFormula t2 = fun.apply(getObjFunction().apply(b), getObjFunction().apply(a));
-        
     }
 
-	public void TranslateInvariant (MClassInvariant inv){
+	public AbstractFormula TranslateInvariant (MClassInvariant inv){
         OclExprTranslator visitor = new OclExprTranslator(this,Flag.QUIET);
         AbstractFormula formula = inv.bodyExpression().accept(visitor);
-        out.println(formula.toSMT2(),Color.RED);
+        //out.println(formula.toSMT2(),Color.RED);
+        return formula;
     }
 
     /* generate formulas here. */
     public void generate(){
-
+        int l=0;
         for (MClass cls:this.features.classes())
             TranslateClass (cls);
 
@@ -161,31 +177,63 @@ public class FOLTranslator extends Thread implements ITranslator {
         for (MAssociation assoc:this.features.associations())
             TranslateAssociation(assoc);
 
-        for (MClassInvariant inv:this.features.invariants())
-            TranslateInvariant(inv);
+        for (MClassInvariant inv:this.features.invariants()){
+            formulas.add(new LabeledFormula(TranslateInvariant(inv),"l"+(l++)));
+        }
 
-        toSMT2("FOL",formulas,factory);
+
+        /* add non empty class diagram axioms */ 
+        addNonemptyAxioms();
+
+        if (this.file.length()==0)
+            toSMT2("FOL",formulas,factory);
+        else
+            toSMT2(this.file,formulas,factory);
     }
 
     private void toSMT2(String filename, List<AbstractFormula> formulas, FunctionFactory factory){
+        long current = System.currentTimeMillis();
+        String str = System.getProperty("os.name");
+        out.println(filename+" ("+str+") solving start...",Color.YELLOW);
+
         SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
         SolverLauncher z3 = new SolverLauncher(Z3+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
         
-        long current = System.currentTimeMillis();
-		/*if (solver.solve()==Result.UNSAT){
-            out.println("unsat",Color.RED);
-        }
-        else{
-            out.println("sat",Color.GREEN);
-        }*/
         Result result = z3.launch();
         long timeUsed = System.currentTimeMillis()-current;
-        String str = System.getProperty("os.name");
-        out.println("OS:"+str,Color.BLUE);
-        out.println(result.toString(),Color.BLUE);
-        out.println("Solving Finished.",Color.BLUE);
-        out.println("Time elapsed:"+timeUsed+" ms ", Color.BLUE);
-        
+        if (result==Result.UNSAT){
+            out.println("Solving Finished from "+this.file+".",Color.BLUE);
+            out.println(result.toString(),Color.RED);
+            out.print("cores: {",Color.RED);
+            for (AbstractFormula formula : z3.cores())
+                out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
+            out.println("}",Color.RED);
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);
+        }
+        else{
+            out.println("Solving Finished from "+this.file+".",Color.GREEN);
+            out.println(result.toString(),Color.GREEN);
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);
+        }
+    }
+
+    private void addNonemptyAxioms(){
+        List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
+
+        for (MClass cls : features.classes()){
+            Variable var = new Variable ("o", new Int());
+				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
+				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
+				if (tmp.size()>0){
+					QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
+						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
+								new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
+						:
+						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0));
+
+					formulas.add(quan_formula);
+				}
+        }
     }
 
     public int getEnumValueIndex(EnumType e, String str){
@@ -213,7 +261,10 @@ public class FOLTranslator extends Thread implements ITranslator {
     }
 
     public Function getObjFunction(){return factory.funLookup(obj_str);}
-    public Function getTypeFunction(String name){return factory.funLookup(type_str+"_"+name);}
+    public Function getTypeFunction(String name){
+            Function f = factory.funLookup(type_str+"_"+name);
+            return (f==null) ? TranslateClass(name) : f;
+    }
     public Function getEnumFunction(EnumType e){return factory.funLookup(e.name());}
     public Function getConFun(){return conFun;}
     public Function getCardFun(){return cardFun;}

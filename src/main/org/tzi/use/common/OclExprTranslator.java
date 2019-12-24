@@ -294,12 +294,13 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 	public AbstractFormula visitAttrOp(ExpAttrOp expr){
 		if (this.flag==Flag.VERBOSE) System.out.println("visiting attrop...");
 		MAttribute attr = expr.attr();
+		
 		Function fun;
 		if (!attr.type().isTypeOfEnum())
 			fun = this.factory.funLookup(attr.owner().name().toLowerCase()+"_"+attr.name());
 		else
 			fun = modelVisitor.getEnumFunction((EnumType)attr.type());
-		
+
 		AbstractFormula formula = expr.objExp().accept(this);
 		
 		List<Function> typeFun = new ArrayList<Function>();
@@ -308,17 +309,18 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 		if (formula.isQuantifiedFormula()){
 			QuantifiedFormula f = (QuantifiedFormula) formula;
 			Function objFun = modelVisitor.getObjFunction();
+
 			org.tzi.use.uml.ocl.type.Type objType = expr.objExp().type();
 			if (objType.isTypeOfClass())
 				context = ((MClass)objType);
 			else
 				context = attr.owner();	
-				
+			
 			typeFun.add(modelVisitor.getTypeFunction(context.name()).apply(boundedVar));
-				
+
 			for (MClass cls : context.allParents())
 				typeFun.add(modelVisitor.getTypeFunction(cls.name()).apply(boundedVar));
-			
+
 			Function[] typeFunArray = typeFun.toArray(new Function[typeFun.size()]);
 			f.setVariables(new Decls(boundedVar));
 
@@ -328,6 +330,7 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 						new ImpliesFormula(typeFun.get(0).apply(boundedVar),fun.apply(objFun.apply(boundedVar)));
 			
 			f.setFormula(impFor);
+
 		}
 
 		if (formula.isFunction()){

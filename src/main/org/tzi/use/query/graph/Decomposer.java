@@ -22,6 +22,7 @@ public class Decomposer{
     }
 
     public List<HashSet<MClassInvariant>> inv_sets(){return this.sets;}
+    public MModel model(){return this.model;}
     public List<QueryState> query_states(){
         List<QueryState> states = new ArrayList<QueryState>();
 
@@ -44,7 +45,7 @@ public class Decomposer{
         }
         /* 凌翠玉，我的老婆:
          * 为了你我会抵挡未来所有的诱惑,
-         * 因为你就是我一直再寻找的那个.
+         * 因为你就是我一直在寻找的那个.
          * 让我好好爱你一辈子，凌翠玉.
          * 永远不分开！！！
          */

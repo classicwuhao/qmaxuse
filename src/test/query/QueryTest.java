@@ -163,7 +163,7 @@ public final class QueryTest{
         int errors = compiler.errors();
 
         if (errors==0)
-            ColorPrint.println("query2:"+expr,Color.BLUE);
+            ColorPrint.println("query2 accepted:"+expr,Color.BLUE);
         else 
             ColorPrint.println("query2 failed: "+errors+" syntax issue(s)",Color.RED);
 

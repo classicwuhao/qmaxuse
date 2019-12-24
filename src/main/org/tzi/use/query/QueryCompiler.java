@@ -69,14 +69,16 @@ public class QueryCompiler{
                 visitor.state().preprocess();
                 out.println(visitor.state().toString(),Color.CYAN);
                 QueryState qstate = visitor.state();
-                FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
-                    qstate.associations(),qstate.invariants()),model);
+                /*FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
+                    qstate.associations(),qstate.invariants()),model);*/
                 
                 //我爱凌翠玉
-                translator.start();
-                Decomposer decomposer = new Decomposer(model);
+                //translator.start();
+                /*Decomposer decomposer = new Decomposer(model);
                 decomposer.decompose();
-                decomposer.query_states();
+                decomposer.query_states();*/
+                GraphSolver solver = new GraphSolver(new Decomposer(model));
+                solver.solve();
                 return 1;
             }
             else{

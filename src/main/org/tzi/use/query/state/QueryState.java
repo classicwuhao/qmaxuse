@@ -19,10 +19,11 @@ public class QueryState{
     }
 
     public QueryState(Set<MClass> classes, Set<MAttribute> attributes, Set<MAssociation> associations, Set<MClassInvariant> invariants){
-        this.classes = classes;
-        this.attributes = attributes;
-        this.associations = associations;
-        this.invariants = invariants;
+        /* make sure we do not create NULL pointer for the solver */ 
+        this.classes = (classes==null) ? new HashSet<MClass>() : classes;
+        this.attributes = (attributes == null) ? new HashSet<MAttribute>() : attributes;
+        this.associations = (associations==null) ? new HashSet<MAssociation>() : associations;
+        this.invariants = (invariants==null) ? new HashSet<MClassInvariant>() : invariants;
     }
 
     public Set<MClass> classes (){return this.classes;}
@@ -65,7 +66,7 @@ public class QueryState{
             if (!this.classes.contains(inv.cls()))
                 this.classes.add(inv.cls());
         }
-        
+
     }
 
     public void preprocess(){

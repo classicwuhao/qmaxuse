@@ -65,12 +65,13 @@ public class SolverLauncher extends AbstractVisitor {
 		this.options = options;
 		
 		try{
-			//process = Runtime.getRuntime().exec(file);
-			List<String> commands = new ArrayList<String>();
+			process = Runtime.getRuntime().exec(file);
+			/*List<String> commands = new ArrayList<String>();
 			commands.add("/home/haowu/z3/build/z3");
 			commands.add("-in");
 			pb = new ProcessBuilder(commands);
-			process = pb.start();
+			process = pb.start();*/
+			
 			in = process.getOutputStream();
 			err = process.getErrorStream();
 			out = process.getInputStream();
@@ -154,7 +155,7 @@ public class SolverLauncher extends AbstractVisitor {
 			
 			if (result==Result.UNSAT) {
 				String str = output.readLine();
-				System.out.println("Z3 Raw:"+str);
+				//System.out.println("Z3 Raw:"+str);
 				getCores(str);
 			}
 			
@@ -165,9 +166,8 @@ public class SolverLauncher extends AbstractVisitor {
 			output.close();
 			out.close();
 			//if (process.isAlive()){
-				process.waitFor();
-				process.destroy();
-				
+				//process.waitFor();
+				//process.destroy();
 				//process.destroyForcibly();
 				
 			//}
