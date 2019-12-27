@@ -144,6 +144,7 @@ public class Decomposer{
             }
         }
 
+        /* if it does not contain in previous sets, then it will be a new set added in the sets. */ 
         out.println("Final Sets:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
             out.println(set.toString(),Color.BLUE);

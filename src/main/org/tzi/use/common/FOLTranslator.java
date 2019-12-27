@@ -13,7 +13,6 @@ import org.tzi.use.uml.ocl.type.EnumType;
 import org.tzi.use.query.io.*;
 import org.tzi.use.uran.weight.Flag;
 
-
 public class FOLTranslator extends Thread implements ITranslator {
     private FeatureSet features;
     private ColorPrint out;
@@ -130,8 +129,6 @@ public class FOLTranslator extends Thread implements ITranslator {
 								new NumLiteral(enum_size)))
 							)));
             }
-
-            
     }
 
     private Function getType(String name){
@@ -186,7 +183,7 @@ public class FOLTranslator extends Thread implements ITranslator {
         addNonemptyAxioms();
 
         if (this.file.length()==0)
-            toSMT2("FOL",formulas,factory);
+            toSMT2(this.file="FOL",formulas,factory);
         else
             toSMT2(this.file,formulas,factory);
     }
