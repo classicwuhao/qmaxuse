@@ -72,7 +72,7 @@ public class QueryCompiler{
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
                     qstate.associations(),qstate.invariants()),model);
                 
-                //我爱凌翠玉
+                
                 translator.start();
                 /*Decomposer decomposer = new Decomposer(model);
                 decomposer.decompose();

@@ -43,12 +43,7 @@ public class Decomposer{
             }
             state.refine();
         }
-        /* 凌翠玉，我的老婆:
-         * 为了你我会抵挡未来所有的诱惑,
-         * 因为你就是我一直在寻找的那个.
-         * 让我好好爱你一辈子，凌翠玉.
-         * 永远不分开！！！
-         */
+   
         return states;
     }
 
