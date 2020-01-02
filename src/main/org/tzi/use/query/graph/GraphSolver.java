@@ -38,6 +38,6 @@ public final class GraphSolver{
         catch(InterruptedException e){}
 
         final long time = System.currentTimeMillis() - startTime;
-        out.println("Total Time Spent: " + time +" ms.",Color.CYAN);
+        out.println("Total Time Spent (" + states.size()+" threads): " + time +" ms.",Color.CYAN);
     }
 }

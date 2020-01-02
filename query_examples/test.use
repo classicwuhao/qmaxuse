@@ -64,15 +64,16 @@ context A
 	inv inv2: self.a3 + self.a4 = self.a1+self.a2
 
 context B
-	inv inv1: self.b2=true
-	inv inv2: self.d->forAll(d|d.b->notEmpty())	
+	inv inv3: self.b2=true
+--	inv inv4: self.d->forAll(d|d.b->notEmpty())
+	inv inv4: B.allInstances()->forAll(b|b.d->notEmpty())
 	
 context C
-	inv inv1: self.c1 > 0 and self.c1 < 0
-	inv inv2: self.a4 <= 0 and self.b2=true 
+	inv inv5: self.c1 > 0 and self.c1 < 0
+	inv inv6: self.a4 <= 0 and self.b2=true 
 	
 context D
-	inv inv1: self.b->forAll(b|b.b3>0)
+	inv inv7: self.b->forAll(b|b.b3>0)
 
 module queryTest0
 	q0 = select A.*, A:*:* with A::* + select B.* with B::* 

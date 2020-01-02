@@ -16,6 +16,7 @@ import org.tzi.use.uran.weight.Flag;
 public class FOLTranslator extends Thread implements ITranslator {
     private FeatureSet features;
     private ColorPrint out;
+    private MModel model;
 	private FunctionFactory factory = new FunctionFactory(1024,0.75f);
     private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
     private HashMap <EnumType, Integer> enum_size = new HashMap<EnumType, Integer>();
@@ -45,6 +46,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 
     public FOLTranslator(FeatureSet features, MModel model){
         this.features = features;
+        this.model = model;
         out = new ColorPrint();
         //Function f1 = factory.createFunction(obj_str,new Int(), new Int());
         //model.processWithVisitor(modelVisitor);
@@ -115,8 +117,10 @@ public class FOLTranslator extends Thread implements ITranslator {
 			else if (attr.type().isTypeOfInteger())
                 f = factory.createFunction(attr.owner().name().toLowerCase()+"_"+attr.name(),new Int(), new Int());
 			else if (attr.type().isTypeOfEnum()){
-                Function enumFun = factory.createFunction(attr.owner().name().toLowerCase()+"_"+
-                    ((EnumType)attr.type()).name(), new Int(), new Int());
+                /*Function enumFun = factory.createFunction(attr.owner().name().toLowerCase()+"_"+
+                    ((EnumType)attr.type()).name(), new Int(), new Int());*/
+                Function enumFun = factory.funLookup(attr.name());
+                if (enumFun==null){out.println(attr.name()+" cannot be found.",Color.RED);return;}
                 Function typeFun = getType(attr.owner().name());
                 if (typeFun==null) {out.println("Type "+attr.owner().name()+ " cannot be found.",Color.RED); return;}
                 int enum_size = getEnumSize((EnumType)attr.type());
@@ -165,6 +169,9 @@ public class FOLTranslator extends Thread implements ITranslator {
     /* generate formulas here. */
     public void generate(){
         int l=0;
+        for (EnumType e : this.model.enumTypes())
+            TranslateEnum (e);
+
         for (MClass cls:this.features.classes())
             TranslateClass (cls);
 

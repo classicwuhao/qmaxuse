@@ -128,21 +128,34 @@ public class Decomposer{
             out.println(" }",Color.BLUE);
         }
 
-        for (HashSet<MClassInvariant> set : sets){
-            for (MClass cls: nav_map.keySet()){
+        boolean[] flag = new boolean [nav_map.size()];
+        int index =0;
+
+        for (MClass cls: nav_map.keySet()){
+            flag[index]=true;
+            for (HashSet<MClassInvariant> set : sets){
                 for (MClassInvariant inv: nav_map.get(cls)){
                     if (set.contains(inv)){
                         set.addAll(nav_map.get(cls));
+                        flag[index]= false;
                         break;
                     }
                 }
             }
+            index++;
         }
 
-        /* if it does not contain in previous sets, then it will be a new set added in the sets. */ 
+        /* if it does not contain in previous sets, then it will be a new set added in the sets. */
+        index=0;
+        for (MClass cls:nav_map.keySet()){
+            if (flag[index++])
+                sets.add(nav_map.get(cls));
+        }
+        
         out.println("Final Sets:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
             out.println(set.toString(),Color.BLUE);
+            
     }
 
     private HashSet<MClassInvariant> union (HashSet<MClassInvariant> seta, HashSet<MClassInvariant> setb){

@@ -156,7 +156,8 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 
 		/* create an implication formula here... */
 		AbstractFormula expr_formula = expr.getQueryExpression().accept(this);
-			
+
+		
 		/* in case this is a navigation */
 		if (formula_range!=null) {
 			if (this.flag==Flag.VERBOSE) System.out.println("formula_range:"+formula_range);
@@ -191,11 +192,13 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 	}
 	
 	private AbstractFormula makeRelations (String name, Function f1, Variable[] vars){
-		if (f1==null || vars == null) 
+		if (f1==null || vars == null)
 			throw new VisitorException("Exception: Relational function applied failed, because parameter(s) is (are) null.");
+
 		if (name.equals(""))
 			throw new VisitorException("Exception: Association name is empty.");
-
+		
+		
 		Function[] f = new Function[vars.length];
 		
 		for (int i=0;i<vars.length;i++){
@@ -209,8 +212,11 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 		if (vars1==null || vars2==null)
 			throw new VisitorException("Exception: Relational function applied failed, because parameter(s) is (are) null.");
 
-		if (name.equals(""))
+		if (name.equals("")){
+			System.out.println("Exception: Association name is empty.");
 			throw new VisitorException("Exception: Association name is empty.");
+		}
+
 		Function[] f = new Function[vars1.length*vars2.length];
 		Function objfun = modelVisitor.getObjFunction();
 		Function relfun = modelVisitor.getRelFunction(name);
@@ -219,6 +225,10 @@ public final class OclExprTranslator implements AbstractExprVisitor{
 			for (int j=0;j<vars1.length;j++)
 				f[c++] = relfun.apply (objfun.apply(vars2[i]),objfun.apply(vars1[j]));
 		
+		//System.out.println("formula:"+f[0].toSMT2());
+		//BinaryFormula formula = new AndFormula().merge(f);
+		//System.out.println("formula:"+formula.toSMT2());
+
 		return f.length==1 ? f[0] : new AndFormula().merge(f);
 	}
 

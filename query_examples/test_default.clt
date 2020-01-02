@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><diagram_Layout version="13">
     <diagramOptions>
-        <autolayout>true</autolayout>
+        <autolayout>false</autolayout>
         <antialiasing>false</antialiasing>
         <showassocnames>false</showassocnames>
         <showattributes>true</showattributes>
@@ -12,40 +12,40 @@
     <node id="A" sizeCalculated="true" type="Class">
         <name>A</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>288.3557099897608</x>
-            <y>116.19989000571647</y>
+            <x>404.85202467228197</x>
+            <y>55.441192421453934</y>
         </strategy>
         <hidden>false</hidden>
     </node>
     <node id="B" sizeCalculated="true" type="Class">
         <name>B</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>215.16734026181334</x>
-            <y>156.13112655382568</y>
+            <x>178.09088294092584</x>
+            <y>60.17534792439392</y>
         </strategy>
         <hidden>false</hidden>
     </node>
     <node id="C" sizeCalculated="true" type="Class">
         <name>C</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>403.2688482989778</x>
-            <y>230.84783180366878</y>
+            <x>406.0344934464415</x>
+            <y>298.84350800783847</y>
         </strategy>
         <hidden>false</hidden>
     </node>
     <node id="D" sizeCalculated="true" type="Class">
         <name>D</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>147.04112836853352</x>
-            <y>254.52375753744172</y>
+            <x>37.0</x>
+            <y>229.25564596985168</y>
         </strategy>
         <hidden>false</hidden>
     </node>
     <node id="E" sizeCalculated="true" type="Class">
         <name>E</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-            <x>349.4821949060992</x>
-            <y>88.79739409934734</y>
+            <x>183.4255763420806</x>
+            <y>294.78430567646205</y>
         </strategy>
         <hidden>false</hidden>
     </node>
@@ -92,18 +92,6 @@
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
-            <edgeproperty id="AB::source::multiplicity" sizeCalculated="true" type="multiplicity" userDefined="false" visible="true">
-                <name>1</name>
-                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
-                    <userOffsetX>0.0</userOffsetX>
-                    <userOffsetY>0.0</userOffsetY>
-                    <attached>AB::WayPoint::0</attached>
-                    <offset_x>8</offset_x>
-                    <offset_y>8</offset_y>
-                    <placement>BOTTOM</placement>
-                </strategy>
-                <hidden>false</hidden>
-            </edgeproperty>
             <edgeproperty id="AB::source::rolename" sizeCalculated="true" type="rolename" userDefined="false" visible="true">
                 <name>a</name>
                 <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
@@ -113,6 +101,18 @@
                     <offset_x>8</offset_x>
                     <offset_y>8</offset_y>
                     <placement>TOP</placement>
+                </strategy>
+                <hidden>false</hidden>
+            </edgeproperty>
+            <edgeproperty id="AB::source::multiplicity" sizeCalculated="true" type="multiplicity" userDefined="false" visible="true">
+                <name>1</name>
+                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+                    <userOffsetX>0.0</userOffsetX>
+                    <userOffsetY>0.0</userOffsetY>
+                    <attached>AB::WayPoint::0</attached>
+                    <offset_x>8</offset_x>
+                    <offset_y>8</offset_y>
+                    <placement>BOTTOM</placement>
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
@@ -276,18 +276,6 @@
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
-            <edgeproperty id="CA::source::rolename" sizeCalculated="true" type="rolename" userDefined="false" visible="true">
-                <name>c</name>
-                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
-                    <userOffsetX>0.0</userOffsetX>
-                    <userOffsetY>0.0</userOffsetY>
-                    <attached>CA::WayPoint::0</attached>
-                    <offset_x>8</offset_x>
-                    <offset_y>8</offset_y>
-                    <placement>TOP</placement>
-                </strategy>
-                <hidden>false</hidden>
-            </edgeproperty>
             <edgeproperty id="CA::source::multiplicity" sizeCalculated="true" type="multiplicity" userDefined="false" visible="true">
                 <name>1..*</name>
                 <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
@@ -297,6 +285,18 @@
                     <offset_x>8</offset_x>
                     <offset_y>8</offset_y>
                     <placement>BOTTOM</placement>
+                </strategy>
+                <hidden>false</hidden>
+            </edgeproperty>
+            <edgeproperty id="CA::source::rolename" sizeCalculated="true" type="rolename" userDefined="false" visible="true">
+                <name>c</name>
+                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+                    <userOffsetX>0.0</userOffsetX>
+                    <userOffsetY>0.0</userOffsetY>
+                    <attached>CA::WayPoint::0</attached>
+                    <offset_x>8</offset_x>
+                    <offset_y>8</offset_y>
+                    <placement>TOP</placement>
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
@@ -368,18 +368,6 @@
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
-            <edgeproperty id="DB::source::rolename" sizeCalculated="true" type="rolename" userDefined="false" visible="true">
-                <name>d</name>
-                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
-                    <userOffsetX>0.0</userOffsetX>
-                    <userOffsetY>0.0</userOffsetY>
-                    <attached>DB::WayPoint::0</attached>
-                    <offset_x>8</offset_x>
-                    <offset_y>8</offset_y>
-                    <placement>TOP</placement>
-                </strategy>
-                <hidden>false</hidden>
-            </edgeproperty>
             <edgeproperty id="DB::source::multiplicity" sizeCalculated="true" type="multiplicity" userDefined="false" visible="true">
                 <name>1..*</name>
                 <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
@@ -389,6 +377,18 @@
                     <offset_x>8</offset_x>
                     <offset_y>8</offset_y>
                     <placement>BOTTOM</placement>
+                </strategy>
+                <hidden>false</hidden>
+            </edgeproperty>
+            <edgeproperty id="DB::source::rolename" sizeCalculated="true" type="rolename" userDefined="false" visible="true">
+                <name>d</name>
+                <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+                    <userOffsetX>0.0</userOffsetX>
+                    <userOffsetY>0.0</userOffsetY>
+                    <attached>DB::WayPoint::0</attached>
+                    <offset_x>8</offset_x>
+                    <offset_y>8</offset_y>
+                    <placement>TOP</placement>
                 </strategy>
                 <hidden>false</hidden>
             </edgeproperty>
