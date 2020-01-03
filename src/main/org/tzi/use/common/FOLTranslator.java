@@ -1,4 +1,3 @@
-
 package org.tzi.use.common;
 import java.util.*;
 import java.io.*;
@@ -8,7 +7,9 @@ import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
 import uran.solver.*;
+import org.tzi.use.uran.visitor.VisitorException;
 import org.tzi.use.uml.mm.*;
+import org.tzi.use.uml.mm.MMultiplicity.Range;
 import org.tzi.use.uml.ocl.type.EnumType;
 import org.tzi.use.query.io.*;
 import org.tzi.use.uran.weight.Flag;
@@ -20,6 +21,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 	private FunctionFactory factory = new FunctionFactory(1024,0.75f);
     private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
     private HashMap <EnumType, Integer> enum_size = new HashMap<EnumType, Integer>();
+    private HashMap <String, Set<MAssociation>> assoc_table = new HashMap<String, Set<MAssociation>>();
     private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
@@ -119,7 +121,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 			else if (attr.type().isTypeOfEnum()){
                 /*Function enumFun = factory.createFunction(attr.owner().name().toLowerCase()+"_"+
                     ((EnumType)attr.type()).name(), new Int(), new Int());*/
-                Function enumFun = factory.funLookup(attr.name());
+                Function enumFun = factory.funLookup( ((EnumType)attr.type()).name());
                 if (enumFun==null){out.println(attr.name()+" cannot be found.",Color.RED);return;}
                 Function typeFun = getType(attr.owner().name());
                 if (typeFun==null) {out.println("Type "+attr.owner().name()+ " cannot be found.",Color.RED); return;}
@@ -178,13 +180,14 @@ public class FOLTranslator extends Thread implements ITranslator {
         for (MAttribute attr:this.features.attributes())
             TranslateAttribute(attr);
 
-        for (MAssociation assoc:this.features.associations())
+        for (MAssociation assoc:this.features.associations()){
             TranslateAssociation(assoc);
+            formulas.add(computeAEM(assoc));
+        }
 
         for (MClassInvariant inv:this.features.invariants()){
             formulas.add(new LabeledFormula(TranslateInvariant(inv),"l"+(l++)));
         }
-
 
         /* add non empty class diagram axioms */ 
         addNonemptyAxioms();
@@ -276,5 +279,206 @@ public class FOLTranslator extends Thread implements ITranslator {
     public Function getSelectFunction(){return selectFun;}
     public Function getRelFunction(String name){return factory.funLookup(rel_str+"_"+name);}
     public FunctionFactory getFactory(){return factory;}
+
+    private void computeSet(MAssociation e, MClass enda, MClass endb){
+		Set<MAssociation> set = assoc_table.get(enda.name()+endb.name());
+		if (set.size()<=0) return;
+		boolean flag = true;
+		for (MAssociation a : set){
+			flag=true;
+			if (a!=e){
+				List<MAssociationEnd> ends = a.associationEnds();
+				if (ends.size()==2){
+					List<Range> ranges = ends.get(0).multiplicity().getRanges();
+					for (Range r : ranges) if (r.getLower()==0 || r.getLower()==-1) flag=false;
+						if (flag){ 
+							ranges = ends.get(1).multiplicity().getRanges();
+							for (Range r: ranges) if (r.getLower()==0 || r.getLower()==-1) flag =false;
+						}
+
+					/* Very Important formula generation. */
+					/* Now we DO generate additional formulas stating that if assoc_a exists, this means it also imples assoc_b */
+					/* In this case, it is also possible to formulate an equality formula.*/
+					if (flag){
+						Function f1 = getRelFunction(e.name());
+						Function f2 = getRelFunction(a.name());
+						Variable vara = new Variable("a", new Int());
+						Variable varb = new Variable("b", new Int());
+						Function type1 = getTypeFunction(enda.name());
+						Function type2 = getTypeFunction(endb.name());
+						AbstractFormula rel1 = new AndFormula (f1.apply(getObjFunction().apply(vara),getObjFunction().apply(varb)),
+								new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb))));
+						AbstractFormula rel2 = new AndFormula (f2.apply(getObjFunction().apply(vara),getObjFunction().apply(varb)),
+								new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb))));
+
+						AbstractFormula enable_formula = f1.apply(getObjFunction().apply(vara),getObjFunction().apply(varb));
+						AbstractFormula enable_type = new AndFormula(type1.apply(getObjFunction().apply(vara)), type2.apply(getObjFunction().apply(varb)));
+						formulas.add (new QuantifiedFormula(Quantifier.FORALL, new Decls(vara,varb), new ImpliesFormula(rel1, rel2)));
+						
+					}
+				}// end of binary association
+			}// end of outter if
+		}//end of for
+		
+	}
+
+    private AbstractFormula computeAEM(MAssociation e){
+		List<MAssociationEnd> ends = e.associationEnds();			
+		List<Integer> lista = new ArrayList<Integer>();
+		List<Integer> listb = new ArrayList<Integer>();
+		List<AbstractFormula> assoc_formulas = new ArrayList<AbstractFormula>();
+		QuantifiedFormula qformula1=null;
+		QuantifiedFormula qformula2=null;
+		AbstractFormula formula = null;
+		boolean flaga=true;
+		boolean flagb=true;
+		Variable var_enda;
+		Variable var_endb;
+		
+		if (ends.size()==2){
+			
+
+			var_enda = new Variable("x",new Int());
+			var_endb = new Variable("y", new Int());
+			//qformula2 = new QuantifiedFormula(Quantifier.FORALL, new Decls(var_endb),null);
+			qformula1 = new QuantifiedFormula(Quantifier.FORALL, new Decls(var_enda, var_endb), qformula2);
+			
+			MAssociationEnd enda = ends.get(0);
+			List<Range> ranges = enda.multiplicity().getRanges();
+
+			/*if (factory.conLookup(enda.cls().name()) != null )
+				var_enda = factory.conLookup(enda.cls().name());
+			else
+				var_enda = factory.createConstant(enda.cls().name(),new Int());*/
+			
+			//formulas.add(new EqFormula(var_enda, new NumLiteral(clsType.get(enda.cls()))));	
+			for (Range r : ranges){
+				lista.add(r.getLower());
+				lista.add(r.getUpper());
+			}
+
+			MAssociationEnd endb = ends.get(1);
+			ranges = endb.multiplicity().getRanges();
+			/*if (factory.conLookup(endb.cls().name())!=null)
+				var_endb = factory.conLookup(endb.cls().name());
+			else
+				var_endb = factory.createConstant(endb.cls().name(),new Int());*/
+
+			//formulas.add(new EqFormula(var_endb, new NumLiteral(clsType.get(endb.cls()))));
+
+			if (!assoc_table.containsKey(enda.cls().name()+endb.cls().name())){
+				Set<MAssociation> set = new HashSet<MAssociation>();
+				set.add(e);
+				assoc_table.put(enda.cls().name()+endb.cls().name(),set);
+			}else{
+				Set<MAssociation> set = assoc_table.get(enda.cls().name()+endb.cls().name());
+				set.add(e);
+				assoc_table.put(enda.cls().name()+endb.cls().name(),set);
+			}
+
+			for (Range r : ranges){
+				listb.add(r.getLower());
+				listb.add(r.getUpper());
+			}
+			
+			for (int i=0;i<lista.size();i++){
+				int a = lista.get(i);
+				for (int j=0;j<listb.size();j++){
+					int b = listb.get(j);
+					/*if (lista.get(i)==0 || listb.get(j)==0){
+						assoc_formulas.add(
+							new AndFormula(
+								new EqFormula(cardFun.apply(conFun.apply(var_enda)), new NumLiteral(a)),
+								new EqFormula(cardFun.apply(conFun.apply(var_endb)), new NumLiteral(b)))
+						);
+					}*/
+					if (a==-1 || b==-1){
+						AbstractFormula f;
+						if (a==-1 && b!=-1){
+							Constant var_k = factory.createConstant(uniqueName("k"),new Int());
+							flaga=false;
+							f = new AndFormula(
+									new EqFormula (
+										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_enda)), new NumLiteral(b)),
+										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_endb)), var_k)
+								),	new ComparisonFormula(Connective.GEQ, var_k, new NumLiteral(0)));
+						}
+						else if (a!=-1 && b==-1){
+							Constant var_k = factory.createConstant(uniqueName("k"),new Int());
+							flagb=false;
+							f = new AndFormula(
+									new EqFormula (
+										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_endb)), new NumLiteral(a)),
+										new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_enda)), var_k)
+								),	new ComparisonFormula(Connective.GEQ, var_k, new NumLiteral(0)));
+						}
+						else{
+							Constant var_k1 = factory.createConstant(uniqueName("k1"),new Int());
+							Constant var_k2 = factory.createConstant(uniqueName("k2"),new Int());
+							f = new AndFormula(
+									new EqFormula(
+												new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_enda)), var_k1),
+												new ArithmeticFormula(Connective.MUL, cardFun.apply(conFun.apply(var_endb)), var_k2)),
+									new AndFormula(
+												new ComparisonFormula(Connective.GEQ,var_k1, new NumLiteral(0)), 
+												new ComparisonFormula(Connective.GEQ,var_k2, new NumLiteral(0)))
+								);
+						}
+						assoc_formulas.add(f);
+					}
+					else{
+						if (a==0 || b==0) flaga=flagb=false;
+
+						AbstractFormula f = new EqFormula(
+								new ArithmeticFormula(Connective.MUL,cardFun.apply(conFun.apply(var_enda)), new NumLiteral(b)),
+								new ArithmeticFormula(Connective.MUL,cardFun.apply(conFun.apply(var_endb)), new NumLiteral(a)));
+						assoc_formulas.add(f);
+					}
+				}//end of inner for
+			}// end of outter for
+
+			AbstractFormula orFormula = new OrFormula().merge(assoc_formulas.toArray(new AbstractFormula[assoc_formulas.size()]));
+			AbstractFormula typeFormula1 = getAllChildren(enda.cls(), var_enda);
+			AbstractFormula typeFormula2 = getAllChildren(endb.cls(), var_endb);
+			AbstractFormula final_typeFormula = new AndFormula( getRelFunction(e.name()).apply( getObjFunction().apply(var_enda), 
+												getObjFunction().apply(var_endb)),new AndFormula(typeFormula1, typeFormula2));
+			AbstractFormula cardFormula1 = new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(var_enda)), new NumLiteral(1));
+			AbstractFormula cardFormula2 = new ComparisonFormula (Connective.GEQ, cardFun.apply(conFun.apply(var_endb)), new NumLiteral(1));
+
+			qformula1.setFormula(new ImpliesFormula(final_typeFormula,orFormula));
+
+			if (flaga) 
+				formulas.add(new QuantifiedFormula(Quantifier.EXISTS, new Decls(var_enda, var_endb), new AndFormula(final_typeFormula,cardFormula1)));
+			if (flagb)
+				formulas.add(new QuantifiedFormula(Quantifier.EXISTS, new Decls(var_enda, var_endb), new AndFormula(final_typeFormula,cardFormula2)));
+			
+			/* in case multiple associations defined */
+			computeSet(e,enda.cls(),endb.cls());
+			return qformula1;
+		}
+		else{
+			throw new VisitorException("Error: Sorry, we don't support this type of association.");
+		}
+	}
+    
+    private String uniqueName(String name){
+		return (name+UUID.randomUUID()).replace("-","_");
+	}
+
+
+	private AbstractFormula getAllChildren(MClass cls, Variable var){
+		List<Function> typeFun = new ArrayList<Function>();
+		
+		typeFun.add(getTypeFunction(cls.name()).apply(var));
+		for (MClass c : cls.allParents())
+			typeFun.add(getTypeFunction(c.name()).apply(var));
+		
+		Function[] typeFunArray = typeFun.toArray(new Function[typeFun.size()]);
+		
+		return typeFun.size() > 1 ?
+				(new AndFormula()).merge(typeFunArray)
+			:
+				typeFun.get(0).apply(var);
+	}
 
 }
