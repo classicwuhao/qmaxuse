@@ -52,12 +52,14 @@ public class FOLTranslator extends Thread implements ITranslator {
         out = new ColorPrint();
         //Function f1 = factory.createFunction(obj_str,new Int(), new Int());
         //model.processWithVisitor(modelVisitor);
-        extraFunctions();
+		extraFunctions();
+		setZ3Path();
     }
 
     public FOLTranslator(FeatureSet features, MModel model, String file){
         this(features,model);
-        this.file = file;
+		this.file = file;
+		setZ3Path();
     }
 
 	private void extraFunctions(){
@@ -257,8 +259,11 @@ public class FOLTranslator extends Thread implements ITranslator {
 	}
 
     private void setZ3Path(){
-        String str = System.getProperty("os.name");
-        out.println("OS:"+str,Color.BLUE);
+		String str = System.getProperty("os.name");
+		if (str.contains ("Mac")){
+			this.Z3 = "../solver/MacOS/z3";
+		}
+		out.println("OS:"+str,Color.BLUE);
     }
 
     public void run(){
