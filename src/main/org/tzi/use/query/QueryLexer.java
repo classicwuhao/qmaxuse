@@ -1,4 +1,4 @@
-// $ANTLR 3.4 Query.g 2020-02-26 14:36:37
+// $ANTLR 3.4 Query.g 2020-03-07 16:24:54
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;
