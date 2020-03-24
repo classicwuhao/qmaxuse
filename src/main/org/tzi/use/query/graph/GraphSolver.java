@@ -3,11 +3,13 @@ import org.tzi.use.query.state.*;
 import org.tzi.use.common.*;
 import java.util.*;
 import org.tzi.use.query.io.*;
+import org.tzi.use.query.setup.*;
 
 public final class GraphSolver{
     private Decomposer decomposer;
     private final String filename = "thread";
     private ColorPrint out = new ColorPrint();
+    
 
     public GraphSolver (Decomposer decomposer){
         this.decomposer = decomposer;
@@ -27,7 +29,7 @@ public final class GraphSolver{
         for (int i=0;i<k;i++){
             QueryState state = states.get(i);
             translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
-                    state.associations(),state.invariants()),this.decomposer.model(),filename+i);
+                    state.associations(),state.invariants()),this.decomposer.model(),filename+i, new Settings());
             translators[i].start();
         }
 
