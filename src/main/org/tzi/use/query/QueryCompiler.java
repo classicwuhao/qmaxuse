@@ -27,6 +27,7 @@ import org.tzi.use.query.visitor.QueryVisitor;
 import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
 import org.tzi.use.query.graph.*;
+import org.tzi.use.query.setup.Settings;
 import java.io.PrintStream;
 import org.tzi.use.common.*;
 import java.util.*;
@@ -69,20 +70,23 @@ public class QueryCompiler{
                 visitor.state().preprocess();
                 out.println(visitor.state().toString(),Color.CYAN);
                 QueryState qstate = visitor.state();
+                Settings settings = new Settings();
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
-                    qstate.associations(),qstate.invariants()),model);
+                    qstate.associations(),qstate.invariants()),model,settings);
                 
-                translator.start();
+                //translator.start();
                 /*Decomposer decomposer = new Decomposer(model);
                 decomposer.decompose();
                 decomposer.query_states();*/
-                try{
+                /*try{
                     translator.join();
                 }
-                catch(InterruptedException e){}
+                catch(InterruptedException e){}*/
                 
-                GraphSolver solver = new GraphSolver(new Decomposer(model));
-                solver.solve();
+                if (settings.TrialRun()){
+                    GraphSolver solver = new GraphSolver(new Decomposer(model));
+                    solver.solve();
+                }
                 return 1;
             }
             else{

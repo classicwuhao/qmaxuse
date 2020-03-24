@@ -7,6 +7,7 @@ import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
 import uran.solver.*;
+import org.tzi.use.query.setup.*;
 import org.tzi.use.uran.visitor.VisitorException;
 import org.tzi.use.uml.mm.*;
 import org.tzi.use.uml.mm.MMultiplicity.Range;
@@ -41,25 +42,25 @@ public class FOLTranslator extends Thread implements ITranslator {
 	private Function includesFun = factory.createFunction(includes_str, new Int(), new Int(), new Bool());
     private Function selectFun = factory.createFunction(select_str, new Int(), new Bool(), new Int());
     private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
-    private String Z3="/home/haowu/z3/build/z3";
-    private String Z3_STD_IN=" -in ";
+    private String Z3="";
+	private String Z3_STD_IN=" -in ";
+	private String SMTSolver="";
     private static int pid=1;
     private String file="";
-
-    public FOLTranslator(FeatureSet features, MModel model){
+	private Settings settings;
+    public FOLTranslator(FeatureSet features, MModel model, Settings settings){
         this.features = features;
-        this.model = model;
+		this.model = model;
+		this.settings = settings;
         out = new ColorPrint();
         //Function f1 = factory.createFunction(obj_str,new Int(), new Int());
         //model.processWithVisitor(modelVisitor);
 		extraFunctions();
-		setZ3Path();
     }
 
-    public FOLTranslator(FeatureSet features, MModel model, String file){
-        this(features,model);
+    public FOLTranslator(FeatureSet features, MModel model, String file,Settings settings){
+        this(features,model,settings);
 		this.file = file;
-		setZ3Path();
     }
 
 	private void extraFunctions(){
@@ -205,16 +206,31 @@ public class FOLTranslator extends Thread implements ITranslator {
         String str = System.getProperty("os.name");
         out.println(filename+" ("+str+") solving start...",Color.YELLOW);
 
-        SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
-        SolverLauncher z3 = new SolverLauncher(Z3+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
-        
-        Result result = z3.launch();
+		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
+		
+		this.SMTSolver = this.settings.SolverPath();
+		SolverLauncher solver;
+		
+		switch (this.settings.solver()){
+			case Z3:
+				solver = new SolverLauncher(this.SMTSolver+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
+				break;
+			/*case CVC4:*/
+				/* use CVC4 SMT solver 
+				break;*/
+
+			default:
+				/* no suitable SMT solver available */
+				return;
+		}
+
+        Result result = solver.launch();
         long timeUsed = System.currentTimeMillis()-current;
         if (result==Result.UNSAT){
             out.println("Solving Finished from "+this.file+".",Color.BLUE);
             out.println(result.toString(),Color.RED);
             out.print("cores: {",Color.RED);
-            for (AbstractFormula formula : z3.cores())
+            for (AbstractFormula formula : solver.cores())
                 out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
             out.println("}",Color.RED);
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);
@@ -257,14 +273,6 @@ public class FOLTranslator extends Thread implements ITranslator {
 
 		return -1;
 	}
-
-    private void setZ3Path(){
-		String str = System.getProperty("os.name");
-		if (str.contains ("Mac")){
-			this.Z3 = "../solver/MacOS/z3";
-		}
-		out.println("OS:"+str,Color.BLUE);
-    }
 
     public void run(){
         //Thread t = Thread.currentThread();

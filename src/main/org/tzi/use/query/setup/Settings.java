@@ -14,20 +14,22 @@ import java.io.File;
 
 
 public final class Settings{
-    private ColorPrint out;
+    private ColorPrint out = new ColorPrint();
     private String PathDelimiter="";
     private OS os;
-    private Solver DefaultSolver;
+    private Solver DefaultSolver=Solver.UNDEF;
     private Solver MainSolver=Solver.UNDEF;
-
+    private String solverpath="";
     public Settings (){
         setup();
-        this.DefaultSolver=Solver.Z3;
-    }   
+        this.DefaultSolver=this.MainSolver=Solver.Z3;
+        this.solverpath=SetSolver();
+    }
 
     public Settings(Solver solver){
         setup();
-        this.MainSolver=solver;
+        this.DefaultSolver=this.MainSolver=solver;
+        this.solverpath=SetSolver();
     }
 
     private void setup(){
@@ -51,23 +53,35 @@ public final class Settings{
 
     public String OS(){return this.os.toString();}
 
-    public boolean SetSolver(){
+    private String SetSolver(){
         Solver solver = (this.MainSolver==Solver.UNDEF) ? this.DefaultSolver : this.MainSolver;
         String solverPath="";
         
         solverPath = ".."+this.PathDelimiter+"solver"+this.PathDelimiter+
         this.os.toString()+this.PathDelimiter+solver.toString();
+        this.solverpath=solverPath;
         File smtsolver = new File(solverPath);
+        return (smtsolver.exists() && !smtsolver.isDirectory()) ? solverPath : "";
+    }
 
-        return smtsolver.exists() && !smtsolver.isDirectory();
+    public String SolverPath(){
+        return this.solverpath;
+    }
+
+    public Solver solver(){
+        return this.DefaultSolver;
     }
 
     public boolean TrialRun(){
-        if (!SetSolver()){
+        if (SetSolver().equals("")){
             out.println("Error: No SMT solver is found, please check your installation.",Color.RED);
             return false;
+        }
+        else{
+            out.println(this.MainSolver.toString()+" solver is picked.",Color.GREEN);
         }
 
         return true;
     }
+
 }   
