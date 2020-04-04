@@ -12,7 +12,6 @@ import uran.formula.type.*;
 import uran.solver.*;
 import java.io.File;
 
-
 public final class Settings{
     private ColorPrint out = new ColorPrint();
     private String PathDelimiter="";
@@ -80,8 +79,6 @@ public final class Settings{
         else{
             out.println(this.MainSolver.toString()+" solver is picked.",Color.GREEN);
         }
-
         return true;
     }
-
 }   

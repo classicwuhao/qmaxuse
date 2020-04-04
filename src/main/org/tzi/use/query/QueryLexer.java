@@ -1,11 +1,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // $ANTLR 3.4 Query.g 2020-03-20 11:02:50
 =======
 // $ANTLR 3.4 Query.g 2020-03-24 15:38:07
 >>>>>>> Qmaxuse
 =======
 // $ANTLR 3.4 Query.g 2020-03-27 10:54:22
+>>>>>>> Qmaxuse
+=======
+// $ANTLR 3.4 Query.g 2020-04-04 14:30:25
 >>>>>>> Qmaxuse
 
 package org.tzi.use.query;
