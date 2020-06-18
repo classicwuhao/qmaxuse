@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2020-04-21 19:44:52
+// $ANTLR 3.4 OCL.g 2020-06-18 14:08:45
 
 package org.tzi.use.parser.ocl; 
 
