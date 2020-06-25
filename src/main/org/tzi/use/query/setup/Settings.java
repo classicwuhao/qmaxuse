@@ -33,6 +33,7 @@ public final class Settings{
 
     private void setup(){
         String strOS =System.getProperty("os.name");
+        
         if (strOS.contains("Mac")){
             this.os=OS.MACOS;
             this.PathDelimiter="/";
@@ -41,7 +42,7 @@ public final class Settings{
             this.os=OS.LINUX;
             this.PathDelimiter="/";
         }
-        else if (strOS.contains("windows")){
+        else if (strOS.contains("Windows")){
             this.os=OS.WINDOWS;
             this.PathDelimiter="\\";
         }
@@ -58,7 +59,12 @@ public final class Settings{
         
         solverPath = ".."+this.PathDelimiter+"solver"+this.PathDelimiter+
         this.os.toString()+this.PathDelimiter+solver.toString();
-        this.solverpath=solverPath;
+        
+        if (this.os==OS.WINDOWS)
+            this.solverpath=solverPath+".exe";
+        else
+            this.solverpath=solverPath;
+
         File smtsolver = new File(solverPath);
         return (smtsolver.exists() && !smtsolver.isDirectory()) ? solverPath : "";
     }
