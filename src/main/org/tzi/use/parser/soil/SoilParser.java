@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-// $ANTLR 3.4 Soil.g 2020-03-20 11:02:46
-=======
-// $ANTLR 3.4 Soil.g 2020-03-24 15:38:03
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Soil.g 2020-03-27 10:54:18
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Soil.g 2020-04-04 14:30:21
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Soil.g 2020-04-15 17:06:44
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Soil.g 2020-04-21 19:44:53
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Soil.g 2020-06-18 14:08:46
->>>>>>> Qmaxuse
+// $ANTLR 3.4 Soil.g 2020-06-25 11:09:39
 
 /*
  * USE - UML based specification environment

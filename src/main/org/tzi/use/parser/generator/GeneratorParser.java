@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-// $ANTLR 3.4 Generator.g 2020-03-20 11:02:52
-=======
-// $ANTLR 3.4 Generator.g 2020-03-24 15:38:10
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Generator.g 2020-03-27 10:54:25
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Generator.g 2020-04-04 14:30:30
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Generator.g 2020-04-15 17:06:58
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Generator.g 2020-04-21 19:45:01
->>>>>>> Qmaxuse
-=======
-// $ANTLR 3.4 Generator.g 2020-06-18 14:08:53
->>>>>>> Qmaxuse
+// $ANTLR 3.4 Generator.g 2020-06-25 11:09:44
  
 /*
  * USE - UML based specification environment
