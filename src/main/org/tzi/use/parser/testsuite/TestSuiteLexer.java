@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.4 TestSuite.g 2020-06-25 11:09:46
-=======
-// $ANTLR 3.4 TestSuite.g 2020-06-25 12:19:41
->>>>>>> Qmaxuse
+// $ANTLR 3.4 TestSuite.g 2020-07-02 11:05:18
 
 /*
  * USE - UML based specification environment
