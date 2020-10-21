@@ -227,21 +227,31 @@ public class FOLTranslator extends Thread implements ITranslator {
         Result result = solver.launch();
         long timeUsed = System.currentTimeMillis()-current;
         if (result==Result.UNSAT){
-            out.println("Solving Finished from "+this.file+".",Color.BLUE);
+			System.out.println("Solving Finished from "+this.file+".");
+            System.out.println(result.toString());
+            System.out.print("cores: {");
+            for (AbstractFormula formula : solver.cores())
+                System.out.print( ((LabeledFormula) formula).label()+" ");
+            System.out.println("}");
+            System.out.println("Time elapsed:"+timeUsed+" ms \n");
+            /*out.println("Solving Finished from "+this.file+".",Color.BLUE);
             out.println(result.toString(),Color.RED);
             out.print("cores: {",Color.RED);
-            for (AbstractFormula formula : solver.cores())
-                out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
+			for (AbstractFormula formula : solver.cores())
+				out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
             out.println("}",Color.RED);
-            out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);*/
         }
         else{
-            out.println("Solving Finished from "+this.file+".",Color.GREEN);
+			System.out.println("Solving Finished from "+this.file+".");
+            System.out.println(result.toString());
+            System.out.println("Time elapsed:"+timeUsed+" ms \n");
+            /*out.println("Solving Finished from "+this.file+".",Color.GREEN);
             out.println(result.toString(),Color.GREEN);
-            out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
         }
     }
-
+	
     private void addNonemptyAxioms(){
         List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 

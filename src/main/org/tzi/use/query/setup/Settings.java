@@ -65,7 +65,8 @@ public final class Settings{
         else
             this.solverpath=solverPath;
 
-        File smtsolver = new File(solverPath);
+        File smtsolver = new File(this.solverpath);
+        //System.out.println("path:"+smtsolver);
         return (smtsolver.exists() && !smtsolver.isDirectory()) ? solverPath : "";
     }
 
