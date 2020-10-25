@@ -26,20 +26,28 @@ public final class GraphSolver{
         FOLTranslator[]  translators = new FOLTranslator[k];
 
         final long startTime = System.currentTimeMillis();
+        FOLTranslator.reset();
         for (int i=0;i<k;i++){
             QueryState state = states.get(i);
             translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
                     state.associations(),state.invariants()),this.decomposer.model(),filename+i, new Settings());
             translators[i].start();
+            try{
+                translators[i].join();
+            }
+            catch(InterruptedException e){
+                
+            }    
         }
 
-        try{
+        /*try{
             for (int i=0;i<k;i++)
                 translators[i].join();
         }
-        catch(InterruptedException e){}
+        catch(InterruptedException e){}*/
 
         final long time = System.currentTimeMillis() - startTime;
+        out.println("Total conflicts: "+FOLTranslator.cores(),Color.CYAN);
         out.println("Total Time Spent (" + states.size()+" threads): " + time +" ms.",Color.CYAN);
     }
 }

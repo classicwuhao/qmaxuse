@@ -68,8 +68,10 @@ public class QueryCompiler{
                 QueryVisitor visitor = new QueryVisitor(model);
                 expr.accept(visitor);
                 visitor.state().preprocess();
-                out.println(visitor.state().toString(),Color.CYAN);
+                //out.println(visitor.state().toString(),Color.CYAN);
                 QueryState qstate = visitor.state();
+                qstate.refine();
+                out.println(qstate.toString(),Color.CYAN);
                 Settings settings = new Settings();
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
                     qstate.associations(),qstate.invariants()),model,settings);
