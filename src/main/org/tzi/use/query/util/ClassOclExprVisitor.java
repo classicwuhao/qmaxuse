@@ -42,7 +42,7 @@ public final class ClassOclExprVisitor implements AbstractOclExprVisitor{
 	}
 
 	public void visitForAll (ExpForAll exp){
-		visitQuery(exp);
+		visitQuery(exp); 
 	}
 
 	private void visitQuery (ExpQuery query){

@@ -48,6 +48,8 @@ public class FOLTranslator extends Thread implements ITranslator {
     private static int pid=1;
     private String file="";
 	private Settings settings;
+	private static int cores=0;
+
     public FOLTranslator(FeatureSet features, MModel model, Settings settings){
         this.features = features;
 		this.model = model;
@@ -202,6 +204,7 @@ public class FOLTranslator extends Thread implements ITranslator {
     }
 
     private void toSMT2(String filename, List<AbstractFormula> formulas, FunctionFactory factory){
+		
         long current = System.currentTimeMillis();
         String str = System.getProperty("os.name");
         out.println(filename+" ("+str+") solving start...",Color.YELLOW);
@@ -225,23 +228,35 @@ public class FOLTranslator extends Thread implements ITranslator {
 		}
 
         Result result = solver.launch();
-        long timeUsed = System.currentTimeMillis()-current;
+		long timeUsed = System.currentTimeMillis()-current;
+		
         if (result==Result.UNSAT){
-            out.println("Solving Finished from "+this.file+".",Color.BLUE);
+			System.out.println("Solving Finished from "+this.file+".");
+            System.out.println(result.toString());
+            System.out.print("cores: {");
+            for (AbstractFormula formula : solver.cores())
+                System.out.print( ((LabeledFormula) formula).label()+" ");
+            System.out.println("}");
+			System.out.println("Time elapsed:"+timeUsed+" ms \n");
+			this.cores++;
+            /*out.println("Solving Finished from "+this.file+".",Color.BLUE);
             out.println(result.toString(),Color.RED);
             out.print("cores: {",Color.RED);
-            for (AbstractFormula formula : solver.cores())
-                out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
+			for (AbstractFormula formula : solver.cores())
+				out.print( ((LabeledFormula) formula).label()+" ",Color.RED);
             out.println("}",Color.RED);
-            out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);*/
         }
         else{
-            out.println("Solving Finished from "+this.file+".",Color.GREEN);
+			System.out.println("Solving Finished from "+this.file+".");
+            System.out.println(result.toString());
+            System.out.println("Time elapsed:"+timeUsed+" ms \n");
+            /*out.println("Solving Finished from "+this.file+".",Color.GREEN);
             out.println(result.toString(),Color.GREEN);
-            out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);
-        }
+            out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
+		}
     }
-
+	
     private void addNonemptyAxioms(){
         List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
 
@@ -276,10 +291,13 @@ public class FOLTranslator extends Thread implements ITranslator {
 
     public void run(){
         //Thread t = Thread.currentThread();
-        //out.println(t.getName(),Color.BLUE);
-        generate();
+		//out.println(t.getName(),Color.BLUE);
+		//synchronized(this) {
+			generate();
+		//}
     }
-
+	public static void reset(){cores=0;}
+	public static int cores(){return cores;}
     public Function getObjFunction(){return factory.funLookup(obj_str);}
     public Function getTypeFunction(String name){
             Function f = factory.funLookup(type_str+"_"+name);

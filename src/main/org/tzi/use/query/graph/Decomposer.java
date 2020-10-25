@@ -152,6 +152,21 @@ public class Decomposer{
                 sets.add(nav_map.get(cls));
         }
         
+
+        /* make remaining invariants into one set */ 
+        HashSet<MClassInvariant> remaining_set = new HashSet<MClassInvariant>();
+        for (MClassInvariant inv : this.model.classInvariants()){
+            boolean contained = false;
+            for (HashSet<MClassInvariant> set : sets ){
+                if (set.contains(inv)){contained=true;};
+            }
+            if (!contained){
+                remaining_set.add(inv);
+            }
+        }
+        
+        if (remaining_set.size()>0) sets.add(remaining_set);
+
         out.println("Final Sets:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
             out.println(set.toString(),Color.BLUE);
