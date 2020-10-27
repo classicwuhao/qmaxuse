@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// $ANTLR 3.4 OCL.g 2020-07-02 11:05:09
-=======
-// $ANTLR 3.4 OCL.g 2020-10-25 10:32:49
->>>>>>> QMaxuse
-=======
-// $ANTLR 3.4 OCL.g 2020-10-27 10:32:27
->>>>>>> QMaxuse
+// $ANTLR 3.4 OCL.g 2020-10-27 11:56:25
  
 /*
  * USE - UML based specification environment

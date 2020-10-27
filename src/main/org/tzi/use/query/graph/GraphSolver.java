@@ -32,14 +32,13 @@ public final class GraphSolver{
             translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
                     state.associations(),state.invariants()),this.decomposer.model(),filename+i, new Settings());
             translators[i].start();
-            try{
-                translators[i].join();
+            //try{
+            //    translators[i].join();
                 if (translators[i].get_unsat_cores().size()>0)
                     cores.add(translators[i].get_unsat_cores());
-            }
-            catch(InterruptedException e){
-                
-            }
+            //}
+            //catch(InterruptedException e){ 
+            //}
         }
         /*try{
             for (int i=0;i<k;i++)
