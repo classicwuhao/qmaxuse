@@ -9,7 +9,7 @@ public final class GraphSolver{
     private Decomposer decomposer;
     private final String filename = "thread";
     private ColorPrint out = new ColorPrint();
-    
+    private HashSet<List<String>> cores = new HashSet<List<String>>();
 
     public GraphSolver (Decomposer decomposer){
         this.decomposer = decomposer;
@@ -34,17 +34,25 @@ public final class GraphSolver{
             translators[i].start();
             try{
                 translators[i].join();
+                if (translators[i].get_unsat_cores().size()>0)
+                    cores.add(translators[i].get_unsat_cores());
             }
             catch(InterruptedException e){
                 
-            }    
+            }
         }
-
         /*try{
             for (int i=0;i<k;i++)
                 translators[i].join();
         }
         catch(InterruptedException e){}*/
+        int c = 0;
+        for (List<String> list : cores){
+            out.print("core "+c++ + ":",Color.RED+"{ ");
+            for (String str :  list) out.print(str+" ",Color.RED);
+            out.print("}",Color.RED);
+            out.println(" ",Color.RED);
+        }
 
         final long time = System.currentTimeMillis() - startTime;
         out.println("Total conflicts: "+FOLTranslator.cores(),Color.CYAN);

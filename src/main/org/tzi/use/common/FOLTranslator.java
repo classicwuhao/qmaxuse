@@ -22,7 +22,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 	private FunctionFactory factory = new FunctionFactory(1024,0.75f);
     private List<AbstractFormula> formulas = new ArrayList<AbstractFormula>();
     private HashMap <EnumType, Integer> enum_size = new HashMap<EnumType, Integer>();
-    private HashMap <String, Set<MAssociation>> assoc_table = new HashMap<String, Set<MAssociation>>();
+	private HashMap <String, Set<MAssociation>> assoc_table = new HashMap<String, Set<MAssociation>>();
     private final String OBJ="obj_";
 	private final String TYPE="type_";
 	private final String REL="rel_";
@@ -49,7 +49,9 @@ public class FOLTranslator extends Thread implements ITranslator {
     private String file="";
 	private Settings settings;
 	private static int cores=0;
-
+	private HashMap<String, String> label_map = new HashMap<String,String>();
+	private List<String> unsat_cores = new ArrayList<String>();
+	
     public FOLTranslator(FeatureSet features, MModel model, Settings settings){
         this.features = features;
 		this.model = model;
@@ -191,7 +193,10 @@ public class FOLTranslator extends Thread implements ITranslator {
         }
 
         for (MClassInvariant inv:this.features.invariants()){
-            formulas.add(new LabeledFormula(TranslateInvariant(inv),"l"+(l++)));
+			String label = "l"+(l++);
+			LabeledFormula label_formula = new LabeledFormula(TranslateInvariant(inv),label);
+			label_map.put(label,inv.name());
+			formulas.add(label_formula);
         }
 
         /* add non empty class diagram axioms */ 
@@ -233,9 +238,13 @@ public class FOLTranslator extends Thread implements ITranslator {
         if (result==Result.UNSAT){
 			System.out.println("Solving Finished from "+this.file+".");
             System.out.println(result.toString());
-            System.out.print("cores: {");
-            for (AbstractFormula formula : solver.cores())
-                System.out.print( ((LabeledFormula) formula).label()+" ");
+			System.out.print("cores: {");
+			
+            for (AbstractFormula formula : solver.cores()){
+				LabeledFormula label_formula = (LabeledFormula) formula;
+				System.out.print(label_formula.label()+" ");
+				unsat_cores.add(label_map.get(label_formula.label()));
+			}
             System.out.println("}");
 			System.out.println("Time elapsed:"+timeUsed+" ms \n");
 			this.cores++;
@@ -255,7 +264,11 @@ public class FOLTranslator extends Thread implements ITranslator {
             out.println(result.toString(),Color.GREEN);
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
 		}
-    }
+	}
+
+	public List<String> get_unsat_cores(){
+		return unsat_cores;
+	}
 	
     private void addNonemptyAxioms(){
         List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
