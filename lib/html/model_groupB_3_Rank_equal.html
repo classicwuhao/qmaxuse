@@ -11,7 +11,7 @@
 Total Weighted Solution(s): 6
 </p>
 <p>
-Total Conflict(s): 5
+Total Conflict(s): 6
 </p>
 <span id="solution"> Weighted Solution 1:</span>
 <table id="entry">
@@ -426,14 +426,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv11</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv12</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv13</td>
@@ -1132,14 +1132,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv11</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv12</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv13</td>
@@ -2436,14 +2436,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv57</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv58</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv59</td>
@@ -2544,14 +2544,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv11</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv12</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv13</td>
@@ -3142,14 +3142,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv57</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv58</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv59</td>
@@ -3250,14 +3250,14 @@ Total Conflict(s): 5
 <tr>
 <td id="inv">inv11</td>
 <td> INVAR </td>
-<td id="off"> OFF </td>
-<td id="weight-unavailable"> NA </td>
+<td id="on"> ON </td>
+<td id="weight-available">1</td>
 </tr>
 <tr>
 <td id="inv">inv12</td>
 <td> INVAR </td>
-<td id="on"> ON </td>
-<td id="weight-available">1</td>
+<td id="off"> OFF </td>
+<td id="weight-unavailable"> NA </td>
 </tr>
 <tr>
 <td id="inv">inv13</td>
@@ -4250,18 +4250,21 @@ Total Conflict(s): 5
 </table>
 <p></p>
 <span id="conflict"> Conflict 1:</span>
-(inv57,inv59)
-<p></p>
-<span id="conflict"> Conflict 2:</span>
 (inv57,inv58)
 <p></p>
-<span id="conflict"> Conflict 3:</span>
+<span id="conflict"> Conflict 2:</span>
 (inv11,inv12)
+<p></p>
+<span id="conflict"> Conflict 3:</span>
+(inv57,inv59,inv11)
 <p></p>
 <span id="conflict"> Conflict 4:</span>
 (inv59,inv60)
 <p></p>
 <span id="conflict"> Conflict 5:</span>
+(inv57,inv59)
+<p></p>
+<span id="conflict"> Conflict 6:</span>
 (inv52)
 <p></p>
 
