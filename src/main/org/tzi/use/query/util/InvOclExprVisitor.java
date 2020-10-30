@@ -7,17 +7,22 @@ import java.util.*;
 public final class InvOclExprVisitor implements AbstractOclExprVisitor{
 	private HashSet<MAttribute> attrs = new HashSet<MAttribute>();
 	private HashSet<MAssociation> navgs = new HashSet<MAssociation>();
+	private HashSet<MClass> cls = new HashSet<MClass>();
+	private MModel model;
 
-	public InvOclExprVisitor(){}
+	public InvOclExprVisitor(MModel model){
+		this.model = model;
+	}
 	
 	public void visitAttrOp (ExpAttrOp exp){
 		attrs.add(exp.attr());
 		exp.objExp().accept(this);
 	}
 	
+	public HashSet<MClass> classes(){return this.cls;}
 	public HashSet<MAttribute> attributes(){return this.attrs;}
 	public HashSet<MAssociation> associations(){return this.navgs;}
-
+	
 	public void visitConstBoolean (ExpConstBoolean exp){
 		
 	}
@@ -39,8 +44,10 @@ public final class InvOclExprVisitor implements AbstractOclExprVisitor{
 	}
 
 	private void visitQuery (ExpQuery query){
+		query.getVariableDeclarations().accept(this);
 		query.getRangeExpression().accept(this);
 		query.getQueryExpression().accept(this);
+		
 	}
 	
 	public void visitNavigation (ExpNavigation exp){
@@ -66,7 +73,12 @@ public final class InvOclExprVisitor implements AbstractOclExprVisitor{
 	}
 	
 	public void visitVarDeclList(VarDeclList varDeclList){
-
+		for (int i=0;i<varDeclList.size();i++){
+			VarDecl var = varDeclList.varDecl(i);
+			if (var.type().isTypeOfClass()){
+				cls.add(this.model.getClass(var.type().shortName()));
+			}
+		}
 	}
 
 	public void visitVarDecl(VarDecl varDecl){

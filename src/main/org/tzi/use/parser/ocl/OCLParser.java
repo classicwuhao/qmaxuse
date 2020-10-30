@@ -1,4 +1,4 @@
-// $ANTLR 3.4 OCL.g 2020-10-27 10:32:27
+// $ANTLR 3.4 OCL.g 2020-10-29 14:27:30
  
 /*
  * USE - UML based specification environment
