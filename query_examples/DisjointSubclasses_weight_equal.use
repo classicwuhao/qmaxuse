@@ -1,0 +1,23 @@
+model Inheritance
+
+@Rank=1
+class C12
+end
+
+@Rank=1
+class C1 < C12
+end
+
+@Rank=1
+class C9 < C1
+end
+
+@Rank=1
+class C13 < C9
+end
+
+constraints
+
+context C12
+	@Rank=1
+	inv: C12.allInstances()->forAll(c12|C1.allInstances()->forAll(c1|c12<>c1))

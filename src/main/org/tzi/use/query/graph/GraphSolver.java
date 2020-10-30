@@ -36,15 +36,24 @@ public final class GraphSolver{
             //    translators[i].join();
                 if (translators[i].get_unsat_cores().size()>0)
                     cores.add(translators[i].get_unsat_cores());
+<<<<<<< HEAD
             //}
             //catch(InterruptedException e){ 
             //}
+=======
+            }
+            catch(InterruptedException e){ 
+            }
+>>>>>>> QMaxuse
         }
+
         /*try{
             for (int i=0;i<k;i++)
                 translators[i].join();
         }
         catch(InterruptedException e){}*/
+        /* wait until until all threads finish */ 
+        
         int c = 0;
         for (List<String> list : cores){
             out.print("core "+c++ + ":",Color.RED+"{ ");

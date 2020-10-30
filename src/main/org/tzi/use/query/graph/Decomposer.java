@@ -35,8 +35,9 @@ public class Decomposer{
             QueryState state = states.get(i);
             HashSet<MClassInvariant> set = sets.get(i);
             for (MClassInvariant inv: set){
-                InvOclExprVisitor inv_visitor = new InvOclExprVisitor();
+                InvOclExprVisitor inv_visitor = new InvOclExprVisitor(this.model);
                 inv.bodyExpression().accept(inv_visitor);
+                state.addAllCls(inv_visitor.classes());
                 state.addAllAttr(inv_visitor.attributes());
                 state.addAllAssoc(inv_visitor.associations());
                 state.addInv(inv);
@@ -158,7 +159,7 @@ public class Decomposer{
         for (MClassInvariant inv : this.model.classInvariants()){
             boolean contained = false;
             for (HashSet<MClassInvariant> set : sets ){
-                if (set.contains(inv)){contained=true;};
+                if (set.contains(inv)){contained=true;break;};
             }
             if (!contained){
                 remaining_set.add(inv);

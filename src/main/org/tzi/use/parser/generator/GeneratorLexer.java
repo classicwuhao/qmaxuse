@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // $ANTLR 3.4 Generator.g 2020-10-27 11:56:30
+=======
+// $ANTLR 3.4 Generator.g 2020-10-29 14:27:35
+>>>>>>> QMaxuse
 
 package org.tzi.use.parser.generator;
 

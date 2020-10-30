@@ -272,8 +272,10 @@ public class FOLTranslator extends Thread implements ITranslator {
 	
     private void addNonemptyAxioms(){
         List<AbstractFormula> tmp = new ArrayList<AbstractFormula>();
-
-        for (MClass cls : features.classes()){
+		int i=0;
+        for (MClass cls : model.classes()){
+			tmp.clear();
+			String label = "c" + i++;
             Variable var = new Variable ("o", new Int());
 				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
 				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
@@ -283,8 +285,9 @@ public class FOLTranslator extends Thread implements ITranslator {
 								new AndFormula().merge(tmp.toArray(new AbstractFormula[tmp.size()])))
 						:
 						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), tmp.get(0));
-
-					formulas.add(quan_formula);
+					
+					formulas.add(new LabeledFormula(quan_formula,label));
+					this.label_map.put(label,cls.name());
 				}
         }
     }
