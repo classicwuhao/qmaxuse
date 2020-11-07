@@ -1,6 +1,5 @@
 model UNIVERSITY
 
-
 class Module
 attributes
 	code:			Integer
@@ -9,14 +8,12 @@ attributes
 	description:	Integer
 end
 
-
 class Person
 attributes
 	age:	Integer
 	mature:	Boolean
 	name:	Integer
 end
-
 
 class Student < Person
 attributes
@@ -32,24 +29,24 @@ end
 constraints
 
 context Person
-@Rank = 5
+@Rank = 1
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 
 
 context Student
-	@Rank = 2
+	@Rank = 1
 	inv: self.age > 18
-	@Rank = 6
+	@Rank = 1
 	inv: self.year>=1 and self.year<=6
-	@Rank = 7
+	@Rank = 1
 	inv: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
-	@Rank = 8
+	@Rank = 1
 	inv: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
-	@Rank = 9
+	@Rank = 1
 	inv: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
-	@Rank = 10
+	@Rank = 1
 	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
 
 context Module
-	@Rank = 3
+	@Rank = 1
 	inv: self.year>=1 and self.year<=5

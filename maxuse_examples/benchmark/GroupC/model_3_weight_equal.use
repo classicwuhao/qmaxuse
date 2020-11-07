@@ -520,7 +520,7 @@ context Class13
 	 inv: self.Class13IntAttr2 < 10
 	 inv: self.Class13BoolAttr0 and self.Class13BoolAttr1
 	 inv: Class13.allInstances()->forAll(c_13|Class12.allInstances()->forAll(c_12|c_13<>c_12))
-
+	 
 @Class14{Rank = 1} 
 context Class14
 	 inv: self.Class14IntAttr2 >= 5
