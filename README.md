@@ -1,5 +1,5 @@
 # MaxUSE
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/classicwuhao/maxuse.svg?branch=master)](https://travis-ci.org/classicwuhao/maxuse) [![paper](https://img.shields.io/badge/paper(preprint)-ecmfa%202017-f39C12.svg)](http://www.cs.nuim.ie/~haowu/pubs/ECMFA2017/ecmfa.pdf) [![paper](https://img.shields.io/badge/paper(preprint)-iFM%202017-orange.svg)](http://www.cs.nuim.ie/~haowu/pubs/iFM2017/paper.pdf)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 ## 1. OVERVIEW
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver. **The full technical details including: theories, proofs and algorithms are described in this paper [(preprint)](https://classicwuhao.github.io/pdf/sosym.pdf) that is currently accepted and published by [SoSym](https://www.springer.com/journal/10270).**
@@ -96,6 +96,7 @@ We provide the following ways for ranking your model features.
 * Check out the [result](http://htmlpreview.github.io/?https://github.com/classicwuhao/maxuse/blob/master/lib/html/DisjointSubclasses.html) for this [example](https://github.com/classicwuhao/maxuse/blob/master/maxuse_examples/benchmark/GroupA/DisjointSubclasses_weight_equal.use).
 
 ## 4. THEORIES & TECHNIAL DETAILS
+* **The full technical details including: theories, proofs and algorithms are described in this paper [(preprint)](https://classicwuhao.github.io/pdf/sosym.pdf) that is currently accepted and published by [SoSym](https://www.springer.com/journal/10270).**
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
 * If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool paper ([iFM 2017](http://ifm2017.di.unito.it/)): **MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.**
 * If you are a geek and love coding, see Section 6.
