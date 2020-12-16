@@ -121,4 +121,4 @@ So you are here and want to see some code :-). Here is a brief description:
 ## 8. ACKNOWLEDGEMENTS
 We woud like to thank [Marie Farrell](https://github.com/mariefarrell) and [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. We would also like to thank [Andrea Balogh](https://github.com/baloghAndi) for helping the benchmark generation.
 
-Last updated: 24-June-2019
+Last updated: 16-December-2020
