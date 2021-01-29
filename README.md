@@ -2,7 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 ## 1. OVERVIEW
-MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver. **The full technical details including: theories, proofs and algorithms are described in this paper [(preprint)](https://classicwuhao.github.io/pdf/sosym.pdf) that is currently accepted and published by [SoSym](https://www.springer.com/journal/10270).**
+MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver. **The full technical details including: theories, proofs and algorithms are described in this paper [(online)](https://link.springer.com/article/10.1007/s10270-020-00849-8) that is currently accepted and published by [SoSym](https://www.springer.com/journal/10270).**
 
 ## 2. BUILD INSTRUCTIONS
 
