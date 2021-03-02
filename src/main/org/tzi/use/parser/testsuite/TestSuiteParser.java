@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // $ANTLR 3.4 TestSuite.g 2020-10-27 11:56:30
 =======
 // $ANTLR 3.4 TestSuite.g 2020-10-29 14:27:36
+>>>>>>> QMaxuse
+=======
+// $ANTLR 3.4 TestSuite.g 2021-02-23 11:19:35
 >>>>>>> QMaxuse
  
 /*

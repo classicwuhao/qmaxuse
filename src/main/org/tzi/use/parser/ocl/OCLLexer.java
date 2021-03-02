@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // $ANTLR 3.4 OCL.g 2020-10-27 11:56:25
 =======
 // $ANTLR 3.4 OCL.g 2020-10-29 14:27:31
+>>>>>>> QMaxuse
+=======
+// $ANTLR 3.4 OCL.g 2021-02-23 11:19:28
 >>>>>>> QMaxuse
 
 package org.tzi.use.parser.ocl; 
