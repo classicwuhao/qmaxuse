@@ -1,13 +1,14 @@
+
+# News: MaxUSE is upgraded !!!
 # QMaxUSE
 
-## 1. OVERVIEW
-QMaxUSE is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE enhances MaxUSE's techniques by providing two additional distinct features: (1) A simple query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
-finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver.
+## 1. Overview
+**QMaxUSE** is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE improves MaxUSE's techniques by providing two additional distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
 
-## 2. BUILD INSTRUCTIONS
-QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections give instructions for building QMaxUSE.
+## 2. Build Instructions
+QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections introduce instructions for building QMaxUSE.
 
-### 2.1 WINDOWS 10 (x86/x64)
+### 2.1 Windows 10 (x86/x64)
 * Make sure you have JDK installed. 
 * Download Z3 SMT solver (latest version).
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
@@ -23,10 +24,10 @@ QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verifica
 
 
 ### 2.2 Pre-built Libraries
-A user can choose to use pre-built libraries. The pre-built libraries are located [here](solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
+A user can choose to use pre-built libraries. The pre-built libraries are located [here](./solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
 
 ### 2.3 MaxUSE Support
-QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as it can and pinpointing all possible OCL conflicting constraints. Details about MaxUSE are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
+QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. Details about MaxUSE are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
 
 
 ## 3. USEAGE
@@ -34,31 +35,31 @@ QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is ru
 ### 3.1 Issuing a query
 Our query allows users to issue a query to select parts of a class diagram. QMaxUSE accepts queries in command line. Here are some query examples:
 
-* Example 1: selecting classes, attributes and associations.
+* **Example 1: selecting classes, attributes and associations.**
 	```sql
 	$select Person, Student.year, Student:study:Module.
 	```
 	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
 
-* Example 2: using a wild character *
+* **Example 2: using a wild character**
 	```sql
 	$select Student.*, Student:*:Module
 	```
 	All attributes of *Student* and any associations with association-ends *Student* and *Module* are selected.
 	
-* Example 3: selecting OCL invariants.
+* **Example 3: selecting OCL invariants.**
 	```sql
 	$select Person, Student with Student::*
 	```	
 	Classes *Person*, *Student* and all ocl invariants defined under *Student* class are selected. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
 	
-* Example 4: exclusion
+* **Example 4: exclusion**
 	```sql
 	$select Student::* but Student::inv4
 	```
 	All ocl invariants defined under *Student* class are selected except for *inv4*. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
 
-* Example 5: aliasing and joint queries
+* **Example 5: aliasing and joint queries**
 	```sql
 	$select Department, Asssignment, Student:finish:Assignment as query1
 	$select Student, Module with Student::* as query2
@@ -66,7 +67,7 @@ Our query allows users to issue a query to select parts of a class diagram. QMax
 	```
 	The first query has an alias **query1**. The second query has an alias **query2**. The last query is a **joint query** query1 intersects query2. The intersection of two sets are selected.
 
-* Example 6: saving queries
+* **Example 6: saving queries**
 	```sql
 	module query_set
 		select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Person as q0
@@ -82,7 +83,7 @@ Our query allows users to issue a query to select parts of a class diagram. QMax
 QMaxUSE can decompose OCL invariants into multiple queries that can be verified concurrently. To use this feaure in QMaxUSE,
 * Load your specification into QMaxUSE, at the command prompt type *qverify*.
 * The verification results are shown in the command prompt.
-* A screenshot is displayed [here](./query_examples/screenshot.png)
+* A screenshot can be found [here](./query_examples/screenshot.png)
    		   
 ## 4. SMT2 ASSERTIONS
 QMaxUSE's verification procedures uses Z3 SMT solver as its solving engine. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
@@ -90,7 +91,7 @@ QMaxUSE's verification procedures uses Z3 SMT solver as its solving engine. Howe
 ## 5. Benchmark
 Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
 
-## 6. REMARKS
+## 6. Remarks
 * The implementation of QMaxUSE spans over the past 1 year. 
 * We are extending our query langauge to include OCL and SMT assertion injection. 
 * We are working on integrating a string solver into QMaxUSE.
@@ -98,7 +99,7 @@ Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In par
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
-## 7. ACKNOWLEDGEMENTS
+## 7. Acknowledgement
 We woud like to thank [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. 
 
 Last updated: 27-April-2021
