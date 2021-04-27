@@ -41,25 +41,25 @@ Our query allows users to issue a query to select parts of a class diagram. QMax
 	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
 
 * Example 2: using a wild character *
-	```
+	```sql
 	$select Student.*, Student:*:Module
 	```
 	All attributes of *Student* and any associations with association-ends *Student* and *Module* are selected.
 	
 * Example 3: selecting OCL invariants.
-	```
+	```sql
 	$select Person, Student with Student::*
 	```	
 	Classes *Person*, *Student* and all ocl invariants defined under *Student* class are selected. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
 	
 * Example 4: exclusion
-	```
+	```sql
 	$select Student::* but Student::inv4
 	```
 	All ocl invariants defined under *Student* class are selected except for *inv4*. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
 
 * Example 5: aliasing and joint queries
-	```
+	```sql
 	$select Department, Asssignment, Student:finish:Assignment as query1
 	$select Student, Module with Student::* as query2
 	$query1 & query2
@@ -67,13 +67,13 @@ Our query allows users to issue a query to select parts of a class diagram. QMax
 	The first query has an alias **query1**. The second query has an alias **query2**. The last query is a **joint query** query1 intersects query2. The intersection of two sets are selected.
 
 * Example 6: saving queries
-	```
+	```sql
 	module query_set
 		select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Person as q0
 	end
 	```
 	The above query is saved in a query module called *query_set*. This query module is a part of (*university*) specification and it is automatically loaded when QMaxUSE reads this specification. A user can type
-	```
+	```sql
 	$query_set.q0
 	```
 	to issue *q0*. A query module can contain multiple aliased queries.
