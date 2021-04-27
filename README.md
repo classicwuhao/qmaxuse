@@ -40,7 +40,7 @@ Our query allows users to issue a query to select parts of a class diagram. To i
 	```
 	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
 
-* Example 2: using a wild character ** * **
+* Example 2: using a wild character *
 	```
 	$select Student.*, Student:*:Module
 	```

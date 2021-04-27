@@ -39,7 +39,7 @@
 	<property name="build.javadoc.dir"   location="${build.dir}/javadoc"/>
 	<property name="build.release.dir"   location="${build.dir}/release/${release.name}"/>
 	<property name="build.doc.dir"       location="${build.dir}/doc"/>
-	<property name="maxuse.jar"             location="${build.lib.dir}/maxuse.jar"/>
+	<property name="qmaxuse.jar"             location="${build.lib.dir}/qmaxuse.jar"/>
 	<property name="use-gui.jar"         location="${build.lib.dir}/use-gui.jar"/>
 	<property name="use-runtime.jar"     location="${build.lib.dir}/use-runtime.jar" />
 	<property name="build.libbuild.dir"  location="${basedir}/lib_build"/>
@@ -71,7 +71,7 @@
 		<pathelement location="${junit.jar}" />
 	</path>
 
-	<manifestclasspath property="use.classpath" jarfile="${maxuse.jar}">
+	<manifestclasspath property="use.classpath" jarfile="${qmaxuse.jar}">
 		<classpath refid="use.classpath.absolute"/>
 	</manifestclasspath>
 
@@ -348,7 +348,7 @@
 	<target name="jar-use" depends="compile-use">
 		<mkdir dir="${build.lib.dir}"/>
 		
-		<jar jarfile="${maxuse.jar}" basedir="${build.classes.dir}">
+		<jar jarfile="${qmaxuse.jar}" basedir="${build.classes.dir}">
 			<manifest>
 				<attribute name="Main-Class" value="${use.mainClass}"/>
 				<attribute name="Class-Path" value="${use.classpath}"/>
@@ -460,7 +460,7 @@
 			<fileset dir="${parser.dir}" includes="**/*.g"/>
 		</delete>
 		<!-- jar files -->
-		<delete file="${maxuse.jar}"/>
+		<delete file="${qmaxuse.jar}"/>
 		<delete file="${use-runtime.jar}"/>
 		<delete file="${use-gui.jar}"/>
 	</target>
