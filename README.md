@@ -92,7 +92,7 @@ QMaxUSE's verification procedures uses Z3 SMT solver as its solving engine. Howe
 Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
 
 ## 6. Remarks
-* The implementation of QMaxUSE spans over the past 1 year. 
+* The implementation of QMaxUSE spans over the past 2 years. 
 * We are extending our query langauge to include OCL and SMT assertion injection. 
 * We are working on integrating a string solver into QMaxUSE.
 * QMaxUSE will be included as a solution to one of our industrial partners.
