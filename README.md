@@ -32,11 +32,11 @@ QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is ru
 ## 3. USEAGE
 
 ### 3.1 Issuing a query
-Our query allows users to issue a query to select parts of a class diagram. To issue a query, you must do it in QMaxUSE command line. Here are some query examples:
+Our query allows users to issue a query to select parts of a class diagram. QMaxUSE accepts queries in command line. Here are some query examples:
 
 * Example 1: selecting classes, attributes and associations.
 	```
-	$select Person, Student.year, Student:study:Module.
+	$**select** Person, Student.year, Student:study:Module.
 	```
 	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
 
@@ -85,10 +85,10 @@ QMaxUSE can decompose OCL invariants into multiple queries that can be verified 
 * A screenshot is displayed [here](./query_examples/screenshot.png)
    		   
 ## 4. SMT2 ASSERTIONS
-QMaxUSE integrates MaxUSE with Z3 SMT solver. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
+QMaxUSE's verification procedures uses Z3 SMT solver as its solving engine. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
 
 ## 5. Benchmark
-QMaxUSE uses the same benchmark as MaxUSE uses. The full details about this benchmark can be viewed [here](./query_examples/benchmark)
+Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
 
 ## 6. REMARKS
 * The implementation of QMaxUSE spans over the past 1 year. 
