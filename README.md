@@ -26,8 +26,8 @@ QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verifica
 A user can choose to use pre-built libraries. The pre-built libraries are located [here](solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
 
 ### 2.3 MaxUSE Support
-QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as it can and pinpointing all possible OCL conflicting constraints. Details about MaxUSE are described [here] (https://link.springer.com/article/10.1007/s10270-020-00849-8).
-	
+QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as it can and pinpointing all possible OCL conflicting constraints. Details about MaxUSE are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
+
 
 ## 3. USEAGE
 
@@ -82,7 +82,7 @@ Our query allows users to issue a query to select parts of a class diagram. To i
 QMaxUSE can decompose OCL invariants into multiple queries that can be verified concurrently. To use this feaure in QMaxUSE,
 * Load your specification into QMaxUSE, at the command prompt type *qverify*.
 * The verification results are shown in the command prompt.
-* A screenshot is displayed [](./query_examples/screenshot.png)
+* A screenshot is displayed [here](./query_examples/screenshot.png)
    		   
 ## 4. SMT2 ASSERTIONS
 QMaxUSE integrates MaxUSE with Z3 SMT solver. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
