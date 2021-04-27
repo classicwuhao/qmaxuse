@@ -3,7 +3,7 @@
 # QMaxUSE
 
 ## 1. Overview
-**QMaxUSE** is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE improves MaxUSE's techniques by providing two additional distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
+**QMaxUSE** is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE improves MaxUSE's techniques by providing two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
 
 ## 2. Build Instructions
 QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections introduce instructions for building QMaxUSE.
@@ -33,25 +33,25 @@ QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is ru
 ## 3. USEAGE
 
 ### 3.1 Issuing a query
-Our query allows users to issue a query to select parts of a class diagram. QMaxUSE accepts queries in command line. Here are some query examples:
+Our query langauge allows users to issue a query to select parts of a class diagram. QMaxUSE accepts queries from command line. Here are some query examples:
 
 * **Example 1: selecting classes, attributes and associations.**
 	```sql
 	$select Person, Student.year, Student:study:Module.
 	```
-	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
+	Classes *Person*, *Student* and *Module* are selected. An attribute *year (Student)* is selected. An association *study* is selected. Note class *Module* is implicitly selected here because of *study* association.
 
 * **Example 2: using a wild character**
 	```sql
 	$select Student.*, Student:*:Module
 	```
-	All attributes of *Student* and any associations with association-ends *Student* and *Module* are selected.
+	All attributes of *Student* class and any associations with association-ends *Student* and *Module* are selected.
 	
 * **Example 3: selecting OCL invariants.**
 	```sql
 	$select Person, Student with Student::*
 	```	
-	Classes *Person*, *Student* and all ocl invariants defined under *Student* class are selected. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
+	Classes *Person*, *Student* and all ocl invariants defined under *Student* class are selected. Further, all relevant clases, attributes and associations used in an ocl expression are also selected.
 	
 * **Example 4: exclusion**
 	```sql
@@ -65,7 +65,7 @@ Our query allows users to issue a query to select parts of a class diagram. QMax
 	$select Student, Module with Student::* as query2
 	$query1 & query2
 	```
-	The first query has an alias **query1**. The second query has an alias **query2**. The last query is a **joint query** query1 intersects query2. The intersection of two sets are selected.
+	The first query has an alias **query1**. The second query has an alias **query2**. The last query is a **joint query**: query1 intersects query2. The intersection of two sets of feature are selected.
 
 * **Example 6: saving queries**
 	```sql
