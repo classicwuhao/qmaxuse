@@ -100,6 +100,6 @@ Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In par
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
 ## 7. Acknowledgement
-We woud like to thank [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. 
+We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
 Last updated: 27-April-2021
