@@ -35,8 +35,8 @@ QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is ru
 Our query allows users to issue a query to select parts of a class diagram. QMaxUSE accepts queries in command line. Here are some query examples:
 
 * Example 1: selecting classes, attributes and associations.
-	```
-	$**select** Person, Student.year, Student:study:Module.
+	```sql
+	$select Person, Student.year, Student:study:Module.
 	```
 	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
 
