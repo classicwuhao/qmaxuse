@@ -1,0 +1,36 @@
+model test_1
+
+@Rank=1
+class Class0 
+attributes
+attr1:Boolean
+end 
+
+@Rank=1
+class Class1 < Class0
+end
+
+@Rank=1
+class Class2 < Class1
+end
+
+@Rank=1
+class Class3 < Class1
+end
+
+class ClassA < Class2
+end
+
+constraints 
+
+context Class1
+	@Rank=1
+	inv: Class1.allInstances()->forAll(c1| Class2.allInstances()->forAll(c2|c1<>c2))
+	
+context Class3
+	@Rank=1
+	inv: Class3.allInstances()->forAll(c3| Class2.allInstances()->forAll(c2|c3<>c2))
+	
+context ClassA
+	@Rank=1
+	inv: self.attr1=true

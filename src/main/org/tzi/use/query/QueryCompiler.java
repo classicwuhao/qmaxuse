@@ -39,6 +39,63 @@ public class QueryCompiler{
 
     public QueryCompiler(){}
     
+
+    public static int con_compileExpression (MModel model, MSystemState state, InputStream in, String inName,PrintWriter err)
+    {
+        ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
+        ANTLRInputStream aInput;
+        QAst expr =null;
+        ColorPrint out = new ColorPrint();
+        visitors.clear();
+
+		try {
+			aInput = new ANTLRInputStream(in);
+			aInput.name = inName;
+		} catch (IOException e1) {
+            err.println(e1.getMessage());
+            return -1;
+        }
+        
+        QueryLexer lexer = new QueryLexer(aInput);
+        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+        QueryParser parser = new QueryParser(tokenStream);
+        lexer.init(errHandler);
+        parser.init(errHandler);
+        out.println("Launching QueryCompiler...",Color.WHITE);
+        
+        try{
+            expr = parser.checkExpr();
+            if (errHandler.errorCount() == 0 ) {
+                //QueryVisitor visitor = new QueryVisitor(model);
+                //expr.accept(visitor);
+                //visitor.state().preprocess();
+                //out.println(visitor.state().toString(),Color.CYAN);
+                //QueryState qstate = visitor.state();
+                //qstate.refine();
+                //out.println(qstate.toString(),Color.CYAN);
+                Settings settings = new Settings();
+                if (settings.TrialRun()){
+                    GraphSolver solver = new GraphSolver(new Decomposer(model));
+                    solver.solve();
+                }
+                return 1;
+            }
+            else{
+                out.println("Invalid query,"+ errHandler.errorCount()+" syntax error(s)",Color.RED);
+                return -1;
+            }
+        }
+        catch(RecognitionException e){
+            err.println(parser.getSourceName() +":" + 
+            e.line + ":" +
+            e.charPositionInLine + ": " + 
+            e.getMessage());
+        }
+        return 1;
+    }
+
+
+
     public static int compileExpression (MModel model, MSystemState state, InputStream in, String inName,PrintWriter err)
     {
         ParseErrorHandler errHandler = new ParseErrorHandler(inName, err);
@@ -86,8 +143,9 @@ public class QueryCompiler{
                 catch(InterruptedException e){}*/
                 
                 if (settings.TrialRun()){
-                    GraphSolver solver = new GraphSolver(new Decomposer(model));
-                    solver.solve();
+                    //GraphSolver solver = new GraphSolver(new Decomposer(model));
+                    //solver.solve();
+                    translator.generate();
                 }
                 return 1;
             }

@@ -84,6 +84,9 @@ queryExpr returns [QueryExpr qexpr] @init{
    | module=moduleAlias {$qexpr =module;}
 ;
 
+
+
+
 moduleAlias returns [ModuleAliasExpr maexpr]@init{
     maexpr = new ModuleAliasExpr(); 
 }:
