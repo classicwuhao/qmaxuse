@@ -20,7 +20,7 @@ QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verifica
 	```  
 	to lanuch QMaxUSE.
 * Load a sample model.
-* In the USE command line, type *maxuse -q* to check the sample model.
+
 
 ### 2.2 Pre-built Libraries
 A user can choose to use pre-built libraries. The pre-built libraries are located [here](solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
