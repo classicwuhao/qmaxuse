@@ -387,6 +387,8 @@ public final class Shell implements Runnable, PPCHandler {
 			cmdMaxuse(line);
         else if (line.equals("q") || line.equals("quit") || line.equals("exit"))
             cmdExit();
+        else if (line.equals("qverify"))
+            con_solve(line.trim());
         else if (line.startsWith("$"))
             query(line.substring(1).trim());
         else if (line.startsWith("??"))
@@ -797,6 +799,22 @@ public final class Shell implements Runnable, PPCHandler {
         //int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
         int r =QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
         
+    }
+
+    /* concurrent verification */ 
+    private void con_solve(String line) throws NoSystemException{
+        // compile query
+        MSystem system;
+        try {
+             system = system();
+        }
+        catch (NoSystemException e) {
+            MModel model = new ModelFactory().createModel("empty model");
+            system = new MSystem(model);
+        }
+        InputStream stream = new ByteArrayInputStream(line.getBytes());
+        //int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
+        int r =QueryCompiler.con_compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
     }
 
     /**

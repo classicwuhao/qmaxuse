@@ -1,84 +1,66 @@
+<<<<<<< HEAD
 # MaxUSE
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 ## 1. OVERVIEW
 MaxUSE is a tool that finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver. **The full technical details including: theories, proofs and algorithms are described in this paper [(online)](https://link.springer.com/article/10.1007/s10270-020-00849-8) that is currently accepted and published by [SoSym](https://www.springer.com/journal/10270).**
+=======
+# QMaxUSE
+
+## 1. OVERVIEW
+QMaxUSE is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE enhances MaxUSE's techniques by providing two additional distinct features: (1) A simple query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
+finds the set of achievable features and constraint conflicts for inconsistent metamodels (UML class diagrams). MaxUSE allows users to freely or automatically rank individual model features. MaxUSE integrates USE modelling tool with [Z3 SMT Solver](https://github.com/Z3Prover/z3). It currently uses [uran](https://github.com/classicwuhao/uran) as its solving engine to interact with underlying SMT solver.
+>>>>>>> QMaxuse
 
 ## 2. BUILD INSTRUCTIONS
+QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections give instructions for building QMaxUSE.
 
-### 2.1 UBUNTU (15.10+)
-* use the latest version of [Z3 SMT Solver](https://github.com/Z3Prover/z3) and follow the build instructions for Java section.
-* Set environment variable *LD_LIBRARY_PATH* to contain libz3java.so and libz3.so
-	```
-	LD_LIBRARY_PATH=<the directory that contains .so files>
-	export LD_LIBRARY_PATH
-	```
-* Copy generated *com.microsoft.z3.jar* to lib directory. Note that the build script has already been configured, it always looks for the .jar files in lib directory.
-* If you want to use the latest version of uran, download uran source code and overwrites the uran directory.
-* Use *ant* to build MaxUSE.
-* In lib directory type:
-	```
-	java -jar maxuse.jar
-	```  
-	to lanuch MaxUSE. Currently, MaxUSE is command line based.
-
-### 2.2 WINDOWS 10 (x86/x64)
+### 2.1 WINDOWS 10 (x86/x64)
 * Make sure you have JDK installed. 
 * Download Z3 SMT solver (latest version).
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
 * Compile Z3 under VS command prompt (please follow Z3 build instructions.). *For x64, you need to compile Z3 with -x.* 
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
-* Download MaxUSE and in the lib directory type:
+* Download QMaxUSE and in the lib directory type:
 	```
-	java -jar maxuse.jar
+	java -jar qmaxuse.jar
 	```  
-	to lanuch MaxUSE.
+	to lanuch QMaxUSE.
 * Load a sample model.
 * In the USE command line, type *maxuse -q* to check the sample model.
 
-*Known issue: If MaxUSE always returns SAT even the model contains conflicts, this is caused by internal SMT solver. Hence, please update Z3 regularly.*
-*Note: All the information is displayed in different colours in the terminal. However, on Windows users may experience direct colour code displayed. In this situation, we refer users to look at the HTML report generated in the lib\textbackslash html folder.*
+### 2.2 Pre-built Libraries
+A user can choose to use pre-built libraries. The pre-built libraries are located [here](solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
 
-### 2.3 Mode
-* MaxUSE provides two modes: quiet and verbose. 
-	1. Quiet (-q or --quiet) mode only emits necessary information on the screen. By default, MaxUSE is running under quiet mode.
-	2. Verbose (-v or --verbose) mode displays internal information including: formulas constructed from an AST, an internal matrix representation, etc. These information can be used for debugging, tracing,and validating the behaviours of MaxUSE. For those who are really interested in how MaxUSE works,this mode could be particlularly helpful.
+### 2.3 MaxUSE Support
+QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as it can and pinpointing all possible OCL conflicting constraints. Details about MaxUSE are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
+
 
 ## 3. USEAGE
 
-### 3.1 Rank Model Features
-Currently, MaxUSE supports different rankings over: classes, associations and OCL invariants. MaxUSE considers all ranked features as *soft features* and unranked features as *hard features*. A soft constraint might or might not be switched off depends on the optimisation. A hard constraint must hold, no matter what. A user could use rank a model in three different ways (depends on the requirements):
-  1. Fully ranked (soft features only)
-  2. Not ranked at all (hard features only) 
-  3. Partially ranked (a mixture of soft and hard features)
-We provide the following ways for ranking your model features.
-* Use *@Rank=c* annotation to rank individual model features, where *c* must be a non-zero integer. For example,
+### 3.1 Issuing a query
+Our query allows users to issue a query to select parts of a class diagram. To issue a query, you must do it in QMaxUSE command line. Here are some query examples:
+
+* Example 1: selecting classes, attributes and associations.
 	```
-	context Person
-		@Rank = 2 
-		inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
+	$select Person, Student.year, Student:study:Module.
 	```
-	inv1 now is ranked with 2.
+	Classes: *Person*, *Student*, *Module*. Attribute *year (Student)* is selected. Association *choose* is selected. Note class *Module* is implicitly selected here because of *choose* association.
+
+* Example 2: using a wild character *
+	```
+	$select Student.*, Student:*:Module
+	```
+	All attributes of *Student* and any associations with association-ends *Student* and *Module* are selected.
 	
-* Use *@Rank=automatic* for automatic ranking. The actual rank is decided by the size of an abstract syntax tree. For example,
+* Example 3: selecting OCL invariants.
 	```
-	context Person
-		@Rank = automatic
-		inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
-	```
-	inv1 now is ranked using automatic ranking.	
-	
-* Use *@IDEN={Rank=c}* to rank over a set of features by using a single ranking scheme. *IDEN* is an identifier for a rank scheme. For example, 
-	```
-	@ClassRank{Rank = 5}
-	context Class2
-		inv: self.Class2IntAttr3 = 3
-		inv: self.Class2IntAttr2 < 19
-		inv: Class2.allInstances()->forAll( c2_1,c2_2 | c2_1.Class2IntAttr3 = c2_2.Class2IntAttr2 ) 
+	$select Person, Student with Student::*
 	```	
-	All 3 class invariants are now ranked with *5* under a ranking scheme named ClassRank.
+	Classes *Person*, *Student* and all ocl invariants defined under *Student* class are selected. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
 	
+<<<<<<< HEAD
 * More examples about using *@Rank* annotation can be found [here](maxuse_examples/).
 
 ### 3.2 Finding All Achievable Features
@@ -100,26 +82,59 @@ We provide the following ways for ranking your model features.
 * If you are interested in theories and algorithms we used in MaxUSE, see our research paper (ECMFA@[STAF2017](http://www.informatik.uni-marburg.de/staf2017/)): **Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels.**
 * If you are interested in how MaxUSE inergrates with the Z3 SMT solver, see our tool paper ([iFM 2017](http://ifm2017.di.unito.it/)): **MaxUSE A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams.**
 * If you are a geek and love coding, see Section 6.
+=======
+* Example 4: exclusion
+	```
+	$select Student::* but Student::inv4
+	```
+	All ocl invariants defined under *Student* class are selected except for *inv4*. Further, all relevant clases, attributs and associations used in an ocl expression are also selected.
+
+* Example 5: aliasing and joint queries
+	```
+	$select Department, Asssignment, Student:finish:Assignment as query1
+	$select Student, Module with Student::* as query2
+	$query1 & query2
+	```
+	The first query has an alias **query1**. The second query has an alias **query2**. The last query is a **joint query** query1 intersects query2. The intersection of two sets are selected.
+
+* Example 6: saving queries
+	```
+	module query_set
+		select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Person as q0
+	end
+	```
+	The above query is saved in a query module called *query_set*. This query module is a part of (*university*) specification and it is automatically loaded when QMaxUSE reads this specification. A user can type
+	```
+	$query_set.q0
+	```
+	to issue *q0*. A query module can contain multiple aliased queries.
+
+### 3.2 Concurrent verification
+QMaxUSE can decompose OCL invariants into multiple queries that can be verified concurrently. To use this feaure in QMaxUSE,
+* Load your specification into QMaxUSE, at the command prompt type *qverify*.
+* The verification results are shown in the command prompt.
+* A screenshot is displayed [here](./query_examples/screenshot.png)
+>>>>>>> QMaxuse
    		   
-## 5. SMT2 ASSERTIONS
-MaxUSE integrates USE with Z3 SMT solver. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
-* All generated assertions for our benchmark can be viewed [here](maxuse_examples/benchmark/smt2).
-* [msc.smt2](maxuse_examples/benchmark/smt2/msc.smt2) contains the set of assertions capturing the [set cover problem](https://en.wikipedia.org/wiki/Set_cover_problem).
-* Note that [msc.smt2](maxuse_examples/benchmark/smt2/msc.smt2) will be changed everytime a new model is solved by MaxUSE.
+## 4. SMT2 ASSERTIONS
+QMaxUSE integrates MaxUSE with Z3 SMT solver. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
 
-## 6. SOURCE CODE
-So you are here and want to see some code :-). Here is a brief description: 
-* MaxUSE uses an SMT solving engine called [uran](https://github.com/classicwuhao/uran) to construct/generate SMT2 assertions and incremently and efficiently solves them. In summary, MaxUSE computes the set of achievable model features by solving a weighted MaxSMT problem, and finds all constraint conflicts by solving the [set cover problem](https://en.wikipedia.org/wiki/Set_cover_problem).
-* The core algorithms has two parts:
-	1. The main procedure for computing the set of achievable model features is [here](src/main/org/tzi/use/uran/visitor).
-	2. The main procedure for computing all constraint conflicts is [here](src/main/org/tzi/use/uran/msc).
+## 5. Benchmark
+QMaxUSE uses the same benchmark as MaxUSE uses. The full details about this benchmark can be viewed [here](./query_examples/benchmark)
 
-## 7. REMARKS
-* The implementation of MaxUSE spans over the past 2+ years, and we are still working on it to add more features such as GUI, customized ranking schemes,fast string reasoning,concurrent solving techniques,constraint synthesizing, and much more to come.
-* MaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
+## 6. REMARKS
+* The implementation of QMaxUSE spans over the past 1 year. 
+* We are extending our query langauge to include OCL and SMT assertion injection. 
+* We are working on integrating a string solver into QMaxUSE.
+* QMaxUSE will be included as a solution to one of our industrial partners.
+* QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
-## 8. ACKNOWLEDGEMENTS
-We woud like to thank [Marie Farrell](https://github.com/mariefarrell) and [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. We would also like to thank [Andrea Balogh](https://github.com/baloghAndi) for helping the benchmark generation.
+## 7. ACKNOWLEDGEMENTS
+We woud like to thank [Joesph Timoney](https://github.com/ArpSolina) for helpful comments on this research. 
 
+<<<<<<< HEAD
 Last updated: 16-December-2020
+=======
+Last updated: 27-April-2021
+>>>>>>> QMaxuse
