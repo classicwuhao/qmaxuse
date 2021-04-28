@@ -86,7 +86,7 @@ QMaxUSE can decompose OCL invariants into multiple queries that can be verified 
 * A screenshot can be found [here](./query_examples/screenshot.png)
    		   
 ## 4. SMT2 ASSERTIONS
-QMaxUSE's verification procedures uses Z3 SMT solver as its solving engine. However, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces for interacting with Z3. Uran is responsible for generating well-formed SMT2 assertions.
+QMaxUSE's verification procedures use Z3 SMT solver as its solving engine. To interact with Z3, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces. Uran is responsible for generating well-formed SMT2 assertions and interpretation.
 
 ## 5. Benchmark
 Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
