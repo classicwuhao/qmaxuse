@@ -102,4 +102,4 @@ Compare to MaxUSE, QMaxUSE improves up to 30x efficenicy in verification. In par
 ## 7. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
-Last updated: 27-April-2021
+Last updated: 21-July-2021
