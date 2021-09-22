@@ -6,7 +6,7 @@
 **QMaxUSE** is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE improves MaxUSE's techniques by providing two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
 
 ## 2. Build Instructions
-QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
+Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
 
 #### 2.2 Using pre-built Z3 libraries.
 We do provide a set of pre-built Z3 libraries under [solver](./solver) directory for Windows (Win10 x64), Linux (Ubuntu 20.04 x64) and Mac OS (Big Sur x64). Everytime QMaxUSE will perform a trial run before solving a set of OCL invariants. You could update pre-built Z3 libraries with the latest build on your own machine.
