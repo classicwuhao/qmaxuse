@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-// $ANTLR 3.4 Query.g 2020-10-27 11:56:28
-=======
-// $ANTLR 3.4 Query.g 2020-10-29 14:27:33
->>>>>>> QMaxuse
-=======
-// $ANTLR 3.4 Query.g 2021-02-23 11:19:32
->>>>>>> QMaxuse
-=======
-// $ANTLR 3.4 Query.g 2021-04-27 17:56:31
->>>>>>> QMaxuse
+// $ANTLR 3.4 Query.g 2021-09-22 15:15:24
 
 package org.tzi.use.query;
 import org.tzi.use.query.ast.*;

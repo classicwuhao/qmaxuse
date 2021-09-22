@@ -38,7 +38,7 @@ public final class Settings{
             this.os=OS.MACOS;
             this.PathDelimiter="/";
         }
-        else if (strOS.contains("linux")){
+        else if (strOS.contains("Linux")){
             this.os=OS.LINUX;
             this.PathDelimiter="/";
         }
@@ -60,13 +60,15 @@ public final class Settings{
         solverPath = ".."+this.PathDelimiter+"solver"+this.PathDelimiter+
         this.os.toString()+this.PathDelimiter+solver.toString();
         
-        if (this.os==OS.WINDOWS)
+        if (this.os==OS.WINDOWS){
             this.solverpath=solverPath+".exe";
-        else
+        }
+        else{
             this.solverpath=solverPath;
+        }
 
         File smtsolver = new File(this.solverpath);
-        //System.out.println("path:"+smtsolver);
+        //System.out.println("path:"+this.solverpath);
         return (smtsolver.exists() && !smtsolver.isDirectory()) ? solverPath : "";
     }
 
