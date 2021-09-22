@@ -6,25 +6,28 @@
 **QMaxUSE** is a verification tool that is able to verify a UML class diagram annotated with OCL invariants. QMaxUSE improves MaxUSE's techniques by providing two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A new verification algorithm that is capable of handling extreme size of OCL invariants. 
 
 ## 2. Build Instructions
-QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections introduce instructions for building QMaxUSE.
+QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as it's verification engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
 
-### 2.1 Windows 10 (x86/x64)
-* Make sure you have JDK installed. 
-* Download Z3 SMT solver (latest version).
+#### 2.2 Using pre-built Z3 libraries.
+We do provide a set of pre-built Z3 libraries under [solver](./solver) directory for Windows (Win10 x64), Linux (Ubuntu 20.04 x64) and Mac OS (Big Sur x64). Everytime QMaxUSE will perform a trial run before solving a set of OCL invariants. You could update pre-built Z3 libraries with the latest build on your own machine.
+
+#### 2.3 Building Z3 on your own machine.
+You can build Z3 on your own machine based on the instructions provided [here](https://github.com/Z3Prover/z3).
+##### 2.3.1 Windows Build
 * Install Visual Studio 2017/2019 (community/professional/enterprise)
 * Compile Z3 under VS command prompt (please follow Z3 build instructions.). *For x64, you need to compile Z3 with -x.* 
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
+
+### 2.4 Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
+* Make sure you have JDK installed. 
+* Either you use our provided pre-built libraries (You don't have to do anything) or use the intructions provided above for building Z3 libraries on your own machine.
 * Download QMaxUSE and in the lib directory type:
 	```
 	java -jar qmaxuse.jar
 	```  
 	to lanuch QMaxUSE.
 * Load a sample model.
-
-
-### 2.2 Pre-built Libraries
-A user can choose to use pre-built libraries. The pre-built libraries are located [here](./solver). Currently, the pre-built libraries are tested under Windows 10 and MacOS. For linux, please follow the instructions [here](https://github.com/Z3Prover/z3).
 
 ### 2.3 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is runnable in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. Details about MaxUSE are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
