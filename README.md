@@ -22,7 +22,7 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
 
-### 4 Running QMaxUSE Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
+## 4 Running QMaxUSE Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
 * Make sure you have JDK installed. 
 * Either you use our provided pre-built libraries (You don't have to do anything) or use the intructions provided above for building Z3 libraries on your own machine.
 * Download QMaxUSE and go to the lib directory type:
@@ -32,12 +32,12 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 	to lanuch QMaxUSE.
 * That's it.
 
-### 2.3 MaxUSE Support
+### 4.1 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is available in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. However, you may need to setup Z3 for MaxUSE. See the instructions [here](https://github.com/classicwuhao/maxuse/blob/master/MaxUSE_README.md). Technical details about how MaxUSE works are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
 
-## 3. USEAGE
+## 5. USEAGE
 
-### 3.1 Issuing a query
+### 5.1 Issuing a query
 Our query langauge allows users to issue a query to select parts of a class diagram to be verified. QMaxUSE accepts queries from command line. Here are some query examples:
 
 * **Example 1: selecting classes, attributes and associations.**
@@ -90,19 +90,19 @@ Our query langauge allows users to issue a query to select parts of a class diag
 	```
 	The above query is injected with an OCL invariant. The verification procedure will verify the query along with injected OCL. The verification will tell the consequences if the injected OCL invariant could break the consistencies or not. This is particularly useful for those who are not sure about adding an OCL invariant to a class whether will break the consistencies.
 
-### 3.2 Concurrent verification
+### 5.2 Concurrent verification
 QMaxUSE uses a specialised algorithm to decompose OCL invariants into multiple queries that can be verified concurrently. To use this feaure in QMaxUSE,
 * Load your specification into QMaxUSE, at the command prompt type *qverify*.
 * The verification results are shown in the command prompt.
 * A screenshot can be found [here](./query_examples/screenshot.png)
 
-## 4. SMT2 ASSERTIONS
+## 6. SMT2 ASSERTIONS
 QMaxUSE's verification procedures use Z3 SMT solver as its solving engine. To interact with Z3, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces. Uran is responsible for generating well-formed SMT2 assertions and interpretation.
 
-## 5. Benchmark
+## 7. Benchmark
 Overall, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
 
-## 6. Remarks
+## 8. Remarks
 * The implementation of QMaxUSE spans over the past 2 years. 
 * We are extending our query langauge to include OCL and SMT assertion injection. 
 * We are working on integrating a string solver into QMaxUSE.
@@ -110,7 +110,7 @@ Overall, QMaxUSE improves up to 30x efficenicy in verification. In particular, Q
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 * Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
-## 7. Acknowledgement
+## 9. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
 Last updated: 26-Sept-2021
