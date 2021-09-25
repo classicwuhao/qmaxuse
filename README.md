@@ -12,7 +12,7 @@ Once you have JDK installed, you can just **download QMaxUSE and run** it withou
 Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
 
 ### 3.1 Using pre-built Z3 libraries.
-We provide a set of pre-built Z3 libraries under [solver](./solver) directory for Windows (Win10 x64), Linux (Ubuntu 20.04 x64) and Mac OS (Big Sur x64). Everytime QMaxUSE will perform a trial run before solving a set of OCL invariants. **You could easily update pre-built Z3 libraries with the latest build on your own machine by just simply overwritting library files under solver directory**.
+We provide a set of pre-built Z3 libraries under [solver](./solver) directory for Windows (Win10 x64), Linux (Ubuntu 20.04 x64) and Mac OS (Big Sur x64). Everytime when you run QMaxUSE, it will perform a trial run before solving any set of OCL invariants. **You could easily update pre-built Z3 libraries with the latest build on your own machine by just simply overwritting library files under solver directory**.
 
 ### 3.2 Building Z3 on your own machine.
 You can build Z3 on your own machine based on the instructions provided [here](https://github.com/Z3Prover/z3).
