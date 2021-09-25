@@ -115,7 +115,7 @@ public class FOLTranslator extends Thread implements ITranslator {
     public Function TranslateClass (String name){
         String full_type_name=type_str+"_"+name;
         Function d = factory.createFunction(full_type_name, new Int(), new Bool());
-        return d;
+        return d;	
     }
 
     public void TranslateAttribute(MAttribute attr){
@@ -203,7 +203,7 @@ public class FOLTranslator extends Thread implements ITranslator {
         addNonemptyAxioms();
 
         if (this.file.length()==0)
-            toSMT2(this.file="FOL",formulas,factory);
+            toSMT2(this.file="query",formulas,factory);
         else
             toSMT2(this.file,formulas,factory);
     }
@@ -212,7 +212,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 		
         long current = System.currentTimeMillis();
         String str = System.getProperty("os.name");
-        out.println(filename+" ("+str+") solving start...",Color.YELLOW);
+        out.println("verifying " + filename+" ("+str+") start...",Color.YELLOW);
 
 		SMT2Writer writer = new SMT2Writer("./"+filename+".smt2",factory,formulas);
 		
@@ -236,17 +236,18 @@ public class FOLTranslator extends Thread implements ITranslator {
 		long timeUsed = System.currentTimeMillis()-current;
 		
         if (result==Result.UNSAT){
-			System.out.println("Solving Finished from "+this.file+".");
-            System.out.println(result.toString());
-			System.out.print("cores: {");
+			out.println("Solving Finished from "+this.file+".",Color.BLUE);
+            out.println(result.toString(),Color.BLUE);
+			out.print("cores: {" , Color.RED);
 			
             for (AbstractFormula formula : solver.cores()){
 				LabeledFormula label_formula = (LabeledFormula) formula;
-				System.out.print(label_formula.label()+" ");
+				//out.print(label_formula.label()+" ",Color.BLUE);
 				unsat_cores.add(label_map.get(label_formula.label()));
+				out.print(label_map.get(label_formula.label())+" ",Color.RED);
 			}
-            System.out.println("}");
-			System.out.println("Time elapsed:"+timeUsed+" ms \n");
+            out.println("}",Color.RED);
+			out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);
 			this.cores++;
             /*out.println("Solving Finished from "+this.file+".",Color.BLUE);
             out.println(result.toString(),Color.RED);

@@ -125,7 +125,7 @@ class NoSystemException extends Exception {
  */
 
 public final class Shell implements Runnable, PPCHandler {
-    public static final String PROMPT = "use> ";
+    public static final String PROMPT = "QMaxUSE> ";
 
     public static final String CONTINUE_PROMPT = "> ";
 

@@ -61,7 +61,7 @@ public class QueryCompiler{
         QueryParser parser = new QueryParser(tokenStream);
         lexer.init(errHandler);
         parser.init(errHandler);
-        out.println("Launching QueryCompiler...",Color.WHITE);
+        out.println("Launching QueryCompiler...",Color.GREEN);
         
         try{
             expr = parser.checkExpr();
@@ -117,7 +117,7 @@ public class QueryCompiler{
         QueryParser parser = new QueryParser(tokenStream);
         lexer.init(errHandler);
         parser.init(errHandler);
-        out.println("Launching QueryCompiler...",Color.WHITE);
+        out.println("Launching QueryCompiler...",Color.GREEN);
         
         try{
             expr = parser.checkExpr();

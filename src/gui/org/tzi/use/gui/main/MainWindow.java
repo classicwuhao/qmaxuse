@@ -215,7 +215,7 @@ public class MainWindow extends JFrame {
 		new HashMap<Map<String, String>, PluginActionProxy>();
 
 	MainWindow(Session session, IRuntime pluginRuntime) {
-        super("USE");
+        super("QMaxUSE");
 		if (pluginRuntime != null) {
 			fPluginRuntime = pluginRuntime;
 		}
@@ -853,11 +853,11 @@ public class MainWindow extends JFrame {
             MSystem system = fSession.system();
             fModelBrowser.setModel(system.model());
             system.getEventBus().register(this);
-            setTitle("USE: " + new File(system.model().filename()).getName());
+            setTitle("QMaxUSE: " + new File(system.model().filename()).getName());
         } else {
             fModelBrowser.setModel(null);
             fActionFileSaveScript.setEnabled(false);
-            setTitle("USE");
+            setTitle("QMaxUSE");
         }
     }
 
