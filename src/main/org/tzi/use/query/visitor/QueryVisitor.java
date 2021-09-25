@@ -163,15 +163,15 @@ public class QueryVisitor extends AbstractVisitor {
                     state.attributes().addAll(c.attributes());
             }
             else{
-                if (e.getModifier()!=Modifier.ONLY)
-                    attr = c.attribute(e.name(),true);
-                else
-                    attr = c.attribute(e.name(),false);
-            
+                //if (e.getModifier()!=Modifier.ONLY)
+                //   attr = c.attribute(e.name(),false);
+                //else
+                attr = c.attribute(e.name(),true);
+                
                 if (attr==null){
                     if (state.classes().contains(c)) state.classes().remove(c);
                     if (!e.container().equals("*")){
-                        out.println("Attribute <" + e.name()+ "> cannot be found in the class <" +e.container()+">.",Color.RED);
+                        out.println("Warning: attribute <" + e.name()+ "> cannot be found in the class <" +e.container()+">.",Color.YELLOW);
                         return;
                     }
                 }else {
@@ -447,7 +447,7 @@ public class QueryVisitor extends AbstractVisitor {
     }
 
     public void visitModuleExpr(ModuleExpr e){
-
+        
     }
 
     public void visitModuleListExpr(ModuleListExpr e){

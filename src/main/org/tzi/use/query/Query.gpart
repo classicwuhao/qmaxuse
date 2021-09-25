@@ -178,8 +178,9 @@ rankExpr returns [int rank] @init{
 
 moduleExpr returns [ModuleExpr mexpr]:
     'module' name=IDENT {$mexpr = new ModuleExpr($name.getText());}
-        query=abstractQueryExpr {$mexpr.addQuery(query);query.setModule($mexpr);} 
-        (query=abstractQueryExpr {$mexpr.addQuery(query);query.setModule($mexpr);})*
+        query=abstractQueryExpr {$mexpr.addQuery(query);} 
+        (query=abstractQueryExpr {$mexpr.addQuery(query);})*
+        {query.setModule($mexpr);}
     'end'
 ;
 

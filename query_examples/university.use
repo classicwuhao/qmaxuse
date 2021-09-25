@@ -5,17 +5,13 @@ enum Gender{Male,Female}
 class Module
 attributes
 	code:			Integer
-	credits:		Integer
-	year: 			Integer
-	description:	Integer
+	year:			Integer
 end
 
 
 class Person
 attributes
 	age:	Integer
-	mature:	Boolean
-	name:	Integer
 	gender: Gender
 end
 
@@ -26,40 +22,31 @@ attributes
 	year:	Integer
 end
 
+class Child < Person
+end
+
 class Department
 attributes
-	name: Integer
+	business_code:	Integer
+	fund: Integer
 end
 
-class Assignment
-attributes
-	code: Integer
-	due: Integer
+class University
 end
 
-association study between
+association choose between
 	Student [1..1] role student
 	Module [0..*] role modules
 end
 
-association contain between
+association teach between
 	Student [1..*] role student
+	Department [1..1] role department
+end
+
+association manage between
+	University [1..1] role university
 	Department [1..*] role department
-end
-
-association design between
-	Department [1..*] role department
-	Module [1..*] role modules
-end
-
-association homework between
-	Assignment [1..*] role assignment
-	Module [1..*] role modules
-end
-
-association finish between
-	Assignment [1..*] role assignment
-	Student [1..*] role student
 end
 
 constraints
@@ -77,17 +64,9 @@ context Student
 
 context Module
 	inv inv8: self.year>=1 and self.year<=5
-	
-module queryset0
-	select Person.* with Person::* as q0
-	select Module.* with Module::* as q1
-	select Person.*, Student.* but Person as q2
-end
 
-module queryset1
-	select Person.*, Student.*, Module.*, Assignment:*:* with Student::*, Module::* but Person as q0
+module Queryset
+	select Person.age, Student.age with Person::inv1, Student::inv2 as query_part_1
+	select Student.*, Module.*, Student:*:* with Student::*, Module::* as query_part_2
+	select Student.id, University:*:* with Student::inv4 as query_part_3
 end
-
---module queryset2
---	select Student.*@5 with Student::* inject {Student.allInstances()->forAll(s|s.modules->size()=10)} as q0
---end

@@ -258,9 +258,9 @@ public class FOLTranslator extends Thread implements ITranslator {
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.BLUE);*/
         }
         else{
-			System.out.println("Solving Finished from "+this.file+".");
-            System.out.println(result.toString());
-            System.out.println("Time elapsed:"+timeUsed+" ms \n");
+			out.println("Solving Finished from "+this.file+".",Color.BLUE);
+            out.println(result.toString(),Color.BLUE);
+            out.println("Time elapsed:"+timeUsed+" ms \n",Color.BLUE);
             /*out.println("Solving Finished from "+this.file+".",Color.GREEN);
             out.println(result.toString(),Color.GREEN);
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/

@@ -81,6 +81,7 @@ module queryTest0
 	q2 = select A.*, B.* with A::* & select C.* with C::*
 	q3 = select A:*:*, B:*:*, C:*:* with A::*, B::*
 	q4 = select D.* with D::* + select C.* with C::*
+	q5 = select *.* with *::*
 end
 
 module queryTest1

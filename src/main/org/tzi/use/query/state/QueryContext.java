@@ -69,7 +69,9 @@ public class QueryContext{
                 for (AbstractQuery e :  m.queries()){
                     if (e.isQueryExpr()){
                         QueryExpr qe = (QueryExpr)e;
-                        if (qe.isAliased())  add (m.name()+"."+qe.alias(),qe);
+                        if (qe.isAliased()) { 
+                            add (m.name()+"."+qe.alias(),qe);
+                        }
                     }
                     if (e.isBinaryQuery()){
                         QueryBinaryExpr be = (QueryBinaryExpr)e;

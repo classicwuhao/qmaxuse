@@ -24,7 +24,7 @@ public final class GraphSolver{
     private void solve(int k){
         List<QueryState> states = this.decomposer.query_states();
         FOLTranslator[]  translators = new FOLTranslator[k];
-
+        
         final long startTime = System.currentTimeMillis();
         FOLTranslator.reset();
         for (int i=0;i<k;i++){

@@ -73,13 +73,13 @@ public class Decomposer{
             }
         }
         
-        for (MAttribute attr : map.keySet()){
+        /*for (MAttribute attr : map.keySet()){
             out.print(attr.owner()+"."+attr.name()+"->{",Color.BLUE);
             for (MClassInvariant inv : map.get(attr)){
                 out.print(inv.name()+" ",Color.BLUE);
             }
             out.println("}",Color.BLUE);
-        }
+        }*/
 
         /* Phase 2 */
         for (int i=0;i<list.size();i++){
@@ -97,9 +97,9 @@ public class Decomposer{
             sets.add(seta);
         }
 
-        out.println("After Phase 2:",Color.RED);
+        /*out.println("After Phase 2:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
-            out.println(set.toString(),Color.BLUE);
+            out.println(set.toString(),Color.BLUE);*/
 
         /* Phase 3 */
         for (MClass cls: this.model.classes()){
@@ -120,14 +120,14 @@ public class Decomposer{
             }
         }
 
-        out.println("After Phase 3:", Color.RED);
+        /*out.println("After Phase 3:", Color.RED);
         for (MClass cls:nav_map.keySet()){
             out.print(cls.name()+ "-> { ", Color.BLUE);
             for (MClassInvariant inv : nav_map.get(cls)){
                 out.print(inv.name()+ " ",Color.BLUE);
             }
             out.println(" }",Color.BLUE);
-        }
+        }*/
 
         boolean[] flag = new boolean [nav_map.size()];
         int index =0;
@@ -168,10 +168,10 @@ public class Decomposer{
         
         if (remaining_set.size()>0) sets.add(remaining_set);
 
-        out.println("Final Sets:",Color.RED);
+        /*out.println("Final Sets:",Color.RED);
         for (HashSet<MClassInvariant> set : sets)
-            out.println(set.toString(),Color.BLUE);
-            
+            out.println(set.toString(),Color.BLUE);*/
+    
     }
 
     private HashSet<MClassInvariant> union (HashSet<MClassInvariant> seta, HashSet<MClassInvariant> setb){
