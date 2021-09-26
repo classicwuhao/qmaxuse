@@ -12,7 +12,7 @@ Once you have JDK installed, you can just **download QMaxUSE and run it without 
 **Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** Set the following key to be 1.
 	```
 	[HKEY_CURRENT_USER\Console]
-	"VirtualTerminalLevel"=dword:00000001
+	VirtualTerminalLevel=dword:00000001
 	```
 	This will enable ANSI colors in Windows terminal. Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
 
