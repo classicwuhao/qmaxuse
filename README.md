@@ -6,7 +6,16 @@
 **QMaxUSE** is an automated verification tool that is able to verify consistencies of a UML class diagram annotated with OCL invariants. QMaxUSE has two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A powerful algorithm that is capable of performing concurrent verification on large number of complex OCL invariants. This is achieved by decomposing a large model into multiple queries.
 
 ## 2. Download and Run
-Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). **Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes.** Here is a [link](https://ss64.com/nt/syntax-ansi.html) showing how to do it. If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections.
+Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections.
+
+### 2.1 Enabling ANSI Colors for Windows (older version: 1511 to 1903)
+**Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** Set the following key to be 1.
+	```
+	[HKEY_CURRENT_USER\Console]
+	"VirtualTerminalLevel"=dword:00000001
+	```  
+	This will enable ANSI colors in Windows terminal.
+Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
 
 ## 3. Build Instructions
 Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
