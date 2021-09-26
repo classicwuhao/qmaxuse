@@ -10,12 +10,12 @@ Once you have JDK installed, you can just **download QMaxUSE and run it without 
 
 ### 2.1 Enabling ANSI Colors for Windows (older version: 1511 to 1903)
 **Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** Set the following key to be 1.
+
 	```
 	[HKEY_CURRENT_USER\Console]
 	"VirtualTerminalLevel"=dword:00000001
-	```  
-	This will enable ANSI colors in Windows terminal.
-Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
+	```
+	This will enable ANSI colors in Windows terminal. Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
 
 ## 3. Build Instructions
 Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
