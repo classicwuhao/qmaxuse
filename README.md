@@ -9,7 +9,8 @@
 Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections.
 
 ### 2.1 Enabling ANSI Colors for Windows (older version: 1511 to 1903)
-**Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** Set the following key to be 1.
+**Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** 
+* Set the following key to be 1.
 	```
 	[HKEY_CURRENT_USER\Console]
 	VirtualTerminalLevel=dword:00000001
