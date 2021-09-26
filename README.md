@@ -10,7 +10,6 @@ Once you have JDK installed, you can just **download QMaxUSE and run it without 
 
 ### 2.1 Enabling ANSI Colors for Windows (older version: 1511 to 1903)
 **Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** Set the following key to be 1.
-
 	```
 	[HKEY_CURRENT_USER\Console]
 	"VirtualTerminalLevel"=dword:00000001
