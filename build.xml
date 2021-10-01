@@ -1,4 +1,4 @@
-<project name="use" default="build" basedir=".">
+<project name="qmaxuse" default="build" basedir=".">
 	<description>Build file for USE</description>
 
 	<property environment="env"/>

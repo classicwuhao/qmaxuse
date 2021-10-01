@@ -8,7 +8,6 @@ attributes
 	year:			Integer
 end
 
-
 class Person
 attributes
 	age:	Integer
