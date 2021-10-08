@@ -52,6 +52,10 @@ public class QueryState{
     }
 
     public void refine(){
+        AttributeOclExprVisitor visitor = new AttributeOclExprVisitor();
+        List<MAttribute> ocl_attr = new ArrayList<MAttribute>();
+        List<MAssociation> ocl_assoc = new ArrayList<MAssociation>();
+
         /* class */
         for (MAttribute attr:this.attributes){
             if (!this.classes.contains(attr.owner()))
@@ -65,6 +69,24 @@ public class QueryState{
         for (MClassInvariant inv: this.invariants){
             if (!this.classes.contains(inv.cls()))
                 this.classes.add(inv.cls());
+            inv.bodyExpression().accept(visitor);
+            ocl_attr.addAll(visitor.attributes());
+            ocl_assoc.addAll(visitor.associations());
+        }
+
+        for (MAttribute attr : ocl_attr){
+            if (!this.attributes.contains(attr)){
+                this.attributes.add(attr);
+            }
+            if (!this.classes.contains(attr.owner())){
+                this.classes.add(attr.owner());
+            }
+        }
+
+        for (MAssociation assoc:ocl_assoc){
+            if (!this.associations.contains(assoc)){
+                this.associations.add(assoc);
+            }
         }
 
     }
@@ -72,6 +94,7 @@ public class QueryState{
     public void preprocess(){
         AttributeOclExprVisitor visitor = new AttributeOclExprVisitor();
         for (MAttribute attr : attributes){
+            //System.out.println("attr:"+attr.name());
             visitor.initialise(attr);
             for (MClassInvariant inv : invariants){
                 inv.bodyExpression().accept(visitor);

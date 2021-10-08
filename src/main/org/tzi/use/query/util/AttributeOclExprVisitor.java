@@ -3,11 +3,14 @@ import org.tzi.use.uml.mm.*;
 import org.tzi.use.uml.ocl.type.*;
 import org.tzi.use.uml.ocl.expr.*;
 import java.util.List;
+import java.util.ArrayList;
 
 public final class AttributeOclExprVisitor implements AbstractOclExprVisitor{
 	private MAttribute attribute=null;
 	private boolean used = false;
-	
+	private List<MAttribute> attributes = new ArrayList<MAttribute>();
+	private List<MAssociation> associations = new ArrayList<MAssociation>();
+
 	public AttributeOclExprVisitor(){}
 	
 	public AttributeOclExprVisitor(MAttribute attribute){
@@ -16,9 +19,12 @@ public final class AttributeOclExprVisitor implements AbstractOclExprVisitor{
 
 	public void visitAttrOp (ExpAttrOp exp){
 		if (exp.attr()==this.attribute) this.used = true;
+		attributes.add(exp.attr());
 		exp.objExp().accept(this);
 	}
 	
+	public List<MAttribute> attributes(){return this.attributes;}
+
 	public void initialise(MAttribute attribute){
 		this.attribute = attribute;
 		this.used = false;
@@ -53,8 +59,12 @@ public final class AttributeOclExprVisitor implements AbstractOclExprVisitor{
 
 	public void visitNavigation (ExpNavigation exp){
 		exp.getObjectExpression().accept(this);
+		associations.add(exp.getSource().association());
+		associations.add(exp.getDestination().association());
 	}
 
+	public List<MAssociation> associations(){return this.associations;}
+	
 	public void visitObjAsSet (ExpObjAsSet exp){
 		exp.getObjectExpression().accept(this);
 	}
