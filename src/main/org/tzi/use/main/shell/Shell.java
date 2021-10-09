@@ -385,6 +385,8 @@ public final class Shell implements Runnable, PPCHandler {
             cmdHelp(line);
 		else if (line.startsWith("maxuse"))
 			cmdMaxuse(line);
+        else if (line.startsWith("select")||line.startsWith("Select"))
+            query_help();
         else if (line.equals("q") || line.equals("quit") || line.equals("exit"))
             cmdExit();
         else if (line.equals("qverify"))
@@ -785,6 +787,12 @@ public final class Shell implements Runnable, PPCHandler {
         //threadCounter.start();
 	}
 
+    private void query_help() throws NoSystemException{
+        System.out.println("QMaxUSE Help v1.0");
+        System.out.println("please use a $ at the begin of a selection statement.");
+        System.out.println("Use command <qverify> to start concurrent verification.");
+    }
+
     private void query(String line) throws NoSystemException{
         // compile query
         MSystem system;
@@ -795,6 +803,7 @@ public final class Shell implements Runnable, PPCHandler {
             MModel model = new ModelFactory().createModel("empty model");
             system = new MSystem(model);
         }
+        
         InputStream stream = new ByteArrayInputStream(line.getBytes());
         //int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
         int r =QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
