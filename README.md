@@ -33,15 +33,14 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 * If Z3 is successfully compiled, it generates 3 files: *com.microsoft.z3.jar*, *libz3.dll* and *libz3java.dll*.
 * Set %PATH% to the Z3 build directory (or to the directory that contains these 3 files.).
 
-## 4 Running QMaxUSE Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
+## 4. Running QMaxUSE on Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
 * Make sure you have JDK installed. 
 * Either you use our provided pre-built libraries (You don't have to do anything) or use the intructions provided above for building Z3 libraries on your own machine.
-* Download QMaxUSE and go to the lib directory type:
+* Download QMaxUSE from [here](https://github.com/classicwuhao/qmaxuse/releases/tag/Latest), and go to the lib directory type:
 	```
 	java -jar qmaxuse.jar
-	```  
+	```
 	to lanuch QMaxUSE.
-* That's it.
 
 ### 4.1 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is available in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. However, you may need to setup Z3 for MaxUSE. See the instructions [here](https://github.com/classicwuhao/maxuse/blob/master/MaxUSE_README.md). Technical details about how MaxUSE works are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).

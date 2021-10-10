@@ -149,7 +149,7 @@ public class ExpressionPrintVisitor implements ExpressionVisitor {
 	@Override
 	public void visitAttrOp(ExpAttrOp exp) {
 		exp.objExp().processWithVisitor(this);
-		System.out.println("expr:["+exp.objExp().name()+"]");
+		//System.out.println("expr:["+exp.objExp().name()+"]");
 		writer.write('.');
 		writer.write(exp.attr().name());
 		atPre(exp);
