@@ -70,7 +70,7 @@ Our query langauge allows users to issue a query to select parts of a class diag
 	
 * **Example 4: exclusion**
 	```sql
-	$select Student::* but Student::inv4
+	$select Student.* with Student::* but Student::inv4
 	```
 	All ocl invariants defined under *Student* class are selected except for *inv4*. Further, all relevant clases, attributes and associations used in an ocl expression are also selected.
 
