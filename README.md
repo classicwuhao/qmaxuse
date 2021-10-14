@@ -21,7 +21,7 @@ Pre-built binaries and releases are available from [here](https://github.com/cla
 
 ### 2.2 Security in MacOS and Ubuntu 
 **For uses who get security warnings ("permission denied") from MacOS and Ubuntu, in the qmaxuse folder please use the following command to change the permission:**
-
+* Give z3 the execution permission
 	```
 	chmod +x solver/MacOS/z3
 	chmod +x solver/Linux/z3
