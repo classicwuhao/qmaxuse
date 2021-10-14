@@ -19,6 +19,13 @@ Pre-built binaries and releases are available from [here](https://github.com/cla
 	```
 	This will enable ANSI colors in Windows terminal. Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
 
+### 2.2 Security in MacOS and Ubuntu 
+** For uses who get security warnings ("permission denied") from MacOS and Ubuntu, in the qmaxuse folder please use the following command to change the permission:
+	```
+	chmod +x solver/MacOS/z3
+	chmod +x solver/Linux/z3
+	```
+
 ## 3. Build Instructions
 Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
 
