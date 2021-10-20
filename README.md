@@ -50,7 +50,7 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 	```
 	to lanuch QMaxUSE.
 	
-* **NOTE: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines in order to for Z3 to run.**
+* **NOTE: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines in order to run Z3.**
 
 ### 4.1 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is available in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. However, you may need to setup Z3 for MaxUSE. See the instructions [here](https://github.com/classicwuhao/maxuse/blob/master/MaxUSE_README.md). Technical details about how MaxUSE works are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
