@@ -35,33 +35,25 @@ class Child < Person
 end
 
 association study between
-	Student [1..1] role student
+	Student [1..1] role students
 	Module [0..*] role modules
 end
 
+association teach between
+	Department [1..1] role department
+	Student [1..*] role student
+end
 
--- comment the following associations for Z3 to get more precise cores (only for Windows 10).
--- uncomment if MAXUSE is running under Linux (Ubuntu).
 
---@Rank = 1
---association teach between
---	Department [1..1] role department
---	Student [1..*] role student
---end
-
---@Rank = 1
---association manage between
---	University [1..1] role department
---	Department [1..*] role student
---end
+association manage between
+	University [1..1] role department
+	Department [1..*] role student
+end
 
 constraints
-
-@Person{Rank = 1}
 context Person
 	inv: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
 
-@Student{Rank = 1}
 context Student
 	inv: self.age > 18
 	inv: self.year>=1 and self.year<=6
@@ -70,6 +62,5 @@ context Student
 	inv: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
 	inv: Student.allInstances()->forAll(s|s.modules->notEmpty())
 
-@Module{Rank = 1}
 context Module
 	inv: self.year>=1 and self.year<=5
