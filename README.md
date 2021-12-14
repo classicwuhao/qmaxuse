@@ -6,7 +6,7 @@
 **QMaxUSE** is an automated verification tool that is able to verify consistencies of a UML class diagram annotated with OCL invariants. QMaxUSE has two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A powerful algorithm that is capable of performing concurrent verification on large number of complex OCL invariants. This is achieved by decomposing a large model into multiple queries.
 
 ## 2. Download and Run
-Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections.
+Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections. **Note: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines**
 
 Pre-built binaries and releases are available from [here](https://github.com/classicwuhao/qmaxuse/releases/tag/Latest).
 
@@ -49,6 +49,8 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 	java -jar qmaxuse.jar
 	```
 	to lanuch QMaxUSE.
+	
+* **NOTE: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines in order to run Z3.**
 
 ### 4.1 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is available in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. However, you may need to setup Z3 for MaxUSE. See the instructions [here](https://github.com/classicwuhao/maxuse/blob/master/MaxUSE_README.md). Technical details about how MaxUSE works are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
