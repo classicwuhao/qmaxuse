@@ -15,14 +15,14 @@ attributes
 end
 
 
---class Student < Person
---attributes
---	id:		Integer
---	year:	Integer
---end
+class Student < Person
+attributes
+	id:		Integer
+	year:	Integer
+end
 
---class Child < Person
---end
+class Child < Person
+end
 
 --class Department
 --attributes

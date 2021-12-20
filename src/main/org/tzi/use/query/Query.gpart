@@ -114,12 +114,16 @@ featureExpr returns [QFeatureExpr feature]:
     | f2 = assocExpr {$feature=f2;}
 ;
 
+/*
+ * experimental implementations.
+ */
 modifiers returns [Modifier m]:
     'only' {$m=Modifier.ONLY;}
     |
     'no' {$m=Modifier.NO;}
-
-    |'all' {$m=Modifier.ALL;}
+    |'all' {$m=Modifier.NO;}
+    |'upward' {$m=Modifier.UPWARD;}
+    |'downward'{$m=Modifier.DOWNWARD;}
 ;
 
 attrExpr returns [QAttrExpr attr]:

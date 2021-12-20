@@ -117,6 +117,14 @@ public class QueryVisitor extends AbstractVisitor {
 
         if (e.getModifier()==Modifier.ONLY)
             state.classes().add(cls);
+        else if (e.getModifier()==Modifier.UPWARD){
+            state.classes().add(cls);
+            state.classes().addAll(cls.allParents());
+        }
+        else if (e.getModifier()==Modifier.DOWNWARD){
+            state.classes().add(cls);
+            state.classes().addAll(cls.allChildren());
+        }
         else{
             state.classes().add(cls);
             state.classes().addAll(cls.parents());
@@ -144,7 +152,20 @@ public class QueryVisitor extends AbstractVisitor {
                 if (e.getModifier()==Modifier.ONLY){
                     list.add(cls);
                     state.classes().add(cls);
-                }else
+                }
+                else if (e.getModifier()==Modifier.UPWARD){
+                    list.add(cls);
+                    state.classes().add(cls);
+                    list.addAll(cls.allParents());
+                    state.classes().addAll(cls.allParents());
+                }
+                else if (e.getModifier()==Modifier.DOWNWARD){
+                    list.add(cls);
+                    state.classes().add(cls);
+                    list.addAll(cls.allChildren());
+                    state.classes().addAll(cls.allChildren());
+                }
+                else
                 {
                     list.add (cls);
                     state.classes().add (cls);
