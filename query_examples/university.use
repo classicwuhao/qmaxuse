@@ -2,11 +2,11 @@ model UNIVERSITY
 
 enum Gender{Male,Female}
 
---class Module
---attributes
---	code:			Integer
---	year:			Integer
---end
+class Module
+attributes
+	code:			Integer
+	year:			Integer
+end
 
 abstract class Person
 attributes
@@ -33,10 +33,10 @@ end
 --class University
 --end
 
---association choose between
---	Student [1..1] role students
---	Module [0..*] role modules
---end
+association choose between
+	Student [1..1] role students
+	Module [0..*] role modules
+end
 
 --association teach between
 --	Student [1..*] role student
@@ -51,23 +51,23 @@ end
 constraints
 
 context Person
---	inv inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
-	inv test: Person.allInstances()->size()>=1
+	inv inv1: Person.allInstances()->forAll(p|p.age>0 and p.age<18)
+	
 
---context Student
---	inv inv2: self.age > 18
---	inv inv3: self.year>=1 and self.year<=6
---	inv inv4: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
---	inv inv5: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
---	inv inv6: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
---	inv inv7: Student.allInstances()->forAll(s|s.modules->notEmpty())
+context Student
+	inv inv2: self.age > 18
+	inv inv3: self.year>=1 and self.year<=6
+	inv inv4: Student.allInstances()->forAll(s1,s2:Student|s1<>s2 implies s1.id <> s2.id)
+	inv inv5: Student.allInstances()->forAll(s1|s1.modules->forAll(m1|s1.year=m1.year))
+	inv inv6: Student.allInstances()->exists(s|s.year=6) and Student.allInstances()->exists(s|s.year<6)
+	inv inv7: Student.allInstances()->forAll(s|s.modules->notEmpty())
 --	inv test1: Student.allInstances()->size()>=1
 --	inv test2: Student.allInstances()->size()=0
 
---context Module
---	inv inv8: self.year>=1 and self.year<=5
---	inv inv9: Module.allInstances()->forAll(m|m.students->isEmpty())
+context Module
+	inv inv8: self.year>=1 and self.year<=5
 
+	
 module Queryset
 	select Person.age, Student.age with Person::inv1, Student::inv2 as query_part_1
 	select Student.*, Module.*, Student:*:* with Student::*, Module::* as query_part_2
