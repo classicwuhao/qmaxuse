@@ -6,9 +6,9 @@
 **QMaxUSE** is an automated verification tool that is able to verify consistencies of a UML class diagram annotated with OCL invariants. QMaxUSE has two distinct features: (1) A query langauge that allows users to select parts of class diagram to be verified. (2) A powerful algorithm that is capable of performing concurrent verification on large number of complex OCL invariants. This is achieved by decomposing a large model into multiple queries.
 
 ## 2. Download and Run
-Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). If you would like to build QMaxUSE on your own machine, please see the instructions provided in the following sections. **Note: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines**
+Once you have JDK installed, you can just **download QMaxUSE and run it without installing any additional libraries**. QMaxUSE is a command-line based tool and currently supports Windows 10(x64), Ubuntu 20.04(x64) and macOS Big Sur(x64). To run QMaxUSE, please see Section 4.
 
-Pre-built binaries and releases are available from [here](https://github.com/classicwuhao/qmaxuse/releases/tag/Latest).
+If you would like to build QMaxUSE on your own machine, please see the instructions provided in Section 3. **Note: If you are using Windows, you may need to install [Microsoft Visual C++ Redistributable packages](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160) on your windows machines**
 
 ### 2.1 Enabling ANSI Colors for Windows (older version: 1511 to 1903)
 **Note that you need to enable ANSI color mode for Windows 10 to avoid seeing color codes in QMaxUSE** 
@@ -19,16 +19,8 @@ Pre-built binaries and releases are available from [here](https://github.com/cla
 	```
 	This will enable ANSI colors in Windows terminal. Here is a [link](https://ss64.com/nt/syntax-ansi.html) about the details. 
 
-### 2.2 Security in MacOS and Ubuntu 
-**For uses who get security warnings ("permission denied") from MacOS and Ubuntu, in the qmaxuse folder please use the following command to change the permission:**
-* Give z3 the execution permission
-	```
-	chmod +x solver/MacOS/z3
-	chmod +x solver/Linux/z3
-	```
-
-## 3. Build Instructions
-Currently, QMaxUSE supports three major operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
+## 3. Build QMaxUSE on a local machine.
+Currently, you can build QMaxUSE on operating systems: Windows 10 (x64), Ubuntu 20.04 (x64) and mac OS Big Sur(x64). In order to build QMaxUSE, you must have [Ant](https://ant.apache.org/) installed on your local machine. QMaxUSE uses an [Z3 SMT Solver](https://github.com/Z3Prover/z3) as its solving engine. The following sections introduce instructions for building QMaxUSE with Z3 SMT solver.
 
 ### 3.1 Using pre-built Z3 libraries.
 We provide a set of pre-built Z3 libraries under [solver](./solver) directory for Windows (Win10 x64), Linux (Ubuntu 20.04 x64) and Mac OS (Big Sur x64). Everytime when you run QMaxUSE, it will perform a trial run before solving any set of OCL invariants. **You could easily update pre-built Z3 libraries with the latest build on your own machine by just simply overwritting library files under solver directory**.
@@ -43,7 +35,6 @@ You can build Z3 on your own machine based on the instructions provided [here](h
 
 ## 4. Running QMaxUSE on Windows 10 (x86/x64), Ubuntu 20.04(x64), macOS Big Sur (x64)
 * Make sure you have JDK installed. 
-* Either you use our provided pre-built libraries (You don't have to do anything) or use the intructions provided above for building Z3 libraries on your own machine.
 * Download QMaxUSE from [here](https://github.com/classicwuhao/qmaxuse/releases/tag/Latest), and go to the lib directory type:
 	```
 	java -jar qmaxuse.jar
