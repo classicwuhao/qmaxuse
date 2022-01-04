@@ -100,7 +100,6 @@ Overall, QMaxUSE improves up to 30x efficenicy in verification. In particular, Q
 * We are working on integrating a string solver into QMaxUSE.
 * QMaxUSE will be included as a solution to one of our industrial partners.
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
-* Multiple SMT solvers (CVC4, MATHSAT5, etc) are being added.
 
 ## 8. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
