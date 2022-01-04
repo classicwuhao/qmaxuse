@@ -17,7 +17,7 @@ Once you have JDK installed, you can just **download QMaxUSE and run it without 
 	to lanuch QMaxUSE.
 
 ### 3.1 Solver Support
-Currently, [the latest version of QMaxUSE](https://github.com/classicwuhao/qmaxuse/releases/tag/v1.0.1) supports two solvers: [z3](https://github.com/Z3Prover/z3) and [cvc5](https://github.com/cvc5/cvc5) (for linux and macOS). To switch between z3 and cvc5 for verification tasks, one can use the following command at QMaxUSE prompt:
+Currently, [the latest version of QMaxUSE](https://github.com/classicwuhao/qmaxuse/releases/tag/v1.0.1) supports two solvers: [z3](https://github.com/Z3Prover/z3) and [cvc5](https://github.com/cvc5/cvc5) (for ubuntu and macOS). To switch between z3 and cvc5 for verification tasks, one can use the following command at QMaxUSE prompt:
 
 ```
 	set-solver:<solver name>
