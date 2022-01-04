@@ -2,6 +2,7 @@ package org.tzi.use.query.setup;
 
 import org.tzi.use.query.state.*;
 import org.tzi.use.common.*;
+import java.io.*;
 import java.util.*;
 import org.tzi.use.query.io.*;
 import uran.formula.*;
@@ -10,7 +11,6 @@ import uran.formula.type.*;
 import uran.formula.smt2.*;
 import uran.formula.type.*;
 import uran.solver.*;
-import java.io.File;
 
 public final class Settings{
     private ColorPrint out = new ColorPrint();
@@ -54,12 +54,11 @@ public final class Settings{
 
     public String OS(){return this.os.toString();}
     public OS System(){return this.os;}
-    
-    public void SetSolver(Solver solver){
-        if (solver!=Solver.UNDEF){
-            this.MainSolver=solver;
-            this.solverpath=SetSolver();
-        }
+
+    public boolean SetSolver(Solver solver){
+        this.MainSolver=solver;
+        this.solverpath=SetSolver();
+        return ShowSolverVersion();
     }
 
     private String SetSolver(){
@@ -79,6 +78,44 @@ public final class Settings{
         File smtsolver = new File(this.solverpath);
         //System.out.println("path:"+this.solverpath);
         return (smtsolver.exists() && !smtsolver.isDirectory()) ? solverPath : "";
+    }
+
+    /**
+     * show solver's version.
+     */
+    public boolean ShowSolverVersion(){
+        Process process;
+        String cmd="";
+        if (this.solverpath.length()==0) {
+            System.out.println("Cannot find solver.");
+            return false;
+        }
+
+        if (this.MainSolver==Solver.Z3)
+            cmd=this.solverpath+" --version ";
+        else if (this.MainSolver==Solver.CVC5)
+            cmd=this.solverpath+" --version ";
+        else
+            return false;
+        
+        try{
+            
+            process = Runtime.getRuntime().exec(cmd);
+
+            OutputStream in = process.getOutputStream();
+		    InputStream err = process.getErrorStream();
+		    InputStream out = process.getInputStream();
+
+            BufferedReader output = new BufferedReader (new InputStreamReader(out));
+            String line=output.readLine();
+            System.out.println(line);
+        }
+        catch(Exception e){
+            System.out.println("unable to retrieve version information.");
+            return false;
+        }
+
+        return true;
     }
 
     public String SolverPath(){

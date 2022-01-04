@@ -46,7 +46,7 @@ public class QueryCompiler{
         OS os = settings.System();
         if (solver.equals(Solver.Z3.toString())){
             if (os==OS.WINDOWS | os==OS.LINUX | os==OS.MACOS){
-                settings.SetSolver(Solver.Z3);
+                if (settings.SetSolver(Solver.Z3)) System.out.println("switch to z3.");
             }
             else{
                 System.out.println("Z3 is currently supported for Windows, Linux and MacOS.");
@@ -55,7 +55,7 @@ public class QueryCompiler{
         }
         else if (solver.equals(Solver.CVC5.toString())){
             if (os==OS.LINUX | os==OS.MACOS){
-                settings.SetSolver(Solver.CVC5);
+                if (settings.SetSolver(Solver.CVC5)) System.out.println("switch to cvc5");
             }
             else if (os==OS.WINDOWS){
                 System.out.println("CVC5 is not supported for Windows");
@@ -69,7 +69,7 @@ public class QueryCompiler{
         }
         else {
             System.out.println("unrecognised solver - "+solver);
-            settings.SetSolver(Solver.UNDEF);
+            //settings.SetSolver(Solver.UNDEF);
         }
     }
 

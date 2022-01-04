@@ -44,7 +44,8 @@ public class FOLTranslator extends Thread implements ITranslator {
     private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
     private String Z3="";
 	private String Z3_STD_IN=" -in ";
-	private String CVC5_STD_IN=" --in=";
+	private final String CVC5_FLAG_1=" --fmf-inst-engine ";
+	private final String CVC5_FLAG_2=" --finite-model-find ";
 	private String SMTSolver="";
     private static int pid=1;
     private String file="";
@@ -228,7 +229,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 				break;
 			case CVC5:
 				/* use CVC5 SMT solver */
-				solver = new SolverLauncher(this.SMTSolver,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
+				solver = new SolverLauncher(this.SMTSolver+CVC5_FLAG_1+CVC5_FLAG_2,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
 				result = solver.launch_cvc5();
 				break;
 				
