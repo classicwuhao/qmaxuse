@@ -51,6 +51,7 @@ public class SolverLauncher extends AbstractVisitor {
 	private	InputStream err = null;
 	private	InputStream out = null;
 	public final static String PRODUCE_UNSAT_CORES = "(set-option :produce-unsat-cores true)";
+	public final static String SET_LOGICS="(set-logic ALL)";
 	private final String CHECK = "(check-sat)";
 	private final String UNSAT_CORES = "(get-unsat-core)";
 	private final String ASSERT = "assert";
@@ -179,6 +180,53 @@ public class SolverLauncher extends AbstractVisitor {
 		return result;
 	}
 	
+
+	public Result launch_cvc5(){
+		Result result=Result.UNUSED;
+		try{
+			in.write ( (this.options+"\n").getBytes());
+			in.write ( (SET_LOGICS+"\n").getBytes());
+			List<Function> functions = writer.getDecls();
+			for (int i=0;i<functions.size();i++)
+			in.write(("(declare-fun "+functions.get(i).toSMT2_decl()+")\n").getBytes());
+			
+			List<AbstractFormula> formulas = writer.getFormulas();
+			for (AbstractFormula f : formulas) f.accept(this);
+		
+			in.write(CHECK.getBytes());
+			in.write(UNSAT_CORES.getBytes());
+			in.flush();
+			in.close();
+		
+			BufferedReader output = new BufferedReader (new InputStreamReader(out));
+			String line;	
+
+			/*while ((line=output.readLine())!=null){
+				System.out.println("output:"+line);
+			}*/
+			line=output.readLine();
+			result = parseResult(line);
+			String core="";
+			if (result==Result.UNSAT){
+				/* skip 1st line */
+				line=output.readLine();
+				while (!(line=output.readLine()).equals(")")){
+					core = line.trim();
+					if (subset.containsKey(core)) cores.add (subset.get(core));
+				}
+			}
+
+			output.close();
+			out.close();
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+
 	private Result parseResult(String line){
 		if (line.trim().equals("sat"))
 			return Result.SAT;

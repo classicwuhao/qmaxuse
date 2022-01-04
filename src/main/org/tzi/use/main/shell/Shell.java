@@ -391,6 +391,8 @@ public final class Shell implements Runnable, PPCHandler {
             cmdExit();
         else if (line.equals("qverify"))
             con_solve(line.trim());
+        else if (line.startsWith("set solver:"))
+            configure_solver(line.trim());
         else if (line.startsWith("$"))
             query(line.substring(1).trim());
         else if (line.startsWith("??"))
@@ -824,6 +826,13 @@ public final class Shell implements Runnable, PPCHandler {
         InputStream stream = new ByteArrayInputStream(line.getBytes());
         //int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
         int r =QueryCompiler.con_compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
+    }
+
+    /*
+     * Configure solver 
+     **/ 
+    private void configure_solver(String line) throws NoSystemException{
+        
     }
 
     /**

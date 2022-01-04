@@ -435,7 +435,7 @@
 	</target>
 
 	<!-- create all jars -->
-	<target name="build" depends="jar-use, run-query-test" description="build everything "/>
+	<target name="build" depends="jar-use" description="build everything "/>
 
 	<!-- delete the build tree -->
 	<target name="clean" description="clean build directory" >

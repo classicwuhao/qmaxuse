@@ -44,6 +44,7 @@ public class FOLTranslator extends Thread implements ITranslator {
     private Function objatFun = factory.createFunction(objat,new Int(),new Int(), new Int());
     private String Z3="";
 	private String Z3_STD_IN=" -in ";
+	private String CVC5_STD_IN=" --in=";
 	private String SMTSolver="";
     private static int pid=1;
     private String file="";
@@ -218,21 +219,24 @@ public class FOLTranslator extends Thread implements ITranslator {
 		
 		this.SMTSolver = this.settings.SolverPath();
 		SolverLauncher solver;
-		
+		Result result;
 		switch (this.settings.solver()){
 			case Z3:
 				solver = new SolverLauncher(this.SMTSolver+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
+				result = solver.launch();
 				break;
-			/*case CVC4:*/
-				/* use CVC4 SMT solver 
-				break;*/
-
+			case CVC5:
+				/* use CVC5 SMT solver */
+				solver = new SolverLauncher(this.SMTSolver,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
+				result = solver.launch_cvc5();
+				break;
+				
 			default:
 				/* no suitable SMT solver available */
 				return;
 		}
-
-        Result result = solver.launch();
+		
+        
 		long timeUsed = System.currentTimeMillis()-current;
 		
         if (result==Result.UNSAT){
@@ -279,7 +283,8 @@ public class FOLTranslator extends Thread implements ITranslator {
 			String label = "c" + i++;
             Variable var = new Variable ("o", new Int());
 				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
-				for (MClass c : cls.allParents()) if (!c.isAbstract()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
+				for (MClass c : cls.allParents()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
+				
 				if (tmp.size()>0){
 					QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
 						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 

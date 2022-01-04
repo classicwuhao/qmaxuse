@@ -21,7 +21,7 @@ public final class Settings{
     private String solverpath="";
     public Settings (){
         setup();
-        this.DefaultSolver=this.MainSolver=Solver.Z3;
+        //this.DefaultSolver=this.MainSolver=Solver.Z3;
         this.solverpath=SetSolver();
     }
 
@@ -37,14 +37,18 @@ public final class Settings{
         if (strOS.contains("Mac")){
             this.os=OS.MACOS;
             this.PathDelimiter="/";
+            this.DefaultSolver=this.MainSolver=Solver.Z3;
         }
         else if (strOS.contains("Linux")){
             this.os=OS.LINUX;
             this.PathDelimiter="/";
+            //try cvc5 here.
+            this.DefaultSolver=this.MainSolver=Solver.CVC5;
         }
         else if (strOS.contains("Windows")){
             this.os=OS.WINDOWS;
             this.PathDelimiter="\\";
+            this.DefaultSolver=this.MainSolver=Solver.Z3;
         }
         else { /* unsupported operating system */ 
             this.os=OS.UNKNOWN;
