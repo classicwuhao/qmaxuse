@@ -391,7 +391,7 @@ public final class Shell implements Runnable, PPCHandler {
             cmdExit();
         else if (line.equals("qverify"))
             con_solve(line.trim());
-        else if (line.startsWith("set solver:"))
+        else if (line.startsWith("set-solver:"))
             configure_solver(line.trim());
         else if (line.startsWith("$"))
             query(line.substring(1).trim());
@@ -831,8 +831,14 @@ public final class Shell implements Runnable, PPCHandler {
     /*
      * Configure solver 
      **/ 
-    private void configure_solver(String line) throws NoSystemException{
+    private void configure_solver(String line){
+        String param[] = line.split(":");
+        if (param.length>2){
+            System.out.println("Error: too many parameter, pelease use set-solver:<solver name>");
+            return;
+        }
         
+        QueryCompiler.set_solver(param[1].trim());
     }
 
     /**

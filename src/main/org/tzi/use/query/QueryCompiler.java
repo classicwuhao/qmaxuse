@@ -28,6 +28,7 @@ import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
 import org.tzi.use.query.graph.*;
 import org.tzi.use.query.setup.Settings;
+import org.tzi.use.query.setup.Solver;
 import java.io.PrintStream;
 import org.tzi.use.common.*;
 import java.util.*;
@@ -36,9 +37,22 @@ public class QueryCompiler{
     private int errors=0;
     private QAst expressions=null;
     private static List<QueryState> visitors = new ArrayList<QueryState>();
+    private static Settings settings = new Settings();
 
     public QueryCompiler(){}
     
+    public static void set_solver(String solver){
+        if (solver.equals(Solver.Z3.toString())){
+            settings.SetSolver(Solver.Z3);
+        }
+        else if (solver.equals(Solver.CVC5.toString())){
+            settings.SetSolver(Solver.CVC5);
+        }
+        else {
+            System.out.println("unrecognised solver - "+solver);
+            settings.SetSolver(Solver.UNDEF);
+        }
+    }
 
     public static int con_compileExpression (MModel model, MSystemState state, InputStream in, String inName,PrintWriter err)
     {
@@ -73,9 +87,9 @@ public class QueryCompiler{
                 //QueryState qstate = visitor.state();
                 //qstate.refine();
                 //out.println(qstate.toString(),Color.CYAN);
-                Settings settings = new Settings();
+                //Settings settings = new Settings();
                 if (settings.TrialRun()){
-                    GraphSolver solver = new GraphSolver(new Decomposer(model));
+                    GraphSolver solver = new GraphSolver(new Decomposer(model),settings);
                     solver.solve();
                 }
                 return 1;
@@ -129,7 +143,7 @@ public class QueryCompiler{
                 QueryState qstate = visitor.state();
                 qstate.refine();
                 out.println(qstate.toString(),Color.CYAN);
-                Settings settings = new Settings();
+                //Settings settings = new Settings();
                 FOLTranslator translator = new FOLTranslator(new FeatureSet(qstate.classes(),qstate.attributes(),
                     qstate.associations(),qstate.invariants()),model,settings);
                 

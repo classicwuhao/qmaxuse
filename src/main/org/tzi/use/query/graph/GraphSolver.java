@@ -10,9 +10,11 @@ public final class GraphSolver{
     private final String filename = "thread";
     private ColorPrint out = new ColorPrint();
     private HashSet<List<String>> cores = new HashSet<List<String>>();
+    private Settings settings;
 
-    public GraphSolver (Decomposer decomposer){
+    public GraphSolver (Decomposer decomposer, Settings settings){
         this.decomposer = decomposer;
+        this.settings = settings;
     }
 
     public void solve(){
@@ -30,7 +32,7 @@ public final class GraphSolver{
         for (int i=0;i<k;i++){
             QueryState state = states.get(i);
             translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
-                    state.associations(),state.invariants()),this.decomposer.model(),filename+i, new Settings());
+                    state.associations(),state.invariants()),this.decomposer.model(),filename+i, this.settings);
             translators[i].start();
             try{
                 translators[i].join();

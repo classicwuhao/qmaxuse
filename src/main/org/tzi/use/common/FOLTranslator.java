@@ -220,6 +220,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 		this.SMTSolver = this.settings.SolverPath();
 		SolverLauncher solver;
 		Result result;
+		
 		switch (this.settings.solver()){
 			case Z3:
 				solver = new SolverLauncher(this.SMTSolver+Z3_STD_IN,writer,SolverLauncher.PRODUCE_UNSAT_CORES);
@@ -269,7 +270,9 @@ public class FOLTranslator extends Thread implements ITranslator {
             out.println(result.toString(),Color.GREEN);
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
 		}
-	}
+
+		writer.clean();
+	}	
 
 	public List<String> get_unsat_cores(){
 		return unsat_cores;
@@ -284,7 +287,7 @@ public class FOLTranslator extends Thread implements ITranslator {
             Variable var = new Variable ("o", new Int());
 				if (!cls.isAbstract()) tmp.add (getTypeFunction(cls.name()).apply(getObjFunction().apply(var)));
 				for (MClass c : cls.allParents()) tmp.add (getTypeFunction(c.name()).apply(getObjFunction().apply(var)));
-				
+
 				if (tmp.size()>0){
 					QuantifiedFormula quan_formula = (tmp.size() > 1) ? 
 						new QuantifiedFormula (Quantifier.EXISTS, new Decls(var), 
