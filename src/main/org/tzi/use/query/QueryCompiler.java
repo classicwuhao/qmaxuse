@@ -28,6 +28,7 @@ import org.tzi.use.query.io.ColorPrint;
 import org.tzi.use.query.io.Color;
 import org.tzi.use.query.graph.*;
 import org.tzi.use.query.setup.Settings;
+import org.tzi.use.query.setup.OS;
 import org.tzi.use.query.setup.Solver;
 import java.io.PrintStream;
 import org.tzi.use.common.*;
@@ -42,11 +43,29 @@ public class QueryCompiler{
     public QueryCompiler(){}
     
     public static void set_solver(String solver){
+        OS os = settings.System();
         if (solver.equals(Solver.Z3.toString())){
-            settings.SetSolver(Solver.Z3);
+            if (os==OS.WINDOWS | os==OS.LINUX | os==OS.MACOS){
+                settings.SetSolver(Solver.Z3);
+            }
+            else{
+                System.out.println("Z3 is currently supported for Windows, Linux and MacOS.");
+                settings.SetSolver(Solver.UNDEF);
+            }
         }
         else if (solver.equals(Solver.CVC5.toString())){
-            settings.SetSolver(Solver.CVC5);
+            if (os==OS.LINUX | os==OS.MACOS){
+                settings.SetSolver(Solver.CVC5);
+            }
+            else if (os==OS.WINDOWS){
+                System.out.println("CVC5 is not supported for Windows");
+                System.out.println("Switch back to Z3.");
+                settings.SetSolver(Solver.Z3);
+            }
+            else{
+                System.out.println("CVC5 is currently supported for Linux and MacOS.");
+                settings.SetSolver(Solver.UNDEF);
+            }
         }
         else {
             System.out.println("unrecognised solver - "+solver);

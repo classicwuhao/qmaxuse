@@ -53,7 +53,8 @@ public final class Settings{
     }
 
     public String OS(){return this.os.toString();}
-
+    public OS System(){return this.os;}
+    
     public void SetSolver(Solver solver){
         if (solver!=Solver.UNDEF){
             this.MainSolver=solver;
