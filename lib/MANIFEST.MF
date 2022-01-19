@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.7
+Created-By: 17.0.1+12-Ubuntu-120.04 (Private Build)
+Main-Class: org.tzi.use.main.Main
+Class-Path: antlr-3.4-complete.jar com.microsoft.z3.jar combinatoricsl
+ ib-0.2.jar gsbase.jar guava-17.0.jar itextpdf-5.5.2.jar jruby-1.7.2.j
+ ar junit.jar maxuse.jar qmaxuse.jar vtd-xml.jar use-gui.jar use-runti
+ me.jar
+
