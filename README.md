@@ -102,7 +102,12 @@ Overall, QMaxUSE improves up to 30x efficiency in verification. In particular, Q
 * QMaxUSE will be included as a solution to one of our industrial partners.
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 
-## 8. Acknowledgement
+## 8. Papers:
+ * QMaxUSE: A Query-based Verification Tool for UML Class Diagrams with OCL Invariants (FASE)
+ * A Formal Approach to Finding Inconsistencies in a Metamodel (Software and Systems Modeling)
+ * MaxUSE: A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams (iFM)
+ * Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels (ECMFA).
+## 9. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
 Last updated: 04-Jan-2022
