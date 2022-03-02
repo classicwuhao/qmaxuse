@@ -11,5 +11,5 @@ end
 constraints
 
 context A
-	inv: A.allInstances()->size()>=1	
+	inv: A.allInstances()->size()>=0
 	

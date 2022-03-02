@@ -300,6 +300,21 @@ public class FOLTranslator extends Thread implements ITranslator {
 					this.label_map.put(label,cls.name());
 				}
         }
+
+		/* deal with single abstract class only */
+		for (MClass cls: model.classes()){
+			if (cls.isAbstract() && cls.allChildren().size()==0){
+				Variable var = new Variable("o", new Int());
+				AbstractFormula f1 = new ImpliesFormula(getTypeFunction(cls.name()).apply(getObjFunction().apply(var)), 
+					new EqFormula(cardFun.apply(conFun.apply(getObjFunction().apply(var))), new NumLiteral(0)) 
+				);
+				QuantifiedFormula quant_formula = new QuantifiedFormula(
+					Quantifier.FORALL, new Decls(var), f1);
+				
+				formulas.add(quant_formula);
+				formulas.add( new QuantifiedFormula(Quantifier.EXISTS, new Decls(var), getTypeFunction(cls.name()).apply(getObjFunction().apply(var))));
+			}
+		}
     }
 
     public int getEnumValueIndex(EnumType e, String str){
