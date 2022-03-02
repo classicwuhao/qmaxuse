@@ -24,8 +24,7 @@ public final class GraphSolver{
 
     public void solve(){
         decomposer.decompose();
-        //solve(decomposer.size());
-        solve(2);
+        solve(decomposer.size());
     }
 
     /* solve this graph with k number of threads. */ 
