@@ -93,7 +93,7 @@ QMaxUSE uses a specialised algorithm to decompose OCL invariants into multiple q
 QMaxUSE's verification procedures use Z3 SMT solver as its solving engine. To interact with Z3, it uses [uran](https://github.com/classicwuhao/uran) as its intermediate interfaces. Uran is responsible for generating well-formed SMT2 assertions and interpretation.
 
 ## 6. Benchmark
-Overall, QMaxUSE improves up to 30x efficenicy in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
+Overall, QMaxUSE improves up to 30x efficiency in verification. In particular, QMaxUSE performs very well on models with extreme size of OCL invariants. Try out some models from our [benchmark](./query_examples/benchmark).
 
 ## 7. Remarks
 * The implementation of QMaxUSE spans over the past 2 years. 
@@ -102,7 +102,12 @@ Overall, QMaxUSE improves up to 30x efficenicy in verification. In particular, Q
 * QMaxUSE will be included as a solution to one of our industrial partners.
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 
-## 8. Acknowledgement
+## 8. Papers:
+ * QMaxUSE: A Query-based Verification Tool for UML Class Diagrams with OCL Invariants (FASE 2022)
+ * A Formal Approach to Finding Inconsistencies in a Metamodel (Software and Systems Modeling 2021)
+ * MaxUSE: A Tool for Finding Achievable Constraints and Conflicts for Inconsistent UML Class Diagrams (iFM 2017)
+ * Finding Achievable Features and Constraint Conflicts for Inconsistent Metamodels (ECMFA 2017).
+## 9. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
 Last updated: 04-Jan-2022
