@@ -1,0 +1,15 @@
+model abstract_test
+
+abstract class A
+attributes
+	a1:	Integer
+	a2:	Integer
+	a3:	Integer
+	a4:	Integer
+end
+
+constraints
+
+context A
+	inv: A.allInstances()->size()>=1	
+	
