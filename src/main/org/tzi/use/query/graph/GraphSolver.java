@@ -2,6 +2,11 @@ package org.tzi.use.query.graph;
 import org.tzi.use.query.state.*;
 import org.tzi.use.common.*;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ArrayBlockingQueue;
 import org.tzi.use.query.io.*;
 import org.tzi.use.query.setup.*;
 
@@ -19,30 +24,44 @@ public final class GraphSolver{
 
     public void solve(){
         decomposer.decompose();
-        solve(decomposer.size());
+        //solve(decomposer.size());
+        solve(2);
     }
 
     /* solve this graph with k number of threads. */ 
     private void solve(int k){
         List<QueryState> states = this.decomposer.query_states();
         FOLTranslator[]  translators = new FOLTranslator[k];
-        
+        final BlockingQueue<QueryState> queue = new ArrayBlockingQueue<QueryState>(decomposer.size());
         final long startTime = System.currentTimeMillis();
         FOLTranslator.reset();
+        for (QueryState state : states) queue.add(state);
+        ExecutorService pool = Executors.newFixedThreadPool(k);
         for (int i=0;i<k;i++){
-            QueryState state = states.get(i);
-            translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
+            //QueryState state = states.get(i);
+                while (!queue.isEmpty()){
+                    QueryState state = queue.poll();
+                    translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
                     state.associations(),state.invariants()),this.decomposer.model(),filename+i, this.settings);
-            translators[i].start();
-            try{
-                translators[i].join();
-                if (translators[i].get_unsat_cores().size()>0)
-                    cores.add(translators[i].get_unsat_cores());
-            }
-            catch(InterruptedException e){ 
-            }
+                    //translators[i].start(); 
+                    pool.execute(translators[i]);
+                    try{
+                        translators[i].join();
+                    //if (pool.isTerminated()){
+                        if (translators[i].get_unsat_cores().size()>0)
+                        cores.add(translators[i].get_unsat_cores());
+                    //}
+                    }
+                    catch(InterruptedException e){}    
+                }
         }
+        pool.shutdown();
+        try{
+            pool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        }
+        catch(InterruptedException e){
 
+        }
         /*try{
             for (int i=0;i<k;i++)
                 translators[i].join();
