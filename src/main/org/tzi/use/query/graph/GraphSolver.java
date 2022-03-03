@@ -44,14 +44,13 @@ public final class GraphSolver{
                     state.associations(),state.invariants()),this.decomposer.model(),filename+i, this.settings);
                     //translators[i].start(); 
                     pool.execute(translators[i]);
-                    try{
-                        translators[i].join();
-                    //if (pool.isTerminated()){
-                        if (translators[i].get_unsat_cores().size()>0)
-                        cores.add(translators[i].get_unsat_cores());
+                    //try{
+                        if (!translators[i].isAlive()){
+                            if (translators[i].get_unsat_cores().size()>0)
+                            cores.add(translators[i].get_unsat_cores());
+                        }
                     //}
-                    }
-                    catch(InterruptedException e){}    
+                    //catch(InterruptedException e){}    
                 }
         }
         pool.shutdown();
@@ -61,6 +60,7 @@ public final class GraphSolver{
         catch(InterruptedException e){
 
         }
+        
         /*try{
             for (int i=0;i<k;i++)
                 translators[i].join();
