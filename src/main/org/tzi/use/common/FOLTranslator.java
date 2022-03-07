@@ -186,6 +186,11 @@ public class FOLTranslator extends Thread implements ITranslator {
         for (MClass cls:this.features.classes())
             TranslateClass (cls);
 
+		for (MClass cls:this.features.classes()){
+			if (cls.isAbstract())
+				GenerateAbstractClass(cls);
+		}
+		
         for (MAttribute attr:this.features.attributes())
             TranslateAttribute(attr);
 
@@ -209,6 +214,32 @@ public class FOLTranslator extends Thread implements ITranslator {
         else
             toSMT2(this.file,formulas,factory);
     }
+
+	private void GenerateAbstractClass(MClass cls){
+		boolean child_selection=false;
+		check:
+		for (MClass child : cls.allChildren()){
+			if (child.isAbstract()) continue;
+			for (MClass c: this.features.classes()){
+				if (c==cls) continue;
+				if (child==c){
+					child_selection=true;
+					break check;
+				}
+			}
+		}
+
+		Variable var = new Variable("o", new Int());
+		AbstractFormula f1 = new ImpliesFormula(getTypeFunction(cls.name()).apply(getObjFunction().apply(var)), 
+			new EqFormula(cardFun.apply(conFun.apply(getObjFunction().apply(var))), new NumLiteral(0)) 
+		);
+
+		QuantifiedFormula quant_formula = new QuantifiedFormula(
+					Quantifier.FORALL, new Decls(var), f1);
+
+		formulas.add(quant_formula);
+		formulas.add( new QuantifiedFormula(Quantifier.EXISTS, new Decls(var), getTypeFunction(cls.name()).apply(getObjFunction().apply(var))));
+	}
 
     private void toSMT2(String filename, List<AbstractFormula> formulas, FunctionFactory factory){
 		

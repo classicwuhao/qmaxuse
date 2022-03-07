@@ -12,4 +12,15 @@ constraints
 
 context A
 	inv: A.allInstances()->size()>=1
-	
+
+-- our query test
+-- 1. load this model with QMaxUSE
+-- 2. at QMaxUSE prompt type: $QueryTest.test to check verification result.
+-- NOTE: by default z3 is chosen. you can change to cvc5 by using the command set-solver:cvc5
+-- NOTE: cvc5 is only supported under Linux.
+
+module QueryTest
+	select A with A::* as test
+-- expected output: to report a conflict in the invariant.
+end
+
