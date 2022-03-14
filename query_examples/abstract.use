@@ -26,5 +26,6 @@ module QueryTest
 	select A with A::* as t1
 -- expected output: to report a conflict in the invariant.
 	select A,B with A::* as t2
+-- expected output: no conflicts reported.
 end
 
