@@ -229,6 +229,8 @@ public class FOLTranslator extends Thread implements ITranslator {
 			}
 		}
 
+		if (child_selection) return;
+
 		Variable var = new Variable("o", new Int());
 		AbstractFormula f1 = new ImpliesFormula(getTypeFunction(cls.name()).apply(getObjFunction().apply(var)), 
 			new EqFormula(cardFun.apply(conFun.apply(getObjFunction().apply(var))), new NumLiteral(0)) 

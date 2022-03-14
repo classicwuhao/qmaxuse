@@ -8,19 +8,23 @@ attributes
 	a4:	Integer
 end
 
+class B < A
+end
+
 constraints
 
 context A
 	inv: A.allInstances()->size()>=1
 
--- our query test
+-- our query test cases
 -- 1. load this model with QMaxUSE
--- 2. at QMaxUSE prompt type: $QueryTest.test to check verification result.
+-- 2. at QMaxUSE prompt type: $QueryTest.t1 or $QueryTest.t2 to check verification results.
 -- NOTE: by default z3 is chosen. you can change to cvc5 by using the command set-solver:cvc5
 -- NOTE: cvc5 is only supported under Linux.
 
 module QueryTest
-	select A with A::* as test
+	select A with A::* as t1
 -- expected output: to report a conflict in the invariant.
+	select A,B with A::* as t2
 end
 
