@@ -64,7 +64,7 @@ public class SolverLauncher extends AbstractVisitor {
 		this.writer = writer;
 		this.file = file;
 		this.options = options;
-		
+		//System.out.println("cmd:"+file);
 		try{
 			process = Runtime.getRuntime().exec(file);
 			/*List<String> commands = new ArrayList<String>();
@@ -78,6 +78,7 @@ public class SolverLauncher extends AbstractVisitor {
 			out = process.getInputStream();
 		}
 		catch(Exception e){
+			System.out.println("Laucher error:"+e.getMessage());
 			e.printStackTrace();
 		}
 				
@@ -147,11 +148,13 @@ public class SolverLauncher extends AbstractVisitor {
 			in.write(UNSAT_CORES.getBytes());
 			in.flush();
 			in.close();
-		
+
+			
 			BufferedReader output = new BufferedReader (new InputStreamReader(out));
 			String line;
 			
 			line=output.readLine();
+			
 			result = parseResult(line);
 			
 			if (result==Result.UNSAT) {
@@ -197,29 +200,34 @@ public class SolverLauncher extends AbstractVisitor {
 			in.write(UNSAT_CORES.getBytes());
 			in.flush();
 			in.close();
-		
+			
 			BufferedReader output = new BufferedReader (new InputStreamReader(out));
-			String line;	
-
+			String line;
+			
+			//System.out.println("process line...");
 			/*while ((line=output.readLine())!=null){
 				System.out.println("output:"+line);
 			}*/
+
 			line=output.readLine();
+			//System.out.println("line:"+line);
+			
 			result = parseResult(line);
 			String core="";
 			if (result==Result.UNSAT){
 				/* skip 1st line */
 				line=output.readLine();
 				while (!(line=output.readLine()).equals(")")){
+					//System.out.println("line:"+line);
 					core = line.trim();
 					if (subset.containsKey(core)) cores.add (subset.get(core));
 				}
 			}
-
 			output.close();
 			out.close();
 		}
 		catch (Exception e){
+			System.err.println("CVC5 launch error:"+e.getMessage());
 			e.printStackTrace();
 		}
 
