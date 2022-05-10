@@ -1,0 +1,36 @@
+model Animals
+
+class Person
+attributes
+	age:Integer
+	height:Integer
+	weight:Integer
+end
+
+class Pet
+attributes
+	name:String
+	specie:String
+	weight:Integer
+end
+
+
+association BelongsTo between
+	Person [*] role person
+	Pet[*] role pet
+end
+
+constraints
+@PersonRank{Rank=1}
+context Person
+	inv: self.age>3
+	inv: self.age<8
+	inv: Person.allInstances()->forAll(p|p.pet->notEmpty())
+	inv: self.pet->forAll(p|p.weight>5)
+	inv: self.age<=0 and self.age>99
+
+@PetRank{Rank=1}
+context Pet
+	inv: Pet.allInstances()->exists(p|p.weight>5)
+	inv: self.weight>=0
+	inv: self.weight<4

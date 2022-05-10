@@ -33,6 +33,8 @@ public final class GraphSolver{
         FOLTranslator[]  translators = new FOLTranslator[k];
         final BlockingQueue<QueryState> queue = new ArrayBlockingQueue<QueryState>(decomposer.size());
         final long startTime = System.currentTimeMillis();
+        boolean completed=false;
+
         FOLTranslator.reset();
         for (QueryState state : states) queue.add(state);
         ExecutorService pool = Executors.newFixedThreadPool(k);
@@ -54,8 +56,9 @@ public final class GraphSolver{
                 }
         }
         pool.shutdown();
+
         try{
-            pool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+            completed=pool.awaitTermination(1, TimeUnit.MINUTES);
         }
         catch(InterruptedException e){
 
@@ -67,7 +70,6 @@ public final class GraphSolver{
         }
         catch(InterruptedException e){}*/
         /* wait until until all threads finish */ 
-        
         int c = 0;
         for (List<String> list : cores){
             out.print("core "+c++ + ":",Color.RED+"{ ");
