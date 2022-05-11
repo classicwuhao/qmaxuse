@@ -109,7 +109,7 @@ public class QueryCompiler{
                 //Settings settings = new Settings();
                 if (settings.TrialRun()){
                     GraphSolver solver = new GraphSolver(new Decomposer(model),settings);
-                    solver.solve();
+                    solver.solve1each();
                 }
                 return 1;
             }

@@ -148,7 +148,6 @@ public class SolverLauncher extends AbstractVisitor {
 			in.write(UNSAT_CORES.getBytes());
 			in.flush();
 			in.close();
-
 			
 			BufferedReader output = new BufferedReader (new InputStreamReader(out));
 			String line;
@@ -195,19 +194,30 @@ public class SolverLauncher extends AbstractVisitor {
 			
 			List<AbstractFormula> formulas = writer.getFormulas();
 			for (AbstractFormula f : formulas) f.accept(this);
-		
-			in.write(CHECK.getBytes());
+			in.write( (CHECK+"\n").getBytes());
 			in.write(UNSAT_CORES.getBytes());
+			in.write("\r\n".getBytes());
 			in.flush();
 			in.close();
 			
 			BufferedReader output = new BufferedReader (new InputStreamReader(out));
+			byte[] raw = out.readAllBytes();
+			if (raw.length==0){
+				System.out.println("failed to process bytes from cvc5.");
+				return Result.UNKNOWN;
+			}
+
 			String line;
-			
+			//int counter=0;
+			//while (counter<=10){
+			//	counter++;
+			//	line=output.readLine();
+			//	System.out.println("output:"+line);
+			//}
 			//System.out.println("process line...");
-			/*while ((line=output.readLine())!=null){
-				System.out.println("output:"+line);
-			}*/
+			//while ((line=output.readLine())!=null){
+			//	System.out.println("output:"+line);
+			//}
 
 			line=output.readLine();
 			//System.out.println("line:"+line);
@@ -226,9 +236,12 @@ public class SolverLauncher extends AbstractVisitor {
 			output.close();
 			out.close();
 		}
+		catch(IOException e){
+			System.err.println("CVC5 io exception:"+e.getMessage());
+		}
 		catch (Exception e){
 			System.err.println("CVC5 launch error:"+e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 
 		return result;

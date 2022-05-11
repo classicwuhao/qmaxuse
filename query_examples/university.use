@@ -65,7 +65,6 @@ context Student
 context Module
 	inv inv8: self.year>=1 and self.year<=5
 
-	
 module Queryset
 	select Person.age, Student.age with Person::inv1, Student::inv2 as query_part_1
 	select Student.*, Module.*, Student:*:* with Student::*, Module::* as query_part_2

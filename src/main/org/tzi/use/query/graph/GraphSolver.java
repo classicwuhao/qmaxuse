@@ -27,6 +27,48 @@ public final class GraphSolver{
         solve(decomposer.size());
     }
 
+    public void solve1each(){
+        decomposer.decompose();
+        solve1by1(decomposer.size());
+    }
+
+    private void solve1by1(int k){
+        List<QueryState> states = this.decomposer.query_states();
+        FOLTranslator[]  translators = new FOLTranslator[k];
+        final long startTime = System.currentTimeMillis();
+        FOLTranslator.reset();
+
+        for (int i=0;i<k;i++){
+            QueryState state = states.get(i);
+            translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
+                    state.associations(),state.invariants()),this.decomposer.model(),filename+i, this.settings);
+            translators[i].start();
+            try{
+                translators[i].join();
+                if(translators[i].get_unsat_cores().size()>0)
+                    cores.add(translators[i].get_unsat_cores());
+            }
+            catch(InterruptedException e){
+                System.out.println("unexpected thread error:"+e.getMessage());
+            }
+        }
+
+        int c = 0;
+        for (List<String> list : cores){
+            out.print("core "+c++ + ":",Color.RED+"{ ");
+            for (String str :  list) out.print(str+" ",Color.RED);
+            out.print("}",Color.RED);
+            out.println(" ",Color.RED);
+        }
+
+        final long time = System.currentTimeMillis() - startTime;
+        out.println("Total conflicts: "+FOLTranslator.cores(),Color.CYAN);
+        out.println("Total Time Spent (" + states.size()+" threads): " + time +" ms.",Color.CYAN);
+
+
+    }
+
+
     /* solve this graph with k number of threads. */ 
     private void solve(int k){
         List<QueryState> states = this.decomposer.query_states();
@@ -38,23 +80,25 @@ public final class GraphSolver{
         FOLTranslator.reset();
         for (QueryState state : states) queue.add(state);
         ExecutorService pool = Executors.newFixedThreadPool(k);
-        for (int i=0;i<k;i++){
+        int id=0;
+        //for (int i=0;i<k;i++){
             //QueryState state = states.get(i);
                 while (!queue.isEmpty()){
                     QueryState state = queue.poll();
-                    translators[i] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
-                    state.associations(),state.invariants()),this.decomposer.model(),filename+i, this.settings);
+                    translators[id] = new FOLTranslator(new FeatureSet(state.classes(),state.attributes(),
+                    state.associations(),state.invariants()),this.decomposer.model(),filename+id, this.settings);
                     //translators[i].start(); 
-                    pool.execute(translators[i]);
+                    pool.execute(translators[id]);
                     //try{
-                        if (!translators[i].isAlive()){
-                            if (translators[i].get_unsat_cores().size()>0)
-                            cores.add(translators[i].get_unsat_cores());
+                        if (!translators[id].isAlive()){
+                            if (translators[id].get_unsat_cores().size()>0)
+                            cores.add(translators[id].get_unsat_cores());
                         }
                     //}
-                    //catch(InterruptedException e){}    
+                    //catch(InterruptedException e){}
+                    id++;    
                 }
-        }
+        //}
         pool.shutdown();
 
         try{

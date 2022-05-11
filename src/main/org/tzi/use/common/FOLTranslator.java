@@ -46,7 +46,7 @@ public class FOLTranslator extends Thread implements ITranslator {
 	private String Z3_STD_IN=" -in ";
 	private final String CVC5_FLAG_1=" --fmf-inst-engine ";
 	private final String CVC5_FLAG_2=" --finite-model-find ";
-	private final String CVC5_STD_IN=" --in=stdin ";
+	private final String CVC5_STD_IN=" --in=\"stdin\" ";
 	private String SMTSolver="";
     private static int pid=1;
     private String file="";
@@ -306,7 +306,7 @@ public class FOLTranslator extends Thread implements ITranslator {
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
 		}
 
-		writer.clean();
+		//writer.clean();
 	}	
 
 	public List<String> get_unsat_cores(){
