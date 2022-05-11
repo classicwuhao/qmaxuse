@@ -306,7 +306,7 @@ public class FOLTranslator extends Thread implements ITranslator {
             out.println("Time elapsed:"+timeUsed+" ms \n", Color.GREEN);*/
 		}
 
-		//writer.clean();
+		writer.clean();
 	}	
 
 	public List<String> get_unsat_cores(){
