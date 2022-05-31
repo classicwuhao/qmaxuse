@@ -120,4 +120,4 @@ Overall, QMaxUSE improves up to 30x efficiency in verification. In particular, Q
 ## 9. Acknowledgement
 We woud like to thank our industrial partner LingCui Yu, HuangXin Xin and their teams from SYSUCC for helpful comments on this research. 
 
-Last updated: 11-May-2022
+Last updated: 31-May-2022
