@@ -39,9 +39,18 @@ public class QueryCompiler{
     private QAst expressions=null;
     private static List<QueryState> visitors = new ArrayList<QueryState>();
     private static Settings settings = new Settings();
+    private static boolean pool=false;
 
     public QueryCompiler(){}
     
+    public static void set_pool(boolean b){
+        pool=b;
+        if (pool)
+            System.out.println("Asynchronous mode is enable.");
+        else
+            System.out.println("1 by 1 mode is enabled.");
+    }
+
     public static void set_solver(String solver){
         OS os = settings.System();
         if (solver.equals(Solver.Z3.toString())){
@@ -109,7 +118,10 @@ public class QueryCompiler{
                 //Settings settings = new Settings();
                 if (settings.TrialRun()){
                     GraphSolver solver = new GraphSolver(new Decomposer(model),settings);
-                    solver.solve1each();
+                    if (!pool)
+                        solver.solve1each();
+                    else
+                        solver.solve();
                 }
                 return 1;
             }

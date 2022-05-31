@@ -393,6 +393,8 @@ public final class Shell implements Runnable, PPCHandler {
             con_solve(line.trim());
         else if (line.startsWith("set-solver:"))
             configure_solver(line.trim());
+        else if (line.startsWith("set-mode:"))
+            configure_mode(line.trim());
         else if (line.startsWith("$"))
             query(line.substring(1).trim());
         else if (line.startsWith("??"))
@@ -826,6 +828,21 @@ public final class Shell implements Runnable, PPCHandler {
         InputStream stream = new ByteArrayInputStream(line.getBytes());
         //int r = QueryCompiler.compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err),system.varBindings());
         int r =QueryCompiler.con_compileExpression(system.model(),system.state(),stream,"<input>",new PrintWriter(System.err));
+    }
+
+    private void configure_mode (String line){
+        String value[] =line.split(":");
+        if (value.length>2){
+            System.out.println("Error: too many parameter.");
+            return;
+        }
+
+        if (value[1].trim().equals("1by1"))
+            QueryCompiler.set_pool(false);
+        else if (value[1].trim().equals("async"))
+            QueryCompiler.set_pool(true);
+        else
+            System.out.println("Error: unknown value: "+ value[1].trim() +" - please use '1by1' or 'async'");
     }
 
     /*
