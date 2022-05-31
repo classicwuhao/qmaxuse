@@ -25,7 +25,16 @@ Currently, [the latest version of QMaxUSE](https://github.com/classicwuhao/qmaxu
 ```
 Here, \<solver name\> can be either z3 or cvc5. If switch is successful, QMaxUSE will display a corresponding sovler's version information.
 
-### 3.2 MaxUSE Support
+### 3.2 Mode Switch
+You can now specify two modes for verification. `1by1` mode allows QMaxUSE to verify one query at a time, other query verification will wait unitl the current thread finishes.  `async` model allows QMaxUSE to use a pool of threads to verify multiple queries at a time, this yield much faster verification results. To switch between these two modes, you can use the following command at QMaxUSE prompt:
+
+
+```
+	set-mode:<name>
+```
+Here, \<name\> can be either `1by1` or `async`. By default, QMaxUSE uses `1by1` mode.
+
+### 3.3 MaxUSE Support
 QMaxUSE is fully compatible with MaxUSE. Everything is supported by MaxUSE is available in QMaxUSE including finding as many satisfiable features as possible and pinpointing all OCL conflicting constraints. However, you may need to setup Z3 for MaxUSE. See the instructions [here](https://github.com/classicwuhao/maxuse/blob/master/MaxUSE_README.md). Technical details about how MaxUSE works are described [here](https://link.springer.com/article/10.1007/s10270-020-00849-8).
 
 ## 4. USEAGE
