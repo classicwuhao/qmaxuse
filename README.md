@@ -112,6 +112,7 @@ Overall, QMaxUSE improves up to 30x efficiency in verification. In particular, Q
 * QMaxUSE supports OCL constructs used in the benchmark, and not all OCL constructs are supported (we are currently adding more). 
 
 ## 8. Papers:
+ * QMaxUSE: QMaxUSE: A New Tool for Verifying UML Class Diagrams and OCL Invariants (SCP 2023)
  * A Query-based Approach for Verifying UML Class Diagrams with OCL Invariants (ECMFA 2022)
  * QMaxUSE: A Query-based Verification Tool for UML Class Diagrams with OCL Invariants (FASE 2022)
  * A Formal Approach to Finding Inconsistencies in a Metamodel (Software and Systems Modeling 2021)
